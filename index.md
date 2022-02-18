@@ -52,7 +52,7 @@ Ne seront pas inclu dans le budget (dépenses individuelles) :
 
 - Les dépassements de frais sur la restauration
 - Alcool et consommations au bar
-- Activités individuelles non-prévue (saut à l'elastique pour vous, etc...)
+- Activités individuelles non-prévues (saut à l'elastique pour vous, etc...)
 
 10% du budget seront bloqués pour prévoir des surcoûts éventuels. Cette marge sera redistribuée si non utilisée.
 
