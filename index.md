@@ -1,37 +1,94 @@
-## Welcome to GitHub Pages
+# Compte rendu EVG
 
-You can use the [editor on GitHub](https://github.com/leobouard/leobouard.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+## Liste des participants (hors marié)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. Valentin
+2. Léo
+3. Romain
+4. Alex
+5. Baptiste
+6. Pierre
+7. Charles
+8. ~~Guillaume~~
 
-### Markdown
+\+ Clément en tant que marié
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Budget
 
-```markdown
-Syntax highlighted code block
+### Résultats du sondage
 
-# Header 1
-## Header 2
-### Header 3
+**Combien seriez-vous prêt à mettre pour participer à l'EVG ?**
 
-- Bulleted
-- List
+- Moins de 100€ : 0%
+- Entre 100 et 200€ : 67%
+- Entre 200 et 300€ : 17%
+- Plus de 300€ : 17%
 
-1. Numbered
-2. List
+**Quel type de participation préférez-vous ?**
 
-**Bold** and _Italic_ and `Code` text
+- Que tout le monde paye une part égale : 83%
+- Que chacun participe en fonction de ses moyens : 17%
 
-[Link](url) and ![Image](src)
-```
+### Simulations
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Participation | Budget total | Budget par personne
+------------- | ------------ | -------------------
+100€ | 700€ | 88€
+125€ | 875€ | 109€
+150€ | 1050€ | 131€
+175€ | 1225€ | 153€
+200€ | 1400€ | 175€
 
-### Jekyll Themes
+### Composition du budget
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/leobouard/leobouard.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
 
-### Support or Contact
+- Frais de transport (location véhicule, péage, carburant...)
+- Frais d'hébergement
+- Activités du marié et de groupe
+- Restauration (selon un budget limité par personne)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Ne seront pas inclu dans le budget (dépenses individuelles) :
+
+- Les dépassements de frais sur la restauration
+- Alcool et consommations au bar
+- Activités individuelles non-prévue (saut à l'elastique pour vous, etc...)
+
+10% du budget seront bloqués pour prévoir des surcoûts éventuels. Cette marge sera redistribuée si non utilisée.
+
+## Activités
+
+Activité | Type | Budget total | Budget par personne
+-------- | ---- | ------------ | -------------------
+[Saut à l'élastique](https://elasticrocodilbungee.com/reserver/saut-elastique-vendee-viaduc-coquilleau/) | Marié | 0€ | 0€
+[Initiation Flyboard - 20 min](http://jet-sensation.fr/flyboard/) | Marié | 70€ | 10€
+[Sortie groupe jet-ski - 45 min](http://jet-sensation.fr/jet-ski/) | Groupe | 560€ | 80€
+[Airsoft EVG - 2 parties](https://rsoftgame.com/tarifs/#la-sulfateuse) | Groupe | 150€ | 21€
+
+Restaurant & bar pour le soir, on verra où la nuit nous portera
+
+## Format
+
+Date retenue : samedi 18 juin et dimanche 18 juin
+
+### Chronologie du samedi
+
+Date | Détail
+---- | ------
+8h | Récupération du marié à Beaulieu pour petit déjeuner
+9h | Départ pour La Châtaigneraie (1h15 de route)
+10h15/10h30 | Saut à l'élastique
+11h30 | Départ pour La Rochelle (1h20)
+13h | Arrivée à La Rochelle pour manger
+14h30 | Initiation flyboard
+Après-midi | Activité de groupe (airsoft ou jet-ski)
+Fin d'après-midi | Passage à l'hotel pour douche et préparation à la soirée
+Soirée | Restaurant, bar et bien plus encore
+
+### Chronologie du dimanche
+
+On verra en fonction de l'état du groupe : donc rien de prévu. On peut trainer dans La Rochelle ou aller à la plage
+
+Temps de trajet retour vers Beaulieu-sous-la-Roche : 1h30
+
+Dimanche soir : soirée pizza à Beaulieu pour bien lui mettre la misère avant sa reprise
