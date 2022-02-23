@@ -26,13 +26,13 @@ permalink: /evg.html
 **Combien seriez-vous prêt à mettre pour participer à l'EVG ?**
 
 - Moins de 100€ : 0%
-- Entre 100 et 200€ : 67%
+- **Entre 100 et 200€ : 67%**
 - Entre 200 et 300€ : 17%
 - Plus de 300€ : 17%
 
 **Quel type de participation préférez-vous ?**
 
-- Que tout le monde paye une part égale : 83%
+- **Que tout le monde paye une part égale : 83%**
 - Que chacun participe en fonction de ses moyens : 17%
 
 ### Simulations
