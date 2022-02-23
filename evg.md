@@ -4,6 +4,8 @@ permalink: /evg.html
 
 # Compte rendu EVG
 
+**Date retenue : samedi 18 juin et dimanche 19 juin**
+
 ## Liste des participants (hors marié)
 
 1. Valentin
@@ -34,6 +36,9 @@ permalink: /evg.html
 - Que chacun participe en fonction de ses moyens : 17%
 
 ### Simulations
+
+Participation : somme apportée par participant (hors marié)
+Budget par personne : somme qui peut être utilisée par personne (avec marié)
 
 Participation | Budget total | Budget par personne
 ------------- | ------------ | -------------------
@@ -72,8 +77,6 @@ Activité | Type | Budget total | Budget par personne
 Restaurant & bar pour le soir, on verra où la nuit nous portera
 
 ## Format
-
-Date retenue : samedi 18 juin et dimanche 18 juin
 
 ### Chronologie du samedi
 
