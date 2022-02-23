@@ -38,6 +38,7 @@ permalink: /evg.html
 ### Simulations
 
 Participation : somme apportée par participant (hors marié)
+
 Budget par personne : somme qui peut être utilisée par personne (avec marié)
 
 Participation | Budget total | Budget par personne
@@ -53,9 +54,19 @@ Participation | Budget total | Budget par personne
 Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
 
 - Frais de transport (location véhicule, péage, carburant...)
+  - Réservation de véhicule 8p : 100€ sur Super U Aizenay
+  - Carburant pour véhicule : 60€ (300km à 12L/100 km)
+  - Parking voiture : ?€
 - Frais d'hébergement
+  - hotel 8 personnes : 310€ pour 2 chambres de 4 sur Odalys Vacances (arrivée 16h - départ 11h)
+  - taxe de séjour : 45€ (2x7€/personne et par jour)
 - Activités du marié et de groupe
-- Restauration (selon un budget limité par personne)
+- Restauration (selon un budget limité par personne, sauf exception)
+  - Samedi matin : (?)
+  - Samedi midi : fast-food (?)
+  - Samedi soir : restaurant sur la côte
+  - Dimanche matin/midi : brunch sur La Rochelle
+  - Dimanche soir : pizza à Beaulieu pour ceux qui peuvent (non compris dans le budget)
 
 Ne seront pas inclu dans le budget (dépenses individuelles) :
 
@@ -94,7 +105,7 @@ Soirée | Restaurant, bar et bien plus encore
 
 ### Chronologie du dimanche
 
-On verra en fonction de l'état du groupe : donc rien de prévu. On peut trainer dans La Rochelle ou aller à la plage
+On verra en fonction de l'état du groupe. On peut trainer dans La Rochelle ou aller à la plage
 
 Temps de trajet retour vers Beaulieu-sous-la-Roche : 1h30
 
