@@ -65,7 +65,7 @@ Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
   - Samedi matin : (?)
   - Samedi midi : fast-food (?)
   - Samedi soir : restaurant sur la côte
-  - Dimanche matin/midi : brunch sur La Rochelle (?)
+  - Dimanche matin/midi : [brunch sur La Rochelle](https://g.page/brunch616?share)
   - Dimanche soir : pizza à Beaulieu pour ceux qui peuvent (non compris dans le budget)
 
 Ne seront pas inclu dans le budget (dépenses individuelles) :
