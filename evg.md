@@ -84,6 +84,7 @@ Activité | Type | Budget total | Budget par personne
 [Initiation Flyboard - 20 min](http://jet-sensation.fr/flyboard/) | Marié | 70€ | 10€
 [Sortie groupe jet-ski - 45 min](http://jet-sensation.fr/jet-ski/) | Groupe | 560€ | 80€
 [Airsoft EVG - 2 parties](https://rsoftgame.com/tarifs/#la-sulfateuse) | Groupe | 150€ | 21€
+Escape Game ? | Groupe | ? | ?
 
 Restaurant & bar pour le soir, on verra où la nuit nous portera
 
