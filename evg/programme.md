@@ -8,7 +8,7 @@ permalink: /evg/programme.html
 
 📅 Date retenue : **samedi 18 juin et dimanche 19 juin**
 
-## Liste des participants (hors marié)
+## 👨‍👨‍👦 Liste des participants (hors marié)
 
 1. Valentin
 2. Léo
@@ -21,18 +21,18 @@ permalink: /evg/programme.html
 
 \+ Clément en tant que marié
 
-## Budget
+## 💰 Budget
 
 ### Résultats du sondage
 
-💰 **Combien seriez-vous prêt à mettre pour participer à l'EVG ?**
+**Combien seriez-vous prêt à mettre pour participer à l'EVG ?**
 
 - Moins de 100€ : 0%
 - **Entre 100 et 200€ : 67%**
 - Entre 200 et 300€ : 17%
 - Plus de 300€ : 17%
 
-🍰 **Quel type de participation préférez-vous ?**
+**Quel type de participation préférez-vous ?**
 
 - **Que tout le monde paye une part égale : 83%**
 - Que chacun participe en fonction de ses moyens : 17%
@@ -79,7 +79,7 @@ Ne seront pas inclu dans le budget (dépenses individuelles) :
 - Alcool et consommations au bar
 - Activités individuelles non-prévues (saut à l'elastique pour vous, etc...)
 
-## Activités
+## ⚽ Activités
 
 Activité | Type | Budget total | Budget par personne
 -------- | ---- | ------------ | -------------------
@@ -87,7 +87,7 @@ Activité | Type | Budget total | Budget par personne
 [Initiation Flyboard - 20 min](http://jet-sensation.fr/flyboard/) | Marié | 70€ | 10€
 [Airsoft EVG - 2 parties](https://rsoftgame.com/tarifs/#la-sulfateuse) | Groupe | 150€ | 21€
 
-## Format
+## ⌚ Format
 
 ### Chronologie du samedi
 
