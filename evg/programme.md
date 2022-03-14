@@ -2,7 +2,7 @@
 permalink: /evg/programme.html
 ---
 
-[⬅️ Revenir au menu](/evg)
+[⬅️ Revenir au menu](/evg.html)
 
 # Programme de l'EVG
 
