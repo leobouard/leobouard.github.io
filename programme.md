@@ -2,7 +2,7 @@
 permalink: /evg/programme.html
 ---
 
-# Compte rendu EVG
+# Programme de l'EVG
 
 📅 Date retenue : **samedi 18 juin et dimanche 19 juin**
 
