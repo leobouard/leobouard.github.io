@@ -12,7 +12,7 @@ Normalement on aura un minibus 8 places avec un autoradio Bluetooth ! On va avoi
 
 Début de la délibération : ...
 
-## 👹 Objets a emmener
+## 👹 Objets à emmener
 
 Vous voulez refaire le morning live à La Rochelle ? Dans ce cas il vous faudra un mégaphone.
 Vous voulez teindre les cheveux du blondinet ? Dans ce cas il faudra de la teinture.
