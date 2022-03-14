@@ -4,7 +4,7 @@ permalink: /evg.html
 
 # Compte rendu EVG
 
-**Date retenue : samedi 18 juin et dimanche 19 juin**
+📅 Date retenue : **samedi 18 juin et dimanche 19 juin**
 
 ## Liste des participants (hors marié)
 
@@ -23,14 +23,14 @@ permalink: /evg.html
 
 ### Résultats du sondage
 
-**Combien seriez-vous prêt à mettre pour participer à l'EVG ?**
+💰 **Combien seriez-vous prêt à mettre pour participer à l'EVG ?**
 
 - Moins de 100€ : 0%
 - **Entre 100 et 200€ : 67%**
 - Entre 200 et 300€ : 17%
 - Plus de 300€ : 17%
 
-**Quel type de participation préférez-vous ?**
+🍰 **Quel type de participation préférez-vous ?**
 
 - **Que tout le monde paye une part égale : 83%**
 - Que chacun participe en fonction de ses moyens : 17%
@@ -61,10 +61,13 @@ Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
   - hotel 8 personnes : 310€ pour 2 chambres de 4 sur Odalys Vacances (arrivée 16h - départ 11h)
   - taxe de séjour : 45€ (2x7€/personne et par jour)
 - Activités du marié et de groupe
+  - saut à l'élastique : 0€
+  - initiation flyboard : 70€
+  - airsoft EVG : 150€
 - Restauration (selon un budget limité par personne, sauf exception)
-  - Samedi matin : (?)
+  - Samedi matin : boulangerie à Beaulieu avant de partir (?)
   - Samedi midi : fast-food (?)
-  - Samedi soir : restaurant sur la côte
+  - Samedi soir : restaurant/bar sur la côte
   - Dimanche matin/midi : [brunch sur La Rochelle](https://g.page/brunch616?share)
   - Dimanche soir : pizza à Beaulieu pour ceux qui peuvent (non compris dans le budget)
 
@@ -74,40 +77,35 @@ Ne seront pas inclu dans le budget (dépenses individuelles) :
 - Alcool et consommations au bar
 - Activités individuelles non-prévues (saut à l'elastique pour vous, etc...)
 
-10% du budget seront bloqués pour prévoir des surcoûts éventuels. Cette marge sera redistribuée si non utilisée.
-
 ## Activités
 
 Activité | Type | Budget total | Budget par personne
 -------- | ---- | ------------ | -------------------
 [Saut à l'élastique](https://elasticrocodilbungee.com/reserver/saut-elastique-vendee-viaduc-coquilleau/) | Marié | 0€ | 0€
 [Initiation Flyboard - 20 min](http://jet-sensation.fr/flyboard/) | Marié | 70€ | 10€
-[Sortie groupe jet-ski - 45 min](http://jet-sensation.fr/jet-ski/) | Groupe | 560€ | 80€
 [Airsoft EVG - 2 parties](https://rsoftgame.com/tarifs/#la-sulfateuse) | Groupe | 150€ | 21€
-Escape Game ? | Groupe | ? | ?
-
-Restaurant & bar pour le soir, on verra où la nuit nous portera
 
 ## Format
 
 ### Chronologie du samedi
 
-Date | Détail
----- | ------
+Heure | Détail
+----- | ------
 8h | Récupération du marié à Beaulieu pour petit déjeuner
 9h | Départ pour La Châtaigneraie (1h15 de route)
 10h15/10h30 | Saut à l'élastique
 11h30 | Départ pour La Rochelle (1h20)
 13h | Arrivée à La Rochelle pour manger
 14h30 | Initiation flyboard
-Après-midi | Activité de groupe (airsoft ou jet-ski)
+Après-midi | Activité de groupe (airsoft)
 Fin d'après-midi | Passage à l'hotel pour douche et préparation à la soirée
 Soirée | Restaurant, bar et bien plus encore
 
 ### Chronologie du dimanche
 
-On verra en fonction de l'état du groupe. On peut trainer dans La Rochelle ou aller à la plage
-
-Temps de trajet retour vers Beaulieu-sous-la-Roche : 1h30
-
-Dimanche soir : soirée pizza à Beaulieu pour bien lui mettre la misère avant sa reprise
+Heure | Détail
+----- | ------
+11h | Sortie de l'hotel
+11h20 | Brunch 
+13h | On chill un peu à La Rochelle et on rentre quand on veut (1h30 de route)
+20h | Pizza à Beaulieu pour ceux qui peuvent
