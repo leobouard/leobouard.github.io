@@ -6,8 +6,6 @@ permalink: /evg/programme.html
 
 # Programme de l'EVG
 
-📅 Date retenue : **samedi 18 juin et dimanche 19 juin**
-
 ## 👨‍👨‍👦 Liste des participants (hors marié)
 
 1. Valentin
