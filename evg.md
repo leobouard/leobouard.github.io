@@ -1,5 +1,5 @@
 ---
-permalink: /evg.html
+permalink: /evg/programme.html
 ---
 
 # Compte rendu EVG
