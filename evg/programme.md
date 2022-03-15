@@ -109,3 +109,7 @@ Heure | Détail
 11h20 | Brunch 
 13h | On chill un peu à La Rochelle et on rentre quand on veut (1h30 de route)
 20h | Pizza à Beaulieu pour ceux qui peuvent
+
+### Synthèse des trajets
+
+![synthèse des trajets](/evg/map.png)
