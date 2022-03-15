@@ -14,8 +14,8 @@ N'en dis pas plus, je suis là pour toi !
 
 - [c'est quoi le programme ?](/evg/programme.html)
 - [c'est où les idées de merde ?](/evg/idees.html)
-- Cagnotte Lydia
-- [Playlist Spotify](https://open.spotify.com/playlist/0mYFHXW6temhSXGNnjs3iC?si=8bf133a43ce3436f)
+- rendez l'argent !
+- [la playlist du week-end](https://open.spotify.com/playlist/0mYFHXW6temhSXGNnjs3iC?si=8bf133a43ce3436f)
 - Le Drive pour les dossiers photos
 
 ![Clement vs. Le Prince Charles](/evg/meme.jpg)
