@@ -16,7 +16,7 @@ N'en dis pas plus, je suis là pour toi !
 - [c'est où les idées de merde ?](/evg/idees.html)
 - rendez l'argent !
 - [la playlist du week-end](https://open.spotify.com/playlist/0mYFHXW6temhSXGNnjs3iC?si=8bf133a43ce3436f)
-- Le Drive pour les dossiers photos
+- [le dossier pour les dossiers photos](https://1drv.ms/u/s!AmiqB-xYe-mKwnPnMHLN_qhG4fBC?e=ubzxxG)
 
 ![Clement vs. Le Prince Charles](/evg/meme.jpg)
 
