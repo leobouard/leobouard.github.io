@@ -81,3 +81,5 @@ Sondage :
 2. Un cadeau à Clem
 3. Participation pour le mariage de Clem & Lolo
 4. Don à l'association "Adopte un Léo" à Rennes
+
+[⬅️ Revenir au menu](/evg.html)
