@@ -58,9 +58,9 @@ Activités | Saut à l'élastique | 0€
 Activités | Initiation flyboard (20 min) | 70€
 Activités | Airsoft EVG | 150€
 Activités | Airsoft 1h<br>Airsoft 20 min | 160€<br>64€
-Total | Avec partie 20 min | 809€ (116€/pers.)
-Total | Avec partie 2x20 min | 873€ (125€/pers.)
-Total | Avec partie 1h | 905€ (130€/pers.)
+**Total** | Avec partie 20 min | **809€ (116€/pers.)**
+**Total** | Avec partie 2x20 min | **873€ (125€/pers.)**
+**Total** | Avec partie 1h | **905€ (130€/pers.)**
 
 ### Vos dépenses personnelles
 
@@ -71,7 +71,7 @@ Samedi soir | Restaurant "La Boussole" | 30€
 Samedi nuit | Bar "La Terasse" | Entre 20€ et l'infini
 Dimanche matin/midi | Restaurant "Brunch 616" | 13€
 Dimanche soir | Pizzeria à Beaulieu | 10€
-Total | | 88€
+**Total** | | **88€**
 
 ## Que faire du reste ?
 
