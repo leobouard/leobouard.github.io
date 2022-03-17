@@ -8,9 +8,9 @@ permalink: /evg/moulaga.html
 
 ## Trop long, pas lu
 
-Le lien vers la cagnotte
+Lien pour les participations : [cagnotte Lydia](https://lydia-app.com/collect/33513-evg-clement/fr)
 
-Participation demandée : 150€
+Participation attendue : 150€
 
 ## Résultats du sondage
 
