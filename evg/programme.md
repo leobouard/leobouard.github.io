@@ -19,64 +19,6 @@ permalink: /evg/programme.html
 
 \+ Clément en tant que marié
 
-## 💰 Budget
-
-### Résultats du sondage
-
-**Combien seriez-vous prêt à mettre pour participer à l'EVG ?**
-
-- Moins de 100€ : 0%
-- **Entre 100 et 200€ : 67%**
-- Entre 200 et 300€ : 17%
-- Plus de 300€ : 17%
-
-**Quel type de participation préférez-vous ?**
-
-- **Que tout le monde paye une part égale : 83%**
-- Que chacun participe en fonction de ses moyens : 17%
-
-### Simulations
-
-Participation : somme apportée par participant (hors marié)
-
-Budget par personne : somme qui peut être utilisée par personne (avec marié)
-
-Participation | Budget total | Budget par personne
-------------- | ------------ | -------------------
-100€ | 700€ | 88€
-125€ | 875€ | 109€
-150€ | 1050€ | 131€
-175€ | 1225€ | 153€
-200€ | 1400€ | 175€
-
-### Composition du budget
-
-Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
-
-- Frais de transport (location véhicule, péage, carburant...)
-  - Réservation de véhicule 8p : 100€ sur Super U Aizenay
-  - Carburant pour véhicule : 60€ (300km à 12L/100 km)
-  - Parking voiture : ?€
-- Frais d'hébergement
-  - hotel 8 personnes : 310€ pour 2 chambres de 4 sur Odalys Vacances (arrivée 16h - départ 11h)
-  - taxe de séjour : 45€ (2x7€/personne et par jour)
-- Activités du marié et de groupe
-  - saut à l'élastique : 0€
-  - initiation flyboard : 70€
-  - airsoft EVG : 150€
-- Restauration (selon un budget limité par personne, sauf exception)
-  - Samedi matin : boulangerie à Beaulieu avant de partir (?)
-  - Samedi midi : fast-food (?)
-  - Samedi soir : restaurant/bar sur la côte
-  - Dimanche matin/midi : [brunch sur La Rochelle](https://g.page/brunch616?share)
-  - Dimanche soir : pizza à Beaulieu pour ceux qui peuvent (non compris dans le budget)
-
-Ne seront pas inclu dans le budget (dépenses individuelles) :
-
-- Les dépassements de frais sur la restauration
-- Alcool et consommations au bar
-- Activités individuelles non-prévues (saut à l'elastique pour vous, etc...)
-
 ## ⚽ Activités
 
 Activité | Type | Budget total | Budget par personne
