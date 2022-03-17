@@ -10,7 +10,7 @@ permalink: /evg/moulaga.html
 
 Lien pour les participations : [cagnotte Lydia](https://lydia-app.com/collect/33513-evg-clement/fr)
 
-Participation attendue : 150€
+Participation attendue : **150€**
 
 ## Résultats du sondage
 
@@ -43,11 +43,13 @@ Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
 
 ## Détails des dépenses
 
+![ma gestion du budget commun](https://media3.giphy.com/media/1N7wpCVjQJatq/giphy.gif?cid=ecf05e47n4i22ylm7aylhg2w33rpkzhukrhgz1fky0wmgs4g&rid=giphy.gif&ct=g)
+
+ > _Ma gestion du budget commun_
+
 ### Tronc commun
 
 Il s'agit des dépenses financées par vos impôts !
-
-![ma gestion du budget commun](https://media3.giphy.com/media/1N7wpCVjQJatq/giphy.gif?cid=ecf05e47n4i22ylm7aylhg2w33rpkzhukrhgz1fky0wmgs4g&rid=giphy.gif&ct=g)
 
 Type | Détails | Somme estimée
 ---- | ------- | -------------
@@ -56,15 +58,13 @@ Transport | Carburant (300km à 12L/100 km) | 60€
 Transport | Parking | 10€
 Hébergement | Hotel (2 chambres de 4 sur Odalys Vacances) | 310€
 Hébergement | Taxe de séjour | 45€ (2x7€/personne et par jour)
-Activités | Saut à l'élastique | 0€
-Activités | Initiation flyboard (20 min) | 70€
-Activités | Airsoft EVG | 150€
-Activités | Airsoft 20 min (x2) | 128€
+Activités | [Saut à l'élastique](https://elasticrocodilbungee.com/reserver/saut-elastique-vendee-viaduc-coquilleau/) | 0€
+Activités | [Initiation flyboard (20 min)](http://jet-sensation.fr/flyboard/) | 70€
+Activités | [Airsoft "La sulfateuse"](https://rsoftgame.com/tarifs/#la-sulfateuse) | 150€
+Activités | [Airsoft 20 min (x2)](https://rsoftgame.com/airsoft/) | 128€
 **Total** | | **873€ (125€/pers.)**
 
 ### Vos dépenses personnelles
-
-![happy hour drinking](https://media4.giphy.com/media/Zw3oBUuOlDJ3W/giphy.gif?cid=ecf05e47l912wzhon1jglt5tjbnuiygk92elf1f4k8fi5zx4&rid=giphy.gif&ct=g)
 
 Temps | Lieu | Somme estimée
 ----- | ---- | -------------
@@ -79,7 +79,7 @@ Dimanche soir | Pizzeria à Beaulieu | 10€
 
 Sondage : 
 
-1. FILLION ! Redonne l'argent (remboursement)
+1. FILLON ! Rends l'argent (remboursement)
 2. Un cadeau à Clem
 3. Participation pour le mariage de Clem & Lolo
 4. La réponse "D"
