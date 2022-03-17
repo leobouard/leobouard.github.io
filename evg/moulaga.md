@@ -47,6 +47,8 @@ Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
 
 Il s'agit des dépenses financées par vos impôts !
 
+![ma gestion du budget commun](https://media3.giphy.com/media/1N7wpCVjQJatq/giphy.gif?cid=ecf05e47n4i22ylm7aylhg2w33rpkzhukrhgz1fky0wmgs4g&rid=giphy.gif&ct=g)
+
 Type | Détails | Somme estimée
 ---- | ------- | -------------
 Transport | Location véhicule | 100€
@@ -57,19 +59,19 @@ Hébergement | Taxe de séjour | 45€ (2x7€/personne et par jour)
 Activités | Saut à l'élastique | 0€
 Activités | Initiation flyboard (20 min) | 70€
 Activités | Airsoft EVG | 150€
-Activités | Airsoft 1h<br>Airsoft 20 min | 160€<br>64€
-**Total** | Avec partie 20 min | **809€ (116€/pers.)**
-**Total** | Avec partie 2x20 min | **873€ (125€/pers.)**
-**Total** | Avec partie 1h | **905€ (130€/pers.)**
+Activités | Airsoft 20 min (x2) | 128€
+**Total** | | **873€ (125€/pers.)**
 
 ### Vos dépenses personnelles
+
+![happy hour drinking](https://media4.giphy.com/media/Zw3oBUuOlDJ3W/giphy.gif?cid=ecf05e47l912wzhon1jglt5tjbnuiygk92elf1f4k8fi5zx4&rid=giphy.gif&ct=g)
 
 Temps | Lieu | Somme estimée
 ----- | ---- | -------------
 Samedi midi | McDonald's | 15€
-Samedi soir | Restaurant "La Boussole" | 30€
-Samedi nuit | Bar "La Terasse" | Entre 20€ et l'infini
-Dimanche matin/midi | Restaurant "Brunch 616" | 13€
+Samedi soir | [Restaurant "La Boussole"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d969725-Reviews-La_Boussole-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 30€
+Samedi nuit | [Bar "La Terasse"](https://www.tripadvisor.fr/Attraction_Review-g187206-d8284699-Reviews-Bar_La_Terrasse-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | Entre 20€ et l'infini
+Dimanche matin/midi | [Restaurant "Brunch 616"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d15199794-Reviews-Brunch616-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 13€
 Dimanche soir | Pizzeria à Beaulieu | 10€
 **Total** | | **88€**
 
@@ -80,6 +82,6 @@ Sondage :
 1. FILLION ! Redonne l'argent (remboursement)
 2. Un cadeau à Clem
 3. Participation pour le mariage de Clem & Lolo
-4. Don à l'association "Adopte un Léo" à Rennes
+4. La réponse "D"
 
 [⬅️ Revenir au menu](/evg.html)
