@@ -6,11 +6,9 @@ permalink: /evg/moulaga.html
 
 # Elle est où la moulaga ?
 
-## Trop long, pas lu
+## En bref
 
-Lien pour les participations : [cagnotte Lydia](https://lydia-app.com/collect/33513-evg-clement/fr)
-
-Participation attendue : **150€**
+Participation attendue : **150€** sur la [cagnotte Lydia](https://lydia-app.com/collect/33513-evg-clement/fr)
 
 ## Résultats du sondage
 
