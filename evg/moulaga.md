@@ -35,7 +35,7 @@ Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
 
 ## Ce qui n'est pas compris dans le budget
 
-- Vos frais de restauration et consommation bar (estimation : moins de 70€)
+- Vos frais de restauration (estimation : moins de 70€)
 - Alcool et consommations au bar (selon votre soif)
 - Activités individuelles non-prévues (saut à l'elastique pour vous, etc...)
 
