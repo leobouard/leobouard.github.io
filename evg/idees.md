@@ -6,7 +6,7 @@ permalink: /evg/idees.html
 
 # Vos idées pour l'EVG de Clément !
 
-## 🚗 Activités en voiture 
+## Activités en voiture 
 
 Normalement on aura un minibus 8 places avec un autoradio Bluetooth ! On va avoir 4h de route dans le week-end, donc il va falloir être créatif. A vous de jouer pour proposer vos meilleurs idées de jeux en voiture.
 
@@ -18,7 +18,7 @@ Normalement on aura un minibus 8 places avec un autoradio Bluetooth ! On va avoi
 
 Début de la délibération : ...
 
-## 💪 Défis à relever
+## Défis à relever
 
 Envie de déguiser Clément en bite géante et avertir la police ? Faites nous rêver !
 
@@ -30,7 +30,7 @@ Envie de déguiser Clément en bite géante et avertir la police ? Faites nous r
 
 Début de la délibération : ...
 
-## 👹 Objets à emmener
+## Objets à emmener
 
 Vous voulez refaire le morning live à La Rochelle ? Dans ce cas il vous faudra un mégaphone.
 Vous voulez teindre les cheveux du blondinet ? Dans ce cas il faudra de la teinture.
@@ -38,3 +38,5 @@ Vous voulez teindre les cheveux du blondinet ? Dans ce cas il faudra de la teint
 Vous avez compris le délire je pense !
 
 Début de la délibération : ...
+
+[⬅️ Revenir au menu](/evg.html)
