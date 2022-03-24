@@ -3,8 +3,6 @@ permalink: /evg/moulaga.html
 layout: evg
 ---
 
-[⬅️ Revenir au menu](/evg.html)
-
 # Elle est où la moulaga ?
 
 ## En bref
@@ -82,5 +80,3 @@ Sondage :
 2. Un cadeau à Clem
 3. Participation pour le mariage de Clem & Lolo
 4. La réponse "D"
-
-[⬅️ Revenir au menu](/evg.html)
