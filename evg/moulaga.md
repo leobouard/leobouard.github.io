@@ -23,6 +23,8 @@ Participation attendue : **150€** sur la [cagnotte Lydia](https://lydia-app.co
 - **Que tout le monde paye une part égale : 83%**
 - Que chacun participe en fonction de ses moyens : 17%
 
+---
+
 ## Ce qui est compris dans le budget
 
 Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
@@ -37,6 +39,8 @@ Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
 - Vos frais de restauration (estimation : moins de 70€)
 - Alcool et consommations au bar (selon votre soif)
 - Activités individuelles non-prévues (saut à l'elastique pour vous, etc...)
+
+---
 
 ## Détails des dépenses
 
@@ -68,9 +72,11 @@ Temps | Lieu | Somme estimée
 Samedi midi | McDonald's | 15€
 Samedi soir | [Restaurant "La Boussole"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d969725-Reviews-La_Boussole-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 30€
 Samedi nuit | [Bar "La Terasse"](https://www.tripadvisor.fr/Attraction_Review-g187206-d8284699-Reviews-Bar_La_Terrasse-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | Entre 20€ et l'infini
-Dimanche matin/midi | [Restaurant "Brunch 616"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d15199794-Reviews-Brunch616-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 13€
+Dimanche midi | [Restaurant "Brunch 616"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d15199794-Reviews-Brunch616-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 13€
 Dimanche soir | Pizzeria à Beaulieu | 10€
 **Total** | | **88€**
+
+---
 
 ## Que faire du reste ?
 
