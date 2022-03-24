@@ -19,7 +19,7 @@ MathJax.Hub.Config({
 
 {% seo %}
     <style>
-      ul {
+      ul.navbar {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -27,7 +27,7 @@ MathJax.Hub.Config({
         background-color: #333;
       }
 
-      li {
+      li.navbar {
         float: left;
       }
 
@@ -53,18 +53,19 @@ MathJax.Hub.Config({
     <div class="wrapper">
       <header>
         
-        <!--<h1><a href="/evg.html">EVG Clem</a></h1>-->        
-        <ul>
-          <li><a class="active" href="/evg.html">Accueil</a></li>
-          <li><a href="/evg/programme.html">Programme</a></li>
-          <li><a href="/evg/moulaga.html">Budget</a></li>
-          <li><a href="/evg/idees.html">Idées</a></li>
-        </ul>
+        <!--<h1><a href="/evg.html">EVG Clem</a></h1>-->
        
       </header>
       <section>
 
-      {{ content }}
+        <ul class="navbar">
+          <li class="navbar"><a class="active" href="/evg.html">Accueil</a></li>
+          <li class="navbar"><a href="/evg/programme.html">Programme</a></li>
+          <li class="navbar"><a href="/evg/moulaga.html">Budget</a></li>
+          <li class="navbar"><a href="/evg/idees.html">Idées</a></li>
+        </ul>
+        
+        {{ content }}
 
       </section>
       <footer>
