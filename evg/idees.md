@@ -1,8 +1,7 @@
 ---
 permalink: /evg/idees.html
+layout: evg
 ---
-
-[⬅️ Revenir au menu](/evg.html)
 
 # Vos idées pour l'EVG de Clément !
 
@@ -38,5 +37,3 @@ Vous voulez teindre les cheveux du blondinet ? Dans ce cas il faudra de la teint
 Vous avez compris le délire je pense !
 
 Début de la délibération : ...
-
-[⬅️ Revenir au menu](/evg.html)
