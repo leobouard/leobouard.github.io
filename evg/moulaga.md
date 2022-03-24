@@ -1,6 +1,6 @@
 ---
 permalink: /evg/moulaga.html
-layout: evg.html
+layout: evg
 ---
 
 [⬅️ Revenir au menu](/evg.html)
