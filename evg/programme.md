@@ -1,5 +1,6 @@
 ---
 permalink: /evg/programme.html
+layout: evg
 ---
 
 # Programme de l'EVG
