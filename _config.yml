@@ -1,5 +1,6 @@
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
 languageCode: fr-FR
 title: Léo Bouard
 logo: logo.png
 description: Administrateur système & lead consultant chez METSYS
+remote_theme: yaoyao-liu/minimal-light
