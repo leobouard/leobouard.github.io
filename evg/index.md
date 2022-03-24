@@ -1,5 +1,6 @@
 ---
 permalink: /evg.html
+layout: evg
 ---
 
 # EVG Clément
