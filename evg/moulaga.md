@@ -75,7 +75,9 @@ Samedi soir | [Restaurant "La Boussole"](https://www.tripadvisor.fr/Restaurant_R
 Samedi nuit | [Bar "La Terasse"](https://www.tripadvisor.fr/Attraction_Review-g187206-d8284699-Reviews-Bar_La_Terrasse-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | Entre 20€ et l'infini
 Dimanche midi | [Restaurant "Brunch 616"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d15199794-Reviews-Brunch616-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 13€
 Dimanche soir | Pizzeria à Beaulieu | 10€
-**Total** | | **88€**
+**Total** | | Entre **103€** et l'infini
+
+> _Y'a moyen de faire pour moins cher, le calcul permet de se faire une idée moyenne
 
 ---
 
