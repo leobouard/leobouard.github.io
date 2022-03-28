@@ -61,9 +61,10 @@ Hébergement | Hotel (2 chambres de 4 sur Odalys Vacances) | 310€
 Hébergement | Taxe de séjour | 45€ (2x7€/personne et par jour)
 Activités | [Saut à l'élastique](https://elasticrocodilbungee.com/reserver/saut-elastique-vendee-viaduc-coquilleau/) | 0€
 Activités | [Initiation flyboard (20 min)](http://jet-sensation.fr/flyboard/) | 70€
+Activités | Bouée tractée pour 8 personnes | 120€
 Activités | [Airsoft "La sulfateuse"](https://rsoftgame.com/tarifs/#la-sulfateuse) | 150€
 Activités | [Airsoft 20 min (x2)](https://rsoftgame.com/airsoft/) | 128€
-**Total** | | **873€ (125€/pers.)**
+**Total** | | **993€ (141€/pers.)**
 
 ### Vos dépenses personnelles
 
