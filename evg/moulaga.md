@@ -70,7 +70,7 @@ Activités | [Airsoft 20 min (x2)](https://rsoftgame.com/airsoft/) | 128€
 Temps | Lieu | Somme estimée
 ----- | ---- | -------------
 Samedi midi | McDonald's | 15€
-Activités | Bouée tractée pour 8 personnes | 15€ ou 17€
+Samedi arpès-midi | Bouée tractée pour 8 personnes | 15€ ou 17€
 Samedi soir | [Restaurant "La Boussole"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d969725-Reviews-La_Boussole-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 30€
 Samedi nuit | [Bar "La Terasse"](https://www.tripadvisor.fr/Attraction_Review-g187206-d8284699-Reviews-Bar_La_Terrasse-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | Entre 20€ et l'infini
 Dimanche midi | [Restaurant "Brunch 616"](https://www.tripadvisor.fr/Restaurant_Review-g187206-d15199794-Reviews-Brunch616-La_Rochelle_Charente_Maritime_Nouvelle_Aquitaine.html) | 13€
