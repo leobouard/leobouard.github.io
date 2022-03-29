@@ -1,5 +1,5 @@
 ---
-permalink: /evg/moulaga.html
+permalink: /evg/moulaga
 layout: evg
 ---
 
