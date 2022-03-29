@@ -19,8 +19,17 @@ Plateforme | Lien
 ![lydia](/lydia.jpg) | [La cagnotte pour les participations]()
 ![onedrive](/onedrive.png) | [Le partage pour les photos compromettantes](https://1drv.ms/u/s!AmiqB-xYe-mKwnPnMHLN_qhG4fBC?e=ubzxxG)
 
-##
+## Avancement du projet
 
-![Clement vs. Le Prince Charles](/evg/meme.jpg)
+Statut | Action
+------ | ------
+✔️ OK  | Définition du budget et des dispos
+✔️ OK  | Définition de la trame de l'EVG
+⏳ EN COURS | Récupération des fonds
+⏳ EN COURS | Réservation de l'hôtel, de la voiture, du restaurant...
+❌ A FAIRE | Sondages hebdomadaires sur chaque thématique
+❌ A FAIRE | Kiffer !
 
 Organisation : Léo & Valentin
+
+![Clement vs. Le Prince Charles](/evg/meme.jpg)
