@@ -15,9 +15,9 @@ Pour l'instant l'idée est de tous se rejoindre à Beaulieu-sous-la-Roche le sam
 
 Plateforme | Lien
 ---------- | ----
-![spotify](/spotify.jpg) | [La playlist du week-end](https://open.spotify.com/playlist/0mYFHXW6temhSXGNnjs3iC?si=8bf133a43ce3436f)
-![lydia](/lydia.jpg) | [La cagnotte pour les participations]()
-![onedrive](/onedrive.png) | [Le partage pour les photos compromettantes](https://1drv.ms/u/s!AmiqB-xYe-mKwnPnMHLN_qhG4fBC?e=ubzxxG)
+Spotify | [La playlist du week-end](https://open.spotify.com/playlist/0mYFHXW6temhSXGNnjs3iC?si=8bf133a43ce3436f)
+Lydia | [La cagnotte pour les participations](https://lydia-app.com/collect/33513-evg-clement/fr)
+OneDrive | [Le partage pour les photos compromettantes](https://1drv.ms/u/s!AmiqB-xYe-mKwnPnMHLN_qhG4fBC?e=ubzxxG)
 
 ## Avancement du projet
 
@@ -30,6 +30,10 @@ Statut | Action
 ❌ A FAIRE | Sondages hebdomadaires sur chaque thématique
 ❌ A FAIRE | Kiffer !
 
+## Contacts
+
 Organisation : Léo & Valentin
+
+---
 
 ![Clement vs. Le Prince Charles](/evg/meme.jpg)
