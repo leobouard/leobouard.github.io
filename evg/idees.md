@@ -1,5 +1,5 @@
 ---
-permalink: /evg/idees.html
+permalink: /evg/idees
 layout: evg
 ---
 
