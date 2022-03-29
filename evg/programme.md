@@ -1,5 +1,5 @@
 ---
-permalink: /evg/programme.html
+permalink: /evg/programme
 layout: evg
 ---
 
