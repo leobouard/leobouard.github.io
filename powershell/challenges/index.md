@@ -13,7 +13,7 @@ layout: powershell
 
 C'est quand le jour de paye ? 
 
-[Plus d'information](/powershell/jour-de-paie)
+[Plus d'information](/powershell/challenges/jour-de-paie)
 
 ---
 
@@ -23,7 +23,7 @@ C'est quand le jour de paye ?
 
 Vous avez une liste d'utilisateurs et vous devez retrouver celui qui a le nom le plus long
 
-[Plus d'information](/powershell/le-nom-le-plus-long)
+[Plus d'information](/powershell/challenges/le-nom-le-plus-long)
 
 ---
 
@@ -33,7 +33,7 @@ Vous avez une liste d'utilisateurs et vous devez retrouver celui qui a le nom le
 
 Mais, vous savez, moi je ne crois pas qu'il y ait de bonne ou de mauvaise situation.
 
-[Plus d'information](/powershell/begaiement)
+[Plus d'information](/powershell/challenges/begaiement)
 
 ---
 
