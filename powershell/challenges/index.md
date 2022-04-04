@@ -1,6 +1,5 @@
 ---
 permalink: /powershell/challenges.html
-layout: powershell
 ---
 
 # Défis PowerShell
