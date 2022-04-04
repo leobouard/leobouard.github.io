@@ -1,6 +1,6 @@
 ---
 permalink: /powershell/challenges/le-nom-le-plus-long.html
-layout: default
+layout: powershell
 ---
 
 # Défi PowerShell n°2 : le nom le plus long
