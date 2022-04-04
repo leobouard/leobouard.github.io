@@ -1,5 +1,5 @@
 ---
-permalink: /powershell/challenges
+permalink: /powershell/challenges.html
 ---
 
 # Défis PowerShell
