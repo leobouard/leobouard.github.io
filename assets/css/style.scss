@@ -4,31 +4,11 @@
 @import "{{ site.theme }}";
 
 h1, h2, h3, h4 {
-    color: #333333;
-}
-
-header {
-    text-align: center;
-    background-color: red;
-}
-
-section {
-    background-color: green;
-    width: fill-available;
-    float: left;
-    padding: 25px;
-}
-
-footer {
-    background-color: yellow;   
-}
-
-.content {
-    background-color: grey;   
+    color: #333;
 }
 
 .links path {
-    fill: #777777;
+    fill: #777;
 }
 
 .links svg {
@@ -38,7 +18,6 @@ footer {
 }
 
 .wrapper {
-    width: 80%;
     margin: 0 auto;
 }
 
