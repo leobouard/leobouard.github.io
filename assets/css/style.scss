@@ -12,9 +12,11 @@ header {
 }
 
 section {
-  margin: 0 auto;
-  float: right;
-  padding-bottom:50px;
+    float: right;
+    padding-bottom:50px;
+    position: absolute;
+    left:0px;
+    right:0px;
 }
 
 .links path {
