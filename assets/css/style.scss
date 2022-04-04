@@ -28,30 +28,30 @@ header {
 }
 
 .navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #f3f3f3;
-  border: 1px solid #e7e7e7;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    border: 1px solid #e7e7e7;
 }
 
 .navbar li {
-  float: left;
+    float: left;
 }
 
 .navbar li:last-child {
-  float: right;
+    float: right;
 }
 
 .navbar li a {
-  display: block;
-  color: #666;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .navbar li a:hover {
-  background-color: #111;
+    background-color: #e7e7e7;
 }
