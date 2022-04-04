@@ -27,23 +27,26 @@ header {
     margin: 0 auto;
 }
 
-.navbar {
-    color: #666;   
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
 .navbar li {
-    display: inline;
-    float: left;
+  float: left;
 }
 
-.navbar a {
-    display: block;
-    padding: 8px;
-    background-color: #dddddd;
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.navbar ul {
-    width: 100%;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+.navbar li a:hover {
+  background-color: #111;
 }
