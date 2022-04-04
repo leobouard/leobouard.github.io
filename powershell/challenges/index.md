@@ -6,13 +6,13 @@ permalink: /powershell/challenges
 
 ---
 
-<h2><a href target="/powershell/challenges/jour-de-paie">Défi PowerShell n°1 : le jour de paie</a></h2>
+<h2><a href target="/powershell/challenges/jour-de-paie.html">Défi PowerShell n°1 : le jour de paie</a></h2>
 
 ![reddit-stonks](https://i.redd.it/hhf9n3zbpg741.png)
 
 ---
 
-<h2><a href target="/powershell/challenges/le-nom-le-plus-long">Défi PowerShell n°2 : le nom le plus long</a></h2>
+<h2><a href target="/powershell/challenges/le-nom-le-plus-long.html">Défi PowerShell n°2 : le nom le plus long</a></h2>
 
 ![reddit-longest-place-name](https://i.redd.it/gn5400czcho51.jpg)
 
