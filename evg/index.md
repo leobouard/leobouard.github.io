@@ -25,7 +25,7 @@ Statut | Action
 ------ | ------
 ✔️ OK  | Définition du budget et des dispos
 ✔️ OK  | Définition de la trame de l'EVG
-⏳ EN COURS | Récupération des fonds
+⏳ EN COURS | Récupération des fonds (90%)
 ⏳ EN COURS | Réservation de l'hôtel, de la voiture, du restaurant...
 ❌ A FAIRE | Sondages hebdomadaires sur chaque thématique
 ❌ A FAIRE | Kiffer !
