@@ -26,3 +26,27 @@ header {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.navbar {
+    color: #666;   
+}
+
+.navbar li {
+    display: inline;
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+}
+
+.navbar ul {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
