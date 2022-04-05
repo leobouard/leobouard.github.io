@@ -28,13 +28,13 @@ MathJax.Hub.Config({
       <header>
         {% if site.logo %}
           <a href="{{ "/" | absolute_url }}">
-            <img src="{{site.logo | relative_url}}" alt="Logo" />
+            <img class="logo" src="{{site.logo | relative_url}}" alt="Logo" />
           </a>
         {% endif %}
         
-        {% if site.title %}
+        <!--{% if site.title %}
           <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        {% endif %}
+        {% endif %}-->
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
