@@ -21,8 +21,17 @@ h1, h2, h3, h4 {
     text-align: center;   
 }
 
+header {
+    background-color: #F7BF5C;   
+}
+
 a {
     color: #785C2C;   
+}
+
+a:hover {
+    background-color: #33333;
+    color: #F7BF5C;
 }
 
 .wrapper {
