@@ -11,6 +11,15 @@ La date a retenir c'est le **samedi 18 et dimanche 19 juin**.
 
 Pour l'instant l'idée est de tous se rejoindre à Beaulieu-sous-la-Roche le samedi matin vers 8h pour faire la surprise à Clem. Ensuite on partirait sur un week-end entre potos à La Rochelle avec un twist alcool & sensations fortes.
 
+Choses à prévoir & emmener :
+
+- une tenue de soirée pour le samedi soir
+- une tenue casual pour la journée & le airsoft
+- un maillot de bain + serviette
+
+Pas besoin d'emmener de bouffe
+
+
 ## Les liens utiles
 
 Plateforme | Lien
