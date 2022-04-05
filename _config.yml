@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 languageCode: fr-FR
-title: La<br>Boua<br>Bouate
-logo: logo.png
+# title: La<br>Boua<br>Bouate
+logo: logo_preview.png
 description: Léo Bouard<br>Administrateur système & lead consultant chez <a href="https://www.linkedin.com/company/metsys" target="_blank">METSYS</a>
 linkedin: https://www.linkedin.com/in/leo-bouard/
