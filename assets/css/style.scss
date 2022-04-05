@@ -8,13 +8,12 @@ h1, h2, h3, h4 {
 }
 
 .links path {
-    fill: #777;
+    fill: #333;
 }
 
 .links svg {
     height: 28px;
     margin: 5px;
-    text-align: center;
 }
 
 .logo {
@@ -23,14 +22,10 @@ h1, h2, h3, h4 {
     margin-bottom: 3em;
 }
 
-.logo a:hover {
-   opacity: 0.5;
-   background-color: transparent;
-}
-
 header {
     background-color: #F7BF5C;
     text-align: center;
+    color: #333;
 }
 
 a {
@@ -38,7 +33,6 @@ a {
 }
 
 a:hover {
-    background-color: #333;
     color: #F7BF5C;
 }
 
