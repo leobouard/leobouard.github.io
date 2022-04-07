@@ -3,6 +3,8 @@
 
 @import "{{ site.theme }}";
 
+/* General & website layout */
+
 html {
     margin: auto;
     max-width: 80%;
@@ -20,6 +22,26 @@ body {
     margin: 0 auto;
 }
 
+header {
+    text-align: center;
+    height: 100%;
+    width: 300px;
+    font-weight: 450;
+    float: left;
+    position: fixed;
+    top: 50px;
+}
+
+section {
+    float: right;
+    width: 650px;
+    margin-left: 50px;
+}
+
+.content {
+    margin-top: 130px;
+}
+
 footer {
     width: 270px;
     float: left;
@@ -28,7 +50,7 @@ footer {
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* --- HEADER & LOGO --- */
+/* Links */
 
 .links {
     height: 50px;
@@ -56,27 +78,7 @@ footer {
     opacity: 80%;
 }
 
-header {
-    text-align: center;
-    height: 100%;
-    width: 300px;
-    font-weight: 450;
-    float: left;
-    position: fixed;
-    top: 50px;
-}
-
-section {
-    float: right;
-    width: 650px;
-    margin-left: 50px;
-}
-
-.content {
-    margin-top: 130px;
-}
-
-/* --- LOGO --- */
+/* --- Logo & description --- */
 
 .logo {
     background-color: #ffcd00;        
@@ -99,7 +101,8 @@ section {
     transition: all 200ms ease-in;
 }
 
-/* --- NAVBAR --- */
+/* Navigation bar */
+
 nav {
     overflow: hidden;
     padding-left: 20px;
@@ -133,6 +136,18 @@ nav a:last-child {
     float: right;
 }
 
+/* Text & titles */
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+/* Tables */
+
 table, td, tr, th {
     border-color: #c9c9c9;
     border-width: 1px;
@@ -147,12 +162,4 @@ th {
 
 table {
     width: 100%;
-}
-
-h1, h2, h3, h4 {
-    color: #333;
-}
-
-h1 {
-    font-size: xx-large;
 }
