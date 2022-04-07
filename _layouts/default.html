@@ -25,16 +25,30 @@ MathJax.Hub.Config({
   </head>
   <body>
     <div class="wrapper">
+      
+      
       <header>
+        
+            <div class="logo">
+                <a href="{{ "/" | absolute_url }}">
+                <img src="https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/logo.svg" alt="Logo" />
+                </a>
+
+                <p>par Léo Bouard</p>
+                <p>Administrateur système & lead consultant chez <a href="" target="_blank">METSYS</a></p>
+            </div>
+
+        
+        <!--
         {% if site.logo %}
           <a href="{{ "/" | absolute_url }}">
             <img class="logo" src="{{site.logo | relative_url}}" alt="Logo" />
           </a>
         {% endif %}
         
-        <!--{% if site.title %}
+        {% if site.title %}
           <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        {% endif %}-->
+        {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
@@ -61,6 +75,8 @@ MathJax.Hub.Config({
               </svg>
             </a>
           {% endif %}
+
+-->
         
         </div>
           
