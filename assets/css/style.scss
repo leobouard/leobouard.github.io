@@ -13,8 +13,8 @@ html {
 
 body {
     font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: large;
-    font-weight: 450;
+    font-size: medium;
+    font-weight: 400;
 }
 
 .wrapper {
@@ -56,6 +56,7 @@ footer {
     height: 50px;
     background-color: #FFF;
     position: fixed;
+    top: 0px;
     float: none;
     width: 1000px;
 }
