@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 languageCode: fr-FR
-title: La BouaBouate
-logo: logo.svg
+title: La Boua-Bouate
+logo: /assets/images/logo.svg
 description: par Léo Bouard<br>Administrateur système & lead consultant chez <a href="https://www.linkedin.com/company/metsys" target="_blank">METSYS</a>
 linkedin: https://www.linkedin.com/in/leo-bouard/
 twitter: https://www.twitter.com/
