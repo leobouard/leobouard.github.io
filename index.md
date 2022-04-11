@@ -50,8 +50,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Un peu de code pour la variété :
 
 ```powershell
+
 $user = Get-ADUser -Filter *
 $user | FT Name,UserPrincipalName
+
+$user | Foreach-Object {
+
+    ...
+
+}
+
+$user | Export-Csv @params
+
 ``` 
 
 Et c'est tout pour moi !
