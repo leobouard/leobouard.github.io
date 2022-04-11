@@ -177,3 +177,13 @@ footer {
 .links a:hover {
     opacity: 80%;
 }
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media print, screen and (max-width: 960px) {
+
+    body {
+        width:auto;
+        margin:0;
+    }
+}
