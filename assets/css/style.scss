@@ -145,54 +145,34 @@ footer {
     background-color: #fff;
     margin-top: 1em;
     margin-bottom: 1em;
-    padding: 1em;
-}
-
-/* Links */
-
-.links {
-    height: 50px;
-    background-color: #FFF;
-    position: fixed;
-    top: 0px;
-    float: right;
-    width: 1000px;
-    padding: 12px;
-}
-
-.links svg {
-    height: 25px;
-    width: 25px;
-}
-
-.links path {
-    fill: #336699;
-}
-
-.links a {
-    text-decoration: none;
-    opacity: 50%;
-}
-
-.links a:hover {
-    opacity: 100%;
 }
 
 footer ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
+    padding: 0;
 }
 
 footer li {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+footer li:first-child {
     float: left;
 }
 
-footer li a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
+footer svg {
+    height: 20px;
+    fill: #383b53;
+    opacity: 75%;
+}
+
+footer svg:hover {
+    opacity: 100%;
 }
 
 /* --- RESPONSIVE DESIGN --- */
