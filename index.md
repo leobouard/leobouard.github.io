@@ -51,13 +51,16 @@ Un peu de code pour la variété :
 
 ```powershell
 
-$user = Get-ADUser -Filter *
-$user | FT Name,UserPrincipalName
+$params = @{
+    Path = ".\export.csv"
+    Encoding = "UTF8"
+    Delimiter = ";"
+    NoTypeInformation = $true
+}
 
-$user | Foreach-Object {
-
-    ...
-
+$users = Get-ADUser -Filter * -Properties CanonicalName
+$users | Foreach-Object {
+    $_ | Add-Member -MemberType NoteProperty -Name "OU" -Value (($_.CanonicalName -split '/')[2])
 }
 
 $user | Export-Csv @params

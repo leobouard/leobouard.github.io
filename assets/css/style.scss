@@ -128,7 +128,9 @@ section {
         color: #fff;
         border: none;
         border-radius: 5px;
-        margin: 5px;
+        padding-left: 1em;
+        padding-right: 1em;
+        overflow-wrap: break-word;
     }
 
     /* --- TABLES --- */
