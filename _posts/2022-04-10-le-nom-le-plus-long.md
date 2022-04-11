@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Le nom le plus long"
+title: "Qui le nom le plus long ?"
+description: "Bernard de La Villardière en PLS"
+tags: powershell, challenges
+author: "Léo"
 ---
-
-# Défi PowerShell n°2 : le nom le plus long

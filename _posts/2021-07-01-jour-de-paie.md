@@ -1,6 +1,9 @@
 ---
 layout: post
-title: "Jour de paie"
+title: "Elle est où la moulaga ?"
+description: "Simple et efficace : vous devez trouver quand est-ce que votre salaire va tomber"
+tags: powershell, challenges
+author: "Léo"
 ---
 
 # Défi PowerShell n°1 : le jour de paie
