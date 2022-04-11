@@ -109,6 +109,23 @@ section {
         width: 100%;
     }
 
+    /* POSTS CONTENT*/
+
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .posts > div {
+        margin: 10px;
+        width: 400px;
+        height: 200px;
+        background-color: #fff;
+        box-shadow: 0px 0px 0.5em #CCC;
+    }
+
     /* --- CODE --- */
 
     pre, code {

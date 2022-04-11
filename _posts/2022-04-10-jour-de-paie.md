@@ -1,5 +1,6 @@
 ---
-permalink: /powershell/challenges/jour-de-paie.html
+layout: post
+title: "Jour de paie"
 ---
 
 # Défi PowerShell n°1 : le jour de paie
