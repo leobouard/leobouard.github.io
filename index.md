@@ -50,8 +50,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Un peu de code pour la variété :
 
 ```powershell
-$user = Get-ADUser -Filter {userPrincipalName -eq "john.doe@laboubouate.fr"} -Properties CanonicalName
-$user | Format-Table Name,UserPrincipalName,@{N="Path";E={($_.CanonicalName -split "/")[2]}}
+$user = Get-ADUser -Filter *
+$user | FT Name,UserPrincipalName
 ``` 
 
 Et c'est tout pour moi !
