@@ -31,7 +31,7 @@ html {
 
 body {
     background-color: #f5f5f5;
-    font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: small;
     font-weight: 400;
 }
@@ -128,8 +128,8 @@ section {
         color: #fff;
         border: none;
         border-radius: 5px;
-        padding: 10px;
-        font-size: 14px;
+        padding: 5px;
+        font-size: medium;
     }
 
     /* --- TABLES --- */
