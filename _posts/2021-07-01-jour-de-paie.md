@@ -37,6 +37,7 @@ Décembre 2022 | vendredi 23 décembre
 ## Ma solution
 
 ```powershell
+
 1..12 | ForEach-Object {
   
   $i = 25
@@ -47,4 +48,5 @@ Décembre 2022 | vendredi 23 décembre
   
   $d
 }
+
 ```
