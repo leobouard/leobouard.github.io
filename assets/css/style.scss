@@ -26,6 +26,8 @@ body {
 /* --- HEADER --- */
 
 header {
+    position: absolute;
+    width: 100%;
     background-color: #f9c80e;
     text-align: left;
     display: flex;
@@ -50,16 +52,6 @@ header {
 }
 
 /* --- NAVIGATION BAR --- */
-
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-}
 
 nav {
     margin-top: 1em;
@@ -200,6 +192,8 @@ section {
 /* --- FOOTER --- */
 
 footer {
+    position: absolute;
+    width: 100%;
     background-color: #383b53;
     color: #fff;
     padding: 0.5em;
