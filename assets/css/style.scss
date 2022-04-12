@@ -147,10 +147,9 @@ section {
         background-color: #383b53;
         border-left: 3px solid #f9c80e;
         color: #fff;
-        border-radius: 5px;
         padding-left: 1em;
         padding-right: 1em;
-        overflow: scroll;
+        overflow: -moz-hidden-unscrollable scroll;
     }
 
     /* --- TABLES --- */
