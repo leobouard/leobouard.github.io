@@ -29,6 +29,7 @@ header {
     background-color: #f9c80e;
     text-align: left;
     display: flex;
+    align-items: stretch;
 }
 
 header > div {
@@ -104,6 +105,18 @@ section {
 
     h1, h2, h3, h4, h5 {
         color: #383b53;
+    }
+
+    h1 {
+        font-size: xx-large;
+    }
+
+    h2 {
+        font-size: x-large;
+    }
+
+    h3 {
+        font-size: larger;
     }
 
     img {
