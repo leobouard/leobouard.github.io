@@ -10,6 +10,12 @@ COLOR SCHEME
 - Positive: Jungle green (#43aa8b)
 */
 
+html {
+    margin: auto;
+    max-width: 1000px;
+    min-width: 500px;
+}
+
 body {
     background-color: #f5f5f5;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
@@ -20,8 +26,6 @@ body {
 /* --- HEADER --- */
 
 header {
-    position: absolute;
-    width: 100%;
     background-color: #f9c80e;
     text-align: left;
     display: flex;
@@ -85,9 +89,6 @@ nav a:last-child {
 /* --- CONTENT --- */
 
 section {
-    margin: auto;
-    max-width: 1000px;
-    min-width: 500px;
     background-color: #fff;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -189,8 +190,6 @@ section {
 /* --- FOOTER --- */
 
 footer {
-    position: absolute;
-    width: 100%;
     background-color: #383b53;
     color: #fff;
     padding: 0.5em;
