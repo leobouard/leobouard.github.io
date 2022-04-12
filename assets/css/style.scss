@@ -174,9 +174,16 @@ section {
 /* --- FOOTER --- */
 
 footer {
-    background-color: #fff;
+    background-color: #383b53;
+    color: #fff;
     margin-top: 1em;
     margin-bottom: 1em;
+    position: absolute;
+    bottom: 0;
+}
+
+footer small a {
+    color: #9ea7eb;
 }
 
 footer ul {
@@ -199,7 +206,7 @@ footer li:first-child {
 
 footer svg {
     height: 20px;
-    fill: #383b53;
+    fill: #fff;
     opacity: 75%;
 }
 
