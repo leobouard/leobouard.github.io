@@ -13,7 +13,7 @@ COLOR SCHEME
 
 html {
     margin: auto;
-    max-width: 1080px;
+    max-width: 900px;
     min-width: 500px;
 }
 
@@ -97,7 +97,7 @@ section {
 
     a {
         color: #336699;
-        font-weight: bold;
+        font-weight: 500;
         text-decoration: none;
     }
 
@@ -118,12 +118,28 @@ section {
         text-align: center;
     }
 
-    .posts > div {
+    .posts div {
         margin: 10px;
         width: 400px;
-        height: 200px;
+        height: 300px;
         background-color: #fff;
-        box-shadow: 0px 0px 0.5em #CCC;
+        box-shadow: 0px 0px 1em #f5f5f5;
+    }
+
+    .posts div a {
+        color: #000;
+        font-weight: 400;
+    }
+
+    .posts div img {
+        height: 200px;
+        overflow: hidden;
+        opacity: 75%;
+    }
+
+    .posts div img:hover {
+        opacity: 100%;
+        
     }
 
     /* --- CODE --- */
@@ -141,7 +157,7 @@ section {
     /* --- TABLES --- */
 
     table, td, tr, th {
-        border-color: #eee;
+        border-color: #f5f5f5;
         border-width: 1px;
         border-style: solid;
         padding: 10px;
@@ -149,7 +165,7 @@ section {
     }
 
     th {
-        background-color: #eee;
+        background-color: #f5f5f5;
     }
 
     table {
