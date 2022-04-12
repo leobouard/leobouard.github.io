@@ -14,15 +14,16 @@
       <div class="logo">
         <a href="{{ "/" | absolute_url }}"><img src="{{site.logo | relative_url}}" alt="La Boua-Bouate"></a>
       </div>
+      <div>
+        <nav>
+          <a href="{{ "/" | absolute_url }}">Accueil</a>
+          <a href="/challenges">Défis</a>
+          <a href="/howto">HowTo</a>
+          <a href="/about">A propos</a>
+        </nav>
+      </div>
     </header>
 
-    <nav>
-      <a href="{{ "/" | absolute_url }}">Accueil</a>
-      <a href="/challenges">Défis</a>
-      <a href="/howto">HowTo</a>
-      <a href="/about">A propos</a>
-    </nav>
-  
     <section>
       {{ content }}
     </section>

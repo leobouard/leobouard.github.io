@@ -48,6 +48,43 @@ header > div {
     transition: all 200ms ease-in;
 }
 
+/* --- NAVIGATION BAR --- */
+
+nav {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    position: absolute fixed;
+    left:0px;
+    right:0px;
+    overflow: hidden;
+    background-color: #fff;
+    /*box-shadow: 0px 0px 0.5em #CCC; */
+}
+
+nav a {
+    color: #383b53;
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+    float: left;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9c80e;
+    background-color: #eee;
+    text-underline-position: below;
+    text-underline-offset: 12px;
+    text-decoration-thickness: 3px;
+}
+
+nav a:last-child {
+    float: right;
+}
+
 /* --- CONTENT --- */
 
 section {
@@ -55,43 +92,6 @@ section {
     padding: 2em;
     min-height: 78%;
 }
-
-    /* --- NAVIGATION BAR --- */
-
-    nav {
-        margin-top: 1em;
-        margin-bottom: 1em;
-        padding-left: 1em;
-        padding-right: 1em;
-        position: absolute fixed;
-        left:0px;
-        right:0px;
-        overflow: hidden;
-        background-color: #fff;
-        /*box-shadow: 0px 0px 0.5em #CCC; */
-    }
-
-    nav a {
-        color: #383b53;
-        text-align: center;
-        font-weight: bold;
-        padding: 1em;
-        float: left;
-        text-decoration: none;
-    }
-
-    nav a:hover {
-        text-decoration: underline;
-        text-decoration-color: #f9c80e;
-        background-color: #eee;
-        text-underline-position: below;
-        text-underline-offset: 12px;
-        text-decoration-thickness: 3px;
-    }
-
-    nav a:last-child {
-        float: right;
-    }
 
     /* --- TEXT --- */
 
