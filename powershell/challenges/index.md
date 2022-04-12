@@ -10,9 +10,10 @@ Et voilà le travail !
     {% for post in site.posts %}
         <div>
             <a href="{{ post.url }}">
-                <img src="{{ post.image }}"/>
+                <img src="{{ post.image }}" loading="lazy"/>
                 <h1>{{ post.title }}</h1>
                 <p>{{ post.description }}</p>
+                <small class="tags">{{ site.tags }}</small>
             </a>
         </div>
     {% endfor %}
