@@ -1,5 +1,5 @@
 ---
-permalink: /powershell/challenges.html
+permalink: /challenges.html
 ---
 
 # Tous mes défis PowerShell
@@ -7,13 +7,12 @@ permalink: /powershell/challenges.html
 Et voilà le travail !
 
 <div class="posts">
-    {% for post in site.posts %}
+    {% for post in site.posts | where: "tags","challenges" %}
         <div>
             <a href="{{ post.url }}">
                 <img src="{{ post.image }}" loading="lazy"/>
                 <h1>{{ post.title }}</h1>
                 <p>{{ post.description }}</p>
-                <small class="tags">{{ post.tags }}</small>
             </a>
         </div>
     {% endfor %}
