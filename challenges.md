@@ -10,8 +10,8 @@ Et voilà le travail !
     {% for post in site.posts | where: "tags","challenges" %}
         <div>
             <a href="{{ post.url }}">
-                <img src="{{ post.image }}" loading="lazy"/>
-                <h1>{{ post.title }}</h1>
+                <img src="{{ post.image | default: site.logo }}" loading="lazy" background="#f9c80e"/>
+                <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
             </a>
         </div>
