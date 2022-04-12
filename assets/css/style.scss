@@ -53,6 +53,7 @@ header > div {
 section {
     background-color: #fff;
     padding: 2em;
+    min-height: 78%;
 }
 
     /* --- NAVIGATION BAR --- */
@@ -145,11 +146,10 @@ section {
 
     pre, code {
         background-color: #383b53;
-        border-left: 3px solid #f9c80e;
         color: #fff;
         padding-left: 1em;
         padding-right: 1em;
-        overflow: -moz-hidden-unscrollable scroll;
+        overflow: scroll;
     }
 
     /* --- TABLES --- */
