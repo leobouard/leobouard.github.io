@@ -52,7 +52,8 @@ header > div {
 
 section {
     background-color: #fff;
-    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
     /* --- NAVIGATION BAR --- */
@@ -108,7 +109,7 @@ section {
         width: 100%;
     }
 
-    /* POSTS CONTENT*/
+    /* --- POSTS CONTENT --- */
 
     .posts {
         display: flex;
