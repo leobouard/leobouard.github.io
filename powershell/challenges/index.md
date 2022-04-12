@@ -10,6 +10,7 @@ Et voilà le travail !
     {% for post in site.posts %}
         <div>
             <a href="{{ post.url }}">
+                <img src="{{ post.image }}"/>
                 <h1>{{ post.title }}</h1>
                 <p>{{ post.description }}</p>
             </a>

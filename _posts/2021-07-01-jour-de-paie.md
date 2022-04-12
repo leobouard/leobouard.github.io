@@ -1,5 +1,6 @@
 ---
 layout: post
+image: "https://media3.giphy.com/media/14SAx6S02Io1ThOlOY/giphy.gif?cid=ecf05e47vjsfts2omq85p4ohnx4u9nc18cpd4mbwclbn2a9b&rid=giphy.gif&ct=g"
 title: "Elle est où la moulaga ?"
 description: "Simple et efficace : vous devez trouver quand est-ce que votre salaire va tomber"
 tags: powershell challenges
