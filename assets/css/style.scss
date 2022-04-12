@@ -1,4 +1,8 @@
 ---
+primary: #f9c80e
+secondary: #43aa8b
+titles: #383b53
+links: #336699
 ---
 
 /* 
@@ -27,7 +31,7 @@ body {
 /* --- HEADER --- */
 
 header {
-    background-color: #f9c80e;
+    background-color: {{ page.primary }};
     text-align: left;
     display: flex;
 }
