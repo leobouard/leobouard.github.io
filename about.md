@@ -1,6 +1,8 @@
 # A propos
 
-## Qui suis-je ?
+## 👋 Salut toi !
+
+Moi c'est Léo Bouard, administrateur système & lead consultant chez METSYS
 
 ## Comment est fait le site web ?
 
