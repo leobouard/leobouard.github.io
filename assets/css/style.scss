@@ -115,7 +115,7 @@ section {
 
     h1 {
         font-size: xx-large;
-        border-bottom: 1px solid #383b53;
+        border-bottom: 1px solid #eee;
         padding-bottom: 7px;
         display: block;
     }
@@ -161,11 +161,11 @@ section {
     .posts a div img {
         height: 200px;
         overflow: hidden;
-        transition: transform 1s;
+        transition: transform 0.2s;
     }
 
     .post a div img:hover {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
 
     /* --- CODE --- */
