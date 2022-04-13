@@ -153,11 +153,6 @@ section {
         transform: scale(1.01);
     }
 
-    .posts .thumbnail {
-        margin: 0;
-        height: 150px;
-    }
-
     .posts a p {
         font-weight: 400;
         color: #000;
@@ -168,7 +163,13 @@ section {
     }
 
     .thumbnail {
-        font-size: 100px;
+        font-size: 90px;
+    }
+
+    .posts .thumbnail {
+        margin: 0;
+        height: 150px;
+        line-height: 150px;
     }
 
     /* --- CODE --- */
