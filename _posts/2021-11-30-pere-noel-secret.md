@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Père Noël secret"
-description: "Oui le père noël est une ordure, mais qui est-il ?"
+description: "Qui offre et qui reçoit chaque cadeau"
 tags: powershell challenges
 author: "Léo"
-thumbnailColor: "#9ea7eb"
+thumbnailColor: "#DD2D4A"
 icon: 🎁
 ---

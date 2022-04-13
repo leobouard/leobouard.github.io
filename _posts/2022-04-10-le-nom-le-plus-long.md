@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Qui le nom le plus long ?"
-description: "Bernard de La Villardière en PLS"
+description: "Non ce n'est pas Bernard de la Villardière"
 tags: powershell challenges
 author: "Léo"
-thumbnailColor: "#9ea7eb"
+thumbnailColor: "#334195"
 icon: 🆔
 ---
