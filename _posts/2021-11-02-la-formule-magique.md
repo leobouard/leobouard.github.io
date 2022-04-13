@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "La formule magique"
-description: "Simple et efficace"
+description: "542 est égal à 11"
 tags: powershell challenges
 author: "Léo"
-thumbnailColor: "#DEC0F1"
+thumbnailColor: "#7C238C"
 icon: 🎩
 ---
