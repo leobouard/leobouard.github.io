@@ -160,18 +160,14 @@ section {
         color: #383b53;
     }
 
-    .posts a div {
-        transition: transform 0.2s;
-    }
-
-    .post a div:hover {
-        transform: scale(1.05);
-    }
-
     .posts div img {
         height: 200px;
         overflow: hidden;
         transition: transform 1s;
+    }
+
+    .post div img:hover {
+        transform: scale(1.05);
     }
 
     /* --- CODE --- */
