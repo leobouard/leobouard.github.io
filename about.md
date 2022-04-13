@@ -2,7 +2,7 @@
 
 ## 👋 Salut toi !
 
-Moi c'est <mark>Léo Bouard</mark>, administrateur système & lead consultant chez METSYS
+Moi c'est Léo Bouard, administrateur système & lead consultant chez METSYS
 
 ## Comment est fait le site web ?
 
