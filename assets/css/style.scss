@@ -154,12 +154,11 @@ section {
     .posts div img {
         height: 200px;
         overflow: hidden;
-        opacity: 60%;
+        transition: transform 0.2s;
     }
 
     .posts div img:hover {
-        opacity: 100%;
-        
+        transform: scale(1.1);
     }
 
     /* --- CODE --- */
