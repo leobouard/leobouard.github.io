@@ -115,10 +115,8 @@ section {
 
     h1 {
         font-size: xx-large;
-        text-decoration: underline;
-        text-decoration-color: #9ea7eb;
-        text-decoration-line: underline;
-        text-underline-offset: 6px;
+        border-bottom: solid  #9ea7eb 1px;
+        padding: 9px;
         display: block;
     }
 
