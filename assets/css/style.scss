@@ -115,8 +115,8 @@ section {
 
     h1 {
         font-size: xx-large;
-        border-bottom: solid  #9ea7eb 1px;
-        padding: 9px;
+        border-bottom: 1px solid #383b53;
+        padding-bottom: 7px;
         display: block;
     }
 
@@ -158,13 +158,13 @@ section {
         color: #383b53;
     }
 
-    .posts div img {
+    .posts a div img {
         height: 200px;
         overflow: hidden;
         transition: transform 1s;
     }
 
-    .post div img:hover {
+    .post a div img:hover {
         transform: scale(1.05);
     }
 
