@@ -140,15 +140,19 @@ section {
 
     .posts div {
         margin: 10px;
-        width: 400px;
-        height: 300px;
+        width: 200px;
+        height: 150px;
         background-color: #fff;
         box-shadow: 0px 0px 1em #f5f5f5;
     }
 
-    .posts div a {
-        color: #000;
+    .posts a p {
         font-weight: 400;
+        color: #000;
+    }
+
+    .posts a h3 {
+        color: #383b53;
     }
 
     .posts div img {
