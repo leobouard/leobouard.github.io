@@ -154,11 +154,11 @@ section {
     .posts div img {
         height: 200px;
         overflow: hidden;
-        transition: transform 0.2s;
+        transition: transform 1s;
     }
 
     .posts div img:hover {
-        transform: scale(1.1);
+        transform: scale(1.01);
     }
 
     /* --- CODE --- */

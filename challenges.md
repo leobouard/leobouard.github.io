@@ -8,12 +8,12 @@ Et voilà le travail !
 
 <div class="posts">
     {% for post in site.posts | where: 'tags',challenges %}
-        <div>
-            <a href="{{ post.url }}">
+        <a href="{{ post.url }}">
+            <div>
                 <img src="{{ post.image | default: "https://flemmingss.com/wp-content/uploads/2019/08/featured_image_powershell.png" }}" loading="lazy"/>
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
-            </a>
-        </div>
+            </div>
+        </a>
     {% endfor %}
 </div>
