@@ -115,6 +115,10 @@ section {
 
     h1 {
         font-size: xx-large;
+        text-decoration: underline;
+        text-decoration-color: #336699;
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;   
     }
 
     h2 {
@@ -155,14 +159,18 @@ section {
         color: #383b53;
     }
 
+    .posts a div {
+        transition: transform 0.2s;
+    }
+
+    .post a div:hover {
+        transform: scale(1.05);
+    }
+
     .posts div img {
         height: 200px;
         overflow: hidden;
         transition: transform 1s;
-    }
-
-    .posts div img:hover {
-        transform: scale(1.01);
     }
 
     /* --- CODE --- */
