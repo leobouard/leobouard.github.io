@@ -101,6 +101,14 @@ section {
     margin-bottom: 1em;
 }
 
+section img {
+    text-align: center;
+}
+
+section table {
+    text-align: center;
+}
+
     /* --- TEXT --- */
 
     a {
@@ -130,6 +138,7 @@ section {
 
     img {
         max-width: 100%;
+        max-height: 250px;
     }
 
     hr {
@@ -204,6 +213,7 @@ section {
 
     table {
         max-width: 100%;
+        min-width: 50%;
     }
 
     /* --- HIGHLIGHT --- */

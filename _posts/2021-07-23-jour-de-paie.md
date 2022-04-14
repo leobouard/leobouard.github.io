@@ -29,14 +29,14 @@ Le défi est trop facile pour vous ? Essayez ça :
 - de faire la version la plus courte possible (mon record : 63 caractères)
 - de créer une version avec un [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
 - utiliser les différents types de boucles :
-  - version `ForEach-Object`
-  - version `do{}until()` et/ou `do{}while()`
-  - version `for()`
+  - version "ForEach-Object"
+  - version "do{}until()" et/ou "do{}while()"
+  - version "for()"
 
 ## Ressources utiles
 
 - [Get-Date \| Microsoft Docs](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
-- [Boucles `do{}until()` et `do{}while()` \| IT-Connect](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
+- [Boucles "do{}until()" et "do{}while()" \| IT-Connect](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
 - [Opérateurs de comparaisons \| Microsoft Docs](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
 
 ## Résultats attendus pour l'année 2022
