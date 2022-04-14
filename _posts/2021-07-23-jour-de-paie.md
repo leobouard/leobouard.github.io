@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Elle est où la moulaga ?"
-description: "<Titre un poil trompeur>"
+description: "\<Titre un poil trompeur\>"
 tags: powershell challenges
 author: "Léo"
 thumbnailColor: "#519E8A"
