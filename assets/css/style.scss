@@ -23,7 +23,7 @@ body {
     margin: 0;
     background-color: #f5f5f5;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: large;
+    font-size: 15px;
     font-weight: 400;
 }
 
@@ -181,6 +181,14 @@ section {
 
     .posts .thumbnail:hover {
         transform: scale(1.10);
+    }
+
+    .postInfo {
+        background-color: #fff;
+    }
+
+    .posts .postInfo {
+        margin: 0;
     }
 
     /* --- CODE --- */
