@@ -23,7 +23,7 @@ body {
     margin: 0;
     background-color: #f5f5f5;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -170,6 +170,7 @@ section {
     .thumbnail {
         font-size: 90px;
         text-align: center;
+        margin: 0;
     }
 
     .posts .thumbnail {
@@ -186,6 +187,7 @@ section {
     .postInfo {
         background-color: #fff;
         height: 100px;
+        margin: 0;
     }
 
     .posts .postInfo {
