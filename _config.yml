@@ -3,6 +3,3 @@ languageCode: fr-FR
 logo: /assets/images/logo.svg
 description: par Léo Bouard<br>Administrateur système & lead consultant chez <a href="https://www.linkedin.com/company/metsys" target="_blank">METSYS</a>
 linkedin: https://www.linkedin.com/in/leo-bouard/
-# twitter: https://www.twitter.com/
-paginate: 5
-paginate_path: "/challenges"
