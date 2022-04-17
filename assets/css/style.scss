@@ -34,23 +34,22 @@ header {
     background-color: #f9c80e;
     text-align: left;
     display: flex;
-    align-items: stretch;
+    /*align-items: stretch;*/
 }
 
-.logo {
-    margin: 1em;
+.banner {
     padding: 1em;
 }
 
-.logo img {
+.logo {
     max-height: 1em;
-    /* transform: rotate(-8deg); */
+    transform: rotate(-8deg);
     transition: all 900ms ease-out;
     image-rendering: optimizeQuality;
 }
 
-.logo img:hover {
-    transform: rotate(0deg);
+.logo:hover {
+    transform: rotate(720deg);
     transition: all 200ms ease-in;
 }
 
@@ -207,19 +206,4 @@ footer li:first-child {
 
 @media only screen {
 
-    section {
-        background-color: #f9c80e;
-    }
-    
 }
-
-
-/*
-@media print {
-    body {
-        padding: 0.4in;
-        font-size: 12pt;
-        color: #444;
-    }
-}
-*/

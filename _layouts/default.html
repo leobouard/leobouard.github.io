@@ -12,9 +12,12 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="{{ "/" | absolute_url }}"><img src="{{site.logo | relative_url}}" alt="La Boua-Bouate"></a>
-      </div>
+      <a href="{{ "/" | absolute_url }}">
+        <div class="banner" style="display: flex;">
+          <img class="logo" src="{{site.logo | relative_url}}"/>
+          <img class="inlineLogo" src="{{site.inlineLogo | relative_url}}" alt="La Boua Bouate"/>
+        </div>
+      </a>
     </header>
 
     <nav>
