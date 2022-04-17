@@ -15,7 +15,7 @@ html {
     max-width: 700px;
     min-width: 500px;
     height: 100%;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.3px;
 }
 
 body {
@@ -149,17 +149,6 @@ section {
         justify-content: center;
     }
 
-    .posts a p {
-        font-weight: 400;
-        color: #000;
-        padding-left: 1em;
-    }
-
-    .posts a h3 {
-        color: #383b53;
-        padding-left: 1em;
-    }
-
     .card {
         margin: 10px;
         width: 300px;
@@ -186,11 +175,23 @@ section {
         transform: scale(1.10);
     }
 
-    .posts .postInfo {
+    .postInfo {
         margin: 0;
-        background-color: #fff;
+        padding-left: 1em;
+        padding-right: 1em;
         height: 100px;
     }
+
+    .postInfo p {
+        font-weight: 400;
+        color: #000;
+    }
+
+    .postInfo h3 {
+        color: #383b53;
+    }
+
+
 
     /* --- CODE --- */
 
