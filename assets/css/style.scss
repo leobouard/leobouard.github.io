@@ -42,15 +42,19 @@ header {
 }
 
 .logo {
-    max-height: 1em;
+    height: 3em;
     transform: rotate(-8deg);
     transition: all 900ms ease-out;
     image-rendering: optimizeQuality;
 }
 
 .logo:hover {
-    transform: rotate(720deg);
-    transition: all 200ms ease-in;
+    transform: rotate(-720deg);
+    transition: all 200ms ease-in-out;
+}
+
+inlineLogo {
+    height: 3em;
 }
 
 /* --- NAVIGATION BAR --- */
