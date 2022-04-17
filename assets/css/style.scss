@@ -43,8 +43,8 @@ header {
 }
 
 .logo img {
-    max-height: 2em;
-    transform: rotate(-8deg);
+    max-height: 1em;
+    /* transform: rotate(-8deg); */
     transition: all 900ms ease-out;
     image-rendering: optimizeQuality;
 }
