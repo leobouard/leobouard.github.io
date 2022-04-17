@@ -39,23 +39,19 @@ header {
 
 .banner {
     padding: 1em;
+    width: 200px;
 }
 
 .logo {
-    width: 45px;
     transform: rotate(-8deg);
     transition: all 900ms ease-in-out;
     transition-duration: 1s;
     image-rendering: optimizeQuality;
-    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .logo:hover {
     transform: rotate(-188deg);
-}
-
-inlineLogo {
-    width: 120px;
 }
 
 /* --- NAVIGATION BAR --- */
