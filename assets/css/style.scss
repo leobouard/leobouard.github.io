@@ -42,9 +42,10 @@ header {
 }
 
 .logo {
-    height: 3em;
+    height: 1em;
     transform: rotate(-8deg);
-    transition: all 900ms ease-out;
+    transition: all 900ms ease-in-out;
+    transition-duration: 3s;
     image-rendering: optimizeQuality;
 }
 
@@ -54,7 +55,7 @@ header {
 }
 
 inlineLogo {
-    height: 3em;
+    height: 1em;
 }
 
 /* --- NAVIGATION BAR --- */
