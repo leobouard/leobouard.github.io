@@ -42,7 +42,7 @@ header {
 }
 
 .logo {
-    height: 10px;
+    width: 45px;
     transform: rotate(-8deg);
     transition: all 900ms ease-in-out;
     transition-duration: 3s;
@@ -50,12 +50,11 @@ header {
 }
 
 .logo:hover {
-    transform: rotate(-720deg);
-    transition: all 200ms ease-in-out;
+    transform: rotate(-712deg);
 }
 
 inlineLogo {
-    height: 10px;
+    width: 120px;
 }
 
 /* --- NAVIGATION BAR --- */
