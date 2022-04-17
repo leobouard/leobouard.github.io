@@ -45,12 +45,13 @@ header {
     width: 45px;
     transform: rotate(-8deg);
     transition: all 900ms ease-in-out;
-    transition-duration: 3s;
+    transition-duration: 1s;
     image-rendering: optimizeQuality;
+    margin-left: 1em;
 }
 
 .logo:hover {
-    transform: rotate(-712deg);
+    transform: rotate(-188deg);
 }
 
 inlineLogo {
