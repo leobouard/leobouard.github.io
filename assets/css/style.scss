@@ -210,16 +210,6 @@ footer li:first-child {
     float: left;
 }
 
-footer svg {
-    height: 25px;
-    fill: #fff;
-    opacity: 75%;
-}
-
-footer svg:hover {
-    opacity: 100%;
-}
-
 /* --- RESPONSIVE DESIGN --- */
 
 @media print, screen and (max-width: 960px) {
