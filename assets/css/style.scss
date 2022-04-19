@@ -11,9 +11,6 @@ COLOR SCHEME
 */
 
 html {
-    margin: auto;
-    max-width: 800px;
-    min-width: 500px;
     height: 100%;
     letter-spacing: 0.3px;
 }
@@ -33,7 +30,7 @@ body {
 header {
     background-color: #f9c80e;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .banner {
@@ -92,7 +89,7 @@ nav a:last-child {
 /* --- CONTENT --- */
 
 section {
-    min-height: 76%;
+    min-height: 85%;
     background-color: #fff;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -100,6 +97,9 @@ section {
     padding-right: 2em;
     margin-top: 1em;
     margin-bottom: 1em;
+    margin: auto;
+    max-width: 800px;
+    min-width: 500px;
 }
 
     /* --- TEXT --- */
@@ -201,10 +201,4 @@ footer li {
 
 footer li:first-child {
     float: left;
-}
-
-/* --- RESPONSIVE DESIGN --- */
-
-@media only screen {
-
 }
