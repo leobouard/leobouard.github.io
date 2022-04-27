@@ -13,20 +13,18 @@
   <body>
     <header>
       <a href="{{ "/" | absolute_url }}">
-        <div class="banner" style="display: flex;">
-          <img class="logo" src="{{site.logo | relative_url}}"/>
+        <div class="banner"">
           <img class="inlineLogo" src="{{site.inlineLogo | relative_url}}" alt="La Boua Bouate"/>
         </div>
       </a>
+      <nav>
+        <a href="{{ "/" | absolute_url }}">Accueil</a>
+        <a href="/challenges">Défis</a>
+        <a href="/howto">How To</a>
+        <a href="/about">A propos</a>
+      </nav>
     </header>
-
-    <nav>
-      <a href="{{ "/" | absolute_url }}">Accueil</a>
-      <a href="/challenges">Défis</a>
-      <a href="/howto">How To</a>
-      <a href="/about">A propos</a>
-    </nav>
-
+    
     <section>
       {{ content }}
     </section>
