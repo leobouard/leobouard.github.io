@@ -28,8 +28,6 @@ body {
 /* --- HEADER --- */
 
 header {
-    display: flex;
-    justify-content: center;
     margin: 0;
 }
 
@@ -37,6 +35,8 @@ header {
     padding: 1em;
     width: 200px;
     background-color: #f9c80e;
+    display: flex;
+    justify-content: center;
 }
 
 /* --- NAVIGATION BAR --- */
