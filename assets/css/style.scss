@@ -208,12 +208,16 @@ footer li:first-child {
       word-wrap:break-word;
     }
 
-    header, section, footer {
-        width: 100%;
-    }
-
     section {
         font-size: large;
+    }
+
+    nav {
+        width: 200px;
+    }
+
+    nav a {
+        display: block;
     }
   
 }
