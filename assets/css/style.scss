@@ -33,6 +33,8 @@ header {
 
 .banner {
     padding: 10px;
+    height: 150px;
+    line-height: 150px;
     margin: 0;
     background-color: #f9c80e;
     display: flex;
@@ -111,18 +113,18 @@ section {
     }
 
     h1 {
-        font-size: xx-large;
+        font-size: x-large;
         border-bottom: 1px solid #eaecef;
         padding-bottom: 7px;
         display: block;
     }
 
     h2 {
-        font-size: x-large;
+        font-size: larger;
     }
 
     h3 {
-        font-size: larger;
+        font-size: large;
     }
 
     img {
