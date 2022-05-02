@@ -200,3 +200,20 @@ footer li {
 footer li:first-child {
     float: left;
 }
+
+/* --- MEDIA --- */
+
+@media print, screen and (max-width: ) {
+    body {
+      word-wrap:break-word;
+    }
+
+    header, section, footer {
+        width: 100%;
+    }
+
+    section {
+        font-size: large;
+    }
+  
+}
