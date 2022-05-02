@@ -96,7 +96,6 @@ section {
     padding-right: 2em;
     margin: auto;
     max-width: 800px;
-    min-width: 500px;
 }
 
     /* --- TEXT --- */
@@ -213,5 +212,6 @@ footer li:first-child {
 
     header, section, footer { 
         margin: auto;
+        max-width: 800px;
     }
 }
