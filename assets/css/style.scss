@@ -92,8 +92,8 @@ section {
     background-color: #fff;
     padding-top: 1em;
     padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     margin: auto;
     max-width: 800px;
 }
@@ -208,6 +208,8 @@ footer li:first-child {
 
     section {
         font-size: large;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     header, section, footer { 
