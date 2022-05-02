@@ -33,8 +33,8 @@ header {
 
 .banner {
     padding: 10px;
-    height: 150px;
-    line-height: 150px;
+    height: 50px;
+    line-height: 50px;
     margin: 0;
     background-color: #f9c80e;
     display: flex;
@@ -54,6 +54,7 @@ header {
     /* --- NAVIGATION BAR --- */
 
     nav {
+        max-width: 800px;
         padding-left: 1em;
         padding-right: 1em;
         position: absolute fixed;
