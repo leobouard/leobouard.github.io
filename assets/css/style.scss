@@ -211,12 +211,8 @@ footer li:first-child {
         font-size: large;
     }
 
-    nav {
-        width: 200px;
+    header, section, footer { 
+        width: 100%;
+        margin: 0;
     }
-
-    nav a {
-        display: block;
-    }
-  
 }
