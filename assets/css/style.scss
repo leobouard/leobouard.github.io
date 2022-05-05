@@ -45,42 +45,42 @@ header {
     }
 }
 
-    /* --- NAVIGATION BAR --- */
+/* --- NAVIGATION BAR --- */
 
-    nav {
-        padding-left: 1em;
-        padding-right: 1em;
-        position: absolute fixed;
-        left:0px;
-        right:0px;
-        overflow: hidden;
-        background-color: #fff;
-        margin: 0;
-        box-shadow: 0 5px 5px -5px #b2b3b8;
-    }
+nav {
+    padding-left: 1em;
+    padding-right: 1em;
+    position: absolute fixed;
+    left:0px;
+    right:0px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0;
+    box-shadow: 0 5px 5px -5px #b2b3b8;
+}
 
-    nav a {
-        color: #383b53;
-        text-align: center;
-        font-weight: bold;
-        padding: 1em;
-        float: left;
-        text-decoration: none;
-        text-decoration-color: transparent;
-        transition: all 400ms ease-in-out;
-    }
+nav a {
+    color: #383b53;
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+    float: left;
+    text-decoration: none;
+    text-decoration-color: transparent;
+    transition: all 400ms ease-in-out;
+}
 
-    nav a:hover {
-        text-decoration: underline;
-        text-decoration-color: #f9c80e;
-        text-underline-position: below;
-        text-underline-offset: 10px;
-        text-decoration-thickness: 3px;
-    }
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9c80e;
+    text-underline-position: below;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+}
 
-    nav a:last-child {
-        float: right;
-    }
+nav a:last-child {
+    float: right;
+}
 
 /* --- CONTENT --- */
 
@@ -93,7 +93,6 @@ section {
     padding-right: 2em;
     margin: auto;
     max-width: 800px;
-}
 
     /* --- TEXT --- */
 
@@ -172,6 +171,8 @@ section {
         margin-left: auto;
         margin-right: auto;
     }
+
+}
 
 /* --- FOOTER --- */
 
