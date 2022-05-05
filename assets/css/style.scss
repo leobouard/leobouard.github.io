@@ -97,6 +97,8 @@ section {
     /* --- HERO DIV --- */
 
     .hero {
+        margin-top: 2em;
+        margin-bottom: 2em;
         width: 100vw;
         position: relative;
         left: 50%;
@@ -112,7 +114,6 @@ section {
         img {
             text-align: right;
             width: 33%;
-            margin: 3em;
             transform: rotate(-6deg);
         }
 
