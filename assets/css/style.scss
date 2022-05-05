@@ -103,14 +103,17 @@ section {
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        background-color: #559ce4;
+        background-color: #43aa8b;
         color: #fff;
         height: 300px;
         display: flex;
+        vertical-align: middle;
 
         img {
+            text-align: right;
             width: 33%;
             margin: 3em;
+            transform: rotate(8deg);
         }
 
         div {
