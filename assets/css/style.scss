@@ -99,14 +99,10 @@ section {
     .hero {
         margin-top: 2em;
         margin-bottom: 2em;
-        width: 100vw;
         position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
         background-color: #43aa8b;
         height: 200px;
+        width: 100%;
     }
 
     /* --- TEXT --- */
