@@ -113,9 +113,10 @@ section {
         .heroContent {
             color: #fff;
             font-weight: 500;
+            max-width: 800px;
 
             .heroImage {
-                height: 200px;
+                width: 150px;
                 display: flex;
             }
 
