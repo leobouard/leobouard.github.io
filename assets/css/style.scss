@@ -108,32 +108,15 @@ section {
         background-color: #43aa8b;
         display: flex;
         justify-content: center;
-        vertical-align: middle;
         
-        .herocontent {
-            display: flex;
-            padding: 3em;
-            max-width: 900px;
-
-            .heroImg {
-                width: 25%;
-                
-                img {
-                    transform: rotate(-8deg);
-                    margin: 1em;
-                }
-            }
-    
-            .heroText {
-                width: 75%;
-                color: #fff;
-                font-weight: 500;
-            }
+        .heroContent {
+            color: #fff;
+            font-weight: 500;
 
             .heroTitle {
-                font-size: large;
+                font-size: larger;
+                font-weight: 700;
             }
-
         }
 
     }
