@@ -6,20 +6,20 @@ Un petit sous texte qui permet de mettre en contexte le site peut-être. Après 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-
-<div class="hero">
-    <span style="font-size: large;">C'est quoi au juste "La Boua Bouate" ?</span>
-    <p>Ce site web sert globalement de boîte à idée avec :</p>
-    <ul>
-        <li>des défis PowerShell</li>
-        <li>des trucs & astuces</li>
-        <li>des petites trouvailles</li>
-    </ul>
-    <p>...et un peu tout ce qui me passe par la tête ! 😀</p>
-    <br>
-    <a href="/challenges">Voir les défis</a>
-</div>
-
+<div style='background-color: #43aa8b; position: absolute; left: 0; right:0;'>
+    <div class="hero">
+        <span style="font-size: large;">C'est quoi au juste "La Boua Bouate" ?</span>
+        <p>Ce site web sert globalement de boîte à idée avec :</p>
+        <ul>
+            <li>des défis PowerShell</li>
+            <li>des trucs & astuces</li>
+            <li>des petites trouvailles</li>
+        </ul>
+        <p>...et un peu tout ce qui me passe par la tête ! 😀</p>
+        <br>
+        <a href="/challenges">Voir les défis</a>
+    </div>
+<div>
 
 ## Un autre petit titre
 
