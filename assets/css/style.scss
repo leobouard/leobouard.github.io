@@ -115,9 +115,13 @@ section {
             padding: 3em;
             max-width: 900px;
 
-            img {
+            .heroImg {
                 width: 25%;
-                transform: rotate(-8deg);
+                
+                img {
+                    transform: rotate(-8deg);
+                    margin: 1em;
+                }
             }
     
             .heroText {
@@ -131,8 +135,6 @@ section {
             }
 
         }
-
-
 
     }
 

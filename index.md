@@ -8,7 +8,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <div class="hero">
     <div class="heroContent">
-        <img src="/assets/images/logo_white.svg" alt="La Boua Bouate mais dans un cube" style="height: 150px;">
+        <div class="heroImg"> 
+            <img src="/assets/images/logo_white.svg" alt="La Boua Bouate mais dans un cube" style="height: 150px;">
+        </div>
         <div class="heroText">
             <span class="heroTitle">C'est quoi au juste "La Boua Bouate" ?</span>
             <p>Ce site web me sert globalement de boîte à idées dans lequel on retrouve :</p>
