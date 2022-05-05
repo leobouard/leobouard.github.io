@@ -144,7 +144,8 @@ section {
         color: #fff;
         padding-left: 1em;
         padding-right: 1em;
-        word-wrap: break-all;
+        white-space: pre-wrap;
+        word-wrap: break-word;
         border-radius: 1em;
     }
 
