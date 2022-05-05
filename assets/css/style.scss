@@ -37,16 +37,10 @@ header {
     background-color: #f9c80e;
     display: flex;
     justify-content: center;
-}
 
-.banner:hover {
-    border: #000 ;
-}
-
-.siteTitle {
-    font-family: 'Martel', serif;
-    font-size: x-large;
-    color: #000;
+    img {
+        height: 30px;
+    }
 }
 
     /* --- NAVIGATION BAR --- */
