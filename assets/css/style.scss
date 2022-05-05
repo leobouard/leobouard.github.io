@@ -97,12 +97,22 @@ section {
     /* --- HERO DIV --- */
 
     .hero {
+        position: absolute;
         left: 0;
         right: 0;
         background-color: #559ce4;
         color: #fff;
         height: 300px;
         display: flex;
+
+        img {
+            width: 33%;
+        }
+
+        div {
+            width: 66%;
+        }
+
     }
 
     /* --- TEXT --- */
