@@ -11,7 +11,7 @@
 
 .card {
     margin: 10px;
-    width: 300px;
+    width: 330px;
     height: 250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -49,12 +49,4 @@
 
 .postInfo h3 {
     color: #383b53;
-}
-
-@media print, screen and (max-width: 800px) {
-    .card {
-        min-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
 }
