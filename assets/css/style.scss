@@ -99,13 +99,23 @@ section {
     .hero {
         margin-top: 2em;
         margin-bottom: 2em;
-        left: 0;
-        right: 0;
-        background-color: #43aa8b;
+        width: 100%;
         min-height: 100px;
-        display: block;
+
+        .heroAbsolute {
+            background-color: #43aa8b;
+            color: #fff;
+            font-weight: 500;
+            position: absolute;
+            left: 0;
+            right: 0;
+            min-height: 100px;
+            padding: 1em;
+        }
     }
 
+    
+     
     /* --- TEXT --- */
 
     a {

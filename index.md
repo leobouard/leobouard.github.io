@@ -8,7 +8,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 <div class="hero">
-    <div style="position: absolute; left: 0; right: 0; background-color: #ccc; min-height: 100px;"></div>
+    <div class="heroAbsolute">
+        <span style="font-size: larger;">C'est quoi au juste "La Boua Bouate" ?</span>
+        <p>Ce site web sert globalement de boîte à idée avec :</p>
+        <ul>
+            <li>des défis PowerShell</li>
+            <li>des trucs & astuces</li>
+            <li>des petites trouvailles</li>
+        </ul>
+        <p>...et un peu tout ce qui me passe par la tête ! 😀</p>
+    </div>
 </div>
 
 
