@@ -110,19 +110,25 @@ section {
         display: flex;
         vertical-align: middle;
         padding: 3em;
-        padding-left: 30%;
-        padding-right: 30%;
 
-        img {
-            width: 33%;
-            transform: rotate(-8deg);
+        .herocontent {
+
+            max-width: 900px;
+
+            img {
+                width: 33%;
+                transform: rotate(-8deg);
+            }
+    
+            div {
+                width: 66%;
+                color: #fff;
+                font-weight: 500;
+            }
+
         }
 
-        div {
-            width: 66%;
-            color: #fff;
-            font-weight: 500;
-        }
+
 
     }
 

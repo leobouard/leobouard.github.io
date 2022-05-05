@@ -7,16 +7,18 @@ Un petit sous texte qui permet de mettre en contexte le site peut-être. Après 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <div class="hero">
-    <img src="/assets/images/logo_white.svg" alt="La Boua Bouate mais dans un cube" style="height: 150px;">
-    <div>
-      <h2 style="color: #fff;">C'est quoi au juste "La Boua Bouate" ?</h2>
-      <p>Ce site web me sert globalement de boîte à idées dans lequel on retrouve :</p>
-      <ul>
-        <li>des défis PowerShell</li>
-        <li>des trucs & astuces</li>
-        <li>des petites trouvailles et réflexion</li>
-      </ul>
-      <p>...et un peu tout ce qui me passe par la tête</p>
+    <div class="heroContent">
+        <img src="/assets/images/logo_white.svg" alt="La Boua Bouate mais dans un cube" style="height: 150px;">
+        <div>
+            <h2 style="color: #fff;">C'est quoi au juste "La Boua Bouate" ?</h2>
+            <p>Ce site web me sert globalement de boîte à idées dans lequel on retrouve :</p>
+            <ul>
+                <li>des défis PowerShell</li>
+                <li>des trucs & astuces</li>
+                <li>des petites trouvailles et réflexion</li>
+            </ul>
+            <p>...et un peu tout ce qui me passe par la tête</p>
+        </div>
     </div>
 </div>
 
