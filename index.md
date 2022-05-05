@@ -9,6 +9,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <div class="hero">
     <div class="heroContent">
+        <img class="heroImage" src="/assets/images/logo_white.svg">
         <span class="heroTitle">C'est quoi au juste "La Boua Bouate" ?</span>
         <p>Ce site web me sert globalement de boîte à idées dans lequel on retrouve :</p>
         <ul>
