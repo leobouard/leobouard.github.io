@@ -94,6 +94,15 @@ section {
     margin: auto;
     max-width: 800px;
 
+    /* --- HERO DIV --- */
+
+    .hero {
+        background-color: #559ce4;
+        color: #fff;
+        height: 300px;
+        display: flex;
+    }
+
     /* --- TEXT --- */
 
     a {
