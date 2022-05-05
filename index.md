@@ -8,7 +8,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <div class="hero">
     <div width="20%" style="padding: 3em;">
-        <img src="/assets/images/logo_white.svg" style="transform: rotate(-8deg);">
+        <img src="/assets/images/logo_white.svg" style="transform: rotate(-8deg);" width="100px">
     </div>
     <div width="80%">
         <span style="font-size: large;">C'est quoi au juste "La Boua Bouate" ?</span>
