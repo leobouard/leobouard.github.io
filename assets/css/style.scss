@@ -101,21 +101,12 @@ section {
         margin-bottom: 2em;
         width: 100%;
         min-height: 100px;
-
-        .heroAbsolute {
-            background-color: #43aa8b;
-            color: #fff;
-            font-weight: 500;
-            position: absolute;
-            left: 0;
-            right: 0;
-            min-height: 100px;
-            padding: 1em;
-        }
+        background-color: #43aa8b;
+        color: #fff;
+        font-weight: 500;
+        padding: 2em;
     }
 
-    
-     
     /* --- TEXT --- */
 
     a {
