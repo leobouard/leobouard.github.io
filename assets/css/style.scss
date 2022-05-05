@@ -115,7 +115,8 @@ section {
             font-weight: 500;
 
             .heroImage {
-                height: 250px;
+                height: 200px;
+                display: flex;
             }
 
             .heroTitle {
@@ -255,5 +256,9 @@ footer li:first-child {
     header, section, footer { 
         margin: auto;
         max-width: 800px;
+    }
+
+    .hero {
+        position: inherit;
     }
 }
