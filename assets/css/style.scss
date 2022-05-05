@@ -117,12 +117,13 @@ section {
 
             .heroImage {
                 width: 150px;
-                float: right;
+                float: left;
+                margin: 1em;
             }
 
             .heroText {
-                float: left;
-
+                float: right;
+                
                 .heroTitle {
                     font-size: larger;
                     font-weight: 700;
