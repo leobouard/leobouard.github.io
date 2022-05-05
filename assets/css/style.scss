@@ -107,8 +107,6 @@ section {
         padding: 2em;
 
         button {
-            right: 0;
-            margin: 1em;
             background-color: #fff;
             color: #43aa8b;
             font-weight: 600;
@@ -117,6 +115,7 @@ section {
             padding-left: 20px;
             padding-right: 20px;
             border: 0;
+            right: 0
         }
     }
 
