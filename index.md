@@ -8,7 +8,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 <div class="hero">
-    <span style="font-size: x-large;">C'est quoi au juste "La Boua Bouate" ?</span>
+    <span style="font-size: large;">C'est quoi au juste "La Boua Bouate" ?</span>
     <p>Ce site web sert globalement de boîte à idée avec :</p>
     <ul>
         <li>des défis PowerShell</li>
@@ -17,7 +17,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </ul>
     <p>...et un peu tout ce qui me passe par la tête ! 😀</p>
     <br>
-    <a href="/challenges" target="_blank">Voir les défis</a>
+    <a href="/challenges">Voir les défis</a>
 </div>
 
 
