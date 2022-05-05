@@ -113,26 +113,24 @@ section {
         .heroContent {
             color: #fff;
             font-weight: 500;
-            max-width: 800px;
+            vertical-align: center;
 
             .heroImage {
                 width: 150px;
                 float: left;
                 margin: 1em;
+                transform: rotate(-8deg);
             }
 
             .heroText {
                 float: right;
-                
+
                 .heroTitle {
                     font-size: larger;
                     font-weight: 700;
                 }
             }
-
-            
         }
-
     }
 
     /* --- TEXT --- */
