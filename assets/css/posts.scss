@@ -50,3 +50,9 @@
 .postInfo h3 {
     color: #383b53;
 }
+
+@media print, screen and (max-width: 800px) {
+    .card {
+        width: 100%;
+    }
+}
