@@ -16,6 +16,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <li>des petites trouvailles</li>
     </ul>
     <p>...et un peu tout ce qui me passe par la tête ! 😀</p>
+    <br>
     <a href="/challenges" target="_blank">Voir les défis</a>
 </div>
 
