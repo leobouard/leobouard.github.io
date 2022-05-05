@@ -112,6 +112,10 @@ section {
         display: flex;
         vertical-align: middle;
 
+        img {
+            width: fit-content;
+        }
+
         a {
             margin-top: 1em;
             background-color: #fff;
