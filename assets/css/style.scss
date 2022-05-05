@@ -117,13 +117,19 @@ section {
 
             .heroImage {
                 width: 150px;
-                display: flex;
+                float: right;
             }
 
-            .heroTitle {
-                font-size: larger;
-                font-weight: 700;
+            .heroText {
+                float: left;
+
+                .heroTitle {
+                    font-size: larger;
+                    font-weight: 700;
+                }
             }
+
+            
         }
 
     }

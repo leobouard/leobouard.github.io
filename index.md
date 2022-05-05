@@ -10,14 +10,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="hero">
     <div class="heroContent">
         <img class="heroImage" src="/assets/images/logo_white.svg">
-        <span class="heroTitle">C'est quoi au juste "La Boua Bouate" ?</span>
-        <p>Ce site web me sert globalement de boîte à idées dans lequel on retrouve :</p>
-        <ul>
-            <li>des défis PowerShell</li>
-            <li>des trucs & astuces</li>
-            <li>des petites trouvailles et réflexion</li>
-        </ul>
-        <p>...et un peu tout ce qui me passe par la tête</p>
+        <div class="heroText">
+            <span class="heroTitle">C'est quoi au juste "La Boua Bouate" ?</span>
+            <p>Ce site web me sert globalement de boîte à idées dans lequel on retrouve :</p>
+            <ul>
+                <li>des défis PowerShell</li>
+                <li>des trucs & astuces</li>
+                <li>des petites trouvailles et réflexion</li>
+            </ul>
+            <p>...et un peu tout ce qui me passe par la tête</p>
+        </div>
     </div>
 </div>
 
