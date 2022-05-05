@@ -97,9 +97,12 @@ section {
     /* --- HERO DIV --- */
 
     .hero {
-        position: absolute;
-        left: 0;
-        right: 0;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
         background-color: #559ce4;
         color: #fff;
         height: 300px;
@@ -107,6 +110,7 @@ section {
 
         img {
             width: 33%;
+            margin: 3em;
         }
 
         div {
