@@ -35,9 +35,9 @@ Le défi est trop facile pour vous ? Essayez ça :
 
 ## Ressources utiles
 
-- [Get-Date \| Microsoft Docs](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
-- [Boucles "do{}until()" et "do{}while()" \| IT-Connect](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
-- [Opérateurs de comparaisons \| Microsoft Docs](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
+- [Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date) sur Microsoft Docs
+- [Boucles "do{}until()" et "do{}while()"](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/) sur IT-Connect
+- [Opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) sur Microsoft Docs
 
 ## Résultats attendus pour l'année 2022
 
