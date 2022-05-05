@@ -110,6 +110,11 @@ section {
         font-weight: 500;
         padding: 2em;
         display: flex;
+        vertical-align: middle;
+
+        img {
+            max-width: 30%;
+        }
 
         a {
             margin-top: 1em;
