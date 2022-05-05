@@ -110,11 +110,12 @@ section {
         display: flex;
         vertical-align: middle;
         padding: 3em;
+        padding-left: 30%;
+        padding-right: 30%;
 
         img {
-            text-align: right;
             width: 33%;
-            transform: rotate(-6deg);
+            transform: rotate(-8deg);
         }
 
         div {
