@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <br>
         <a href="/challenges">Voir les défis</a>
     </div>
-<div>
+</div>
 
 ## Un autre petit titre
 
