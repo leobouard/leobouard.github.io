@@ -9,7 +9,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div>
     <div class="hero">
     </div>
-<div>
+</div>
 
 ## Un autre petit titre
 
