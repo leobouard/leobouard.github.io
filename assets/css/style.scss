@@ -112,6 +112,11 @@ section {
         display: flex;
         flex-wrap: wrap;
 
+        img {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
         a {
             margin-top: 1em;
             background-color: #fff;
