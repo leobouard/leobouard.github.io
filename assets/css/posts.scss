@@ -53,6 +53,6 @@
 
 @media print, screen and (max-width: 800px) {
     .card {
-        width: 100%;
+        max-width: 800px;
     }
 }
