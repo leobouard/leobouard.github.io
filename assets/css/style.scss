@@ -105,9 +105,9 @@ section {
         margin-right: -50vw;
         background-color: #43aa8b;
         color: #fff;
-        height: 300px;
         display: flex;
         vertical-align: middle;
+        padding: 3em;
 
         img {
             text-align: right;
@@ -119,6 +119,7 @@ section {
         div {
             width: 66%;
             color: #fff;
+            font-weight: 500;
         }
 
     }

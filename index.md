@@ -9,7 +9,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="hero">
     <img src="/assets/images/logo_white.svg" alt="La Boua Bouate mais dans un cube">
     <div>
-      <h2>C'est quoi au juste "La Boua Bouate" ?</h2>
+      <h2 style="color: #fff;">C'est quoi au juste "La Boua Bouate" ?</h2>
       <p>Ce site web me sert globalement de boîte à idées dans lequel on retrouve :</p>
       <ul>
         <li>des défis PowerShell</li>
