@@ -106,22 +106,24 @@ section {
         margin-left: -50vw;
         margin-right: -50vw;
         background-color: #43aa8b;
-        color: #fff;
         display: flex;
+        justify-content: center;
         vertical-align: middle;
-        padding: 3em;
+        
 
         .herocontent {
-
+            color: #fff;
+            display: flex;
+            padding: 3em;
             max-width: 900px;
 
             img {
-                width: 33%;
+                width: 20%;
                 transform: rotate(-8deg);
             }
     
             div {
-                width: 66%;
+                width: 80%;
                 color: #fff;
                 font-weight: 500;
             }
