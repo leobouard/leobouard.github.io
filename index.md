@@ -7,10 +7,10 @@ Un petit sous texte qui permet de mettre en contexte le site peut-être. Après 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <div class="hero">
-    <div width="20%" style="padding: 1em;">
+    <div width="100px" style="padding: 1em;">
         <img src="/assets/images/logo_white.svg" style="transform: rotate(-8deg);">
     </div>
-    <div width="80%" style="display: table-cell; vertical-align: middle;">
+    <div>
         <span style="font-size: large;">C'est quoi au juste "La Boua Bouate" ?</span>
         <p>Ce site web sert globalement de boîte à idée avec :</p>
         <ul>
