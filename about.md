@@ -10,9 +10,9 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 Entreprise | Poste
 ---------- | -----
-![Groupe Roullier](/assets/images/groupe-roullier.jfif)<br>@Saint-Malo | **Administrateur système**<br><small>janvier 2019 à aujourd'hui</small>
-![METSYS](/assets/images/metsys.jfif)<br>@Rennes | **Lead-consultant**<br><small>septembre 2021 à aujourd'hui</small><br><br>**Associate consultant**<small>septembre 2018 à septembre 2021 • 3 ans</small>
-![GEVES](/assets/images/geves.jfif)<br>@Angers | **Administrateur système en alternance**<br><small>août 2017 à septembre 2018 • ~1 an</small><br><br>**Administrateur système en stage**<br><small>avril 2017 à juin 2017 • 10 semaines</small>
+![Groupe Roullier](/assets/images/groupe-roullier.jfif) | **Administrateur système**<br><small>janvier 2019 à aujourd'hui</small>
+![METSYS](/assets/images/metsys.jfif) | **Lead-consultant**<br><small>septembre 2021 à aujourd'hui</small><br><br>**Associate consultant**<small>septembre 2018 à septembre 2021 • 3 ans</small>
+![GEVES](/assets/images/geves.jfif) | **Administrateur système en alternance**<br><small>août 2017 à septembre 2018 • ~1 an</small><br><br>**Administrateur système en stage**<br><small>avril 2017 à juin 2017 • 10 semaines</small>
 
 ## Ma formation
 
