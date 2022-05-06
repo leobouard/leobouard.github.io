@@ -9,8 +9,8 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 ## Mes expériences
 
 <table><tbody>
-    <tr>
-        <td style="text-align: center; vertical-align: top;">
+    <tr style="vertical-align: top;">
+        <td style="text-align: center;">
             <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="80px">
             <strong>Groupe Roullier</strong><br>
             <i>@Saint-Malo</i>
@@ -18,16 +18,11 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
         <td>
             <strong>Administrateur système</strong><br>
             <small>janvier 2019 à aujourd’hui</small>
-            <ul>
-                <li>Automatisation en PowerShell</li>
-                <li>Administration de l'environnement Microsoft (AD, Exchange, O365)</li>
-                <li>Documentation & formation du personnel informatique des pays étrangers</li>
-                <li>Gestion de projet</li>
-            </ul>
+            <p>Assistance technique en tant que prestataire (METSYS)</p>
         </td>
     </tr>
-    <tr>
-        <td style="text-align: center; vertical-align: top;">
+    <tr style="vertical-align: top;">
+        <td style="text-align: center;">
             <img src="/assets/images/metsys.jfif" alt="METSYS" width="80px">
             <strong>METSYS</strong><br>
             <i>@Rennes</i>
@@ -36,34 +31,24 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <strong>Lead-consultant</strong><br>
             <small>septembre 2021 à aujourd'hui</small>
             <p>Gestion d'une équipe de 8 personnes</p>
-            <ul>
-                <li>Partage de connaissance sur les réseaux internes</li>
-                <li>Formation & accompagnement de collaborateurs sur PowerShell, Microsoft 365, Active Directory et Azure</li>
-                <li>Suivi des collaborateurs en mission</li>
-            </ul>
-            <br>
             <strong>Associate consultant</strong><br>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
             <p>Membre de l'équipe "Infrastructure & services"</p>
-            <ul>
-                <li>Passage de certification (AZ-900, MS-900)</li>
-                <li>Animation d'une présentation technique pour les étudiants de l'ENIMembre</li>
-            </ul>
-            <br>
         </td>
     </tr>
-    <tr>
-        <td style="text-align: center; vertical-align: top;">
+    <tr style="vertical-align: top;">
+        <td style="text-align: center;">
             <img src="/assets/images/geves.jfif" alt="GEVES" width="80px">
             <strong>GEVES</strong><br>
             <i>@Angers</i>
         </td>
         <td>
             <strong>Administrateur système en alternance</strong><br>
-            <small>août 2017 à septembre 2018 • ~1 an</small><br>
-            <br>
+            <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
+            <p>Alternance dans le cadre de la licence professionnelle administration et sécurité des systèmes et réseaux, à la suite de mon stage de 10 semaines au GEVES</p>
             <strong>Administrateur système en stage</strong><br>
             <small>avril 2017 à juin 2017 • 10 semaines</small>
+            <p>Stage de 10 semaines pour la fin de mon DUT réseaux et télécommunications</p>
         </td>
     </tr>
 </tbody></table>
