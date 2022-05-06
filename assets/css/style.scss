@@ -200,6 +200,20 @@ section {
         width: 100%;
     }
 
+    .CVtr {
+        vertical-align: top;
+    }
+
+    .CVtd {
+        text-align: center;
+        width: 100px;
+        font-size: 13px;
+
+        img {
+            width: 64px;
+        }
+    }
+
 }
 
 /* --- FOOTER --- */
