@@ -10,7 +10,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 <table><tbody>
     <tr style="vertical-align: top;">
-        <td style="text-align: center; width: 120px">
+        <td style="text-align: center; width: 150px">
             <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px">
             <strong>Groupe Roullier</strong><br>
             <i>@Saint-Malo</i>
@@ -28,7 +28,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
         </td>
     </tr>
     <tr style="vertical-align: top;">
-        <td style="text-align: center; width: 120px">
+        <td style="text-align: center; width: 150px">
             <img src="/assets/images/metsys.jfif" alt="METSYS" width="64px">
             <strong>METSYS</strong><br>
             <i>@Rennes</i>
@@ -43,7 +43,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
         </td>
     </tr>
     <tr style="vertical-align: top;">
-        <td style="text-align: center; width: 120px">
+        <td style="text-align: center; width: 150px">
             <img src="/assets/images/geves.jfif" alt="GEVES" width="64px">
             <strong>GEVES</strong><br>
             <i>@Angers</i>
@@ -63,7 +63,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 <table><tbody>
     <tr style="vertical-align: top;">
-        <td style="text-align: center; width: 120px">
+        <td style="text-align: center; width: 150px">
             <img src="/assets/images/univ-nantes.jfif" alt="Université de Nantes" width="64px">
             <strong>IUT de La Roche-sur-Yon</strong><br>
             <i>@La Roche-sur-Yon</i>
@@ -78,7 +78,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
         </td>
     </tr>
     <tr style="vertical-align: top;">
-        <td style="text-align: center; width: 120px">
+        <td style="text-align: center; width: 150px">
             <img src="/assets/images/mendes.jfif" alt="Lycée Pierre Mendès France" width="64px">
             <strong>Lycée Pierre Mendès France</strong><br>
             <i>@La Roche-sur-Yon</i>
