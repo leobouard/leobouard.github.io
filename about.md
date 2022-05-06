@@ -37,6 +37,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <strong>Lead-consultant</strong><br>
             <small>septembre 2021 à aujourd'hui</small>
             <p>Gestion d'une équipe de 8 personnes</p>
+            <hr>
             <strong>Associate consultant</strong><br>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
             <p>Membre de l'équipe "Infrastructure & services"</p>
@@ -52,6 +53,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <strong>Administrateur système en alternance</strong><br>
             <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
             <p>Alternance dans le cadre de la licence professionnelle administration et sécurité des systèmes et réseaux, à la suite de mon stage de 10 semaines au GEVES</p>
+            <hr>
             <strong>Administrateur système en stage</strong><br>
             <small>avril 2017 à juin 2017 • 10 semaines</small>
             <p>Stage de 10 semaines pour la fin de mon DUT réseaux et télécommunications</p>
@@ -72,6 +74,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <strong>Licence professionnelle A2SR</strong><br>
             <small>2017 à 2018 • 1 an</small>
             <p>Licence professionnelle administration et sécurité des systèmes et des réseaux</p>
+            <hr>
             <strong>DUT Réseaux & Télécommunications</strong><br>
             <small>2015 à 2017 • 2 ans</small>
             <p>Projet tutoré sur l'initiation à la cybersécurité</p>
