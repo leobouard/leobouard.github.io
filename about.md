@@ -34,10 +34,22 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
         </td>
         <td>
             <strong>Lead-consultant</strong><br>
-            <small>septembre 2021 à aujourd'hui</small><br>
+            <small>septembre 2021 à aujourd'hui</small>
+            <p>Gestion d'une équipe de 8 personnes</p>
+            <ul>
+                <li>Partage de connaissance sur les réseaux internes</li>
+                <li>Formation & accompagnement de collaborateurs sur PowerShell, Microsoft 365, Active Directory et Azure</li>
+                <li>Suivi des collaborateurs en mission</li>
+            </ul>
             <br>
             <strong>Associate consultant</strong><br>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
+            <p>Membre de l'équipe "Infrastructure & services"</p>
+            <ul>
+                <li>Passage de certification (AZ-900, MS-900)</li>
+                <li>Animation d'une présentation technique pour les étudiants de l'ENIMembre</li>
+            </ul>
+            <br>
         </td>
     </tr>
     <tr>
