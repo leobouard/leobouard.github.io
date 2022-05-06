@@ -6,13 +6,13 @@ Moi c'est Léo Bouard, administrateur système & lead consultant chez METSYS.
 
 Je travaille notamment sur les technologies Microsoft (Active Directory, Office 365, Exchange, Azure) et je sais faire deux-trois trucs en PowerShell 💪
 
-## Mes expériences 
+## Mes expériences
 
-- Janv. 2019 à aujourd'hui : Administrateur système en prestation chez Groupe ROULLIER @Saint-Malo
-- Sept. 2021 à aujourd'hui : Lead consultant chez METSYS @Rennes
-- Sept. 2018 à Sept. 2021 : Associate consultant chez METSYS @Rennes
-- Juin 2017 à Sept. 2018 : Administrateur système en alternance au GEVES @Angers
-- Avril 2017 à Juin 2017 : Administrateur système en stage au GEVES @Angers
+Entreprise | Poste
+---------- | -----
+![Groupe Roullier](/assets/images/groupe-roullier.jfif)<br>@Saint-Malo | **Administrateur système**<br><small>janvier 2019 à aujourd'hui</small>
+![METSYS](/assets/images/metsys.jfif)<br>@Rennes | **Lead-consultant**<br><small>septembre 2021 à aujourd'hui</small><br><br>**Associate consultant**<small>septembre 2018 à septembre 2021 • 3 ans</small>
+![GEVES](/assets/images/geves.jfif)<br>@Angers | **Administrateur système en alternance**<br><small>août 2017 à septembre 2018 • ~1 an</small><br><br>**Administrateur système en stage**<br><small>avril 2017 à juin 2017 • 10 semaines</small>
 
 ## Ma formation
 
