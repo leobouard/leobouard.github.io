@@ -8,20 +8,30 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 ## Mes expériences
 
-<table style="border: 0;"><tbody>
+<table><tbody>
     <tr>
-        <td><img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px"></td>
+        <td style="text-align: center; vertical-align: top;">
+            <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px"><br>
+            <strong>Groupe Roullier</strong><br>
+            <i>@Saint-Malo</i>
+        </td>
         <td>
             <strong>Administrateur système</strong><br>
             <small>janvier 2019 à aujourd’hui</small>
             <ul>
                 <li>Automatisation en PowerShell</li>
                 <li>Administration de l'environnement Microsoft (AD, Exchange, O365)</li>
+                <li>Documentation & formation du personnel informatique des pays étrangers</li>
+                <li>Gestion de projet</li>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><img src="/assets/images/metsys.jfif" alt="METSYS" width="64px"></td>
+        <td style="text-align: center; vertical-align: top;">
+            <img src="/assets/images/metsys.jfif" alt="METSYS" width="64px"><br>
+            <strong>METSYS</strong><br>
+            <i>@Rennes</i>
+        </td>
         <td>
             <strong>Lead-consultant</strong><br>
             <small>septembre 2021 à aujourd'hui</small><br>
@@ -31,7 +41,11 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
         </td>
     </tr>
     <tr>
-        <td><img src="/assets/images/geves.jfif" alt="GEVES" width="64px"></td>
+        <td style="text-align: center; vertical-align: top;">
+            <img src="/assets/images/geves.jfif" alt="GEVES" width="64px"><br>
+            <strong>GEVES</strong><br>
+            <i>@Angers</i>
+        </td>
         <td>
             <strong>Administrateur système en alternance</strong><br>
             <small>août 2017 à septembre 2018 • ~1 an</small><br>
