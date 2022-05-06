@@ -34,7 +34,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <i>@Rennes</i>
         </td>
         <td>
-            <strong>Lead-consultant</strong><br>
+            <strong>Lead consultant</strong><br>
             <small>septembre 2021 à aujourd'hui</small>
             <p>Gestion d'une équipe de 8 personnes</p>
             <hr>
