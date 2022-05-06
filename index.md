@@ -58,9 +58,15 @@ On se met un séparateur et un autre texte et on devrait être pas trop mal !
 
 ---
 
-## Un titre H2
+## Comment est fait le site web ?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Le site est hébergé sur [GitHub Pages](https://pages.github.com/) et repose donc sur le moteur [Jekyll](https://jekyllrb.com/).
+
+Je me suis basé sur le theme [minimal de orderedlist](https://github.com/orderedlist/minimal/) dans un premier temps, pour ensuite voler de mes propres ailes et produire mon code HTML & CSS par moi-même (pour le meilleur et pour le pire).
+
+Je ne suis pas développeur web, donc soyez indulgent sur certaines mises en page un peu hasardeuses ! 😄
+
+## Ma spécialité
 
 Un peu de code pour la variété :
 
