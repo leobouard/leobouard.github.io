@@ -201,7 +201,10 @@ section {
     }
 
     .CVtable {
-        border-color: #fff;
+
+        td, tr {
+            border-color: #fff;
+        }
     }
 
     .CVtr {
