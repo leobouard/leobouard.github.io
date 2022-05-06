@@ -19,6 +19,8 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
                 <li>Administration de l'environnement Microsoft (AD, Exchange, O365)</li>
             </ul>
         </td>
+    </tr>
+    <tr>
         <td><img src="/assets/images/metsys.jfif" alt="METSYS" width="64px"></td>
         <td>
             <strong>Lead-consultant</strong><br>
@@ -27,6 +29,8 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <strong>Associate consultant</strong><br>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
         </td>
+    </tr>
+    <tr>
         <td><img src="/assets/images/geves.jfif" alt="GEVES" width="64px"></td>
         <td>
             <strong>Administrateur système en alternance</strong><br>
