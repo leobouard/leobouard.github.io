@@ -10,8 +10,8 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 <table><tbody>
     <tr style="vertical-align: top;">
-        <td style="text-align: center;">
-            <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="80px">
+        <td style="text-align: center; width: 120px">
+            <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px">
             <strong>Groupe Roullier</strong><br>
             <i>@Saint-Malo</i>
         </td>
@@ -19,11 +19,17 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <strong>Administrateur système</strong><br>
             <small>janvier 2019 à aujourd’hui</small>
             <p>Assistance technique en tant que prestataire (METSYS)</p>
+            <ul>
+                <li>Automatisation en PowerShell</li>
+                <li>Administration de l'environnement Microsoft (AD, Exchange, O365)</li>
+                <li>Documentation & formation du personnel informatique des pays étrangers</li>
+                <li>Gestion de projet</li>
+            </ul>
         </td>
     </tr>
     <tr style="vertical-align: top;">
-        <td style="text-align: center;">
-            <img src="/assets/images/metsys.jfif" alt="METSYS" width="80px">
+        <td style="text-align: center; width: 120px">
+            <img src="/assets/images/metsys.jfif" alt="METSYS" width="64px">
             <strong>METSYS</strong><br>
             <i>@Rennes</i>
         </td>
@@ -37,8 +43,8 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
         </td>
     </tr>
     <tr style="vertical-align: top;">
-        <td style="text-align: center;">
-            <img src="/assets/images/geves.jfif" alt="GEVES" width="80px">
+        <td style="text-align: center; width: 120px">
+            <img src="/assets/images/geves.jfif" alt="GEVES" width="64px">
             <strong>GEVES</strong><br>
             <i>@Angers</i>
         </td>
@@ -55,9 +61,35 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 ## Ma formation
 
-- 2017 : Licence professionnelle A2SR @La Roche-Sur-Yon
-- 2015-2017 : DUT Réseaux & Télécommunications @La Roche-Sur-Yon
-- 2013-2015 : Baccalauréat ES @La Roche-Sur-Yon
+<table><tbody>
+    <tr style="vertical-align: top;">
+        <td style="text-align: center; width: 120px">
+            <img src="/assets/images/univ-nantes.jfif" alt="Université de Nantes" width="64px">
+            <strong>IUT de La Roche-sur-Yon</strong><br>
+            <i>@La Roche-sur-Yon</i>
+        </td>
+        <td>
+            <strong>Licence professionnelle A2SR</strong><br>
+            <small>2017 à 2018 • 1 an</small>
+            <p>Licence professionnelle administration et sécurité des systèmes et des réseaux</p>
+            <strong>DUT Réseaux & Télécommunications</strong><br>
+            <small>2015 à 2017 • 2 ans</small>
+            <p>Projet tutoré sur l'initiation à la cybersécurité</p>
+        </td>
+    </tr>
+    <tr style="vertical-align: top;">
+        <td style="text-align: center; width: 120px">
+            <img src="/assets/images/mendes.jfif" alt="Lycée Pierre Mendès France" width="64px">
+            <strong>Lycée Pierre Mendès France</strong><br>
+            <i>@La Roche-sur-Yon</i>
+        </td>
+        <td>
+            <strong>Baccalauréat économique et social</strong><br>
+            <small>2013 à 2015 • 2 ans</small>
+            <p>Spécialité mathématique, obtenu avec mention bien</p>
+        </td>
+    </tr>
+</tbody></table>
 
 ## Comment est fait le site web ?
 
