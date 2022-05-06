@@ -8,7 +8,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 ## Mes expériences
 
-<table><tbody>
+<table style="border: 0;"><tbody>
     <tr>
         <td><img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px"></td>
         <td>
