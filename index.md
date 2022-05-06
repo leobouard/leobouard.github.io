@@ -7,7 +7,7 @@ Un petit sous texte qui permet de mettre en contexte le site peut-être. Après 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <div class="hero">
-    <div style="display: table; vertical-align: middle; padding: 25px;">
+    <div style="display: inline-block; vertical-align: middle; padding: 25px; height: 100%;">
         <img src="/assets/images/logo_white.svg" width="150px" style="transform: rotate(-8deg);">
     </div>
     <div>
