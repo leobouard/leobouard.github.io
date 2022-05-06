@@ -8,11 +8,35 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 ## Mes expériences
 
-Entreprise | Poste
----------- | -----
-![Groupe Roullier](/assets/images/groupe-roullier.jfif) | **Administrateur système**<br><small>janvier 2019 à aujourd'hui</small>
-![METSYS](/assets/images/metsys.jfif) | **Lead-consultant**<br><small>septembre 2021 à aujourd'hui</small><br><br>**Associate consultant**<br><small>septembre 2018 à septembre 2021 • 3 ans</small>
-![GEVES](/assets/images/geves.jfif) | **Administrateur système en alternance**<br><small>août 2017 à septembre 2018 • ~1 an</small><br><br>**Administrateur système en stage**<br><small>avril 2017 à juin 2017 • 10 semaines</small>
+<table><tbody>
+    <tr>
+        <td><img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px"></td>
+        <td>
+            <strong>Administrateur système</strong><br>
+            <small>janvier 2019 à aujourd’hui</small>
+            <ul>
+                <li>Automatisation en PowerShell</li>
+                <li>Administration de l'environnement Microsoft (AD, Exchange, O365)</li>
+            </ul>
+        </td>
+        <td><img src="/assets/images/metsys.jfif" alt="METSYS" width="64px"></td>
+        <td>
+            <strong>Lead-consultant</strong><br>
+            <small>septembre 2021 à aujourd'hui</small><br>
+            <br>
+            <strong>Associate consultant</strong><br>
+            <small>septembre 2018 à septembre 2021 • 3 ans</small>
+        </td>
+        <td><img src="/assets/images/geves.jfif" alt="GEVES" width="64px"></td>
+        <td>
+            <strong>Administrateur système en alternance</strong><br>
+            <small>août 2017 à septembre 2018 • ~1 an</small><br>
+            <br>
+            <strong>Administrateur système en stage</strong><br>
+            <small>avril 2017 à juin 2017 • 10 semaines</small>
+        </td>
+    </tr>
+</tbody></table>
 
 ## Ma formation
 
