@@ -8,7 +8,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 ## Mes expériences
 
-<table><tbody>
+<table class="CVtable"><tbody>
     <tr class="CVtr">
         <td class="CVtd">
             <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px">
@@ -63,7 +63,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 
 ## Ma formation
 
-<table><tbody>
+<table class="CVtable"><tbody>
     <tr class="CVtr">
         <td class="CVtd">
             <img src="/assets/images/univ-nantes.jfif" alt="Université de Nantes" width="64px">
