@@ -11,7 +11,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
 <table><tbody>
     <tr>
         <td style="text-align: center; vertical-align: top;">
-            <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px"><br>
+            <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="80px">
             <strong>Groupe Roullier</strong><br>
             <i>@Saint-Malo</i>
         </td>
@@ -28,7 +28,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
     </tr>
     <tr>
         <td style="text-align: center; vertical-align: top;">
-            <img src="/assets/images/metsys.jfif" alt="METSYS" width="64px"><br>
+            <img src="/assets/images/metsys.jfif" alt="METSYS" width="80px">
             <strong>METSYS</strong><br>
             <i>@Rennes</i>
         </td>
@@ -42,7 +42,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
     </tr>
     <tr>
         <td style="text-align: center; vertical-align: top;">
-            <img src="/assets/images/geves.jfif" alt="GEVES" width="64px"><br>
+            <img src="/assets/images/geves.jfif" alt="GEVES" width="80px">
             <strong>GEVES</strong><br>
             <i>@Angers</i>
         </td>
