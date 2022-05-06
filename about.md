@@ -87,7 +87,7 @@ Je travaille notamment sur les technologies Microsoft (Active Directory, Office 
             <i>@La Roche-sur-Yon</i>
         </td>
         <td>
-            <strong>Baccalauréat économique et social</strong><br>
+            <strong>Baccalauréat ES</strong><br>
             <small>2013 à 2015 • 2 ans</small>
             <p>Spécialité mathématique, obtenu avec mention bien</p>
         </td>
