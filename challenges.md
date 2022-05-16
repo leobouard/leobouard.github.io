@@ -11,7 +11,7 @@ Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs. �
 
 <div class="posts">
     {% for post in site.posts %}
-        {% if post.title == "Qui le nom le plus long ?" %}
+        {% if post.tags == "challenges" %}
             <a href="{{ post.url }}">
                 <div class="card">
                     <div class="thumbnailLimits">
