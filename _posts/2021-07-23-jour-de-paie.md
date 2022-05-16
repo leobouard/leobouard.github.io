@@ -3,7 +3,6 @@ layout: post
 title: "Elle est où la moulaga ?"
 description: "Le titre est un poil trompeur"
 tags: challenges
-author: "Léo"
 thumbnailColor: "#519E8A"
 icon: 💸
 ---
