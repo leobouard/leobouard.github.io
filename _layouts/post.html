@@ -2,6 +2,6 @@
 layout: default
 ---
 
-<p>{{ page.date }} - Article par {{ page.author }}</p>
+<p>{{ page.date | date_to_string: "ordinal", "FR" }} - Article par {{ page.author }}</p>
 
 {{ content }}
