@@ -2,6 +2,6 @@
 layout: default
 ---
 
-<p>{{ page.date | date: "dd MMM yyyy" }} - Article par {{ page.author }}</p>
+<p>Le {{ page.date | date: "%d/%m/*Y" }} - Article par {{ page.author }}</p>
 
 {{ content }}
