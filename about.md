@@ -14,4 +14,4 @@ Moi c'est Léo Bouard, administrateur système & lead consultant chez [METSYS](h
 Pour plus d'informations :
 
 - vous pouvez jeter un oeil à [mon CV](/cv)
-- ou consulter [mon profil LinkedIn]({{ site.linkedin }})
+- ...ou consulter [mon profil LinkedIn]({{ site.linkedin }})
