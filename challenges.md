@@ -2,9 +2,11 @@
 permalink: /challenges.html
 ---
 
-<h1>Prêt à relever le défi ?</h1>
+# Prêt à relever le défi ?
 
-<p>Parce qu'on apprend mieux en s'amusant, je vous propose une série de défis à relever avec PowerShell. Vous êtes prévenus : il n'y a rien de bien sérieux et aucun prix à la clé ! Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs. 😉</p>
+Parce qu'on apprend mieux en s'amusant, je vous propose une série de défis à relever avec PowerShell.
+Vous êtes prévenus : il n'y a rien de bien sérieux et aucun prix à la clé !
+Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs. 😉
 
 <div class="posts">
     {% for post in site.posts %}
