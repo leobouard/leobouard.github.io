@@ -181,12 +181,11 @@ section {
         word-wrap: break-word;
         border-radius: 1em;
 
-        .bp, .nv, .bp, .kr { color: #8cdcda; }
+        .bp, .nv, .bp { color: #8cdcda; }
+        .n, .nf { color: #f9f1a5; }
         .s2 { color: #c3602c; }
-        .n  { color: #f9f1a5; }
         .kr { color: #c586c0; }
-        .c  { color: #89c76c; }
-        .nf { color: #dddd4e; }
+        .c { color: #89c76c; }
     }
 
 
