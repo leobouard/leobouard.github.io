@@ -2,7 +2,7 @@
 layout: post
 title: "Elle est où la moulaga ?"
 description: "Le titre est un poil trompeur"
-tags: powershell challenges
+tags: challenges
 author: "Léo"
 thumbnailColor: "#519E8A"
 icon: 💸
