@@ -2,7 +2,7 @@
 permalink: /challenges.html
 ---
 
-# Prêt à relever le défi ?
+# Prêt à relever le défi ? 💪
 
 Parce qu'on apprend mieux en s'amusant, je vous propose une série de défis à relever avec PowerShell.
 Vous êtes prévenus : il n'y a rien de bien sérieux et aucun prix à la clé !
