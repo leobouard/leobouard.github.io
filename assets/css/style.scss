@@ -134,6 +134,11 @@ section {
         text-decoration: none;
     }
 
+    a:hover {
+        text-decoration: underline;
+        transition: all 400ms ease-in-out;
+    }
+
     h1, h2, h3, h4, h5 {
         color: #383b53;
     }
