@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<div class="hero" style="background-color: {{ page.thumbnailColor }}; line-height: 100px;">
+    {{ page.icon }}
+</div>
+
 <p>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</p>
 
 {{ content }}
