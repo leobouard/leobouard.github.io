@@ -63,7 +63,10 @@
     right: 0;
     height: 200px;
     line-height: 200px;
-    font-size: 90px;
     display: flex;
-    justify-content: center;
+
+    .icon {
+        font-size: 90px;
+        text-align: center;
+    }
 }
