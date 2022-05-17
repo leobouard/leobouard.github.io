@@ -7,7 +7,7 @@ thumbnailColor: "#519E8A"
 icon: 💸
 ---
 
-# #01 - Elle est où la moulaga ?
+# Elle est où la moulaga ?
 
 La situation initiale est la suivante : je dois rendre un document administratif tous les mois, au plus tard le 25e jour du mois en cours. Le problème, c'est que je dois faire ça sur des jours ouvrés (sinon ça compte pas).
 
