@@ -54,3 +54,16 @@
 .postInfo h3 {
     color: #383b53;
 }
+
+.postBanner {
+    margin-left: -1em;
+    margin-right: -1em;
+    position: relative;
+    left: 0;
+    right: 0;
+    height: 100px;
+    line-height: 100px;
+    font-size: 90px;
+    display: flex;
+    justify-content: center;
+}
