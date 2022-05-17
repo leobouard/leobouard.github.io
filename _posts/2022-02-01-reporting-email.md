@@ -6,3 +6,5 @@ tags: howto
 thumbnailColor: "#373F47"
 icon: ✨
 ---
+
+# Comment faire des bô rapports ?
