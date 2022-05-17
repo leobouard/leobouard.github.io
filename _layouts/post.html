@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
-
 <div class="postBanner" style="background-color: {{ page.thumbnailColor }};">
     {{ page.icon }}
 </div>
+
+<small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 
 {{ content }}
