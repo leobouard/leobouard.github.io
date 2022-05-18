@@ -3,9 +3,13 @@ layout: post
 title: "[SOLUTION] Le jour de paie"
 ---
 
-
-
 ## Version Do/Until
+
+Simple et efficace : on va directement au 25e jour du mois et on vérifie qu'il ne s'agit pas d'un samedi ou d'un dimanche. On determine ça via le membre "DayOfWeek" qui nous retourne le jour de la semaine en anglais (même si la culture de votre terminal de commande est dans une langue). 
+
+Et ça tombe bien que la valeur de "DayOfWeek" soit en anglais, parce que du coup c'est très facile d'identifier le week-end : le jour commence par un S (saturday & sunday).
+
+Si le 25e jour du mois tombe un week-end, on essaye le jour d'avant jusqu'à ce qu'on soit sur un jour ouvré !
 
 ```powershell
 
@@ -27,7 +31,25 @@ $i=25;do{$d=date -Day $i;$i--}until($d.DayOfWeek-notlike"S*")$d
 
 ```
 
+Version alternative avec une boucle While :
+
+```powershell
+
+$d = Get-Date -Day 25
+while ($d.DayOfWeek -like "S*") {
+    $d = $d.AddDays(-1)
+}
+$d
+
+```
+
 ## Version Foreach-Object
+
+On instancie un tableau de 1 à 25 via `1..25` puis on va effectuer un traitement pour chaque élement du tableau(récupérer la date associée 1er jour du mois, puis le 2eme, puis le 3e...).
+
+On ne stocke la date associée que si le jour de la semaine ne commence pas par un "S" (Wednesday c'est OK, mais pas Sunday) avec `Where-Object {$_.DayOfWeek -notlike "S*"}`.
+
+De cette manière, la variable `$d` contient tous les jours ouvrés jusqu'au 25e du mois. Il ne reste plus qu'à récupérer la dernière valeur via le `Select-Object -Last 1`.
 
 ```powershell
 
@@ -39,24 +61,12 @@ $d | Select-Object -Last 1
 
 ```
 
-## Version For
+Version alternative avec une boucle For :
 
 ```powershell
 
 for ($i = 25; $null -eq $d ; $i--) {
     $d = Get-Date -Day $i | Where-Object {$_.DayOfWeek -notlike "S*"}
-}
-$d
-
-```
-
-## Version While
-
-```powershell
-
-$d = Get-Date -Day 25
-while ($d.DayOfWeek -like "S*") {
-    $d = $d.AddDays(-1)
 }
 $d
 
