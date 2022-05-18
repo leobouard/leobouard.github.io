@@ -1,3 +1,7 @@
+---
+permalink: /
+---
+
 # Bienvenue ! 👋
 
 Bienvenue sur mon humble site web, 

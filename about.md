@@ -1,3 +1,7 @@
+---
+permalink: /about
+---
+
 # A propos
 
 Moi c'est Léo Bouard, administrateur système & lead consultant chez [METSYS](https://www.metsys.fr/) @Rennes.

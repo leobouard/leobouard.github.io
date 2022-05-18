@@ -1,5 +1,5 @@
 ---
-permalink: /howto.html
+permalink: /howto
 ---
 
 # Comment qu'on fait ? 🤔

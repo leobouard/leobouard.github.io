@@ -1,5 +1,5 @@
 ---
-permalink: /cv.html
+permalink: /cv
 ---
 
 # Léo Bouard
