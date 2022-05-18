@@ -2,11 +2,16 @@
 layout: default
 ---
 
-<div class="postBanner" style="background-color: {{ page.thumbnailColor }};">
-    {{ page.icon }}
-</div>
+{% if page.icon %}
+    <div class="postBanner" style="background-color: {{ page.thumbnailColor }};">
+        {{ page.icon }}
+    </div>
+{% endif %}
 
 <small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 
 {{ content }}
 
+{% if page.tags contains "challenges" %}
+    <a class= "button" href="{{ page.url }}-soluce">Voir la solution 💡</a>
+{% endif %}
