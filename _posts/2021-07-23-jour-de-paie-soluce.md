@@ -43,13 +43,17 @@ $d
 
 ```
 
+---
+
 ## Version Foreach-Object
 
-On instancie un tableau de 1 à 25 via `1..25` puis on va effectuer un traitement pour chaque élement du tableau(récupérer la date associée 1er jour du mois, puis le 2eme, puis le 3e...).
+`1..25` : on instancie un tableau de 1 à 25 puis on va effectuer un traitement pour chaque élement du tableau(récupérer la date associée 1er jour du mois, puis le 2eme, puis le 3e...) via le Foreach-Object
 
-On ne stocke la date associée que si le jour de la semaine ne commence pas par un "S" (Wednesday c'est OK, mais pas Sunday) avec `Where-Object {$_.DayOfWeek -notlike "S*"}`.
+`Where-Object {$_.DayOfWeek -notlike "S*"}` : on ne stocke la date associée que si le jour de la semaine ne commence pas par un "S" (Wednesday c'est OK, mais pas Sunday)
 
-De cette manière, la variable `$d` contient tous les jours ouvrés jusqu'au 25e du mois. Il ne reste plus qu'à récupérer la dernière valeur via le `Select-Object -Last 1`.
+`$d` : la variable contient alors tous les jours ouvrés jusqu'au 25e du mois
+
+`Select-Object -Last 1` : on récupère la dernière valeur du tableau contenant tous les jours ouvrés
 
 ```powershell
 
@@ -71,6 +75,8 @@ for ($i = 25; $null -eq $d ; $i--) {
 $d
 
 ```
+
+---
 
 ## Version avec modulo
 
