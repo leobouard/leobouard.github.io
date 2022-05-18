@@ -1,21 +1,21 @@
 ---
 layout: post
-title: "Elle est où la moulaga ?"
-description: "Le titre est un poil trompeur"
+title: "Le jour de paie"
+description: "Elle est où la moulaga ?"
 tags: challenges
 thumbnailColor: "#519E8A"
 icon: 💸
 ---
 
-# Elle est où la moulaga ?
+# Le jour de paie
 
-La situation initiale est la suivante : je dois rendre un document administratif tous les mois, au plus tard le 25e jour du mois en cours. Le problème, c'est que je dois faire ça sur des jours ouvrés (sinon ça compte pas).
-
-Et comme c'est pas très parlant, on va se dire qu'au lieu de faire de l'administratif, c'est le jour où l'on reçoit notre paye. 
-
-En bref : **elle est où la moulaga ?**
+Admettons la situation suivante : votre salaire vous est versé au plus tard le 25 du mois en cours. Comme vous êtes très dépensier, vous voulez savoir précisement quand est-ce que vous allez pouvoir manger autre chose que des pâtes !
 
 ![le jour après la paye](https://media2.giphy.com/media/ZWiIwPxJ9JGW4/giphy.gif?cid=ecf05e47tztz1sa2magi8gsof2idlq05bmu1qvxiofkxia0q&rid=giphy.gif&ct=g)
+
+<span style="text-align: center;"><i>Environ 5 min après avoir reçu votre salaire</i></span>
+
+Du coup la question est simple : c'est quand votre jour de paie ?
 
 ## Règles
 
@@ -24,19 +24,24 @@ Les règles de base :
 - les jours feriés ne sont pas à prendre en compte (pour simplifier le modèle)
 - votre code doit afficher le résultat dans la console
 
-Le défi est trop facile pour vous ? Essayez ça :
-- de faire la version la plus courte possible (mon record : 63 caractères)
-- de créer une version avec un [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
-- utiliser les différents types de boucles :
-  - version "ForEach-Object"
-  - version "do{}until()" et/ou "do{}while()"
-  - version "for()"
+## Trop facile pour vous ?
+
+Pas de problème ! Pour corser un peu l'exercice, on peut ajouter quelques défis bonus 🌶️
+
+- Faire la version la plus courte possible, mon record personnel étant 63 caractères
+- Créer une version en utilisant un [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
+- Utiliser 3 différents types de boucles :
+  - version `Foreach-Object` ou `foreach`
+  - version `Do/Until` et/ou `Do/While`
+  - version `For`
 
 ## Ressources utiles
 
-- [Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date) sur Microsoft Docs
-- [Boucles "do{}until()" et "do{}while()"](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/) sur IT-Connect
-- [Opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) sur Microsoft Docs
+Voici quelques ressources qui pourraient vous être utiles :
+
+1. La documentation Microsoft sur la commande [Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
+2. Un article sympa et très complet de IT Connect sur [les boucles `Do/Until` et `Do/While`](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
+3. Un petit rappel sur les [opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) sur Microsoft Docs
 
 ## Résultats attendus pour l'année 2022
 
@@ -55,29 +60,4 @@ Octobre 2022 | mardi 25 octobre
 Novembre 2022 | vendredi 25 novembre
 Décembre 2022 | vendredi 23 décembre
 
-## Les solutions
-
-Pour avoir les résultats sur toute l'année 2022 :
-
-```powershell
-
-1..12 | ForEach-Object {
-  
-  $i = 25
-  do {
-      $d = Get-Date -Year 2022 -Month $_ -Day $i
-      $i--
-  } until ($d.DayOfWeek -notlike "S*")
-  
-  $d
-}
-
-```
-
-En version compressée (63 caractères de long) :
-
-```powershell
-
-$i=25;do{$d=date -Day $i;$i--}until($d.DayOfWeek-notlike"S*")$d
-
-```
+A vos claviers ! 🙂
