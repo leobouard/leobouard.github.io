@@ -2,7 +2,7 @@
 permalink: /cv.html
 ---
 
-<h1>{{ site.author }}</h1>
+# Léo Bouard
 
 <h2>Mes expériences</h2>
 
