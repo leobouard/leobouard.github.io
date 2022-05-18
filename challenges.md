@@ -12,7 +12,7 @@ Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs. �
 <div class="posts">
     {% for post in site.posts %}
         {% if post.tags contains "challenges" %}
-            <a href="{{ post.url }}">
+            <a href="{{ post.id }}">
                 <div class="card">
                     <div class="thumbnailLimits">
                         <div class="thumbnail" style="background-color: {{ post.thumbnailColor | default: "#9ea7eb" }}">{{ post.icon | default: "⚙️"}}</div>

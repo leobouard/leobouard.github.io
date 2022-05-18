@@ -9,7 +9,7 @@ Je n'ai pas la science infuse, mais j'essaye de partager au mieux mes petites tr
 <div class="posts">
     {% for post in site.posts %}
         {% if post.tags contains "howto" %}
-            <a href="{{ post.url }}">
+            <a href="{{ post.id }}">
                 <div class="card">
                     <div class="thumbnailLimits">
                         <div class="thumbnail" style="background-color: {{ post.thumbnailColor | default: "#9ea7eb" }}">{{ post.icon | default: "⚙️"}}</div>
