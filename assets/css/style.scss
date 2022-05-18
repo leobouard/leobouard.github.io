@@ -139,7 +139,6 @@ section {
     /* --- BUTTON LINK --- */
 
     .button {
-        margin-top: 1em;
         background-color: #43aa8b;
         color: #fff;
         font-weight: 600;
@@ -149,8 +148,8 @@ section {
         padding-right: 20px;
         margin-top: 30px;
         margin-bottom: 15px;
-        position: relative;
         right: 0;
+        bottom: 0;
         border: 0;
     }
 
