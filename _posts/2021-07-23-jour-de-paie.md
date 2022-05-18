@@ -13,7 +13,7 @@ Admettons la situation suivante : votre salaire vous est versé au plus tard le 
 
 ![le jour après la paye](https://media2.giphy.com/media/ZWiIwPxJ9JGW4/giphy.gif?cid=ecf05e47tztz1sa2magi8gsof2idlq05bmu1qvxiofkxia0q&rid=giphy.gif&ct=g)
 
-<span style="text-align: center;"><i>Environ 5 min après avoir reçu votre salaire</i></span>
+*Environ 5 min après avoir reçu votre salaire*
 
 Du coup la question est simple : c'est quand votre jour de paie ?
 
@@ -31,16 +31,16 @@ Pas de problème ! Pour corser un peu l'exercice, on peut ajouter quelques défi
 - Faire la version la plus courte possible, mon record personnel étant 63 caractères
 - Créer une version en utilisant un [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
 - Utiliser 3 différents types de boucles :
-  - version `Foreach-Object` ou `foreach`
-  - version `Do/Until` et/ou `Do/While`
-  - version `For`
+  - version Foreach-Object ou foreach
+  - version Do/Until et/ou Do/While
+  - version For
 
 ## Ressources utiles
 
 Voici quelques ressources qui pourraient vous être utiles :
 
 1. La documentation Microsoft sur la commande [Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
-2. Un article sympa et très complet de IT Connect sur [les boucles `Do/Until` et `Do/While`](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
+2. Un article sympa et complet de IT Connect sur [les boucles Do/Until et Do/While](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
 3. Un petit rappel sur les [opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) sur Microsoft Docs
 
 ## Résultats attendus pour l'année 2022
