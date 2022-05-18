@@ -13,7 +13,9 @@ Admettons la situation suivante : votre salaire vous est versé au plus tard le 
 
 ![le jour après la paye](https://media2.giphy.com/media/ZWiIwPxJ9JGW4/giphy.gif?cid=ecf05e47tztz1sa2magi8gsof2idlq05bmu1qvxiofkxia0q&rid=giphy.gif&ct=g)
 
-*Environ 5 min après avoir reçu votre salaire*
+<div style="text-align: center">
+  <i>Environ 5 min après avoir reçu votre salaire</i>
+</div>
 
 Du coup la question est simple : c'est quand votre jour de paie ?
 
