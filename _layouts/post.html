@@ -15,5 +15,7 @@ layout: default
 {{ content }}
 
 {% if page.tags contains "challenges" %}
-    <a class= "button" href="{{ page.id }}-soluce">Voir la solution 💡</a>
+    <div class="button">
+        <a href="{{ page.id }}-soluce">Voir la solution 💡</a>
+    </div>
 {% endif %}
