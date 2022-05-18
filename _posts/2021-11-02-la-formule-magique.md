@@ -7,8 +7,6 @@ thumbnailColor: "#7C238C"
 icon: 🎩
 ---
 
-# La formule magique !
-
 On part sur quelque-chose de plus simple pour cette fois-ci ! 😋
 
 Il faut simplement faire en sorte que :

@@ -6,5 +6,3 @@ tags: challenges
 thumbnailColor: "#DD2D4A"
 icon: 🎅
 ---
-
-# Père Noël secret

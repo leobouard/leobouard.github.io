@@ -7,8 +7,6 @@ thumbnailColor: "#519E8A"
 icon: 💸
 ---
 
-# Le jour de paie
-
 Admettons la situation suivante : votre salaire vous est versé au plus tard le 25 du mois en cours. Comme vous êtes très dépensier, vous voulez savoir précisement quand est-ce que vous allez pouvoir manger autre chose que des pâtes !
 
 Du coup la question est simple : c'est quand votre jour de paie ?
