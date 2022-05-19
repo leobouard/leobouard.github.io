@@ -1,15 +1,24 @@
 ---
 layout: post
-title: "JS0N vs. CSV"
+title: "CSV vs. JSON"
 description: "Les voyelles c'est pour les faibles"
 tags: howto
-thumbnailColor: "#519E8A"
+thumbnailColor: "#ef5b5b"
 icon: 🆚
 ---
 
-## C'est quoi le JSON
-
 ## C'est quoi le CSV
+
+```powershell
+
+$csv = @'
+Prénom;Nom;Age;Couleurs
+Jacques;Dupont;30;Kaki,Gris,Bleu marine
+'@ | ConvertFrom-Csv -Delimiter ";"
+
+```
+
+## C'est quoi le JSON
 
 ```powershell
 
@@ -30,23 +39,26 @@ $json = @'
 
 ```
 
-```powershell
+## Gestion des types de données
 
-$csv = @'
-Prénom;Nom;Age;Couleurs
-Jacques;Dupont;30;Kaki,Gris,Bleu marine
-'@ | ConvertFrom-Csv -Delimiter ";"
+### Entiers
 
 ```
 
 PS C:\> $csv.Age -gt 5
 False
 
+```
+
+```
+
 PS C:\> $json.Age -gt 5
 True
+
+```
 
 ![json c'est mieux](https://i.kym-cdn.com/entries/icons/original/000/023/194/cover1.jpg)
 
 <div style="text-align: center">
-  <i>JSON versus CSV</i>
+  <i>CSV vs. JSON</i>
 </div>
