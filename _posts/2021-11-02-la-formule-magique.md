@@ -20,6 +20,10 @@ Vous voyez, c'est L-I-M-P-I-D-E !
 
 ![Il faut un peu cogiter](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
 
+<div style="text-align: center">
+  <i>Simple comme bonjour</i>
+</div>
+
 ## Règles
 
 Rien de spécifique, mais si vous voulez faire le script le plus court possible :

@@ -41,7 +41,7 @@ Voici quelques ressources qui pourraient vous être utiles :
 
 1. La documentation Microsoft sur la commande [Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
 2. Un article sympa et complet de IT Connect sur [les boucles Do/Until et Do/While](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
-3. Un petit rappel sur les [opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) sur Microsoft Docs
+3. Un petit rappel sur [les opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) sur Microsoft Docs
 
 ## Résultats attendus pour l'année 2022
 

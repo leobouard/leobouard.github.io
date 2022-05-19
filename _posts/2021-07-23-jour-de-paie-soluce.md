@@ -5,7 +5,7 @@ title: "[SOLUTION] Le jour de paie"
 
 ## Version Do/Until
 
-Simple et efficace : on va directement au 25e jour du mois et on vérifie qu'il ne s'agit pas d'un samedi ou d'un dimanche. On determine ça via le membre "DayOfWeek" qui nous retourne le jour de la semaine en anglais (même si la culture de votre terminal de commande est dans une langue). 
+Simple et efficace : on va directement au 25e jour du mois et on vérifie qu'il ne s'agit pas d'un samedi ou d'un dimanche. On determine ça via la propriété "DayOfWeek" qui nous retourne le jour de la semaine en anglais (même si la culture de votre terminal de commande est en français). 
 
 Et ça tombe bien que la valeur de "DayOfWeek" soit en anglais, parce que du coup c'est très facile d'identifier le week-end : le jour commence par un S (saturday & sunday).
 
@@ -47,9 +47,9 @@ $d
 
 ## Version Foreach-Object
 
-`1..25` : on instancie un tableau de 1 à 25 puis on va effectuer un traitement pour chaque élement du tableau(récupérer la date associée 1er jour du mois, puis le 2eme, puis le 3e...) via le Foreach-Object
+`1..25` : on instancie un tableau de 1 à 25 puis on va effectuer un traitement pour chaque élement du tableau (récupérer la date associée 1er jour du mois, puis le 2eme, puis le 3e...) via le Foreach-Object
 
-`Where-Object {$_.DayOfWeek -notlike "S*"}` : on ne stocke la date associée que si le jour de la semaine ne commence pas par un "S" (Wednesday c'est OK, mais pas Sunday)
+`Where-Object {$_.DayOfWeek -notlike "S*"}` : on ne stocke la date associée que si le jour de la semaine ne commence pas par un "S" (par exemple : Wednesday c'est OK, mais pas Sunday)
 
 `$d` : la variable contient alors tous les jours ouvrés jusqu'au 25e du mois
 
@@ -82,7 +82,7 @@ $d
 
 Trouvé par [@Ludovic]()
 
-On se base sur la version avec la boucle Do/Until, mais on modifie la condition de sortie pour quelque chose de plus exotique !
+On se base sur la version avec la boucle Do/Until, mais on modifie la condition de sortie pour quelque chose de plus exotique
 
 ```powershell
 
