@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[SOLUTION] La formule magique"
+title: "✅ La formule magique"
 ---
 
 Vous l'avez probablement trouvé, il suffisait simplement d'additionner les chiffres qui composent le nombre entre eux. Pour reprendre le premier exemple : **2568 = 21** donc 2+5+6+8 devient 21. Une fois qu'on a compris le principe, il faut maintenant le convertir en PowerShell. 
@@ -13,14 +13,13 @@ Ma fonction :
 
 ```powershell
 
-# Version à compléter
 function LaFormuleMagique {
     param([Int64]$i)
 
     $expression = ([string]$i).ToCharArray() -join '+'
     $result = Invoke-Expression -Command $expression
 
-    return 
+    return $result
 }
 
 ```

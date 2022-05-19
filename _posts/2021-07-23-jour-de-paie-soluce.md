@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[SOLUTION] Le jour de paie"
+title: "✅ Le jour de paie"
 ---
 
 ## Version Do/Until
