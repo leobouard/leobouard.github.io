@@ -8,6 +8,12 @@ layout: default
     </div>
 {% endif %}
 
+{% if page.id contains "-soluce" %}
+    <div class="button" style="background-color: #ea3546;">
+        <a href="{{ page.id | replace: "-soluce","" }}">Retour au défi 💪</a>
+    </div>
+{% endif %}
+
 <small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 
 <h1>{{ page.title }}</h1>
