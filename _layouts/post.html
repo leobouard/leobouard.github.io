@@ -8,20 +8,20 @@ layout: default
     </div>
 {% endif %}
 
-{% if page.id contains "-soluce" %}
-    <div class="button" style="text-align: left;">
-        <a href="{{ page.id | replace: "-soluce","" }}" style="background-color: #ea3546;">Retour au défi 💪</a>
-    </div>
-{% endif %}
-
 <small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 
 <h1>{{ page.title }}</h1>
+
+{% if page.id contains "-soluce" %}
+    <div class="button" style="text-align: left;">
+        <a href="{{ page.id | replace: "-soluce","" }}">Retour au défi 💪</a>
+    </div>
+{% endif %}
 
 {{ content }}
 
 {% if page.tags contains "challenges" %}
     <div class="button">
-        <a href="{{ page.id }}-soluce">Voir la solution 💡</a>
+        <a href="{{ page.id }}-soluce" style="background-color: #43aa8b;">Voir la solution 💡</a>
     </div>
 {% endif %}
