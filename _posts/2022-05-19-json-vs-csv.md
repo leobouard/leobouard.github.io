@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CSV vs. JSON"
-description: "Les voyelles c'est pour les nuls"
+description: "Les voyelles c'est pour les faibles"
 tags: howto
 thumbnailColor: "#ef5b5b"
 icon: 🆚
