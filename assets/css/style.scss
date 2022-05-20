@@ -142,6 +142,7 @@ section {
         text-align: right;
         margin-top: 30px;
         margin-bottom: 15px;
+        display: inline;
         
         a {
             background-color: #336699;
@@ -304,6 +305,10 @@ footer li:first-child {
 @media print, screen and (max-width: 800px) {
     body {
         word-wrap: break-word;
+    }
+
+    .button {
+        display: block;
     }
 
     section {
