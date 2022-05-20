@@ -30,7 +30,7 @@ body {
 header {
     margin: 0;
     margin-bottom: 15px;
-    position: sticky;
+    top: 0;
 }
 
 .banner {
@@ -330,5 +330,9 @@ footer li:first-child {
 
     .verticalNav {
         visibility: visible;
+    }
+
+    header {
+        position: sticky;
     }
 }
