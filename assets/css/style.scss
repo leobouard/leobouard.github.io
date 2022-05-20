@@ -334,6 +334,7 @@ footer li:first-child {
 
     header {
         position: sticky;
-        z-index: 10;
+        position: -webkit-sticky;
+        z-index: 1000;
     }
 }
