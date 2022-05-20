@@ -51,6 +51,7 @@ header {
         margin-top: 15px;
         margin-left: 15px;
         fill: #000;
+        display: none;
     }
 }
 
@@ -319,5 +320,9 @@ footer li:first-child {
 
     .hero {
         position: inherit;
+    }
+
+    .verticalNav {
+        display: inline;
     }
 }
