@@ -18,11 +18,11 @@
     width: 350px;
     height: 250px;
     box-shadow: 0 5px 5px 0px #8c8c8c65;
-    transition: transform 0.2s;
+    transition: all 200ms ease-in-out;
 }
 
 .card:hover {
-    box-shadow: 0 10px 10px 0px #38383834;
+    box-shadow: 0 7px 7px 0px #38383834;
 }
 
 .thumbnailLimits {
