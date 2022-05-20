@@ -2,11 +2,19 @@
 layout: default
 ---
 
-{% if page.icon %}
-    <div class="postBanner" style="background-color: {{ page.thumbnailColor }};">
-        {{ page.icon }}
-    </div>
+{% if page.tags contains "challenges" %}
+<div class="button" style="text-align: left; position: absolute; display: inline; z-index: 3; margin-top: 15px;">
+    <a href="/challenges">Tous mes défis</a>
+</div>
 {% endif %}
+
+{% if page.icon %}
+<div class="postBanner" style="background-color: {{ page.thumbnailColor }};">
+    {{ page.icon }}
+</div>
+{% endif %}
+
+
 
 <small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 
@@ -15,13 +23,13 @@ layout: default
 {{ content }}
 
 {% if page.tags contains "challenges" %}
-    <div class="button">
-        <a href="{{ page.id }}-soluce" style="background-color: #43aa8b;">Voir la solution 💡</a>
-    </div>
+<div class="button">
+    <a href="{{ page.id }}-soluce" style="background-color: #43aa8b;">Voir la solution 💡</a>
+</div>
 {% endif %}
 
 {% if page.id contains "-soluce" %}
-    <div class="button" style="text-align: left;">
-        <a href="{{ page.id | replace: "-soluce","" }}">Retour au défi 💪</a>
-    </div>
+<div class="button" style="text-align: left;">
+    <a href="{{ page.id | replace: "-soluce","" }}">Retour au défi 💪</a>
+</div>
 {% endif %}
