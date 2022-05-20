@@ -3,8 +3,8 @@ layout: default
 ---
 
 {% if page.tags contains "challenges" %}
-<div class="button" style="text-align: left; position: absolute; z-index: 3; margin-top: 15px;">
-    <a href="/challenges">Tous mes défis</a>
+<div style="text-align: left; position: absolute; z-index: 3; margin-top: 15px;">
+    <a href="/challenges" style="color: #fff;">← Tous les défis</a>
 </div>
 {% endif %}
 
@@ -13,8 +13,6 @@ layout: default
     {{ page.icon }}
 </div>
 {% endif %}
-
-
 
 <small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 
