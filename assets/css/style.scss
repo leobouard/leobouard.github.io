@@ -67,7 +67,7 @@ nav {
     background-color: #fff;
     margin: 0;
     box-shadow: 0 5px 5px -5px #b2b3b8;
-    visibility: visible;
+    display: block;
 }
 
 nav a {
@@ -324,7 +324,7 @@ footer li:first-child {
     }
 
     nav {
-        visibility: hidden;
+        display: none;
     }
 
     .verticalNav {
