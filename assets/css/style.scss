@@ -52,6 +52,7 @@ header {
     margin-top: 15px;
     margin-left: 15px;
     fill: #000;
+    visibility: hidden;
 }
 
 /* --- NAVIGATION BAR --- */
@@ -322,6 +323,6 @@ footer li:first-child {
     }
 
     .verticalNav {
-        display: inline;
+        visibility: visible;
     }
 }
