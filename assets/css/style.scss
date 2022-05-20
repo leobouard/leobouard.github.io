@@ -340,5 +340,11 @@ footer li:first-child {
         position: sticky;
         position: -webkit-sticky;
         z-index: 1000;
+        box-shadow: 0 3px 3px -3px #8c8c8c65;
+        transition: all 200ms ease-in-out;
+    }
+
+    header:hover {
+        box-shadow: 0 6px 6px -6px #38383834;
     }
 }
