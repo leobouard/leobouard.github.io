@@ -32,9 +32,9 @@ OneDrive | [Le partage pour les photos compromettantes](https://1drv.ms/u/s!Amiq
 
 - Réservation de l'hotel : OK
 - Réservation de la voiture : OK
-- Réservation de l'airsoft : @Valentin en cours
+- Réservation de l'airsoft : OK
 - Réservation du flyboard / bouée : @Léo en cours
-- Réservation du restaurant du samedi soir : @Valentin en cours
+- Réservation du restaurant du samedi soir : OK
 - Réservation du brunch du dimanche midi : @Léo en cours
 - Achat des sauces piquantes pour le Hot Ones du dimanche soir : pas commencé
 
