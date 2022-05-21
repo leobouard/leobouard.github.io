@@ -30,14 +30,13 @@ OneDrive | [Le partage pour les photos compromettantes](https://1drv.ms/u/s!Amiq
 
 ## Avancement du projet
 
-Statut | Action
------- | ------
-✔️ OK  | Définition du budget et des dispos
-✔️ OK  | Définition de la trame de l'EVG
-⏳ EN COURS | Récupération des fonds (90%)
-⏳ EN COURS | Réservation de l'hôtel, de la voiture, du restaurant...
-❌ A FAIRE | Sondages hebdomadaires sur chaque thématique
-❌ A FAIRE | Kiffer !
+- Réservation de l'hotel : OK
+- Réservation de la voiture : OK
+- Réservation de l'airsoft : @Valentin en cours
+- Réservation du flyboard / bouée : @Léo en cours
+- Réservation du restaurant du samedi soir : @Valentin en cours
+- Réservation du brunch du dimanche midi : @Léo en cours
+- Achat des sauces piquantes pour le Hot Ones du dimanche soir : pas commencé
 
 ## Contacts
 
