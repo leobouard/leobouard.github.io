@@ -26,11 +26,11 @@ Heure | Détail
 ----- | ------
 9h | Récupération du marié à Beaulieu pour petit déjeuner
 10h | Départ pour La Rochelle (1h30 de route)
-12h | R Soft
-13h30 | Mc Donald's sur la route
+12h à 13h30 | R Soft
+14h | Mc Donald's sur la route
 15h | Flyboard & bouée tractée
 Après-midi | Balade à La Rochelle, douche et prépa pour la soirée
-21h | Restaurant
+21h45 | Restaurant La Boussole
 23h | Bar et souillure
 
 ### Chronologie du dimanche
