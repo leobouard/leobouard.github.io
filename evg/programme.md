@@ -5,42 +5,26 @@ layout: evg
 
 # Programme de l'EVG
 
-## Liste des participants (hors marié)
-
-1. Valentin
-2. Léo
-3. Romain
-4. Alex
-5. Baptiste
-6. Pierre
-7. Charles
-8. ~~Guillaume~~
-
-\+ Clément en tant que marié
-
-## Activités
-
-Activité | Type | Budget total | Budget par personne
--------- | ---- | ------------ | -------------------
-[Saut à l'élastique](https://elasticrocodilbungee.com/reserver/saut-elastique-vendee-viaduc-coquilleau/) | Marié | 0€ | 0€
-[Initiation Flyboard - 20 min](http://jet-sensation.fr/flyboard/) | Marié | 70€ | 10€
-[Airsoft EVG - 2 parties](https://rsoftgame.com/tarifs/#la-sulfateuse) | Groupe | 150€ | 21€
-
-## Format
-
-### Chronologie du samedi
+### Chronologie du vendredi 17/06/2022
 
 Heure | Détail
 ----- | ------
-8h | Récupération du marié à Beaulieu pour petit déjeuner
-9h | Départ pour La Châtaigneraie (1h15 de route)
-10h15/10h30 | Saut à l'élastique
-11h30 | Départ pour La Rochelle (1h20)
-13h | Arrivée à La Rochelle pour manger
-14h30 | Initiation flyboard
-Après-midi | Activité de groupe (airsoft)
-Fin d'après-midi | Passage à l'hotel pour douche et préparation à la soirée
-Soirée | Restaurant, bar et bien plus encore
+18h30 | Récupération du camion au SUPER U LES ACHARDS
+
+### Chronologie du samedi
+
+**Le saut à l'elastique a été annulé malheureusement ! Pas de session dispo sur le week-end**
+
+Heure | Détail
+----- | ------
+9h | Récupération du marié à Beaulieu pour petit déjeuner
+10h | Départ pour La Rochelle (1h30 de route)
+12h à 13h30 | R Soft
+14h | Mc Donald's sur la route
+15h | Flyboard & bouée tractée
+Après-midi | Balade à La Rochelle, douche et prépa pour la soirée
+21h45 | Restaurant La Boussole
+23h | Bar et souillure
 
 ### Chronologie du dimanche
 
@@ -51,8 +35,12 @@ Heure | Détail
 13h | On chill un peu à La Rochelle et on rentre quand on veut (1h30 de route)
 20h | Pizza à Beaulieu pour ceux qui peuvent
 
-### Synthèse des trajets
+### Chronologie du lundi
 
-![synthèse des trajets](/evg/map.png)
+Heure | Détail
+----- | ------
+9h00 | Dépôt de la voiture au SUPER U LES ACHARDS
 
-[Voir dans Google Maps](https://www.google.fr/maps/dir/Aizenay/Beaulieu-sous-la-Roche/Elastic+Crocodil+Bungee+Vend%C3%A9e,+La+Golli%C3%A8re,+Breuil-Barret/La+Rochelle/R'soft+Game+-+Terrain+d'Airsoft+indoor+%2F+Paintball+%2FL'activit%C3%A9+de+loisir+%C3%A0+La+Rochelle+-+Aigrefeuille+d'Aunis,+zi+des+grands+champs,+Aigrefeuille-d'Aunis/La+Rochelle/Beaulieu-sous-la-Roche/Aizenay/@46.249158,-0.6959682,10z/data=!4m50!4m49!1m5!1m1!1s0x480435e28ad9a355:0x6b6eec16d6b33119!2m2!1d-1.608569!2d46.739235!1m5!1m1!1s0x480437e038af086f:0x26bd1fbd5ed85c99!2m2!1d-1.610318!2d46.677521!1m5!1m1!1s0x4806e37120b22e2d:0x70753b77d7ca10ff!2m2!1d-0.7045928!2d46.6354227!1m5!1m1!1s0x48015383c9253d75:0x405d39260ee9640!2m2!1d-1.151139!2d46.160329!1m5!1m1!1s0x4801499996680af7:0x3f5ebfca716a2147!2m2!1d-0.9733045!2d46.1133928!1m5!1m1!1s0x48015383c9253d75:0x405d39260ee9640!2m2!1d-1.151139!2d46.160329!1m5!1m1!1s0x480437e038af086f:0x26bd1fbd5ed85c99!2m2!1d-1.610318!2d46.677521!1m5!1m1!1s0x480435e28ad9a355:0x6b6eec16d6b33119!2m2!1d-1.608569!2d46.739235!3e0)
+## Synthèse des trajets  en voiture
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d352217.8607269634!2d-1.5693426537452777!3d46.39513450925847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x480437e038af086f%3A0x26bd1fbd5ed85c99!2sBeaulieu-sous-la-Roche!3m2!1d46.677521!2d-1.610318!4m5!1s0x4801499996680af7%3A0x3f5ebfca716a2147!2sR&#39;soft%20Game%20-%20Terrain%20d&#39;Airsoft%20indoor%20%2F%20Paintball%20%2FL&#39;activit%C3%A9%20de%20loisir%20%C3%A0%20La%20Rochelle%20-%20Aigrefeuille%20d&#39;Aunis%2C%20zi%20des%20grands%20champs%2C%20Aigrefeuille-d&#39;Aunis!3m2!1d46.1134322!2d-0.9735727999999999!4m5!1s0x48015383c9253d75%3A0x405d39260ee9640!2sLa%20Rochelle!3m2!1d46.160329!2d-1.151139!5e0!3m2!1sen!2sfr!4v1653127901443!5m2!1sen!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
