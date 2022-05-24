@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "✅ La formule magique"
+title: "Solution - La formule magique"
 ---
 
 Vous l'avez probablement trouvé, il suffisait simplement d'additionner les chiffres qui composent le nombre entre eux. Pour reprendre le premier exemple : **2568 = 21** donc 2+5+6+8 devient 21. Une fois qu'on a compris le principe, il faut maintenant le convertir en PowerShell. 
@@ -66,6 +66,7 @@ Une fois notre chaine de caractère prête, il ne reste plus qu'à l'interprête
 ```powershell
 
 PS C:\> Invoke-Expression $i
+
 21
 
 ```

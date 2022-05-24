@@ -9,6 +9,10 @@ icon: 🆚
 
 ## C'est quoi le CSV
 
+Prénom | Nom | Age | Couleurs
+------ | --- | --- | --------
+Jacques | Dupont | 30 | Kaki,Gris,Bleu marine
+
 ```powershell
 
 $csv = @'
@@ -46,6 +50,7 @@ $json = @'
 ```
 
 PS C:\> $csv.Age -gt 5
+
 False
 
 ```
@@ -53,6 +58,7 @@ False
 ```
 
 PS C:\> $json.Age -gt 5
+
 True
 
 ```

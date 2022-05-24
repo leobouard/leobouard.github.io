@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "✅ Le nom le plus long"
+title: "Solution - Le nom le plus long"
 ---
 
 ```powershell
