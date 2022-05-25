@@ -9,18 +9,30 @@ icon: 🆚
 
 ## C'est quoi le CSV
 
-Prénom | Nom | Age | Couleurs
------- | --- | --- | --------
-Jacques | Dupont | 30 | Kaki,Gris,Bleu marine
+Quoi de mieux qu'une bonne définition Wikipédia pour commencer ?
 
-```powershell
+> Comma-separated values, connu sous le sigle CSV, est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées par des virgules.
 
-$csv = @'
-Prénom;Nom;Age;Couleurs
-Jacques;Dupont;30;Kaki,Gris,Bleu marine
-'@ | ConvertFrom-Csv -Delimiter ";"
+Sur [Wikipédia](https://fr.wikipedia.org/wiki/Comma-separated_values)
+
+### A quoi ça ressemble ?
+
+givenName | surname | userPrincipalName | id
+--------- | ------- | ----------------- | --
+John | Doe | john.doe@labouabouate.fr | 51
+Jack | Smith | jack.smith@labouabouate.fr | 85
+Jane | Black | jane.black@labouabouate.fr | 22
+
+
 
 ```
+givenName,surname,userPrincipalName,id
+
+```
+
+### Intégration avec PowerShell
+
+
 
 ## C'est quoi le JSON
 
