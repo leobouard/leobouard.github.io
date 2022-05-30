@@ -23,8 +23,6 @@ John | Doe | john.doe@labouabouate.fr | 51
 Jack | Smith | jack.smith@labouabouate.fr | 85
 Jane | Black | jane.black@labouabouate.fr | 22
 
-
-
 ```
 givenName,surname,userPrincipalName,id
 
