@@ -87,14 +87,7 @@ nav a:hover, a:active {
     text-underline-position: below;
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
-}
-
-nav a:hover {
     text-decoration-color: #f9c80e;
-}
-
-nav a:active {
-    text-decoration-color: #336699;
 }
 
 nav a:last-child {
@@ -324,6 +317,7 @@ footer li:first-child {
         font-size: 15px;
         padding-left: 15px;
         padding-right: 15px;
+        min-height: 87%;
     }
 
     header, section, footer { 
