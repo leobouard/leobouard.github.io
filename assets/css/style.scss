@@ -82,12 +82,19 @@ nav a {
     transition: all 400ms ease-in-out;
 }
 
-nav a:hover {
+nav a:hover, a:active {
     text-decoration: underline;
-    text-decoration-color: #f9c80e;
     text-underline-position: below;
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
+}
+
+nav a:hover {
+    text-decoration-color: #f9c80e;
+}
+
+nav a:active {
+    text-decoration-color: #336699;
 }
 
 nav a:last-child {
