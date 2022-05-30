@@ -34,10 +34,16 @@
         <a href="/about">A propos</a>
       </nav>
     </header>
-    
-    <section>
-      {{ content }}
-    </section>
+
+    {% if page.layout == homepage %}
+      <div class="homepageContent">
+        {{ content }}
+      </div>
+    {% else %}
+      <section>
+        {{ content }}
+      </section>
+    {% endif %}
 
     <footer>
       <ul>
