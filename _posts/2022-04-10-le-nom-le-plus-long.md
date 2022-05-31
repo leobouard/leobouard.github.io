@@ -9,13 +9,34 @@ icon: 🆔
 
 Bon bah là pas besoin de broder... Tout est dans le titre ! 😄
 
-Vous avez une liste d'utilisateurs (type annuaire Active Directory) et vous voulez savoir qui a le nom le plus long ? Est-ce que c'est le comptable d'origine indienne ? Ou votre collègue sud-américaine avec plus de prénoms que vous n'avez de lettres dans votre nom de famille ? Ou alors simplement un présentateur TV bien connu avec un nom à particule ?
+Vous avez une liste d'utilisateurs (type annuaire Active Directory) et vous voulez savoir qui a le nom le plus long ?
+
+Est-ce que c'est le comptable d'origine indienne ? 
+
+Ou votre collègue sud-américaine avec plus de prénoms que vous n'avez de lettres dans votre nom de famille ? 
+
+Ou alors simplement un présentateur TV bien connu avec un nom à particule ?
 
 ![eminem-my-name-is](https://media2.giphy.com/media/xUOxf9Gau3L2B0kMPC/giphy.gif?cid=ecf05e4752pf5db8at27ms7voi8coytccw6il1v27e8o3mke&rid=giphy.gif&ct=g)
 
 <div style="text-align: center">
   <i>🎶 My name is, chka-chka, "Bernard de La Villardière" 🎵</i>
 </div>
+
+## Un peu plus de défi
+
+Vous trouvez ça trop facile ? Je comprends, du coup je vous propose d'essayer une version sans utiliser de boucles. Donc pas le droit d'utiliser :
+
+- foreach
+- ForEach-Object 
+- for
+- while
+- do-while ou do-until
+
+Et oui c'est quand même faisable ! 😁 Pour ne pas vous laisser sans rien, voici deux indices :
+
+1. [La commande qui peut-être utiliser pour faire ça](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object)
+2. [Comment l'utiliser dans ce contexte](https://docs.microsoft.com/fr-fr/powershell/scripting/samples/selecting-parts-of-objects--select-object-)
 
 ## Liste d'utilisateurs
 
