@@ -45,7 +45,7 @@ $d
 
 ---
 
-## Version Foreach-Object
+## Version ForEach-Object
 
 `1..25` : on instancie un tableau de 1 à 25 puis on va effectuer un traitement pour chaque élement du tableau (récupérer la date associée 1er jour du mois, puis le 2eme, puis le 3e...) via le Foreach-Object
 
