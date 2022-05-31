@@ -34,7 +34,7 @@ $users | Foreach-Object {
 
 C'est bien sympa mais dans ce modèle, il ne peut y avoir qu'un seul "record" (même si dans la réalité la première place est peut-être partagée entre plusieurs noms).
 
-On pourrait modifier le comportement du script en lui demandant d'afficher le texte *"Pierre Dupont est le nom le plus long avec 13 caractères* à chaque fois que le record est battu ou égalé :
+On pourrait modifier le comportement du script en lui demandant d'afficher le texte *"Pierre Dupont est le nom le plus long avec 13 caractères"* à chaque fois que le record est battu ou égalé :
 
 ```powershell
 
