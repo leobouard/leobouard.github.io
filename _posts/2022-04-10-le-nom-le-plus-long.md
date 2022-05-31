@@ -29,11 +29,11 @@ Vous trouvez ça trop facile ? Je comprends, du coup je vous propose d'essayer u
 - while
 - do-while ou do-until
 
-Et oui c'est quand même faisable ! 😁 
+(Et oui c'est quand même faisable ! 😁)
 
 Pour ne pas vous laisser sans rien, voici deux indices :
 
-1. [La commande qui peut-être utiliser pour faire ça](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object)
+1. [La commande qui peut-être utilisée pour faire ça](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object)
 2. [Comment l'utiliser dans ce contexte](https://docs.microsoft.com/fr-fr/powershell/scripting/samples/selecting-parts-of-objects--select-object-)
 
 ## Liste d'utilisateurs
