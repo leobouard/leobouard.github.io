@@ -17,16 +17,26 @@ Sur [Wikipédia](https://fr.wikipedia.org/wiki/Comma-separated_values)
 
 ### A quoi ça ressemble ?
 
+La version mise en page :
+
 givenName | surname | userPrincipalName | id
 --------- | ------- | ----------------- | --
 John | Doe | john.doe@labouabouate.fr | 51
 Jack | Smith | jack.smith@labouabouate.fr | 85
 Jane | Black | jane.black@labouabouate.fr | 22
 
-```
-givenName,surname,userPrincipalName,id
+La version brute :
 
 ```
+
+givenName,surname,userPrincipalName,id
+John,Doe,john.doe@labouabouate.fr,51
+Jack,Smith,jack.smith@labouabouate.fr,85
+Jane,Black,jane.black@labouabouate.fr,22
+
+```
+
+Bon du coup c'est simple à comprendre : les colonnes sont indiquées par des virgules !
 
 ### Intégration avec PowerShell
 
