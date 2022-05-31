@@ -3,6 +3,15 @@ layout: post
 title: "Solution - Le nom le plus long"
 ---
 
+Dans les solutions ennoncées, je me base sur mon fichier CSV qui est récupérable avec ce bout de code :
+
+```powershell
+
+$uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/assets/files/users.csv"
+$users = (Invoke-WebRequest -Uri $uri).Content | ConvertFrom-Csv -Delimiter ';'
+
+```
+
 ## La solution classique
 
 Droit au but et de manière scolaire, on va calculer la longueur du nom de chaque utilisateur. Si le nom est plus long que le précédent "record", on garde le nom & la longueur de celui-ci en mémoire.
