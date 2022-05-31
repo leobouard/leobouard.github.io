@@ -23,9 +23,9 @@ $users | Foreach-Object {
 
 ```
 
-C'est bien sympa mais dans ce modèle, il ne peut y avoir qu'un seul "record" (même si dans la réalité la première place est peut-être partagée entre plusieurs noms)
+C'est bien sympa mais dans ce modèle, il ne peut y avoir qu'un seul "record" (même si dans la réalité la première place est peut-être partagée entre plusieurs noms).
 
-On pourrait modifier le comportement du script en lui demandant d'afficher le texte *"..." est le nom le plus long avec X caractères* à chaque fois que le record est battu ou égalé :
+On pourrait modifier le comportement du script en lui demandant d'afficher le texte *"Pierre Dupont est le nom le plus long avec 13 caractères* à chaque fois que le record est battu ou égalé :
 
 ```powershell
 
@@ -43,7 +43,7 @@ $users | Foreach-Object {
 
 ```
 
-Ça reste deux solutions valables puisqu'elles répondent bien à la question de départ : **Qui a le nom le plus long ?**.
+Ça reste deux solutions valables puisqu'elles répondent bien à la question de départ : **Qui a le nom le plus long ?**
 
 ## Ma solution préférée
 
@@ -60,7 +60,21 @@ $users | Sort-Object -Property nameLength -Descending | Select-Object -First 10 
 
 Pour ça, on ajoute une nouvelle propriété "nameLength" à notre objet de base. Une fois que tous les utilisateurs ont reçu cette nouvelle propriété, il suffit simplement de trier les objets du nom le plus long au nom le plus court... et c'est bon !
 
-Simple et efficace.
+Simple et efficace :
+
+```
+
+displayName             country city                nameLength
+-----------             ------- ----                ----------
+Alexandrin Courtemanche FR      BELFORT                     23
+Alphonsine De La Vergne FR      AUXERRE                     23
+Christophe Deslauriers  CH      STECKBORN                   22
+
+```
+
+<div style="text-align: center">
+  <i>Ne vous attachez pas trop au résultat affiché, il est probable que le fichier CSV utilisé ai été modifié entre temps 😉</i>
+</div>
 
 On pourrait même faire une version dérivée qui se passerait de la boucle `ForEach-Object`. Pour ça, on utilise la commande `Select-Object` pour calculer la propriété "nameLength" à la volée :
 
