@@ -13,7 +13,7 @@ icon: 🆚
 
 Sur [Wikipédia](https://fr.wikipedia.org/wiki/Comma-separated_values)
 
-Si vous faites un peu de PowerShell, vous avez probablement déjà travaillé avec le format de fichier CSV qui permet d'importer/exporter facilement et rapidement des données avec PowerShell via le duo de commandes `Import-Csv` et `Export-Csv`.
+Si vous faites un peu de PowerShell, vous avez probablement déjà travaillé avec le format de fichier CSV qui permet d'importer/exporter facilement et rapidement des données avec PowerShell via le duo de commandes [Import-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv) et [Export-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv).
 
 C'est un format de fichier très populaire et qui est assez simple à prendre en main : le fichier est facilement modifiable par des personnes non-techniques directement dans Excel.
 
@@ -62,6 +62,8 @@ Jane,Black,jane.black@labouabouate.fr,22
 '@ | ConvertFrom-Csv -Delimiter ','
 
 ```
+
+...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂
 
 ---
 
