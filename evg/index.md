@@ -25,7 +25,7 @@ Heure | Détail | Lieu
 ### Samedi 18 juin
 
 <div style="background-color: #FFCCB2; display: flex;">
-  <div><p style="font-size: 40px;">⚠️</p></div>
+  <div><p style="font-size: 40px;">  ⚠️  </p></div>
   <div>
     <p>Le saut à l'elastique a été annulé (pas de sessions disponible pour ce week-end)<br><br>La session flyboard a été convertie en 2 sessions bouée tractée (les sessions flyboard prennent place le matin uniquement)</p>
   </div>
