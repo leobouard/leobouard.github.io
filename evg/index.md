@@ -55,14 +55,14 @@ Heure | Détail | Lieu
 
 Petite liste des sauces piquantes choisies :
 
-- CHOLULA CHIPOTLE (3 000)
-- TAPATIO (10 000)
-- BARON WEST INDIAN (20 000)
-- NOLA CAJOHN'S (30 000)
-- HABANERO MARIE SHARP'S (45 000)
-- MARIE SHARP'S BEWARE (100 000)
-- EL YUCATECO XXXTRA HOT (150 000)
-- AKA MISO GHOST (+1 000 000)
+- Cholula chipotle (3 000 scoville)
+- Tapatio (10 000 scoville)
+- Baron West Indian (20 000 scoville)
+- Nola Cajohn's (30 000 scoville)
+- Habanero Marie Sharp's (45 000 scoville)
+- Marie Sharp's Beware (100 000 scoville)
+- El Yucateco XXXtra Hot (150 000 scoville)
+- Aka Miso Ghostx (+1 000 000 scoville)
 
 ### Lundi 20 juin
 
