@@ -44,10 +44,6 @@ Les dépenses suivantes seront inclues dans le budget prévu pour l'EVG :
 
 ## Détails des dépenses
 
-![ma gestion du budget commun](https://media3.giphy.com/media/1N7wpCVjQJatq/giphy.gif?cid=ecf05e47n4i22ylm7aylhg2w33rpkzhukrhgz1fky0wmgs4g&rid=giphy.gif&ct=g)
-
- > _Ma gestion du budget commun_
-
 ### Tronc commun
 
 Il s'agit des dépenses financées par vos impôts !
