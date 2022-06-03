@@ -15,7 +15,7 @@ permalink: /cv
         </td>
         <td>
             <strong>Administrateur système</strong><br>
-            <small>janvier 2019 à aujourd’hui</small>
+            <small>janvier 2019 à aujourd’hui • 3 ans et 6 mois</small>
             <p>Assistance technique en tant que prestataire (METSYS)</p>
             <ul>
                 <li>Automatisation en PowerShell</li>
@@ -33,8 +33,13 @@ permalink: /cv
         </td>
         <td>
             <strong>Lead consultant</strong><br>
-            <small>septembre 2021 à aujourd'hui</small>
+            <small>septembre 2021 à aujourd'hui • 9 mois</small>
             <p>Gestion d'une équipe de 8 personnes</p>
+            <ul>
+                <li>Accompagnement technique sur la montée en compétence</li>
+                <li>Qualification technique</li>
+                <li>Suivi des collaborateurs en mission</li>
+            </ul>
             <hr>
             <strong>Associate consultant</strong><br>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
