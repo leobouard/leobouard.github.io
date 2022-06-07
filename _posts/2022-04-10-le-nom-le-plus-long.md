@@ -16,7 +16,7 @@ Est-ce que c'est le comptable d'origine indienne ? Ou votre collègue sud-améri
 ![eminem-my-name-is](https://media2.giphy.com/media/xUOxf9Gau3L2B0kMPC/giphy.gif?cid=ecf05e4752pf5db8at27ms7voi8coytccw6il1v27e8o3mke&rid=giphy.gif&ct=g)
 
 <div style="text-align: center">
-  <i>🎶 My name is, chka-chka, "Bernard de La Villardière" 🎵</i>
+  <i>🎶 Hi, my name is, what? My name is, who?<br>My name is, chka-chka, "Bernard de la Villardière" 🎵</i>
 </div>
 
 ## Un peu plus de défi
