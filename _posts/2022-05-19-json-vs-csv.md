@@ -81,7 +81,7 @@ Et bien oui, le CSV n'est pas parfait pour tous les besoins. Il possède notamme
 
 #### CSV ne sait pas compter
 
-Malgré toutes ses qualités, les mathématiques sont le point faible du CSV.
+Malgré toutes ses qualités, les mathématiques ne sont pas le point fort du CSV.
 
 Pour les exemples suivants, on va se baser sur la variable $CSV suivante :
 
@@ -96,7 +96,7 @@ Jane,Black,jane.black@labouabouate.fr,22
 
 ```
 
-##### Exemple 1 - Les comparaisons
+#### Exemple 1 - Les comparaisons
 
 Ici on demande simplement de vérifier que chaque identifiant (colonne ID) est supérieur à 9. Le résultat attendu est donc 'True' à chaque fois, et pourtant...
 
@@ -110,7 +110,7 @@ False
 
 ```
 
-##### Exemple 2 - Les additions
+#### Exemple 2 - Les additions
 
 Encore plus simple, on demande d'ajouter 1 à chacun des identifiants. On devrait donc retrouver les valeurs 52, 86 et 23, et pourtant...
 
@@ -124,7 +124,7 @@ PS C:\> $csv | % {$_.id + 1}
 
 ```
 
-##### Exemple 3 - Les multiplications
+#### Exemple 3 - Les multiplications
 
 On fait la même chose que d'habitude : on multiplie la valeur de chaque identifiant par deux :
 
@@ -142,7 +142,7 @@ PS C:\> $csv | % {$_.id * 2}
   <i>A ce niveau, c'est un 0 pointé en maths</i>
 </div>
 
-##### Explication
+#### Explication
 
 Vous l'avez probablement déjà deviné avec les trois exemples précédents, mais PowerShell considère que toutes les données contenues dans le fichier CSV sont des valeurs de type "texte" (même quand la valeur n'est composée que de chiffres).
 
