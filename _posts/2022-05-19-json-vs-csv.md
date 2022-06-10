@@ -7,15 +7,13 @@ thumbnailColor: "#ef5b5b"
 icon: 🆚
 ---
 
-Si vous avez déjà utiliser PowerShell, vous êtes probablement déjà tombé sur
-
 ## Informations en bref
 
 Dans cet article j'aborde le thème des "fichiers de données structurées". Souvent externe aux scripts PowerShell, ils permettent d'importer, exporter, stocker ou requêter des données via PowerShell. Dans les types de fichiers récurents, on retrouve :
 
 - **CSV** : le meilleur ami de PowerShell, très souvent utilisé pour peupler ou extraire des données sur Active Directory
-- **XAML** : utilisé pour les interfaces graphique en WPF ou la sauvegarde d'identifiants de connexion par exemple ([Import-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml) et [Export-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-clixml))
 - **JSON** : le meilleur ami de JavaScript, mais qui est de plus en plus utilisé pour les configurations Azure et en PowerShell
+- - **XAML** : utilisé pour les interfaces graphique en WPF ou la sauvegarde d'identifiants de connexion par exemple ([Import-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml))
 - **TXT** : souvent utilisé les journalisations d'un script ou les bannières d'affichage
 - **YAML** : plus simple et plus complet que JSON, il n'est malheureusement pas supporté nativement par PowerShell
 
