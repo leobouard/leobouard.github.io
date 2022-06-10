@@ -154,53 +154,6 @@ $csv | % {$_.id = [int]($_.id)}
 
 ---
 
-## C'est quoi le JSON
-
-> JavaScript Object Notation (JSON) est un format de données textuelles dérivé de la notation des objets du langage JavaScript. Il permet de représenter de l’information structurée comme le permet XML par exemple.
-
-Sur [Wikipédia](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation)
-
-### A quoi ça ressemble ?
-
-### Intégration avec PowerShell
-
-```powershell
-
-$json = @'
-[
-    {
-        "Prénom": "Jacques",
-        "Nom": "Dupont",
-        "Age": 30,
-        "Couleurs": [
-            "Kaki",
-            "Gris",
-            "Bleu marine"
-        ]
-    }
-]
-'@ | ConvertFrom-Json
-
-```
-
----
-
-## Comparaison des deux formats
-
-### Formatage des données
-
-#### Entiers
-
-#### Multi-valeurs
-
-#### Objets complexes
-
-#### Dates
-
-### En résumé
-
-![json c'est mieux](https://i.kym-cdn.com/entries/icons/original/000/023/194/cover1.jpg)
-
-<div style="text-align: center">
-  <i>CSV vs. JSON</i>
+<div class="button">
+    <a href="/challenges" style="background-color: #43aa8b;">La suite : le JSON</a>
 </div>
