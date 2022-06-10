@@ -155,5 +155,5 @@ $csv | % {$_.id = [int]($_.id)}
 ---
 
 <div class="button">
-    <a href="/challenges" style="background-color: #43aa8b;">La suite : le JSON</a>
+    <a href="/challenges" style="background-color: #43aa8b;">La suite sur JSON</a>
 </div>
