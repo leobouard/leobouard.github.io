@@ -18,9 +18,10 @@ Dans cet article j'aborde le thème des "fichiers de données structurées". Sou
 - **JSON** : le meilleur ami de JavaScript, mais qui est de plus en plus utilisé pour les configurations Azure et en PowerShell
 - **TXT** : souvent utilisé les journalisations d'un script ou les bannières d'affichage
 - **YAML** : plus simple et plus complet que JSON, il n'est malheureusement pas supporté nativement par PowerShell
-- ...et sûrement plein d'autres que j'oublie.
 
-Chacun de ces types fichiers ont leurs usages, leurs avantages et inconvénients. On va ce concentrer exclusivement sur le CSV et le JSON qui sont les plus faciles à utiliser avec PowerShell (en attendant YAML 😄).
+...et sûrement plein d'autres formats que j'oublie.
+
+Chacun de ces types fichiers ont leurs usages, leurs avantages et inconvénients. On va ce concentrer exclusivement sur le CSV et le JSON qui sont les plus faciles à utiliser avec PowerShell (en attendant le support natif du YAML 😄).
 
 ## C'est quoi le CSV
 
@@ -29,6 +30,12 @@ Chacun de ces types fichiers ont leurs usages, leurs avantages et inconvénients
 Sur [Wikipédia](https://fr.wikipedia.org/wiki/Comma-separated_values)
 
 Si vous faites déjà un peu de PowerShell, vous avez probablement déjà travaillé avec le format de fichier CSV. Celui-ci permet d'importer/exporter facilement et rapidement des données avec PowerShell via le duo de commandes [Import-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv) et [Export-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv). C'est un format de fichier très populaire et qui est assez simple à prendre en main : le fichier est facilement modifiable par des personnes non-techniques directement dans Excel.
+
+La modification dans Excel est le plus gros point fort du CSV, car des fichiers peuvent être :
+
+- peuplés par des personnes qui ne travaillent pas en informatique (exemple type : les ressources humaines pour la création de nouveaux utilisateurs dans Active Directory)
+- modifiés en masse rapidement via la fonctionnalité *[poignée de recopie](https://support.microsoft.com/fr-fr/office/copier-une-formule-en-faisant-glisser-la-poign%C3%A9e-de-recopie-dans-excel-pour-mac-dd928259-622b-473f-9a33-83aa1a63e218)* (drag pour les anglophones)
+- extrait pour être revus et étudié plus facilement
 
 ### A quoi ça ressemble ?
 
@@ -51,7 +58,7 @@ Jane,Black,jane.black@labouabouate.fr,22
 
 ```
 
-Le nom des colonnes est indiqué sur la première ligne et les colonnes sont séparées par des virgules (ou des points-virgules, libre à vous de choisir le délimiteur qui vous convient le plus).
+Le nom des colonnes est visible sur la première ligne et les colonnes sont indiquées par des virgules (ou des points-virgules, libre à vous de choisir le délimiteur qui vous convient le plus).
 
 ### Intégration avec PowerShell
 
@@ -76,14 +83,20 @@ Jane,Black,jane.black@labouabouate.fr,22
 
 ```
 
-...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂
+...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂 
 
-### Avantages
+Ou au moins c'est l'impression qu'il donne, mais le CSV possède tout de même quelques limitations.
 
-✅ Facile à prendre en main
-✅ Modification dans Excel
+### Les limites de CSV
 
-### Inconvénients
+Et bien oui, le CSV n'est pas parfait pour tous les besoins. Il possède notamment deux gros défauts (qui ont la même cause) :
+
+- il ne sait pas compter
+- il ne gère que des données "plates"
+
+### CSV ne sait pas compter
+
+
 
 ❌ Passé un certain nombre de colonnes, c'est un format compliqué à modifier sans Excel (sur une station d'administration par exemple)
 ❌ Conservation des formats
