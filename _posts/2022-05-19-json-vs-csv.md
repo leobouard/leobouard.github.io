@@ -114,11 +114,47 @@ False
 
 #### Exemple 2 - Les additions
 
+Encore plus simple, on demande d'ajouter 1 à chacun des identifiants. On devrait donc retrouver les valeurs 52, 86 et 23, et pourtant...
 
+```powershell
 
-Pourquoi ? Parce que PowerShell considère que le CSV ne contient que des valeurs de type "texte"
+PS C:\> $csv | % {$_.id + 1}
 
+511
+851
+221
 
+```
+
+#### Exemple 3 - Les multiplications
+
+On fait la même chose que d'habitude : on multiplie la valeur de chaque identifiant par deux :
+
+```powershell
+
+PS C:\> $csv | % {$_.id * 2}
+
+5151
+8585
+2222
+
+```
+
+<div style="text-align: center">
+  <i>A ce niveau, c'est un 0 pointé en maths</i>
+</div>
+
+#### Explication
+
+Vous l'avez probablement déjà deviné avec les trois exemples précédents, mais PowerShell considère que toutes les données contenues dans le fichier CSV sont des valeurs de type "texte" (même quand la valeur n'est composée que de chiffres).
+
+Pour corriger ça, on peut formater la "colonne" ID en amont en indiquant à PowerShell qu'il s'agit de nombres entiers et pas de simples chaines de caractères :
+
+```powershell
+
+$csv | % {$_.id = [int]($_.id)}
+
+```
 
 ---
 
