@@ -70,11 +70,26 @@ Import-Csv -Path "C:\temp\export.csv" -Delimiter ',' -Encoding UTF8
 
 ```
 
-ou alors avec un petit fichier CSV inclu directement dans le script :
+...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂 
+
+Ou au moins c'est l'impression qu'il donne, mais le CSV possède tout de même quelques limitations.
+
+### Les limites de CSV
+
+Et bien oui, le CSV n'est pas parfait pour tous les besoins. Il possède notamment deux gros défauts (qui sont liés) :
+
+- il ne sait pas compter
+- il ne gère que des données "plates"
+
+### CSV ne sait pas compter
+
+Malgré toutes ses qualités, les mathématiques sont le point faible du CSV.
+
+Pour les exemples suivants, on va se baser sur la variable $CSV suivante :
 
 ```powershell
 
-@'
+$csv = @'
 givenName,surname,userPrincipalName,id
 John,Doe,john.doe@labouabouate.fr,51
 Jack,Smith,jack.smith@labouabouate.fr,85
@@ -83,23 +98,27 @@ Jane,Black,jane.black@labouabouate.fr,22
 
 ```
 
-...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂 
+#### Exemple 1 - Les comparaisons
 
-Ou au moins c'est l'impression qu'il donne, mais le CSV possède tout de même quelques limitations.
+Ici on demande simplement de vérifier que chaque identifiant (colonne ID) est supérieur à 9. Le résultat attendu est donc 'True' à chaque fois, et pourtant...
 
-### Les limites de CSV
+```powershell
 
-Et bien oui, le CSV n'est pas parfait pour tous les besoins. Il possède notamment deux gros défauts (qui ont la même cause) :
+PS C:\> $csv | % {$_.id -gt 9}
 
-- il ne sait pas compter
-- il ne gère que des données "plates"
+False
+False
+False
 
-### CSV ne sait pas compter
+```
+
+#### Exemple 2 - Les additions
 
 
 
-❌ Passé un certain nombre de colonnes, c'est un format compliqué à modifier sans Excel (sur une station d'administration par exemple)
-❌ Conservation des formats
+Pourquoi ? Parce que PowerShell considère que le CSV ne contient que des valeurs de type "texte"
+
+
 
 ---
 
