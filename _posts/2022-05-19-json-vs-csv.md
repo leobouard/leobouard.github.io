@@ -13,7 +13,7 @@ Dans cet article j'aborde le thème des "fichiers de données structurées". Sou
 
 - **CSV** : le meilleur ami de PowerShell, très souvent utilisé pour peupler ou extraire des données sur Active Directory
 - **JSON** : le meilleur ami de JavaScript, mais qui est de plus en plus utilisé pour les configurations Azure et en PowerShell
-- - **XAML** : utilisé pour les interfaces graphique en WPF ou la sauvegarde d'identifiants de connexion par exemple ([Import-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml))
+- **XAML** : utilisé pour les interfaces graphique en WPF ou la sauvegarde d'identifiants de connexion par exemple ([Import-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml))
 - **TXT** : souvent utilisé les journalisations d'un script ou les bannières d'affichage
 - **YAML** : plus simple et plus complet que JSON, il n'est malheureusement pas supporté nativement par PowerShell
 
@@ -60,7 +60,7 @@ Le nom des colonnes est visible sur la première ligne et les colonnes sont indi
 
 ### Intégration avec PowerShell
 
-Avec un fichier CSV externe au script :
+Pour récupérer rapidement et facilement les données d'un fichier CSV en PowerShell, on peut utiliser la commande dédiée [Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv).
 
 ```powershell
 
@@ -68,9 +68,7 @@ Import-Csv -Path "C:\temp\export.csv" -Delimiter ',' -Encoding UTF8
 
 ```
 
-...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂 
-
-Ou au moins c'est l'impression qu'il donne, mais le CSV possède tout de même quelques limitations.
+...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂 Ou au moins c'est l'impression qu'il donne, mais le CSV possède tout de même quelques limitations.
 
 ### Les limites de CSV
 
@@ -81,9 +79,7 @@ Et bien oui, le CSV n'est pas parfait pour tous les besoins. Il possède notamme
 
 #### CSV ne sait pas compter
 
-Malgré toutes ses qualités, les mathématiques ne sont pas le point fort du CSV.
-
-Pour les exemples suivants, on va se baser sur la variable $CSV suivante :
+Malgré toutes ses qualités, les mathématiques ne sont pas le point fort du CSV. Pour les exemples suivants, on va se baser sur la variable $CSV suivante :
 
 ```powershell
 
@@ -194,22 +190,6 @@ $json = @'
 ### Formatage des données
 
 #### Entiers
-
-```
-
-PS C:\> $csv.Age -gt 5
-
-False
-
-```
-
-```
-
-PS C:\> $json.Age -gt 5
-
-True
-
-```
 
 #### Multi-valeurs
 
