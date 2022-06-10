@@ -148,7 +148,9 @@ PS C:\> $csv | % {$_.id * 2}
 
 Vous l'avez probablement déjà deviné avec les trois exemples précédents, mais PowerShell considère que toutes les données contenues dans le fichier CSV sont des valeurs de type "texte" (même quand la valeur n'est composée que de chiffres).
 
-Pour corriger ça, on peut formater la "colonne" ID en amont en indiquant à PowerShell qu'il s'agit de nombres entiers et pas de simples chaines de caractères :
+Dans certains cas, PowerShell comprend que la valeur est en fait un nombre entier, notamment sur la division et la soustraction (car il s'agit de deux opérations purement mathématiques qui ne concernent pas les chaines de caractères).
+
+Pour corriger ça, on peut formater la "colonne" ID en amont en indiquant à PowerShell qu'il s'agit de nombres entiers et pas de chaines de caractères :
 
 ```powershell
 
