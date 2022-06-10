@@ -7,15 +7,28 @@ thumbnailColor: "#ef5b5b"
 icon: 🆚
 ---
 
+Si vous avez déjà utiliser PowerShell, vous êtes probablement déjà tombé sur
+
+## Informations en bref
+
+Dans cet article j'aborde le thème des "fichiers de données structurées". Souvent externe aux scripts PowerShell, ils permettent d'importer, exporter, stocker ou requêter des données via PowerShell. Dans les types de fichiers récurents, on retrouve :
+
+- **CSV** : le meilleur ami de PowerShell, très souvent utilisé pour peupler ou extraire des données sur Active Directory
+- **XAML** : utilisé pour les interfaces graphique en WPF ou la sauvegarde d'identifiants de connexion par exemple ([Import-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml) et [Export-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-clixml))
+- **JSON** : le meilleur ami de JavaScript, mais qui est de plus en plus utilisé pour les configurations Azure et en PowerShell
+- **TXT** : souvent utilisé les journalisations d'un script ou les bannières d'affichage
+- **YAML** : plus simple et plus complet que JSON, il n'est malheureusement pas supporté nativement par PowerShell
+- ...et sûrement plein d'autres que j'oublie.
+
+Chacun de ces types fichiers ont leurs usages, leurs avantages et inconvénients. On va ce concentrer exclusivement sur le CSV et le JSON qui sont les plus faciles à utiliser avec PowerShell (en attendant YAML 😄).
+
 ## C'est quoi le CSV
 
 > Comma-separated values, connu sous le sigle CSV, est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées par des virgules.
 
 Sur [Wikipédia](https://fr.wikipedia.org/wiki/Comma-separated_values)
 
-Si vous faites un peu de PowerShell, vous avez probablement déjà travaillé avec le format de fichier CSV. Celui-ci permet d'importer/exporter facilement et rapidement des données avec PowerShell via le duo de commandes [Import-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv) et [Export-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv).
-
-C'est un format de fichier très populaire et qui est assez simple à prendre en main : le fichier est facilement modifiable par des personnes non-techniques directement dans Excel.
+Si vous faites déjà un peu de PowerShell, vous avez probablement déjà travaillé avec le format de fichier CSV. Celui-ci permet d'importer/exporter facilement et rapidement des données avec PowerShell via le duo de commandes [Import-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv) et [Export-Csv](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv). C'est un format de fichier très populaire et qui est assez simple à prendre en main : le fichier est facilement modifiable par des personnes non-techniques directement dans Excel.
 
 ### A quoi ça ressemble ?
 
@@ -38,7 +51,7 @@ Jane,Black,jane.black@labouabouate.fr,22
 
 ```
 
-Bon du coup c'est simple à comprendre : les colonnes sont indiquées par des virgules (ou des points-virgules, c'est vous qui voyez).
+Le nom des colonnes est indiqué sur la première ligne et les colonnes sont séparées par des virgules (ou des points-virgules, libre à vous de choisir le délimiteur qui vous convient le plus).
 
 ### Intégration avec PowerShell
 
