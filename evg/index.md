@@ -88,7 +88,7 @@ Pas besoin d'emmener de bouffe
 
 Plateforme | Lien
 ---------- | ----
-Spotify | [La playlist du week-end](https://open.spotify.com/playlist/0mYFHXW6temhSXGNnjs3iC?si=8bf133a43ce3436f)
+Spotify | [La playlist du week-end](https://open.spotify.com/playlist/0mYFHXW6temhSXGNnjs3iC?si=2d804e4876b946c3&pt=138fb505a67d91b592445834b006f648)
 OneDrive | [Le partage pour les photos compromettantes](https://1drv.ms/u/s!AmiqB-xYe-mKwnPnMHLN_qhG4fBC?e=ubzxxG)
 
 ## Avancement du projet
