@@ -16,6 +16,7 @@ Dans cet article j'aborde le thème des "fichiers de données structurées". Sou
 - **XAML** : utilisé pour les interfaces graphique en WPF ou la sauvegarde d'identifiants de connexion par exemple ([Import-CliXml](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml))
 - **TXT** : souvent utilisé les journalisations d'un script ou les bannières d'affichage
 - **YAML** : plus simple et plus complet que JSON, il n'est malheureusement pas supporté nativement par PowerShell
+- **INI** : utilisé pour stocker les données de configuration pour des scripts
 
 ...et sûrement plein d'autres formats que j'oublie.
 
