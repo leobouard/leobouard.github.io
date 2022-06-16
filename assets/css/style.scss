@@ -147,12 +147,13 @@ section {
     }
 
     .buttonNext {
-        text-align: left;
+        text-align: right;
         margin-top: 30px;
         margin-bottom: 15px;
         
         a {
-            background-color: #336699;
+            background-color: #43aa8b;
+            
             color: #fff;
             font-weight: 600;
             padding-top: 10px;
@@ -168,12 +169,12 @@ section {
     }
 
     .buttonBack {
-        text-align: right;
+        text-align: left;
         margin-top: 30px;
         margin-bottom: 15px;
         
         a {
-            background-color: #43aa8b;
+            background-color: #336699;
             color: #fff;
             font-weight: 600;
             padding-top: 10px;
