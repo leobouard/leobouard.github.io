@@ -141,13 +141,39 @@ section {
 
     /* --- BUTTON LINK --- */
 
-    .button {
-        text-align: right;
+
+    .buttons {
+        display: flex;
+    }
+
+    .buttonNext {
+        text-align: left;
         margin-top: 30px;
         margin-bottom: 15px;
         
         a {
             background-color: #336699;
+            color: #fff;
+            font-weight: 600;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: 0;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    .buttonBack {
+        text-align: right;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        
+        a {
+            background-color: #43aa8b;
             color: #fff;
             font-weight: 600;
             padding-top: 10px;

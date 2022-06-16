@@ -21,6 +21,8 @@ Dans cet article j'aborde le thème des "fichiers de données structurées". Sou
 
 Chacun de ces types fichiers ont leurs usages, leurs avantages et inconvénients. On va ce concentrer exclusivement sur le CSV et le JSON qui sont les plus faciles à utiliser avec PowerShell (en attendant le support natif du YAML 😄).
 
-<div class="button">
-    <a href="/2022/05/19/donnees-structurees-1" style="background-color: #43aa8b;">On commence par CSV</a>
+<div class="buttons">
+    <div class="buttonNext">
+        <a href="/2022/05/19/donnees-structurees-1">Suivant : CSV</a>
+    </div>
 </div>
