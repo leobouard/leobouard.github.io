@@ -138,7 +138,7 @@ $csv | % {$_.id = [int]($_.id)}
 
 <div class="buttons">
     <div class="buttonBack">
-        <a href="/2022/05/19/donnees-structurees-0">Retour à l'introduction</a>
+        <a href="/2022/05/19/donnees-structurees-0">Précédent : Introduction</a>
     </div>
     <div class="buttonNext">
         <a href="/2022/05/19/donnees-structurees-2">Suivant : JSON</a>
