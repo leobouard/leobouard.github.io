@@ -144,10 +144,11 @@ section {
 
     .buttons {
         display: flex;
+        justify-content: space-between;
     }
 
     .buttonNext {
-        right: 0;
+        text-align: right;
         margin-top: 30px;
         margin-bottom: 15px;
         
@@ -169,7 +170,7 @@ section {
     }
 
     .buttonBack {
-        left: 0;
+        text-align: left;
         margin-top: 30px;
         margin-bottom: 15px;
         
