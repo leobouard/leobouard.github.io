@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CanonicalName dans Active Directory"
+title: "CanonicalName dans l'AD"
 description: "Mort au DistinguishedName !"
 tags: howto
 icon: 🌳
