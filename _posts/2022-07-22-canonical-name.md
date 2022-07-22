@@ -28,12 +28,9 @@ Pour prendre un exemple, voici une arborescence Active Directory :
 
 Qui peut être traduite de la manière suivante :
 
----
-DistinguishedName: `CN=John Smith,OU=Users,OU=US,OU=LBB,DC=labouabouate,DC=com`
-CanonicalName: `labouabouate.com/LBB/US/Users/John Smith`
----
+### DistinguishedName
 
-### R
+DistinguishedName : `CN=John Smith,OU=Users,OU=US,OU=LBB,DC=labouabouate,DC=com`
 
 Identifiant | Type d'attribut
 ----------- | ---------------
@@ -43,6 +40,9 @@ OU | organizationalUnitName
 
 Le tableau complet est disponible ici : [Distinguished Names - Microsoft Docs](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names)
 
+### CanonicalName
+
+`labouabouate.com/LBB/US/Users/John Smith`
 
 ## DistinguishedName c'est quoi ?
 
@@ -64,6 +64,4 @@ Surname           : Smith
 UserPrincipalName : john.smith@labouabouate.com
 
 ```
-
-## CanonicalName c'est quoi ?
 
