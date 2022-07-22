@@ -7,19 +7,33 @@ thumbnailColor: "#4c5b61"
 icon: 🌳
 ---
 
-Bien souvent, tout est une question d'aborescence et par défaut on a tendance à utiliser la propriété "DistinguishedName" pour déterminer où se trouve un objet dans l'Active Directory. Ce n'est pas un mal en soit, mais 
+L'emplacement dans l'aborescence Active Directory est souvent très important et peu s'avérer utile pour la génération de rapports. L'attribut le plus utilisé pour determiner cette information est le "Distinguished Name", mais si vous ne connaissez pas son cousin le "Canonical Name" cet article est fait pour vous !
 
-`CN=John Smith,OU=Users,OU=US,OU=LBB,DC=labouabouate,DC=com`
+En bref, la différence principale est la suivante :
 
-En réel, ça se traduit donc par l'arborescence suivante :
+- le DistinguishedName part de l'objet pour aller vers la racine
+- le CanonicalName part de la racine pour aller vers l'objet
+
+## Syntaxe
+
+Pour prendre un exemple, voici une arborescence Active Directory :
 
 ```
-  🌐 labouabouate.com
-    📁 LBB
-      📁 US
-        📁 Users
-          🧑‍💼 John Smith
+🌐 labouabouate.com
+  📁 LBB
+    📁 US
+      📁 Users
+        🧑‍💼 John Smith
 ```
+
+Qui peut être traduite de la manière suivante :
+
+---
+DistinguishedName: `CN=John Smith,OU=Users,OU=US,OU=LBB,DC=labouabouate,DC=com`
+CanonicalName: `labouabouate.com/LBB/US/Users/John Smith`
+---
+
+### R
 
 Identifiant | Type d'attribut
 ----------- | ---------------
@@ -27,7 +41,7 @@ DC | domainComponent
 CN | commonName
 OU | organizationalUnitName
 
-Le tableau complet est disponible ici : [Distinguished Names | Microsoft Docs](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names)
+Le tableau complet est disponible ici : [Distinguished Names - Microsoft Docs](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names)
 
 
 ## DistinguishedName c'est quoi ?
