@@ -104,12 +104,12 @@ $cn | ForEach-Object {
 
 ```
 
-Facile non ? On sépare simplement la chaine de caractère à chaque "/" puis on récupère la ~~deuxième~~ troisième valeur (puisqu'on commence à compter à partir de 0, donc `[2]` correspond à la troisième valeur) :
+Facile non ? On sépare simplement la chaine de caractère à chaque "/" puis on récupère la ~~deuxième~~ troisième valeur (puisqu'on commence à compter à partir de 0, donc [2] correspond à la troisième valeur) :
 
 ID | Valeur
 -- | ------
-0 | labouabouate
-1 | com
-**2** | **LBB**
-3 | US
+0 | labouabouate.com
+1 | LBB
+2 | US
+3 | Users
 4 | John Smith
