@@ -78,7 +78,22 @@ On veut générer un rapport avec tous les utilisateurs du domaine en affichant 
 
 ### Parser le DistinguishedName
 
-Le problème avec le DistinguishedName dans notre cas, c'est que la valeur que l'on rechar
+Le problème avec le DistinguishedName dans notre cas, c'est que la valeur que l'on recherche "bouge". Je m'explique :
+
+- pour John Smith, "US" est la troisième valeur de la chaine
+- pour Pierre Dupont, "FR" est la quatrième valeur de la chaine (puisqu'il existe une "sous-OU" nommée "Rennes")
+
+ID | John Smith | Pierre Dupont
+-- | ---------- | -------------
+0 | CN=John Smith | CN=Pierre Dupont
+1 | OU=Users | OU=Users
+2 | **OU=US** | OU=Rennes
+3 | OU=LBB | **OU=FR**
+4 | DC=labouabouate | OU=LBB
+5 | DC=com | DC=labouabouate
+6 | | DC=com
+
+Mais si on retourne notre méthode et que l'on lit le DistinguishedName de droite à gauche (racine vers objet), on retrouvera toujours la valeur recherchée en avant-avant-avant dernière position.
 
 ```powershell
 
@@ -94,6 +109,19 @@ Comme vous pouvez le voir, ça se fait mais y'a plus simple.
 
 ### Parser le CanonicalName
 
+Pas besoin de se casser la tête puisque la valeur recherchée est toujours en troisième position :
+
+ID | John Smith | Pierre Dupont 
+-- | ---------- | -------------
+0 | labouabouate.com | labouabouate.com
+1 | LBB | LBB
+2 | **US** | **FR**
+3 | Users | Rennes
+4 | John Smith | Users
+5 | | Pierre Dupont
+
+Et on se retrouve avec un code PowerShell beaucoup plus simple :
+
 ```powershell
 
 $root = "labouabouate.com/LBB"
@@ -103,13 +131,3 @@ $cn | ForEach-Object {
 } 
 
 ```
-
-Facile non ? On sépare simplement la chaine de caractère à chaque "/" puis on récupère la ~~deuxième~~ troisième valeur (puisqu'on commence à compter à partir de 0, donc [2] correspond à la troisième valeur) :
-
-ID | Valeur
--- | ------
-0 | labouabouate.com
-1 | LBB
-2 | US
-3 | Users
-4 | John Smith
