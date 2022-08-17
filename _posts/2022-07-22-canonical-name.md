@@ -27,9 +27,7 @@ Pour illustrer mon propos, on va prendre l'exemple suivant. C'est une arborescen
 
 ```
 
-## Syntaxe
-
-### DistinguishedName
+## DistinguishedName
 
 Le DistinguishedName fait partie des propriétés affichées par défaut lors d'une requête PowerShell, notamment avec la commande `Get-ADUser` par exemple.
 
@@ -57,7 +55,7 @@ Domaine | DistinguishedName
 labouabouate.com | DC=labouabouate,DC=com
 ldap.lbb.com | DC=ldap,DC=lbb,DC=com
 
-### CanonicalName
+## CanonicalName
 
 Cette propriété est malheureusement en "option" lors des requêtes Active Directory. Il faut donc la spécifier pour l'obtenir lors des requêtes `Get-ADUser` :
 
@@ -75,8 +73,6 @@ Les CanonicalName des deux utilisateurs :
 Beaucoup plus lisible que le DistinguishedName, **on part de la racine du domaine pour descendre vers l'objet cible**. Les élements sont séparés entre eux par des "/" et c'est tout. Simple et efficace !
 
 ## Cas pratique
-
-
 
 Un élement important à connaître pour nos rapport est l'unité organisationnelle à laquelle l'utilisateur appartient. Dans notre cas, il est important de savoir s'il appartient à "FR" ou "US".
 
