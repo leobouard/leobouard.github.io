@@ -74,11 +74,11 @@ Beaucoup plus lisible que le DistinguishedName, **on part de la racine du domain
 
 ## Cas pratique
 
-Un élement important à connaître pour nos rapport est l'unité organisationnelle à laquelle l'utilisateur appartient. Dans notre cas, il est important de savoir s'il appartient à "FR" ou "US".
+On veut générer un rapport avec tous les utilisateurs du domaine en affichant à quelle unité organisationnelle l'utilisateur appartient. Les OUs qui nous intéressent sont "FR" ou "US". Pour obtenir cette information, on va se baser les valeurs du DistinguishedName et du CanonicalName (évidemment).
 
 ### Parser le DistinguishedName
 
-Le problème du DistinguishedName, c'est qu'il 
+Le problème avec le DistinguishedName dans notre cas, c'est que la valeur que l'on rechar
 
 ```powershell
 
