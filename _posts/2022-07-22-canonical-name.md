@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "CanonicalName & DistinguishedName"
-description: "Toutes les routes mènent au domaine"
+title: "CanonicalName & DN"
+description: "Toutes les routes mènent à la racine du domaine"
 tags: howto
 thumbnailColor: "#26c9fc"
 icon: 🛣️
