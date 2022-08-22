@@ -2,12 +2,14 @@
 permalink: /challenges
 ---
 
-# Mes défis PowerShell 💪
+# Un défi à relever ?
 
 Parce qu'on apprend mieux en s'amusant, je vous propose une série de défis à relever avec PowerShell.
 Vous êtes prévenus : il n'y a rien de bien sérieux et aucun prix à la clé !
 
-Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs. 😉
+Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs.
+
+## Les derniers défis
 
 <div class="posts">
     {% for post in site.posts %}

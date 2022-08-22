@@ -2,9 +2,11 @@
 permalink: /howto
 ---
 
-# Comment qu'on fait ? 🤔
+# Articles
 
-Je n'ai pas la science infuse, mais j'essaye de partager au mieux mes petites trouvailles, en espérant que ça puisse aider quelqu'un d'autre.
+Je n'ai pas la science infuse, mais j'essaye de partager au mieux mes petites trouvailles, en espérant que ça puisse aider quelqu'un d'autre. Les articles se concentrent surtout sur les environnements Microsoft (donc Active Directory, Microsoft 365, Microsoft Exchange et peut-être un peu d'Azure).
+
+## Les derniers articles
 
 <div class="posts">
     {% for post in site.posts %}
