@@ -9,7 +9,7 @@ icon: 🎩
 
 On part sur quelque-chose de plus simple pour cette fois-ci ! 😋
 
-Il faut simplement faire une fonction avec le fonctionnement suivant :
+Il faut simplement faire une fonction pour que :
 
 - 2568 en entrée donne 21 en sortie
 - 5143 en entrée donne 13 en sortie
