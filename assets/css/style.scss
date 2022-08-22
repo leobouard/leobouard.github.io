@@ -33,6 +33,19 @@ header {
     top: 0;
 }
 
+.banner {
+    margin: 0;
+    background-color: #f9c80e;
+    display: flex;
+    justify-content: center;
+
+    img {
+        height: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
 .verticalNav {
     position: absolute;
     left: 0;
@@ -56,12 +69,6 @@ nav {
     margin: 0;
     box-shadow: 0 5px 5px -5px #b2b3b8;
     display: block;
-
-    img {
-        height: 20px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
 }
 
 nav a {
@@ -69,7 +76,7 @@ nav a {
     text-align: center;
     font-weight: bold;
     padding: 1em;
-    float: right;
+    float: left;
     text-decoration: none;
     text-decoration-color: transparent;
     transition: all 400ms ease-in-out;
@@ -83,8 +90,8 @@ nav a:hover {
     text-decoration-color: #f9c80e;
 }
 
-nav a:first-child {
-    float: left;
+nav a:last-child {
+    float: right;
 }
 
 /* --- CONTENT --- */
