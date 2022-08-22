@@ -122,7 +122,7 @@ Mercredi | 3 | 9 | 2
 Jeudi | 4 | 10 | 3
 Vendredi | 5 | 11 | 4
 Samedi | 6 | 12 | 5
-Dimanche | 7 | 13 | 6
+Dimanche | 0 | 6 | 6
 
 `-le 4` : suite à toutes nos opérations mathématiques, samedi = 5 et dimanche = 6. Il ne nous reste donc plus qu'à les exclure des résultats avec un opérateur de comparaison "Lower or equal".
 
