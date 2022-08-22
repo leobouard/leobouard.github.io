@@ -9,12 +9,12 @@ icon: 🎩
 
 On part sur quelque-chose de plus simple pour cette fois-ci ! 😋
 
-Il faut simplement faire en sorte que :
+Il faut simplement faire une fonction avec le fonctionnement suivant :
 
-- 2568 = 21
-- 5143 = 13
-- 8543 = 20
-- etc...
+- 2568 en entrée donne 21 en sortie
+- 5143 en entrée donne 13 en sortie
+- 8543 en entrée donne 20 en sortie
+- etc
 
 Vous voyez, c'est L-I-M-P-I-D-E !
 
