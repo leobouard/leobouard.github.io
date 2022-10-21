@@ -9,14 +9,29 @@ icon: 🎓
 
 ## Introduction
 
+L'idée est simple : **créer un petit jeu avec PowerShell** mais qu'on va emmener loin, très loin ! Le jeu que j'ai choisi pour ce cours pratique est le suivant : un nombre aléatoire est généré et vous devez le trouver.
+
+Simple non ? Normalement vous aurez fini la base en moins de 10 minutes, mais c'est la suite qui va être intéressante... On va explorer un maximum de chose avec PowerShell via ce jeu et on finira en beauté par l'ajout d'une interface graphique avec WPF.
+
+Quelques précisions :
+
+- Dans ce cours, je considère que vous êtes familier avec les concepts de base de PowerShell, ainsi que sa syntaxe. Si ce n'est pas le cas, vous avez plein de ressources à disposition pour monter en compétence sur cette partie
+- Je ne mettrais pas les liens directs pour les documentations / renseignement sur la syntaxe ou les paramètres des commandes employées. L'idée est de faire vos propres recherche (c'est comme ça qu'on apprend)
+- Une *correction* sera disponible à la fin de chaque partie. Celle-ci n'est qu'une réponse parmis d'autre. Si votre script fonctionne mais ne ressemble pas au mien, tant mieux !
+
+## Structure
+
+Chaque partie sera similaire dans son organisation :
+
+- Un résumé avec une capture d'écran du fonctionnement attendu. Je vais essayer de faire en sorte que le résumé contienne toutes les informations nécessaires pour que vous puissiez développer juste avec ça
+- Le détail pas-à-pas pour avoir plus d'information sur chaque élément
+- La fameuse *correction* en fin de page pour suivre le rythme en cas de problème
+
 ## Sommaire
 
 1. Partie 1 - Simple. Basique.
 2. Partie 2 - En boucle en boucle en boucle
 3. Partie 3 - 
-
-
-
 
 <div class="buttonNext">
     <a href="/2022/10/21/cours-pratique-posh-1">Suivant : Partie 1</a>
