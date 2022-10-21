@@ -5,11 +5,20 @@ thumbnailColor: "#007acc"
 icon: 🎓
 ---
 
-### 1. Générer un nombre entier aléatoire entre 1 et 1000
+## Résumé
+
+Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. L'utilisateur n'a qu'un seul essai. Si le nombre de l'utilisateur est plus petit ou plus grand que le nombre aléatoire, alors un message est affiché pour situer la comparaison entre les deux nombres (X plus grand que Y ou inversement). Si le nombre aléatoire est égal à l'estimation de l'utilisateur, alors on déclare la victoire. A la fin du script, le nombre aléatoire et l'estimation de l'utilisateur sont affichées sous la forme d'un objet au format liste.
+
+![Vidéo du script à l'issue de la première partie](cours-pratique-partie-1.gif)
+
+## Détails
+
+### 1. Générer un nombre aléatoire
 
 La première pierre est posée : la génération du nombre aléatoire qui doit être deviné par le joueur !
 
 - Commande utilisée : "Get-Random"
+- Valeur obtenue : nombre entier en 1 et 1000
 
 <details>
   <code>Get-Random -Minimum 1 -Maximum 1000</code>
@@ -51,7 +60,9 @@ Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au no
   </code></pre>
 </details>
 
-### 5. Comparaison 1 : afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
+### 5. Comparaison 1 
+
+Afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
 
 - Commande "Write-Host"
 - Condition "if(){}"
@@ -60,25 +71,48 @@ Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au no
   <code>if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }</code>
 </details>
 
-### 6. Comparaison 2 : afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
+### 6. Comparaison 2
+
+Afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
 
 - Commande "Write-Host"
 - Condition "elseif(){}"
 
 <details>
-  <code>elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }</code>
+  <pre><code>
+    elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
+  </pre></code>
 </details>
 
-1. Comparaison 3 : afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur (commande "Write-Host" et condition "else{}")
-else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
+### 7. Comparaison 3
 
-8. Vérifier vos conditions en affichant un objet avec les membres "Random" et "Answer" (objet "PSCustomObject")
-$result = [PSCustomObject]@{
-    "Random" = $random
-    "Answer" = $answer
-}
+Afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur
 
-9. Formater la vue de l'objet en mode liste (commande "Format-List")
+- Commande "Write-Host"
+- Condition "else{}"
+
+<details>
+  <pre><code>
+    else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
+  </pre></code>
+</details>
+
+### Vérification des conditions
+
+A la fin de votre script, afficher un objet avec les membres "Random" et "Answer"
+
+- Objet "PSCustomObject"
+
+<details>
+  <pre><code>
+    $result = [PSCustomObject]@{
+        "Random" = $random
+        "Answer" = $answer
+    }
+  </code></pre>
+</details>
+
+1. Formater la vue de l'objet en mode liste (commande "Format-List")
 $result | Format-List
 
 ## CORRECTION 
