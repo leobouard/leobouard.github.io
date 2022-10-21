@@ -19,7 +19,9 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
 - Valeur obtenue : nombre entier en 1 et 1000
 
 <details>
-  <code>Get-Random -Minimum 1 -Maximum 1000</code>
+  <pre><code>
+    Get-Random -Minimum 1 -Maximum 1000
+  </code></pre>
 </details>
 
 ### 2. Stocker le nombre aléatoire dans une variable
@@ -27,7 +29,9 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
 - Nom de variable : "random"
 
 <details>
-  <code>$random = Get-Random -Minimum 1 -Maximum 1000</code>
+  <pre><code>
+    $random = Get-Random -Minimum 1 -Maximum 1000
+  </code></pre>
 </details>
 
 ### 3. Demander à l'utilisateur de deviner le nombre
@@ -38,7 +42,9 @@ On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
 - Nom de variable : "answer"
 
 <details>
-  <code>$answer = Read-Host "Deviner le nombre"</code>
+  <pre><code>
+    $answer = Read-Host "Deviner le nombre"
+  </code></pre>
 </details>
 
 ### 4. Comparer le nombre aléatoire au nombre de l'utilisateur
@@ -66,7 +72,9 @@ Afficher un message pour dire que le nombre aléatoire est plus grand que le nom
 - Condition "if(){}"
 
 <details>
-  <code>if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }</code>
+  <pre><code>
+    if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
+  </code></pre>
 </details>
 
 ### 6. Comparaison 2
