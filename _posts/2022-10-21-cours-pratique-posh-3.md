@@ -67,6 +67,6 @@ icon: 🎓
         <a href="/2022/10/21/cours-pratique-posh-2">Précédent : Partie 2</a>
     </div>
     <div class="buttonNext">
-        <a href="/2022/10/22/cours-pratique-posh-4">Suivant : Partie 4</a>
+        <a href="/2022/10/21/cours-pratique-posh-4">Suivant : Partie 4</a>
     </div>
 </div>
