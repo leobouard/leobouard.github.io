@@ -9,14 +9,24 @@ icon: 🎓
 
 ## PARTIE 1 - Simple, basique.
 
-1. Générer un nombre aléatoire (commande "Get-Random")
+1. Générer un nombre entier aléatoire entre 1 et 1000 (commande "Get-Random")
+
+<details>
+    <summary>Réponse</summary>
 `Get-Random -Minimum 1 -Maximum 1000`
+</details>
+
 2. Stocker le nombre aléatoire dans une variable
+
+<details>
 `$random = Get-Random -Minimum 1 -Maximum 1000`
-3. Demander à l'utilisateur de deviner le nombre (commande "Read-Host")
+</details>
+
+1. Demander à l'utilisateur de deviner le nombre (commande "Read-Host")
+
 `$answer = Read-Host "Deviner le nombre"`
 
-4. Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au nombre de l'utilisateur (opérateurs de comparaison "-gt" et "-lt")
+1. Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au nombre de l'utilisateur (opérateurs de comparaison "-gt" et "-lt")
 $random -gt $answer ; $answer -lt $random
 $random -lt $answer ; $answer -gt $random
 
