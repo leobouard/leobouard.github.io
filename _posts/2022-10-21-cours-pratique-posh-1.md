@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Partie 1 - Simple. Basique."
+thumbnailColor: "#007acc"
+icon: 🎓
 ---
 
 ## 1. Générer un nombre entier aléatoire entre 1 et 1000
@@ -10,9 +12,7 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
 - Commande utilisée : "Get-Random"
 
 <details>
-
-`Get-Random -Minimum 1 -Maximum 1000`
-
+  <code>Get-Random -Minimum 1 -Maximum 1000</code>
 </details>
 
 ## 2. Stocker le nombre aléatoire dans une variable
@@ -20,12 +20,10 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
 - Nom de variable : "random"
 
 <details>
-
-`$random = Get-Random -Minimum 1 -Maximum 1000`
-
+  <code>$random = Get-Random -Minimum 1 -Maximum 1000</code>
 </details>
 
-## 3. Demander à l'utilisateur de deviner le nombre (commande "Read-Host")
+## 3. Demander à l'utilisateur de deviner le nombre
 
 On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
 
