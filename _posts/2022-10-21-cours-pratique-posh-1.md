@@ -5,7 +5,7 @@ thumbnailColor: "#007acc"
 icon: 🎓
 ---
 
-## 1. Générer un nombre entier aléatoire entre 1 et 1000
+### 1. Générer un nombre entier aléatoire entre 1 et 1000
 
 La première pierre est posée : la génération du nombre aléatoire qui doit être deviné par le joueur !
 
@@ -15,7 +15,7 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
   <code>Get-Random -Minimum 1 -Maximum 1000</code>
 </details>
 
-## 2. Stocker le nombre aléatoire dans une variable
+### 2. Stocker le nombre aléatoire dans une variable
 
 - Nom de variable : "random"
 
@@ -23,7 +23,7 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
   <code>$random = Get-Random -Minimum 1 -Maximum 1000</code>
 </details>
 
-## 3. Demander à l'utilisateur de deviner le nombre
+### 3. Demander à l'utilisateur de deviner le nombre
 
 On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
 
@@ -31,60 +31,42 @@ On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
 - Nom de variable : "answer"
 
 <details>
-
-`$answer = Read-Host "Deviner le nombre"`
-
+  <code>$answer = Read-Host "Deviner le nombre"</code>
 </details>
 
-## 4. Comparer le nombre aléatoire au nombre de l'utilisateur
+### 4. Comparer le nombre aléatoire au nombre de l'utilisateur
 
 Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au nombre de l'utilisateur.
 
 - Opérateurs de comparaison "-gt" et "-lt"
 
 <details>
-
-```powershell
-
-# Aléatoire est supérieur au nb utilisateur
-$random -gt $answer
-$answer -lt $random
-# Aléatoire est plus petit que nb utilisateur
-$random -lt $answer
-$answer -gt $random
-
-```
-
+  <pre><code>
+    # Aléatoire est supérieur au nb utilisateur
+    $random -gt $answer
+    $answer -lt $random
+    # Aléatoire est plus petit que nb utilisateur
+    $random -lt $answer
+    $answer -gt $random
+  </code></pre>
 </details>
 
-## 5. Comparaison 1 : afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
+### 5. Comparaison 1 : afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
 
 - Commande "Write-Host"
 - Condition "if(){}"
 
 <details>
-
-```powershell
-
-if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
-
-```
-
+  <code>if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }</code>
 </details>
 
-## 6. Comparaison 2 : afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
+### 6. Comparaison 2 : afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
 
 - Commande "Write-Host"
 - Condition "elseif(){}"
 
 <details>
-
-```powershell
-
-elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
-
-```
-
+  <code>elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }</code>
 </details>
 
 1. Comparaison 3 : afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur (commande "Write-Host" et condition "else{}")
@@ -100,6 +82,7 @@ $result = [PSCustomObject]@{
 $result | Format-List
 
 ## CORRECTION 
+
 
 ```powershell
 
