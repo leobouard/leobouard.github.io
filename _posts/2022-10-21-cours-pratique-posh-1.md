@@ -74,10 +74,22 @@ if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
 
 </details>
 
-1. Comparaison 2 : afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur (commande "Write-Host" et condition "elseif(){}")
+## 6. Comparaison 2 : afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
+
+- Commande "Write-Host"
+- Condition "elseif(){}"
+
+<details>
+
+```powershell
+
 elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
 
-7. Comparaison 3 : afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur (commande "Write-Host" et condition "else{}")
+```
+
+</details>
+
+1. Comparaison 3 : afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur (commande "Write-Host" et condition "else{}")
 else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
 
 8. Vérifier vos conditions en affichant un objet avec les membres "Random" et "Answer" (objet "PSCustomObject")
@@ -112,9 +124,9 @@ if ($random -gt $answer) {
 
 <div class="buttons">
     <div class="buttonBack">
-        <a href="/2022/10/22/cours-pratique-posh-0">Précédent : Introduction</a>
+        <a href="/2022/10/21/cours-pratique-posh-0">Précédent : Introduction</a>
     </div>
     <div class="buttonNext">
-        <a href="/2022/10/22/cours-pratique-posh-2">Suivant : Partie 2</a>
+        <a href="/2022/10/21/cours-pratique-posh-2">Suivant : Partie 2</a>
     </div>
 </div>

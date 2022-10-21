@@ -40,5 +40,5 @@ icon: 🎓
 # Afficher une barre de progression
 
 <div class="buttonNext">
-    <a href="/2022/10/22/cours-pratique-posh-1">Suivant : Partie 1</a>
+    <a href="/2022/10/21/cours-pratique-posh-1">Suivant : Partie 1</a>
 </div>
