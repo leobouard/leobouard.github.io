@@ -13,7 +13,7 @@ L'idée est simple : **créer un petit jeu avec PowerShell** mais qu'on va emmen
 
 Simple non ? Normalement vous aurez fini la base en moins de 10 minutes, mais c'est la suite qui va être intéressante... On va explorer un maximum de chose avec PowerShell via ce jeu et on finira en beauté par l'ajout d'une interface graphique avec WPF.
 
-![Interface graphique finale en WPF](../assets/images/capture-cours-posh-interface-wpf.png)
+![Interface graphique finale en WPF](/assets/images/capture-cours-posh-interface-wpf.png)
 
 Quelques précisions :
 
