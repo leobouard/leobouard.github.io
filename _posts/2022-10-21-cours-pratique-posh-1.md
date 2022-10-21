@@ -9,8 +9,6 @@ icon: 🎓
 
 Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. L'utilisateur n'a qu'un seul essai. Si le nombre de l'utilisateur est plus petit ou plus grand que le nombre aléatoire, alors un message est affiché pour situer la comparaison entre les deux nombres (X plus grand que Y ou inversement). Si le nombre aléatoire est égal à l'estimation de l'utilisateur, alors on déclare la victoire. A la fin du script, le nombre aléatoire et l'estimation de l'utilisateur sont affichées sous la forme d'un objet au format liste.
 
-![Vidéo du script à l'issue de la première partie](cours-pratique-partie-1.gif)
-
 ## Détails
 
 ### 1. Générer un nombre aléatoire
@@ -66,7 +64,7 @@ Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au no
   </code></pre>
 </details>
 
-### 5. Comparaison 1 
+### 5. Comparaison n°1 : random > answer
 
 Afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
 
@@ -79,7 +77,7 @@ Afficher un message pour dire que le nombre aléatoire est plus grand que le nom
   </code></pre>
 </details>
 
-### 6. Comparaison 2
+### 6. Comparaison n°2 : random < answer
 
 Afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
 
@@ -92,7 +90,7 @@ Afficher un message pour dire que le nombre aléatoire est plus petit que le nom
   </code></pre>
 </details>
 
-### 7. Comparaison 3
+### 7. Comparaison n°3 : random = answer
 
 Afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur
 
@@ -105,7 +103,7 @@ Afficher un message de victoire si le nombre aléatoire est égal au nombre de l
   </code></pre>
 </details>
 
-### Vérification des conditions
+### 8. Vérification des conditions
 
 A la fin de votre script, afficher un objet avec les membres "Random" et "Answer"
 
@@ -120,7 +118,7 @@ A la fin de votre script, afficher un objet avec les membres "Random" et "Answer
   </code></pre>
 </details>
 
-### Formater la vue en mode liste
+### 9. Formater la vue en mode liste
 
 Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que deux valeurs). Il faut donc forcer un affichage sous forme de liste.
 

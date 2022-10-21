@@ -15,9 +15,9 @@ Simple non ? Normalement vous aurez fini la base en moins de 10 minutes, mais c'
 
 Quelques précisions :
 
-- Dans ce cours, je considère que vous êtes familier avec les concepts de base de PowerShell, ainsi que sa syntaxe. Si ce n'est pas le cas, vous avez plein de ressources à disposition pour monter en compétence sur cette partie
-- Je ne mettrais pas les liens directs pour les documentations / renseignement sur la syntaxe ou les paramètres des commandes employées. L'idée est de faire vos propres recherche (c'est comme ça qu'on apprend)
-- Une *correction* sera disponible à la fin de chaque partie. Celle-ci n'est qu'une réponse parmis d'autre. Si votre script fonctionne mais ne ressemble pas au mien, tant mieux !
+- Dans ce cours, je considère que vous êtes familier avec les concepts de base de PowerShell, ainsi que sa syntaxe. Si ce n'est pas le cas, il y a plein de ressources à disposition pour monter en compétence sur cette partie sur Internet
+- Je ne mettrais pas les liens directs pour les documentations / renseignement sur la syntaxe ou les paramètres des commandes employées. L'idée est de faire vos propres recherches (c'est comme ça qu'on apprend le mieux)
+- Une *correction* sera disponible à la fin de chaque partie. Celle-ci n'est qu'une réponse parmi d'autre. Si votre script fonctionne mais ne ressemble pas au mien, ce n'est pas grave !
 
 ## Structure
 
