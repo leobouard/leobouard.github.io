@@ -13,7 +13,7 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 
 ## Détails
 
-### 1. Générer un nombre aléatoire
+**1. Générer un nombre aléatoire**
 
 La première pierre est posée : la génération du nombre aléatoire qui doit être deviné par le joueur !
 
@@ -24,7 +24,7 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
   <code>Get-Random -Minimum 1 -Maximum 1000</code>
 </details>
 
-### 2. Stocker le nombre aléatoire dans une variable
+**2. Stocker le nombre aléatoire dans une variable**
 
 - Nom de variable : "random"
 
@@ -32,7 +32,7 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
   <code>$random = Get-Random -Minimum 1 -Maximum 1000</code>
 </details>
 
-### 3. Demander à l'utilisateur de deviner le nombre
+**3. Demander à l'utilisateur de deviner le nombre**
 
 On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
 
@@ -43,7 +43,7 @@ On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
   <code>$answer = Read-Host "Deviner le nombre"</code>
 </details>
 
-### 4. Comparer le nombre aléatoire au nombre de l'utilisateur
+**4. Comparer le nombre aléatoire au nombre de l'utilisateur**
 
 Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au nombre de l'utilisateur.
 
@@ -60,7 +60,7 @@ Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au no
   </code></pre>
 </details>
 
-### 5. Comparaison 1 
+**5. Comparaison 1**
 
 Afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
 
@@ -71,7 +71,7 @@ Afficher un message pour dire que le nombre aléatoire est plus grand que le nom
   <code>if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }</code>
 </details>
 
-### 6. Comparaison 2
+**6. Comparaison 2**
 
 Afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
 
@@ -84,7 +84,7 @@ Afficher un message pour dire que le nombre aléatoire est plus petit que le nom
   </pre></code>
 </details>
 
-### 7. Comparaison 3
+**7. Comparaison 3**
 
 Afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur
 
@@ -97,7 +97,7 @@ Afficher un message de victoire si le nombre aléatoire est égal au nombre de l
   </pre></code>
 </details>
 
-### Vérification des conditions
+**Vérification des conditions**
 
 A la fin de votre script, afficher un objet avec les membres "Random" et "Answer"
 
@@ -112,7 +112,7 @@ A la fin de votre script, afficher un objet avec les membres "Random" et "Answer
   </code></pre>
 </details>
 
-### Formater la vue en mode liste
+**Formater la vue en mode liste**
 
 Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que deux valeurs). Il faut donc forcer un affichage sous forme de liste.
 
