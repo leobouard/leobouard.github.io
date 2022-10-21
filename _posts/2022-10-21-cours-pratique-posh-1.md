@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Partie 1 - Simple. Basique."
+thumbnailColor: "#007acc"
+icon: 🎓
 ---
 
 ## Résumé
