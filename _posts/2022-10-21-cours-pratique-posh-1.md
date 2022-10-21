@@ -112,16 +112,27 @@ A la fin de votre script, afficher un objet avec les membres "Random" et "Answer
   </code></pre>
 </details>
 
-1. Formater la vue de l'objet en mode liste (commande "Format-List")
-$result | Format-List
+### Formater la vue en mode liste
 
-## CORRECTION 
+Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que deux valeurs). Il faut donc forcer un affichage sous forme de liste.
 
+- Commande "Format-List"
+
+<details>
+  <pre><code>
+    $result | Format-List
+  </code></pre>
+</details>
+
+## Correction 
+
+Encore une fois un petit rappel : il n'y a pas une seule bonne méthode donc si votre script ne ressemble pas au mien mais qu'il fonctionne, tant-mieux !
 
 ```powershell
 
 $random = Get-Random -Minimum 1 -Maximum 1000
 $answer = Read-Host "Deviner le nombre"
+
 if ($random -gt $answer) { 
     Write-Host "??? est plus grand que $answer"
 } elseif ($random -lt $answer) {
@@ -129,13 +140,13 @@ if ($random -gt $answer) {
 } else {
     Write-Host "VICTOIRE ! Vous avez deviné le nombre aléatoire"
 }
+
 [PSCustomObject]@{
     "Random" = $random
     "Answer" = $answer
 } | Format-List
 
 ```
-
 
 <div class="buttons">
     <div class="buttonBack">
