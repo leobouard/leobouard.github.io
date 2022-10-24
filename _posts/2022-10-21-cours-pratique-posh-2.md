@@ -39,7 +39,7 @@ Compter le nombre de tentatives. Vous pouvez partir de 0 ou de 1, c'est votre ch
 
 <details>
   <pre><code>
-    $i = 1
+    $i = 0
     $i++
   </code></pre>
 </details>
@@ -86,6 +86,7 @@ Si le joueur n'a pas trouvé le nombre aléatoire au bout de 10 tentatives, affi
 Dans l'objet affiché à la fin, on ajoute le nombre de tentatives de l'utilisateur. 
 
 - Objet "PSCustomObject"
+- Propriété "count"
 
 <details>
   <pre><code>
@@ -101,9 +102,10 @@ Dans l'objet affiché à la fin, on ajoute le nombre de tentatives de l'utilisat
 
 ```powershell
 
-$i = 1
+$i = 0
 $random = Get-Random -Minimum 1 -Maximum 1000
 do {
+    $i++
     $answer = Read-Host "Deviner le nombre"
     if ($random -gt $answer) { 
         Write-Host "??? est plus grand que $answer"
@@ -112,7 +114,6 @@ do {
     } else {
         Write-Host "VICTOIRE ! Vous avez deviné le nombre aléatoire"
     }
-    $i++
 } until ($answer -eq $random -or $i -ge 10)
 
 if ($answer -ne $random) { 

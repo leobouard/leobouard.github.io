@@ -1,129 +1,78 @@
 ---
 layout: post
-title: "Partie 3"
+title: "Partie 3 - Top chrono"
 thumbnailColor: "#007acc"
 icon: 🎓
 ---
 
 ## Résumé
 
-L'utilisateur possède maintenant jusqu'à 10 tentatives pour deviner le nombre aléatoire. Si l'utilisateur échoue à deviner le nombre, un message de défaite apparait. A la fin du script, le nombre de tentatives nécessaires est affiché avec les autres statistiques.
+Ajouter un chronomètre
 
 ## Détails
 
-### 1. Mettre le code dans une boucle
+### 1. Ajouter un chronomètre
 
-On va maintenant mettre le code qu'on a produit jusqu'ici dans une boucle pour pouvoir donner un peu plus qu'un seul essai. L'idée est de demande un nombre à l'utilisateur jusqu'à ce qu'il trouve le nombre aléatoire.
+Chronométrer le temps qu'il faut à l'utilisateur pour trouver le nombre aléatoire.
 
-- Boucles possibles :
-  - boucle "while(){}"
-  - boucle "do{}while()"
-  - **boucle "do{}until()"**
-
-<details>
-  <pre><code>
-    while ($answer -ne $random) { <#[...]#> }
-
-    do { <#[...]#> } while ($answer -ne $random)
-
-    do { <#[...]#> } until ($answer -eq $random)
-  </code></pre>
-</details>
-
-### 2. Ajouter un compteur de tentatives
-
-Compter le nombre de tentatives. Vous pouvez partir de 0 ou de 1, c'est votre choix.
-
-- Nom de variable : "i"
-- Opérateur "++"
+- Méthodes possibles :
+  - **Classe .NET "System.Diagnostics.Stopwatch"**
+  - Commande "Measure-Command"
+  - Commande "New-TimeSpan"
+- Nom de variable : "stopwatch" 
 
 <details>
   <pre><code>
-    $i = 1
-    $i++
+    $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+    $stopwatch.Stop()
+
+    $stopwatch = Measure-Command { <#[...]#> }
+
+    $startTime = Get-Date
+    $stopWatch = New-TimeSpan -Start $startTime -End (Get-Date)
   </code></pre>
 </details>
 
-### Point bonus : utilisation de la boucle "for()"
+### 2. Formatage du temps de résolution
 
-On peut utiliser la boucle "for(){}" pour boucler et compter dans le même temps. Cette méthode ne sera pas conservée dans la correction.
+Arrondir le temps total de résolution en seconde à au millième de seconde (0.001 secondes).
 
-- Boucle : "for(){}"
+- Classe .NET "System.Math"
 
 <details>
   <pre><code>
-    for ($i = 1 ; $i++ ; $answer -ne $random) { <#[...]#> }
+    [System.Math]::Round($stopWatch.Elapsed.TotalSeconds,3)
   </code></pre>
 </details>
 
-### 3. Sortir de la boucle après 10 tentatives
+### 3. Affichage du temps de résolution
 
-On augmente la difficulté pour le joueur : il dispose maintenant de 10 essais maximum pour trouver le nombre aléatoire. Si l'utilisateur dépasse 10 tentatives, on sort de la boucle.
-
-- **Opérateur "-or"**
-- Commande "break"
-
-<details>
-  <pre><code>
-    do { <#[...]#> } until ($answer -eq $random -or $i -ge 10)
-   
-    if ($i -ge 10) { break }
-  </code></pre>
-</details>
-
-### 4. Affichage d'un message de défaite
-
-Si le joueur n'a pas trouvé le nombre aléatoire au bout de 10 tentatives, afficher un message de défaite.
-
-<details>
-  <pre><code>
-    if ($answer -ne $random) { Write-Host "DEFAITE" }
-  </code></pre>
-</details>
-
-### 5. Affichage du nombre de tentatives
-
-Dans l'objet affiché à la fin, on ajoute le nombre de tentatives de l'utilisateur. 
+Dans l'objet affiché à la fin, on ajoute le temps de résolution de la tentative. 
 
 - Objet "PSCustomObject"
+- Propriété "totalSeconds"
 
 <details>
   <pre><code>
     [PSCustomObject]@{
-        "Random" = $random
-        "Answer" = $answer
-        "Count"  = $i
+        "Random"       = $random
+        "Answer"       = $answer
+        "Count"        = $i
+        "TotalSeconds" = [System.Math]::Round($stopWatch.Elapsed.TotalSeconds,3)
     } | Format-List
   </code></pre>
 </details>
+
+### 4. Affichage du temps par essai
+
+Dans l'objet affiché à la fin, on calcul le temps moyen par essai.
+
+- Object "PSCustomObject"
 
 ## Correction
 
 ```powershell
 
-$i = 1
-$random = Get-Random -Minimum 1 -Maximum 1000
-do {
-    $answer = Read-Host "Deviner le nombre"
-    if ($random -gt $answer) { 
-        Write-Host "??? est plus grand que $answer"
-    } elseif ($random -lt $answer) {
-        Write-Host "??? est plus petit que $answer"
-    } else {
-        Write-Host "VICTOIRE ! Vous avez deviné le nombre aléatoire"
-    }
-    $i++
-} until ($answer -eq $random -or $i -ge 10)
-
-if ($answer -ne $random) { 
-    Write-Host "DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire"
-}
-
-[PSCustomObject]@{
-    "Random" = $random
-    "Answer" = $answer
-    "Count"  = $i
-} | Format-List
 
 ```
 

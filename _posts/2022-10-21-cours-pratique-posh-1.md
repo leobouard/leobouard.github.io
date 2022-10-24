@@ -108,6 +108,7 @@ Afficher un message de victoire si le nombre aléatoire est égal au nombre de l
 A la fin de votre script, afficher un objet avec les membres "Random" et "Answer"
 
 - Objet "PSCustomObject"
+- Propriétés "random" et "answer"
 
 <details>
   <pre><code>
