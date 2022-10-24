@@ -36,5 +36,5 @@ Chaque partie sera similaire dans son organisation :
 3. Partie 3 - 
 
 <div class="buttonNext">
-    <a href="/2022/10/21/cours-pratique-posh-1">Suivant : Partie 1</a>
+    <a href="/2022/10/21/cours-pratique-posh-1">Partie 1 →</a>
 </div>

@@ -129,9 +129,9 @@ if ($answer -ne $random) {
 
 <div class="buttons">
     <div class="buttonBack">
-        <a href="/2022/10/21/cours-pratique-posh-1">Précédent : Partie 1</a>
+        <a href="/2022/10/21/cours-pratique-posh-1">← Partie 1</a>
     </div>
     <div class="buttonNext">
-        <a href="/2022/10/21/cours-pratique-posh-3">Suivant : Partie 3</a>
+        <a href="/2022/10/21/cours-pratique-posh-3">Partie 3 →</a>
     </div>
 </div>

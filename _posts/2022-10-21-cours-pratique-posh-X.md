@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Partie 3"
+title: "Partie X"
 thumbnailColor: "#007acc"
 icon: 🎓
 ---
@@ -18,6 +18,7 @@ icon: 🎓
   - Via pipeline
 
 ```powershell
+
     # 3a. Avec "Array"
     $allAnswers = @()
     $allAnswers += $answer
@@ -32,6 +33,7 @@ icon: 🎓
 
     # 3d. En natif
     $allAnswers = while ($answer -ne $random) { <#...#> $answer }
+    
 ```
 
 ### Remplacer le compteur de tentative "$i" par avec la variable "$allAnswers"
@@ -59,14 +61,3 @@ icon: 🎓
 ### Mode simplifié avec (Get-Random de 0 à 100)*100
 
 ### Mise en fonction (mise en bouate)
-
-
-
-<div class="buttons">
-    <div class="buttonBack">
-        <a href="/2022/10/21/cours-pratique-posh-2">Précédent : Partie 2</a>
-    </div>
-    <div class="buttonNext">
-        <a href="/2022/10/21/cours-pratique-posh-4">Suivant : Partie 4</a>
-    </div>
-</div>

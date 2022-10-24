@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Partie 3 - En boucle en boucle en boucle"
+title: "Partie 3"
 thumbnailColor: "#007acc"
 icon: 🎓
 ---
