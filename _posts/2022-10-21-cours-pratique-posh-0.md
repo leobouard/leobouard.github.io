@@ -25,7 +25,7 @@ Quelques précisions :
 
 Chaque partie sera similaire dans son organisation :
 
-- Un résumé avec une capture d'écran du fonctionnement attendu. Je vais essayer de faire en sorte que le résumé contienne toutes les informations nécessaires pour que vous puissiez développer juste avec ça
+- Un résumé du résultat à obtenir. Je vais essayer de faire en sorte que le résumé contienne toutes les informations nécessaires pour que vous puissiez développer juste avec ça
 - Le détail pas-à-pas pour avoir plus d'information sur chaque élément
 - La fameuse *correction* en fin de page pour suivre le rythme en cas de problème
 
