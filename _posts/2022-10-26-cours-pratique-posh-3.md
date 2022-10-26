@@ -18,7 +18,7 @@ Toutes les tentatives de l'utilisateur doivent maintenant être stockées dans u
 - Objets utilisables :
   - "Array"
   - "ArrayList"
-  - "Generic.List<T>"
+  - "Generic.List[T]"
   - **En natif PowerShell "$array = do{}until()"**
 - Nom de variable : "allAnswers"
 
@@ -32,7 +32,7 @@ Toutes les tentatives de l'utilisateur doivent maintenant être stockées dans u
     $allAnswers = [System.Collections.ArrayList]@()
     $allAnswers.Add($answer)
 
-    # 3c. Avec "Generic.List<T>"
+    # 3c. Avec "Generic.List[T]"
     $allAnswers = [System.Collections.Generic.List[int]]@()
     $allAnswers.Add($answer)
 
