@@ -31,9 +31,15 @@ Chaque partie sera similaire dans son organisation :
 
 ## Sommaire
 
-1. Partie 1 - Simple. Basique.
-2. Partie 2 - En boucle en boucle en boucle
-3. Partie 3 - 
+<ol>
+    {% for post in site.posts %}
+        {% if post.id contains "cours-pratique-posh" %}
+            <li>
+                <a href="{{ post.id }}">{{ post.Title }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ol>
 
 <div class="buttonNext">
     <a href="/2022/10/21/cours-pratique-posh-1">Partie 1 →</a>
