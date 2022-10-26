@@ -31,13 +31,11 @@ Chaque partie sera similaire dans son organisation :
 
 ## Sommaire
 
-<ol>
-    {% for post in site.posts %}
-        {% if post.id contains "cours-pratique-posh" %}
-            <li>{{ post.Title }}</li>
-        {% endif %}
-    {% endfor %}
-</ol>
+   [Partie 1 - Simple. Basique.](/2022/10/21/cours-pratique-posh-1)
+2. [Partie 2 - En boucle en boucle en boucle](/2022/10/21/cours-pratique-posh-2)
+3. [Partie 3 - Historique de navigation](/2022/10/26/cours-pratique-posh-3)
+4. [Partie 4 - Mais on est où là ?](/2022/10/26/cours-pratique-posh-4)
+5. [Partie 5 - Top chrono !](/2022/10/26/cours-pratique-posh-5)
 
 <div class="buttonNext">
     <a href="/2022/10/21/cours-pratique-posh-1">Partie 1 →</a>
