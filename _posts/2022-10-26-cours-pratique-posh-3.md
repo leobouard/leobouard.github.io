@@ -7,7 +7,10 @@ icon: 🎓
 
 ## Résumé
 
-Tous les nombes essayés par l'utilisateurs sont maintenant gardés en mémoire.
+Tous les nombes essayés par l'utilisateur sont maintenant gardés en mémoire. Dans l'objet de fin :
+
+- on remplace la dernière réponse de l'utilisateur par une liste contenant toutes ses réponses
+- on affiche maintenant la valeur moyenne de toutes les réponses données par l'utilisateur (arrondie à l'entier)
 
 ## Détails
 
@@ -76,7 +79,7 @@ Avec tous les nombres essayés par l'utilisateur, on va calculer la valeur moyen
 
 ### 4. Affichage de la réponse moyenne
 
-Afficher la réponse moyenne arrondie à l'unité dans l'ojbect de fin.
+Afficher la réponse moyenne arrondie à l'unité dans l'objet de fin.
 
 - Propriété "Average answer"
 - Type "[int]"
