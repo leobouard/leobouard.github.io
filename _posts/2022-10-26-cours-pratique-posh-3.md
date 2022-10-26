@@ -21,8 +21,8 @@ Toutes les tentatives de l'utilisateur doivent maintenant être stockées dans u
 - Objets utilisables :
   - "Array"
   - "ArrayList"
-  - "Generic.List[T]"
-  - **En natif PowerShell "$array = do{}until()"**
+  - **"Generic.List[T]"**
+  - En natif PowerShell "$array = do{}until()"
 - Nom de variable : "allAnswers"
 
 <details>
@@ -100,11 +100,12 @@ Afficher la réponse moyenne arrondie à l'unité dans l'objet de fin.
 ```powershell
 
 $i = 0
+$allAnswers = [System.Collections.Generic.List[int]]@()
 $random = Get-Random -Minimum 1 -Maximum 1000
-$allAnswers = do {
+do {
     $i++
     $answer = Read-Host "Deviner le nombre"
-    $answer
+    $allAnswers.Add($answer)
     if ($random -gt $answer) { 
         Write-Host "??? est plus grand que $answer"
     } elseif ($random -lt $answer) {

@@ -26,9 +26,9 @@ Dans l'objet affiché à la fin, on calcul le temps moyen par essai.
 
 <div class="buttons">
     <div class="buttonBack">
-        <a href="/2022/10/21/cours-pratique-posh-3">← Partie 3</a>
+        <a href="/2022/10/26/cours-pratique-posh-4">← Partie 4</a>
     </div>
     <div class="buttonNext">
-        <a href="/2022/10/21/cours-pratique-posh-5">Partie 5 →</a>
+        <a href="/2022/10/26/cours-pratique-posh-6">Partie 6 →</a>
     </div>
 </div>
