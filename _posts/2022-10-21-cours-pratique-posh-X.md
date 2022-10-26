@@ -9,6 +9,22 @@ icon: 🎓
 
 ## Détails
 
+### Vérification des données à l'entrée
+
+```powershell
+
+do {
+    $validAnswer = try {
+        [int]$answer = Read-Host "TEST"
+        $true
+    } catch {
+        Write-Host "Answer is bad formating"
+        $false
+    }
+} while ($validAnswer -ne $true)
+
+```
+
 ### Garder en mémoire tous les nombres essayés par l'utilisateurs
 
 - Objets utilisables :
@@ -36,11 +52,22 @@ icon: 🎓
     
 ```
 
-### Remplacer le compteur de tentative "$i" par avec la variable "$allAnswers"
+### Définir les bornes supérieures et inférieures
+
+```powershell
+
+$limitLow  = 0
+$limitHigh = 1000
+
+# Borne inférieure
+$limitLow  = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object -Descending | Select-Object -First 1
+
+# Borne supérieure
+$limitHigh = $allAnswers | Where-Object {$_ -gt $random} | Sort-Object | Select-Object -First 1
+
+```
 
 ### Modifier les couleurs
-
-### Définir les bornes supérieures et inférieures
 
 ### Nettoyer l'affichage après chaque essai
 
@@ -49,8 +76,6 @@ icon: 🎓
 ### Sauvegarder dans un JSON
 
 ### Récupérer les high-scores avec une requête web
-
-### Chronometrer le temps de résolution
 
 ### Calcul de statistique
 

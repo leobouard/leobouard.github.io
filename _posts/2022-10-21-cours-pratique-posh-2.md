@@ -133,6 +133,6 @@ if ($answer -ne $random) {
         <a href="/2022/10/21/cours-pratique-posh-1">← Partie 1</a>
     </div>
     <div class="buttonNext">
-        <a href="/2022/10/21/cours-pratique-posh-3">Partie 3 →</a>
+        <a href="/2022/10/26/cours-pratique-posh-3">Partie 3 →</a>
     </div>
 </div>
