@@ -34,9 +34,7 @@ Chaque partie sera similaire dans son organisation :
 <ol>
     {% for post in site.posts %}
         {% if post.id contains "cours-pratique-posh" %}
-            <li>
-                <a href="{{ post.id }}">{{ post.Title }}</a>
-            </li>
+            <li>{{ post.Title }}</li>
         {% endif %}
     {% endfor %}
 </ol>
