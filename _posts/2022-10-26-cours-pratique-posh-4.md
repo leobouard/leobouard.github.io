@@ -65,7 +65,8 @@ Après chaque coup, les bornes se resserent pour afficher l'encadrement le plus 
 
 ### Point bonus : utiliser la variable "allAnswers" pour obtenir les bornes
 
-Cette version sera conservée dans la correction, elle a comme avantage de conserver la borne la plus proche en cas d'erreur :
+Cette version sera conservée dans la correction.
+Elle a comme avantage de conserver la borne la plus proche en cas d'erreur du joueur:
 
 > Deviner le nombre (1 < ??? < 1000): 500
 > 
