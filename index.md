@@ -1,6 +1,5 @@
 ---
 permalink: /
-layout: homepage
 ---
 
 # Bienvenue ! 👋
