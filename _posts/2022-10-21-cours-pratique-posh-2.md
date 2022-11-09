@@ -13,32 +13,31 @@ Exemple victoire :
 
 <blockquote>
   <p>
-  Deviner le nombre: 500<br>
-  ??? est plus petit que 500<br>
-  [...]<br>
-  VICTOIRE ! Vous avez deviné le nombre aléatoire<br>
-  <br>
-  Random : 238<br>
-  Answer : 238<br>
-  Count  : 9
+    Deviner le nombre: 500<br>
+    ??? est plus petit que 500<br>
+    [...]<br>
+    VICTOIRE ! Vous avez deviné le nombre aléatoire<br>
+    <br>
+    Random : 238<br>
+    Answer : 238<br>
+    Count  : 9
   </p>
 </blockquote>
 
 Exemple défaite :
 
-> Deviner le nombre: 500
-> 
-> ??? est plus petit que 500
->
-> [...]
-> 
-> DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire
->
-> Random : 35
-> 
-> Answer : 495
-> 
-> Count  : 10
+<blockquote>
+  <p>
+    Deviner le nombre: 500<br>
+    ??? est plus petit que 500<br>
+    [...]<br>
+    DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire<br>
+    <br>
+    Random : 35<br>
+    Answer : 495<br>
+    Count  : 10
+  </p>
+</blockquote>
 
 ## Détails
 
