@@ -11,19 +11,18 @@ L'utilisateur possède maintenant jusqu'à 10 tentatives pour deviner le nombre 
 
 Exemple victoire :
 
-> Deviner le nombre: 500
-> 
-> ??? est plus petit que 500
->
-> [...]
-> 
-> VICTOIRE ! Vous avez deviné le nombre aléatoire
->
-> Random : 238
-> 
-> Answer : 238
-> 
-> Count  : 9
+<blockquote>
+  <p>
+  Deviner le nombre: 500<br>
+  ??? est plus petit que 500<br>
+  [...]<br>
+  VICTOIRE ! Vous avez deviné le nombre aléatoire<br>
+  <br>
+  Random : 238<br>
+  Answer : 238<br>
+  Count  : 9
+  </p>
+</blockquote>
 
 Exemple défaite :
 
