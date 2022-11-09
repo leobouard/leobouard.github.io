@@ -11,13 +11,9 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 
 Exemple :
 
-> Deviner le nombre: 500
-> 
-> ??? est plus grand que 500
-> 
-> Random : 759
-> 
-> Answer : 500
+<blockquote>
+  <p>Deviner le nombre: 500<br>??? est plus grand que 500<br><br>Random : 759<br>Answer : 500</p>
+</blockquote>
 
 ## Détails
 
