@@ -14,21 +14,19 @@ Tous les nombes essayés par l'utilisateur sont maintenant gardés en mémoire. 
 
 Résultat :
 
-> Deviner le nombre: 500
-> 
-> ??? est plus grand que 500
-> 
-> [...]
-> 
-> VICTOIRE ! Vous avez deviné le nombre aléatoire
-> 
-> Random         : 939
-> 
-> Answers        : {500, 750, 900, 950...}
-> 
-> Average answer : 864
-> 
-> Count          : 9
+<blockquote>
+  <p>
+    Deviner le nombre: 500<br>
+    ??? est plus grand que 500<br>
+    [...]<br>
+    VICTOIRE ! Vous avez deviné le nombre aléatoire<br>
+    <br>
+    Random         : 939<br>
+    Answers        : {500, 750, 900, 950...}<br>
+    Average answer : 864<br>
+    Count          : 9
+  </p>
+</blockquote>
 
 ## Détails
 
