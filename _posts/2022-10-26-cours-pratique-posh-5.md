@@ -7,9 +7,25 @@ icon: 🎓
 
 ## Résumé
 
-Ajouter un chronomètre
+On ajoute un chronomètre qui se lance après que le script ait reçu la première réponse du joueur et qui s'arrête avant d'afficher les résultats. On mesure et on affiche dans l'objet de fin :
 
-Le chronomètre se lance après la première réponse du joueur.
+- le temps total en secondes (arrondi à 0.001 seconde)
+- le temps moyen par essai (temps total / nombre d'essais)
+
+### Résultat attendu
+
+<blockquote>
+  <p>
+    VICTOIRE ! Vous avez deviné le nombre aléatoire<br>
+    <br>
+    Random         : 198<br>
+    Answers        : {500, 250, 125, 200...}<br>
+    Average answer : 216<br>
+    Seconds        : 16,036<br>
+    Count          : 10<br>
+    Sec per try    : 1,604
+  </p>
+</blockquote>
 
 ## Détails
 
@@ -30,7 +46,7 @@ Le chronomètre se lance après la première réponse du joueur.
   </code></pre>
 </details>
 
-### . Stopper le chronomètre
+### 2. Stopper le chronomètre
 
 - Méthodes possibles :
   - Commandes "Get-Date" & "New-TimeSpan"
@@ -62,7 +78,7 @@ Le chronomètre se lance après la première réponse du joueur.
 
 ### 4. Formatage du temps de résolution
 
-Arrondir le temps total de résolution au millième de seconde (0.001 secondes).
+Arrondir le temps total de résolution au millième de seconde (0.001 seconde).
 
 - Classe .NET "System.Math"
 

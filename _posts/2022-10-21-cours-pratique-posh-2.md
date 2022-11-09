@@ -9,7 +9,7 @@ icon: 🎓
 
 L'utilisateur possède maintenant jusqu'à 10 tentatives pour deviner le nombre aléatoire. Si l'utilisateur échoue à deviner le nombre, un message de défaite apparait. A la fin du script, le nombre de tentatives nécessaires est affiché avec les autres statistiques.
 
-Exemple victoire :
+### Résultat attendu pour une victoire
 
 <blockquote>
   <p>
@@ -24,7 +24,7 @@ Exemple victoire :
   </p>
 </blockquote>
 
-Exemple défaite :
+### Résultat attendu pour une défaite
 
 <blockquote>
   <p>

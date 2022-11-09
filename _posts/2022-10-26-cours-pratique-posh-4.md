@@ -9,17 +9,15 @@ icon: 🎓
 
 Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant variabilisés. Ils permettent de donner une indication au joueur avec une borne inférieure et supérieure affichée dans le "Read-Host". Ces bornes se resserent au fur et à mesure des réponses du joueur.
 
-Exemple : 
+### Résultat attendu
 
-> Deviner le nombre (1 < ??? < 1000): 500
-> 
-> ??? est plus grand que 500
-> 
-> Deviner le nombre (500 < ??? < 1000): 750
-> 
-> ??? est plus petit que 750
-> 
-> Deviner le nombre (500 < ??? < 750):
+<blockquote>
+  <p>
+    Deviner le nombre (1 < ??? < 1000): 500<br>
+    ??? est plus grand que 500<br>
+    Deviner le nombre (500 < ??? < 750):
+  </p>
+</blockquote>
 
 ## Détails
 

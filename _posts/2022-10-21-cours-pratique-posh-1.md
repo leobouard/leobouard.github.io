@@ -9,10 +9,16 @@ icon: 🎓
 
 Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. L'utilisateur n'a qu'un seul essai. Si le nombre de l'utilisateur est plus petit ou plus grand que le nombre aléatoire, alors un message est affiché pour situer la comparaison entre les deux nombres (X plus grand que Y ou inversement). Si le nombre aléatoire est égal à l'estimation de l'utilisateur, alors on déclare la victoire. A la fin du script, le nombre aléatoire et l'estimation de l'utilisateur sont affichées sous la forme d'un objet au format liste.
 
-Exemple :
+### Résultat attendu
 
 <blockquote>
-  <p>Deviner le nombre: 500<br>??? est plus grand que 500<br><br>Random : 759<br>Answer : 500</p>
+  <p>
+    Deviner le nombre: 500<br>
+    ??? est plus grand que 500<br>
+    <br>
+    Random : 759<br>
+    Answer : 500
+  </p>
 </blockquote>
 
 ## Détails

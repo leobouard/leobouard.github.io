@@ -12,7 +12,7 @@ Tous les nombes essayés par l'utilisateur sont maintenant gardés en mémoire. 
 - on remplace la dernière réponse de l'utilisateur par une liste contenant toutes ses réponses
 - on affiche maintenant la valeur moyenne de toutes les réponses données par l'utilisateur (arrondie à l'entier)
 
-Résultat :
+### Résultat attendu
 
 <blockquote>
   <p>
