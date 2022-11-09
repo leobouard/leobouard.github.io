@@ -12,6 +12,24 @@ Tous les nombes essayés par l'utilisateur sont maintenant gardés en mémoire. 
 - on remplace la dernière réponse de l'utilisateur par une liste contenant toutes ses réponses
 - on affiche maintenant la valeur moyenne de toutes les réponses données par l'utilisateur (arrondie à l'entier)
 
+Résultat :
+
+> Deviner le nombre: 500
+> 
+> ??? est plus grand que 500
+> 
+> [...]
+> 
+> VICTOIRE ! Vous avez deviné le nombre aléatoire
+> 
+> Random         : 939
+> 
+> Answers        : {500, 750, 900, 950...}
+> 
+> Average answer : 864
+> 
+> Count          : 9
+
 ## Détails
 
 ### 1. Garder en mémoire tous les nombres essayés par l'utilisateur

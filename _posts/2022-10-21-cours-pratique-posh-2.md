@@ -9,6 +9,38 @@ icon: 🎓
 
 L'utilisateur possède maintenant jusqu'à 10 tentatives pour deviner le nombre aléatoire. Si l'utilisateur échoue à deviner le nombre, un message de défaite apparait. A la fin du script, le nombre de tentatives nécessaires est affiché avec les autres statistiques.
 
+Exemple victoire :
+
+> Deviner le nombre: 500
+> 
+> ??? est plus petit que 500
+>
+> [...]
+> 
+> VICTOIRE ! Vous avez deviné le nombre aléatoire
+>
+> Random : 238
+> 
+> Answer : 238
+> 
+> Count  : 9
+
+Exemple défaite :
+
+> Deviner le nombre: 500
+> 
+> ??? est plus petit que 500
+>
+> [...]
+> 
+> DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire
+>
+> Random : 35
+> 
+> Answer : 495
+> 
+> Count  : 10
+
 ## Détails
 
 ### 1. Mettre le code dans une boucle
