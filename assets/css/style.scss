@@ -104,7 +104,7 @@ section {
     padding-left: 30px;
     padding-right: 30px;
     margin: auto;
-    max-width: 800px;
+    max-width: 963px;
     overflow: hidden;
 
     /* --- HERO DIV --- */
@@ -341,7 +341,7 @@ footer li:first-child {
 
 /* --- MEDIA --- */
 
-@media print, screen and (max-width: 800px) {
+@media print, screen and (max-width: 963px) {
     body {
         word-wrap: break-word;
     }
@@ -356,7 +356,7 @@ footer li:first-child {
 
     header, section, footer { 
         margin: auto;
-        max-width: 800px;
+        max-width: 963px;
     }
 
     .hero {
