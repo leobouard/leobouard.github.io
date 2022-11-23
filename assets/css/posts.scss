@@ -100,9 +100,10 @@ article {
     transition: all 100ms ease-in-out;
     border-radius: 5px;
 
-    a {
-        text-align: right;
-        bottom: 0;
+    div {
+        margin: -15 -15 -15 -15px;
+        border-radius: 0 5px 0 5;
+        height: 100px;
     }
 }
 
