@@ -11,17 +11,17 @@ COLOR SCHEME
 */
 
 html {
-    height: 100%;
-    letter-spacing: 0.3px;
-}
-
-body {
-    background-color: #f2f2f2;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 15px;
     font-weight: 400;
     height: 100%;
+    letter-spacing: 0.3px;
     line-height: 160%;
+}
+
+body {
+    background-color: #f2f2f2;
+    height: 100%;
     margin: 0;
     width: auto;
 }
