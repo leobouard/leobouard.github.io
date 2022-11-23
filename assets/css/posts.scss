@@ -85,11 +85,12 @@ article {
     box-shadow: 0 0 5px 0 #b8c3c9;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
+    overflow: hidden;
 
     div {
         margin: -10px;
         height: 200px;
-        border-radius: 5px 5px 0 0;
+        /*border-radius: 5px 5px 0 0;*/
     }
 }
 
