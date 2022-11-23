@@ -17,14 +17,13 @@
     margin: 15px;
     width: 425px;
     height: 300px;
-    box-shadow: 3px 3px 3px 3px #000000AA;
+    box-shadow: 3px 3px 3px 3px #b8c3c9;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
-    border-color: #000;
 }
 
 .card:hover {
-    box-shadow: 5px 5px 5px 5px #000000AA;
+    box-shadow: 5px 5px 5px 5px #b8c3c9;
 }
 
 .thumbnailLimits {
@@ -74,4 +73,5 @@
     display: flex;
     justify-content: center;
     font-size: 90px;
+    border-radius: 5px;
 }
