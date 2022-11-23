@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "fr-FR" }}">
   <head>
-    <!-- General -->
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     {% seo %}
-    <!-- SCSS Files -->
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}">
-    <link rel='stylesheet' href="{{ "/assets/css/links.css?v=" | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Poppins&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- HEADER with navbar & title -->
+
     <header>
-      <!-- Horizontal navbar -->
       <nav>
         <a href="{{ "/" | absolute_url }}" style="font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 22px;">LaBouaBouate</a>
         <a href="/about">A propos</a>
@@ -38,7 +33,6 @@
         <li>Hébergé sur <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
         <li>Fait avec ❤️ par Léo Bouard</li>
       </ul>
-
       <p><b>Envie d'en savoir plus sur moi ?</b></p>
       <ul>
         <li><a href="{{ site.emailAddress }}">Email</a></li>
@@ -46,5 +40,6 @@
         <li><a href="{{ site.github.owner_url }}">GitHub</a></li>
       </ul>
     </footer>
+    
   </body>
 </html>

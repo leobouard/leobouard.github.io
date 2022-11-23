@@ -74,7 +74,6 @@ nav a:first-child {
 section {
     min-height: 82%;
     background-color: #fff;
-    border-radius: 5px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 50px;
@@ -261,31 +260,6 @@ footer {
     padding: 0.5em;
     height: 100px;
     margin-top: 15px;
-}
-
-footer small a {
-    color: #9ea7eb;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-footer ul {
-    list-style-type: none;
-    overflow: hidden;
-    padding: 0;
-}
-
-footer li {
-    float: right;
-    display: block;
-    text-align: center;
-    padding: 0.5em;
-    text-decoration: none;
-}
-
-footer li:first-child {
-    float: left;
-    text-align: left;
 }
 
 /* --- MEDIA --- */
