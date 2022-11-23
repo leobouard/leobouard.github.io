@@ -2,17 +2,9 @@
 layout: default
 ---
 
-{% if page.tags contains "challenges" %}
 <div style="text-align: left; position: absolute; z-index: 3; margin-top: 5px;">
-    <a href="/challenges" style="color: #fff;">← Tous les défis</a>
+    <a href="/blog" style="color: #fff;">← Tous les articles</a>
 </div>
-{% endif %}
-
-{% if page.tags contains "howto" %}
-<div style="text-align: left; position: absolute; z-index: 3; margin-top: 5px;">
-    <a href="/howto" style="color: #fff;">← Tous les tutos</a>
-</div>
-{% endif %}
 
 {% if page.icon %}
 <div class="postBanner" style="background-color: {{ page.thumbnailColor }};">
@@ -29,12 +21,12 @@ layout: default
 
 {% if page.tags contains "challenges" %}
 <div class="buttonNext">
-    <a href="{{ page.id }}-soluce"">Voir la solution 💡</a>
+    <a href="{{ page.id }}-soluce"">Voir la solution</a>
 </div>
 {% endif %}
 
 {% if page.id contains "-soluce" %}
 <div class="buttonBack">
-    <a href="/challenges">Retour aux défis 💪</a>
+    <a href="{{ page.id | replace '-soluce','' }}">Retour au défi</a>
 </div>
 {% endif %}
