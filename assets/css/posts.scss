@@ -15,8 +15,9 @@
 
 .card {
     margin: 15px;
-    width: 425px;
-    height: 300px;
+    min-width: 200px;
+    max-width: 300px;
+    height: 350px;
     box-shadow: 0 0 5px 0 #b8c3c9;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
