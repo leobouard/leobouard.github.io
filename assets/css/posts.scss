@@ -5,7 +5,7 @@
 
 .posts {
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     justify-content: left;
 
     a:hover {
@@ -20,6 +20,7 @@
     box-shadow: 0 0 5px 0 #b8c3c9;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
+    flex: 1 1 0px;
 }
 
 .card:hover {
