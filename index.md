@@ -2,9 +2,17 @@
 permalink: /
 ---
 
-<div style="width: 500px; margin: auto;">
-    <h1>Bienvenue</h1>
-    <p>...mais vous venez un peu trop tôt, j'ai pas eu le temps de tout finir !<br>
-    La page est en cours de construction, promis elle sera belle !</p>
-    <img src="https://media2.giphy.com/media/iIAYEKtLy0yG7TacbC/giphy.gif?cid=ecf05e47u2uhsy292k64jvy40hdyx3gp8u26il8hbb9n2v3v&rid=giphy.gif&ct=g" alt="dancing-construction-worker-gif">
-</div>
+# Bienvenue
+
+...mais vous venez un peu trop tôt, j'ai pas eu le temps de tout finir ! La page est en cours de construction, promis elle sera belle !
+
+Pour l'instant elle n'est pas prête, il me reste encore des choses à faire avant :
+
+- [ ] Remettre en forme le pied de page
+- [ ] Refaire le CSS pour les extraits de code
+- [ ] Changer le style pour la balise "pre"
+- [ ] Fusionner les pages "Articles" et "Défis"
+- [ ] Faire de nouvelles cartes, plus jolies et plus petites avec :
+  - [ ] le tag de l'article
+  - [ ] la date d'écriture
+  - [ ] un bouton pour lire l'article
