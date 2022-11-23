@@ -1,3 +1,7 @@
+---
+permalink: /cv
+---
+
 # Léo Bouard
 
 ## Résumé

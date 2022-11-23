@@ -4,7 +4,7 @@ permalink: /about
 
 # A propos
 
-Moi c'est Léo Bouard, administrateur système & lead consultant chez [METSYS](https://www.metsys.fr/) @Rennes.
+Moi c'est Léo Bouard, administrateur système & lead consultant chez [METSYS Grand-Ouest](https://www.metsys.fr/) @Rennes.
 
 Ça fait maintenant 4 ans que j'ai commencé dans l'administration système (spécialisé sur les infrastructures Microsoft) sur des technologies comme :
 
