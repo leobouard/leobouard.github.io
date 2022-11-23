@@ -36,10 +36,9 @@ header {
 /* --- NAVIGATION BAR --- */
 
 nav {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 25px;
+    padding-right: 25px;
     position: absolute fixed;
-    right: 0px;
     overflow: hidden;
     background-color: #fff;
     margin: 0;
@@ -51,7 +50,7 @@ nav a {
     color: #383b53;
     text-align: center;
     font-weight: bold;
-    padding: 1em;
+    padding: 25px;
     float: right;
     text-decoration: none;
     text-decoration-color: transparent;
@@ -84,40 +83,7 @@ section {
     max-width: 950px;
     overflow: hidden;
 
-    /* --- HERO DIV --- */
-
-    .hero {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        margin-left: -50px;
-        margin-right: -50px;
-        position: relative;
-        left: 0;
-        right: 0;
-        min-height: 100px;
-        background-color: #43aa8b;
-        color: #fff;
-        font-weight: 500;
-        padding: 2em;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        a {
-            margin-top: 1em;
-            background-color: #fff;
-            color: #43aa8b;
-            font-weight: 600;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border: 0;
-        }
-    }
-
     /* --- BUTTON LINK --- */
-
 
     .buttons {
         display: flex;
@@ -185,9 +151,10 @@ section {
     }
 
     h1 {
+        font-family: 'Kanit', sans-serif;
         font-size: xx-large;
-        border-bottom: 1px solid #eaecef;
-        padding-bottom: 7px;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 10px;
         display: block;
     }
 
@@ -217,7 +184,7 @@ section {
     }
 
     hr {
-        border: 1px solid #eaecef;
+        border: 1px solid #f2f2f2;
         margin-top: 15px;
         margin-bottom: 15px;
     }
