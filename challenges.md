@@ -13,7 +13,7 @@ permalink: /challenges
         <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <p><small>Défi</small></p>
-        <p><a href="/">Continuer →</a>
+        <p><a href="/">Continuer →</a></p>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
@@ -21,7 +21,7 @@ permalink: /challenges
         <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <p><small>Défi</small></p>
-        <p><a href="/">Continuer →</a>
+        <p><a href="/">Continuer →</a></p>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
@@ -29,7 +29,7 @@ permalink: /challenges
         <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <p><small>Défi</small></p>
-        <p><a href="/">Continuer →</a>
+        <p><a href="/">Continuer →</a></p>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
@@ -37,7 +37,7 @@ permalink: /challenges
         <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <p><small>Défi</small></p>
-        <p><a href="/">Continuer →</a>
+        <p><a href="/">Continuer →</a></p>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
