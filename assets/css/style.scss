@@ -253,7 +253,10 @@ footer {
     }
     
     nav a {
-        padding: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     section {
@@ -271,9 +274,8 @@ footer {
 
     header {
         position: sticky;
-        position: -webkit-sticky;
         z-index: 1000;
-        box-shadow: 0 5px 5px -5px #b2b3b8;
+        box-shadow: 0 5px 5px -5px #b8c3c9;
         transition: all 200ms ease-in-out;
     }
 }
