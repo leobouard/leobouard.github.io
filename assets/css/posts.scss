@@ -17,12 +17,13 @@
     margin: 15px;
     width: 425px;
     height: 300px;
-    box-shadow: 0 3px 3px 0px #8c8c8c65;
-    transition: all 200ms ease-in-out;
+    box-shadow: 3px #000000AA;
+    transition: all 100ms ease-in-out;
+    border-radius: 5px;
 }
 
 .card:hover {
-    box-shadow: 0 6px 6px 0px #38383834;
+    box-shadow: 5px #000000AA;
 }
 
 .thumbnailLimits {
@@ -37,11 +38,11 @@
     margin: 0;
     height: 150px;
     line-height: 150px;
-    transition: transform 0.2s;
+    transition: transform 0.1s;
 }
 
 .thumbnail:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .postInfo {
