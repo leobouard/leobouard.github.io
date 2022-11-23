@@ -15,14 +15,13 @@
 
 .card {
     margin: 15px;
-    min-width: 200px;
-    max-width: 300px;
     flex-grow: 1;
-    height: 500px;
+    height: 400px;
     box-shadow: 0 0 5px 0 #b8c3c9;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
     flex: 1 1 0px;
+    flex-basis: 300px;
 }
 
 .card:hover {
