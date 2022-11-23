@@ -270,7 +270,7 @@ section {
     /* --- TABLES --- */
 
     table, td, tr, th {
-        border-color: #eaecef;
+        border-color: #f2f2f2;
         border-width: 1px;
         border-style: solid;
         padding: 10px;
@@ -278,7 +278,8 @@ section {
     }
 
     th {
-        background-color: #eaecef;
+        background-color: #f2f2f2;
+        text-align: left;
     }
 
     table {
