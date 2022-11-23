@@ -4,7 +4,13 @@ permalink: /cv
 
 # Léo Bouard
 
-<h2>Mes expériences</h2>
+## Résumé
+
+Administrateur/ingénieur systèmes spécialisé dans les infrastructures et l'écosystème Microsoft, notamment sur Active Directory, Exchange, Microsoft 365 et Azure AD.
+
+Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum avec mes équipes et sur mon (humble) blog: <https://www.labouabouate.fr/>.
+
+## Mes expériences
 
 <table class="CVtable"><tbody>
     <tr class="CVtr">
@@ -64,7 +70,13 @@ permalink: /cv
     </tr>
 </tbody></table>
 
-<h2>Ma formation</h2>
+## Mes certifications
+
+- Microsoft 365 Identity and services (MS-100)
+- Microsoft 365 Fundamentals (MS-900)
+- Azure Fundamentals (AZ-900)
+
+## Ma formation
 
 <table class="CVtable"><tbody>
     <tr class="CVtr">
