@@ -16,14 +16,14 @@ html {
 }
 
 body {
-    height: 100%;
-    width: auto;
-    margin: 0;
-    background-color: #f1f2fa;
+    background-color: #f2f2f2;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 15px;
     font-weight: 400;
+    height: 100%;
     line-height: 160%;
+    margin: 0;
+    width: auto;
 }
 
 /* --- HEADER --- */
@@ -36,14 +36,14 @@ header {
 /* --- NAVIGATION BAR --- */
 
 nav {
+    background-color: #fff;
+    box-shadow: 0 5px 5px -5px #b8c3c9;
+    display: block;
+    margin: 0;
+    overflow: hidden;
     padding-left: 25px;
     padding-right: 25px;
     position: absolute fixed;
-    overflow: hidden;
-    background-color: #fff;
-    margin: 0;
-    box-shadow: 0 5px 5px -5px #b2b3b8;
-    display: block;
 }
 
 nav a {
@@ -96,7 +96,6 @@ section {
         
         a {
             background-color: #43aa8b;
-            
             color: #fff;
             font-weight: 600;
             padding-top: 10px;
@@ -227,29 +226,6 @@ section {
     table {
         width: 100%;
     }
-
-    .CVtable {
-
-        td, tr {
-            border-color: #fff;
-        }
-    }
-
-    .CVtr {
-        vertical-align: top;
-    }
-
-    .CVtd {
-        text-align: center;
-        width: 100px;
-        font-size: 13px;
-        color: #383b53;
-
-        img {
-            width: 64px;
-        }
-    }
-
 }
 
 /* --- FOOTER --- */
@@ -258,7 +234,6 @@ footer {
     background-color: #383b53;
     color: #fff;
     padding: 0.5em;
-    height: 100px;
     margin-top: 15px;
 }
 
