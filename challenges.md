@@ -7,21 +7,41 @@ permalink: /challenges
 ## Les derniers défis
 
 <div class="posts">
-    {% for post in site.posts %}
-        {% if post.tags contains "challenges" %}
-            <a href="{{ post.id }}">
-                <div class="card">
-                    <div class="thumbnailLimits">
-                        <div class="thumbnail" style="background-color: {{ post.thumbnailColor | default: "#9ea7eb" }}">{{ post.icon | default: "⚙️"}}</div>
-                    </div>
-                    <div class="postInfo">
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.description }}</p>
-                    </div>
-                </div>
-            </a>
-        {% endif %}
-    {% endfor %}
+    <article>
+        <div style="background-color: #f9c80e;" height="150px"></div>
+        <h3>Voici un test de titre un peu long<h3>
+        <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
+        <small>Défi</small>
+        <a href="/">Continuer →</a>
+    </article>
+    <article>
+        <div style="background-color: #f9c80e;" height="150px"></div>
+        <h3>Voici un test de titre un peu long<h3>
+        <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
+        <small>Défi</small>
+        <a href="/">Continuer →</a>
+    </article>
+    <article>
+        <div style="background-color: #f9c80e;" height="150px"></div>
+        <h3>Voici un test de titre un peu long<h3>
+        <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
+        <small>Défi</small>
+        <a href="/">Continuer →</a>
+    </article>
+    <article>
+        <div style="background-color: #f9c80e;" height="150px"></div>
+        <h3>Voici un test de titre un peu long<h3>
+        <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
+        <small>Défi</small>
+        <a href="/">Continuer →</a>
+    </article>
+    <article>
+        <div style="background-color: #f9c80e;" height="150px"></div>
+        <h3>Voici un test de titre un peu long<h3>
+        <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
+        <small>Défi</small>
+        <a href="/">Continuer →</a>
+    </article>
 </div>
 
 ## Pourquoi des défis ?
