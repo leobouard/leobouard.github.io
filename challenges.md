@@ -4,11 +4,6 @@ permalink: /challenges
 
 # Un défi à relever ?
 
-Parce qu'on apprend mieux en s'amusant, je vous propose une série de défis à relever avec PowerShell.
-Vous êtes prévenus : il n'y a rien de bien sérieux et aucun prix à la clé !
-
-Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs.
-
 ## Les derniers défis
 
 <div class="posts">
@@ -28,3 +23,9 @@ Mais qui sait, peut-être qu'à l'occasion vous apprendrez deux-trois trucs.
         {% endif %}
     {% endfor %}
 </div>
+
+## Pourquoi des défis ?
+
+Parce qu'on apprend mieux en s'amusant, je propose une série de défis à relever avec PowerShell. Comme d'habitude sur ce blog, je pars du principe que vous savez faire vos propres recherches, que vous êtes familier avec la syntaxe et que vous connaissez les bases du langages. En revanche, j'essaye de faire en sorte que vous n'ayez besoin ni d'une infrastructure de test (Active Directory ou tenant Microsoft 365 par exemple) ni d'installer des modules supplémentaires ! Donc si vous avez un accès à Internet (et normalement cette condition est remplie puisque vous lisez cette phrase sur un site web) et un terminal de commande avec Windows PowerShell 5.1 ou supérieur : félicitations, vous avez tous les outils pour participer aux défis !
+
+Par contre vous êtes prévenus : il n'y a pas de récompense à la clé ! Mais qui sait, peut-être qu'à l'occasion vous aurez appris deux-trois trucs.
