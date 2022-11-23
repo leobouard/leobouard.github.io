@@ -10,37 +10,42 @@ permalink: /challenges
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
         <h3>Voici un test de titre un peu long</h3>
+        <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
-        <small>Défi</small>
-        <a href="/">Continuer →</a>
+        <p><small>Défi</small></p>
+        <p><a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
         <h3>Voici un test de titre un peu long</h3>
+        <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
-        <small>Défi</small>
-        <a href="/">Continuer →</a>
+        <p><small>Défi</small></p>
+        <p><a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
         <h3>Voici un test de titre un peu long</h3>
+        <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
-        <small>Défi</small>
-        <a href="/">Continuer →</a>
+        <p><small>Défi</small></p>
+        <p><a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
         <h3>Voici un test de titre un peu long</h3>
+        <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
-        <small>Défi</small>
-        <a href="/">Continuer →</a>
+        <p><small>Défi</small></p>
+        <p><a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
         <h3>Voici un test de titre un peu long</h3>
+        <hr>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
-        <small>Défi</small>
-        <a href="/">Continuer →</a>
+        <p><small>Défi</small></p>
+        <p><a href="/">Continuer →</a></p>
     </article>
 </div>
 

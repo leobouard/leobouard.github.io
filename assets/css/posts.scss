@@ -85,7 +85,7 @@
 .posts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
 }
 
 article {
@@ -99,4 +99,8 @@ article {
     box-shadow: 0 0 5px 0 #b8c3c9;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
+}
+
+article:hover {
+    box-shadow: 0 0 10px 0 #b8c3c9;
 }
