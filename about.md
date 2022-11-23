@@ -22,11 +22,7 @@ Pour plus d'informations :
 
 ## Comment est fait le site web ?
 
-Le site est hébergé sur [GitHub Pages](https://pages.github.com/) et repose donc sur le moteur [Jekyll](https://jekyllrb.com/).
-
-Je me suis basé sur le thème [minimal de orderedlist](https://github.com/orderedlist/minimal/) dans un premier temps, pour ensuite voler de mes propres ailes et produire mon code HTML & CSS par moi-même (pour le meilleur et pour le pire).
-
-Je ne suis pas développeur web donc je m'excuse par avance pour certains éléments un peu hazardeux ou l'accessibilité du site web, je fais de mon mieux mais je ne suis pas un professionnel !
+Le site est hébergé sur [GitHub Pages](https://pages.github.com/) et repose donc sur le moteur [Jekyll](https://jekyllrb.com/). Je me suis basé sur le thème [minimal de orderedlist](https://github.com/orderedlist/minimal/) dans un premier temps, pour ensuite voler de mes propres ailes et produire mon code HTML & CSS par moi-même (pour le meilleur et pour le pire). Je ne suis pas développeur web donc je m'excuse par avance pour certains éléments un peu hazardeux ou l'accessibilité du site web, je fais de mon mieux mais je ne suis pas un professionnel ! Dans les influences pour le design et la conception du blog, vous avez peut-être reconnu le site [Microsoft Learn](https://learn.microsoft.com) sur lequel je me suis beaucoup appuyé.
 
 ### Les outils utilisés
 
