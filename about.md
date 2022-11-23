@@ -11,7 +11,7 @@ Moi c'est Léo Bouard, administrateur système & lead consultant chez [METSYS Gr
 - Microsoft 365
 - Active Directory
 - Microsoft Exchange
-- Azure (je n'ai fait que gratter la surface 😊)
+- Azure Active Directory
 
 ...et qui dit technologies Microsoft dit PowerShell ! Je me suis pris de passion pour cet outil et j'essaye de partager ça avec ce site web sans prétention.
 
