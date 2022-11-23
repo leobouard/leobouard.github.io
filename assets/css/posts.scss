@@ -99,6 +99,11 @@ article {
     box-shadow: 0 0 5px 0 #b8c3c9;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
+
+    a {
+        text-align: right;
+        bottom: 0;
+    }
 }
 
 article:hover {

@@ -10,6 +10,7 @@ permalink: /blog
     {% for post in site.posts %}
         {% if post.listed == true %}
             <article>
+                <div style="background-color: {{ post.thumbnailColor }}; height: 100px;"></div>
                 <h2>{{ post.title }}</h2>
                 <hr>
                 <p>{{ post.description }}</p>
