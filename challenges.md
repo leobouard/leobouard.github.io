@@ -9,35 +9,35 @@ permalink: /challenges
 <div class="posts">
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
-        <h3>Voici un test de titre un peu long<h3>
+        <h3>Voici un test de titre un peu long</h3>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <small>Défi</small>
         <a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
-        <h3>Voici un test de titre un peu long<h3>
+        <h3>Voici un test de titre un peu long</h3>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <small>Défi</small>
         <a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
-        <h3>Voici un test de titre un peu long<h3>
+        <h3>Voici un test de titre un peu long</h3>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <small>Défi</small>
         <a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
-        <h3>Voici un test de titre un peu long<h3>
+        <h3>Voici un test de titre un peu long</h3>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <small>Défi</small>
         <a href="/">Continuer →</a>
     </article>
     <article>
         <div style="background-color: #f9c80e;" height="150px"></div>
-        <h3>Voici un test de titre un peu long<h3>
+        <h3>Voici un test de titre un peu long</h3>
         <p>Un résumé un peu plus conséquent qui permet d'avoir une bonne idée du contenu de l'article. Je pense qu'on toujours garder la phrase rigolote d'avant.</p>
         <small>Défi</small>
         <a href="/">Continuer →</a>
