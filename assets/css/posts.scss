@@ -1,7 +1,7 @@
 ---
 ---
 
-/* --- POSTS CONTENT --- */
+/* --- POSTS CONTENT ---
 
 .posts {
     display: flex;
@@ -78,4 +78,25 @@
     display: flex;
     justify-content: center;
     font-size: 90px;
+}
+
+*/
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+article {
+    margin: 15px;
+    height: 400px;
+    max-width: 300px;
+    flex: 1;
+    flex-basis: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px 0 #b8c3c9;
+    transition: all 100ms ease-in-out;
+    border-radius: 5px;
 }
