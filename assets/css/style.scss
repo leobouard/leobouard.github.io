@@ -31,30 +31,6 @@ body {
 header {
     margin: 0;
     margin-bottom: 15px;
-    top: 0;
-}
-
-.banner {
-    margin: 0;
-    background-color: #f9c80e;
-    display: flex;
-    justify-content: center;
-
-    img {
-        height: 20px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-}
-
-.verticalNav {
-    position: absolute;
-    left: 0;
-    height: 25px;
-    margin-top: 15px;
-    margin-left: 15px;
-    fill: #000;
-    visibility: hidden;
 }
 
 /* --- NAVIGATION BAR --- */
@@ -63,7 +39,6 @@ nav {
     padding-left: 1em;
     padding-right: 1em;
     position: absolute fixed;
-    left: 0px;
     right: 0px;
     overflow: hidden;
     background-color: #fff;
@@ -317,7 +292,6 @@ footer {
     background-color: #383b53;
     color: #fff;
     padding: 0.5em;
-    bottom: 0;
     height: 100px;
     margin-top: 15px;
 }
