@@ -72,7 +72,7 @@ nav a:first-child {
 /* --- CONTENT --- */
 
 section {
-    min-height: 82%;
+    min-height: 80%;
     background-color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -281,20 +281,6 @@ footer {
         margin: auto;
         max-width: 950px;
     }
-
-    .hero {
-        position: inherit;
-    }
-
-    /* 
-    nav {
-        display: none;
-    }
-
-    .verticalNav {
-        visibility: visible;
-    }
-    */
 
     header {
         position: sticky;
