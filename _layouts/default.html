@@ -12,39 +12,26 @@
     <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}">
     <link rel='stylesheet' href="{{ "/assets/css/links.css?v=" | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Poppins&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- HEADER with navbar & title -->
     <header>
-      <div class="banner"">
-        <!-- Vertical navbar button -->
-        <svg class="verticalNav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-          <path d="M1,9h14V7H1V9z M1,14h14v-2H1V14z M1,2v2h14V2H1z"/>
-        </svg>
-        <!-- Main title -->
-        <a href="{{ "/" | absolute_url }}">
-          <img src="/assets/images/logo-inline.svg" alt="La Boua Bouate">
-        </a>
-      </div>
       <!-- Horizontal navbar -->
       <nav>
-        <a href="{{ "/" | absolute_url }}">Accueil</a>
+        <a href="{{ "/" | absolute_url }}" style="font-family: 'Kanit', sans-serif; font-weight: 700;">LaBouaBouate</a>
         <a href="/challenges">Défis</a>
         <a href="/howto">Articles</a>
         <a href="/about">A propos</a>
       </nav>
     </header>
 
-    {% if page.layout == "homepage" %}
-      <!-- Special layout for homepage -->
-      <div class="homepageContent">
-        {{ content }}
-      </div>
-    {% else %}
-      <section>
-        {{ content }}
-      </section>
-    {% endif %}
+    <section>
+      {{ content }}
+    </section>
 
     <footer>
       <ul>
