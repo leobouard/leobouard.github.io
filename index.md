@@ -20,16 +20,15 @@ Pour l'instant elle n'est pas prête, il me reste encore des choses à faire ava
 ## Les derniers articles
 
 <div class="posts">
-    {% for post in site.posts %}
-        {% if post.listed == true %}
-            <article>
-                <div style="background-color: {{ post.thumbnailColor }};"></div>
-                <h2>{{ post.title }}</h2>
-                <hr>
-                <p>{{ post.description }}</p>
-                <p><small>{{ post.tags }}</small></p>
-                <p><a href="{{ post.id }}">Continuer →</a></p>
-            </article>
-        {% endif %}
+    {% assign listed_posts = sites.posts.listed | where: 'true'}
+    {% for post in listed_posts limit:3 %}
+        <article>
+            <div style="background-color: {{ post.thumbnailColor }}; height: 100px;"></div>
+            <h2>{{ post.title }}</h2>
+            <hr>
+            <p>{{ post.description }}</p>
+            <p><small>{{ post.tags }}</small></p>
+            <p><a href="{{ post.id }}">Continuer →</a></p>
+        </article>
     {% endfor %}
 </div>
