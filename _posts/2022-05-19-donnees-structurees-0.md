@@ -5,6 +5,7 @@ description: "J'ai pas de jeu de mot pour celle-ci"
 tags: howto
 thumbnailColor: "#3C787E"
 icon: 📖
+listed: true
 ---
 
 ## Informations en bref

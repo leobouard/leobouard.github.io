@@ -5,6 +5,7 @@ description: "Oui. Je viens de faire ce jeu de mot."
 tags: howto
 thumbnailColor: "#452057"
 icon: 🍆
+listed: true
 ---
 
 En faisant quelques recherches sur le fameux attribut "UserAccountControl" sur les comptes utilisateurs Active Directory, je suis tombé sur un très bon article d'IT-Connect sur le sujet. L'article parle de l'attribut et donne un bout de script PowerShell pour déchiffrer sa valeur.

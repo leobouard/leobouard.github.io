@@ -5,6 +5,7 @@ description: "Promis on va s'amuser !"
 tags: howto
 thumbnailColor: "#007acc"
 icon: 🎓
+listed: true
 ---
 
 ## Introduction

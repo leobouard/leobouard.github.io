@@ -5,6 +5,7 @@ description: "Vous avez peut-être déjà une idée"
 tags: challenges
 thumbnailColor: "#334195"
 icon: 🆔
+listed: true
 ---
 
 Bon bah là pas besoin de broder... Tout est dans le titre ! 😄

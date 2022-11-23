@@ -5,6 +5,7 @@ description: "Un peu de sérieux cette fois"
 tags: howto
 thumbnailColor: "#007acc"
 icon: ❌
+listed: true
 ---
 
 ## Contexte

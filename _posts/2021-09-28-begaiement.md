@@ -5,6 +5,7 @@ description: "C’est une bonne situation ça scribe ?"
 tags: challenges
 thumbnailColor: "#EDAE49"
 icon: 🗨️
+listed: true
 ---
 
 Un grand classique de la programmation appliqué au PowerShell : faire bégayer un texte !

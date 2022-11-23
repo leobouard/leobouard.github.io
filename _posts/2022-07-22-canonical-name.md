@@ -5,6 +5,7 @@ description: "Toutes les routes mènent à la racine du domaine"
 tags: howto
 thumbnailColor: "#26c9fc"
 icon: 🛣️
+listed: true
 ---
 
 L'emplacement dans l'aborescence Active Directory est souvent très important et peu s'avérer utile pour la génération de rapports. L'attribut le plus utilisé pour determiner cette information est le "Distinguished Name", mais si vous ne connaissez pas son cousin le "Canonical Name", cet article est fait pour vous !
