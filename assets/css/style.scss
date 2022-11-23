@@ -21,7 +21,7 @@ body {
     margin: 0;
     background-color: #f1f2fa;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 160%;
 }
@@ -102,10 +102,10 @@ section {
     background-color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     margin: auto;
-    max-width: 963px;
+    max-width: 950px;
     overflow: hidden;
 
     /* --- HERO DIV --- */
@@ -113,8 +113,8 @@ section {
     .hero {
         margin-top: 30px;
         margin-bottom: 30px;
-        margin-left: -30px;
-        margin-right: -30px;
+        margin-left: -50px;
+        margin-right: -50px;
         position: relative;
         left: 0;
         right: 0;
@@ -347,7 +347,7 @@ footer li:first-child {
 
 /* --- MEDIA --- */
 
-@media print, screen and (max-width: 963px) {
+@media print, screen and (max-width: 950px) {
     body {
         word-wrap: break-word;
     }
@@ -362,7 +362,7 @@ footer li:first-child {
 
     header, section, footer { 
         margin: auto;
-        max-width: 963px;
+        max-width: 950px;
     }
 
     .hero {
