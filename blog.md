@@ -10,12 +10,12 @@ permalink: /blog
     {% for post in site.posts %}
         {% if post.listed == true %}
             <article>
-                <p style="text-align: center; font-size: 50px;">{{ post.icon }}</p>
+                <p style="text-align: center; font-size: 65px;">{{ post.icon }}</p>
                 <hr style="background-color: {{ post.thumbnailColor }};">
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.description }}</p>
                 <p><small>{{ post.tags }}</small></p>
-                <p><a href="{{ post.id }}">Continuer →</a></p>
+                <p style="text-align: right; bottom: 0;"><a href="{{ post.id }}">Continuer →</a></p>
             </article>
         {% endif %}
     {% endfor %}
