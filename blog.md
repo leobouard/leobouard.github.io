@@ -15,7 +15,7 @@ permalink: /blog
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.description }}</p>
                 <p><small>{{ post.tags }}</small></p>
-                <p style="position: absolute; bottom: 0px; right: 0px;"><a href="{{ post.id }}">Continuer →</a></p>
+                <p style="position: absolute; bottom: 0px; right: 15px;"><a href="{{ post.id }}">Continuer →</a></p>
             </article>
         {% endif %}
     {% endfor %}
