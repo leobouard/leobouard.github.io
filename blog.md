@@ -1,5 +1,6 @@
 ---
 permalink: /blog
+description: "Tous les défis, cours et articles sur PowerShell et d'autres technologies Microsoft"
 ---
 
 # Articles
