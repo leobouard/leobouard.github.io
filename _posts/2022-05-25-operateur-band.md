@@ -2,10 +2,10 @@
 layout: post
 title: "-band en PowerShell"
 description: "Oui. Je viens de faire ce jeu de mot."
-tags: howto
+tags: AD
 thumbnailColor: "#452057"
 icon: 🍆
-listed: true
+listed: false
 ---
 
 En faisant quelques recherches sur le fameux attribut "UserAccountControl" sur les comptes utilisateurs Active Directory, je suis tombé sur un très bon article d'IT-Connect sur le sujet. L'article parle de l'attribut et donne un bout de script PowerShell pour déchiffrer sa valeur.

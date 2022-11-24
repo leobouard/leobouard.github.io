@@ -2,7 +2,7 @@
 layout: post
 title: "Les données structurées"
 description: "J'ai pas de jeu de mot pour celle-ci"
-tags: howto
+tags: cours
 thumbnailColor: "#3C787E"
 icon: 📖
 listed: true

@@ -2,7 +2,7 @@
 layout: post
 title: "La formule magique"
 description: "Petite énigme a résoudre avec le script le plus court possible"
-tags: challenges
+tags: défi
 thumbnailColor: "#7C238C"
 icon: 🎩
 listed: true
