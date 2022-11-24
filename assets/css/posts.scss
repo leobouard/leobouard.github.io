@@ -87,6 +87,16 @@ article {
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+
+    small {
+        border-width: 2px;
+        border-radius: 5px;
+        border-color: #f2f2f2;
+        border-style: solid;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #fff;
+    }
 }
 
 article:hover {

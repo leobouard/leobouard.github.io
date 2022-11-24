@@ -2,7 +2,7 @@
 layout: post
 title: "-band en PowerShell"
 description: "Oui. Je viens de faire ce jeu de mot."
-tags: AD
+tags: powershell
 thumbnailColor: "#452057"
 icon: 🍆
 listed: false

@@ -2,7 +2,7 @@
 layout: post
 title: "CanonicalName & DN"
 description: "Toutes les routes mènent à la racine du domaine"
-tags: AD
+tags: activedirectory
 thumbnailColor: "#26c9fc"
 icon: 💡
 listed: true
