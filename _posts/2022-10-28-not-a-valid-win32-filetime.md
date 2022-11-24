@@ -3,7 +3,7 @@ layout: post
 title: "Not a valid Win32 FileTime."
 description: "Un peu de sérieux cette fois"
 tags: AD
-thumbnailColor: "#007acc"
+thumbnailColor: "#7D1730"
 icon: ❌
 listed: true
 ---

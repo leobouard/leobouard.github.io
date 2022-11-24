@@ -3,7 +3,7 @@ layout: post
 title: "Père Noël aléatoire"
 description: "Qui offre et qui reçoit chaque cadeau"
 tags: DÉFI
-thumbnailColor: "#DD2D4A"
+thumbnailColor: "#7F1526"
 icon: 🎅
 listed: true
 ---

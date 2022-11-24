@@ -3,7 +3,7 @@ layout: post
 title: "-band en PowerShell"
 description: "Oui. Je viens de faire ce jeu de mot."
 tags: POWERSHELL
-thumbnailColor: "#452057"
+thumbnailColor: "#523760"
 icon: 🍆
 listed: false
 ---
