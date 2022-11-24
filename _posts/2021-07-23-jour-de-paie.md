@@ -2,7 +2,7 @@
 layout: post
 title: "Le jour de paie"
 description: "Calculer le jour exact ou vous recevrez votre salaire"
-tags: défi
+tags: DÉFI
 thumbnailColor: "#519E8A"
 icon: 💸
 listed: true

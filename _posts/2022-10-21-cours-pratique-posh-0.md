@@ -2,7 +2,7 @@
 layout: post
 title: "Cours pratique PowerShell"
 description: "Promis on va s'amuser !"
-tags: cours
+tags: COURS
 thumbnailColor: "#007acc"
 icon: 🎓
 listed: true

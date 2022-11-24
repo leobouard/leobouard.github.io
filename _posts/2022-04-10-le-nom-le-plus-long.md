@@ -2,7 +2,7 @@
 layout: post
 title: "Qui a le nom le plus long ?"
 description: "Vous avez peut-être déjà une idée"
-tags: défi
+tags: DÉFI
 thumbnailColor: "#334195"
 icon: 🆔
 listed: true

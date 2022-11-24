@@ -2,7 +2,7 @@
 layout: post
 title: "Bégaiement"
 description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
-tags: défi
+tags: DÉFI
 thumbnailColor: "#EDAE49"
 icon: 🗨️
 listed: true

@@ -10,7 +10,7 @@ permalink: /blog
     {% for post in site.posts %}
         {% if post.listed == true %}
             <article>
-                <small style="position: absolute; top: 15px; left: 15px;">{{ post.tags | upcase }}</small>
+                <small style="position: absolute; top: 15px; left: 15px;">{{ post.tags }}</small>
                 <p style="text-align: center; font-size: 75px;">{{ post.icon }}</p>
                 <hr>
                 <h2>{{ post.title }}</h2>
