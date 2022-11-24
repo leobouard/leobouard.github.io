@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Le jour de paie"
-description: "Elle est où la moulaga ?"
-tags: challenges
+description: "Calculer le jour exact ou vous recevrez votre salaire"
+tags: défi powershell
 thumbnailColor: "#519E8A"
 icon: 💸
 listed: true

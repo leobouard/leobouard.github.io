@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bégaiement"
-description: "C’est une bonne situation ça scribe ?"
+description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
 tags: challenges
 thumbnailColor: "#EDAE49"
 icon: 🗨️

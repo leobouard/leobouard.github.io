@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "La formule magique"
-description: "542 est égal à 11"
+description: "Petite énigme a résoudre avec le script le plus court possible"
 tags: challenges
 thumbnailColor: "#7C238C"
 icon: 🎩
