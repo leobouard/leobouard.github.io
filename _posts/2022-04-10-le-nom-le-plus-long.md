@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Qui a le nom le plus long ?"
-description: "Vous avez peut-être déjà une idée"
+description: "Saurez-vous retrouver la personne avec le nom complet (prénom et nom) le plus long de la liste ? Indice : vous connaissez déjà la réponse"
 tags: DÉFI
 thumbnailColor: "#334195"
 icon: 🆔

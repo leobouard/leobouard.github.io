@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "Cours pratique PowerShell"
-description: "Promis on va s'amuser !"
+description: "Création d'un jeu en PowerShell en utilisant un maximum de commandes et de techniques différentes"
 tags: COURS
-thumbnailColor: "#004370"
 icon: 🎓
 listed: true
 ---

@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "CanonicalName & DN"
-description: "Toutes les routes mènent à la racine du domaine"
+description: "Et si on prennait la racine du domaine en point de départ pour une fois ?"
 tags: AD
-thumbnailColor: "#423f4f"
 icon: 💡
 listed: true
 ---

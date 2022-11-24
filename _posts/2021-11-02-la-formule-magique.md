@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "La formule magique"
-description: "Petite énigme a résoudre avec le script le plus court possible"
+description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
 tags: DÉFI
 thumbnailColor: "#7C238C"
 icon: 🎩

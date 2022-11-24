@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "Le jour de paie"
-description: "Calculer le jour exact ou vous recevrez votre salaire"
+description: "Calculer le jour exact où vous recevrez votre salaire, en prennant en compte les jours ouvrés uniquement"
 tags: DÉFI
-thumbnailColor: "#24473E"
 icon: 💸
 listed: true
 ---

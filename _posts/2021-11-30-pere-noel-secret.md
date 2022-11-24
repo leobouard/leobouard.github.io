@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "Père Noël aléatoire"
-description: "Qui offre et qui reçoit chaque cadeau"
+description: "Une variante du 'secret santa' : faire un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
 tags: DÉFI
-thumbnailColor: "#7F1526"
 icon: 🎅
 listed: true
 ---

@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "-band en PowerShell"
-description: "Oui. Je viens de faire ce jeu de mot."
+description: "Est-ce que je viens de faire un jeu de mot sur le nom de l'opérateur ? Oui."
 tags: POWERSHELL
-thumbnailColor: "#523760"
 icon: 🍆
 listed: false
 ---
