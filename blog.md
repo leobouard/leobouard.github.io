@@ -11,7 +11,7 @@ permalink: /blog
         {% if post.listed == true %}
             <article>
                 <div style="margin: -15px;">
-                    <p style="text-align: center; font-size: 60px;">{{ post.icon }}</p>
+                    <p style="text-align: center; font-size: 80px;">{{ post.icon }}</p>
                 </div>
                 <hr>
                 <h2>{{ post.title }}</h2>
