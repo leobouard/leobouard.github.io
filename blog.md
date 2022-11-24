@@ -10,8 +10,8 @@ permalink: /blog
     {% for post in site.posts %}
         {% if post.listed == true %}
             <article>
-                <div>
-                    <p style="text-align: center; font-size: 65px;">{{ post.icon }}</p>
+                <div style="margin: -15px;">
+                    <p style="text-align: center; font-size: 60px;">{{ post.icon }}</p>
                 </div>
                 <hr>
                 <h2>{{ post.title }}</h2>
