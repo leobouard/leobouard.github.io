@@ -29,7 +29,7 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/) pour l'audit de performance, de bonnes pratiques et d'accessibilité du site
 - [W3schools](https://www.w3schools.com/) et [Stack Overflow](https://stackoverflow.com/) pour l'aide sur générale HTML et CSS
 
-### Chartre graphique
+### Charte graphique
 
 <table>
   <thead>
