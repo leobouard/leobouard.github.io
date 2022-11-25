@@ -200,7 +200,7 @@ section {
     pre {
         border-radius: 5px;
         background-color: #f2f2f2;
-        padding: 5px;
+        padding: 20px;
 
         code {
             white-space: pre-wrap;
@@ -313,6 +313,11 @@ footer {
         z-index: 1000;
         box-shadow: 0 5px 5px -5px #b8c3c9;
         transition: all 200ms ease-in-out;
+    }
+
+    pre {
+        padding: 10px;
+        overflow: scroll;
     }
 
     footer {
