@@ -192,12 +192,16 @@ section {
 
     /* --- CODE --- */
 
-    pre, code {
+    pre {
         border-width: 2px;
         border-radius: 5px;
         border-color: #f2f2f2;
         border-style: solid;
         padding: 5px;
+    }
+    
+    code {
+
         white-space: pre-wrap;
         word-wrap: break-word;
 
