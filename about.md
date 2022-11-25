@@ -43,6 +43,7 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
   <tbody>
     <tr>
       <td>Bordures et arrière plan</td>
+      <td>Blanc</td>
       <td>#F2F2F2</td>
       <td><div style="width: 50px; height: 25px; background-color: #F2F2F2; border-radius: 5px;"></div></td>
     </tr>
