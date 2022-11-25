@@ -4,10 +4,8 @@
 ## Récupérer la liste des utilisateurs
 
 ```powershell
-
 $uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/assets/files/users.csv"
 $users = (Invoke-WebRequest -Uri $uri).Content | ConvertFrom-Csv -Delimiter ';'
-
 ```
 
 ## Ajouter une date aléatoire à chaque utilisateur
@@ -23,7 +21,6 @@ Générer une date aléatoire, ça peut paraitre simple au premier abords, mais 
 ...pour ensuite générer la fameuse date aléatoire. Problème : le 31 février n'existe pas. On peut contourner le problème en réduisant le nombre de jours possible à 28, mais on s'eloigne alors de la réalité.
 
 ```powershell
-
 $days   = 1..28
 $months = 1..12
 $years  = 1990..2022
@@ -42,7 +39,6 @@ $users | ForEach-Object {
     $_ | Add-Member -MemberType NoteProperty -Name 'hireDate' -Value $value -Force
 
 }
-
 ```
 
 ### Deuxième solution
@@ -50,7 +46,6 @@ $users | ForEach-Object {
 Une autre méthode serait d'enlever un nombre de jours aléatoire à la date du jour. On calcule le nombre de jours qui nous séparent de 
 
 ```powershell
-
 $max = [int](New-TimeSpan -Start (Get-Date '01/01/1990') -End (Get-Date)).TotalDays
 $range = 1..$max
 
@@ -59,7 +54,6 @@ $users | ForEach-Object {
     $value  = (Get-Date -H 0 -Min 0 -Sec 0).AddDays(-$random)
     $_ | Add-Member -MemberType NoteProperty -Name 'hireDate' -Value $value -Force
 }
-
 ```
 
 Attention quand-même : cette méthode consomme beaucoup plus de ressources que l'autre ! Si vous utilisez PowerShell 7 ou supérieur, je vous recommande d'utiliser le paramètre '-Parallel' pour la boucle 'ForEach-Object' afin de diviser le temps de traitement. Si vous utilisez ce paramètre, il faudra quand-même un peu adapter votre script pour qu'il soit compatible.
@@ -70,11 +64,9 @@ Pour ça, il existe une commande sur-mesure : `Group-Object` qui permet de regro
 
 
 ```powershell
-
 $users | Select-Object givenName,surname,@{N='month';E={Get-Date -Month $_.hireDate.month -Format 'MMM'}} `
     | Group-Object -Property month `
     | Sort-Object -Property Count
-
 ```
 
 ## Si vous voulez aller plus loin 

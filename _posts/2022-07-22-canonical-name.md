@@ -14,7 +14,6 @@ L'emplacement dans l'aborescence Active Directory est souvent très important et
 Pour illustrer mon propos, on va prendre l'exemple suivant. C'est une arborescence classique avec différentes OU et un domaine en "labouabouate.com".
 
 ```
-
 🌐 labouabouate.com
   📁 LBB
     📁 FR
@@ -24,7 +23,6 @@ Pour illustrer mon propos, on va prendre l'exemple suivant. C'est une arborescen
     📁 US
       📁 Users
         🧑‍💼 John Smith
-
 ```
 
 ## DistinguishedName
@@ -60,9 +58,7 @@ ldap.lbb.com | DC=ldap,DC=lbb,DC=com
 Cette propriété est malheureusement en "option" lors des requêtes Active Directory. Il faut donc la spécifier pour l'obtenir lors des requêtes `Get-ADUser` :
 
 ```powershell
-
 Get-ADUser john.smith -Properties CanonicalName
-
 ```
 
 Les CanonicalName des deux utilisateurs :
@@ -96,13 +92,11 @@ ID | John Smith | Pierre Dupont
 Mais si on retourne notre méthode et que l'on lit le DistinguishedName de droite à gauche (racine vers objet), on retrouvera toujours la valeur recherchée en avant-avant-avant dernière position.
 
 ```powershell
-
 $root = "OU=LBB,DC=labouabouate,DC=com"
 $dn = "CN=John Smith,OU=Users,OU=US,$root","CN=Pierre Dupont,OU=Users,OU=Rennes,OU=FR,$root"
 $dn | ForEach-Object {
   (($_ -split ',' | Select-Object -Last 4)[0] -split '=')[1]
 }
-
 ```
 
 Comme vous pouvez le voir, ça se fait mais y'a plus simple. 
@@ -123,11 +117,9 @@ ID | John Smith | Pierre Dupont
 Et on se retrouve avec un code PowerShell beaucoup plus simple :
 
 ```powershell
-
 $root = "labouabouate.com/LBB"
 $cn = "$root/US/Users/John Smith","$root/FR/Rennes/Users/Pierre Dupont"
 $cn | ForEach-Object {
   ($_ -split '/')[2]
-} 
-
+}
 ```

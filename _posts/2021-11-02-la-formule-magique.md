@@ -39,7 +39,6 @@ Rien de spécifique, mais si vous voulez faire le script le plus court possible 
 Comme je suis sympa, je vous laisse la structure de ma fonction :
 
 ```powershell
-
 # Version à compléter
 function LaFormuleMagique {
     param([Int64]$i)
@@ -48,7 +47,6 @@ function LaFormuleMagique {
 
     return 
 }
-
 ```
 
 A vos claviers ! 😃

@@ -148,7 +148,6 @@ Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que de
 Encore une fois un petit rappel : il n'y a pas une seule bonne méthode donc si votre script ne ressemble pas au mien mais qu'il fonctionne, tant-mieux !
 
 ```powershell
-
 $random = Get-Random -Minimum 1 -Maximum 1000
 $answer = Read-Host "Deviner le nombre"
 
@@ -164,7 +163,6 @@ if ($random -gt $answer) {
     "Random" = $random
     "Answer" = $answer
 } | Format-List
-
 ```
 
 <div class="buttons">

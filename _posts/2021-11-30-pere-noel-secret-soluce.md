@@ -6,7 +6,6 @@ title: "Solution - Père Noël aléatoire"
 Encore une fois on tire partie au maximum des PSCustomObject pour ajouter une propriété "Random" qui va nous pemettre de mélanger la liste aléatoirement. Une fois que l'on a fait ça, on suit simplement le nouvel ordre aléatoire de la liste pour annoncer "A offre son cadeau à B", puis "B offre son cadeau à C", etc...
 
 ```powershell
-
 function PereNoelAleatoire {
 
     param([array]$Participants)
@@ -44,9 +43,7 @@ function PereNoelAleatoire {
         "#{0} {1} offre son cadeau à {2}" -f $_,$giftFrom,$giftTo
         Read-Host | Out-Null
     }
-
 }
-
 ```
 
 `if ($index -ge $count) { $index = $count - $index }` : ce petit bout de code permet de dire que quand on arrive à la dernière personne de la liste, celle-ci doit offrir son cadeau à la première personne.

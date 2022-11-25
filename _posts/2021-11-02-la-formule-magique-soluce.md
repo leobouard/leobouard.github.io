@@ -12,7 +12,6 @@ Pour ça j'avais envie de vous partager une commande assez spécifique mais qui 
 Ma fonction :
 
 ```powershell
-
 function LaFormuleMagique {
     param([Int64]$i)
 
@@ -21,7 +20,6 @@ function LaFormuleMagique {
 
     return $result
 }
-
 ```
 
 ### Explications
@@ -31,44 +29,35 @@ On va y aller étape par étape :
 `([string]$i)` : permet de convertir le nombre entier en une chaine de caractères
 
 ```powershell
-
 PS C:\> $i = [string]2568
-
 ```
 
 `.ToCharArray()` : une fois que l'entier est transformé, on peut utiliser la méthode ToCharArray pour convertir la chaine "2568" en un tableau avec les valeurs 2, 5, 6 et 8
 
 ```powershell
-
 PS C:\> $i = $i.ToCharArray()
 PS C:\> $i
-
 2
 5
 6
 8
-
 ```
 
 `-join '+'` : on réassemble ensuite le tableau en joignant les caractères entre eux avec un "+"
 
 ```powershell
-
 PS C:\> $i = $i -join '+'
 PS C:\> $i
 
 2+5+6+8
-
 ```
 
 Une fois notre chaine de caractère prête, il ne reste plus qu'à l'interprêter comme une ligne de commande. Et pour ça on peut utiliser la commande Invoke-Expression (iex pour les intimes) :
 
 ```powershell
-
 PS C:\> Invoke-Expression $i
 
 21
-
 ```
 
 ---

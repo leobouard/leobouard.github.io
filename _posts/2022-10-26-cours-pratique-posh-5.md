@@ -100,7 +100,6 @@ Arrondir le temps total de résolution au millième de seconde (0.001 seconde).
 ## Correction
 
 ```powershell
-
 $i          = 0
 $min        = 1
 $max        = 1000
@@ -138,7 +137,6 @@ $stopwatch.Stop()
     "Count"          = $i
     "Sec per try"    = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $i),3)
 } | Format-List
-
 ```
 
 <div class="buttons">

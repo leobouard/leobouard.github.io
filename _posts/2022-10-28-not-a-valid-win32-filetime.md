@@ -31,13 +31,11 @@ Il s'agit d'une valeur d'attribut qui ne correspond pas au format souhaité. Il 
 Première étape : trianguler la position du compte dans l'Active Directory :
 
 ```powershell
-
 $ous = Get-ADOrganizationalUnit -SearchBase (Get-ADDomain).DistinguishedName -Properties CanonicalName -Filter * | Sort-Object -Property CanonicalName
 $ous | ForEach-Object {
     $_.CanonicalName
     $null = Get-ADUser -Filter * -Properties * -SearchBase $_.DistinguishedName -SearchScope OneLevel
 }
-
 ```
 
 ### 2. Quel compte ?
@@ -45,12 +43,10 @@ $ous | ForEach-Object {
 Une fois que l'on a récupéré l'emplacement, on va tester chaque compte à la racine de cette OU :
 
 ```powershell
-
 Get-ADUser -Filter * -SearchBase "OU=CONTOSO (14),OU=LBB,DC=corp,DC=lbb,DC=com" -SearchScope OneLevel | ForEach-Object {
     $_.Name
     $null = Get-ADUser -Identity $_.DistinguishedName -Properties *
 }
-
 ```
 
 ### 3. Quel attribut ?
@@ -58,10 +54,8 @@ Get-ADUser -Filter * -SearchBase "OU=CONTOSO (14),OU=LBB,DC=corp,DC=lbb,DC=com" 
 Prener un compte "sain" (compteA) en exemple et tester chacune des propriétés sur le compte "infecté" (compteB) :
 
 ```powershell
-
 $members = Get-ADUser "compteA" -Properties * | Get-Member -MemberType Property
 $members.Name | ForEach-Object { $_ ; $null = Get-ADUser "compteB" -Properties $_ }
-
 ```
 
 ## Résolution

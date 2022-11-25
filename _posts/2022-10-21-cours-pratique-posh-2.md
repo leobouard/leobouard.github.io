@@ -131,7 +131,6 @@ Dans l'objet affiché à la fin, on ajoute le nombre de tentatives de l'utilisat
 ## Correction
 
 ```powershell
-
 $i = 0
 $random = Get-Random -Minimum 1 -Maximum 1000
 do {
@@ -155,7 +154,6 @@ if ($answer -ne $random) {
     "Answer" = $answer
     "Count"  = $i
 } | Format-List
-
 ```
 
 <div class="buttons">
