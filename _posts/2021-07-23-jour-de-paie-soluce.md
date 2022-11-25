@@ -12,14 +12,12 @@ Et ça tombe bien que la valeur de "DayOfWeek" soit en anglais, parce que du cou
 Si le 25e jour du mois tombe un week-end, on essaye le jour d'avant jusqu'à ce qu'on soit sur un jour ouvré !
 
 ```powershell
-
 $i = 25
 do {
     $d = Get-Date -Day $i
     $i--
 } until ($d.DayOfWeek -notlike "S*")
 $d
-
 ```
 
 En version compressée on obtient :
