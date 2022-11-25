@@ -237,10 +237,15 @@ section {
 /* --- FOOTER --- */
 
 footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: #383b53;
     color: #fff;
-    padding: 0.5em;
-    margin-top: 15px;
+
+    div {
+        padding: 15px;
+    }
 
     a {
         color: #fff;
