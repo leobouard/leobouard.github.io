@@ -230,7 +230,7 @@ section {
     }
 
     table {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -302,5 +302,13 @@ footer {
         z-index: 1000;
         box-shadow: 0 5px 5px -5px #b8c3c9;
         transition: all 200ms ease-in-out;
+    }
+
+    footer {
+
+        li {
+            margin-bottom: 3px;
+            margin-top: 3px;
+        }
     }
 }
