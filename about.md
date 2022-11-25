@@ -25,6 +25,17 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
 
 ### Les ressources utilisées
 
-- [Coolors](https://coolors.co/generate) pour la génération de palettes de couleurs et l'adaptation des contrastes pour l'accessibilité
+- [Coolors](https://coolors.co/) pour la génération de [palettes de couleurs](https://coolors.co/generate) et [l'adaptation des contrastes](https://coolors.co/contrast-checker/) pour l'accessibilité
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/) pour l'audit de performance, de bonnes pratiques et d'accessibilité du site
-- [W3schools](https://www.w3schools.com/) pour l'aide sur HTML et CSS
+- [W3schools](https://www.w3schools.com/) et [Stack Overflow](https://stackoverflow.com/) pour l'aide sur générale HTML et CSS
+
+### Chartre graphique
+
+Utilisation | Couleur | Code | Apperçu
+----------- | ------- | ---- | -------
+Bordures et arrière plan | #F2F2F2 | <div style="width: 50px; height: 25px; background-color: #F2F2F2; border-radius: 5px;"></div>
+Primaire | Or | #F9C80E | <div style="width: 50px; height: 25px; background-color: #F9C80E; border-radius: 5px;"></div>
+Boutons | Bleu | #3590F3 | <div style="width: 50px; height: 25px; background-color: #3590F3; border-radius: 5px;"></div>
+Liens | Bleu foncé | #214263 | <div style="width: 50px; height: 25px; background-color: #214263; border-radius: 5px;"></div>
+Titres et pied de page | Gris bleu | #383B53 | <div style="width: 50px; height: 25px; background-color: #383B53; border-radius: 5px;"></div>
+
