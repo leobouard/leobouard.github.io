@@ -204,7 +204,7 @@ section {
 
         code {
             white-space: pre-wrap;
-            word-wrap: break-word;
+            word-wrap: normal;
     
             /*PowerShell*/
             .bp, .nv, .bp { color: #001080; } /*Variables*/
@@ -318,6 +318,7 @@ footer {
     pre {
         padding: 10px;
         overflow: scroll;
+        white-space: pre;
     }
 
     footer {
