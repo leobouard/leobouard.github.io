@@ -45,31 +45,31 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
       <td>Bordures et arrière plan</td>
       <td>Blanc</td>
       <td>#F2F2F2</td>
-      <td><div style="width: 50px; height: 25px; background-color: #F2F2F2; border-radius: 5px;"></div></td>
+      <td><div style="width: 65px; height: 25px; background-color: #F2F2F2; border-radius: 5px;"></div></td>
     </tr>
     <tr>
       <td>Primaire</td>
       <td>Or</td>
       <td>#F9C80E</td>
-      <td><div style="width: 50px; height: 25px; background-color: #F9C80E; border-radius: 5px;"></div></td>
+      <td><div style="width: 65px; height: 25px; background-color: #F9C80E; border-radius: 5px;"></div></td>
     </tr>
     <tr>
       <td>Boutons</td>
       <td>Bleu</td>
       <td>#3590F3</td>
-      <td><div style="width: 50px; height: 25px; background-color: #3590F3; border-radius: 5px;"></div></td>
+      <td><div style="width: 65px; height: 25px; background-color: #3590F3; border-radius: 5px;"></div></td>
     </tr>
     <tr>
       <td>Liens</td>
       <td>Bleu foncé</td>
       <td>#214263</td>
-      <td><div style="width: 50px; height: 25px; background-color: #214263; border-radius: 5px;"></div></td>
+      <td><div style="width: 65px; height: 25px; background-color: #214263; border-radius: 5px;"></div></td>
     </tr>
     <tr>
       <td>Titres et pied de page</td>
       <td>Gris bleu</td>
       <td>#383B53</td>
-      <td><div style="width: 50px; height: 25px; background-color: #383B53; border-radius: 5px;"></div></td>
+      <td><div style="width: 65px; height: 25px; background-color: #383B53; border-radius: 5px;"></div></td>
     </tr>
   </tbody>
 </table>
