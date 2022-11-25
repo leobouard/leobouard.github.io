@@ -193,23 +193,23 @@ section {
     /* --- CODE --- */
 
     pre, code {
-        background-color: #383b53;
-        color: #fff;
-        padding-left: 1em;
-        padding-right: 1em;
+        border-width: 2px;
+        border-radius: 5px;
+        border-color: #f2f2f2;
+        border-style: solid;
+        padding: 5px;
         white-space: pre-wrap;
         word-wrap: break-word;
-        border-radius: 3px;
 
-        .bp, .nv, .bp { color: #8cdcda; }
-        .n, .nf { color: #f9f1a5; }
-        .s1, .s2, .sh { color: #ce9178; }
-        .kr { color: #c586c0; }
-        .c, .cm  { color: #89c76c; }
-        .mi { color: #a9ce9e }
+        /*PowerShell*/
+        .bp, .nv, .bp { color: #001080; } /*Variables*/
+        .n            { color: #795e26; } /*Commandes*/
+        .nf           { color: #0000ff; } /*Type & Commandes*/
+        .s1, .s2, .sh { color: #a31515; } /*Chaines*/
+        .kr           { color: #af00db; } /*IF & ELSE*/
+        .c, .cm       { color: #008000; } /*Commentaires*/
+        .mi           { color: #098658; } /*Entiers*/ 
     }
-
-
 
     /* --- TABLES --- */
 
