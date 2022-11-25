@@ -172,7 +172,7 @@ section {
     }
 
     h2, h3, h4, h5 {
-        margin-top: 1em;
+        margin-top: 10px;
         font-weight: 600;
     }
 
@@ -260,6 +260,7 @@ footer {
 
     ul {
         list-style: none;
+        padding: 0;
     }
 }
 
