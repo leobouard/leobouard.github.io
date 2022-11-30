@@ -5,7 +5,7 @@ description: "J'ai pas de jeu de mot pour celle-ci"
 tags: COURS
 thumbnailColor: "#3C787E"
 icon: 📖
-listed: true
+listed: false
 ---
 
 ## Informations en bref
