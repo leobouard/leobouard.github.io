@@ -318,7 +318,10 @@ footer {
     pre {
         padding: 10px;
         overflow: scroll;
-        white-space: pre;
+
+        code {
+            white-space: pre;
+        }
     }
 
     footer {
