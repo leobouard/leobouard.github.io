@@ -4,9 +4,6 @@ permalink: /
 
 # Bienvenue
 
-...mais vous venez un peu trop tôt, j'ai pas eu le temps de tout finir.\ 
-La page est en cours de construction, promis elle sera belle !
-
-## Les derniers articles
+![Illustration de PowerShell et des services cloud de Microsoft]](assets/images/hero.png)
 
 ## C'est quoi "LaBouaBouate" ?
