@@ -5,7 +5,7 @@ permalink: /
 # Bienvenue
 
 <div id="container" style="display: flex; flex-wrap: wrap; justify-content: left;">
-    <div id="text" style="max-width: 300px;">
+    <div id="text" style="max-width: 450px;">
         <h2>C'est quoi "LaBouaBouate" ?</h2>
         <p>LaBouaBouate est un blog technique pour partager des connaissances sur les technologies Microsoft (Active Directory, Microsoft 365, Azure AD...) et notamment <b>le langage de scripting PowerShell</b> (anciennement connu sous le nom de Windows PowerShell). Vous pourrez donc retrouver sur site :</p>
         <ul>
@@ -15,7 +15,7 @@ permalink: /
             <li>quelques cours rapides</li>
         </ul>
     </div>
-    <div id="image" style="max-width: 300px;">
+    <div id="image" style="max-width: 450px;">
         <img src="assets/images/hero.png">
     </div>
 </div>
