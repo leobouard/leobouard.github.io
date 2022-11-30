@@ -1,6 +1,6 @@
 ---
 permalink: /about
-description: "Plus d'information sur l'auteur du site et le site en lui-même"
+description: "Plus d'information sur le site et sur son auteur"
 ---
 
 # A propos
