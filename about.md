@@ -1,5 +1,6 @@
 ---
 permalink: /about
+description: "Plus d'information sur l'auteur du site et le site en lui-même"
 ---
 
 # A propos
@@ -14,14 +15,14 @@ Moi c'est Léo Bouard, administrateur système & lead consultant chez [METSYS Gr
 - Azure Active Directory
 - ...et évidemment PowerShell
 
-Pour plus d'informations :
+Pour plus d'informations sur mon parcours :
 
 - vous pouvez jeter un oeil à [mon CV](/cv)
 - ou consulter [mon profil LinkedIn]({{ site.linkedin }})
 
 ## Comment est fait le site web ?
 
-Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose donc sur le moteur [Jekyll](https://docs.github.com/en/pages). Tout le code HTML & CSS du site a été réalisé par mes soins. Je ne suis pas développeur web, mais j'essaye au maximum de garder un bon niveau d'accessibilité et de performance.
+Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose donc sur le moteur [Jekyll](https://jekyllrb.com/docs/). Tout le code HTML & CSS du site a été réalisé par mes soins. Je ne suis pas développeur web, mais j'essaye au maximum de garder un bon niveau d'accessibilité et de performance.
 
 ### Les ressources utilisées
 
