@@ -120,3 +120,12 @@ article:hover {
     justify-content: center;
     font-size: 90px;
 }
+
+@media print, screen and (max-width: 950px) {
+
+    .postBanner {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+}
