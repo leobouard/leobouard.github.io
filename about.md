@@ -58,7 +58,7 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
       <td>Boutons</td>
       <td>Bleu</td>
       <td>#3590F3</td>
-      <td><div style="width: 65px; height: 25px; background-color: #3590F3; border-radius: 5px;"></div></td>
+      <td><div style="width: 65px; height: 25px; background-color: #2C78C9; border-radius: 5px;"></div></td>
     </tr>
     <tr>
       <td>Liens</td>
