@@ -1,5 +1,6 @@
 ---
 permalink: /
+description: "Blog technique sur PowerShell et les technologies Microsoft pour l'administration système"
 ---
 
 # Bienvenue
@@ -16,6 +17,6 @@ permalink: /
         </ul>
     </div>
     <div id="image">
-        <img src="assets/images/hero.png">
+        <img src="assets/images/hero.png" alt="PowerShell et les différents services cloud de Microsoft">
     </div>
 </div>
