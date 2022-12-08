@@ -31,9 +31,9 @@ Pas de problème ! Pour corser un peu l'exercice, on peut ajouter quelques défi
 - Faire la version la plus courte possible, mon record personnel étant 63 caractères
 - Créer une version en utilisant un [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
 - Utiliser 3 différents types de boucles :
-  - version ForEach-Object ou foreach
-  - version Do/Until et/ou Do/While
-  - version For
+  - version `ForEach-Object` ou `foreach`
+  - version `Do/Until` et/ou `Do/While`
+  - version `For`
 
 ## Ressources utiles
 
