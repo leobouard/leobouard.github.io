@@ -137,11 +137,12 @@ section {
         color: #214263;
         font-weight: 500;
         text-decoration: none;
+        transition: all 100ms ease-in-out;
     }
 
     a:hover {
         text-decoration: underline;
-        transition: all 400ms ease-in-out;
+        text-underline-offset: 1px;
         color: #3a75af;
     }
 
