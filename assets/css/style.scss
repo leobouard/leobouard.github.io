@@ -183,7 +183,6 @@ section {
     img {
         display: block;
         max-width: 100%;
-        max-height: 250px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -193,6 +192,17 @@ section {
         margin-top: 15px;
         margin-bottom: 15px;
     }
+
+    blockquote {
+        background-color: #f5f5f5;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-left: solid;
+        border-left-color: #d1d1d1;
+        border-left-width: 5px;
+    }    
 
     /* --- CODE --- */
 
