@@ -11,10 +11,10 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 
 ### Résultat attendu
 
-> Deviner le nombre: 500
-> ??? est plus petit que 500
->
-> Random : 21
+> Deviner le nombre: 500\
+> ??? est plus petit que 500\
+> \
+> Random : 21\
 > Answer : 500
 
 ## Détails
