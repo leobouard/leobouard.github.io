@@ -11,15 +11,11 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 
 ### Résultat attendu
 
-<blockquote>
-  <p>
-    Deviner le nombre: 500<br>
-    ??? est plus grand que 500<br>
-    <br>
-    Random : 759<br>
-    Answer : 500
-  </p>
-</blockquote>
+> Deviner le nombre: 500
+> ??? est plus petit que 500
+>
+> Random : 21
+> Answer : 500
 
 ## Détails
 
@@ -31,9 +27,7 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
 - Valeur obtenue : nombre entier en 1 et 1000
 
 <details>
-  <pre><code>
-    Get-Random -Minimum 1 -Maximum 1000
-  </code></pre>
+  <pre><code>Get-Random -Minimum 1 -Maximum 1000</code></pre>
 </details>
 
 ### 2. Stocker le nombre aléatoire dans une variable
@@ -41,9 +35,7 @@ La première pierre est posée : la génération du nombre aléatoire qui doit �
 - Nom de variable : "random"
 
 <details>
-  <pre><code>
-    $random = Get-Random -Minimum 1 -Maximum 1000
-  </code></pre>
+  <pre><code>$random = Get-Random -Minimum 1 -Maximum 1000</code></pre>
 </details>
 
 ### 3. Demander à l'utilisateur de deviner le nombre
@@ -54,9 +46,7 @@ On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
 - Nom de variable : "answer"
 
 <details>
-  <pre><code>
-    $answer = Read-Host "Deviner le nombre"
-  </code></pre>
+  <pre><code>$answer = Read-Host "Deviner le nombre"</code></pre>
 </details>
 
 ### 4. Comparer le nombre aléatoire au nombre de l'utilisateur
@@ -66,14 +56,12 @@ Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au no
 - Opérateurs de comparaison "-gt" et "-lt"
 
 <details>
-  <pre><code>
-    # Aléatoire est supérieur au nb utilisateur
-    $random -gt $answer
-    $answer -lt $random
-    # Aléatoire est plus petit que nb utilisateur
-    $random -lt $answer
-    $answer -gt $random
-  </code></pre>
+  <pre><code># Aléatoire est supérieur au nb utilisateur
+$random -gt $answer
+$answer -lt $random
+# Aléatoire est plus petit que nb utilisateur
+$random -lt $answer
+$answer -gt $random</code></pre>
 </details>
 
 ### 5. Comparaison n°1 : random > answer
@@ -84,9 +72,7 @@ Afficher un message pour dire que le nombre aléatoire est plus grand que le nom
 - Condition "if(){}"
 
 <details>
-  <pre><code>
-    if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
-  </code></pre>
+  <pre><code>if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }</code></pre>
 </details>
 
 ### 6. Comparaison n°2 : random < answer
@@ -97,9 +83,7 @@ Afficher un message pour dire que le nombre aléatoire est plus petit que le nom
 - Condition "elseif(){}"
 
 <details>
-  <pre><code>
-    elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
-  </code></pre>
+  <pre><code>elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }</code></pre>
 </details>
 
 ### 7. Comparaison n°3 : random = answer
@@ -110,9 +94,7 @@ Afficher un message de victoire si le nombre aléatoire est égal au nombre de l
 - Condition "else{}"
 
 <details>
-  <pre><code>
-    else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
-  </code></pre>
+  <pre><code>else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }</code></pre>
 </details>
 
 ### 8. Vérification des conditions
@@ -123,12 +105,10 @@ A la fin de votre script, afficher un objet avec les membres "Random" et "Answer
 - Propriétés "random" et "answer"
 
 <details>
-  <pre><code>
-    $result = [PSCustomObject]@{
-        "Random" = $random
-        "Answer" = $answer
-    }
-  </code></pre>
+  <pre><code>$result = [PSCustomObject]@{
+    "Random" = $random
+    "Answer" = $answer
+}</code></pre>
 </details>
 
 ### 9. Formater la vue en mode liste
@@ -138,9 +118,7 @@ Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que de
 - Commande "Format-List"
 
 <details>
-  <pre><code>
-    $result | Format-List
-  </code></pre>
+  <pre><code>$result | Format-List</code></pre>
 </details>
 
 ## Correction 
