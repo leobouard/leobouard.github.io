@@ -5,18 +5,30 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
 
 # Bienvenue
 
-<div id="container" style="display: flex; flex-wrap: wrap; justify-content: left;">
-    <div id="text">
-        <h2>C'est quoi "LaBouaBouate" ?</h2>
-        <p>LaBouaBouate est un blog technique pour partager des connaissances sur les technologies Microsoft (Active Directory, Microsoft 365, Azure AD...) et notamment <b>le langage de scripting PowerShell</b> (anciennement connu sous le nom de Windows PowerShell). Vous pourrez donc retrouver sur site :</p>
-        <ul>
-            <li>des articles techniques sur les produits Microsoft</li>
-            <li>des retours d'expériences dans des contextes professionnels</li>
-            <li>des défis PowerShell pour vous améliorer</li>
-            <li>quelques cours rapides</li>
-        </ul>
-    </div>
-    <div id="image">
-        <img src="assets/images/hero.png" alt="PowerShell et les différents services cloud de Microsoft">
-    </div>
+## C'est quoi "LaBouaBouate" ?
+
+LaBouaBouate est un blog technique pour partager des connaissances sur les technologies Microsoft (Active Directory, Microsoft 365, Azure AD...) et notamment <b>le langage de scripting PowerShell</b> (anciennement connu sous le nom de Windows PowerShell). Vous pourrez donc retrouver sur site :
+
+- des articles techniques sur les produits Microsoft
+- des retours d'expériences dans des contextes professionnels
+- des défis PowerShell pour vous améliorer
+- quelques cours rapides
+
+## Les derniers articles
+
+<div class="posts">
+    {% assign listed_posts = site.posts | where: "listed", "True" %}
+    {% assign last_three_posts = listed_posts | slice: 0, 3 %}
+    {% for post in last_three_posts %}
+        <article>
+            <small>{{ post.tags }}</small>
+            <a href="{{ post.id }}">
+                <p style="text-align: center; font-size: 75px; line-height: 0px; user-select: none;">{{ post.icon }}</p>
+            </a>
+            <hr>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.description }}</p>
+            <a style="position: absolute; bottom: 15px; right: 15px;" href="{{ post.id }}">Continuer →</a>
+        </article>
+    {% endfor %}
 </div>
