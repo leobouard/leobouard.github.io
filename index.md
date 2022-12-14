@@ -17,7 +17,7 @@ LaBouaBouate est un blog technique pour partager des connaissances sur les techn
 ## Les derniers articles
 
 <div class="posts">
-    {% assign listed_posts = site.posts | where: "listed", "True" %}
+    {% assign listed_posts = site.posts | where: "listed", true %}
     {% assign last_three_posts = listed_posts | slice: 0, 3 %}
     {% for post in last_three_posts %}
         <article>
