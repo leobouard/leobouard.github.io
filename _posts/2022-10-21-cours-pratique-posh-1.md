@@ -5,7 +5,9 @@ thumbnailColor: "#007acc"
 icon: 🎓
 ---
 
-## Résumé
+## Consigne
+
+### Résumé
 
 Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. L'utilisateur n'a qu'un seul essai. Si le nombre de l'utilisateur est plus petit ou plus grand que le nombre aléatoire, alors un message est affiché pour situer la comparaison entre les deux nombres (X plus grand que Y ou inversement). Si le nombre aléatoire est égal à l'estimation de l'utilisateur, alors on déclare la victoire. A la fin du script, le nombre aléatoire et l'estimation de l'utilisateur sont affichées sous la forme d'un objet au format liste.
 
@@ -17,108 +19,123 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 > Random : 21\
 > Answer : 500
 
-## Détails
+## Etape par étape
 
-### 1. Générer un nombre aléatoire
+1. Générer un nombre aléatoire
+2. Stocker le nombre aléatoire dans une variable
+3. Demander à l'utilisateur de deviner le nombre
+4. Comparer le nombre aléatoire au nombre de l'utilisateur
+   - random est supérieur à answer
+   - random est inférieur à answer
+   - random est égal à answer
+5. Affichage des données
+6. Formater l'affichage en mode liste
+
+<details>
+    <summary>Voir le code pour chaque étape</summary>
+
+### Générer un nombre aléatoire
 
 La première pierre est posée : la génération du nombre aléatoire qui doit être deviné par le joueur !
 
 - Commande utilisée : "Get-Random"
 - Valeur obtenue : nombre entier en 1 et 1000
 
-<details>
-  <pre><code>Get-Random -Minimum 1 -Maximum 1000</code></pre>
-</details>
+```powershell
+Get-Random -Minimum 1 -Maximum 1000
+```
 
-### 2. Stocker le nombre aléatoire dans une variable
+### Stocker le nombre aléatoire dans une variable
 
 - Nom de variable : "random"
 
-<details>
-  <pre><code>$random = Get-Random -Minimum 1 -Maximum 1000</code></pre>
-</details>
+```powershell
+$random = Get-Random -Minimum 1 -Maximum 1000
+```
 
-### 3. Demander à l'utilisateur de deviner le nombre
+### Demander à l'utilisateur de deviner le nombre
 
 On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
 
 - Commande utilisée : "Read-Host"
 - Nom de variable : "answer"
 
-<details>
-  <pre><code>$answer = Read-Host "Deviner le nombre"</code></pre>
-</details>
+```powershell
+$answer = Read-Host "Deviner le nombre"
+```
 
-### 4. Comparer le nombre aléatoire au nombre de l'utilisateur
+### Comparer le nombre aléatoire au nombre de l'utilisateur
 
 Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au nombre de l'utilisateur.
 
 - Opérateurs de comparaison "-gt" et "-lt"
 
-<details>
-  <pre><code># Aléatoire est supérieur au nb utilisateur
+```powershell
+# Aléatoire est supérieur au nb utilisateur
 $random -gt $answer
 $answer -lt $random
 # Aléatoire est plus petit que nb utilisateur
 $random -lt $answer
-$answer -gt $random</code></pre>
-</details>
+$answer -gt $random
+```
 
-### 5. Comparaison n°1 : random > answer
+#### random est supérieur à answer
 
 Afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
 
 - Commande "Write-Host"
 - Condition "if(){}"
 
-<details>
-  <pre><code>if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }</code></pre>
-</details>
+```powershell
+if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
+```
 
-### 6. Comparaison n°2 : random < answer
+#### random est inférieur à answer
 
 Afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
 
 - Commande "Write-Host"
 - Condition "elseif(){}"
 
-<details>
-  <pre><code>elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }</code></pre>
-</details>
+```powershell
+elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
+```
 
-### 7. Comparaison n°3 : random = answer
+#### random est égal à answer
 
 Afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur
 
 - Commande "Write-Host"
 - Condition "else{}"
 
-<details>
-  <pre><code>else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }</code></pre>
-</details>
+```powershell
+else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
+```
 
-### 8. Vérification des conditions
+### Affichage des données
 
 A la fin de votre script, afficher un objet avec les membres "Random" et "Answer"
 
 - Objet "PSCustomObject"
 - Propriétés "random" et "answer"
 
-<details>
-  <pre><code>$result = [PSCustomObject]@{
+```powershell
+$result = [PSCustomObject]@{
     "Random" = $random
     "Answer" = $answer
-}</code></pre>
-</details>
+}
+```
 
-### 9. Formater la vue en mode liste
+### Formater l'affichage en mode liste
 
 Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que deux valeurs). Il faut donc forcer un affichage sous forme de liste.
 
 - Commande "Format-List"
 
-<details>
-  <pre><code>$result | Format-List</code></pre>
+```powershell
+$result | Format-List
+```
+
 </details>
 
 ## Correction 
