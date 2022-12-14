@@ -12,7 +12,9 @@ description: "Tous les défis, cours et articles sur PowerShell et d'autres tech
         {% if post.listed == true %}
             <article>
                 <small>{{ post.tags }}</small>
-                <p style="text-align: center; font-size: 75px; line-height: 0px; user-select: none;">{{ post.icon }}</p>
+                <a href="{{ post.id }}">
+                    <p style="text-align: center; font-size: 75px; line-height: 0px; user-select: none;">{{ post.icon }}</p>
+                </a>
                 <hr>
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.description }}</p>
