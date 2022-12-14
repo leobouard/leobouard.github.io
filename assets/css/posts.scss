@@ -83,7 +83,7 @@ article {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 5px 0 #b8c3c9;
-    transition: all 100ms ease-in-out;
+    transition: all 150ms ease-in-out;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -101,10 +101,14 @@ article {
         left: 15px;
         user-select: none;
     }
+
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 article:hover {
-    box-shadow: 0 0 10px 0 #b8c3c9;
+    box-shadow: 0 0 15px 0 #b8c3c9;
 }
 
 .postBanner {
@@ -119,10 +123,6 @@ article:hover {
     display: flex;
     justify-content: center;
     font-size: 90px;
-}
-
-.postBanner:hover {
-    text-decoration: none;
 }
 
 @media print, screen and (max-width: 950px) {
