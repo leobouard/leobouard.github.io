@@ -1,6 +1,7 @@
 ---
 permalink: /about
-description: "Plus d'information sur le site et sur son auteur"
+title: "A propos"
+description: "Plus d'informations sur le site web et moi-même"
 ---
 
 # A propos

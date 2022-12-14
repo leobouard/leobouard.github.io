@@ -1,5 +1,6 @@
 ---
 permalink: /
+title: "Accueil"
 description: "Blog technique sur PowerShell et les technologies Microsoft pour l'administration système"
 ---
 
