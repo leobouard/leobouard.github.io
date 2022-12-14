@@ -204,7 +204,18 @@ section {
         border-left-width: 5px;
         color: #424242;
         margin-inline: 0;
-    }    
+    }
+
+    details {
+        border: 2px solid #f2f2f2;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    details > summary {
+        list-style: none;
+        font-weight: 600;
+    }
 
     /* --- CODE --- */
 
