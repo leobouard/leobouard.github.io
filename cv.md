@@ -6,9 +6,9 @@ permalink: /cv
 
 ## Résumé
 
-Administrateur/ingénieur systèmes spécialisé dans les infrastructures et l'écosystème Microsoft, notamment sur Active Directory, Exchange, Microsoft 365 et Azure AD.
+Ingénieur systèmes spécialisé dans les infrastructures et l'écosystème Microsoft, notamment sur Active Directory, Exchange, Microsoft 365 et Azure AD.
 
-Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum avec mes équipes et sur mon (humble) blog: <https://www.labouabouate.fr/>.
+Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum avec mes équipes et sur mon blog : <https://www.labouabouate.fr/>.
 
 ## Mes expériences
 

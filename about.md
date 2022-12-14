@@ -7,7 +7,7 @@ description: "Plus d'information sur le site et sur son auteur"
 
 ## A propos de moi
 
-Moi c'est Léo Bouard, administrateur système & lead consultant chez [METSYS Grand-Ouest](https://www.metsys.fr/) @Rennes. Ça fait plus de 4 ans que j'ai commencé dans l'administration système (spécialisé sur les infrastructures Microsoft) sur des technologies comme :
+Moi c'est Léo Bouard, ingénieur systèmes & lead consultant chez [METSYS Grand-Ouest](https://www.metsys.fr/) @Rennes. Ça fait plus de 4 ans que j'ai commencé dans l'administration système (spécialisé sur les infrastructures Microsoft) sur des technologies comme :
 
 - Microsoft 365
 - Active Directory
@@ -29,6 +29,7 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
 - [Coolors](https://coolors.co/) pour la génération de [palettes de couleurs](https://coolors.co/generate) et [l'adaptation des contrastes](https://coolors.co/contrast-checker/) pour l'accessibilité
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/) pour l'audit de performance, de bonnes pratiques et d'accessibilité du site
 - [W3schools](https://www.w3schools.com/) et [Stack Overflow](https://stackoverflow.com/) pour l'aide sur générale HTML et CSS
+- [ChatGPT](https://chat.openai.com/chat) pour des coups de main sur la syntaxe de Liquid
 
 ### Charte graphique
 
