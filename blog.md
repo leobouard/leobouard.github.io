@@ -8,18 +8,17 @@ description: "Tous les défis, cours et articles sur PowerShell et d'autres tech
 ## Tous les articles
 
 <div class="posts">
-    {% for post in site.posts %}
-        {% if post.listed == true %}
-            <article>
-                <small>{{ post.tags }}</small>
-                <a href="{{ post.id }}">
-                    <p style="text-align: center; font-size: 75px; line-height: 0px; user-select: none;">{{ post.icon }}</p>
-                </a>
-                <hr>
-                <h2>{{ post.title }}</h2>
-                <p>{{ post.description }}</p>
-                <a style="position: absolute; bottom: 15px; right: 15px;" href="{{ post.id }}">Continuer →</a>
-            </article>
-        {% endif %}
+    {% assign listed_posts = site.posts | where: "listed", true %}
+    {% for post in listed_posts %}
+        <article>
+            <small>{{ post.tags }}</small>
+            <a href="{{ post.id }}">
+                <p style="text-align: center; font-size: 75px; line-height: 0px; user-select: none;">{{ post.icon }}</p>
+            </a>
+            <hr>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.description }}</p>
+            <a style="position: absolute; bottom: 15px; right: 15px;" href="{{ post.id }}">Continuer →</a>
+        </article>
     {% endfor %}
 </div>

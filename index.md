@@ -31,4 +31,7 @@ LaBouaBouate est un blog technique pour partager des connaissances sur les techn
             <a style="position: absolute; bottom: 15px; right: 15px;" href="{{ post.id }}">Continuer →</a>
         </article>
     {% endfor %}
+    <div class="buttonNext" style="display: flex; align-items: center; justify-content: center; margin: 20px;">
+        <a href="/blog">Voir tous les articles</a>
+    </div>
 </div>
