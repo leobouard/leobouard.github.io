@@ -21,7 +21,7 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 
 ## Etape par étape
 
-1. Générer un nombre aléatoire
+1. Générer un nombre aléatoire entre 1 et 1000
 2. Stocker le nombre aléatoire dans une variable
 3. Demander à l'utilisateur de deviner le nombre
 4. Comparer le nombre aléatoire au nombre de l'utilisateur
@@ -31,19 +31,12 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 5. Affichage des données
 6. Formater l'affichage en mode liste
 
+### Générer un nombre aléatoire entre 1 et 1000
+
 <details>
-    <summary>Voir le code pour chaque étape</summary>
-
-### Générer un nombre aléatoire
-
-La première pierre est posée : la génération du nombre aléatoire qui doit être deviné par le joueur !
-
-- Commande utilisée : "Get-Random"
-- Valeur obtenue : nombre entier en 1 et 1000
-
-```powershell
-Get-Random -Minimum 1 -Maximum 1000
-```
+  <summary>Voir le code pour la commande <code>Get-Random</code></summary>
+  <code>Get-Random -Minimum 1 -Maximum 1000</code>
+</details>
 
 ### Stocker le nombre aléatoire dans une variable
 
@@ -135,8 +128,6 @@ Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que de
 ```powershell
 $result | Format-List
 ```
-
-</details>
 
 ## Correction 
 
