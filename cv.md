@@ -37,6 +37,56 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 ## Mes expériences
 
+<div class="posts">
+    <div class="enterprise">
+        <h3>METSYS</h3>
+    </div>
+    <div class="experience">
+        <h4>Lead consultant</h4>
+        <small>depuis septembre 2021</small>
+    </div>
+    <div class="experience">
+        <h4>Associate consultant</h4>
+        <small>septembre 2018 à septembre 2021 (3 ans)</small>
+        <p>Texte un peu long qui permet d'avoir une meilleur idée de ce que j'ai pu faire dans le cadre de mes différentes missions chez METSYS. Il faut anticiper les situations où le texte contient du multi-ligne et même des listes comme celle-ci :
+        <ul>
+            <li>Premier élément</li>
+            <li>Deuxième élément</li>
+            <li>Troisième élément</li>
+        </ul>
+        </p>
+    </div>
+</div>
+
+### METSYS
+
+**Lead consultant**
+
+
+**Associate consultant**
+
+
+### Groupe ROULLIER
+
+<b>Ingénieur systèmes</b>
+<small>depuis septembre 2021</small>
+
+**Administrateur système**
+<small>septembre 2019 à septembre 2021 - 2 ans</small>
+
+**Support N2/N3**
+<small>janvier 2019 à septembre 2019 - 9 mois</small>
+
+**Support N2**
+<small>septembre 2018 à octobre 2018 - 3 semaines</small>
+
+### GEVES
+
+**Administrateur système en alternance**
+
+**Administrateur système en stage**
+
+
 <table class="CVtable"><tbody>
     <tr class="CVtr">
         <td class="CVtd">
