@@ -39,7 +39,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 <div style="display: block;">
     <!-- METSYS -->
-    <div id="div-metsys" style="margin-bottom: 15px;">
+    <div id="div-metsys">
         <div class="enterprise">
             <div>
                 <img src="https://media.licdn.com/dms/image/C4D0BAQE5KJZV7v44vQ/company-logo_100_100/0/1538657927471?e=1679529600&v=beta&t=C0AKNt7hlOi_nbmOehAyNUP-WsWZV-KXsA_4qu3c66w" alt="logo METSYS">
@@ -59,8 +59,9 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
         </div>
     </div>
+    <hr>
     <!-- Groupe ROULLIER -->
-    <div id="div-groupe-roullier" style="margin-bottom: 15px;">
+    <div id="div-groupe-roullier">
         <div class="enterprise">
             <div>
                 <img src="https://media.licdn.com/dms/image/C4D0BAQFkmJTRk_252A/company-logo_100_100/0/1519856575710?e=1679529600&v=beta&t=v_nlqf7lNxTTqaS9pt_JsaplD2czF-X5or0H4KnYciM" alt="logo Groupe Roullier">
@@ -88,8 +89,9 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <small>septembre 2018 à octobre 2018 • 3 semaines</small>
         </div>
     </div>
+    <hr>
     <!-- GEVES -->
-    <div id="div-geves" style="margin-bottom: 15px;">
+    <div id="div-geves">
         <div class="enterprise">
             <div>
                 <img src="https://media.licdn.com/dms/image/C4D0BAQHzTFbiS8dAmw/company-logo_100_100/0/1536567798460?e=1679529600&v=beta&t=_F8Px6eDUS1KjEUejb89ii5FC13Cj2FoLBH9aikgvyU" alt="logo GEVES">
