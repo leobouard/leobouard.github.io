@@ -18,19 +18,19 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
     <div width="250px">
         <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" height="64px">
         <b>MS-100</b>
-        <p>Microsoft 365 Identity and Services</p>
+        <span>Microsoft 365 Identity and Services</span>
         <small>Novembre 2022</small>
     </div>
     <div width="250px">
         <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="64px">
         <b>MS-900</b><br>
-        <p>Microsoft 365 Fundamentals</p>
+        <span>Microsoft 365 Fundamentals</span>
         <small>Août 2022</small>
     </div>
     <div width="250px">
         <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="64px">
         <b>AZ-900</b>
-        <p>Azure Fundamentals</p>
+        <span>Azure Fundamentals</span>
         <small>Juin 2021</small>
     </div>
 </div>
