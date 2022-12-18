@@ -136,36 +136,3 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
         </div>
     </div>
 </div>
-
-
-
-<table class="CVtable"><tbody>
-    <tr class="CVtr">
-        <td class="CVtd">
-            <img src="/assets/images/univ-nantes.jfif" alt="Université de Nantes" width="64px">
-            <strong>IUT de La Roche-sur-Yon</strong><br>
-            <i>@La Roche-sur-Yon</i>
-        </td>
-        <td>
-            <strong>Licence professionnelle A2SR</strong><br>
-            <small>2017 à 2018 • 1 an</small>
-            <p>Licence professionnelle administration et sécurité des systèmes et des réseaux</p>
-            <hr>
-            <strong>DUT Réseaux & Télécommunications</strong><br>
-            <small>2015 à 2017 • 2 ans</small>
-            <p>Projet tutoré sur l'initiation à la cybersécurité</p>
-        </td>
-    </tr>
-    <tr class="CVtr">
-        <td class="CVtd">
-            <img src="/assets/images/mendes.jfif" alt="Lycée Pierre Mendès France" width="64px">
-            <strong>Lycée Pierre Mendès France</strong><br>
-            <i>@La Roche-sur-Yon</i>
-        </td>
-        <td>
-            <strong>Baccalauréat ES</strong><br>
-            <small>2013 à 2015 • 2 ans</small>
-            <p>Spécialité mathématique, obtenu avec mention bien</p>
-        </td>
-    </tr>
-</tbody></table>
