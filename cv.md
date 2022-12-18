@@ -53,6 +53,13 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
         <div class="experience">
             <b>Lead consultant</b><br>
             <small>depuis septembre 2021</small>
+            <p>Référent technique sur PowerShell et gestion d'une équipe de 5 personnes. Mes différentes missions sont :
+            <ul>
+                <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnel</li>
+                <li>la qualification technique des candidats</li>
+                <li>l'organisation des afterwork d'équipe</li>
+                <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
+            </ul></p>
         </div>
         <div class="experience">
             <b>Associate consultant</b><br>
