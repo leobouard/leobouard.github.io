@@ -24,12 +24,12 @@ LaBouaBouate est un blog technique pour partager des connaissances sur les techn
         <article>
             <small>{{ post.tags }}</small>
             <a href="{{ post.id }}">
-                <p style="text-align: center; font-size: 75px; line-height: 0px; user-select: none;">{{ post.icon }}</p>
+                <p class="articleIcon">{{ post.icon }}</p>
             </a>
             <hr>
             <h2>{{ post.title }}</h2>
             <p>{{ post.description }}</p>
-            <a style="position: absolute; bottom: 15px; right: 15px;" href="{{ post.id }}">Continuer →</a>
+            <a class="articleButton" href="{{ post.id }}">Continuer →</a>
         </article>
     {% endfor %}
     <div class="buttonNext" style="display: flex; align-items: center; justify-content: center; margin: 20px;">
