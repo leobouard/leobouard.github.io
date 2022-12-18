@@ -51,7 +51,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div class="experience">
-            <b>Lead consultant</b><br>
+            <h4>Lead consultant</h4>
             <small>depuis septembre 2021</small>
             <p>Référent technique sur PowerShell et gestion d'une équipe de 5 personnes.<br>Mes différentes missions sont :
             <ul>
@@ -62,7 +62,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </ul></p>
         </div>
         <div class="experience">
-            <b>Associate consultant</b><br>
+            <h4>Associate consultant</h4>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
             <p>Membre de l'unité "Infrastructure et services".<br>Spécialisé sur Active Directory, PowerShell et Microsoft 365.</p>
         </div>
@@ -80,7 +80,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div class="experience">
-            <b>Ingénieur systèmes</b><br>
+            <h4>Ingénieur systèmes</h4>
             <small>depuis septembre 2021</small>
             <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
             <ul>
@@ -91,7 +91,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </ul></p>
         </div>
         <div class="experience">
-            <b>Administrateur systèmes</b><br>
+            <h4>Administrateur systèmes</h4>
             <small>septembre 2019 à septembre 2021 • 2 ans</small>
             <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
             <ul>
@@ -102,7 +102,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </ul></p>
         </div>
         <div class="experience">
-            <b>Support N2/N3</b><br>
+            <h4>Support N2/N3</h4>
             <small>janvier 2019 à septembre 2019 • 9 mois</small>
             <p>Dans le cadre d'une prestation METSYS pour l'équipe de support utilisateur.<br>Mes missions récurentes :
             <ul>
@@ -112,7 +112,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </ul></p>
         </div>
         <div class="experience">
-            <b>Support N2</b><br>
+            <h4>Support N2</h4>
             <small>septembre 2018 à octobre 2018 • 3 semaines</small>
             <p>Dans le cadre d'une prestation METSYS d'une durée déterminée. Renfort pour la préparation de postes de travail pour la mise en conformité d'une société du groupe.</p>
         </div>
@@ -130,12 +130,12 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div class="experience">
-            <b>Administrateur systèmes (en alternance)</b><br>
+            <h4>Administrateur systèmes (en alternance)</h4
             <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
             <p>Alternance dans le cadre de la licence professionnelle A2SR.</p>
         </div>
         <div class="experience">
-            <b>Administrateur systèmes (en stage)</b><br>
+            <h4>Administrateur systèmes (en stage)</h4>
             <small>avril 2017 à juin 2017 • 10 semaines</small>
             <p>Stage dans le cadre de mon DUT réseaux et télécommunications. Participation à une migration de domaine et d'infrastructure physique.</p>
         </div>
