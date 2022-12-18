@@ -50,14 +50,12 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
         </div>
     </div>
     <div class="experience">
+        <b>Lead consultant</b><br>
+        <small>depuis septembre 2021</small>
+    </div>
+    <div class="experience">
         <b>Associate consultant</b><br>
         <small>septembre 2018 à septembre 2021 (3 ans)</small>
-        <p>Texte un peu long qui permet d'avoir une meilleur idée de ce que j'ai pu faire dans le cadre de mes différentes missions chez METSYS. Il faut anticiper les situations où le texte contient du multi-ligne et même des listes comme celle-ci :
-        <ul>
-            <li>Premier élément</li>
-            <li>Deuxième élément</li>
-            <li>Troisième élément</li>
-        </ul></p>
     </div>
     <!-- Groupe ROULLIER -->
     <div class="enterprise">
@@ -70,6 +68,22 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <span>Dinard, Ille-et-Vilaine (35)</span>
         </div>
     </div>
+    <div class="experience">
+        <b>Ingénieur systèmes</b><br>
+        <small>depuis septembre 2021</small>
+    </div>
+    <div class="experience">
+        <b>Administrateur systèmes</b><br>
+        <small>septembre 2019 à septembre 2021 • 2 ans</small>
+    </div>
+    <div class="experience">
+        <b>Support N2/N3</b><br>
+        <small>janvier 2019 à septembre 2019 • 9 mois</small>
+    </div>
+    <div class="experience">
+        <b>Support N2</b><br>
+        <small>septembre 2018 à octobre 2018 • 3 semaines</small>
+    </div>
     <!-- GEVES -->
     <div class="enterprise">
         <div>
@@ -81,36 +95,15 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <span>Beaucouzé, Maine-et-Loire (49)</span>
         </div>
     </div>
+    <div class="experience">
+        <b>Administrateur systèmes (en alternance)</b><br>
+        <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
+    </div>
+    <div class="experience">
+        <b>Administrateur systèmes (en stage)</b><br>
+        <small>avril 2017 à juin 2017 • 10 semaines</small>
+    </div>
 </div>
-
-### METSYS
-
-**Lead consultant**
-
-
-
-**Associate consultant**
-
-
-### Groupe ROULLIER
-
-<b>Ingénieur systèmes</b>
-<small>depuis septembre 2021</small>
-
-**Administrateur système**
-<small>septembre 2019 à septembre 2021 - 2 ans</small>
-
-**Support N2/N3**
-<small>janvier 2019 à septembre 2019 - 9 mois</small>
-
-**Support N2**
-<small>septembre 2018 à octobre 2018 - 3 semaines</small>
-
-### GEVES
-
-**Administrateur système en alternance**
-
-**Administrateur système en stage**
 
 
 <table class="CVtable"><tbody>
