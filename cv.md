@@ -39,19 +39,18 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 <div style="display: block;">
     <!-- METSYS -->
-    <div id="metsys">
-        <div class="enterprise">
-            <div>
-                <img src="https://media.licdn.com/dms/image/C4D0BAQE5KJZV7v44vQ/company-logo_100_100/0/1538657927471?e=1679529600&v=beta&t=C0AKNt7hlOi_nbmOehAyNUP-WsWZV-KXsA_4qu3c66w" alt="logo METSYS">
-            </div>
-            <div>
-                <h3>METSYS</h3>
-                <span>Depuis 2018</span><br>
-                <span>Rennes, Ille-et-Vilaine (35)</span>
-            </div>
+    <div class="enterprise">
+        <div>
+            <img src="https://media.licdn.com/dms/image/C4D0BAQE5KJZV7v44vQ/company-logo_100_100/0/1538657927471?e=1679529600&v=beta&t=C0AKNt7hlOi_nbmOehAyNUP-WsWZV-KXsA_4qu3c66w" alt="logo METSYS">
         </div>
-        <div class="experience">
-            <b>Associate consultant</b><br>
+        <div>
+            <h3>METSYS</h3>
+            <span>Depuis 2018</span><br>
+            <span>Rennes, Ille-et-Vilaine (35)</span>
+        </div>
+    </div>
+    <div class="experience">
+        <b>Associate consultant</b><br>
         <small>septembre 2018 à septembre 2021 (3 ans)</small>
         <p>Texte un peu long qui permet d'avoir une meilleur idée de ce que j'ai pu faire dans le cadre de mes différentes missions chez METSYS. Il faut anticiper les situations où le texte contient du multi-ligne et même des listes comme celle-ci :
         <ul>
@@ -59,8 +58,8 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <li>Deuxième élément</li>
             <li>Troisième élément</li>
         </ul>
-        </div>
     </div>
+</div>
     <!-- Groupe ROULLIER -->
     <div class="enterprise">
         <div>
