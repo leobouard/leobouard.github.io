@@ -15,19 +15,22 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 ## Examens et certifications
 
 <div style="display: flex; align-content: left;">
-    <div>
-        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" height="45px">
-        <b>Microsoft 365 Identity and Services (MS-100)</b>
+    <div width="250px">
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" height="64px">
+        <b>MS-100</b>
+        <p>Microsoft 365 Identity and Services</p>
         <small>Novembre 2022</small>
     </div>
-    <div>
+    <div width="64px">
         <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="45px">
-        <b>Microsoft 365 Fundamentals (MS-900)</b>
+        <b>MS-900</b>
+        <p>Microsoft 365 Fundamentals</p>
         <small>Août 2022</small>
     </div>
-    <div>
+    <div width="64px">
         <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="45px">
-        <p>Azure Fundamentals (AZ-900)</p>
+        <b>AZ-900</b>
+        <p>Azure Fundamentals</p>
         <small>Juin 2021</small>
     </div>
 </div>
