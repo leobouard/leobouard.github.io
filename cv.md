@@ -53,17 +53,18 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
         <div class="experience">
             <b>Lead consultant</b><br>
             <small>depuis septembre 2021</small>
-            <p>Référent technique sur PowerShell et gestion d'une équipe de 5 personnes. Mes différentes missions sont :
+            <p>Référent technique sur PowerShell et gestion d'une équipe de 5 personnes.<br>Mes différentes missions sont :
             <ul>
                 <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnel</li>
+                <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
                 <li>la qualification technique des candidats</li>
                 <li>l'organisation des afterwork d'équipe</li>
-                <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
             </ul></p>
         </div>
         <div class="experience">
             <b>Associate consultant</b><br>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
+            <p>Membre de l'unité "Infrastructure et services".<br>Spécialisé sur Active Directory, PowerShell et Microsoft 365.</p>
         </div>
     </div>
     <!-- Groupe ROULLIER -->
@@ -81,18 +82,39 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
         <div class="experience">
             <b>Ingénieur systèmes</b><br>
             <small>depuis septembre 2021</small>
+            <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
+            <ul>
+                <li>segmentation des permissions dans Azure AD avec les unités administratives</li>
+                <li>migration du mode d'attribution des licences Microsoft 365</li>
+                <li>audit des stratégies de mot de passe Active Directory</li>
+                <li>migration et déploiement de l'authentification multi-facteur (en cours)</li>
+            </ul></p>
         </div>
         <div class="experience">
             <b>Administrateur systèmes</b><br>
             <small>septembre 2019 à septembre 2021 • 2 ans</small>
+            <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
+            <ul>
+                <li>création d'un script PowerShell pour créer, mettre à jour et désactiver automatiquement les comptes Active Directory</li>
+                <li>fourniture d'indicateurs clés pour la direction des services informatiques (KPI)</li>
+                <li>adaptation multi-langue d'un script PowerShell de rappel d'expiration de mot de passe</li>
+                <li>création d'une documentation technique pour la formation des équipes informatique internationales</li>
+            </ul></p>
         </div>
         <div class="experience">
             <b>Support N2/N3</b><br>
             <small>janvier 2019 à septembre 2019 • 9 mois</small>
+            <p>Dans le cadre d'une prestation METSYS pour l'équipe de support utilisateur.<br>Mes missions récurentes :
+            <ul>
+                <li>assistance et support aux utilisateurs (en anglais et français)</li>
+                <li>création de plusieurs scripts PowerShell avec interface graphique pour faciliter les tâches du support</li>
+                <li>administration Active Directory, Microsoft Exchange, Microsoft 365 et SCCM</li>
+            </ul></p>
         </div>
         <div class="experience">
             <b>Support N2</b><br>
             <small>septembre 2018 à octobre 2018 • 3 semaines</small>
+            <p>Dans le cadre d'une prestation METSYS d'une durée déterminée. Renfort pour la préparation de postes de travail pour la mise en conformité d'une société du groupe.</p>
         </div>
     </div>
     <!-- GEVES -->
@@ -110,10 +132,12 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
         <div class="experience">
             <b>Administrateur systèmes (en alternance)</b><br>
             <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
+            <p>Alternance dans le cadre de la licence professionnelle A2SR.</p>
         </div>
         <div class="experience">
             <b>Administrateur systèmes (en stage)</b><br>
             <small>avril 2017 à juin 2017 • 10 semaines</small>
+            <p>Stage dans le cadre de mon DUT réseaux et télécommunications. Participation à une migration de domaine et d'infrastructure physique.</p>
         </div>
     </div>
 </div>
