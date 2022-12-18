@@ -30,7 +30,6 @@
 
 .enterprise {
     display: flex;
-    width: 100%;
     margin: 15px;
     justify-content: left;
 }
@@ -39,6 +38,10 @@
     margin: 5px;
 }
 
-.enterprise > h3 {
+.enterprise > div > h3 {
     margin: 0;
+}
+
+.enterprise > div > img {
+    height: 64px;
 }
