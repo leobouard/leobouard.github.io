@@ -62,11 +62,18 @@ Attention quand-même : cette méthode consomme beaucoup plus de ressources que 
 
 Pour ça, il existe une commande sur-mesure : `Group-Object` qui permet de regrouper des objets en fonction d'un critère commun. Dans notre cas
 
-
 ```powershell
 $users | Select-Object givenName,surname,@{N='month';E={Get-Date -Month $_.hireDate.month -Format 'MMM'}} `
     | Group-Object -Property month `
     | Sort-Object -Property Count
+```
+
+Et pour la version qui se base directement sur Active Directory :
+
+```powershell
+$users = Get-ADUser -Filter {Enabled -eq $true} -Properties created
+$users | % { $_ | Add-Member -MemberType NoteProperty -Name "createdMonth" -Value (Get-Date $_.created -Format 'MMM') -Force }
+$users | Group-Object -Property createdMonth | Sort-Object Count -Descending
 ```
 
 ## Si vous voulez aller plus loin 

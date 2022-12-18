@@ -14,7 +14,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
         <article>
             <small>{{ post.tags }}</small>
             <a href="{{ post.id }}">
-                <p style="text-align: center; font-size: 75px; line-height: 0px; user-select: none;">{{ post.icon }}</p>
+                <p class="articleIcon">{{ post.icon }}</p>
             </a>
             <hr>
             <h2>{{ post.title }}</h2>
