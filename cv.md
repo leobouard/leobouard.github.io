@@ -49,17 +49,6 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <span>Rennes, Ille-et-Vilaine (35)</span>
         </div>
     </div>
-    <div class="experience">
-        <b>Associate consultant</b><br>
-        <small>septembre 2018 à septembre 2021 (3 ans)</small>
-        <p>Texte un peu long qui permet d'avoir une meilleur idée de ce que j'ai pu faire dans le cadre de mes différentes missions chez METSYS. Il faut anticiper les situations où le texte contient du multi-ligne et même des listes comme celle-ci :
-        <ul>
-            <li>Premier élément</li>
-            <li>Deuxième élément</li>
-            <li>Troisième élément</li>
-        </ul>
-    </div>
-</div>
     <!-- Groupe ROULLIER -->
     <div class="enterprise">
         <div>
@@ -88,6 +77,16 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 **Lead consultant**
 
+<div class="experience">
+        <b>Associate consultant</b><br>
+        <small>septembre 2018 à septembre 2021 (3 ans)</small>
+        <p>Texte un peu long qui permet d'avoir une meilleur idée de ce que j'ai pu faire dans le cadre de mes différentes missions chez METSYS. Il faut anticiper les situations où le texte contient du multi-ligne et même des listes comme celle-ci :
+        <ul>
+            <li>Premier élément</li>
+            <li>Deuxième élément</li>
+            <li>Troisième élément</li>
+        </ul>
+    </div>
 
 **Associate consultant**
 
