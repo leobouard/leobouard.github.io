@@ -158,12 +158,14 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div class="experience">
-            <b>Licence professionnelle administration et sécurité des systèmes et des réseaux</b><br>
+            <h4>LP A2SR</h4>
             <small>2017 à 2018</small>
+            <p>Licence professionnelle administration et sécurité des systèmes et des réseaux. En alternance au GEVES.</p>
         </div>
         <div class="experience">
-            <b>DUT réseaux et télécommunications</b><br>
+            <h4>DUT R&T</h4>
             <small>2015 à 2017</small>
+            <p>Diplôme universitaire technique (DUT) réseaux et télécommunications.<br>Projet d'étude : initiation de lycéens à la cybersécurité avec des ateliers de sensibilisation et des travaux pratiques.<br>Stage de fin d'année au GEVES.</p>
         </div>
     </div>
 </div>
