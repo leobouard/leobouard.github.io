@@ -57,7 +57,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <li>Premier élément</li>
             <li>Deuxième élément</li>
             <li>Troisième élément</li>
-        </ul>
+        </ul></p>
     </div>
     <!-- Groupe ROULLIER -->
     <div class="enterprise">
