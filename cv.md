@@ -39,130 +39,77 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 <div style="display: block;">
     <!-- METSYS -->
-    <div class="enterprise">
-        <div>
-            <img src="https://media.licdn.com/dms/image/C4D0BAQE5KJZV7v44vQ/company-logo_100_100/0/1538657927471?e=1679529600&v=beta&t=C0AKNt7hlOi_nbmOehAyNUP-WsWZV-KXsA_4qu3c66w" alt="logo METSYS">
+    <div id="div-metsys" style="margin-bottom: 15px;">
+        <div class="enterprise">
+            <div>
+                <img src="https://media.licdn.com/dms/image/C4D0BAQE5KJZV7v44vQ/company-logo_100_100/0/1538657927471?e=1679529600&v=beta&t=C0AKNt7hlOi_nbmOehAyNUP-WsWZV-KXsA_4qu3c66w" alt="logo METSYS">
+            </div>
+            <div>
+                <h3>METSYS</h3>
+                <span>Depuis 2018</span><br>
+                <span>Rennes, Ille-et-Vilaine (35)</span>
+            </div>
         </div>
-        <div>
-            <h3>METSYS</h3>
-            <span>Depuis 2018</span><br>
-            <span>Rennes, Ille-et-Vilaine (35)</span>
+        <div class="experience">
+            <b>Lead consultant</b><br>
+            <small>depuis septembre 2021</small>
         </div>
-    </div>
-    <div class="experience">
-        <b>Lead consultant</b><br>
-        <small>depuis septembre 2021</small>
-    </div>
-    <div class="experience">
-        <b>Associate consultant</b><br>
-        <small>septembre 2018 à septembre 2021 (3 ans)</small>
+        <div class="experience">
+            <b>Associate consultant</b><br>
+            <small>septembre 2018 à septembre 2021 • 3 ans</small>
+        </div>
     </div>
     <!-- Groupe ROULLIER -->
-    <div class="enterprise">
-        <div>
-            <img src="https://media.licdn.com/dms/image/C4D0BAQFkmJTRk_252A/company-logo_100_100/0/1519856575710?e=1679529600&v=beta&t=v_nlqf7lNxTTqaS9pt_JsaplD2czF-X5or0H4KnYciM" alt="logo Groupe Roullier">
+    <div id="div-groupe-roullier" style="margin-bottom: 15px;">
+        <div class="enterprise">
+            <div>
+                <img src="https://media.licdn.com/dms/image/C4D0BAQFkmJTRk_252A/company-logo_100_100/0/1519856575710?e=1679529600&v=beta&t=v_nlqf7lNxTTqaS9pt_JsaplD2czF-X5or0H4KnYciM" alt="logo Groupe Roullier">
+            </div>
+            <div>
+                <h3>Groupe Roullier</h3>
+                <span>Depuis 2019</span><br>
+                <span>Dinard, Ille-et-Vilaine (35)</span>
+            </div>
         </div>
-        <div>
-            <h3>Groupe Roullier</h3>
-            <span>Depuis 2019</span><br>
-            <span>Dinard, Ille-et-Vilaine (35)</span>
+        <div class="experience">
+            <b>Ingénieur systèmes</b><br>
+            <small>depuis septembre 2021</small>
         </div>
-    </div>
-    <div class="experience">
-        <b>Ingénieur systèmes</b><br>
-        <small>depuis septembre 2021</small>
-    </div>
-    <div class="experience">
-        <b>Administrateur systèmes</b><br>
-        <small>septembre 2019 à septembre 2021 • 2 ans</small>
-    </div>
-    <div class="experience">
-        <b>Support N2/N3</b><br>
-        <small>janvier 2019 à septembre 2019 • 9 mois</small>
-    </div>
-    <div class="experience">
-        <b>Support N2</b><br>
-        <small>septembre 2018 à octobre 2018 • 3 semaines</small>
+        <div class="experience">
+            <b>Administrateur systèmes</b><br>
+            <small>septembre 2019 à septembre 2021 • 2 ans</small>
+        </div>
+        <div class="experience">
+            <b>Support N2/N3</b><br>
+            <small>janvier 2019 à septembre 2019 • 9 mois</small>
+        </div>
+        <div class="experience">
+            <b>Support N2</b><br>
+            <small>septembre 2018 à octobre 2018 • 3 semaines</small>
+        </div>
     </div>
     <!-- GEVES -->
-    <div class="enterprise">
-        <div>
-            <img src="https://media.licdn.com/dms/image/C4D0BAQHzTFbiS8dAmw/company-logo_100_100/0/1536567798460?e=1679529600&v=beta&t=_F8Px6eDUS1KjEUejb89ii5FC13Cj2FoLBH9aikgvyU" alt="logo GEVES">
+    <div id="div-geves" style="margin-bottom: 15px;">
+        <div class="enterprise">
+            <div>
+                <img src="https://media.licdn.com/dms/image/C4D0BAQHzTFbiS8dAmw/company-logo_100_100/0/1536567798460?e=1679529600&v=beta&t=_F8Px6eDUS1KjEUejb89ii5FC13Cj2FoLBH9aikgvyU" alt="logo GEVES">
+            </div>
+            <div>
+                <h3>GEVES</h3>
+                <span>De 2017 à 2018</span><br>
+                <span>Beaucouzé, Maine-et-Loire (49)</span>
+            </div>
         </div>
-        <div>
-            <h3>GEVES</h3>
-            <span>De 2017 à 2018</span><br>
-            <span>Beaucouzé, Maine-et-Loire (49)</span>
+        <div class="experience">
+            <b>Administrateur systèmes (en alternance)</b><br>
+            <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
         </div>
-    </div>
-    <div class="experience">
-        <b>Administrateur systèmes (en alternance)</b><br>
-        <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
-    </div>
-    <div class="experience">
-        <b>Administrateur systèmes (en stage)</b><br>
-        <small>avril 2017 à juin 2017 • 10 semaines</small>
+        <div class="experience">
+            <b>Administrateur systèmes (en stage)</b><br>
+            <small>avril 2017 à juin 2017 • 10 semaines</small>
+        </div>
     </div>
 </div>
-
-
-<table class="CVtable"><tbody>
-    <tr class="CVtr">
-        <td class="CVtd">
-            <img src="/assets/images/groupe-roullier.jfif" alt="Groupe Roullier" width="64px">
-            <strong>Groupe Roullier</strong><br>
-            <i>@Saint-Malo</i>
-        </td>
-        <td>
-            <strong>Administrateur système</strong><br>
-            <small>janvier 2019 à aujourd’hui • 3 ans et 6 mois</small>
-            <p>Assistance technique en tant que prestataire (METSYS)</p>
-            <ul>
-                <li>Automatisation en PowerShell</li>
-                <li>Administration de l'environnement Microsoft (AD, Exchange, O365)</li>
-                <li>Documentation & formation du personnel informatique des pays étrangers</li>
-                <li>Gestion de projet</li>
-            </ul>
-        </td>
-    </tr>
-    <tr class="CVtr">
-        <td class="CVtd">
-            <img src="/assets/images/metsys.jfif" alt="METSYS" width="64px">
-            <strong>METSYS</strong><br>
-            <i>@Rennes</i>
-        </td>
-        <td>
-            <strong>Lead consultant</strong><br>
-            <small>septembre 2021 à aujourd'hui • 9 mois</small>
-            <p>Gestion d'une équipe de 8 personnes</p>
-            <ul>
-                <li>Accompagnement technique sur la montée en compétence</li>
-                <li>Qualification technique</li>
-                <li>Suivi des collaborateurs en mission</li>
-            </ul>
-            <hr>
-            <strong>Associate consultant</strong><br>
-            <small>septembre 2018 à septembre 2021 • 3 ans</small>
-            <p>Membre de l'équipe "Infrastructure & services"</p>
-        </td>
-    </tr>
-    <tr class="CVtr">
-        <td class="CVtd">
-            <img src="/assets/images/geves.jfif" alt="GEVES" width="64px">
-            <strong>GEVES</strong><br>
-            <i>@Angers</i>
-        </td>
-        <td>
-            <strong>Administrateur système en alternance</strong><br>
-            <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
-            <p>Alternance dans le cadre de la licence professionnelle administration et sécurité des systèmes et réseaux, à la suite de mon stage de 10 semaines au GEVES</p>
-            <hr>
-            <strong>Administrateur système en stage</strong><br>
-            <small>avril 2017 à juin 2017 • 10 semaines</small>
-            <p>Stage de 10 semaines pour la fin de mon DUT réseaux et télécommunications</p>
-        </td>
-    </tr>
-</tbody></table>
 
 ## Ma formation
 
