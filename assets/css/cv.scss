@@ -29,7 +29,16 @@
 }
 
 .enterprise {
-    display: block;
+    display: flex;
     width: 100%;
     margin: 15px;
+    justify-content: left;
+}
+
+.enterprise > div {
+    margin: 5px;
+}
+
+.enterprise > h3 {
+    margin: 0;
 }

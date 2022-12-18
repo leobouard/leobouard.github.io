@@ -38,15 +38,45 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 ## Mes expériences
 
 <div class="posts">
+    <!-- METSYS -->
     <div class="enterprise">
-        <h3>METSYS</h3>
+        <div>
+            <img src="https://media.licdn.com/dms/image/C4D0BAQE5KJZV7v44vQ/company-logo_100_100/0/1538657927471?e=1679529600&v=beta&t=C0AKNt7hlOi_nbmOehAyNUP-WsWZV-KXsA_4qu3c66w" alt="logo METSYS">
+        </div>
+        <div>
+            <h3>METSYS</h3>
+            <span>Depuis 2018</span><br>
+            <span>Région de Rennes, Bretagne</span>
+        </div>
+    </div>
+    <!-- Groupe ROULLIER -->
+    <div class="enterprise">
+        <div>
+            <img src="https://media.licdn.com/dms/image/C4D0BAQFkmJTRk_252A/company-logo_100_100/0/1519856575710?e=1679529600&v=beta&t=v_nlqf7lNxTTqaS9pt_JsaplD2czF-X5or0H4KnYciM" alt="logo Groupe ROULLIER">
+        </div>
+        <div>
+            <h3>Groupe ROULLIER</h3>
+            <span>Depuis 2019</span><br>
+            <span>Région de Saint-Malo, Bretagne</span>
+        </div>
+    </div>
+    <!-- GEVES -->
+    <div class="enterprise">
+        <div>
+            <img src="https://media.licdn.com/dms/image/C4D0BAQHzTFbiS8dAmw/company-logo_100_100/0/1536567798460?e=1679529600&v=beta&t=_F8Px6eDUS1KjEUejb89ii5FC13Cj2FoLBH9aikgvyU" alt="logo Groupe ROULLIER">
+        </div>
+        <div>
+            <h3>GEVES</h3>
+            <span>De 2017 à 2018</span><br>
+            <span>Région de Angers, Pays de la Loire</span>
+        </div>
     </div>
     <div class="experience">
-        <h4>Lead consultant</h4>
+        <b>Lead consultant</b><br>
         <small>depuis septembre 2021</small>
     </div>
-    <div class="experience">
-        <h4>Associate consultant</h4>
+    <!--<div class="experience">
+        <b>Associate consultant</b><br>
         <small>septembre 2018 à septembre 2021 (3 ans)</small>
         <p>Texte un peu long qui permet d'avoir une meilleur idée de ce que j'ai pu faire dans le cadre de mes différentes missions chez METSYS. Il faut anticiper les situations où le texte contient du multi-ligne et même des listes comme celle-ci :
         <ul>
@@ -55,7 +85,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <li>Troisième élément</li>
         </ul>
         </p>
-    </div>
+    </div>-->
 </div>
 
 ### METSYS
