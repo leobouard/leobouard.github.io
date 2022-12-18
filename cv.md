@@ -35,7 +35,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
     </div>
 </div>
 
-## Mes expériences
+## Expériences
 
 <div style="display: block;">
     <!-- METSYS -->
@@ -111,7 +111,33 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
     </div>
 </div>
 
-## Ma formation
+## Formation
+
+<div style="display: block;">
+    <!-- METSYS -->
+    <div id="div-metsys" style="margin-bottom: 35px;">
+        <div class="enterprise">
+            <div>
+                <img src="https://media.licdn.com/dms/image/C4E0BAQHYwJXHq0sifw/company-logo_100_100/0/1649151202556?e=1679529600&v=beta&t=HjExswgziINC--7m_cSrLjqTdu15B6a7oa8kS_nrQGQ" alt="logo Université de Nantes">
+            </div>
+            <div>
+                <h3>Université de Nantes</h3>
+                <span>De 2015 à 2018</span><br>
+                <span>La Roche-sur-Yon, Vendée (85)</span>
+            </div>
+        </div>
+        <div class="experience">
+            <b>Licence professionnelle administration et sécurité des systèmes et des réseaux</b><br>
+            <small>2017 à 2018</small>
+        </div>
+        <div class="experience">
+            <b>DUT réseaux et télécommunications</b><br>
+            <small>2015 à 2017</small>
+        </div>
+    </div>
+</div>
+
+
 
 <table class="CVtable"><tbody>
     <tr class="CVtr">
