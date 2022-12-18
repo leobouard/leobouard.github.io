@@ -14,25 +14,28 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 ## Examens et certifications
 
-<div style="display: flex; align-content: center;">
-    <div width="250px">
-        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" height="64px">
-        <b>MS-100</b>
-        <span>Microsoft 365 Identity and Services</span>
+<div class="posts">
+    <article>
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" height="80px">
+        <hr>
+        <h2>MS-100</h2>
+        <p>Microsoft 365 Identity and Services</p>
         <small>Novembre 2022</small>
-    </div>
-    <div width="250px">
-        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="64px">
-        <b>MS-900</b><br>
-        <span>Microsoft 365 Fundamentals</span>
+    </article>
+    <article>
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="80px">
+        <hr>
+        <h2>MS-900</h2>
+        <p>Microsoft 365 Fundamentals</p>
         <small>Août 2022</small>
-    </div>
-    <div width="250px">
-        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="64px">
-        <b>AZ-900</b>
-        <span>Azure Fundamentals</span>
+    </article>
+    <article>
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="80px">
+        <hr>
+        <h2>AZ-900</h2>
+        <p>Azure Fundamentals</p>
         <small>Juin 2021</small>
-    </div>
+    </article>
 </div>
 
 ## Mes expériences
