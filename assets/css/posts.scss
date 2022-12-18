@@ -56,18 +56,14 @@ article:hover {
     transition: all 150ms ease-in-out;
 }
 
-.articleTitle, .articleTitle:hover {
-    text-decoration: none;
-}
-
-.articleText, .articleText:hover {
-    text-decoration: none;
-}
-
 .articleButton {
     position: absolute;
     bottom: 15px;
     right: 15px;
+}
+
+.articleButton:hover {
+    text-decoration: underline;
 }
 
 .postBanner {
