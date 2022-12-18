@@ -148,7 +148,7 @@ section {
         color: #3a75af;
     }
 
-    h1, h2, h3, h4, h5 {
+    h1, h2, h3, h4, h5, .articleTitle {
         color: #383b53;
     }
 
@@ -163,7 +163,7 @@ section {
         text-decoration-color: #f9c80e;
     }
 
-    h2 {
+    h2, .articleTitle {
         font-size: x-large;
     }
 

@@ -56,6 +56,20 @@ article:hover {
     transition: all 150ms ease-in-out;
 }
 
+.articleTitle, .articleTitle:hover {
+    text-decoration: none;
+}
+
+.articleText, .articleText:hover {
+    text-decoration: none;
+}
+
+.articleButton {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 .postBanner {
     margin-left: -50px;
     margin-right: -50px;
