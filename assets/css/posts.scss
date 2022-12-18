@@ -109,10 +109,10 @@ article {
 
 article:hover {
     box-shadow: 0 0 15px 0 #b8c3c9;
-}
 
-article:hover > .articleIcon {
-    transform: scale(1.3);
+    .articleIcon {
+        transform: scale(1.3);
+    }
 }
 
 .articleIcon {
