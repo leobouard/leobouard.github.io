@@ -16,25 +16,22 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 <div class="posts">
     <div class="certification">
-        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" height="100px" margin="15px">
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" alt="logo Microsoft Exam">
         <hr>
         <h3>MS-100</h3>
         <p>Microsoft 365 Identity and Services</p>
-        <small>Novembre 2022</small>
     </div>
     <div class="certification">
-        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="100px" margin="15px">
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
         <hr>
         <h3>MS-900</h3>
         <p>Microsoft 365 Fundamentals</p>
-        <small>Août 2022</small>
     </div>
     <div class="certification">
-        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="100px" margin="15px">
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
         <hr>
         <h3>AZ-900</h3>
         <p>Azure Fundamentals</p>
-        <small>Juin 2021</small>
     </div>
 </div>
 
