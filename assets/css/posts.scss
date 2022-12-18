@@ -1,73 +1,6 @@
 ---
 ---
 
-/* --- POSTS CONTENT ---
-
-.posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    a:hover {
-        text-decoration: none;
-    }
-}
-
-.card {
-    margin: 15px;
-    flex-grow: 1;
-    height: 400px;
-    box-shadow: 0 0 5px 0 #b8c3c9;
-    transition: all 100ms ease-in-out;
-    border-radius: 5px;
-    flex: 1 1 0px;
-    flex-basis: 300px;
-}
-
-.card:hover {
-    box-shadow: 0 0 10px 0 #b8c3c9;
-}
-
-.thumbnailLimits {
-    margin: 0px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 5px;
-}
-
-.thumbnail {
-    font-size: 90px;
-    text-align: center;
-    margin: 0;
-    height: 150px;
-    line-height: 150px;
-    transition: transform 0.1s;
-    border-radius: 5px;
-}
-
-.thumbnail:hover {
-    transform: scale(1.05);
-    border-radius: 5px;
-}
-
-.postInfo {
-    margin: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 100px;
-}
-
-.postInfo p {
-    font-weight: 400;
-    color: #000;
-}
-
-.postInfo h3 {
-    color: #383b53;
-}
-
-*/
-
 .posts {
     display: flex;
     flex-wrap: wrap;
@@ -134,7 +67,7 @@ article:hover {
     line-height: 200px;
     display: flex;
     justify-content: center;
-    font-size: 90px;
+    font-size: 110px;
 }
 
 @media print, screen and (max-width: 950px) {
