@@ -12,6 +12,26 @@ Ingénieur systèmes spécialisé dans les infrastructures et l'écosystème Mic
 
 Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum avec mes équipes et sur mon blog : <https://www.labouabouate.fr/>.
 
+## Examens et certifications
+
+<div style="display: flex; align-content: left;">
+    <div>
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" height="45px">
+        <b>Microsoft 365 Identity and Services (MS-100)</b>
+        <small>Novembre 2022</small>
+    </div>
+    <div>
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="45px">
+        <b>Microsoft 365 Fundamentals (MS-900)</b>
+        <small>Août 2022</small>
+    </div>
+    <div>
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" height="45px">
+        <p>Azure Fundamentals (AZ-900)</p>
+        <small>Juin 2021</small>
+    </div>
+</div>
+
 ## Mes expériences
 
 <table class="CVtable"><tbody>
@@ -71,12 +91,6 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
         </td>
     </tr>
 </tbody></table>
-
-## Mes certifications
-
-- Microsoft 365 Identity and services (MS-100)
-- Microsoft 365 Fundamentals (MS-900)
-- Azure Fundamentals (AZ-900)
 
 ## Ma formation
 
