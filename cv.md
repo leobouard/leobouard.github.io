@@ -130,7 +130,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div class="experience">
-            <h4>Administrateur systèmes (en alternance)</h4
+            <h4>Administrateur systèmes (en alternance)</h4>
             <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
             <p>Alternance dans le cadre de la licence professionnelle A2SR.</p>
         </div>
