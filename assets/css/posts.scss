@@ -9,7 +9,7 @@
 
 article {
     margin: 15px;
-    height: 400px;
+    height: 370px;
     max-width: 315px;
     flex: 1;
     flex-basis: 200px;
@@ -20,32 +20,32 @@ article {
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+}
 
-    small {
-        border-width: 2px;
-        border-radius: 5px;
-        border-color: #f2f2f2;
-        border-style: solid;
-        padding-left: 5px;
-        padding-right: 5px;
-        background-color: #fff;
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        user-select: none;
-    }
+article > small {
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #f2f2f2;
+    border-style: solid;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    user-select: none;
+}
 
-    a:hover {
-        text-decoration: none;
-    }
+article > a:hover {
+    text-decoration: none;
 }
 
 article:hover {
     box-shadow: 0 0 15px 0 #b8c3c9;
+}
 
-    .articleIcon {
-        transform: scale(1.15);
-    }
+article:hover > .articleIcon {
+    transform: scale(1.15);
 }
 
 .articleIcon {
