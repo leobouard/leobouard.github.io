@@ -8,7 +8,7 @@ description: "Plus d'informations sur le site web et moi-même"
 
 ## A propos de moi
 
-Moi c'est Léo Bouard, ingénieur systèmes & lead consultant chez [METSYS Grand-Ouest](https://www.metsys.fr/) @Rennes. Ça fait plus de 4 ans que j'ai commencé dans l'administration système (spécialisé sur les infrastructures Microsoft) sur des technologies comme :
+Moi c'est Léo Bouard, ingénieur système & lead consultant chez [METSYS Grand-Ouest](https://www.metsys.fr/) @Rennes. Ça fait plus de 4 ans que j'ai commencé dans l'administration système (spécialisé sur les infrastructures Microsoft) sur des technologies comme :
 
 - Microsoft 365
 - Active Directory
