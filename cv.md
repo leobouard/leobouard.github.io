@@ -8,7 +8,7 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 ## Résumé
 
-Ingénieur systèmes spécialisé dans les infrastructures et l'écosystème Microsoft, notamment sur Active Directory, Exchange, Microsoft 365 et Azure AD.
+Ingénieur système spécialisé dans les infrastructures et l'écosystème Microsoft, notamment sur Active Directory, Exchange, Microsoft 365 et Azure AD.
 
 Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum avec mes équipes et sur mon blog : <https://www.labouabouate.fr/>.
 
@@ -80,7 +80,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div class="experience">
-            <h4>Ingénieur systèmes</h4>
+            <h4>Ingénieur système</h4>
             <small>depuis septembre 2021</small>
             <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
             <ul>
@@ -91,7 +91,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </ul></p>
         </div>
         <div class="experience">
-            <h4>Administrateur systèmes</h4>
+            <h4>Administrateur système</h4>
             <small>septembre 2019 à septembre 2021 • 2 ans</small>
             <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
             <ul>
@@ -130,12 +130,12 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div class="experience">
-            <h4>Administrateur systèmes (en alternance)</h4>
+            <h4>Administrateur système (en alternance)</h4>
             <small>août 2017 à septembre 2018 • 1 an et 1 mois</small>
             <p>Alternance dans le cadre de la licence professionnelle A2SR.</p>
         </div>
         <div class="experience">
-            <h4>Administrateur systèmes (en stage)</h4>
+            <h4>Administrateur système (en stage)</h4>
             <small>avril 2017 à juin 2017 • 10 semaines</small>
             <p>Stage dans le cadre de mon DUT réseaux et télécommunications. Participation à une migration de domaine et d'infrastructure physique.</p>
         </div>
@@ -149,23 +149,23 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
     <div id="div-metsys" style="margin-bottom: 35px;">
         <div class="enterprise">
             <div>
-                <img src="https://media.licdn.com/dms/image/C4E0BAQHYwJXHq0sifw/company-logo_100_100/0/1649151202556?e=1679529600&v=beta&t=HjExswgziINC--7m_cSrLjqTdu15B6a7oa8kS_nrQGQ" alt="logo Université de Nantes">
+                <img src="https://media.licdn.com/dms/image/C4E0BAQHYwJXHq0sifw/company-logo_100_100/0/1649151202556?e=1679529600&v=beta&t=HjExswgziINC--7m_cSrLjqTdu15B6a7oa8kS_nrQGQ" alt="logo IUT de La Roche-sur-Yon">
             </div>
             <div>
-                <h3>Université de Nantes</h3>
+                <h3>IUT de La Roche-sur-Yon</h3>
                 <span>De 2015 à 2018</span><br>
                 <span>La Roche-sur-Yon, Vendée (85)</span>
             </div>
         </div>
         <div class="experience">
-            <h4>LP A2SR</h4>
+            <h4>Licence professionnelle A2SR</h4>
             <small>2017 à 2018</small>
-            <p>Licence professionnelle administration et sécurité des systèmes et des réseaux. En alternance au GEVES.</p>
+            <p>Licence professionnelle administration et sécurité des systèmes et des réseaux.<br>Alternance au GEVES en tant qu'administrateur système.</p>
         </div>
         <div class="experience">
-            <h4>DUT R&T</h4>
+            <h4>DUT réseaux et télécommunications</h4>
             <small>2015 à 2017</small>
-            <p>Diplôme universitaire technique (DUT) réseaux et télécommunications.<br>Projet d'étude : initiation de lycéens à la cybersécurité avec des ateliers de sensibilisation et des travaux pratiques.<br>Stage de fin d'année au GEVES.</p>
+            <p>Projet tutoré : initiation de lycéens à la cybersécurité avec des ateliers de sensibilisation et des travaux pratiques.<br>Stage de fin d'année au GEVES en tant qu'administrateur système.</p>
         </div>
     </div>
 </div>
