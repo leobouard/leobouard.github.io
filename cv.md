@@ -16,18 +16,6 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 <div class="posts">
     <div class="certification">
-        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" alt="logo Microsoft Certified Expert">
-        <hr>
-        <h3>M365 Expert</h3>
-        <p>Microsoft 365 Enterprise Administrator Expert</p>
-    </div>
-    <div class="certification">
-        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="logo Microsoft Certified Associate">
-        <hr>
-        <h3>MS-500</h3>
-        <p>Microsoft 365 Security Administrator Associate</p>
-    </div>
-    <div class="certification">
         <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" alt="logo Microsoft Exam">
         <hr>
         <h3>MS-100</h3>
