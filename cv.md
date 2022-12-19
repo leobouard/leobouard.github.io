@@ -16,6 +16,18 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
 
 <div class="posts">
     <div class="certification">
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" alt="logo Microsoft Certified Expert">
+        <hr>
+        <h3>M365 Expert</h3>
+        <p>Microsoft 365 Enterprise Administrator Expert</p>
+    </div>
+    <div class="certification">
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="logo Microsoft Certified Associate">
+        <hr>
+        <h3>MS-500</h3>
+        <p>Microsoft 365 Security Administrator Associate</p>
+    </div>
+    <div class="certification">
         <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" alt="logo Microsoft Exam">
         <hr>
         <h3>MS-100</h3>
@@ -50,6 +62,9 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
                 <span>Rennes, Ille-et-Vilaine (35)</span>
             </div>
         </div>
+        <div>
+            <p>Entreprise de services numériques (ESN) de plus de 400 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
+        </div>
         <div class="experience">
             <h4>Lead consultant</h4>
             <small>depuis septembre 2021</small>
@@ -78,6 +93,9 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
                 <span>Depuis 2019</span><br>
                 <span>Dinard, Ille-et-Vilaine (35)</span>
             </div>
+        </div>
+        <div>
+            <p>Groupe international établi dans plus de 80 filliales et 50 pays différents. Presque 10000 utilisateurs dans un environnement Active Directory et Microsoft 365.</p>
         </div>
         <div class="experience">
             <h4>Ingénieur système</h4>
@@ -128,6 +146,9 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
                 <span>De 2017 à 2018</span><br>
                 <span>Beaucouzé, Maine-et-Loire (49)</span>
             </div>
+        </div>
+        <div>
+            <p>Laboratoire d'analyse répartis sur 6 sites en France. Environ 600 utilisateurs dans un environnement Active Directory et Office 365.</p>
         </div>
         <div class="experience">
             <h4>Administrateur système (en alternance)</h4>
