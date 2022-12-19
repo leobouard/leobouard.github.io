@@ -4,6 +4,8 @@ title: "Accueil"
 description: "Blog technique sur PowerShell et les technologies Microsoft pour l'administration système"
 ---
 
+{% assign random_post = listed_posts | sample %}
+
 # Bienvenue
 
 ## C'est quoi "LaBouaBouate" ?
@@ -35,4 +37,5 @@ LaBouaBouate est un blog technique pour partager des connaissances sur les techn
 </div>
 <div class="buttonNext" style="display: flex; align-items: center; justify-content: center; margin: 20px;">
     <a href="/blog">Voir tous les articles</a>
+    <a href="{{ random_post.id }}">🎲 Article aléatoire</a>
 </div>
