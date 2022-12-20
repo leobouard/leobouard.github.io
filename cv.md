@@ -83,7 +83,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div>
-            <p>Groupe international établi dans plus de 80 filliales et 50 pays différents. Presque 10000 utilisateurs dans un environnement Active Directory et Microsoft 365.</p>
+            <p>Groupe international présent sur 50 pays et avec 80 entités différentes. Presque 10000 utilisateurs dans un environnement Active Directory et Microsoft 365.</p>
         </div>
         <div class="experience">
             <h4>Ingénieur système</h4>
