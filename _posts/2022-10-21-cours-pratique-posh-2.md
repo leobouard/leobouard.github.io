@@ -7,7 +7,7 @@ icon: 🎓
 
 ## Consigne
 
-Le script est maintenant pourvu d'une boucle qui permet au joueur d'avoir 10 tentatives pour deviner le nombre aléatoire. Le script se termine si l'une des deux conditions est remplie :
+Le script est maintenant pourvu d'une boucle qui permet au joueur d'avoir 10 tentatives maximum pour deviner le nombre aléatoire. Le script se termine si l'une des deux conditions est remplie :
 
 - le joueur a trouvé le nombre aléatoire (victoire)
 - le joueur n'a pas réussi à trouver le nombre aléatoire en 10 tentatives (défaite)
@@ -20,14 +20,9 @@ Exemple de victoire :
 
 > Deviner le nombre: 500\
 > ??? est plus grand que 500\
-> Deviner le nombre: 750\
-> ??? est plus petit que 750\
-> Deviner le nombre: 600\
-> ??? est plus petit que 600\
-> Deviner le nombre: 550\
-> ??? est plus grand que 550\
-> Deviner le nombre: 575\
-> ??? est plus petit que 575\
+> \
+> [...]
+> \
 > Deviner le nombre: 560\
 > VICTOIRE ! Vous avez deviné le nombre aléatoire\
 > \
@@ -39,22 +34,9 @@ Exemple de défaite :
 
 > Deviner le nombre: 500\
 > ??? est plus grand que 500\
-> Deviner le nombre: 600\
-> ??? est plus grand que 600\
-> Deviner le nombre: 700\
-> ??? est plus petit que 700\
-> Deviner le nombre: 650\
-> ??? est plus petit que 650\
-> Deviner le nombre: 625\
-> ??? est plus petit que 625\
-> Deviner le nombre: 620\
-> ??? est plus petit que 620\
-> Deviner le nombre: 615\
-> ??? est plus petit que 615\
-> Deviner le nombre: 610\
-> ??? est plus petit que 610\
-> Deviner le nombre: 605\
-> ??? est plus grand que 605\
+> \
+> [...]
+> \
 > Deviner le nombre: 608\
 > ??? est plus petit que 608\
 > DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire\
@@ -75,38 +57,37 @@ Exemple de défaite :
 
 ### Mettre le code dans une boucle
 
-Pour permettre au joueur d'avoir plusieurs tentatives, le plus simple est de mettre le code dans une boucle. Plusieurs types de boucles sont utilisables dans notre exemple
+Pour permettre au joueur d'avoir plusieurs tentatives, le plus simple est de mettre le code dans une boucle. Plusieurs types de boucles sont utilisables dans notre exemple, suivant notre condition de sortie.
 
-On va maintenant mettre le code qu'on a produit jusqu'ici dans une boucle pour pouvoir donner un peu plus qu'un seul essai. L'idée est de demande un nombre à l'utilisateur jusqu'à ce qu'il trouve le nombre aléatoire.
+- boucle `while` : tant que le joueur n'a pas trouvé le nombre aléatoire, on reste dans la boucle
+- boucle `do while` : on reste dans la boucle tant que le joueur n'a pas trouvé le nombre aléatoire
+- **boucle `do until`** : on reste dans la boucle jusqu'à ce que le joueur trouve le nombre aléatoire
 
-- Boucles possibles :
-  - boucle "while(){}"
-  - boucle "do{}while()"
-  - **boucle "do{}until()"**
+Pour le script exemple, j'ai choisi la boucle `do until`.
 
-<details>
-  <pre><code>
-    while ($answer -ne $random) { <#[...]#> }
+```powershell
+while ($answer -ne $random) { <#[...]#> }
 
-    do { <#[...]#> } while ($answer -ne $random)
+do { <#[...]#> } while ($answer -ne $random)
 
-    do { <#[...]#> } until ($answer -eq $random)
-  </code></pre>
-</details>
+do { <#[...]#> } until ($answer -eq $random)
+```
 
 ### Ajouter un compteur de tentatives
 
-Compter le nombre de tentatives. Vous pouvez partir de 0 ou de 1, c'est votre choix.
+Cette étape se décompose en deux parties : 
 
-- Nom de variable : "i"
-- Opérateur "++"
+1. hors de la boucle : initier le compteur en créant une nouvelle variable `$i` dont la valeur initiale est 0 (par exemple)
+2. dans la boucle : incrémenter la variable à chaque nouvelle tentative avec l'opérateur `++`
 
-<details>
-  <pre><code>
-    $i = 0
+```powershell
+$i = 0
+do { 
+
     $i++
-  </code></pre>
-</details>
+
+} until ($answer -eq $random)
+```
 
 ### Point bonus : utilisation de la boucle "for()"
 
@@ -114,11 +95,9 @@ On peut utiliser la boucle "for(){}" pour boucler et compter dans le même temps
 
 - Boucle : "for(){}"
 
-<details>
-  <pre><code>
-    for ($i = 1 ; $i++ ; $answer -ne $random) { <#[...]#> }
-  </code></pre>
-</details>
+```powershell
+for ($i = 1 ; $i++ ; $answer -ne $random) { <#[...]#> }
+```
 
 ### Sortir de la boucle après 10 tentatives
 
@@ -127,13 +106,11 @@ On augmente la difficulté pour le joueur : il dispose maintenant de 10 essais m
 - **Opérateur "-or"**
 - Commande "break"
 
-<details>
-  <pre><code>
-    do { <#[...]#> } until ($answer -eq $random -or $i -ge 10)
-   
-    if ($i -ge 10) { break }
-  </code></pre>
-</details>
+```powershell
+do { <#[...]#> } until ($answer -eq $random -or $i -ge 10)
+
+if ($i -ge 10) { break }
+```
 
 ### Affichage d'un message de défaite
 
