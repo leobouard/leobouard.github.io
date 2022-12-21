@@ -214,11 +214,11 @@ section {
     details {
         background-color: #fff;
         z-index: 3;
+        box-shadow: 0 5px 5px -5px #b8c3c9;
     }
 
     details > a {
-        padding: 5px;
-        
+        padding: 10px 20px;
     }
 
     details > summary {
