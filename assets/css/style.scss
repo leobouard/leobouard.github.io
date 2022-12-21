@@ -214,16 +214,16 @@ section {
     details {
         background-color: #fff;
         z-index: 3;
-        box-shadow: 0 5px 5px -5px #b8c3c9;
+        box-shadow: 0 0 5px 0 #b8c3c9;
     }
 
     details > a {
-        padding: 10px 20px;
+        padding: 5px 25px;
     }
 
     details > summary {
         padding: 10px 20px;
-        border: 2px solid #fff;
+        border: 2px solid #f2f2f2;
         list-style: none;
         font-weight: 600;
     }
