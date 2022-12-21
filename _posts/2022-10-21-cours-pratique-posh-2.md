@@ -12,7 +12,7 @@ Le script est maintenant pourvu d'une boucle qui permet au joueur d'avoir 10 ten
 - le joueur a trouvé le nombre aléatoire (victoire)
 - le joueur n'a pas réussi à trouver le nombre aléatoire en 10 tentatives (défaite)
 
-A la fin du script, le nombre de tentatives est affiché avec les autres statistiques.
+À la fin du script, le nombre de tentatives est affiché avec les autres statistiques.
 
 ### Résultats attendus
 
@@ -81,18 +81,6 @@ do {
 } until ($answer -eq $random)
 ```
 
-<!--
-### Point bonus : utilisation de la boucle "for()"
-
-On peut utiliser la boucle `for` pour boucler et compter dans le même temps. Cette méthode ne sera pas conservée dans la correction.
-
-- Boucle : "for(){}"
-
-```powershell
-for ($i = 1 ; $i++ ; $answer -ne $random) { <#[...]#> }
-```
--->
-
 ### Sortir de la boucle après 10 tentatives
 
 Le plus simple est d'ajouter une deuxième condition de sortie à notre boucle `do/until`. Pour créer et ajouter cette deuxième condition, on peut se baser sur :
@@ -108,6 +96,11 @@ do {
 
 } until ($answer -eq $random -or $i -ge 10)
 ```
+
+<div class="information">
+    <p><b>Point bonus : la boucle <code>for</code></b><br>
+    Pour réaliser la boucle, le compteur et la condition de sortie en une seule commande, il est possible d'utiliser la boucle <code>for</code>. Celle-ci peut s'avérer très utile dans certains cas (comme celui-ci) mais reste très rare en PowerShell. Si cela vous intéresse, vous pouvez consulter la documentation disponible ici : <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_for" target="_blank">à propos de For - PowerShell | Microsoft Learn →</a></p>
+</div>
 
 ### Affichage d'un message de défaite
 
