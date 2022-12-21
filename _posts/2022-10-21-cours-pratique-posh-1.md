@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Partie 1 - Simple. Basique."
-thumbnailColor: "#007acc"
+description: "Création de la base du script PowerShell : générer un nombre aléatoire et le comparer avec l'estimation du joueur"
 icon: 🎓
 ---
 
@@ -15,16 +15,16 @@ A la fin du script, le nombre aléatoire et l'estimation du joueur sont affiché
 
 Si l'estimation est plus grande que le nombre aléatoire :
 
-> Deviner le nombre: 500\
-> ??? est plus petit que 500\
+> Deviner le nombre: 400\
+> ??? est plus petit que 400\
 > \
 > Random : 21\
 > Answer : 500
 
 Si l'estimation est plus petite que le nombre aléatoire :
 
-> Deviner le nombre: 500\
-> ??? est plus grand que 500\
+> Deviner le nombre: 600\
+> ??? est plus grand que 600\
 > \
 > Random : 746\
 > Answer : 500
@@ -61,7 +61,7 @@ Get-Random -Minimum 1 -Maximum 1000
 
 ### Stocker le nombre aléatoire dans une variable
 
-On utilise le nom de variable `$random` pour récupérer la valeur de la commande `Get-Random`.
+On utilise la variable `$random` pour récupérer la valeur de la commande `Get-Random`.
 
 ```powershell
 $random = Get-Random -Minimum 1 -Maximum 1000
@@ -77,9 +77,7 @@ $answer = Read-Host -Prompt "Deviner le nombre"
 
 ### Comparer le nombre aléatoire à l'estimation du joueur
 
-Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au nombre de l'utilisateur.
-
-- Opérateurs de comparaison "-gt" et "-lt"
+On compare les deux variables `$answer` et `$random` avec les opérateurs `-gt` (*greater than*, plus grand que) et `-lt` (*lower than*, plus petit que).
 
 ```powershell
 # Aléatoire est supérieur au nb utilisateur
@@ -92,10 +90,7 @@ $answer -gt $random
 
 #### random est supérieur à answer
 
-Afficher un message pour dire que le nombre aléatoire est plus grand que le nombre de l'utilisateur 
-
-- Commande "Write-Host"
-- Condition "if(){}"
+Si la condition `if` est remplie (`$random` est supérieur à `$answer`), on affiche un message au joueur avec la commande `Write-Host` pour indiquer que le nombre aléatoire est plus grand que son estimation.
 
 ```powershell
 if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
@@ -103,10 +98,7 @@ if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
 
 #### random est inférieur à answer
 
-Afficher un message pour dire que le nombre aléatoire est plus petit que le nombre de l'utilisateur
-
-- Commande "Write-Host"
-- Condition "elseif(){}"
+Si la condition `elseif` est remplie (`$random` est inférieur à `$answer`), on affiche un message au joueur avec la commande `Write-Host` pour indiquer que le nombre aléatoire est plus petit que son estimation.
 
 ```powershell
 elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
@@ -114,10 +106,7 @@ elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
 
 #### random est égal à answer
 
-Afficher un message de victoire si le nombre aléatoire est égal au nombre de l'utilisateur
-
-- Commande "Write-Host"
-- Condition "else{}"
+Si aucune des conditions précédentes (`if` et `elseif`) n'est remplie, alors on affiche un message de victoire avec la commande `Write-Host`.
 
 ```powershell
 else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
@@ -125,10 +114,7 @@ else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
 
 ### Affichage des données
 
-A la fin de votre script, afficher un objet avec les membres "Random" et "Answer"
-
-- Objet "PSCustomObject"
-- Propriétés "random" et "answer"
+A la fin du script, on créer un objet `PSCustomObject` qui regroupe les informations principales : le nombre aléatoire (propriété `Random`) et l'estimation du joueur (propriété `Answer`).
 
 ```powershell
 $result = [PSCustomObject]@{
@@ -139,9 +125,7 @@ $result = [PSCustomObject]@{
 
 ### Formater l'affichage en mode liste
 
-Par défaut, l'objet va s'afficher sous forme de tableau (puisqu'il n'y a que deux valeurs). Il faut donc forcer un affichage sous forme de liste.
-
-- Commande "Format-List"
+Par défaut, l'objet va s'afficher sous forme de tableau puisqu'il n'y a que deux valeurs. On formate donc la vue avec la commande `Format-List`.
 
 ```powershell
 $result | Format-List
