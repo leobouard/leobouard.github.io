@@ -7,11 +7,13 @@ icon: 🎓
 
 ## Consigne
 
-### Résumé
+Un nombre aléatoire entier compris entre 1 et 1000 est généré par PowerShell. Le joueur entre son estimation du nombre aléatoire et le script lui indique alors si le nombre aléatoire est plus grand ou plus petit que son estimation. Si le nombre aléatoire et égal à l'estimation du joueur, le script affiche un message de victoire.
 
-Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. L'utilisateur n'a qu'un seul essai. Si le nombre de l'utilisateur est plus petit ou plus grand que le nombre aléatoire, alors un message est affiché pour situer la comparaison entre les deux nombres (X plus grand que Y ou inversement). Si le nombre aléatoire est égal à l'estimation de l'utilisateur, alors on déclare la victoire. A la fin du script, le nombre aléatoire et l'estimation de l'utilisateur sont affichées sous la forme d'un objet au format liste.
+A la fin du script, le nombre aléatoire et l'estimation du joueur sont affichés dans une liste.
 
-### Résultat attendu
+### Résultats attendus
+
+Si l'estimation est plus grande que le nombre aléatoire :
 
 > Deviner le nombre: 500\
 > ??? est plus petit que 500\
@@ -19,12 +21,30 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 > Random : 21\
 > Answer : 500
 
+Si l'estimation est plus petite que le nombre aléatoire :
+
+> Deviner le nombre: 500\
+> ??? est plus grand que 500\
+> \
+> Random : 746\
+> Answer : 500
+
+Si l'estimation est égale au nombre aléatoire :
+
+> Deviner le nombre: 500\
+> VICTOIRE ! Vous avez deviné le nombre aléatoire\
+> \
+> Random : 500\
+> Answer : 500
+
+---
+
 ## Etape par étape
 
 1. Générer un nombre aléatoire entre 1 et 1000
 2. Stocker le nombre aléatoire dans une variable
-3. Demander à l'utilisateur de deviner le nombre
-4. Comparer le nombre aléatoire au nombre de l'utilisateur
+3. Demander au joueur de deviner le nombre
+4. Comparer le nombre aléatoire à l'estimation du joueur
    - random est supérieur à answer
    - random est inférieur à answer
    - random est égal à answer
@@ -33,31 +53,29 @@ Un nombre aléatoire est généré et l'utilisateur doit entrer son estimation. 
 
 ### Générer un nombre aléatoire entre 1 et 1000
 
-<details>
-  <summary>Voir le code pour la commande <code>Get-Random</code></summary>
-  <code>Get-Random -Minimum 1 -Maximum 1000</code>
-</details>
+Pour générer un nombre aléatoire, on utilise la commande `Get-Random`, puis on spécifie les valeurs minimales et maximales possibles avec les paramètres `Minimum` et `Maximum`. Par défaut, la commande retourne un nombre entier, donc pas besoin de faire plus d'action.
+
+```powershell
+Get-Random -Minimum 1 -Maximum 1000
+```
 
 ### Stocker le nombre aléatoire dans une variable
 
-- Nom de variable : "random"
+On utilise le nom de variable `$random` pour récupérer la valeur de la commande `Get-Random`.
 
 ```powershell
 $random = Get-Random -Minimum 1 -Maximum 1000
 ```
 
-### Demander à l'utilisateur de deviner le nombre
+### Demander au joueur de deviner le nombre
 
-On va maintenant inviter le joueur / l'utilisateur a entrer son estimation.
-
-- Commande utilisée : "Read-Host"
-- Nom de variable : "answer"
+On va maintenant inviter le joueur a entrer son estimation avec la commande `Read-Host`. On affiche un message au joueur avec le paramètre `Prompt` et on stocke sa réponse dans la variable `$answer`. 
 
 ```powershell
-$answer = Read-Host "Deviner le nombre"
+$answer = Read-Host -Prompt "Deviner le nombre"
 ```
 
-### Comparer le nombre aléatoire au nombre de l'utilisateur
+### Comparer le nombre aléatoire à l'estimation du joueur
 
 Vérifier si le nombre aléatoire est strictement supérieur ou inférieur au nombre de l'utilisateur.
 
