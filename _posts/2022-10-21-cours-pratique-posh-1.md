@@ -15,16 +15,16 @@ A la fin du script, le nombre aléatoire et l'estimation du joueur sont affiché
 
 Si l'estimation est plus grande que le nombre aléatoire :
 
-> Deviner le nombre: 400\
-> ??? est plus petit que 400\
+> Deviner le nombre: 500\
+> ??? est plus petit que 500\
 > \
 > Random : 21\
 > Answer : 500
 
 Si l'estimation est plus petite que le nombre aléatoire :
 
-> Deviner le nombre: 600\
-> ??? est plus grand que 600\
+> Deviner le nombre: 500\
+> ??? est plus grand que 500\
 > \
 > Random : 746\
 > Answer : 500
