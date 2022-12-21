@@ -47,7 +47,7 @@ nav {
 }
 
 nav > a {
-    color: #0a1b2f;
+    color: #383b53;
     text-align: center;
     font-weight: bold;
     padding: 18px;
@@ -95,7 +95,7 @@ section {
         margin-bottom: 15px;
         
         a {
-            background-color: #3590F3;
+            background-color: #2C78C9;
             color: #fff;
             font-weight: 600;
             padding-top: 10px;
@@ -117,7 +117,7 @@ section {
         margin-bottom: 15px;
         
         a {
-            background-color: #153a62;
+            background-color: #214263;
             color: #fff;
             font-weight: 600;
             padding-top: 10px;
@@ -129,14 +129,14 @@ section {
 
         a:hover {
             color: #fff;
-            background-color: #0a1b2f;
+            background-color: #3a75af;
         }
     }
 
     /* --- TEXT --- */
 
     a {
-        color: #205995;
+        color: #214263;
         font-weight: 500;
         text-decoration: none;
         transition: all 100ms ease-in-out;
@@ -145,11 +145,11 @@ section {
     a:hover {
         text-decoration: underline;
         text-underline-offset: 1px;
-        color: #3590F3;
+        color: #3a75af;
     }
 
     h1, h2, h3, h4, h5, .articleTitle {
-        color: #0a1b2f;
+        color: #383b53;
     }
 
     h1 {
@@ -285,7 +285,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #0a1b2f;
+    background-color: #383b53;
     color: #fff;
 
     div {
