@@ -213,24 +213,23 @@ section {
 
     details {
         background-color: #fff;
+        z-index: 3;
+    }
+
+    details > a {
+        padding: 5px;
+        
     }
 
     details > summary {
         padding: 10px 20px;
-        border: 2px transparent #fff;
-    }
-
-    details > summary:hover {
-        border: 2px solid #f9c80e;
-    }
-
-    details > summary {
+        border: 2px solid #fff;
         list-style: none;
         font-weight: 600;
     }
 
-    details[open] {
-        background-color: #fff;
+    details > summary:hover {
+        border: 2px solid #f9c80e;
     }
 
     /* --- CODE --- */
