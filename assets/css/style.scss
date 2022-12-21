@@ -211,9 +211,16 @@ section {
         margin-inline: 0;
     }
 
-    details:hover {
-        border: 2px solid #f9c80e;
+    details {
+        background-color: #fff;
+    }
+
+    details > summary {
         padding: 10px 20px;
+    }
+
+    details > summary:hover {
+        border: 2px solid #f9c80e;
     }
 
     details > summary {
