@@ -10,7 +10,7 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 Ingénieur système spécialisé dans les infrastructures et l'écosystème Microsoft, notamment sur Active Directory, Exchange, Microsoft 365 et Azure AD.
 
-Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum avec mes équipes et sur mon blog : <https://www.labouabouate.fr/>.
+Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum sur mon blog : <https://www.labouabouate.fr/>.
 
 ## Examens et certifications
 
@@ -58,7 +58,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <small>depuis septembre 2021</small>
             <p>Référent technique sur PowerShell et gestion d'une équipe de 5 personnes.<br>Mes différentes missions sont :
             <ul>
-                <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnel</li>
+                <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels</li>
                 <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
                 <li>la qualification technique des candidats</li>
                 <li>l'organisation des afterwork d'équipe</li>
