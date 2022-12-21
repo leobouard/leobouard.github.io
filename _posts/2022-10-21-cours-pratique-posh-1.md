@@ -9,7 +9,7 @@ icon: 🎓
 
 Un nombre aléatoire entier compris entre 1 et 1000 est généré par PowerShell. Le joueur entre son estimation du nombre aléatoire et le script lui indique alors si le nombre aléatoire est plus grand ou plus petit que son estimation. Si le nombre aléatoire et égal à l'estimation du joueur, le script affiche un message de victoire.
 
-A la fin du script, le nombre aléatoire et l'estimation du joueur sont affichés dans une liste.
+À la fin du script, le nombre aléatoire et l'estimation du joueur sont affichés dans une liste.
 
 ### Résultats attendus
 
@@ -69,7 +69,7 @@ $random = Get-Random -Minimum 1 -Maximum 1000
 
 ### Demander au joueur de deviner le nombre
 
-On va maintenant inviter le joueur a entrer son estimation avec la commande `Read-Host`. On affiche un message au joueur avec le paramètre `Prompt` et on stocke sa réponse dans la variable `$answer`. 
+On va maintenant inviter le joueur à entrer son estimation avec la commande `Read-Host`. On affiche un message au joueur avec le paramètre `Prompt` et on stocke sa réponse dans la variable `$answer`. 
 
 ```powershell
 $answer = Read-Host -Prompt "Deviner le nombre"
@@ -114,7 +114,7 @@ else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
 
 ### Affichage des données
 
-A la fin du script, on créer un objet `PSCustomObject` qui regroupe les informations principales : le nombre aléatoire (propriété `Random`) et l'estimation du joueur (propriété `Answer`).
+A la fin du script, on crée un objet `PSCustomObject` qui regroupe les informations principales : le nombre aléatoire (propriété `Random`) et l'estimation du joueur (propriété `Answer`).
 
 ```powershell
 $result = [PSCustomObject]@{
