@@ -95,7 +95,13 @@ for ($i = 1 ; $i++ ; $answer -ne $random) { <#[...]#> }
 
 ### Sortir de la boucle après 10 tentatives
 
-On se base sur notre variable `$i` qui compte le nombre de tentatives et on ajoute une condition de sortie dans notre boucle `do/until` avec l'opérateur `-or` qui permet de joindre deux condition entre-elle : on reste dans la boucle jusqu'à ce que le joueur trouve le nombre aléatoire **ou** que le nombre de tentatives soit égal ou supérieur à 10.
+Le plus simple est d'ajouter une deuxième condition de sortie à notre boucle `do/until`. Pour créer et ajouter cette deuxième condition, on peut se baser sur :
+
+- la variable `$i` qui contient le nombre de tentatives du joueur
+- les opérateurs de comparaison `-eq` (*equals*, est égal à) ou `-ge` (*greater or equals*, supérieur ou égal à)
+- l'opérateur logique `-or` qui permet de joindre deux conditions entre-elles
+
+On arrive à la double condition suivante : "on reste dans la boucle jusqu'à ce que le joueur trouve le nombre aléatoire **ou** que le nombre de tentatives soit égal ou supérieur à 10", que l'on peut ensuite ajouter à notre boucle `do/until`.
 
 ```powershell
 do {
@@ -105,7 +111,7 @@ do {
 
 ### Affichage d'un message de défaite
 
-A la fin de la boucle, si le joueur n'a pas trouvé le nombre aléatoire au bout de 10 tentatives, on affiche un message de défaite dans la console avec la commande `Write-Host`.
+A la fin de la boucle, si le joueur n'a pas trouvé le nombre aléatoire, on affiche un message de défaite dans la console avec la commande `Write-Host`. La condition avant l'affichage du message permet d'éviter le double message "VICTOIRE" puis "DEFAITE".
 
 ```powershell
 if ($answer -ne $random) { Write-Host "DEFAITE" }
