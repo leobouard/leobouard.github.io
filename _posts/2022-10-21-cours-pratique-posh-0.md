@@ -31,6 +31,15 @@ Chaque partie sera similaire dans son organisation :
 
 ## Sommaire
 
+<details>
+    <summary>Sommaire</summary>
+    <a href="">Partie 1 - Simple. Basique.</a>
+    <a href="">Partie 2 - En boucle en boucle en boucle</a>
+    <a href="">Partie 3 - Historique de navigation</a>
+    <a href="">Partie 4 - Mais on est où là ?</a>
+    <a href="">Partie 5 - Top chrono !</a>
+</details>
+
 1. [Partie 1 - Simple. Basique.](/2022/10/21/cours-pratique-posh-1)
 2. [Partie 2 - En boucle en boucle en boucle](/2022/10/21/cours-pratique-posh-2)
 3. [Partie 3 - Historique de navigation](/2022/10/26/cours-pratique-posh-3)
