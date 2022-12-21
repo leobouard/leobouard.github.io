@@ -98,8 +98,8 @@ do {
 ```
 
 <div class="information">
-    <p><b>Autre possibilité : la boucle For</b><br>
-    Pour réaliser la boucle, le compteur et la condition de sortie en une seule commande, il est possible d'utiliser la boucle <code>for</code>. Celle-ci peut s'avérer très utile dans certains cas (comme celui-ci) mais reste très rare en PowerShell. Si cela vous intéresse, vous pouvez consulter la documentation disponible ici : <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_for" target="_blank">à propos de For - PowerShell | Microsoft Learn →</a></p>
+    <h5>Autre possibilité : la boucle For</h5>
+    <p>Pour réaliser la boucle, le compteur et la condition de sortie en une seule commande, il est possible d'utiliser la boucle <code>for</code>. Celle-ci peut s'avérer très utile dans certains cas (comme celui-ci) mais reste très rare en PowerShell. Si cela vous intéresse, vous pouvez consulter la documentation disponible ici : <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_for" target="_blank">à propos de For - PowerShell | Microsoft Learn →</a></p>
 </div>
 
 ### Affichage d'un message de défaite
