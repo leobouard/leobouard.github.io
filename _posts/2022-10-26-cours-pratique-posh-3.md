@@ -46,7 +46,7 @@ Cette étape se décompose en deux parties :
 1. hors de la boucle : créer la variable `$allAnswers` de type tableau ou liste qui va permettre de contenir toutes les estimations du joueur
 2. dans la boucle : l'ajout de l'estimation du joueur dans cette variable
 
-Pour créer une variable de type tableau ou liste (c'est à dire qui contient plusieurs valeurs homogènes), plusieurs choix s'offrent à vous :
+Pour créer une variable de type tableau ou liste (c'est-à-dire qui contient plusieurs valeurs homogènes), plusieurs choix s'offrent à vous :
 
 - Array : `$array = @()`
 - ArrayList : `$array = [System.Collections.ArrayList]@()`
