@@ -53,7 +53,7 @@ Pour créer une variable de type tableau ou liste (c'est à dire qui contient pl
 - Pipeline : `$array = 1..10 | % { $_ }`
 - **List<\T>** : `$list = [System.Collections.Generic.List[int]]@()`
 
-Pour vous aider à faire votre choix, je vous recommande vivement de lire l'article suivant : [Building Arrays and Collections in PowerShell | Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/) qui fait un comparatif entre les différentes méthodes et qui explique le fonctionnement de chacune.
+Pour vous aider à faire votre choix, je vous recommande vivement de lire l'article suivant : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/) qui fait un comparatif entre les différentes méthodes et qui explique le fonctionnement de chacune.
 
 En résumé, il est recommandé d'utiliser les List<\T> pour les performances et le pipeline pour la simplicité d'utilisation et la compatibilité. Pour ma part, j'ai choisi une List<\T>.
 
