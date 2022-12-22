@@ -53,7 +53,7 @@ Si l'estimation est égale au nombre aléatoire :
 
 ### Générer un nombre aléatoire entre 1 et 1000
 
-Pour générer un nombre aléatoire, on utilise la commande `Get-Random`, puis on spécifie les valeurs minimales et maximales possibles avec les paramètres `Minimum` et `Maximum`. Par défaut, la commande retourne un nombre entier, donc pas besoin de faire plus d'action.
+Pour générer un nombre aléatoire, on utilise la commande `Get-Random`, puis on spécifie les valeurs minimales et maximales possibles avec les paramètres `-Minimum` et `-Maximum`. Par défaut, la commande retourne un nombre entier, donc pas besoin de faire plus d'action.
 
 ```powershell
 Get-Random -Minimum 1 -Maximum 1000
@@ -69,7 +69,7 @@ $random = Get-Random -Minimum 1 -Maximum 1000
 
 ### Demander au joueur de deviner le nombre
 
-On va maintenant inviter le joueur à entrer son estimation avec la commande `Read-Host`. On affiche un message au joueur avec le paramètre `Prompt` et on stocke sa réponse dans la variable `$answer`. 
+On va maintenant inviter le joueur à entrer son estimation avec la commande `Read-Host`. On affiche un message au joueur avec le paramètre `-Prompt` et on stocke sa réponse dans la variable `$answer`. 
 
 ```powershell
 $answer = Read-Host -Prompt "Deviner le nombre"
