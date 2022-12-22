@@ -5,94 +5,102 @@ thumbnailColor: "#007acc"
 icon: 🎓
 ---
 
-## Résumé
+## Consigne
 
 Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant variabilisés. Ils permettent de donner une indication au joueur avec une borne inférieure et supérieure affichée dans le "Read-Host". Ces bornes se resserent au fur et à mesure des réponses du joueur.
 
 ### Résultat attendu
 
-<blockquote>
-  <p>
-    Deviner le nombre (1 < ??? < 1000): 500<br>
-    ??? est plus grand que 500<br>
-    Deviner le nombre (500 < ??? < 750):
-  </p>
-</blockquote>
+Bornes classiques :
 
-## Détails
+> Deviner le nombre (1 < ??? < 1000): 500\
+> ??? est plus grand que 500\
+> Deviner le nombre (500 < ??? < 1000): 750\
+> ??? est plus petit que 750\
+> Deviner le nombre (500 < ??? < 750):
 
-### 1. Variabiliser les paramètres "Minimum" et "Maximum"
+Bornes intelligentes (donne toujours l'écart le plus serré) :
 
-- Noms de variable :
-  - "min"
-  - "max"
+> Deviner le nombre (500 < ??? < 750): 800\
+> ??? est plus petit que 800\
+> Deviner le nombre (500 < ??? < 750):
 
-<details>
-  <pre><code>
-    $min = 1
-    $max = 1000
-    Get-Random -Minimum $min -Maximum $max
-  </code></pre>
-</details>
+C'est cette version qui sera conservée pour la correction. Elle a comme avantage de conserver la borne la plus proche en cas d'erreur du joueur.
 
-### 2. Modifier le "Read-Host"
+---
 
-Modification du texte pour afficher les valeurs minimum et maximum possible
+## Etape par étape
 
-- Commande "Read-Host"
-- Variables "min" et "max"
+1. Variabiliser les valeurs minimum et maximum pour la génération du nombre aléatoire
+2. Modifier le texte affiché pour ajouter des bornes
+3. Mettre à jour les bornes inférieure et supérieure
+  - Point bonus : faire des bornes intelligentes
 
-<details>
-  <pre><code>
-    Read-Host "Deviner le nombre ($min < ??? < $max)"
-  </code></pre>
-</details>
+### Variabiliser les valeurs minimum et maximum pour la génération du nombre aléatoire
 
-### 3. Mettre à jour les bornes supérieures et inférieures
+L'objectif est de créer deux variables `$min` et `$max` qui vont contenir et afficher les bornes inférieure et supérieure. Comme lors de la première tentative, les bornes sont définies à 1 et 1000 respectivement, on peut les utiliser pour la génération du nombre aléatoire par la commande `Get-Random`. De cette manière, on centralise l'information.
 
-Après chaque coup, les bornes se resserent pour afficher l'encadrement le plus proche de la valeur aléatoire.
+```powershell
+$min = 1
+$max = 1000
+Get-Random -Minimum $min -Maximum $max
+```
 
-- Dans les blocs "if" et "elseif"
+### Modifier le texte affiché pour ajouter des bornes
 
-<details>
-  <pre><code>
-    if ($random -gt $answer) { $min = $answer }
-    elseif ($random -lt $answer) { $max = $answer }
-  </code></pre>
-</details>
+On va maintenant afficher la valeur des variables `$min` et `$max` dans le texte du `Read-Host` pour avoir un résultat qui ressemble à ça : "Deviner le nombre (1 < ??? < 1000):"
 
-### Point bonus : utiliser la variable "allAnswers" pour obtenir les bornes
+```powershell
+Read-Host "Deviner le nombre ($min < ??? < $max)"
+```
 
-Cette version sera conservée dans la correction.
-Elle a comme avantage de conserver la borne la plus proche en cas d'erreur du joueur:
+### Mettre à jour les bornes inférieure et supérieure
 
-> Deviner le nombre (1 < ??? < 1000): 500
-> 
-> ??? est plus petit que 500
-> 
-> Deviner le nombre (1 < ??? < 500): 501
-> 
-> ??? est plus petit que 501
-> 
-> Deviner le nombre (1 < ??? < 500):
+Après chaque tentative, les bornes se resserent pour afficher l'encadrement le plus proche de la valeur aléatoire. Dans les blocs `if` et `elseif`, on met donc à jour les variables `$min` ou `$max` en fonction du contexte :
 
-- Variable "allAnswers"
-- Commandes "Where-Object", "Sort-Object" et "Select-Object"
+- si le nombre proposé par le joueur est **plus élevé que le nombre aléatoire**, alors on met à jour la **borne supérieure**
+- si le nombre proposé par le joueur est **plus bas que le nombre aléatoire**, alors on met à jour la **borne inférieure**.
 
-<details>
-  <pre><code>
-    if ($random -gt $answer) { 
-        $min = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object | Select-Object -Last 1
-    } elseif ($random -lt $answer) { 
-        $max = $allAnswers | Where-Object {$_ -gt $random} | Sort-Object | Select-Object -First 1
-    }
-  </code></pre>
-</details>
+Voici un exemple où le nombre aléatoire est 342 :
+
+Tentative | Proposition joueur | Borne inférieure | Borne supérieure | Commentaire
+--------- | ------------------ | ---------------- | ---------------- | -----------
+n°1       | 500                | 1                | 1000             | 500 > 342, donc on met à jour la borne supérieure
+n°2       | 250                | 1                | **500**          | 250 < 342, donc on met à jour la borne inférieure
+n°3       | 300                | **250**          | 500              | 300 < 342, donc on met à jour la borne inférieure
+n°4       | 350                | **300**          | 500              | 350 > 342, donc on met à jour la borne supérieure
+n°5       |                    | 300              | **350**          | 
+
+Affichage dans la console :
+
+> Deviner le nombre (1 < ??? < 1000): 500\
+> ??? est plus petit que 500\
+> Deviner le nombre (1 < ??? < **500**): 250
+> ??? est plus grand que 250\
+> Deviner le nombre (**250** < ??? < 500): 300\
+> ??? est plus grand que 300\
+> Deviner le nombre (**300** < ??? < 500): 350\
+> ??? est plus petit que 350\
+> Deviner le nombre (300 < ??? < **350**):
+
+```powershell
+if ($random -gt $answer) { $min = $answer }
+elseif ($random -lt $answer) { $max = $answer }
+```
+
+### Point bonus : faire des bornes intelligentes
+
+```powershell
+if ($random -gt $answer) { 
+    $min = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object | Select-Object -Last 1
+} elseif ($random -lt $answer) { 
+    $max = $allAnswers | Where-Object {$_ -gt $random} | Sort-Object | Select-Object -First 1
+}
+```
 
 ## Correction
 
 ```powershell
-
 $i   = 0
 $min = 1
 $max = 1000
@@ -124,7 +132,6 @@ if ($answer -ne $random) {
     "Average answer" = [int]($allAnswers | Measure-Object -Average).Average
     "Count"          = $i
 } | Format-List
-
 ```
 
 <div class="buttons">
