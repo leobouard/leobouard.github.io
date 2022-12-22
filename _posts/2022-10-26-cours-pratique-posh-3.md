@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Partie 3 - Historique de navigation"
-thumbnailColor: "#007acc"
+description: "Toutes les tentatives du joueur sont gardées en mémoire pour pouvoir afficher plus d'informations sur la partie"
 icon: 🎓
 nextLink:
   name: "Partie 4"
@@ -13,10 +13,10 @@ prevLink:
 
 ## Consigne
 
-Tous les nombes essayés par l'utilisateur sont maintenant gardés en mémoire. Dans l'objet de fin :
+Toutes les tentatives du joueur sont maintenant gardées en mémoire et l'objet de fin est modifié en conséquence :
 
-- on remplace la dernière réponse de l'utilisateur par une liste contenant toutes ses réponses
-- on affiche maintenant la valeur moyenne de toutes les réponses données par l'utilisateur (arrondie à l'entier)
+- on remplace la dernière tentative par une liste contenant toutes les tentatives
+- on affiche maintenant la valeur moyenne de toutes les tentatives du joueur (arrondie à l'entier)
 
 ### Résultat attendu
 
@@ -92,7 +92,7 @@ until ()
 
 ### Afficher toutes les tentatives
 
-Dans le `PSCustomObject` affiché à la fin, on modifie la propriété `Answer` en `Answers` qui contient toutes les tentatives (variable `$allAnswers`) utilisées par le joueur.
+Dans le `PSCustomObject` affiché à la fin, on modifie la propriété `Answer` en `Answers` qui contient toutes les tentatives (variable `$allAnswers`) du joueur.
 
 ```powershell
 [PSCustomObject]@{
