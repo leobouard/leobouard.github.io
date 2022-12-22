@@ -51,18 +51,18 @@ Pour créer une variable de type tableau ou liste (c'est-à-dire qui contient pl
 - Array : `$array = @()`
 - ArrayList : `$array = [System.Collections.ArrayList]@()`
 - Pipeline : `$array = 1..10 | % { $_ }`
-- **List<\T>** : `$list = [System.Collections.Generic.List[int]]@()`
+- **List<T>** : `$list = [System.Collections.Generic.List[int]]@()`
 
 Pour vous aider à faire votre choix, je vous recommande vivement de lire l'article suivant : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/) qui fait un comparatif entre les différentes méthodes et qui explique le fonctionnement de chacune.
 
-En résumé, il est recommandé d'utiliser les List<\T> pour les performances et le pipeline pour la simplicité d'utilisation et la compatibilité. Pour ma part, j'ai choisi une List<\T>.
+En résumé, il est recommandé d'utiliser les List<T> pour les performances et le pipeline pour la simplicité d'utilisation et la compatibilité. Pour ma part, j'ai choisi une List<T>.
 
 Une fois dans la boucle, il ne reste plus qu'à ajouter des valeurs dans notre variable. Dans ce cas, la méthode varie suivant votre choix :
 
 - Array : `$array += 1`
 - ArrayList : `$null = $array.Add(1)`
 - Pipeline : `$array = 1..10 | % { $_ }`
-- **List<\T>** : `$list.Add(1)`
+- **List<T>** : `$list.Add(1)`
 
 ```powershell
 # a. Avec "Array"
