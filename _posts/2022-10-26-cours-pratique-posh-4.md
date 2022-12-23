@@ -69,7 +69,7 @@ Nb joueur | Borne inf. | Borne sup. | Commentaire
 250 | 1 | **500** | 250 < 342, donc on met à jour la borne inférieure
 300 | **250** | 500 | 300 < 342, donc on met à jour la borne inférieure
 350 | **300** | 500 | 350 > 342, donc on met à jour la borne supérieure
-  | 300 | **350** | 
+325 | 300 | **350** | etc...
 
 Affichage dans la console :
 
