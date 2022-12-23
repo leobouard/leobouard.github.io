@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Partie 4 - Mais on est où là ?"
-thumbnailColor: "#007acc"
+description: "Ajout de bornes inférieure et supérieure pour aider le joueur à deviner le nombre aléatoire"
 icon: 🎓
 nextLink:
   name: "Partie 5"
