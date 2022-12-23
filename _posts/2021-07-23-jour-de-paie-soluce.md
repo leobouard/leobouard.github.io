@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Solution - Le jour de paie"
+prevLink:
+  name: "Retour au défi"
+  id: "/2021-07-23-jour-de-paie"
 ---
 
 ## Version Do/Until

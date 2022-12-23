@@ -152,12 +152,3 @@ if ($answer -ne $random) {
     "Count"          = $i
 } | Format-List
 ```
-
-<div class="buttons">
-    <div class="buttonBack">
-        <a href="/2022/10/26/cours-pratique-posh-3">← Partie 3</a>
-    </div>
-    <div class="buttonNext">
-        <a href="/2022/10/26/cours-pratique-posh-5">Partie 5 →</a>
-    </div>
-</div>

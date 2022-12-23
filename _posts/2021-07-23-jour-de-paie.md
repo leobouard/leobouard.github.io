@@ -5,6 +5,9 @@ description: "Calculer le jour exact où vous recevrez votre salaire, en prennan
 tags: DÉFI
 icon: 💸
 listed: true
+nextLink:
+  name: "Voir la solution"
+  id: "/2021-07-23-jour-de-paie-soluce"
 ---
 
 Admettons la situation suivante : votre salaire vous est versé au plus tard le 25 du mois en cours. Comme vous êtes très dépensier, vous voulez savoir précisement quand est-ce que vous allez pouvoir manger autre chose que des pâtes !
