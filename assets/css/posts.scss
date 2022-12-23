@@ -67,15 +67,16 @@ article:hover {
 }
 
 .postBanner {
-    margin: -15px -50px 0px -50px;
+    margin-top: -15px;
     position: relative;
-    height: 150px;
+    height: 200px;
     line-height: 150px;
     display: flex;
     justify-content: center;
     user-select: none;
     font-size: 100px;
     background: #2c78c9;
+    z-index: -1;
 }
 
 .information {
