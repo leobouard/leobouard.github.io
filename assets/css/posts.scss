@@ -90,6 +90,33 @@ article:hover {
     margin-bottom: 30px;
 }
 
+.div_summary {
+    display: block;
+}
+
+.div_summary > a {
+    background: #fafafa;
+    display: block;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.div_summary > a:hover {
+    text-decoration: none;
+    background: #f2f2f2;
+
+    span {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.div_summary > span {
+    font-weight: 400;
+    color: #000;
+}
+
 @media print, screen and (max-width: 950px) {
 
     .postBanner {
