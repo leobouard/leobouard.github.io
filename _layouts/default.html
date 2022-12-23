@@ -33,9 +33,11 @@
       </nav>
     </header>
 
-    <div class="postBanner" {% unless page.icon %} style="visibility: hidden;" {% endunless %}>
+    {% if page.icon %}
+    <div class="postBanner">
       {{ page.icon }}
     </div>
+    {% endif %}
     
     <section {% unless page.icon %} style="margin-top: -185px;" {% endunless %}>
       {{ content }}
