@@ -11,8 +11,8 @@ icon: 🎓
     {% assign posts = site.posts | sort: 'id' %}
     {% for post in posts %}
         <a href="{{ post.id }}" style="display: block; display: block; padding: 10px; margin: 10px; background: #fafafa; border-radius: 5px;">
-            <h4>{{ post.Title }}</h4>
-            <span>{{ post.Description }}</span>
+            <h4>{{ post.title }}</h4>
+            <span>{{ post.description }}</span>
         </a>
     {% endfor %}
 </div>
