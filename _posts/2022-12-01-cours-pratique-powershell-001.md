@@ -8,7 +8,7 @@ nextLink:
   id: "/2022/12/01/cours-pratique-powershell-002"
 prevLink:
   name: "Sommaire"
-  id: "/2022/12/01/cours-pratique-powershell-introduction"
+  id: "/2022/12/01/cours-pratique-powershell-sommaire"
 ---
 
 ## Consigne
