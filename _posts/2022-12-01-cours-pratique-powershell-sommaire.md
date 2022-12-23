@@ -8,7 +8,7 @@ icon: 🎓
 ## Sommaire
 
 <div>
-    {% assign posts = site.posts | sort: 'id' %}
+    {% assign posts = site.posts %}
     {% for post in posts %}
         <a href="{{ post.id }}" style="display: block; display: block; padding: 10px; margin: 10px; background: #fafafa; border-radius: 5px;">
             <h4>{{ post.title }}</h4>
