@@ -14,8 +14,7 @@ layout: default
 <div class="div_topnav_buttons">
     {% if page.prevLink or page.nextLink %}
         <a href="{{ page.prevLink.id }}" {% unless page.prevLink %} style="visibility: hidden;" {% endunless %}>← {{ page.prevLink.name }}</a>
-        {% if page.nextLink %}
-        <a href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
+        <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>{{ page.nextLink.name }} →</a>
     {% endif %}
 </div>
 
