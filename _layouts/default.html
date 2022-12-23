@@ -37,7 +37,7 @@
       {{ page.icon }}
     </div>
     
-    <section>
+    <section {% unless page.icon %} style="margin-top: -185px;" {% endunless %}>
       {{ content }}
     </section>
     
