@@ -33,12 +33,10 @@
       </nav>
     </header>
 
-    {% if page.icon %}
-    <div class="postBanner">
+    <div class="postBanner" {% unless page.icon %} visibility="hidden" {% endunless %}>
       {{ page.icon }}
     </div>
-    {% endif %}
-
+    
     <section>
       {{ content }}
     </section>
