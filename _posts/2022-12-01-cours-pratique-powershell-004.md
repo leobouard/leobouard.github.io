@@ -3,6 +3,12 @@ layout: post
 title: "Partie 4 - Mais on est où là ?"
 thumbnailColor: "#007acc"
 icon: 🎓
+nextLink:
+  name: "Partie 5"
+  id: "/2022/12/01/cours-pratique-powershell-005"
+prevLink:
+  name: "Partie 3"
+  id: "/2022/12/01/cours-pratique-powershell-003"
 ---
 
 ## Consigne

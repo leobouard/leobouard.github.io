@@ -3,6 +3,12 @@ layout: post
 title: "Partie 2 - En boucle en boucle en boucle"
 description: "Mise en boucle du script pour permettre au joueur d'avoir 10 tentatives pour trouver un nombre aléatoire"
 icon: 🎓
+nextLink:
+  name: "Partie 3"
+  id: "/2022/12/01/cours-pratique-powershell-003"
+prevLink:
+  name: "Partie 1"
+  id: "/2022/12/01/cours-pratique-powershell-001"
 ---
 
 ## Consigne

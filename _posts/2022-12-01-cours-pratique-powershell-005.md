@@ -3,6 +3,12 @@ layout: post
 title: "Partie 5 - Top chrono !"
 thumbnailColor: "#007acc"
 icon: 🎓
+nextLink:
+  name: "Partie 6"
+  id: "/2022/12/01/cours-pratique-powershell-006"
+prevLink:
+  name: "Partie 4"
+  id: "/2022/12/01/cours-pratique-powershell-004"
 ---
 
 ## Résumé
@@ -138,12 +144,3 @@ $stopwatch.Stop()
     "Sec per try"    = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $i),3)
 } | Format-List
 ```
-
-<div class="buttons">
-    <div class="buttonBack">
-        <a href="/2022/10/26/cours-pratique-posh-4">← Partie 4</a>
-    </div>
-    <div class="buttonNext">
-        <a href="/2022/10/26/cours-pratique-posh-6">Partie 6 →</a>
-    </div>
-</div>

@@ -5,10 +5,10 @@ description: "Toutes les tentatives du joueur sont gardées en mémoire pour pou
 icon: 🎓
 nextLink:
   name: "Partie 4"
-  id: "/2022/10/26/cours-pratique-posh-4"
+  id: "/2022/12/01/cours-pratique-powershell-004"
 prevLink:
   name: "Partie 2"
-  id: "/2022/10/21/cours-pratique-posh-2"
+  id: "/2022/12/01/cours-pratique-powershell-002"
 ---
 
 ## Consigne
@@ -155,12 +155,3 @@ if ($answer -ne $random) {
     "Count"          = $i
 } | Format-List
 ```
-
-<div class="buttons">
-    <div class="buttonBack">
-        <a href="/2022/10/21/cours-pratique-posh-2">← Partie 2</a>
-    </div>
-    <div class="buttonNext">
-        <a href="/2022/10/26/cours-pratique-posh-4">Partie 4 →</a>
-    </div>
-</div>

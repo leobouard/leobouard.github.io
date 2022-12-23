@@ -5,6 +5,9 @@ description: "Création d'un jeu en PowerShell en utilisant un maximum de comman
 tags: COURS
 icon: 🎓
 listed: true
+nextLink:
+  name: "Sommaire"
+  id: "/2022/12/01/cours-pratique-powershell-sommaire"
 ---
 
 ## Introduction

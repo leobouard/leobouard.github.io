@@ -3,6 +3,12 @@ layout: post
 title: "Partie 1 - Simple. Basique."
 description: "Création de la base du script PowerShell : générer un nombre aléatoire et le comparer avec l'estimation du joueur"
 icon: 🎓
+nextLink:
+  name: "Partie 2"
+  id: "/2022/12/01/cours-pratique-powershell-002"
+prevLink:
+  name: "Sommaire"
+  id: "/2022/12/01/cours-pratique-powershell-introduction"
 ---
 
 ## Consigne
@@ -152,12 +158,3 @@ if ($random -gt $answer) {
     "Answer" = $answer
 } | Format-List
 ```
-
-<div class="buttons">
-    <div class="buttonBack">
-        <a href="/2022/10/21/cours-pratique-posh-0">← Introduction</a>
-    </div>
-    <div class="buttonNext">
-        <a href="/2022/10/21/cours-pratique-posh-2">Partie 2 →</a>
-    </div>
-</div>
