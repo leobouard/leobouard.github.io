@@ -7,7 +7,7 @@ icon: 🎓
 
 ## Consigne
 
-Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant stockés dans des variables. Des bornes font leur apparition dans le texte du `Read-Host` pour aider le joueur à mieux situer le nombre aléatoire par rapport à ses précedentes tentatives. Ces bornes se resserent au fur et à mesure des réponses du joueur.
+Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant stockés dans des variables. Des bornes font leur apparition dans le texte du `Read-Host` pour aider le joueur à mieux situer le nombre aléatoire par rapport à ses précédentes  tentatives. Ces bornes se rapprochent au fur et à mesure des réponses du joueur.
 
 ### Résultat attendu
 
@@ -31,12 +31,12 @@ C'est cette version qui sera conservée pour la correction. Elle a comme avantag
 
 ## Etape par étape
 
-1. Variabiliser les valeurs minimum et maximum pour la génération du nombre aléatoire
+1. Stocker les valeurs minimum et maximum dans des variables pour la génération du nombre aléatoire
 2. Modifier le texte affiché pour ajouter des bornes
 3. Mettre à jour les bornes inférieure et supérieure
   - Point bonus : faire des bornes intelligentes
 
-### Variabiliser les valeurs minimum et maximum pour la génération du nombre aléatoire
+### Stocker les valeurs minimum et maximum dans des variables pour la génération du nombre aléatoire
 
 L'objectif est de créer deux variables `$min` et `$max` qui vont contenir et afficher les bornes inférieure et supérieure. Comme lors de la première tentative, les bornes sont définies à 1 et 1000 respectivement, on peut les utiliser pour la génération du nombre aléatoire par la commande `Get-Random`. De cette manière, on centralise l'information.
 
