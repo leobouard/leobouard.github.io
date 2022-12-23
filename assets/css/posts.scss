@@ -120,7 +120,7 @@ article:hover {
 .div_topnav_buttons {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0px;
+    margin: 15px 0px;
 }
 
 .div_topnav_buttons > a {
@@ -130,7 +130,7 @@ article:hover {
 
 .div_topnav_buttons > a:hover {
     border-color: #f9c80e;
-    background-color: #f2f2f2;
+    background-color: #fafafa;
 }
 
 @media print, screen and (max-width: 950px) {
