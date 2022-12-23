@@ -126,11 +126,13 @@ article:hover {
 .div_topnav_buttons > a {
     border: 2px solid #f2f2f2;
     padding: 5px 10px;
+    color: #424242;
 }
 
 .div_topnav_buttons > a:hover {
     border-color: #f9c80e;
     background-color: #fafafa;
+    color: #424242;
 }
 
 @media print, screen and (max-width: 950px) {
