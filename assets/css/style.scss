@@ -293,11 +293,13 @@ section {
 /* --- FOOTER --- */
 
 footer {
-    margin-top: 15px;
+    margin-top: -50px;
+    padding: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #383b53;
+    background-color: #151620;
+    z-index: -1;
     color: #fff;
 
     div {
