@@ -117,6 +117,22 @@ article:hover {
     color: #000;
 }
 
+.div_topnav_buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.div_topnav_buttons > a {
+    border: 2px solid #f2f2f2;
+    padding: 5px 10px;
+}
+
+.div_topnav_buttons > a:hover {
+    border-color: #f9c80e;
+    background-color: #f2f2f2;
+}
+
 @media print, screen and (max-width: 950px) {
 
     .postBanner {

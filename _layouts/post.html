@@ -9,7 +9,15 @@ layout: default
 <div class="postBanner" style="background-color: #214263;">
     {{ page.icon }}
 </div>
-<br>
+
+<div class="div_topnav_buttons">
+    {% if page.prevLink %}
+    <a href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
+    {% endif %}
+    {% if page.nextLink %}
+    <a href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
+    {% endif %}
+</div>
 
 <small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 
