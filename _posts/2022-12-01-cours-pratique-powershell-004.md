@@ -13,7 +13,7 @@ prevLink:
 
 ## Consigne
 
-Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant stockés dans des variables. Des bornes font leur apparition dans le texte du `Read-Host` pour aider le joueur à mieux situer le nombre aléatoire par rapport à ses précédentes  tentatives. Ces bornes se rapprochent au fur et à mesure des réponses du joueur.
+Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant stockés dans des variables. Des bornes font leur apparition dans le texte du `Read-Host` pour aider le joueur à mieux situer le nombre aléatoire par rapport à ses précédentes tentatives. Ces bornes se rapprochent au fur et à mesure des réponses du joueur.
 
 ### Résultat attendu
 
@@ -54,7 +54,7 @@ Get-Random -Minimum $min -Maximum $max
 
 ### Modifier le texte affiché pour ajouter des bornes
 
-On va maintenant afficher la valeur des variables `$min` et `$max` dans le texte du `Read-Host` pour avoir un résultat qui ressemble à ça : "Deviner le nombre (1 < ??? < 1000):"
+On va maintenant afficher la valeur des variables `$min` et `$max` dans le texte du `Read-Host` avec comme résultat : "Deviner le nombre (1 < ??? < 1000)"
 
 ```powershell
 Read-Host "Deviner le nombre ($min < ??? < $max)"
@@ -62,7 +62,7 @@ Read-Host "Deviner le nombre ($min < ??? < $max)"
 
 ### Mettre à jour les bornes inférieure et supérieure
 
-Après chaque tentative, les bornes se resserent pour afficher l'encadrement le plus proche de la valeur aléatoire. Dans les blocs `if` et `elseif`, on met donc à jour les variables `$min` ou `$max` en fonction du contexte :
+Après chaque tentative, les bornes se rapprochent pour afficher l'encadrement le plus proche de la valeur aléatoire. Dans les blocs `if` et `elseif`, on met donc à jour les variables `$min` ou `$max` en fonction du contexte :
 
 - si le nombre proposé par le joueur est **plus élevé que le nombre aléatoire**, alors on met à jour la **borne supérieure**
 - si le nombre proposé par le joueur est **plus bas que le nombre aléatoire**, alors on met à jour la **borne inférieure**.
