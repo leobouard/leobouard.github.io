@@ -101,7 +101,7 @@ Le point faible des bornes "classiques", c'est que si le joueur commet une erreu
   2. on trie les réponses par ordre croissant avec `Sort-Object` pour faire remonter la valeur la plus faible (et donc la plus proche du nombre aléatoire) en première position
   3. on récupère la première valeur du tableau avec la commande `Select-Object` et le paramètre `-First`
 
-On joint le tout avec des `|` pour envoyer le résultat de la commande vers la prochaine et on obtient un bloc assez compact et qui n'est pas impacté par les erreurs potentielles du joueur :
+On joint le tout avec des `|` (pipeline) pour envoyer le résultat de la commande vers la prochaine et on obtient un bloc assez compact et qui n'est pas impacté par les erreurs potentielles du joueur :
 
 ```powershell
 if ($random -gt $answer) { 
