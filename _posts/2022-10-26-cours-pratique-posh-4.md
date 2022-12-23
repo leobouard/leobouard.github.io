@@ -7,7 +7,7 @@ icon: 🎓
 
 ## Consigne
 
-Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant variabilisés. Ils permettent de donner une indication au joueur avec une borne inférieure et supérieure affichée dans le "Read-Host". Ces bornes se resserent au fur et à mesure des réponses du joueur.
+Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont maintenant stockés dans des variables. Des bornes font leur apparition dans le texte du `Read-Host` pour aider le joueur à mieux situer le nombre aléatoire par rapport à ses précedentes tentatives. Ces bornes se resserent au fur et à mesure des réponses du joueur.
 
 ### Résultat attendu
 
@@ -63,13 +63,13 @@ Après chaque tentative, les bornes se resserent pour afficher l'encadrement le 
 
 Voici un exemple où le nombre aléatoire est 342 :
 
-Tentative | Proposition joueur | Borne inférieure | Borne supérieure | Commentaire
---------- | ------------------ | ---------------- | ---------------- | -----------
-n°1       | 500                | 1                | 1000             | 500 > 342, donc on met à jour la borne supérieure
-n°2       | 250                | 1                | **500**          | 250 < 342, donc on met à jour la borne inférieure
-n°3       | 300                | **250**          | 500              | 300 < 342, donc on met à jour la borne inférieure
-n°4       | 350                | **300**          | 500              | 350 > 342, donc on met à jour la borne supérieure
-n°5       |                    | 300              | **350**          | 
+Nb joueur | Borne inf. | Borne sup. | Commentaire
+--------- | ---------- | ---------- | -----------
+500 | 1 | 1000 | 500 > 342, donc on met à jour la borne supérieure
+250 | 1 | **500** | 250 < 342, donc on met à jour la borne inférieure
+300 | **250** | 500 | 300 < 342, donc on met à jour la borne inférieure
+350 | **300** | 500 | 350 > 342, donc on met à jour la borne supérieure
+  | 300 | **350** | 
 
 Affichage dans la console :
 
