@@ -2,18 +2,17 @@
 layout: default
 ---
 
-<div style="text-align: left; position: absolute; z-index: 3; margin-top: 5px;">
-    <a href="/blog" style="color: #fff;">← Tous les articles</a>
-</div>
-
 <div class="postBanner">
     {{ page.icon }}
 </div>
 
-
 <div class="div_topnav_buttons">
     {% if page.prevLink or page.nextLink %}
-        <a href="{{ page.prevLink.id }}" {% unless page.prevLink %} style="visibility: hidden;" {% endunless %}>← {{ page.prevLink.name }}</a>
+        {% if page.prevLink %}
+            <a href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
+        {% else %}
+            <a href="/blog">← Tous les articles</a>
+        {% endif %}
         <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>{{ page.nextLink.name }} →</a>
     {% endif %}
 </div>
