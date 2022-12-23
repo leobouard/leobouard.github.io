@@ -90,6 +90,19 @@ elseif ($random -lt $answer) { $max = $answer }
 
 ### Point bonus : faire des bornes intelligentes
 
+Le point faible des bornes "classiques", c'est que si le joueur commet une erreur, celles-ci vont s'agrandir au lieu de rester sur l'encadrement le plus proche du nombre aléatoire. Pour éviter ce genre de problème, on peut utiliser la variable `$allAnswers` qui contient toutes les tentatives précédentes.
+
+- si le nombre proposé par le joueur est **plus bas que le nombre aléatoire**, alors :
+  1. on récupère toutes les tentatives qui sont inférieures au nombre aléatoire avec `Where-Object`
+  2. on trie les réponses par ordre croissant avec `Sort-Object` pour faire descendre la valeur la plus élevée (et donc la plus proche du nombre aléatoire) en dernière position
+  3. on récupère la dernière valeur du tableau avec la commande `Select-Object` et le paramètre `-Last`
+- si le nombre proposé par le joueur est **plus élevé que le nombre aléatoire**, alors :
+  1. on récupère toutes les tentatives qui sont supérieures au nombre aléatoire avec `Where-Object`
+  2. on trie les réponses par ordre croissant avec `Sort-Object` pour faire remonter la valeur la plus faible (et donc la plus proche du nombre aléatoire) en première position
+  3. on récupère la première valeur du tableau avec la commande `Select-Object` et le paramètre `-First`
+
+On joint le tout avec des `|` pour envoyer le résultat de la commande vers la prochaine et on obtient un bloc assez compact et qui n'est pas impacté par les erreurs potentielles du joueur :
+
 ```powershell
 if ($random -gt $answer) { 
     $min = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object | Select-Object -Last 1
