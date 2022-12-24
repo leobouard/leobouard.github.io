@@ -74,7 +74,7 @@ nav > a:first-child {
 section {
     min-height: 85%;
     background-color: #fff;
-    padding: 50px;
+    padding: 30px 50px;
     margin: auto;
     max-width: 950px;
     overflow: hidden;
@@ -339,9 +339,8 @@ footer {
     }
 
     section {
-        font-size: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
+        font-size: 14px;
+        padding: 20px;
         min-height: 80%;
         overflow: scroll;
     }
@@ -361,10 +360,6 @@ footer {
     pre {
         padding: 10px;
         overflow: scroll;
-
-        code {
-            white-space: nowrap;
-        }
     }
 
     footer {
