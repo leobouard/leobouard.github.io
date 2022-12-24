@@ -149,3 +149,21 @@ article:hover {
     }
 
 }
+
+@media print, screen and (max-width: 560px) {
+
+    article {
+        padding: 10px;
+        margin: 10px;
+        max-width: 100%;
+        flex: 0;
+        display: flex;
+        height: 150px;
+        width: 100%;
+    }
+
+    .articleIcon {
+        font-size: 50px;
+        line-height: 50px;
+    }
+}
