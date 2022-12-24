@@ -27,9 +27,11 @@ LaBouaBouate est un blog technique pour partager des connaissances sur les techn
                 <p class="articleIcon">{{ post.icon }}</p>
             </a>
             <hr>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.description }}</p>
-            <a class="articleButton" href="{{ post.id }}">Continuer →</a>
+            <div class="articleDescription">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <a class="articleButton" href="{{ post.id }}">Continuer →</a>
+            </div>
         </article>
     {% endfor %}
 </div>
