@@ -162,12 +162,13 @@ article:hover {
         width: 100%;
     }
 
+    article > hr {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     .articleIcon {
         font-size: 60px;
         line-height: 55px;
-    }
-
-    .articleDescription {
-        padding-left: 10px;
     }
 }
