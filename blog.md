@@ -17,9 +17,11 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
                 <p class="articleIcon">{{ post.icon }}</p>
             </a>
             <hr>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.description }}</p>
-            <a class="articleButton" href="{{ post.id }}">Continuer →</a>
+            <div class="article_description">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <a class="articleButton" href="{{ post.id }}">Continuer →</a>
+            </div>
         </article>
     {% endfor %}
 </div>
