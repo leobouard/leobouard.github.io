@@ -213,7 +213,7 @@ section {
     details {
         background-color: #fff;
         z-index: 3;
-        box-shadow: 0 0 5px 0 #b8c3c9;
+        box-shadow: 0 0 5px 0 #00000040;
     }
 
     details > a {
@@ -327,19 +327,15 @@ footer {
     }
 
     nav {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding: 0px 5px;
     }
     
     nav a {
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding: 15px 10px;
     }
 
     section {
-        font-size: 14px;
+        font-size: 15px;
         padding: 20px;
         min-height: 80%;
         overflow: scroll;
@@ -353,7 +349,7 @@ footer {
     header {
         position: sticky;
         z-index: 1000;
-        box-shadow: 0 5px 5px -5px #b8c3c9;
+        box-shadow: 0 5px 5px -5px #00000040;
         transition: all 200ms ease-in-out;
     }
 
@@ -366,8 +362,7 @@ footer {
         justify-content: left;
 
         li {
-            margin-bottom: 5px;
-            margin-top: 5px;
+            margin: 5px 0px;
             height: 38px;
         }
     }
