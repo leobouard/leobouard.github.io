@@ -44,6 +44,7 @@ article:hover {
     box-shadow: 0 0 15px 0 #00000040;
 
     .articleIcon {
+        filter: grayscale(0);
         transform: scale(1.10);
     }
 
@@ -58,6 +59,7 @@ article:hover {
     font-size: 75px;
     line-height: 0px;
     user-select: none;
+    filter: grayscale(0.5);
     transition: all 150ms ease-in-out;
 }
 
