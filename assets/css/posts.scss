@@ -53,6 +53,10 @@ article:hover {
         color: #fff;
         background-color: #3773c5;
     }
+
+    .articleButton:hover {
+        color: #2f508e;
+    }
 }
 
 .articleIcon {
@@ -60,7 +64,7 @@ article:hover {
     font-size: 75px;
     line-height: 0px;
     user-select: none;
-    filter: grayscale(0.5);
+    filter: grayscale(0.2);
     transition: all 150ms ease-in-out;
 }
 
@@ -75,7 +79,6 @@ article:hover {
 .articleButton:hover {
     text-decoration: underline;
     color: #fff;
-    background-color: #285592;
 }
 
 .postBanner {
