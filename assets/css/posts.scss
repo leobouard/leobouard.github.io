@@ -60,10 +60,16 @@ article:hover {
     position: absolute;
     bottom: 15px;
     right: 15px;
+    padding: 8px 15px;
+    background-color:#2c78c9;
+    border-radius: 20px;
+    color: #fff;
 }
 
 .articleButton:hover {
     text-decoration: underline;
+    color: #fff;
+    background-color: #205995;
 }
 
 .postBanner {
