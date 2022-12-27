@@ -11,97 +11,93 @@ prevLink:
   id: "/2022/12/01/cours-pratique-powershell-004"
 ---
 
-## Résumé
+## Consigne
 
-On ajoute un chronomètre qui se lance après que le script ait reçu la première réponse du joueur et qui s'arrête avant d'afficher les résultats. On mesure et on affiche dans l'objet de fin :
-
-- le temps total en secondes (arrondi à 0.001 seconde)
-- le temps moyen par essai (temps total / nombre d'essais)
+On ajoute un chronomètre qui se lance après que le script ait reçu la première réponse du joueur. Ce chronomètre s'arrêtera juste avant d'afficher les résultats, qui inclurons maintenant le temps total en secondes pour la résolution (arrondi à 0.001 seconde) et le temps moyen par essai (également arrondi à 0.001 seconde).
 
 ### Résultat attendu
 
-<blockquote>
-  <p>
-    VICTOIRE ! Vous avez deviné le nombre aléatoire<br>
-    <br>
-    Random         : 198<br>
-    Answers        : {500, 250, 125, 200...}<br>
-    Average answer : 216<br>
-    Seconds        : 16,036<br>
-    Count          : 10<br>
-    Sec per try    : 1,604
-  </p>
-</blockquote>
+> VICTOIRE ! Vous avez deviné le nombre aléatoire\
+> \
+> Random         : 198\
+> Answers        : {500, 250, 125, 200...}\
+> Average answer : 216\
+> Seconds        : 16,036\
+> Count          : 10\
+> Sec per try    : 1,604
+
+---
+
+## Etape par étape
+
+1. Créer et lancer un chronomètre
+2. Stopper le chronomètre
+3. Afficher le temps de résolution
+4. Formater du temps de résolution
+5. Calculer et afficher le temps par coup
 
 ## Détails
 
-### 1. Créer et lancer un chronomètre
+### Créer et lancer un chronomètre
 
-- Méthodes possibles :
-  - Commandes "Get-Date" & "New-TimeSpan"
-  - Classe .NET "System.Diagnostics.Stopwatch"
+Pour mesure un temps d'éxecution, il existe deux méthodes principales en PowerShell :
 
-<details>
-  <pre><code>
-    # Pour "Get-Date" & "New-TimeSpan"
-    if (!$startTime) { $startTime = Get-Date }
-    
-    # Pour "System.Diagnostics.Stopwatch"
-    $stopwatch  = [System.Diagnostics.Stopwatch]::New()
-    if ($stopwatch.IsRunning -eq $false) { $stopwatch.Start() }
-  </code></pre>
-</details>
+- le combo des commandes `Get-Date` pour obtenir la date à un instant T et `New-TimeSpan` pour mesurer un écart de temps entre deux dates. Les deux combinés permettent d'obtenir une sorte de chronomètre. On démarre le chronomètre en sauvegardant la date du début dans une variable.
+- la classe .NET `[System.Diagnostics.Stopwatch]` : "stopwatch" signifie litéralement "chronomètre". On peut démarrer le chronomètre avec la méthode `Start()`.
 
-### 2. Stopper le chronomètre
+On peut également mentionner la commande `Measure-Command` qui permet de mesurer le temps d'execution d'un bloc de script, mais celle-ci ne convient pas à notre usage car notre début se situe dans une boucle et la fin se trouve en dehors de cette boucle (le bloc de script n'est donc pas entier).
 
-- Méthodes possibles :
-  - Commandes "Get-Date" & "New-TimeSpan"
-  - Classe .NET "System.Diagnostics.Stopwatch"
+```powershell
+# Pour "Get-Date" & "New-TimeSpan"
+if (!$startTime) { $startTime = Get-Date }
 
-<details>
-  <pre><code>
-    # Pour "Get-Date" & "New-TimeSpan"
-    $stopwatch = New-TimeSpan -Start $startTime -End (Get-Date)
-    
-    # Pour "System.Diagnostics.Stopwatch"
-    $stopwatch.Stop()
-  </code></pre>
-</details>
+# Pour "System.Diagnostics.Stopwatch"
+$stopwatch = [System.Diagnostics.Stopwatch]::New()
+if ($stopwatch.IsRunning -eq $false) { $stopwatch.Start() }
+```
 
-### 3. Afficher le temps de résolution
+### Stopper le chronomètre
 
-- Propriété "TotalSeconds"
+Pour arrêter le chronomètre, tout dépend du type de chronomètre que l'on utilise :
 
-<details>
-  <pre><code>
-    # Pour "Get-Date" & "New-TimeSpan"
-    $stopwatch.TotalSeconds
-    
-    # Pour "System.Diagnostics.Stopwatch"
-    $stopwatch.Elapsed.TotalSeconds
-  </code></pre>
-</details>
+- pour la technique avec le combo `Get-Date` & `New-TimeSpan` : on mesure le temps écoulé avec une comparaison via `New-TimeSpan`
+- pour la technique `[System.Diagnostics.Stopwatch]`, on utilise la méthode `Stop()`
 
-### 4. Formatage du temps de résolution
+```powershell
+# Pour "Get-Date" & "New-TimeSpan"
+$stopwatch = New-TimeSpan -Start $startTime
 
-Arrondir le temps total de résolution au millième de seconde (0.001 seconde).
+# Pour "System.Diagnostics.Stopwatch"
+$stopwatch.Stop()
+```
 
-- Classe .NET "System.Math"
+### Afficher le temps de résolution
 
-<details>
-  <pre><code>
-    [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
-  </code></pre>
-</details>
+Le temps total de résolution en secondes est stocké dans la propriété `TotalSeconds` du chronomètre.
 
-### 5. Calculer et afficher le temps par coup
+```powershell
+# Pour "Get-Date" & "New-TimeSpan"
+$stopwatch.TotalSeconds
 
-<details>
-  <pre><code>
-    $stopwatch.Elapsed.TotalSeconds / $i
-  </code></pre>
-</details>
+# Pour "System.Diagnostics.Stopwatch"
+$stopwatch.Elapsed.TotalSeconds
+```
 
+### Formater du temps de résolution
+
+Pour arrondir le temps total de résolution au millième de seconde (0.001 seconde), on utilise la classe .NET `[System.Math]` qui prend deux paramètres : le premier est la valeur à arrondir et le deuxième est le nombre de décimales que l'on doit conserver (dans notre cas : 3).
+
+```powershell
+[System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
+```
+
+### Calculer et afficher le temps par coup
+
+L'étape la plus simple de cette partie : on divise avec l'opérateur `/` le nombre de secondes du chronomètre par le nombre de coups stockés dans la variable `$i`.
+
+```powershell
+$stopwatch.Elapsed.TotalSeconds / $i
+```
 
 ## Correction
 
