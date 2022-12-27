@@ -46,6 +46,11 @@ article:hover {
     .articleIcon {
         transform: scale(1.10);
     }
+
+    .articleButton {
+        color: #fff;
+        background-color: #3773c5;
+    }
 }
 
 .articleIcon {
@@ -67,7 +72,7 @@ article:hover {
 .articleButton:hover {
     text-decoration: underline;
     color: #fff;
-    background-color: #205995;
+    background-color: #285592;
 }
 
 .postBanner {
@@ -80,7 +85,7 @@ article:hover {
     justify-content: center;
     user-select: none;
     font-size: 100px;
-    background: #2c78c9;
+    background: #3773c5;
     z-index: -1;
 }
 
