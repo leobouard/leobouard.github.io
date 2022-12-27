@@ -322,6 +322,15 @@ footer {
 /* --- MEDIA --- */
 
 @media print, screen and (max-width: 950px) {
+
+    html {
+        font-size: 14px;
+        font-weight: 400;
+        height: 100%;
+        letter-spacing: 0.2px;
+        line-height: 150%;
+    }
+
     body {
         word-wrap: break-word;
     }
@@ -335,7 +344,6 @@ footer {
     }
 
     section {
-        font-size: 15px;
         padding: 20px;
         min-height: 80%;
         overflow: scroll;
