@@ -22,3 +22,4 @@ prevLink:
         <span>{{ post.description}}</span>
     </a>
 </div>
+{% endfor %}
