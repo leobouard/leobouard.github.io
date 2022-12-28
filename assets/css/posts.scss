@@ -156,7 +156,6 @@ article:hover {
     article {
         padding: 10px;
         margin: 10px;
-        max-width: 100%;
     }
 
 }
@@ -164,13 +163,10 @@ article:hover {
 @media print, screen and (max-width: 560px) {
 
     article {
-        padding: 10px;
-        margin: 10px;
-        max-width: 100%;
+        max-width: 95%;
         flex: none;
         display: flex;
         height: 180px;
-        width: 100%;
     }
 
     article > hr {
