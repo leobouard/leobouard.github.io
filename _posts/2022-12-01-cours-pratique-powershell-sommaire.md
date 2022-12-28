@@ -15,7 +15,7 @@ prevLink:
 
 <div class="div_summary">
 {% for post in site.posts %}
-  {% if post.ud starts_with "2022-12-01-cours-pratique-powershell-0" %}
+  {% if post.id starts_with "2022-12-01-cours-pratique-powershell-0" %}
     <a href="{{ post.id }}">
         <h3>{{ post.title }}</h3>
         <span>{{ post.description}}</span>
