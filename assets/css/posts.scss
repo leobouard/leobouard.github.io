@@ -144,6 +144,37 @@ article:hover {
     color: #424242;
 }
 
+.div_bottomnav_buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 0px;
+}
+
+.a_button_prev, .a_button_next {
+    padding: 8px 15px;
+    color: #fff;
+    border-radius: 30px;
+}
+
+.a_button_prev {
+    background-color: #453643;
+}
+
+.a_button_prev:hover {
+    color: #fff;
+    background-color: #5B4859;
+}
+
+.a_button_next {
+    background-color: #3d5249;
+}
+
+.a_button_next:hover {
+    background-color: #4e6a5e;
+    color: #fff;
+}
+
+
 @media print, screen and (max-width: 950px) {
 
     .postBanner {
