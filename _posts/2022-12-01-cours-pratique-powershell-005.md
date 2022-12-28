@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Partie 5 - Top chrono !"
-thumbnailColor: "#007acc"
+description: "On ajoute un chronomètre qui va mesurer le temps de résolution total ainsi que le temps moyen par tentative"
 icon: 🎓
 nextLink:
   name: "Partie 6"
