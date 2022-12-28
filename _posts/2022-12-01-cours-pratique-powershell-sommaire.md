@@ -13,14 +13,12 @@ prevLink:
 
 ## Table des matières
 
+{% assign posts = site.posts | sort: 'id' %}
+{% assign posts = posts | where: 'id', '2022-12-01-cours-pratique-powershell-0*' %}
 <div class="div_summary">
-{% for post in site.posts %}
-  {% if post.id starts_with "2022-12-01-cours-pratique-powershell-0" %}
+{% for post in posts %}
     <a href="{{ post.id }}">
         <h3>{{ post.title }}</h3>
         <span>{{ post.description}}</span>
     </a>
-  {% endif %}
-{% endfor %}
 </div>
-
