@@ -105,11 +105,13 @@ article:hover {
 }
 
 .div_summary > a {
-    background: #fafafa;
+    background: #fff;
     display: block;
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
+    border: 1px solid #ddd;
+    font-weight: 400;
 }
 
 .div_summary > a:hover {
