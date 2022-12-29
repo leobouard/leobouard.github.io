@@ -16,9 +16,11 @@ prevLink:
 {% assign posts = site.posts | sort: 'id' %}
 <div class="div_summary">
   {% for post in posts %}
-    <a href="{{ post.id }}">
-        <h3>{{ post.title }}</h3>
-        <span>{{ post.description}}</span>
-    </a>
+    {% if post.id contains "2022-12-01-cours-pratique-powershell-0" %}
+      <a href="{{ post.id }}">
+          <h3>{{ post.title }}</h3>
+          <span>{{ post.description}}</span>
+      </a>
+    {% endif %}
   {% endfor %}
 </div>
