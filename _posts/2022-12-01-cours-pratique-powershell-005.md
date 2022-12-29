@@ -40,12 +40,12 @@ On ajoute un chronomètre qui se lance après que le script ait reçu la premiè
 
 ### Créer et lancer un chronomètre
 
-Pour mesure un temps d'éxecution, il existe deux méthodes principales en PowerShell :
+Pour mesure un temps d'exécution, il existe deux méthodes principales en PowerShell :
 
 - le combo des commandes `Get-Date` pour obtenir la date à un instant T et `New-TimeSpan` pour mesurer un écart de temps entre deux dates. Les deux combinés permettent d'obtenir une sorte de chronomètre. On démarre le chronomètre en sauvegardant la date du début dans une variable.
 - la classe .NET `[System.Diagnostics.Stopwatch]` : "stopwatch" signifie litéralement "chronomètre". On peut démarrer le chronomètre avec la méthode `Start()`.
 
-On peut également mentionner la commande `Measure-Command` qui permet de mesurer le temps d'execution d'un bloc de script, mais celle-ci ne convient pas à notre usage car notre début se situe dans une boucle et la fin se trouve en dehors de cette boucle (le bloc de script n'est donc pas entier).
+On peut également mentionner la commande `Measure-Command` qui permet de mesurer le temps d'exécution d'un bloc de script, mais celle-ci ne convient pas à notre usage car notre début se situe dans une boucle et la fin se trouve en dehors de cette boucle (le bloc de script n'est donc pas entier).
 
 ```powershell
 # Pour "Get-Date" & "New-TimeSpan"
