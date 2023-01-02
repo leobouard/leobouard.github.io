@@ -19,6 +19,12 @@ layout: default
 {{ content }}
 
 <div class="div_bottomnav_buttons">
-    <a class="a_button_prev" href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
-    <a class="a_button_next" href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
+    {% if page.prevLink %}
+        <a class="a_button_prev" href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
+    {% else %}
+        <a href="/">↑ Retour en haut de page</a>
+    {% endif %}
+    {% if page.nextLink %}
+        <a class="a_button_next" href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
+    {% endif %}
 </div>
