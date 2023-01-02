@@ -42,7 +42,7 @@ prevLink:
 
 On va maintenant vouloir stocker l'objet de fin dans une variable `$stats` pour pouvoir l'utiliser dans différents contextes. On prépare également le formatage des données pour pouvoir les stocker efficacement dans un fichier externe (CSV) :
 
-1. Ajouter la propriété `Joueur` qui contient le nom de l'utilisateur actuel Windows accessible avec la variable d'environnement $env:USERNAME
+1. Ajouter la propriété `Joueur` qui contient le nom de l'utilisateur actuel Windows accessible avec la variable d'environnement `$env:USERNAME`
 2. Ajouter la propriété `Date` qui contient la date et l'heure de la partie. On utilise donc la commande `Get-Date` et on format l'affichage avec le paramètre `-Format` et la valeur de paramètre `G` qui permet d'obtenir une date au format "31/12/2022 23:59:59"
 3. Modifier la propriété `Réponses` pour transformer l'objet en chaine de caractères avec l'opérateur `-join` pour mieux l'exporter en CSV
 
