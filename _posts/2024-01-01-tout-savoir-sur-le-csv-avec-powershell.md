@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Les données structurées - CSV"
+title: "Tout savoir sur le CSV avec PowerShell"
+description: "Résumé de toutes les choses à savoir sur l'utilisation du format CSV pour extraire ou importer des données avec PowerShell"
 ---
 
 ## C'est quoi le CSV

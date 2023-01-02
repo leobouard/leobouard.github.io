@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Partie X"
-thumbnailColor: "#007acc"
 icon: 🎓
 ---
 

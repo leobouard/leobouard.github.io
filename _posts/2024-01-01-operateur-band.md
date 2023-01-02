@@ -2,9 +2,6 @@
 layout: post
 title: "-band en PowerShell"
 description: "Est-ce que je viens de faire un jeu de mot sur le nom de l'opérateur ? Oui."
-tags: POWERSHELL
-icon: 🍆
-listed: false
 ---
 
 En faisant quelques recherches sur le fameux attribut "UserAccountControl" sur les comptes utilisateurs Active Directory, je suis tombé sur un très bon article d'IT-Connect sur le sujet. L'article parle de l'attribut et donne un bout de script PowerShell pour déchiffrer sa valeur.

@@ -3,7 +3,6 @@ layout: post
 title: "La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
 tags: DÉFI
-thumbnailColor: "#7C238C"
 icon: 🎩
 listed: true
 ---
@@ -15,7 +14,7 @@ Il faut simplement faire une fonction pour que :
 - 2568 en entrée donne 21 en sortie
 - 5143 en entrée donne 13 en sortie
 - 8543 en entrée donne 20 en sortie
-- etc
+- etc…
 
 Vous voyez, c'est L-I-M-P-I-D-E !
 
