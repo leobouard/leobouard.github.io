@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Partie 6 - Mode difficile"
-description: "On ajoute un paramètre qui permet de régler la difficulté du jeu"
+title: "Partie 6 - EasyMode"
+description: "On ajoute un paramètre qui permet de diminuer la difficulté du jeu en faisant en sorte que le nombre aléatoire soit toujours un mutliple de 5"
 icon: 🎓
 nextLink:
   name: "Partie 7"
