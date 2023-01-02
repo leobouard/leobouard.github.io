@@ -18,7 +18,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
             </a>
             <hr>
             <div class="articleDescription">
-                <h2>{{ post.title }}</h2>
+                <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
                 <a class="articleButton" href="{{ post.id }}">Continuer →</a>
             </div>
