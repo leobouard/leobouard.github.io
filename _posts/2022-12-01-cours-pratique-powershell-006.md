@@ -24,7 +24,9 @@ Ajouter un mode facile au script qui permet de modifier la génération du nombr
 ## Etape par étape
 
 1. Ajouter le paramètre au script
-
+2. Générer un nombre aléatoire "facile" à deviner
+3. Modifier la génération du nombre aléatoire en mode facile
+4. Ajouter la difficulté dans l'objet de fin
 
 ### Ajouter le paramètre au script
 
