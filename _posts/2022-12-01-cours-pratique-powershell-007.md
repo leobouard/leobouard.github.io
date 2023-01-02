@@ -68,7 +68,7 @@ Avec la commande `Export-Csv`, on va ajouter une nouvelle ligne au fichier qui c
 
 - `-Path` pour indiquer l'emplacement du fichier CSV
 - `-Encoding` pour spécifier le type d'encodage (en l'occurence : "UTF8")
-- `-Delimiter` pour indiquer quel caractère doit être utilisé pour séparer les valeurs entre-elles (dans notre cas, le point-virgule : `;`)
+- `-Delimiter` pour indiquer quel caractère doit être utilisé pour séparer les valeurs entre-elles (dans notre cas, le point-virgule)
 - `-NoTypeInformation` pour éviter d'avoir le type d'objet d'origine en première ligne du CSV (par exemple : `#TYPE System.Management.Automation.PSCustomObject`)
 - `-Append` pour ne faire qu'ajouter une nouvelle ligne au fichier CSV au lieu d'écraser toutes les données
 - `-Force` pour éviter les erreurs si jamais vous faites des modifications sur l'objet
