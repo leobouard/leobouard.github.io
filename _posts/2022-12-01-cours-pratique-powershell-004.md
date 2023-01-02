@@ -146,9 +146,9 @@ if ($answer -ne $random) {
 }
 
 [PSCustomObject]@{
-    "Random"         = $random
-    "Answers"        = $allAnswers
-    "Average answer" = [int]($allAnswers | Measure-Object -Average).Average
-    "Count"          = $i
+    "Nombre aléatoire" = $random
+    "Réponses"         = $allAnswers
+    "Réponse moyenne"  = [int]($allAnswers | Measure-Object -Average).Average
+    "Tentatives"       = $i
 } | Format-List
 ```

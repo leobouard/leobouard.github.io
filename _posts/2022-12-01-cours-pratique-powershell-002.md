@@ -30,9 +30,9 @@ Exemple de victoire :
 > Deviner le nombre: 560\
 > VICTOIRE ! Vous avez deviné le nombre aléatoire\
 > \
-> Random : 560\
-> Answer : 560\
-> Count  : 6
+> Nombre aléatoire : 560\
+> Dernière réponse : 560\
+> Tentatives       : 6
 
 Exemple de défaite :
 
@@ -43,9 +43,9 @@ Exemple de défaite :
 > ??? est plus petit que 608\
 > DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire\
 > \
-> Random : 606\
-> Answer : 608\
-> Count  : 10
+> Nombre aléatoire : 606\
+> Dernière réponse : 608\
+> Tentative        : 10
 
 ---
 
@@ -149,8 +149,8 @@ if ($answer -ne $random) {
 }
 
 [PSCustomObject]@{
-    "Random" = $random
-    "Answer" = $answer
-    "Count"  = $i
+    "Nombre aléatoire" = $random
+    "Dernière réponse" = $answer
+    "Tentative"        = $i
 } | Format-List
 ```

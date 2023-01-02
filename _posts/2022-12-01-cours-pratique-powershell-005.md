@@ -19,12 +19,12 @@ On ajoute un chronomètre qui se lance après que le script ait reçu la premiè
 
 > VICTOIRE ! Vous avez deviné le nombre aléatoire\
 > \
-> Random         : 198\
-> Answers        : {500, 250, 125, 200...}\
-> Average answer : 216\
-> Seconds        : 16,036\
-> Count          : 10\
-> Sec per try    : 1,604
+> Nombre aléatoire          : 198\
+> Réponses                  : {500, 250, 125, 200...}\
+> Réponse moyenne           : 216\
+> Tentatives                : 10\
+> Temps de résolution (sec) : 16,036\
+> Temps moyen par tentative : 1,604
 
 ---
 
@@ -135,11 +135,11 @@ if ($answer -ne $random) {
 $stopwatch.Stop()
 
 [PSCustomObject]@{
-    "Random"         = $random
-    "Answers"        = $allAnswers
-    "Average answer" = [int]($allAnswers | Measure-Object -Average).Average
-    "Seconds"        = [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
-    "Count"          = $i
-    "Sec per try"    = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $i),3)
+    "Nombre aléatoire"          = $random
+    "Réponses"                  = $allAnswers
+    "Réponse moyenne"           = [int]($allAnswers | Measure-Object -Average).Average
+    "Tentatives"                = $i
+    "Temps de résolution (sec)" = [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
+    "Temps moyen par tentative" = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $i),3)
 } | Format-List
 ```

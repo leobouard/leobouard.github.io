@@ -25,10 +25,10 @@ Toutes les tentatives du joueur sont maintenant gardées en mémoire et l'objet 
 > [...]\
 > VICTOIRE ! Vous avez deviné le nombre aléatoire\
 > \
-> Random         : 939\
-> Answers        : {500, 750, 900, 950...}\
-> Average answer : 864\
-> Count          : 9
+> Nombre aléatoire : 939\
+> Réponses         : {500, 750, 900, 950...}\
+> Réponse moyenne  : 864\
+> Tentatives       : 9
 
 ---
 
@@ -147,9 +147,9 @@ if ($answer -ne $random) {
 }
 
 [PSCustomObject]@{
-    "Random"         = $random
-    "Answers"        = $allAnswers
-    "Average answer" = [int]($allAnswers | Measure-Object -Average).Average
-    "Count"          = $i
+    "Nombre aléatoire" = $random
+    "Réponses"         = $allAnswers
+    "Réponse moyenne"  = [int]($allAnswers | Measure-Object -Average).Average
+    "Tentatives"       = $i
 } | Format-List
 ```

@@ -114,12 +114,12 @@ if ($answer -ne $random) {
 $stopwatch.Stop()
 
 [PSCustomObject]@{
-    "Random"         = $random
-    "Answers"        = $allAnswers
-    "Average answer" = [int]($allAnswers | Measure-Object -Average).Average
-    "Seconds"        = [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
-    "Count"          = $i
-    "Sec per try"    = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $i),3)
-    "EasyMode"       = $EasyMode.IsPresent
+    "Nombre aléatoire"          = $random
+    "Réponses"                  = $allAnswers
+    "Réponse moyenne"           = [int]($allAnswers | Measure-Object -Average).Average
+    "Tentatives"                = $i
+    "Temps de résolution (sec)" = [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
+    "Temps moyen par tentative" = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $i),3)
+    "Mode facile"               = $EasyMode.IsPresent
 } | Format-List
 ```

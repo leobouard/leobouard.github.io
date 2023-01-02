@@ -24,24 +24,24 @@ Si l'estimation est plus grande que le nombre aléatoire :
 > Deviner le nombre: 500\
 > ??? est plus petit que 500\
 > \
-> Random : 21\
-> Answer : 500
+> Nombre aléatoire : 21\
+> Dernière réponse : 500
 
 Si l'estimation est plus petite que le nombre aléatoire :
 
 > Deviner le nombre: 500\
 > ??? est plus grand que 500\
 > \
-> Random : 746\
-> Answer : 500
+> Nombre aléatoire : 746\
+> Dernière réponse : 500
 
 Si l'estimation est égale au nombre aléatoire :
 
 > Deviner le nombre: 500\
 > VICTOIRE ! Vous avez deviné le nombre aléatoire\
 > \
-> Random : 500\
-> Answer : 500
+> Nombre aléatoire : 500\
+> Dernière réponse : 500
 
 ---
 
@@ -154,7 +154,7 @@ if ($random -gt $answer) {
 }
 
 [PSCustomObject]@{
-    "Random" = $random
-    "Answer" = $answer
+    "Nombre aléatoire" = $random
+    "Dernière réponse" = $answer
 } | Format-List
 ```
