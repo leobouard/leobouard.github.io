@@ -45,10 +45,22 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
   </thead>
   <tbody>
     <tr>
-      <td>Bordures et arrière plan</td>
+      <td>Survol et accentuation légère</td>
+      <td>Blanc</td>
+      <td>#FAFAFA</td>
+      <td><div style="width: 65px; height: 25px; background-color: #FAFAFA; border-radius: 5px;"></div></td>
+    </tr>
+    <tr>
+      <td>Arrière-plan</td>
       <td>Blanc</td>
       <td>#F2F2F2</td>
       <td><div style="width: 65px; height: 25px; background-color: #F2F2F2; border-radius: 5px;"></div></td>
+    </tr>
+    <tr>
+      <td>Bordures</td>
+      <td>Gris</td>
+      <td>#DDDDDD</td>
+      <td><div style="width: 65px; height: 25px; background-color: #DDDDDD; border-radius: 5px;"></div></td>
     </tr>
     <tr>
       <td>Primaire</td>
@@ -57,27 +69,32 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
       <td><div style="width: 65px; height: 25px; background-color: #F9C80E; border-radius: 5px;"></div></td>
     </tr>
     <tr>
-      <td>Secondaires</td>
-      <td>Bleu</td>
-      <td>#3590F3<br>#205995<br>#153a62<br>#0a1b2f</td>
+      <td>Bannière</td>
+      <td>Vert</td>
+      <td>#7EA090</td>
+      <td><div style="width: 65px; height: 25px; background-color: #7EA090; border-radius: 5px;"></div></td>
+    </tr>
+    <tr>
+      <td>Boutons principaux</td>
+      <td>Vert</td>
+      <td>#5E7A6f</td>
       <td>
-        <div style="width: 65px; height: 25px; background-color: #2C78C9; border-radius: 5px;"></div>
-        <div style="width: 65px; height: 25px; background-color: #205995; border-radius: 5px;"></div>
-        <div style="width: 65px; height: 25px; background-color: #153a62; border-radius: 5px;"></div>
-        <div style="width: 65px; height: 25px; background-color: #0a1b2f; border-radius: 5px;"></div>
+        <div style="width: 65px; height: 25px; background-color: #5E7A6f; border-radius: 5px;"></div>
       </td>
     </tr>
     <tr>
-      <td>Secondaire </td>
-      <td>Bleu foncé</td>
-      <td>#214263</td>
-      <td><div style="width: 65px; height: 25px; background-color: #214263; border-radius: 5px;"></div></td>
+      <td>Boutons secondaires</td>
+      <td>Marron</td>
+      <td>#8C6E6C</td>
+      <td>
+        <div style="width: 65px; height: 25px; background-color: #8C6E6C; border-radius: 5px;"></div>
+      </td>
     </tr>
     <tr>
       <td>Titres et pied de page</td>
-      <td>Gris bleu</td>
-      <td>#383B53</td>
-      <td><div style="width: 65px; height: 25px; background-color: #383B53; border-radius: 5px;"></div></td>
+      <td>Violet foncé</td>
+      <td>#342E37</td>
+      <td><div style="width: 65px; height: 25px; background-color: #342E37; border-radius: 5px;"></div></td>
     </tr>
   </tbody>
 </table>
