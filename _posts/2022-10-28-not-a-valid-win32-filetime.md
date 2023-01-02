@@ -3,8 +3,7 @@ layout: post
 title: "Not a valid Win32 FileTime."
 description: "Une requête Active Directory bloquée à cause d'une erreur sur un compte utilisateur ou ordinateur"
 tags: AD
-thumbnailColor: "#7D1730"
-icon: ❌
+icon: 🔎
 listed: true
 ---
 
