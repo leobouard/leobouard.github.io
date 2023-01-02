@@ -4,11 +4,11 @@ title: "Partie 6 - Mode difficile"
 description: "On ajoute un paramètre qui permet de régler la difficulté du jeu"
 icon: 🎓
 nextLink:
-  name: "Partie 5"
-  id: "/2022/12/01/cours-pratique-powershell-005"
-prevLink:
   name: "Partie 7"
   id: "/2022/12/01/cours-pratique-powershell-007"
+prevLink:
+  name: "Partie 5"
+  id: "/2022/12/01/cours-pratique-powershell-005"
 ---
 
 ## Consigne
