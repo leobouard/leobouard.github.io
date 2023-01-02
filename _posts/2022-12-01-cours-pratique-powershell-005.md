@@ -36,8 +36,6 @@ On ajoute un chronomètre qui se lance après que le script ait reçu la premiè
 4. Formater du temps de résolution
 5. Calculer et afficher le temps par coup
 
-## Détails
-
 ### Créer et lancer un chronomètre
 
 Pour mesure un temps d'exécution, il existe deux méthodes principales en PowerShell :
