@@ -35,7 +35,7 @@ prevLink:
 1. Modification et stockage dans une variable de l'objet de fin
 2. Ajout d'un paramètre pour indiquer l'emplacement de sauvegarde des scores
 3. Sauvegarder le score dans un fichier CSV
-4. Demander à l'utilisateur si il veut voir le tableau
+4. Demander au joueur si il veut voir le tableau
 5. Afficher le tableau des meilleurs scores
 
 ### Modification et stockage dans une variable de l'objet de fin
@@ -56,17 +56,35 @@ $stats = [PSCustomObject]@{
 
 ### Ajout d'un paramètre pour indiquer l'emplacement de sauvegarde des scores
 
+On ajoute un nouveau paramètre `-HighscorePath` du type `[IO.FileInfo]` qui contient le chemin vers le fichier CSV qui contiendra les highscores.
+
 ```powershell
 param([IO.FileInfo]$HighscorePath = "$PSScriptRoot\highscore.csv")
 ```
 
 ### Sauvegarder le score dans un fichier CSV
 
+Avec la commande `Export-Csv`, on va ajouter une nouvelle ligne au fichier qui contient les meilleurs scores. Détail des paramètres utilisés :
+
+- `-Path` pour indiquer l'emplacement du fichier CSV
+- `-Encoding` pour spécifier le type d'encodage (en l'occurence : "UTF8")
+- `-Delimiter` pour indiquer quel caractère doit être utilisé pour séparer les valeurs entre-elles (dans notre cas, le point-virgule : `;`)
+- `-NoTypeInformation` pour éviter d'avoir le type d'objet d'origine en première ligne du CSV (par exemple : `#TYPE System.Management.Automation.PSCustomObject`)
+- `-Append` pour ne faire qu'ajouter une nouvelle ligne au fichier CSV au lieu d'écraser toutes les données
+- `-Force` pour éviter les erreurs si jamais vous faites des modifications sur l'objet
+
 ```powershell
 $stats | Export-Csv -Path $HighscorePath -Encoding UTF8 -Delimiter ';' -NoTypeInformation -Append -Force
 ```
 
-### Demander à l'utilisateur si il veut voir le tableau
+### Demander au joueur si il veut voir le tableau
+
+Pour demander au joueur si il veut voir le tableau des meilleurs score, on va utiliser `$Host.UI.PromptForChoice()` avec les quatres paramètres suivants (dans l'ordre) :  
+
+1. Le titre
+2. La question à poser 
+3. Les différents choix possibles sous forme d'un array où chaque option commence par `&`
+4. L'option par défaut (commence à 0)
 
 ```powershell
 $question = 'Voulez-vous voir les meilleurs scores?'
@@ -75,6 +93,8 @@ $decision = $Host.UI.PromptForChoice($null, $question, $choices, 1)
 ```
 
 ### Afficher le tableau des meilleurs scores
+
+Si le premier choix est selectionné par le joueur, alors on récupère le contenu du fichier CSV avec la commande `Import-Csv` pour l'afficher ensuite avec la commande `Out-GridView`.
 
 ```powershell
 if ($decision -eq 0) {
