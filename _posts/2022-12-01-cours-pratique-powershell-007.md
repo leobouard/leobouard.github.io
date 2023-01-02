@@ -79,7 +79,7 @@ $stats | Export-Csv -Path $HighscorePath -Encoding UTF8 -Delimiter ';' -NoTypeIn
 
 ### Demander au joueur si il veut voir le tableau
 
-Pour demander au joueur si il veut voir le tableau des meilleurs score, on va utiliser `$Host.UI.PromptForChoice()` avec les quatres paramètres suivants (dans l'ordre) :  
+Pour demander au joueur si il veut voir le tableau des meilleurs score, on va utiliser `$Host.UI.PromptForChoice()` avec les paramètres suivants (dans l'ordre) :  
 
 1. Le titre
 2. La question à poser 
