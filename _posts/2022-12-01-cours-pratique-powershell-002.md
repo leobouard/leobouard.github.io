@@ -122,8 +122,7 @@ Dans le `PSCustomObject` affiché à la fin, on ajoute une nouvelle propriété 
 
 ```powershell
 [PSCustomObject]@{
-    "Random" = $random
-    "Answer" = $answer
+    # Vos autres propriétés
     "Count"  = $i
 } | Format-List
 ```

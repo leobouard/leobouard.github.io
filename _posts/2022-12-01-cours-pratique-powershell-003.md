@@ -118,10 +118,8 @@ Pour arrondir un nombre décimal en PowerShell, le plus simple est de le convert
 
 ```powershell
 [PSCustomObject]@{
-    "Random"         = $random
-    "Answers"        = $allAnswers
+    # Vos autres propriétés
     "Average answer" = [int]($allAnswers | Measure-Object -Average).Average
-    "Count"          = $i
 }
 ```
 
