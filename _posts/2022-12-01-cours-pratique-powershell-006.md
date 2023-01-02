@@ -30,7 +30,7 @@ Ajouter un mode facile au script qui permet de modifier la génération du nombr
 
 Je vous recommande fortement de lire l'article [about_Parameters - PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters) si vous n'êtes pas familier avec le passage de paramètres dans PowerShell. 
 
-Notre exemple est relativement simple : si le paramètre `-EasyMode` du script est invoqué, alors on modifie la génération du nombre aléatoire. Il s'agit donc d'un paramètre du type [switch] (soit il est présent, soit il est absent).
+Notre besoin est relativement simple : si le paramètre `-EasyMode` du script est invoqué, alors on modifie la génération du nombre aléatoire, sinon on ne change rien. Il s'agit donc d'un paramètre du type `[switch]` (soit il est présent, soit il est absent).
 
 ```powershell
 param([switch]$EasyMode)
