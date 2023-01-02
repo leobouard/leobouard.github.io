@@ -9,8 +9,8 @@
 
 article {
     margin: 15px;
-    height: 370px;
-    max-width: 315px;
+    height: 320px;
+    max-width: 300px;
     flex: 1;
     flex-basis: 200px;
     border-radius: 5px;
@@ -46,18 +46,17 @@ article:hover {
 
     .articleIcon {
         filter: grayscale(0);
-        /*transform: scale(1.10);*/
     }
 
     .articleButton {
         color: #fff;
-        background-color: #4E6A5E;
+        background-color: #607D71;
     }
 }
 
 .articleIcon {
     text-align: center;
-    font-size: 75px;
+    font-size: 60px;
     line-height: 0px;
     user-select: none;
     filter: grayscale(0.2);
