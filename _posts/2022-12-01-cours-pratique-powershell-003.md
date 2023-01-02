@@ -92,19 +92,19 @@ until ()
 
 ### Afficher toutes les tentatives
 
-Dans le `PSCustomObject` affiché à la fin, on modifie la propriété `Answer` en `Answers` qui contient toutes les tentatives (variable `$allAnswers`) du joueur.
+Dans le `PSCustomObject` affiché à la fin, on modifie la propriété `Réponse` en `Réponses` qui contient toutes les réponses (variable `$allAnswers`) du joueur.
 
 ```powershell
 [PSCustomObject]@{
-    "Random"  = $random
-    "Answers" = $allAnswers
-    "Count"   = $i
+    "Nombre aléatoire"  = $random
+    "Réponses" = $allAnswers
+    "Tentatives"   = $i
 }
 ```
 
 ### Calculer l'estimation moyenne
 
-Avec toutes les tentatives du joueur stockées dans une variable, on va maintenant calculer la valeur moyenne de toutes ses tentatives. Par exemple : (500+750+875+800+850+862)/6 = 772,833. On peut le faire facilement en PowerShell avec la commande `Measure-Object` et le paramètre `-Average`.
+Avec toutes les réponses du joueur stockées dans une variable, on va maintenant calculer la valeur moyenne de toutes ses réponses. Par exemple : (500+750+875+800+850+862)/6 = 772,833. On peut le faire facilement en PowerShell avec la commande `Measure-Object` et le paramètre `-Average`.
 
 ```powershell
 ($allAnswers | Measure-Object -Average).Average
@@ -112,14 +112,13 @@ Avec toutes les tentatives du joueur stockées dans une variable, on va maintena
 
 ### Afficher l'estimation moyenne
 
-Dans le `PSCustomObject` affiché à la fin, on ajoute une nouvelle propriété `Average answer` pour montrer la valeur moyenne des tentatives du joueur arrondie à l'entier.
+Dans le `PSCustomObject` affiché à la fin, on ajoute une nouvelle propriété `Réponse moyenne` pour montrer la valeur moyenne des tentatives du joueur arrondie à l'entier.
 
 Pour arrondir un nombre décimal en PowerShell, le plus simple est de le convertir en utilisant le type `[int]`. Il est également possible d'utiliser la méthode `[math]:Round()`, que l'on utilisera plus tard.
 
 ```powershell
 [PSCustomObject]@{
-    # Vos autres propriétés
-    "Average answer" = [int]($allAnswers | Measure-Object -Average).Average
+    "Réponse moyenne" = [int]($allAnswers | Measure-Object -Average).Average
 }
 ```
 

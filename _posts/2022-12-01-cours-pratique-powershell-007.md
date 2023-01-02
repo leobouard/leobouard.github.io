@@ -15,15 +15,18 @@ prevLink:
 
 ### Résultat attendu
 
-User           : leo.bouard
-Date           : 02/01/2023 17:22:07
-Random         : 20
-Answers        : 500,250,125,75,50,25,15,20
-Average answer : 132
-Seconds        : 10,027
-Count          : 8
-Sec per try    : 1,253
-EasyMode       : True
+> Joueur                    : john.smith\
+> Date                      : 01/12/2022 12:00:00\
+> Nombre aléatoire          : 20\
+> Réponses                  : 500,250,125,75,50,25,15,20\
+> Réponse moyenne           : 132\
+> Temps de résolution (sec) : 10,027\
+> Temps moyen par tentative : 1,253\
+> Tentatives                : 8\
+> Mode facile               : True\
+> \
+> Voulez-vous voir les meilleurs scores?\
+> [O] Oui  [N] Non  [?] Aide (la valeur par défaut est « N ») :
 
 ---
 
@@ -37,28 +40,17 @@ EasyMode       : True
 
 ### Modification et stockage dans une variable de l'objet de fin
 
-On va maintenant vouloir stocker l'objet de fin dans une variable `$stats` pour pouvoir l'utiliser dans différents contextes. On prépare également le formatage des données pour pouvoir les stocker efficacement dans un fichier externe (CSV). Pour ça on doit modifier la propriété `Answers` afin de la transormer en une chaine de caractères sinon on risque de se retrouver avec le résultat suivant :
+On va maintenant vouloir stocker l'objet de fin dans une variable `$stats` pour pouvoir l'utiliser dans différents contextes. On prépare également le formatage des données pour pouvoir les stocker efficacement dans un fichier externe (CSV) :
 
-User | Date | Answers
----- | ---- | -------
-john.smith | 31/12/2022 23:59:59 | System.Object[]
-
-…au lieu de :
-
-User | Date | Answers
----- | ---- | -------
-john.smith | 31/12/2022 23:59:59 
-
-On ajoute également deux nouvelles propriétés :
-
-1. `User` qui contient le nom de l'utilisateur actuel Windows accessible avec la variable d'environnement $env:USERNAME
-2. `Date` qui contient la date et l'heure de la partie. On utilise donc la commande `Get-Date` et on format l'affichage avec le paramètre `-Format` et la valeur de paramètre `G` qui permet d'obtenir une date au format "31/12/2022 23:59:59"
+1. Ajouter la propriété `Joueur` qui contient le nom de l'utilisateur actuel Windows accessible avec la variable d'environnement $env:USERNAME
+2. Ajouter la propriété `Date` qui contient la date et l'heure de la partie. On utilise donc la commande `Get-Date` et on format l'affichage avec le paramètre `-Format` et la valeur de paramètre `G` qui permet d'obtenir une date au format "31/12/2022 23:59:59"
+3. Modifier la propriété `Réponses` pour transformer l'objet en chaine de caractères avec l'opérateur `-join` pour mieux l'exporter en CSV
 
 ```powershell
 $stats = [PSCustomObject]@{
-    "User"    = $env:USERNAME
-    "Date"    = Get-Date -Format G
-    "Answers" = $allAnswers -join ','
+    "Joueur"   = $env:USERNAME
+    "Date"     = Get-Date -Format G
+    "Réponses" = $allAnswers -join ','
 }
 ```
 
@@ -71,25 +63,23 @@ param([IO.FileInfo]$HighscorePath = "$PSScriptRoot\highscore.csv")
 ### Sauvegarder le score dans un fichier CSV
 
 ```powershell
-
+$stats | Export-Csv -Path $HighscorePath -Encoding UTF8 -Delimiter ';' -NoTypeInformation -Append -Force
 ```
 
 ### Demander à l'utilisateur si il veut voir le tableau
 
 ```powershell
-
+$question = 'Voulez-vous voir les meilleurs scores?'
+$choices  = '&Oui', '&Non'
+$decision = $Host.UI.PromptForChoice($null, $question, $choices, 1)
 ```
 
 ### Afficher le tableau des meilleurs scores
 
 ```powershell
-
-```
-
-### Conversion du format CSV au format JSON
-
-```powershell
-
+if ($decision -eq 0) {
+    Import-Csv -Path $HighscorePath -Delimiter ';' -Encoding UTF8 | Out-GridView -Title "Meilleurs scores"
+}
 ```
 
 ## Correction

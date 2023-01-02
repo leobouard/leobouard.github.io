@@ -120,12 +120,12 @@ else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
 
 ### Affichage des données
 
-A la fin du script, on crée un objet `PSCustomObject` qui regroupe les informations principales : le nombre aléatoire (propriété `Random`) et l'estimation du joueur (propriété `Answer`).
+A la fin du script, on crée un objet `PSCustomObject` qui regroupe les informations principales : le nombre aléatoire et la réponse du joueur.
 
 ```powershell
 $result = [PSCustomObject]@{
-    "Random" = $random
-    "Answer" = $answer
+    "Nombre aléatoire" = $random
+    "Dernière réponse" = $answer
 }
 ```
 

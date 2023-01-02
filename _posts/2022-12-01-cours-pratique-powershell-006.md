@@ -69,7 +69,7 @@ Même chose dans l'affichage de l'information, on utilise simplement la proprié
 
 ```powershell
 [PSCustomObject]@{
-  EasyMode = $EasyMode.IsPresent
+    "Mode facile" = $EasyMode.IsPresent
 }
 ```
 
