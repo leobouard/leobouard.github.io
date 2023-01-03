@@ -128,11 +128,11 @@ do {
     }
 } until ($answer -eq $random -or $i -ge 10)
 
+$stopwatch.Stop()
+
 if ($answer -ne $random) { 
     Write-Host "DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire"
 }
-
-$stopwatch.Stop()
 
 [PSCustomObject]@{
     "Nombre aléatoire"          = $random
