@@ -77,9 +77,9 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
     <tr>
       <td>Boutons principaux</td>
       <td>Vert</td>
-      <td>#5E7A6f</td>
+      <td>#5E7A6F</td>
       <td>
-        <div style="width: 65px; height: 25px; background-color: #5E7A6f; border-radius: 5px;"></div>
+        <div style="width: 65px; height: 25px; background-color: #5E7A6F; border-radius: 5px;"></div>
       </td>
     </tr>
     <tr>
