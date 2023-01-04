@@ -48,7 +48,7 @@ Type | Address
 ---- | -------
 **SIP** | **leo@labouabouate.fr**
 SMTP | leo@labouabouate.fr
-smtp | leo@labouaobuate.mail.onmicrosoft.com
+smtp | leo@labouabouate.mail.onmicrosoft.com
 
 Lien vers la documentation Microsoft pour ajouter une adresse SIP : [Add a SIP address: Exchange Server Help \| Microsoft Learn](https://learn.microsoft.com/en-us/exchange/add-sip-address-exchange-2013-help)
 
