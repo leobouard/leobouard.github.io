@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cours PowerShell #7 - Highscores"
-description: "Le résultat de chaque victoire est maintenant conservé dans un fichier externe pour stocker toutes les tentatives du joueur"
+description: "Le résultat de chaque victoire est maintenant conservé dans un fichier externe pour stocker toutes les victoires du joueur"
 icon: 🎓
 nextLink:
   name: "Partie 8"
@@ -12,6 +12,8 @@ prevLink:
 ---
 
 ## Consigne
+
+A partir de maintenant, les statistiques d'une partie qui se termine par une victoire du joueur seront sauvegardées dans un fichier externe au script (CSV par exemple). Pour l'occasion, on ajoute deux propriétés dans l'objet de fin : le nom du joueur et la date. A la fin de chaque partie (victoire ou défaite), on propose au joueur d'afficher les meilleurs scores dans un `Out-GridView`. La réponse par défaut est de ne rien afficher.
 
 ### Résultat attendu
 
@@ -33,10 +35,11 @@ prevLink:
 ## Etape par étape
 
 1. Modification et stockage dans une variable de l'objet de fin
-2. Ajout d'un paramètre pour indiquer l'emplacement de sauvegarde des scores
-3. Sauvegarder le score dans un fichier CSV
-4. Demander au joueur si il veut voir le tableau
-5. Afficher le tableau des meilleurs scores
+2. Affichage de l'objet dans la console
+3. Ajout d'un paramètre pour indiquer l'emplacement de sauvegarde des scores
+4. Sauvegarder le score dans un fichier CSV
+5. Demander au joueur si il veut voir le tableau
+6. Afficher le tableau des meilleurs scores
 
 ### Modification et stockage dans une variable de l'objet de fin
 
@@ -54,12 +57,20 @@ $stats = [PSCustomObject]@{
 }
 ```
 
-### Ajout d'un paramètre pour indiquer l'emplacement de sauvegarde des scores
+### Affichage de l'objet dans la console
 
-On ajoute un nouveau paramètre `-HighscorePath` du type `[IO.FileInfo]` qui contient le chemin vers le fichier CSV qui contiendra les highscores.
+Comme l'objet de fin a été mis dans une variable, plus rien n'est affiché dans la console. Pour modifier ça, on va utiliser la commande `Write-Output` plutôt que `Write-Host`. Je vous laisse faire le test pour voir la différence entre les deux commandes.
 
 ```powershell
-param([IO.FileInfo]$HighscorePath = "$PSScriptRoot\highscore.csv")
+$stats | Write-Output
+```
+
+### Ajout d'un paramètre pour indiquer l'emplacement de sauvegarde des scores
+
+On ajoute un nouveau paramètre `-FilePath` du type `[IO.FileInfo]` qui contient le chemin vers le fichier CSV qui contiendra les meilleurs scores.
+
+```powershell
+param([IO.FileInfo]$FilePath = "$PSScriptRoot\highscore.csv")
 ```
 
 ### Sauvegarder le score dans un fichier CSV
@@ -74,7 +85,7 @@ Avec la commande `Export-Csv`, on va ajouter une nouvelle ligne au fichier qui c
 - `-Force` pour éviter les erreurs si jamais vous faites des modifications sur l'objet
 
 ```powershell
-$stats | Export-Csv -Path $HighscorePath -Encoding UTF8 -Delimiter ';' -NoTypeInformation -Append -Force
+$stats | Export-Csv -Path $FilePath -Encoding UTF8 -Delimiter ';' -NoTypeInformation -Append -Force
 ```
 
 ### Demander au joueur si il veut voir le tableau
@@ -98,7 +109,7 @@ Si le premier choix est selectionné par le joueur, alors on récupère le conte
 
 ```powershell
 if ($decision -eq 0) {
-    Import-Csv -Path $HighscorePath -Delimiter ';' -Encoding UTF8 | Out-GridView -Title "Meilleurs scores"
+    Import-Csv -Path $FilePath -Delimiter ';' -Encoding UTF8 | Out-GridView -Title "Meilleurs scores"
 }
 ```
 
@@ -107,7 +118,7 @@ if ($decision -eq 0) {
 ```powershell
 param(
     [switch]$EasyMode,
-    [IO.FileInfo]$HighscorePath = "$PSScriptRoot\highscore.csv"
+    [IO.FileInfo]$FilePath = "$PSScriptRoot\highscore.csv"
 )
 
 $i          = 0
@@ -155,7 +166,7 @@ $stats | Write-Output
 if ($answer -ne $random) { 
     Write-Host "DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire"
 } else {
-    $stats | Export-Csv -Path $HighscorePath -Encoding UTF8 -Delimiter ';' -NoTypeInformation -Append -Force
+    $stats | Export-Csv -Path $FilePath -Encoding UTF8 -Delimiter ';' -NoTypeInformation -Append -Force
 }
 
 $question = 'Voulez-vous voir les meilleurs scores?'
@@ -163,6 +174,6 @@ $choices  = '&Oui', '&Non'
 $decision = $Host.UI.PromptForChoice($null, $question, $choices, 1)
 
 if ($decision -eq 0) {
-    Import-Csv -Path $HighscorePath -Delimiter ';' -Encoding UTF8 | Out-GridView -Title "Meilleurs scores"
+    Import-Csv -Path $FilePath -Delimiter ';' -Encoding UTF8 | Out-GridView -Title "Meilleurs scores"
 }
 ```
