@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Partie 7 - Highscores"
+title: "Cours PowerShell #7 - Highscores"
 description: "Le résultat de chaque victoire est maintenant conservé dans un fichier externe pour stocker toutes les tentatives du joueur"
 icon: 🎓
 nextLink:

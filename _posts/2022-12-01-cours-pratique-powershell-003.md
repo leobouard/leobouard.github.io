@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Partie 3 - Historique de navigation"
+title: "Cours PowerShell #3 - Historique de navigation"
 description: "Toutes les tentatives du joueur sont gardées en mémoire pour pouvoir afficher plus d'informations sur la partie"
 icon: 🎓
 nextLink:

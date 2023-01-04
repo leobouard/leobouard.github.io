@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Partie X"
+title: "Parties inachevées du cours"
 icon: 🎓
 ---
 
