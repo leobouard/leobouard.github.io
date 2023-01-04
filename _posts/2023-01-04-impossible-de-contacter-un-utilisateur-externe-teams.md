@@ -13,10 +13,13 @@ L'utilisateur concerné ne peut plus contacter des comptes externes à l'organis
 
 ![L'option "Rechercher *** en externe" dans la barre de recherche de Microsoft Teams](/assets/images/option-rechercher-en-externe-teams.png)
 
+<div style="text-align: center;">
+    <p><i>Avec un compte utilisateur touché par le problème, l'option "Rechercher <strong>leo@labouabouate.fr</strong> en externe" ne serait pas disponible.</i></p>
+</div>
+
 <div class="information">
     <h4>A vérifier avant de continuer</h4>
     <p>Évidemment, pensez à vérifier que votre organisation autorise bien les utilisateurs à communiquer avec des comptes externes. Vous pouvez vérifier ce paramètre dans <a href="https://admin.teams.microsoft.com/company-wide-settings/external-communications">Microsoft Teams admin center - Users - External access</a></p>
-    <img alt="Autoriser les personnes de votre organisation à contacter des personnes externes" src="/assets/images/parametre-autoriser-contacts-externes.png">
 </div>
 
 Comme le problème vient probablement de la configuration du compte, on vérifie l'état de celui-ci en PowerShell avec le module `MicrosoftTeams` :
