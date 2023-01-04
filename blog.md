@@ -13,6 +13,9 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
     {% for post in listed_posts %}
         <article>
             <small>{{ post.tags }}</small>
+            {% if post.favorite %}
+            <div class="favoriteMarker">⭐</div>
+            {% endif %}
             <a href="{{ post.id }}">
                 <p class="articleIcon">{{ post.icon }}</p>
             </a>
