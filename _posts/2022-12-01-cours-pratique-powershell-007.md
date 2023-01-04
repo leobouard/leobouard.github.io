@@ -13,7 +13,7 @@ prevLink:
 
 ## Consigne
 
-A partir de maintenant, les statistiques d'une partie qui se termine par une victoire du joueur seront sauvegardées dans un fichier externe au script (CSV par exemple). Pour l'occasion, on ajoute deux propriétés dans l'objet de fin : le nom du joueur et la date. A la fin de chaque partie (victoire ou défaite), on propose au joueur d'afficher les meilleurs scores dans un `Out-GridView`. La réponse par défaut est de ne rien afficher.
+À partir de maintenant, les statistiques d'une partie qui se termine par une victoire du joueur seront sauvegardées dans un fichier externe au script (CSV par exemple). Pour l'occasion, on ajoute deux propriétés dans l'objet de fin : le nom du joueur et la date. À la fin de chaque partie (victoire ou défaite), on propose au joueur d'afficher les meilleurs scores dans un `Out-GridView`. La réponse par défaut est de ne rien afficher.
 
 ### Résultat attendu
 
@@ -38,7 +38,7 @@ A partir de maintenant, les statistiques d'une partie qui se termine par une vic
 2. Affichage de l'objet dans la console
 3. Ajout d'un paramètre pour indiquer l'emplacement de sauvegarde des scores
 4. Sauvegarder le score dans un fichier CSV
-5. Demander au joueur si il veut voir le tableau
+5. Demander au joueur s'il veut voir le tableau
 6. Afficher le tableau des meilleurs scores
 
 ### Modification et stockage dans une variable de l'objet de fin
@@ -46,7 +46,7 @@ A partir de maintenant, les statistiques d'une partie qui se termine par une vic
 On va maintenant vouloir stocker l'objet de fin dans une variable `$stats` pour pouvoir l'utiliser dans différents contextes. On prépare également le formatage des données pour pouvoir les stocker efficacement dans un fichier externe (CSV) :
 
 1. Ajouter la propriété "Joueur" qui contient le nom de l'utilisateur actuel Windows accessible avec la variable d'environnement `$env:USERNAME`
-2. Ajouter la propriété "Date" qui contient la date et l'heure de la partie. On utilise donc la commande `Get-Date` et on format l'affichage avec le paramètre `-Format` et la valeur de paramètre `G` qui permet d'obtenir une date au format "31/12/2022 23:59:59"
+2. Ajouter la propriété "Date" qui contient la date et l'heure de la partie. On utilise donc la commande `Get-Date` et on formate l'affichage avec le paramètre `-Format` et la valeur de paramètre `G` qui permet d'obtenir une date au format "31/12/2022 23:59:59"
 3. Modifier la propriété "Réponses" pour transformer l'objet en chaine de caractères avec l'opérateur `-join` pour mieux l'exporter en CSV
 
 ```powershell
@@ -78,7 +78,7 @@ param([IO.FileInfo]$FilePath = "$PSScriptRoot\highscore.csv")
 Avec la commande `Export-Csv`, on va ajouter une nouvelle ligne au fichier qui contient les meilleurs scores. Détail des paramètres utilisés :
 
 - `-Path` pour indiquer l'emplacement du fichier CSV
-- `-Encoding` pour spécifier le type d'encodage (en l'occurence : "UTF8")
+- `-Encoding` pour spécifier le type d'encodage (en l'occurrence  : "UTF8")
 - `-Delimiter` pour indiquer quel caractère doit être utilisé pour séparer les valeurs entre-elles (dans notre cas, le point-virgule)
 - `-NoTypeInformation` pour éviter d'avoir le type d'objet d'origine en première ligne du CSV (par exemple : `#TYPE System.Management.Automation.PSCustomObject`)
 - `-Append` pour ne faire qu'ajouter une nouvelle ligne au fichier CSV au lieu d'écraser toutes les données
@@ -88,9 +88,9 @@ Avec la commande `Export-Csv`, on va ajouter une nouvelle ligne au fichier qui c
 $stats | Export-Csv -Path $FilePath -Encoding UTF8 -Delimiter ';' -NoTypeInformation -Append -Force
 ```
 
-### Demander au joueur si il veut voir le tableau
+### Demander au joueur s'il veut voir le tableau
 
-Pour demander au joueur si il veut voir le tableau des meilleurs score, on va utiliser `$Host.UI.PromptForChoice()` avec les paramètres suivants (dans l'ordre) :  
+Pour demander au joueur s'il veut voir le tableau des meilleurs scores, on va utiliser `$Host.UI.PromptForChoice()` avec les paramètres suivants (dans l'ordre) :  
 
 1. Le titre
 2. La question à poser 
@@ -105,7 +105,7 @@ $decision = $Host.UI.PromptForChoice($null, $question, $choices, 1)
 
 ### Afficher le tableau des meilleurs scores
 
-Si le premier choix est selectionné par le joueur, alors on récupère le contenu du fichier CSV avec la commande `Import-Csv` pour l'afficher ensuite avec la commande `Out-GridView`.
+Si le premier choix est sélectionné par le joueur, alors on récupère le contenu du fichier CSV avec la commande `Import-Csv` pour l'afficher ensuite avec la commande `Out-GridView`.
 
 ```powershell
 if ($decision -eq 0) {
