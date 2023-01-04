@@ -5,6 +5,9 @@ description: "Faire bégailler une longue tirade en faisant attention à la long
 tags: DÉFI
 icon: 🗨️
 listed: true
+nextLink:
+  name: "Voir la solution"
+  id: "/2021/09/28/begaiement-soluce"
 ---
 
 Un grand classique de la programmation appliqué au PowerShell : faire bégayer un texte !

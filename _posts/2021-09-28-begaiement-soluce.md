@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Solution - Bégaiement"
+prevLink:
+  name: "Retour au défi"
+  id: "/2021/09/28/begaiement"
 ---
 
 Petit rappel de la tirade complète :

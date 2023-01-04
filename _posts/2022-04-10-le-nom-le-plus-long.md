@@ -5,6 +5,9 @@ description: "Saurez-vous retrouver la personne avec le nom complet (prénom et 
 tags: DÉFI
 icon: 🆔
 listed: true
+nextLink:
+  name: "Voir la solution"
+  id: "/2022/04/10/le-nom-le-plus-long-soluce"
 ---
 
 Bon bah là pas besoin de broder... Tout est dans le titre ! 😄

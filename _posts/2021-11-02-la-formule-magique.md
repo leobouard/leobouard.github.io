@@ -5,6 +5,9 @@ description: "Une petite énigme a résoudre avant d'essayer de faire le script 
 tags: DÉFI
 icon: 🎩
 listed: true
+nextLink:
+  name: "Voir la solution"
+  id: "/2021/11/02/la-formule-magique-soluce"
 ---
 
 On part sur quelque-chose de plus simple pour cette fois-ci ! 😋

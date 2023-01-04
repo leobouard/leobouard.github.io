@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Solution - La formule magique"
+prevLink:
+  name: "Retour au défi"
+  id: "/2021/11/02/la-formule-magique"
 ---
 
 Vous l'avez probablement trouvé, il suffisait simplement d'additionner les chiffres qui composent le nombre entre eux. Pour reprendre le premier exemple : **2568 = 21** donc 2+5+6+8 devient 21. Une fois qu'on a compris le principe, il faut maintenant le convertir en PowerShell. 

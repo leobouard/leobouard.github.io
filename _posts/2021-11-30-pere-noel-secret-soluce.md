@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Solution - Père Noël aléatoire"
+prevLink:
+  name: "Retour au défi"
+  id: "/2021/11/30/pere-noel-secret"
 ---
 
 Encore une fois on tire partie au maximum des PSCustomObject pour ajouter une propriété "Random" qui va nous pemettre de mélanger la liste aléatoirement. Une fois que l'on a fait ça, on suit simplement le nouvel ordre aléatoire de la liste pour annoncer "A offre son cadeau à B", puis "B offre son cadeau à C", etc...
