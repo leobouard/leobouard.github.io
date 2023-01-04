@@ -23,6 +23,9 @@ LaBouaBouate est un blog technique pour partager des connaissances sur les techn
     {% for post in last_three_posts %}
         <article>
             <small>{{ post.tags }}</small>
+            {% if post.favorite %}
+            <div class="favoriteMarker">⭐</div>
+            {% endif %}
             <a href="{{ post.id }}">
                 <p class="articleIcon">{{ post.icon }}</p>
             </a>
