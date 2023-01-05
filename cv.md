@@ -1,6 +1,6 @@
 ---
 permalink: /cv
-title: "Léo Bouard"
+title: "CV"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
 
