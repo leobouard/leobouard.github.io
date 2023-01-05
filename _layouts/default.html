@@ -21,7 +21,6 @@
     </noscript>
   </head>
   <body>
-
     <header>
       <nav>
         <a href="{{ "/" | absolute_url }}" style="font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 22px;">
@@ -32,17 +31,16 @@
         <a href="/blog">Articles</a>
       </nav>
     </header>
-
-    {% if page.icon %}
-    <div class="postBanner">
-      {{ page.icon }}
-    </div>
-    {% endif %}
-    
-    <section>
-      {{ content }}
-    </section>
-    
+    <main>
+      {% if page.icon %}
+      <div class="postBanner">
+        {{ page.icon }}
+      </div>
+      {% endif %}
+      <section>
+        {{ content }}
+      </section>
+    </main>
     <footer>
       <div style="width: 250px;">
         <p><b>Informations générales</b></p>
