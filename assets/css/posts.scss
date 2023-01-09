@@ -46,7 +46,7 @@ article:hover {
 
     .articleIcon {
         filter: grayscale(0);
-        transform: rotate(5deg);
+        transform: scale(1.05)
     }
 
     .articleButton {
@@ -71,7 +71,7 @@ div.favoriteMarker {
     font-size: 60px;
     line-height: 0px;
     user-select: none;
-    filter: grayscale(0.2);
+    filter: grayscale(0.3);
     transition: all 150ms ease-in-out;
 }
 
