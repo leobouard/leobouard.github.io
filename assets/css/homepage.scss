@@ -1,0 +1,21 @@
+---
+---
+
+.div_container {
+    height: 70rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_hero {
+    background-color: #342e37;
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.div_hero_text {
+    max-width: 950px;
+    color: #fff;
+}

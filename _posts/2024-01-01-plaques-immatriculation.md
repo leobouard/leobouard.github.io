@@ -15,7 +15,11 @@ foreach ($firstLetter in $letters) {
 
 $secondPart = [System.Collections.Generic.List[string]]@()
 foreach ($nb in $numbers) {
-    while ($nb.Length -ne 3) { $nb = "0$nb" }
+    $nb = switch ("$nb".Length) {
+        1       { "00$nb" }
+        2       { "0$nb" }
+        default { $nb }
+    }
     $secondPart.Add([string]$nb)
 }
 

@@ -67,65 +67,17 @@ nav > a:first-child {
     float: left;
 }
 
-/* --- CONTENT --- */
+main {
 
-section {
-    min-height: 85%;
-    background-color: #fff;
-    padding: 30px 50px;
-    margin: auto;
-    max-width: 950px;
-    overflow: hidden;
-    box-shadow: 0 0 5px 0 #00000040;
-
-    /* --- BUTTON LINK --- */
-
-    .buttons {
-        display: flex;
-        justify-content: space-between;
+    section {
+        min-height: 85%;
+        background-color: #fff;
+        padding: 30px 50px;
+        margin: auto;
+        max-width: 950px;
+        overflow: hidden;
+        box-shadow: 0 0 5px 0 #00000040;
     }
-
-    .buttonNext {
-        text-align: right;
-        margin-top: 30px;
-        margin-bottom: 15px;
-        
-        a {
-            background-color: #5E7A6F;
-            color: #fff;
-            font-weight: 600;
-            padding: 8px 15px;
-            border-radius: 30px;
-        }
-
-        a:hover {
-            color: #fff;
-        }
-    }
-
-    .buttonBack {
-        text-align: left;
-        margin-top: 30px;
-        margin-bottom: 15px;
-        
-        a {
-            background-color: #214263;
-            color: #fff;
-            font-weight: 600;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border: 0;
-        }
-
-        a:hover {
-            color: #fff;
-            background-color: #3a75af;
-        }
-    }
-
-    /* --- TEXT --- */
 
     a {
         color: #214263;
@@ -217,7 +169,7 @@ section {
         border: 1px solid #ddd;
         padding: 20px;
     }
-    
+
     pre > code {
         white-space: pre-wrap;
         word-wrap: normal;
@@ -231,7 +183,7 @@ section {
         .c, .cm       { color: #008000; } /*Commentaires*/
         .mi           { color: #01633F; } /*Entiers*/ 
     }
-    
+
     p > code, li > code {
         border-radius: 5px;
         background-color: #f2f2f2;
@@ -257,6 +209,7 @@ section {
     table {
         width: 100%;
     }
+
 }
 
 /* --- FOOTER --- */
