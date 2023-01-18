@@ -44,7 +44,11 @@
     font-size: 18px;
 }
 
-@media print, screen and (max-width: 600px) {
+@media print, screen and (max-width: 900px) {
+
+    .div_hero {
+        padding: 15px;
+    }
 
     .div_hero_image {
         max-width: 250px;
