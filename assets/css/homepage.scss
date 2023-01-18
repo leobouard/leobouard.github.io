@@ -13,9 +13,14 @@
     padding: 100px 50px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .div_hero_text {
     max-width: 950px;
     color: #fff;
+
+    h1 {
+        color: #fafafa;
+    }
 }
