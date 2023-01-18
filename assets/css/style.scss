@@ -267,7 +267,7 @@ footer {
         padding: 15px 10px;
     }
 
-    section {
+    main section {
         padding: 15px;
         min-height: 80%;
         overflow: scroll;
@@ -277,14 +277,7 @@ footer {
         margin: auto;
         max-width: 950px;
     }
-
-    header {
-        position: sticky;
-        z-index: 1000;
-        box-shadow: 0 5px 5px -5px #00000040;
-        transition: all 200ms ease-in-out;
-    }
-
+    
     pre {
         padding: 10px;
         overflow: scroll;
