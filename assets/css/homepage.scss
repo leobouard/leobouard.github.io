@@ -16,14 +16,30 @@
     padding: 100px 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .div_hero_text {
-    max-width: 950px;
+    max-width: 450px;
+    margin: 25px;
     color: #fff;
 
     h1 {
         color: #fafafa;
     }
+}
+
+.div_hero_image {
+    max-width: 450px;
+    margin: 25px;
+}
+
+.a_hero_button_1 {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #f9c80e;
+    color: #342e37;
+    font-weight: bold;
 }
