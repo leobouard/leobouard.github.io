@@ -19,7 +19,7 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
     </div>
 </div>
 
-<section>
+<section style="margin-top: -50px;">
     <h2>Les derniers articles</h2>
     <div class="posts">
         {% assign listed_posts = site.posts | where: "listed", true %}
