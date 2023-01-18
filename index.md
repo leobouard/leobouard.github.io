@@ -8,13 +8,9 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
     <div class="div_hero">
         <div class="div_hero_text">
             <h1 id="bienvenue">Bienvenue sur un blog qui se prend pas trop au sérieux</h1>
-            <p>LaBouaBouate est un blog technique pour partager des connaissances sur les technologies Microsoft (Active Directory, Microsoft 365, Azure AD…) et notamment <b>le langage de scripting PowerShell</b> (anciennement connu sous le nom de Windows PowerShell). Vous pourrez donc retrouver sur site :</p>
-            <ul>
-                <li>des articles techniques sur les produits Microsoft</li>
-                <li>des retours d’expériences dans des contextes professionnels</li>
-                <li>des défis PowerShell pour vous améliorer</li>
-                <li>quelques cours rapides</li>
-            </ul>
+            <p>Vous l'avez peut-être deviné rien qu'au nom ! Ici on parle de PowerShell et d'autres technologies Microsoft</p>
+            <a href=""></a>
+            <a href=""></a>
         </div>
     </div>
 </div>
