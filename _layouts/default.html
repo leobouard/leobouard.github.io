@@ -32,7 +32,7 @@
         <a href="/blog">Articles</a>
       </nav>
     </header>
-    <main>
+    <main {%if page.title == "Accueil"%}style="height: 94%;"{% endif %}>
       {{ content }}
     </main>
     <footer>
