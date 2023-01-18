@@ -34,7 +34,7 @@ header {
 }
 
 nav {
-    background-color: #342e37;
+    background-color: #6E8F82;
     display: block;
     margin: 0;
     overflow: hidden;
@@ -42,7 +42,7 @@ nav {
 }
 
 nav > a {
-    color: #fff;
+    color: #342E37;
     text-align: center;
     font-weight: bold;
     padding: 18px;
@@ -65,7 +65,6 @@ nav > a:first-child {
 }
 
 main {
-
     min-height: 90%;
 
     section {
@@ -75,7 +74,7 @@ main {
         margin: auto;
         max-width: 950px;
         overflow: hidden;
-        box-shadow: 0 0 5px 0 #00000040;
+        /* box-shadow: 0 0 5px 0 #00000040; */
     }
 
     a {
