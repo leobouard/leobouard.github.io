@@ -43,3 +43,12 @@
     color: #342e37;
     font-size: 18px;
 }
+
+@media print, screen and (max-width: 600px) {
+
+    .div_hero_image {
+        max-width: 250px;
+        margin: 10px;
+    }
+
+}
