@@ -2,29 +2,33 @@
 layout: default
 ---
 
-<div class="div_topnav_buttons">
-    {% if page.prevLink %}
-        <a href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
-    {% else %}
-        <a href="/blog">← Tous les articles</a>
-    {% endif %}
-    {% if page.nextLink %}
-        <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>{{ page.nextLink.name }} →</a>
-    {% endif %}
+{% if page.icon %}
+<div class="postBanner">
+    {{ page.icon }}
 </div>
-
-<h1>{{ page.title }}</h1>
-<small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
-
-{{ content }}
-
-<div class="div_bottomnav_buttons">
-    {% if page.prevLink %}
-        <a class="a_button_prev" href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
-    {% else %}
-        <a class="a_button_prev" href="{{ page.id }}">↑ Retour en haut de page</a>
-    {% endif %}
-    {% if page.nextLink %}
-        <a class="a_button_next" href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
-    {% endif %}
-</div>
+{% endif %}
+<section>
+    <div class="div_topnav_buttons">
+        {% if page.prevLink %}
+            <a href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
+        {% else %}
+            <a href="/blog">← Tous les articles</a>
+        {% endif %}
+        {% if page.nextLink %}
+            <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>{{ page.nextLink.name }} →</a>
+        {% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    <small>Le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
+    {{ content }}
+    <div class="div_bottomnav_buttons">
+        {% if page.prevLink %}
+            <a class="a_button_prev" href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
+        {% else %}
+            <a class="a_button_prev" href="{{ page.id }}">↑ Retour en haut de page</a>
+        {% endif %}
+        {% if page.nextLink %}
+            <a class="a_button_next" href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
+        {% endif %}
+    </div>
+</section>

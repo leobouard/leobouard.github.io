@@ -1,5 +1,6 @@
 ---
 permalink: /cv
+layout: standard
 title: "CV"
 description: "Toutes mes expériences, mes formations et certifications"
 ---

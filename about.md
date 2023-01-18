@@ -1,5 +1,6 @@
 ---
 permalink: /about
+layout: standard
 title: "A propos"
 description: "Plus d'informations sur le site web et moi-même"
 ---
