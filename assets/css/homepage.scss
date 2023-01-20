@@ -32,7 +32,7 @@
 }
 
 .div_hero_image {
-    max-width: 450px;
+    max-width: 300px;
     margin: 25px;
 }
 
@@ -41,7 +41,7 @@
     border-radius: 30px;
     background-color: #f9c80e;
     color: #342e37;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 @media print, screen and (max-width: 900px) {
@@ -51,7 +51,7 @@
     }
 
     .div_hero_image {
-        max-width: 250px;
+        max-width: 150px;
         margin: 10px;
     }
 
