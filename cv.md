@@ -15,7 +15,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 ## Compétences
 
-<div>
+<div style="margin: 20px 0px;">
     <div class="skill">
         <span>PowerShell</span>
         <div class="progressBar">
