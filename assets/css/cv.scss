@@ -60,6 +60,13 @@
     height: 64px;
 }
 
+.skills {
+    margin: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .skill {
     margin: 10px 0px;
     display: flex;
