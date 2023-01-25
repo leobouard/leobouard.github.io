@@ -19,20 +19,17 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
     <div class="certification">
         <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" alt="logo Microsoft Exam">
         <hr>
-        <h3>MS-100</h3>
-        <p>Microsoft 365 Identity and Services</p>
+        <h3>Microsoft 365 Identity and Services</h3>
     </div>
     <div class="certification">
         <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
         <hr>
-        <h3>MS-900</h3>
-        <p>Microsoft 365 Fundamentals</p>
+        <h3>Microsoft 365 Fundamentals</h3>
     </div>
     <div class="certification">
         <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
         <hr>
-        <h3>AZ-900</h3>
-        <p>Azure Fundamentals</p>
+        <h3>Azure Fundamentals</h3>
     </div>
 </div>
 
@@ -84,7 +81,7 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             </div>
         </div>
         <div>
-            <p>Groupe international présent sur 50 pays et avec 80 entités différentes. Presque 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.</p>
+            <p>Groupe international présent sur 50 pays et avec 80 entités différentes. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.</p>
         </div>
         <div class="experience">
             <h4>Ingénieur système</h4>
@@ -93,8 +90,8 @@ Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maxi
             <ul>
                 <li>segmentation des permissions dans Azure AD avec les unités administratives</li>
                 <li>migration du mode d'attribution des licences Microsoft 365</li>
-                <li>audit des stratégies de mot de passe Active Directory</li>
-                <li>migration et déploiement de l'authentification multi-facteur (en cours)</li>
+                <li>migration et déploiement de l'authentification multi-facteur</li>
+                <li>audit, sécurisation et mise en place du modèle N-tiers sur Active Directory (en cours)</li>
             </ul></p>
         </div>
         <div class="experience">
