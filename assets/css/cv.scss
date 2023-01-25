@@ -59,3 +59,32 @@
 .enterprise > div > img {
     height: 64px;
 }
+
+.skill {
+    margin: 10px;
+    display: flex;
+    padding: 5px;
+}
+
+.skill > span {
+    width: 150px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.progressBar {
+    background-color: #f2f2f2;
+    width: 250px;
+    height: 15px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.progressBar > div {
+    height: 100%;
+    background-color: linear-gradient(45deg, rgba(17,85,251,1) 0%, rgba(83,199,247,1) 100%);;
+    border-radius: 5px;
+}
