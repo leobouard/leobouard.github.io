@@ -40,6 +40,24 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             <div class="progressBarContent" style="width: 70%;"></div>
         </div>
     </div>
+    <div class="skill">
+        <span>Exchange</span>
+        <div class="progressBar">
+            <div class="progressBarContent" style="width: 60%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Teams</span>
+        <div class="progressBar">
+            <div class="progressBarContent" style="width: 50%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>SharePoint</span>
+        <div class="progressBar">
+            <div class="progressBarContent" style="width: 50%;"></div>
+        </div>
+    </div>
 </div>
 
 ## Examens et certifications
