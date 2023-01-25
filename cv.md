@@ -9,9 +9,12 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 ## Résumé
 
-Ingénieur système spécialisé dans les infrastructures et l'écosystème Microsoft, notamment sur Active Directory, Exchange, Microsoft 365 et Azure AD.
+Ingénieur système spécialisé dans les infrastructures, technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, de sécurisation et d'automatisation. J'accorde beaucoup d'importance à la documentation et j'essaie de faire en sorte que mon travail soit toujours en accord avec les bonnes pratiques, résilient et le plus simple possible.
 
-Je sais faire deux trois trucs en PowerShell, et j'essaie de le partager au maximum sur mon blog : <https://www.labouabouate.fr/>.
+Je partage également mes connaissances notamment sur PowerShell via mon site web [LaBouaBouate](https://www.labouabouate.fr)
+
+## Compétences
+
 
 ## Examens et certifications
 
