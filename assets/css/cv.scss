@@ -64,7 +64,7 @@
     margin: 20px 0px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .skill {
@@ -74,7 +74,7 @@
 }
 
 .skill > span {
-    width: 150px;
+    width: 130px;
     height: 15px;
     display: flex;
     align-items: center;
@@ -82,7 +82,7 @@
 
 .progressBar {
     background-color: #f2f2f2;
-    width: 250px;
+    width: 200px;
     height: 15px;
     border-radius: 25px;
     position: relative;
