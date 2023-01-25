@@ -19,28 +19,28 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     <div class="skill">
         <span>PowerShell</span>
         <div class="progressBar">
-            <div width="90%"></div>
+            <div class="progressBarContent" width="90%"></div>
         </div>
     </div>
     <div class="skill">
         <span>Active Directory</span>
         <div class="progressBar">
-            <div width="80%"></div>
+            <div class="progressBarContent" width="80%"></div>
         </div>
     </div>
     <div class="skill">
         <span>Microsoft 365</span>
         <div class="progressBar">
-            <div width="80%"></div>
+            <div class="progressBarContent" width="80%"></div>
         </div>
     </div>
     <div class="skill">
         <span>Azure AD</span>
         <div class="progressBar">
-            <div width="70%"></div>
+            <div class="progressBarContent" width="70%"></div>
         </div>
     </div>
-<div>
+</div>
 
 ## Examens et certifications
 
