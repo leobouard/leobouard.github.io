@@ -38,6 +38,7 @@
 .div_hero_image {
     max-width: 300px;
     background-color: #f6f6ff;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -52,6 +53,10 @@
 .a_hero_button_1 {
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #f9c80e;
+    background-color: #6f6cb1;
+    color: #fff;
+}
+
+.a_hero_button_1:hover {
     color: #fff;
 }
