@@ -70,25 +70,19 @@ Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et re
       <td><div style="width: 65px; height: 25px; background-color: #F9C80E; border-radius: 5px;"></div></td>
     </tr>
     <tr>
-      <td>Bannière</td>
-      <td>Vert</td>
-      <td>#7EA090</td>
-      <td><div style="width: 65px; height: 25px; background-color: #7EA090; border-radius: 5px;"></div></td>
-    </tr>
-    <tr>
       <td>Boutons principaux</td>
-      <td>Vert</td>
-      <td>#5E7A6F</td>
+      <td>Violet</td>
+      <td>#6f6cb1</td>
       <td>
-        <div style="width: 65px; height: 25px; background-color: #5E7A6F; border-radius: 5px;"></div>
+        <div style="width: 65px; height: 25px; background-color: #6f6cb1; border-radius: 5px;"></div>
       </td>
     </tr>
     <tr>
       <td>Boutons secondaires</td>
-      <td>Marron</td>
-      <td>#8C6E6C</td>
+      <td>Turquoise</td>
+      <td>#167e92</td>
       <td>
-        <div style="width: 65px; height: 25px; background-color: #8C6E6C; border-radius: 5px;"></div>
+        <div style="width: 65px; height: 25px; background-color: #167e92; border-radius: 5px;"></div>
       </td>
     </tr>
     <tr>
