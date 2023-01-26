@@ -169,20 +169,25 @@ div.favoriteMarker {
 
 .a_button_prev, .a_button_next {
     padding: 8px 15px;
-    color: #fff;
     border-radius: 5px;
 }
 
 .a_button_prev {
-    background-color: #197F94;
+    background-color: #fff;
+    color: #6B70B5;
+    border: 2px solid #6B70B5;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .a_button_prev:hover {
-    color: #fff;
+    color: #6B70B5;
 }
 
 .a_button_next {
     background-color: #6B70B5;
+    color: #fff;
 }
 
 .a_button_next:hover {
