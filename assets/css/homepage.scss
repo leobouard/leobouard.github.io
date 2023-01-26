@@ -56,8 +56,19 @@
     color: #fff;
 }
 
+.a_hero_button_2 {
+    padding: 9px 20px;
+    border-radius: 5px;
+    color: #6f6cb1;
+    border: 2px solid;
+}
+
 .a_hero_button_1:hover {
     color: #fff;
+}
+
+.a_hero_button_2:hover {
+    color: #6f6cb1;
 }
 
 @media print, screen and (max-width: 800px) {
