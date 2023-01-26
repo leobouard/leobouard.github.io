@@ -169,6 +169,8 @@ div.favoriteMarker {
 
 .a_button_prev, .a_button_next {
     border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .a_button_prev {
