@@ -6,9 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(/assets/images/hero_image.webp);
-    background-repeat: round;
-    background-attachment: fixed;
+    background: linear-gradient(45deg, #f1f1fd, #fafafa);
 }
 
 .div_hero {
@@ -20,6 +18,7 @@
     border-radius: 5px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 5px 0px #00000030;
 }
 
 .div_hero_text {
