@@ -14,6 +14,7 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
             <p>Ici on parle de PowerShell et d'autres technologies Microsoft, avec des cours, des défis et des retours d'expériences.</p>
             <br>
             <a class="a_hero_button_1" href="/blog">Voir mes articles</a>
+            <a class="a_hero_button_2" href="/cv">Mon CV</a>
         </div>
     </div>
 </div>
