@@ -89,17 +89,16 @@ div.favoriteMarker {
 }
 
 .postBanner {
-    margin-bottom: -50px;
     position: relative;
-    height: 200px;
-    line-height: 150px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    user-select: none;
+    margin-bottom: -50px;
+    margin-top: -50px;
+    height: 225px;
     font-size: 100px;
-    background-image: url(/assets/images/hero_image.webp);
-    background-repeat: round;
-    background-attachment: fixed;
+    background: linear-gradient(45deg, #E4E4F1, #FEFAEC);
+    user-select: none;
     z-index: -1;
 }
 
