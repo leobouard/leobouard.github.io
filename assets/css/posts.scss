@@ -168,17 +168,14 @@ div.favoriteMarker {
 }
 
 .a_button_prev, .a_button_next {
-    padding: 8px 15px;
     border-radius: 5px;
 }
 
 .a_button_prev {
+    padding: 7px 15px;
     background-color: #fff;
     color: #6B70B5;
-    border: 2px solid #6B70B5;
-    height: 20px;
-    display: inline-flex;
-    align-items: center;
+    border: 2px solid;
 }
 
 .a_button_prev:hover {
@@ -186,6 +183,7 @@ div.favoriteMarker {
 }
 
 .a_button_next {
+    padding: 8px 15px;
     background-color: #6B70B5;
     color: #fff;
 }
