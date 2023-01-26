@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, #f1f1fd, #fafafa);
+    background: linear-gradient(45deg, #E4E4F1, #FEFAEC);
 }
 
 .div_hero {
@@ -18,7 +18,7 @@
     border-radius: 5px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0px 5px 0px #00000030;
+    box-shadow: 0px 0px 5px 0px #00000030;
 }
 
 .div_hero_text {
@@ -35,7 +35,7 @@
 
 .div_hero_image {
     max-width: 300px;
-    background-color: #f6f6ff;
+    background-color: #f2f2f8;
     display: flex;
     justify-content: center;
     align-items: center;
