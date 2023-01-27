@@ -7,7 +7,7 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
 <div class="div_container">
     <div class="div_hero">
         <div class="div_hero_image">
-            <span>🫥</span>
+            <span>👌</span>
         </div>
         <div class="div_hero_text">
             <h1 id="bienvenue">Bienvenue sur un blog qui se prend pas trop au sérieux</h1>
