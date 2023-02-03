@@ -1,6 +1,8 @@
 ---
 ---
 
+$borderColor: #ddd;
+
 .certification {
     margin: 5px;
     height: 200px;
@@ -9,7 +11,7 @@
     flex-basis: 135px;
     border-radius: 5px;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid $borderColor;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -27,7 +29,7 @@
     display: block;
     margin-left: 35px;
     padding-left: 15px;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid $borderColor;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -44,7 +46,7 @@
     padding: 5px;
     border-radius: 5px;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid $borderColor;
 }
 
 .enterprise > div {
