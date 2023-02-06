@@ -58,13 +58,11 @@ $uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/ass
 $Global:interface = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $xaml))
 ```
 
-### Afficher l'interface graphique
-
-```powershell
-$Global:interface.ShowDialog() | Out-Null
-```
-
 ### Créer des variables pour chaque élement de l'interface graphique
+
+Toutes les interactions que le code va avoir avec l'interface graphique va se faire à travers des variables correspondant à chaque élement. On va donc avoir une variable pour la boite de texte (textbox), une variable pour barre de progression, une variable pour les étiquettes (label), etc…
+
+Voici donc un bout de code pour prendre tous les éléments XAML avec un attribut "Name" et créer une variable globale associée :
 
 ```powershell
 $xaml.SelectNodes("//*[@Name]") | ForEach-Object { 
@@ -72,8 +70,38 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object {
 }
 ```
 
+### Afficher l'interface graphique
+
+Une fois que toutes les étapes préliminaires sont terminées, on peut enfin afficher notre interface graphique ! Pour ça, on utilise la méthode `ShowDialog()` sur la variable qui contient notre interface. Le `$null =` avant la commande permet d'empêcher d'afficher le résultat dans le terminal.
+
+```powershell
+$null = $Global:interface.ShowDialog()
+```
+
+### Créer des actions pour chaque bouton
+
 ## Correction
 
 ```powershell
+Add-Type -AssemblyName PresentationFramework
+$uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/assets/files/interface.xaml"
+[xml]$Global:xaml = (Invoke-WebRequest -Uri $uri).Content
+$Global:interface = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $xaml))
+$xaml.SelectNodes("//*[@Name]") | ForEach-Object { 
+    Set-Variable -Name ($_.Name) -Value $interface.FindName($_.Name) -Scope Global
+}
 
+$textboxResponse.Add_KeyDown({
+
+})
+
+$buttonRetry.Add_Click({
+
+})
+
+$buttonHighScore.Add_Click({
+
+})
+
+$null = $Global:interface.ShowDialog()
 ```
