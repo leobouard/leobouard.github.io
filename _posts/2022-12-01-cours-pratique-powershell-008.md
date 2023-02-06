@@ -28,7 +28,7 @@ Comme cette partie est relativement compliquée, je vous donne quelques ressourc
 
 - [Mon code XAML utilisé pour l'interface WPF](https://github.com/leobouard/leobouard.github.io/blob/main/assets/files/interface.xaml)
 - [Créer une interface graphique WPF en PowerShell - Akril.net](https://akril.net/creer-une-interface-graphique-wpf-en-powershell/)
-- [A propos de l'encodage de caractères - PowerShell | Microsoft Learn](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding)
+- [A propos de l'encodage de caractères - PowerShell \| Microsoft Learn](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding)
 
 ---
 
