@@ -30,6 +30,7 @@ Comme cette partie est relativement compliquée, je vous donne quelques ressourc
 
 - [Mon code XAML utilisé pour l'interface WPF](https://github.com/leobouard/leobouard.github.io/blob/main/assets/files/interface.xaml)
 - [Créer une interface graphique WPF en PowerShell - Akril.net](https://akril.net/creer-une-interface-graphique-wpf-en-powershell/)
+- [A propos des étendues - PowerShell \| Microsoft Learn](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes)
 - [A propos de l'encodage de caractères - PowerShell \| Microsoft Learn](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding)
 
 ---
@@ -39,6 +40,37 @@ Comme cette partie est relativement compliquée, je vous donne quelques ressourc
 1. Afficher l'interface graphique
 2. Créer des évenements pour chaque action
 3. Adapter le code PowerShell
+
+### Charger l'interface graphique
+
+Ce bout de code est assez barbare, mais il y a peu de chose à comprendre donc ne vous en faites pas !
+
+Dans un premier temps, on ajoute les pré-requis nécessaires à l'affichage de notre interface WPF avec le `Add-Type`. Une fois ajouté, on s'occupe de récupérer et de stocker le contenu de notre fichier XAML dans la variable globale `$xaml`. Sans l'exemple, je récupère le XAML via la commande `Invoke-WebRequest` puisque celui-ci est hébergé sur GitHub. Si vous souhaitez utiliser plutôt un fichier local, vous pouvez utiliser la commande `Get-Content`.
+
+Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la dernière ligne de notre exemple pour créer un nouvel objet du type interface graphique, stocké dans la variable globale `$interface`.
+
+Il ne s'agit bien évidemment pas de connaitre ces commandes par coeur, l'idée est simplement de savoir à quoi elle servent.
+
+```powershell
+Add-Type -AssemblyName PresentationFramework
+$uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/assets/files/interface.xaml"
+[xml]$Global:xaml = (Invoke-WebRequest -Uri $uri).Content
+$Global:interface = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $xaml))
+```
+
+### Afficher l'interface graphique
+
+```powershell
+$Global:interface.ShowDialog() | Out-Null
+```
+
+### Créer des variables pour chaque élement de l'interface graphique
+
+```powershell
+$xaml.SelectNodes("//*[@Name]") | ForEach-Object { 
+    Set-Variable -Name ($_.Name) -Value $interface.FindName($_.Name) -Scope Global
+}
+```
 
 ## Correction
 
