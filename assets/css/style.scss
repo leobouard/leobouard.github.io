@@ -161,6 +161,7 @@ main {
 
     pre > code {
         white-space: pre;
+        overflow: scroll;
 
         /*PowerShell*/
         .bp, .nv, .bp { color: #001080; } /*Variables*/
@@ -270,7 +271,6 @@ footer {
 
     pre {
         padding: 10px;
-        overflow: scroll;
     }
 
     footer {
