@@ -22,6 +22,8 @@ Nouveau départ ! On va implémenter une interface graphique réalisée avec Win
 
 ### Résultat attendu
 
+![Interface graphique finale en WPF](/assets/images/final-results.gif)
+
 ### Ressources
 
 Comme cette partie est relativement compliquée, je vous donne quelques ressources :
