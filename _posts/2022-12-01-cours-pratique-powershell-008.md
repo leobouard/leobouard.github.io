@@ -50,7 +50,6 @@ Une interface graphique XAML est disponible ci-dessous, vous pouvez l'utiliser s
         <ProgressBar Name="progressbarCoupsRestants" Minimum="0" Maximum="10" Height="10" Foreground="#3590F3" Background="#F2F2F2" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
-'@
 ```
 
 ---

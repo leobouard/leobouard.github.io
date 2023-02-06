@@ -157,11 +157,11 @@ main {
         background-color: #fafafa;
         border: 1px solid #ddd;
         padding: 20px;
+        overflow: scroll;
     }
 
     pre > code {
         white-space: pre;
-        overflow: scroll;
 
         /*PowerShell*/
         .bp, .nv, .bp { color: #001080; } /*Variables*/
