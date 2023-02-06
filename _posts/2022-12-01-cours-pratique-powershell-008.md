@@ -13,7 +13,16 @@ prevLink:
 
 ## Consigne
 
+Nouveau départ ! On va implémenter une interface graphique réalisée avec Windows Presentation Foundation (WPF) et stockée dans un fichier XAML externe au script. Si vous le souhaitez, vous pouvez faire votre propre interface graphique en utilisant Visual Studio Community par exemple. Je vous recommande tout de même d'utiliser le fichier que je propose comme base de travail.
+
+<div class="information">
+  <h4>P'tit conseil</h4>
+  <p>Pour cette partie, je vous recommande de créer un nouveau script plutôt qu'adapter le script existant. De cette manière, vous pourrez créer la structure liée à l'interface graphique, puis copier-coller les bouts de code pertinents en dessous de chaque bouton.</p>
+</div>
+
 ### Résultat attendu
+
+
 
 ### Ressources
 
@@ -55,6 +64,10 @@ Une interface graphique XAML est disponible ci-dessous, vous pouvez l'utiliser s
 ---
 
 ## Etape par étape
+
+1. Afficher l'interface graphique
+2. Créer des évenements pour chaque action
+3. Adapter le code PowerShell
 
 ## Correction
 
