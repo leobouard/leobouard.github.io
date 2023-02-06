@@ -223,12 +223,7 @@ div.favoriteMarker {
         height: 150px;
     }
 
-    article > hr {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .articleIcon {
-        line-height: 15px;
+    .articleIcon, article > hr, article > small {
+        display: none;
     }
 }
