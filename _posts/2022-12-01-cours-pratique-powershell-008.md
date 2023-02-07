@@ -15,14 +15,14 @@ prevLink:
 
 Nouveau départ ! On va implémenter une interface graphique réalisée avec Windows Presentation Foundation (WPF) et stockée dans un fichier XAML externe au script. Si vous le souhaitez, vous pouvez faire votre propre interface graphique en utilisant Visual Studio Community par exemple. Je vous recommande tout de même d'utiliser le fichier que je propose comme base de travail.
 
+Dans un premier temps, on va juste vouloir lancer l'interface graphique et laisser le joueur entrer une estimation dans la boite de texte. Lorsque le joueur appuie sur la touchée "Entrée" de son clavier, la boite de texte est alors vidée de son contenu et l'estimation est affichée dans la console.
+
 <div class="information">
   <h4>Recommandation</h4>
   <p>Pour cette partie, je vous recommande de créer un nouveau script plutôt qu'adapter le script existant. De cette manière, vous pourrez créer la structure liée à l'interface graphique, puis copier-coller les bouts de code pertinents en dessous de chaque bouton.</p>
 </div>
 
 ### Résultat attendu
-
-![Interface graphique finale en WPF](/assets/images/final-results.gif)
 
 ### Ressources
 
@@ -80,7 +80,17 @@ Le `$null =` avant la commande permet d'empêcher d'afficher un résultat dans l
 $null = $Global:interface.ShowDialog()
 ```
 
-### Créer des actions pour chaque bouton
+### Ajouter une action pour la boite de texte
+
+```powershell
+$textboxResponse.Add_KeyDown({
+    if ($_.Key -eq "Return") {
+        $answer = [int]($textboxResponse.Text)
+        Write-Host $answer
+        $textboxResponse.Text = $null
+    }
+})
+```
 
 ## Correction
 
@@ -94,15 +104,11 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object {
 }
 
 $textboxResponse.Add_KeyDown({
-
-})
-
-$buttonRetry.Add_Click({
-
-})
-
-$buttonHighScore.Add_Click({
-
+    if ($_.Key -eq "Return") {
+        $answer = [int]($textboxResponse.Text)
+        Write-Host $answer
+        $textboxResponse.Text = $null
+    }
 })
 
 $null = $Global:interface.ShowDialog()
