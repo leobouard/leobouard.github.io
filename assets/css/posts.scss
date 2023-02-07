@@ -213,7 +213,6 @@ span.articleTitle {
     }
 
     article {
-        padding: 10px;
         margin: 10px;
     }
 
@@ -222,13 +221,11 @@ span.articleTitle {
 @media print, screen and (max-width: 560px) {
 
     article {
-        max-width: 95%;
+        max-width: 100%;
+        margin: 0px;
         flex: none;
         display: flex;
         height: 150px;
     }
 
-    .articleIcon, article > hr, article > small {
-        display: none;
-    }
 }
