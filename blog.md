@@ -12,7 +12,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
 <div class="posts">
     {% assign listed_posts = site.posts | where: "listed", true %}
     {% for post in listed_posts %}
-        <a href="{{ post.id }}">
+        <a class="noDecoration" href="{{ post.id }}">
             <article>
                 {% if post.favorite %}<div class="favoriteMarker">⭐</div>{% endif %}
                 <small>{{ post.tags }}</small>
