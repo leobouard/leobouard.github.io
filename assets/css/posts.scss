@@ -36,10 +36,6 @@ article > small {
     user-select: none;
 }
 
-article > a:hover {
-    text-decoration: none;
-}
-
 article:hover {
     box-shadow: 0 0 5px 0 #00000040;
 
@@ -83,7 +79,9 @@ div.articleText > span {
 
 span.articleTitle {
     font-size: 16px;
+    font-weight: 600;
     margin: 10px 0px;
+    color: #342E37
 }
 
 .articleIcon {
