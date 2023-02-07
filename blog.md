@@ -12,20 +12,18 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
 <div class="posts">
     {% assign listed_posts = site.posts | where: "listed", true %}
     {% for post in listed_posts %}
-        <article>
-            <small>{{ post.tags }}</small>
-            {% if post.favorite %}
-            <div class="favoriteMarker">⭐</div>
-            {% endif %}
-            <a href="{{ post.id }}">
-                <p class="articleIcon">{{ post.icon }}</p>
-            </a>
-            <hr>
-            <div class="articleDescription">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.description }}</p>
-                <a class="articleButton" href="{{ post.id }}">Continuer →</a>
-            </div>
-        </article>
+        <a href="{{ post.id }}">
+            <article>
+                {% if post.favorite %}<div class="favoriteMarker">⭐</div>{% endif %}
+                <small>{{ post.tags }}</small>
+                <div class="articleThumbnail">
+                    <span class="articleIcon">{{ post.icon }}</span>
+                </div>
+                <div class="articleText">
+                    <span class="articleTitle">{{ post.title }}</span>
+                    <span class="articleDescription">{{ post.description }}</span>
+                </div>
+            </article>
+        </a>
     {% endfor %}
 </div>
