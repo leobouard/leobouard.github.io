@@ -26,6 +26,7 @@ article {
 
 article > small {
     border: 1px solid #ddd;
+    font-weight: 400;
     border-radius: 5px;
     padding: 0px 5px;
     background-color: #fff;
@@ -40,7 +41,7 @@ article:hover {
     filter: grayscale(0) saturate(1.2);
 }
 
-a.noDecoration {
+a.noDecoration:hover {
     text-decoration: none;
     color: unset
 }
