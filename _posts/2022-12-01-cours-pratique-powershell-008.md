@@ -72,7 +72,7 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object {
 
 ### Afficher l'interface graphique
 
-Une fois que toutes les étapes préliminaires sont terminées, on peut enfin afficher notre interface graphique ! Pour ça, on utilise la méthode `ShowDialog()` sur la variable qui contient notre interface. 
+Une fois que toutes les étapes préliminaires sont terminées, on peut enfin afficher notre interface graphique ! Pour ça, on utilise la méthode `ShowDialog()` sur la variable qui contient notre interface.
 
 Le `$null =` avant la commande permet d'empêcher d'afficher un résultat dans le terminal.
 
