@@ -122,7 +122,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
         </div>
         <div>
-            <p>Groupe international présent sur 50 pays et avec 80 entités différentes. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.</p>
+            <p>Groupe international présent sur 50 pays à travers 80 entités. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.</p>
         </div>
         <div class="experience">
             <h4>Ingénieur système</h4>
