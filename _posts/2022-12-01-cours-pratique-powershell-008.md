@@ -24,6 +24,8 @@ Dans un premier temps, on va juste vouloir lancer l'interface graphique et laiss
 
 ### Résultat attendu
 
+![Démonstration du résultat attendu pour la partie 8](../assets/images/resultat-attendu_partie8.webp)
+
 ### Ressources
 
 Comme cette partie est relativement compliquée, je vous donne quelques ressources :
