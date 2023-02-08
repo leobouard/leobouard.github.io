@@ -7,89 +7,10 @@ description: "Plus d'informations sur le site web et moi-même"
 
 # A propos
 
-## A propos de moi
+Bienvenue sur LaBouaBouate ! Ce site web est un projet personnel pour monter en compétence sur le développement web statique (HTML, CSS et Liquid) et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Ici vous ne trouvez pas de publicité, pas de cookie ou autre tracker, juste un peu de contenu que j'espère vous sera utile.
 
-Moi c'est Léo Bouard, ingénieur système & lead consultant chez [METSYS Grand-Ouest](https://www.metsys.fr/) @Rennes. Ça fait plus de 4 ans que j'ai commencé dans l'administration système (spécialisé sur les infrastructures Microsoft) sur des technologies comme :
-
-- Microsoft 365
-- Active Directory
-- Microsoft Exchange
-- Azure Active Directory
-- ...et évidemment PowerShell
-
-Pour plus d'informations sur mon parcours :
-
-- vous pouvez jeter un oeil à [mon CV](/cv)
-- ou consulter [mon profil LinkedIn]({{ site.linkedin }})
+Le meilleur moyen de me contacter au sujet d'un article est de m'envoyer un message sur [mon profil LinkedIn]({{ site.linkedin }}) ou de m'envoyer [un email](mailto:{{ site.emailAddress }}). Si vous voulez en savoir plus sur moi, vous pouvez jeter un coup d'oeil à [mon CV](/cv).
 
 ## Comment est fait le site web ?
 
-Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose donc sur le moteur [Jekyll](https://jekyllrb.com/docs/). Tout le code HTML & CSS du site a été réalisé par mes soins. Je ne suis pas développeur web, mais j'essaye au maximum de garder un bon niveau d'accessibilité et de performance.
-
-### Les ressources utilisées
-
-- [Coolors](https://coolors.co/) pour la génération de [palettes de couleurs](https://coolors.co/generate) et [l'adaptation des contrastes](https://coolors.co/contrast-checker/) pour l'accessibilité
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse/) pour l'audit de performance, de bonnes pratiques et d'accessibilité du site
-- [W3schools](https://www.w3schools.com/) et [Stack Overflow](https://stackoverflow.com/) pour l'aide sur générale HTML et CSS
-- [ChatGPT](https://chat.openai.com/chat) pour des coups de main sur la syntaxe de Liquid
-
-### Charte graphique
-
-<table>
-  <thead>
-    <tr>
-      <th>Utilisation</th>
-      <th>Couleur</th>
-      <th>Code</th>
-      <th>Aperçu</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Survol et accentuation légère</td>
-      <td>Blanc</td>
-      <td>#FAFAFA</td>
-      <td><div style="width: 65px; height: 25px; background-color: #FAFAFA; border-radius: 5px;"></div></td>
-    </tr>
-    <tr>
-      <td>Arrière-plan</td>
-      <td>Blanc</td>
-      <td>#F2F2F2</td>
-      <td><div style="width: 65px; height: 25px; background-color: #F2F2F2; border-radius: 5px;"></div></td>
-    </tr>
-    <tr>
-      <td>Bordures</td>
-      <td>Gris</td>
-      <td>#DDDDDD</td>
-      <td><div style="width: 65px; height: 25px; background-color: #DDDDDD; border-radius: 5px;"></div></td>
-    </tr>
-    <tr>
-      <td>Primaire</td>
-      <td>Or</td>
-      <td>#F9C80E</td>
-      <td><div style="width: 65px; height: 25px; background-color: #F9C80E; border-radius: 5px;"></div></td>
-    </tr>
-    <tr>
-      <td>Boutons principaux</td>
-      <td>Violet</td>
-      <td>#6f6cb1</td>
-      <td>
-        <div style="width: 65px; height: 25px; background-color: #6f6cb1; border-radius: 5px;"></div>
-      </td>
-    </tr>
-    <tr>
-      <td>Boutons secondaires</td>
-      <td>Turquoise</td>
-      <td>#167e92</td>
-      <td>
-        <div style="width: 65px; height: 25px; background-color: #167e92; border-radius: 5px;"></div>
-      </td>
-    </tr>
-    <tr>
-      <td>Titres et pied de page</td>
-      <td>Violet foncé</td>
-      <td>#342E37</td>
-      <td><div style="width: 65px; height: 25px; background-color: #342E37; border-radius: 5px;"></div></td>
-    </tr>
-  </tbody>
-</table>
+Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose sur le moteur [Jekyll](https://jekyllrb.com/docs/). Tout le code HTML & CSS est fait maison, avec la simplicité comme mot d'ordre (je ne suis pas un développeur web professionnel).
