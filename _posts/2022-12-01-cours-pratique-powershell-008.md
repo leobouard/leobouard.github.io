@@ -24,7 +24,7 @@ Dans un premier temps, on va juste vouloir lancer l'interface graphique et laiss
 
 ### Résultat attendu
 
-![Démonstration du résultat attendu pour la partie 8](../assets/images/resultat-attendu_partie8.webp)
+![Démonstration du résultat attendu pour la partie 8](/assets/images/resultat-attendu_partie8.webp)
 
 ### Ressources
 
@@ -77,6 +77,8 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object {
 Une fois que toutes les étapes préliminaires sont terminées, on peut enfin afficher notre interface graphique ! Pour ça, on utilise la méthode `ShowDialog()` sur la variable qui contient notre interface.
 
 Le `$null =` avant la commande permet d'empêcher d'afficher un résultat dans le terminal.
+
+**Attention :** cette commande doit-être placée à la dernière ligne du script.
 
 ```powershell
 $null = $Global:interface.ShowDialog()
