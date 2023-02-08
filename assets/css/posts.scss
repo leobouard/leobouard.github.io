@@ -39,6 +39,10 @@ article > small {
 article:hover {
     box-shadow: 0 0 5px 0 #00000040;
     filter: grayscale(0) saturate(1.2);
+
+    div.articleThumbnail {
+        background: linear-gradient(135deg,#e4e4f1, #fefaec);
+    }
 }
 
 a.noDecoration:hover {
@@ -58,11 +62,12 @@ div.favoriteMarker {
 }
 
 div.articleThumbnail {
-    background: #E4E4F1;
+    background: linear-gradient(45deg,#e4e4f1, #fefaec);
     height: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 150ms ease-in-out;
 }
 
 div.articleText {
