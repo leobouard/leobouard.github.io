@@ -53,8 +53,8 @@ Dans un premier temps, on ajoute les pré-requis nécessaires à l'affichage de 
 Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la dernière ligne de notre exemple pour créer un nouvel objet du type interface graphique, stocké dans la variable globale `$interface`.
 
 <div class="information">
-  <h4>Recommandation</h4>
-  <p>Nous sommes obligé d'utiliser des variables du type <pre>$Global:</pre> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne peuvent pas communiquer entre-elles.</p>
+  <h4>A propos des variables globales</h4>
+  <p>Nous sommes obligé d'utiliser des variables du type <code>$Global:</code> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne peuvent pas communiquer entre-elles.</p>
 </div>
 
 Il ne s'agit bien évidemment pas de connaitre ces commandes par coeur, l'idée est simplement de savoir à quoi elle servent.
