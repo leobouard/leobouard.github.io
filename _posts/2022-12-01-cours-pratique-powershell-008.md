@@ -54,7 +54,7 @@ Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la 
 
 <div class="information">
   <h4>A propos des variables globales</h4>
-  <p>Nous sommes obligé d'utiliser des variables du type <code>$Global:</code> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne peuvent pas communiquer entre-elles.</p>
+  <p>Nous sommes obligé d'utiliser des variables du type <code>$Global:</code> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne pourront pas communiquer entre-elles.</p>
 </div>
 
 Il ne s'agit bien évidemment pas de connaitre ces commandes par coeur, l'idée est simplement de savoir à quoi elle servent.
