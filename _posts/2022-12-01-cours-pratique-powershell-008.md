@@ -15,7 +15,7 @@ prevLink:
 
 Nouveau départ ! On va implémenter une interface graphique réalisée avec Windows Presentation Foundation (WPF) et stockée dans un fichier XAML externe au script. Si vous le souhaitez, vous pouvez faire votre propre interface graphique en utilisant Visual Studio Community par exemple. Je vous recommande tout de même d'utiliser le fichier que je propose comme base de travail.
 
-Dans un premier temps, on va juste vouloir lancer l'interface graphique et laisser le joueur entrer une estimation dans la boite de texte. Lorsque le joueur appuie sur la touchée "Entrée" de son clavier, la boite de texte est alors vidée de son contenu et l'estimation est affichée dans la console.
+Dans un premier temps, on va juste vouloir lancer l'interface graphique et laisser le joueur entrer une estimation dans la boite de texte. Lorsque le joueur appuie sur la touchée "Entrée" de son clavier, l'estimation est affichée dans la console et la boite de texte est vidée de son contenu.
 
 <div class="information">
   <h4>Recommandation</h4>
@@ -81,6 +81,15 @@ $null = $Global:interface.ShowDialog()
 ```
 
 ### Ajouter une action pour la boite de texte
+
+Avec une interface graphique, on va vouloir assigner des actions à certains éléments de l'interface. Par exemple : appuyer sur un bouton va afficher un message dans la console. Dans notre jeu, c'est quand le joueur soumet son chiffre que l'on veut déclencher une action. On pourrait très bien choisir d'assigner ça à un bouton, mais j'ai choisi d'opter plutôt sur un déclencheur via la boite de texte : on lance l'action dès que la touche "Entrée" est appuyée.
+
+Pour récupérer la liste de tous les déclencheurs possibles (car les déclencheurs ne sont pas les même suivant si l'élément est un bouton, une liste déroulante, une case à cocher, etc…) on utilise la commande PowerShell : `Get-Member -MemberType Event`. J'ai personnellement choisi le déclencheur "KeyDown" qui correspond à une touche appuyée, mais d'autres choix sont possibles.
+
+Pour déclarer une action à faire pour un déclencheur, la syntaxe est la suivante : `$textboxResponse.Add_KeyDown({ ... })`. Ensuite on ajoute une condition `if` pour vérifier que la touche qui a été appuyé correspond bien à la touche "Entrée" puis :
+
+1. On affiche l'estimation de l'utilisateur dans la console
+2. On vide le contenu de la boite de texte pour permettre une nouvelle estimation
 
 ```powershell
 $textboxResponse.Add_KeyDown({
