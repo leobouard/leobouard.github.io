@@ -39,9 +39,10 @@ Comme cette partie est relativement compliquée, je vous donne quelques ressourc
 
 ## Etape par étape
 
-1. Afficher l'interface graphique
-2. Créer des évenements pour chaque action
-3. Adapter le code PowerShell
+1. Charger l'interface graphique
+2. Créer des variables pour chaque élement de l'interface graphique
+3. Afficher l'interface graphique
+4. Ajouter une action pour la boite de texte
 
 ### Charger l'interface graphique
 
@@ -50,6 +51,11 @@ Ce bout de code est assez barbare, mais il y a peu de chose à comprendre donc n
 Dans un premier temps, on ajoute les pré-requis nécessaires à l'affichage de notre interface WPF avec le `Add-Type`. Une fois ajouté, on s'occupe de récupérer et de stocker le contenu de notre fichier XAML dans la variable globale `$xaml`. Sans l'exemple, je récupère le XAML via la commande `Invoke-WebRequest` puisque celui-ci est hébergé sur GitHub. Si vous souhaitez utiliser plutôt un fichier local, vous pouvez utiliser la commande `Get-Content`.
 
 Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la dernière ligne de notre exemple pour créer un nouvel objet du type interface graphique, stocké dans la variable globale `$interface`.
+
+<div class="information">
+  <h4>Recommandation</h4>
+  <p>Nous sommes obligé d'utiliser des variables du type <pre>$Global:</pre> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne peuvent pas communiquer entre-elles.</p>
+</div>
 
 Il ne s'agit bien évidemment pas de connaitre ces commandes par coeur, l'idée est simplement de savoir à quoi elle servent.
 
@@ -64,7 +70,7 @@ $Global:interface = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.Xml
 
 Toutes les interactions que le code va avoir avec l'interface graphique va se faire à travers des variables correspondant à chaque élement. On va donc avoir une variable pour la boite de texte (textbox), une variable pour barre de progression, une variable pour les étiquettes (label), etc…
 
-Voici donc un bout de code pour prendre tous les éléments XAML avec un attribut "Name" et créer une variable globale associée :
+Voici donc un bout de code pour prendre tous les éléments XAML avec un attribut "Name" et créer une variable globale associée.
 
 ```powershell
 $xaml.SelectNodes("//*[@Name]") | ForEach-Object { 
