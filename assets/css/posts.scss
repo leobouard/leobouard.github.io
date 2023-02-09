@@ -41,7 +41,10 @@ article:hover {
     filter: grayscale(0) saturate(1.2);
 
     div.articleThumbnail {
-        background: linear-gradient(45deg,#e4e4f1, #fefaec);
+        background-color: linear-gradient(45deg,#e4e4f1, #fefaec);
+        -webkit-transition: background-color 300ms linear;
+        -ms-transition: background-color 3000ms linear;
+        transition: background-color 300ms linear;
     }
 }
 
@@ -62,7 +65,7 @@ div.favoriteMarker {
 }
 
 div.articleThumbnail {
-    background: #e4e4f1;
+    background-color: #e4e4f1;
     height: 110px;
     display: flex;
     justify-content: center;
