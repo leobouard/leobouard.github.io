@@ -210,6 +210,24 @@ span.articleDescription {
 }
 
 
+div.side_buttons {
+    position: fixed;
+    flex-direction: column;
+    margin-left: -110px;
+    margin-top: -35px;
+}
+
+div.side_buttons > a {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
 @media print, screen and (max-width: 950px) {
 
     .postBanner {
