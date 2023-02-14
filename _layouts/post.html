@@ -7,7 +7,7 @@ layout: default
 </div>
 <section>
     <div class="side_buttons">
-        <a href="javascript:navigator.share({{page.id}})">❤️‍🔥</a>
+        <a href="javascript:document.documentElement.scrollTop = 0">❤️‍🔥</a>
         <a href="">👍</a>
         <a href="">🤨</a>
     </div>
@@ -28,7 +28,7 @@ layout: default
         {% if page.prevLink %}
             <a class="a_button_prev" href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
         {% else %}
-            <a class="a_button_prev" href="javascript:topFunction()">↑ Haut de page</a>
+            <a class="a_button_prev" href="javascript:document.documentElement.scrollTop = 0">↑ Haut de page</a>
         {% endif %}
         {% if page.nextLink %}
             <a class="a_button_next" href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
