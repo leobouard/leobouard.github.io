@@ -58,31 +58,19 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 <div class="posts">
     <div class="certification">
-        <div>
-            <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" alt="logo Microsoft Exam">
-        </div>
-        <div>
-            <span>Microsoft 365 Identity and Services</span>
-            <small>novembre 2022</small>
-        </div>
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" alt="logo Microsoft Exam">
+        <small>novembre 2022</small>
+        <span>Microsoft 365 Identity and Services</span>
     </div>
     <div class="certification">
-        <div>
-            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
-        </div>
-        <div>
-            <span>Microsoft 365 Fundamentals</span>
-            <small>août 2022</small>
-        </div>
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
+        <small>août 2022</small>
+        <span>Microsoft 365 Fundamentals</span>
     </div>
     <div class="certification">
-        <div>
-            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
-        </div>
-        <div>
-            <span>Azure Fundamentals</span>
-            <small>juin 2021</small>
-        </div>
+        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
+        <small>juin 2021</small>
+        <span>Azure Fundamentals</span>
     </div>
 </div>
 
