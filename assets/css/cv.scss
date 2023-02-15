@@ -25,6 +25,15 @@ $borderColor: #ddd;
     display: block;
 }
 
+div.certification > small {
+    display: block;
+}
+
+div.certification > span {
+    font-weight: 600;
+    display: block;
+}
+
 .experience {
     display: block;
     margin-left: 35px;
