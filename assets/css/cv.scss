@@ -6,7 +6,7 @@ $borderColor: #ddd;
 .certification {
     margin: 5px;
     height: 200px;
-    max-width: 135px;
+    max-width: 100px;
     flex: 1;
     flex-basis: 135px;
     border-radius: 5px;
@@ -29,6 +29,7 @@ div.certification > small {
 div.certification > span {
     font-weight: 600;
     display: block;
+    font-size: 15px;
 }
 
 .experience {
