@@ -1,6 +1,26 @@
 ---
 ---
 
+$primaryColor: #F9C80E;
+$secondaryColor: #6B70B5;
+$white: #FFF;
+$offWhite1: #FAFAFA;
+$offWhite2: #F2F2F2;
+$blue1: #3a75af;
+$blue2: #214263;
+$black: #000;
+$offBlack1: #342E37;
+
+$boxShadow: 0px 0px 5px 0px #00000050;
+
+@mixin titleDecoration {
+    text-decoration: underline;
+    text-decoration-color: $primaryColor;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+    text-underline-position: below;
+}
+
 html {
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 15px;
@@ -11,7 +31,7 @@ html {
 }
 
 body {
-    background-color: #F2F2F2;
+    background-color: $offWhite2;
     height: 100%;
     margin: 0;
     width: auto;
@@ -23,8 +43,8 @@ header {
 }
 
 nav {
-    background-color: #FFF;
-    box-shadow: 0px 0px 5px 0px #00000050;
+    background-color: $white;
+    box-shadow: $boxShadow;
     display: block;
     margin: 0;
     overflow: hidden;
@@ -32,7 +52,7 @@ nav {
 }
 
 nav > a {
-    color: #342E37;
+    color: $offBlack1;
     float: right;
     font-weight: bold;
     padding: 15px;
@@ -56,7 +76,7 @@ main {
 }
 
 main > section {
-    background-color: #FFF;
+    background-color: $white;
     margin: auto;
     max-width: 950px;
     min-height: 85%;
@@ -65,7 +85,7 @@ main > section {
 }
 
 main > section > a {
-    color: #214263;
+    color: $blue2;
     font-weight: 500;
     text-decoration: none;
     transition: all 100ms ease-in-out;
@@ -74,11 +94,11 @@ main > section > a {
 main > section > a:hover {
     text-decoration: underline;
     text-underline-offset: 1px;
-    color: #3A75AF;
+    color: $blue1;
 }
 
 h1, h2, h3, h4, h5 {
-    color: #342E37;
+    color: $offBlack1;
 }
 
 h1 {
@@ -128,7 +148,7 @@ blockquote {
     padding: 5px 15px;
     border-left: 5px solid #DDD;
     border-radius: 5px;
-    color: #342E37;
+    color: $offBlack1;
     margin-inline: 0;
 }
 
@@ -188,10 +208,10 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #342E37;
+    background-color: $offBlack1;
     position: relative;
     z-index: -1;
-    color: #FFF;
+    color: $white;
 } 
 
 footer > div {
@@ -211,16 +231,6 @@ footer > a:hover {
 footer > ul {
     list-style: none;
     padding: 0;
-}
-
-/* --- MIXINS --- */
-
-@mixin titleDecoration {
-    text-decoration: underline;
-    text-decoration-color: #F9C80E;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 3px;
-    text-underline-position: below;
 }
 
 /* --- MEDIA --- */

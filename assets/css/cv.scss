@@ -1,6 +1,11 @@
 ---
 ---
 
+@mixin borderSettings {
+    border: 1px solid #DDD;
+    border-radius: 5px;
+}
+
 .certification {
     @include borderSettings;
     margin: 5px;
@@ -97,12 +102,5 @@ div.certification > span {
 .progressBarContent {
     height: 100%;
     background: linear-gradient(45deg, #6B70B5 0%, #858BE1 100%);
-    border-radius: 5px;
-}
-
-/* --- MIXINS --- */
-
-@mixin borderSettings {
-    border: 1px solid #DDD;
     border-radius: 5px;
 }
