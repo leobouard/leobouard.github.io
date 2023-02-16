@@ -53,6 +53,7 @@ nav > a:hover {
 }
 
 nav > a:first-child {
+    @include titleDecoration;
     float: left;
 }
 
@@ -281,4 +282,14 @@ footer {
             height: 38px;
         }
     }
+}
+
+/* --- MIXINS --- */
+
+@mixin titleDecoration {
+    text-decoration: underline;
+    text-underline-position: below;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #f9c80e;
 }
