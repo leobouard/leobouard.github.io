@@ -1,19 +1,18 @@
 ---
 ---
 
-@mixin borderSettings {
-    border: 1px solid #DDD;
-    border-radius: 5px;
-}
+$borderColor: #ddd;
 
 .certification {
-    @include borderSettings;
     margin: 5px;
     height: 200px;
     max-width: 125px;
     flex: 1;
     flex-basis: 100px;
+    border-radius: 5px;
     padding: 15px;
+    border: 1px solid $borderColor;
+    border-radius: 5px;
     overflow: hidden;
     position: relative;
 }
@@ -34,11 +33,10 @@ div.certification > span {
 }
 
 .experience {
-    @include borderSettings;
     display: block;
     margin-left: 35px;
     padding-left: 15px;
-    border-left: $border;
+    border-left: 1px solid $borderColor;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -53,7 +51,9 @@ div.certification > span {
     margin: 15px 0px;
     justify-content: left;
     padding: 5px;
+    border-radius: 5px;
     align-items: center;
+    border: 1px solid $borderColor;
 }
 
 .enterprise > div {
