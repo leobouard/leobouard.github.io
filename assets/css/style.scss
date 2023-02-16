@@ -53,7 +53,7 @@ nav > a:hover {
 }
 
 nav > a:first-child {
-    @include titleDecoration;
+    @include titleDecoration();
     float: left;
 }
 
