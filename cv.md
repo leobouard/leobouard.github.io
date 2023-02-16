@@ -58,17 +58,17 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 <div class="posts">
     <div class="certification">
-        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/certification-exam.svg?branch=main" alt="logo Microsoft Exam">
+        <img src="/assets/images/certification-exam.svg" alt="logo Microsoft Exam">
         <small>novembre 2022</small>
         <span>Microsoft 365 Identity and Services</span>
     </div>
     <div class="certification">
-        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
+        <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
         <small>août 2022</small>
         <span>Microsoft 365 Fundamentals</span>
     </div>
     <div class="certification">
-        <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="logo Microsoft Certified Fundamentals">
+        <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
         <small>juin 2021</small>
         <span>Azure Fundamentals</span>
     </div>
