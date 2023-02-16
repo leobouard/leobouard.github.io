@@ -282,13 +282,3 @@ footer {
         }
     }
 }
-
-/* --- MIXINS --- */
-
-@mixin titleDecoration {
-    text-decoration: underline;
-    text-underline-position: below;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 3px;
-    text-decoration-color: #f9c80e;
-}
