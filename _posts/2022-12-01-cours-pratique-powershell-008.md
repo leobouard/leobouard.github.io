@@ -18,7 +18,7 @@ Nouveau départ ! On va implémenter une interface graphique réalisée avec Win
 Dans un premier temps, on va juste vouloir lancer l'interface graphique et laisser le joueur entrer une estimation dans la boite de texte. Lorsque le joueur appuie sur la touchée "Entrée" de son clavier, l'estimation est affichée dans la console et la boite de texte est vidée de son contenu.
 
 <div class="information">
-  <h4>Recommandation</h4>
+  <span>Recommandation</span>
   <p>Pour cette partie, je vous recommande de créer un nouveau script plutôt qu'adapter le script existant. De cette manière, vous pourrez créer la structure liée à l'interface graphique, puis copier-coller les bouts de code encore pertinents.</p>
 </div>
 
@@ -53,7 +53,7 @@ Dans un premier temps, on ajoute les prérequis nécessaires à l'affichage de n
 Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la dernière ligne de notre exemple pour créer un nouvel objet du type interface graphique, stocké dans la variable globale `$interface`.
 
 <div class="information">
-  <h4>À propos des variables globales</h4>
+  <span>À propos des variables globales</span>
   <p>Nous sommes obligé d'utiliser des variables du type <code>$Global:</code> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne pourront pas communiquer entre-elles.</p>
 </div>
 

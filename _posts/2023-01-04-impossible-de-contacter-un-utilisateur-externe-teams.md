@@ -18,7 +18,7 @@ L'utilisateur concerné ne peut plus contacter des comptes externes à l'organis
 </div>
 
 <div class="information">
-    <h4>A vérifier avant de continuer</h4>
+    <span>A vérifier avant de continuer</span>
     <p>Évidemment, pensez à vérifier que votre organisation autorise bien les utilisateurs à communiquer avec des comptes externes. Vous pouvez vérifier ce paramètre dans <a href="https://admin.teams.microsoft.com/company-wide-settings/external-communications">Microsoft Teams admin center - Users - External access</a></p>
 </div>
 
