@@ -186,19 +186,19 @@ footer {
     background-color: #342E37;
     position: relative;
     z-index: -1;
-    color: #fff;
+    color: #FAFAFA;
 }
 
 footer > div {
     padding: 15px;
 }
 
-footer > div > a {
+footer > div > ul > li > a {
     color: #fff;
     text-decoration: none;
 }
 
-footer > div > a:hover {
+footer > div > ul > li > a:hover {
     text-decoration: underline;
     transition: all 400ms ease-in-out;
 }
