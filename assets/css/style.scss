@@ -49,7 +49,7 @@ nav > a {
     transition: all 400ms ease-in-out;
 }
 
-nav > a:hover {
+nav > a:hover, nav > a:first-child {
     text-decoration: underline;
     text-underline-position: below;
     text-underline-offset: 3px;
@@ -63,147 +63,138 @@ nav > a:first-child {
 
 main {
     min-height: 90%;
+}
 
-    section {
-        min-height: 85%;
-        background-color: #fff;
-        padding: 30px 50px;
-        margin: auto;
-        max-width: 950px;
-        overflow: hidden;
-    }
+main > section {
+    min-height: 85%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px 50px;
+    margin: auto;
+    max-width: 950px;
+    overflow: hidden;
+}
 
-    a {
-        color: #214263;
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 100ms ease-in-out;
-    }
+main > a {
+    color: #214263;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 100ms ease-in-out;
+}
 
-    a:hover {
-        text-decoration: underline;
-        text-underline-offset: 1px;
-        color: #3a75af;
-    }
+main > a:hover {
+    color: #3a75af;
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
 
-    h1, h2, h3, h4, h5 {
-        color: #342E37;
-    }
+main > h1, h2, h3, h4, h5 {
+    color: #342E37;
+}
 
-    h1 {
-        font-family: 'Kanit', sans-serif;
-        font-size: xx-large;
-        text-decoration: underline;
-        text-underline-position: below;
-        text-underline-offset: 3px;
-        text-decoration-thickness: 3px;
-        text-decoration-color: #f9c80e;
-        line-height: 1.3;
-        margin: 0px;
-    }
+main > h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: xx-large;
+    text-decoration: underline;
+    text-underline-position: below;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #f9c80e;
+    line-height: 1.3;
+    margin: 0px;
+}
 
-    h2 {
-        font-size: x-large;
-    }
+main > h2 {
+    font-size: x-large;
+}
 
-    h3 {
-        font-size: large;
-    }
+main > h3 {
+    font-size: large;
+}
 
-    h4 {
-        font-size: 16px;
-    }
+main > h4 {
+    font-size: 16px;
+}
 
-    h5 {
-        font-size: 15px;
-    }
+main > h5 {
+    font-size: 15px;
+}
 
-    h2, h3, h4, h5 {
-        margin-top: 10px;
-        font-weight: 600;
-    }
+main > h2, h3, h4, h5 {
+    font-weight: 600;
+    margin-top: 10px;
+}
 
-    img {
-        display: block;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+main > img {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    hr {
-        border: 1px solid #f2f2f2;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
+main > hr {
+    border: 1px solid #ddd;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
-    blockquote {
-        background-color: #fafafa;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 15px;
-        padding-right: 15px;
-        border-left: solid;
-        border-left-color: #bfbfbf;
-        border-left-width: 5px;
-        border-radius: 5px;
-        color: #342E37;
-        margin-inline: 0;
-    }
+main > blockquote {
+    background-color: #fafafa;
+    border-left: 5px solid #ddd;
+    border-radius: 5px;
+    color: #342E37;
+    margin-inline: 0;
+    padding: 5px 15px;
+}
 
-    /* --- CODE --- */
+main > pre, code {
+    font-family: 'Martian Mono', monospace;
+    font-size: 12px;
+}
 
-    pre, code {
-        font-family: 'Martian Mono', monospace;
-        font-size: 12px;
-    }
+main > pre {
+    border-radius: 5px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow: scroll;
+}
 
-    pre {
-        border-radius: 5px;
-        background-color: #fafafa;
-        border: 1px solid #ddd;
-        padding: 10px;
-        overflow: scroll;
-    }
+main > pre > code {
+    white-space: pre;
 
-    pre > code {
-        white-space: pre;
+    /*PowerShell*/
+    .bp, .nv, .bp { color: #001080; } /*Variables*/
+    .n            { color: #795e26; } /*Commandes*/
+    .nf           { color: #0000ff; } /*Type & Commandes*/
+    .s1, .s2, .sh { color: #a31515; } /*Chaines*/
+    .kr           { color: #af00db; } /*IF & ELSE*/
+    .c, .cm       { color: #008000; } /*Commentaires*/
+    .mi           { color: #01633F; } /*Entiers*/ 
+}
 
-        /*PowerShell*/
-        .bp, .nv, .bp { color: #001080; } /*Variables*/
-        .n            { color: #795e26; } /*Commandes*/
-        .nf           { color: #0000ff; } /*Type & Commandes*/
-        .s1, .s2, .sh { color: #a31515; } /*Chaines*/
-        .kr           { color: #af00db; } /*IF & ELSE*/
-        .c, .cm       { color: #008000; } /*Commentaires*/
-        .mi           { color: #01633F; } /*Entiers*/ 
-    }
-
-    p > code, li > code {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
+p > code, li > code {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 
     /* --- TABLES --- */
 
-    table, td, tr, th {
-        border-color: #ddd;
-        border-width: 1px;
-        border-style: solid;
-        padding: 10px;
-        border-collapse: collapse;
-    }
+main > table, td, tr, th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-collapse: collapse;
+}
 
-    th {
-        background-color: #fafafa;
-        text-align: left;
-    }
+main > th {
+    background-color: #fafafa;
+    text-align: left;
+}
 
-    table {
-        width: 100%;
-    }
-
+main > table {
+    width: 100%;
 }
 
 /* --- FOOTER --- */
@@ -218,26 +209,27 @@ footer {
     position: relative;
     z-index: -1;
     color: #fff;
-
-    div {
-        padding: 15px;
-    }
-
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-        transition: all 400ms ease-in-out;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-    }
 }
+
+footer > div {
+    padding: 15px;
+}
+
+div > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+div > a:hover {
+    text-decoration: underline;
+    transition: all 400ms ease-in-out;
+}
+
+div > ul {
+    list-style: none;
+    padding: 0;
+}
+
 
 /* --- MEDIA --- */
 
