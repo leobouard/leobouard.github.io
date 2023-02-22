@@ -22,8 +22,6 @@ body {
     width: auto;
 }
 
-/* --- HEADER --- */
-
 header {
     margin: 0;
     position: relative;
@@ -75,24 +73,24 @@ main > section {
     overflow: hidden;
 }
 
-main > a {
+a {
     color: #214263;
     font-weight: 500;
     text-decoration: none;
     transition: all 100ms ease-in-out;
 }
 
-main > a:hover {
+a:hover {
     color: #3a75af;
     text-decoration: underline;
     text-underline-offset: 1px;
 }
 
-main > h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
     color: #342E37;
 }
 
-main > h1 {
+h1 {
     font-family: 'Kanit', sans-serif;
     font-size: xx-large;
     text-decoration: underline;
@@ -104,41 +102,25 @@ main > h1 {
     margin: 0px;
 }
 
-main > h2 {
-    font-size: x-large;
-}
-
-main > h3 {
-    font-size: large;
-}
-
-main > h4 {
-    font-size: 16px;
-}
-
-main > h5 {
-    font-size: 15px;
-}
-
-main > h2, h3, h4, h5 {
+h2, h3, h4, h5 {
     font-weight: 600;
     margin-top: 10px;
 }
 
-main > img {
+img {
     display: block;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-main > hr {
+hr {
     border: 1px solid #ddd;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-main > blockquote {
+blockquote {
     background-color: #fafafa;
     border-left: 5px solid #ddd;
     border-radius: 5px;
@@ -147,12 +129,12 @@ main > blockquote {
     padding: 5px 15px;
 }
 
-main > pre, code {
+pre, code {
     font-family: 'Martian Mono', monospace;
     font-size: 12px;
 }
 
-main > pre {
+pre {
     border-radius: 5px;
     background-color: #fafafa;
     border: 1px solid #ddd;
@@ -160,7 +142,7 @@ main > pre {
     overflow: scroll;
 }
 
-main > pre > code {
+pre > code {
     white-space: pre;
 
     /*PowerShell*/
@@ -180,24 +162,20 @@ p > code, li > code {
     padding-right: 5px;
 }
 
-    /* --- TABLES --- */
-
-main > table, td, tr, th {
+table, td, tr, th {
     border: 1px solid #ddd;
     padding: 10px;
     border-collapse: collapse;
 }
 
-main > th {
+th {
     background-color: #fafafa;
     text-align: left;
 }
 
-main > table {
+table {
     width: 100%;
 }
-
-/* --- FOOTER --- */
 
 footer {
     margin-top: -50px;
@@ -215,23 +193,20 @@ footer > div {
     padding: 15px;
 }
 
-div > a {
+footer > div > a {
     color: #fff;
     text-decoration: none;
 }
 
-div > a:hover {
+footer > div > a:hover {
     text-decoration: underline;
     transition: all 400ms ease-in-out;
 }
 
-div > ul {
+footer > div > ul {
     list-style: none;
     padding: 0;
 }
-
-
-/* --- MEDIA --- */
 
 @media print, screen and (max-width: 950px) {
 
