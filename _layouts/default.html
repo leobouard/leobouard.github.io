@@ -24,10 +24,7 @@
   <body>
     <header id="top">
       <nav>
-        <a href="{{ "/" | absolute_url }}" style="font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 22px;">
-          <!--<img src="/assets/images/favicon.ico" alt="Logo de LaBouaBouate" style="user-select: none; height: 20px; margin-right: 5px;"/>-->
-          LaBouaBouate
-        </a>
+        <a href="{{ "/" | absolute_url }}">LaBouaBouate</a>
         <a href="/about">A propos</a>
         <a href="/blog">Articles</a>
       </nav>
@@ -36,15 +33,15 @@
       {{ content }}
     </main>
     <footer>
-      <div style="width: 250px;">
-        <p><b>Informations générales</b></p>
+      <div>
+        <span>Informations générales</span>
         <ul>
           <li>Hébergé sur <a href="https://pages.github.com/" target="_blank">GitHub Pages →</a></li>
           <li>Fait avec ❤️ par Léo Bouard</li>
         </ul>
       </div>
-      <div style="width: 250px;">
-        <p><b>Envie d'en savoir plus sur moi ?</b></p>
+      <div>
+        <span>Envie d'en savoir plus sur moi ?</span>
         <ul>
           <li><a href="mailto:{{ site.emailAddress }}">M'envoyer un email</a></li>
           <li><a href="{{ site.linkedin }}" target="_blank">Voir mon profil LinkedIn →</a></li>
@@ -53,6 +50,5 @@
         </ul>
       </div>
     </footer>
-
   </body>
 </html>
