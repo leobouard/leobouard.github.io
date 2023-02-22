@@ -115,10 +115,9 @@ span.articleDescription {
 .information {
     background-color: #CDE0F4;
     color: #0F2843;
-    padding: 15px;
+    padding: 5px 15px;
     border-radius: 5px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 15px 0px;
 }
 
 .div_summary {
@@ -219,19 +218,18 @@ div.side_buttons {
 
 div.side_buttons > a {
     display: flex;
-    height: 48px;
-    width: 48px;
+    height: 50px;
+    width: 50px;
     background-color: #fff;
     margin: 5px;
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    border: 1px solid #f2f2f2
+    border-radius: 5px;
 }
 
 div.side_buttons > a:hover {
-    background-color: #fafafa;
-    border-color: #ddd;
+    background-color: #6f6cb1;
     text-decoration: none;
 }
 
