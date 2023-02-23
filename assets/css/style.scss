@@ -183,6 +183,27 @@ main {
     }
 }
 
+div.cookieInfo {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    filter: opacity(0.90);
+}
+
+div.cookieInfo > a {
+    background: #6f6cb1;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
 footer {
     margin-top: -50px;
     padding: 60px 0px 0px;
