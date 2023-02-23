@@ -36,9 +36,9 @@
     {% endif %}
     <main {% if page.title == "Accueil" %} style="background: linear-gradient(45deg, #FEFAEC, #E4E4F1);" {% endif %}>
       {{ content }}
-      <div class="cookieInfo">
+      <div class="cookieInfo" id="cookieInfo">
         <p>🍪 Ce site utilise deux cookies pour son fonctionnement : l'un pour savoir si vous avez lu cette information et l'autre pour garder en mémoire votre préférence pour le thème (sombre ou clair).</p>
-        <a href="">OK</a>
+        <a href="javascript:const OK = document.getElementById('cookieInfo');OK.style.display = 'none'">OK</a>
       </div>
     </main>
     <footer>
