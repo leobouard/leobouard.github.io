@@ -96,15 +96,15 @@ Pour récupérer la liste de tous les déclencheurs possibles (car les déclench
 
 Pour déclarer une action à faire pour un déclencheur, la syntaxe est la suivante : `$textboxResponse.Add_KeyDown({ ... })`. Ensuite on ajoute une condition `if` pour vérifier que la touche qui a été appuyé correspond bien à la touche "Entrée" puis :
 
-1. On affiche l'estimation de l'utilisateur dans la console
-2. On vide le contenu de la boite de texte pour permettre une nouvelle estimation
+1. On vide le contenu de la boite de texte pour permettre une nouvelle estimation
+2. On affiche l'estimation de l'utilisateur dans la console
 
 ```powershell
 $textboxResponse.Add_KeyDown({
     if ($_.Key -eq "Return") {
         $answer = [int]($textboxResponse.Text)
-        Write-Host $answer
         $textboxResponse.Text = $null
+        Write-Host $answer
     }
 })
 ```
@@ -123,8 +123,8 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object {
 $textboxResponse.Add_KeyDown({
     if ($_.Key -eq "Return") {
         $answer = [int]($textboxResponse.Text)
-        Write-Host $answer
         $textboxResponse.Text = $null
+        Write-Host $answer
     }
 })
 
