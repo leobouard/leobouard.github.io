@@ -133,12 +133,6 @@ div.information > p {
     display: block;
 }
 
-.div_summary:hover {
-    h3 {
-        text-decoration: underline;
-    }
-}
-
 .div_summary > a {
     background: #fff;
     display: block;
@@ -161,6 +155,10 @@ div.information > p {
 .div_summary > a:hover {
     text-decoration: none;
     background: #fafafa;
+
+    h3 {
+        text-decoration: underline;
+    }
 
     span {
         text-decoration: none;
