@@ -14,7 +14,7 @@ prevLink:
 ## Table des matières
 
 {% assign posts = site.posts | sort: 'id' %}
-<div class="div_summary">
+<div class="summary">
   {% for post in posts %}
     {% if post.title contains 'Cours PowerShell #' %}
       <a href="{{ post.id }}">

@@ -29,6 +29,11 @@
         <a href="/blog">Articles</a>
       </nav>
     </header>
+    {% if page.layout == "post" %}
+    <div class="postBanner">
+      {{ page.icon }}
+    </div>
+    {% endif %}
     <main {% if page.title == "Accueil" or page.title == "Erreur 404" %} style="height: 94%;" {% endif %}>
       {{ content }}
     </main>

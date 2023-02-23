@@ -129,11 +129,11 @@ div.information > p {
     margin: 10px 0px 0px;
 }
 
-.div_summary {
+div.summary {
     display: block;
 }
 
-.div_summary > a {
+div.summary > a {
     background: #fff;
     display: block;
     padding: 10px;
@@ -152,7 +152,7 @@ div.information > p {
     }
 }
 
-.div_summary > a:hover {
+div.summary > a:hover {
     text-decoration: none;
     background: #fafafa;
 
@@ -166,7 +166,7 @@ div.information > p {
     }
 }
 
-.div_summary > span {
+div.summary > span {
     font-weight: 400;
     color: #000;
 }
