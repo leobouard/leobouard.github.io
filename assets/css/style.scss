@@ -64,6 +64,9 @@ header {
 
 main {
     min-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     section {
         min-height: 85%;
