@@ -11,7 +11,7 @@ Bienvenue sur LaBouaBouate ! 👋
 
 Ce site web est un projet personnel pour monter en compétence sur le développement web statique (HTML, CSS et Liquid) et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Je ne prend pas ce projet particulièrement au sérieux, donc excusez-moi des quelques mauvais jeux de mots que vous pourrez trouver dans mes différents contenus.
 
-Ici vous ne trouvez pas de publicité, pas de cookie ou autre tracker, juste un peu de contenu qui j'espère vous sera utile.
+Ici vous ne trouvez pas de publicité ou de tracker, juste un peu de contenu qui j'espère vous sera utile.
 
 Le meilleur moyen de me contacter au sujet d'un article est de m'envoyer un message sur [mon profil LinkedIn]({{ site.linkedin }}) ou de m'envoyer [un email](mailto:{{ site.emailAddress }}). Si vous voulez en savoir plus sur moi, vous pouvez jeter un coup d'oeil à [mon CV](/cv).
 
