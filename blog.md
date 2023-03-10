@@ -20,7 +20,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
                     <span class="articleIcon">{{ post.icon }}</span>
                 </div>
                 <div class="articleText">
-                    <span class="articleDate">{{ page.date | date: "%d/%m/%Y" }}</span>
+                    <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
                     <span class="articleTitle">{{ post.title }}</span>
                     <span class="articleDescription">{{ post.description }}</span>
                 </div>
