@@ -19,18 +19,16 @@ prevLink:
 
 ## Etape par étape
 
-1. Adaptation des variables
-2. 
 
 ### Adaptation des variables
 
-Certaines de nos anciennes variables vont être directement intégrées à l'interface graphique. Il s'agit du nombre de tentatives et les bornes inférieures et supérieures.
+Certaines de nos anciennes variables vont être directement intégrées à des éléments de l'interface graphique : les bornes inférieures et supérieures ainsi que la barre de progression :
 
-Ancienne variable | Composant XAML | Nouvelle variable | Description
------------------ | -------------- | ----------------- | -----------
-`$i` | Barre de progression | `$progressbarCoupsRestants.Value` | Compte le nombre de tentatives du joueur
-`$min` | Label | `$labelMin.Content` | Borne inférieure
-`$max` | Label | `$labelMax.Content` | Borne supérieure
+Ancienne variable | Composant XAML | Description
+----------------- | -------------- | -----------
+`$i` | Barre de progression | Compte le nombre de tentatives du joueur
+`$min` | Label | Borne inférieure
+`$max` | Label | Borne supérieure
 
 ```powershell
 $progressbarCoupsRestants.Value = 0
@@ -78,7 +76,7 @@ if ($random -gt $answer) {
 
 ### Modification du comportement de la victoire
 
-Si vous tester le script à ce stade et que vous parvenez à trouver le nombre aléatoire, vous constaterez que la victoire n'empêche pas le joueur de continuer à jouer. On va donc ajouter quelques traitement supplémentaires :
+Si vous testez le script à ce stade et que vous parvenez à trouver le nombre aléatoire, vous constaterez que la victoire n'empêche pas le joueur de continuer à jouer. On va donc ajouter quelques traitement supplémentaires :
 
 - Rendre les boutons "Recommencer" et "Meilleurs scores" visibles
 - Afficher le nombre aléatoire dans la boite de texte
@@ -94,7 +92,16 @@ $stopwatch.Stop()
 
 ### Détection de défaite
 
-Dans l'état, la défaite n'est pas possible puisqu
+Dans l'état, la défaite n'est pas possible puisque 
+
+```powershell
+if ($progressbarCoupsRestants.Value -ge $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
+    $labelText.Content = "DEFAITE ! Le nombre etait : $random"
+    $stackpanelButtons.Visibility = "Visible"
+    $textboxResponse.IsEnabled = $false
+    $stopwatch.Stop()
+}
+```
  
 ## Correction
 
@@ -114,6 +121,8 @@ $Global:allAnswers = [System.Collections.Generic.List[int]]@()
 $Global:stopwatch  = [System.Diagnostics.Stopwatch]::New()
 $Global:random     = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
 
+$random
+
 $textboxResponse.Add_KeyDown({
     if ($_.Key -eq "Return") {
         $answer = [int]($textboxResponse.Text)
@@ -132,6 +141,13 @@ $textboxResponse.Add_KeyDown({
             $labelText.Content = "VICTOIRE ! Vous avez deviné le nombre aléatoire"
             $stackpanelButtons.Visibility = "Visible"
             $textboxResponse.Text = $random
+            $textboxResponse.IsEnabled = $false
+            $stopwatch.Stop()
+        }
+
+        if ($progressbarCoupsRestants.Value -ge $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
+            $labelText.Content = "DEFAITE ! Le nombre etait : $random"
+            $stackpanelButtons.Visibility = "Visible"
             $textboxResponse.IsEnabled = $false
             $stopwatch.Stop()
         }
