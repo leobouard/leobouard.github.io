@@ -13,12 +13,27 @@ prevLink:
 
 ## Consigne
 
+On continue d'adapter notre script pour convenir à l'interface graphique. Dans cette partie, on va simplement s'assurer que le jeu re-fonctionne correctement sur sa base :
+
+- 10 tentatives pour deviner le nombre aléatoire (indiquées par la barre de progression)
+- toutes les tentatives du joueurs sont enregistrées
+- la partie est chronométrée
+- en cas de victoire ou de défaite :
+  - un message annonce la victoire ou la défaite
+  - les boutons "Recommencer" et "Meilleurs scores" deviennent visibles
+  - le nombre aléatoire est affiché dans la boite de texte
+
+
 ### Résultat attendu
 
 ---
 
 ## Etape par étape
 
+1. Adaptation des variables
+2. Intégration du traitement
+3. Gestion de la victoire
+4. Gestion de la défaite
 
 ### Adaptation des variables
 
@@ -71,10 +86,10 @@ if ($random -gt $answer) {
 
 <div class="information">
     <span>Problème d'encodage</span>
-    <p>Si vous rencontrez des problèmes avec l'affichage des accents à ce stade, il faut bien vérifier que votre script est enregistré au format UTF8-BOM.</p>
+    <p>Si vous rencontrez des problèmes avec l'affichage des accents à ce stade, il faut bien vérifier que votre script (c'est-à-dire le fichier <code>.ps1</code>) est enregistré au format UTF8-BOM.</p>
 </div>
 
-### Modification du comportement de la victoire
+### Gestion de la victoire
 
 Si vous testez le script à ce stade et que vous parvenez à trouver le nombre aléatoire, vous constaterez que la victoire n'empêche pas le joueur de continuer à jouer. On va donc ajouter quelques traitement supplémentaires :
 
@@ -90,19 +105,26 @@ $textboxResponse.IsEnabled = $false
 $stopwatch.Stop()
 ```
 
-### Détection de défaite
+### Gestion de la défaite
 
-Dans l'état, la défaite n'est pas possible puisque 
+Dans l'état, la défaite n'est pas possible puisque si le joueur dépasse le nombre de tentatives autorisées, il ne se passe rien. Pour résoudre le problème, on va mettre en place une condition : si l'on arrive à la valeur maximum de la barre de progression et que la dernière tentative du joueur n'est pas la bonne réponse, alors on effectue les actions suivantes :
+
+- Rendre les boutons "Recommencer" et "Meilleurs scores" visibles
+- Afficher le nombre aléatoire dans la boite de texte
+- Désactiver la boite de texte
+- Afficher un message  de défaite via la variable `$labelText.Content`
+- Arrêter le chronomètre
 
 ```powershell
-if ($progressbarCoupsRestants.Value -ge $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
-    $labelText.Content = "DEFAITE ! Le nombre etait : $random"
+if ($progressbarCoupsRestants.Value -eq $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
     $stackpanelButtons.Visibility = "Visible"
+    $textboxResponse.Text = $random
     $textboxResponse.IsEnabled = $false
+    $labelText.Content = "DEFAITE ! Le nombre etait : $random"
     $stopwatch.Stop()
 }
 ```
- 
+
 ## Correction
 
 ```powershell
@@ -145,10 +167,11 @@ $textboxResponse.Add_KeyDown({
             $stopwatch.Stop()
         }
 
-        if ($progressbarCoupsRestants.Value -ge $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
-            $labelText.Content = "DEFAITE ! Le nombre etait : $random"
+        if ($progressbarCoupsRestants.Value -eq $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
             $stackpanelButtons.Visibility = "Visible"
+            $textboxResponse.Text = $random
             $textboxResponse.IsEnabled = $false
+            $labelText.Content = "DEFAITE ! Le nombre etait : $random"
             $stopwatch.Stop()
         }
     }
