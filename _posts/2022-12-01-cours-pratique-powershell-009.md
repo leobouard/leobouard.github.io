@@ -23,7 +23,6 @@ On continue d'adapter notre script pour convenir à l'interface graphique. Dans 
   - les boutons "Recommencer" et "Meilleurs scores" deviennent visibles
   - le nombre aléatoire est affiché dans la boite de texte
 
-
 ### Résultat attendu
 
 ---
@@ -142,8 +141,6 @@ $labelMax.Content = 1000
 $Global:allAnswers = [System.Collections.Generic.List[int]]@()
 $Global:stopwatch  = [System.Diagnostics.Stopwatch]::New()
 $Global:random     = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
-
-$random
 
 $textboxResponse.Add_KeyDown({
     if ($_.Key -eq "Return") {
