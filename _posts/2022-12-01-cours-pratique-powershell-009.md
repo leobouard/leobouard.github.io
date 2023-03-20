@@ -23,6 +23,14 @@ On continue d'adapter notre script pour convenir à l'interface graphique. Dans 
   - les boutons "Recommencer" et "Meilleurs scores" deviennent visibles
   - le nombre aléatoire est affiché dans la boite de texte
 
+
+Reste à faire :
+
+- Rendre le bouton "Meilleurs scores" fonctionnel
+- Rendre le bouton "Recommencer" fonctionnel
+- Créer un mode triche
+- Réimplémenter le mode facile
+
 ### Résultat attendu
 
 ---

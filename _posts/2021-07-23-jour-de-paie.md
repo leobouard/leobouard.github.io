@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Le jour de paie"
-description: "Calculer le jour exact où vous recevrez votre salaire, en prennant en compte les jours ouvrés uniquement"
+description: "Calculer le jour exact où vous recevrez votre salaire, en prenant en compte les jours ouvrés uniquement"
 tags: DÉFI
 icon: 💸
 listed: true
@@ -10,9 +10,9 @@ nextLink:
   id: "/2021/07/23/jour-de-paie-soluce"
 ---
 
-Admettons la situation suivante : votre salaire vous est versé au plus tard le 25 du mois en cours. Comme vous êtes très dépensier, vous voulez savoir précisement quand est-ce que vous allez pouvoir manger autre chose que des pâtes !
+Admettons la situation suivante : votre salaire vous est versé sur votre compte en banque  **au plus tard** le 25 du mois. En sachant que vous ne pouvez pas recevoir votre virement un samedi ou un dimanche, vous devez donc déterminer le jour exact où l'argent arrivera sur votre compte en banque.
 
-Du coup la question est simple : c'est quand votre jour de paie ?
+En bref : elle est où la moulaga ?
 
 ![le jour après la paye](https://media2.giphy.com/media/ZWiIwPxJ9JGW4/giphy.gif?cid=ecf05e47tztz1sa2magi8gsof2idlq05bmu1qvxiofkxia0q&rid=giphy.gif&ct=g)
 
@@ -20,31 +20,23 @@ Du coup la question est simple : c'est quand votre jour de paie ?
   <i>Environ 5 min après avoir reçu votre salaire</i>
 </div>
 
-## Règles
+## Consignes
 
-Les règles de base :
-- le résultat doit être le jour ouvré le plus proche du 25e jour du mois (donc hors samedi & dimanche)
-- les jours feriés ne sont pas à prendre en compte (pour simplifier le modèle)
-- votre code doit afficher le résultat dans la console
+Les règles de ce défis sont très simple : on cherche à obtenir le jour ouvré (hors samedi et dimanche) le plus proche du 25e jour du mois. Exclure les jours fériés est facultatif et ne sera pas explicité dans les solutions proposées.
 
-## Trop facile pour vous ?
+Pour les plus motivés d'entre-vous, voici plusieurs défis supplémentaires :
 
-Pas de problème ! Pour corser un peu l'exercice, on peut ajouter quelques défis bonus
-
-- Faire la version la plus courte possible, mon record personnel étant 63 caractères
-- Créer une version en utilisant un [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
-- Utiliser 3 différents types de boucles :
-  - version `ForEach-Object` ou `foreach`
-  - version `Do/Until` et/ou `Do/While`
-  - version `For`
+1. (FACILE) Faire la version la plus courte possible : tous les coups syntaxique sont permis. Vous serez probablement amené à tester tous les types de boucles (`for`, `ForEach-Object`, `while`, `do/until`, etc.) pour obtenir ou battre le record actuel : 63 caractères, espaces inclus.
+2. (MEDIUM) Utiliser l'[API de l'Etat Français sur les jours fériés](https://api.gouv.fr/documentation/jours-feries) pour les exclure des résultats. Je n'ai pas eu le courage de le faire personnellement, mais ça peut être un bon moyen d'aborder les API en PowerShell.
+3. (DIFFICILE) Créer une version du script en utilisant le [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
 
 ## Ressources utiles
 
 Voici quelques ressources qui pourraient vous être utiles :
 
-1. La documentation Microsoft sur la commande [Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
-2. Un article sympa et complet de IT Connect sur [les boucles Do/Until et Do/While](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
-3. Un petit rappel sur [les opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators) sur Microsoft Docs
+- la documentation officielle de Microsoft sur la [commande `Get-Date`](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date) qui permet d'obtenir une date
+- la documentation officielle de Microsoft sur [les opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
+- - un article de IT Connect sur les [les boucles `do/until` et `do/while`](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
 
 ## Résultats attendus pour l'année 2022
 
@@ -63,4 +55,4 @@ Octobre 2022 | mardi 25 octobre
 Novembre 2022 | vendredi 25 novembre
 Décembre 2022 | vendredi 23 décembre
 
-A vos claviers ! 🙂
+A vous de jouer !
