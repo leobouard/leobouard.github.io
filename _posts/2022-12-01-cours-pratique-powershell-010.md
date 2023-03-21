@@ -15,7 +15,7 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 - Rendre le bouton "Recommencer" fonctionnel
 - Réimplémenter le mode facile
 - Créer un mode triche
-- Rendre le bouton "Meilleurs scores" fonctionnel et améliorer le tableau des scores
+- 
 
 ### Résultat attendu
 
@@ -23,4 +23,101 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 
 ## Etape par étape
 
+### Rendre le bouton "Recommencer" fonctionnel
+
+### Réimplémenter le mode facile
+
+### Création du mode triche
+
+On ajoute le paramètre `[switch]$CalcBot` pour invoquer le mode triche : celui-ci va calculer pour nous la valeur moyenne entre la borne inférieure et la borne supérieure, puis l'inscrire directement dans la boite de texte.
+
+Calculer la valeur moyenne des bornes est la meilleure méthode pour parvenir à la victoire de manière assurée, puisque 2¹⁰ = 1024. Cette méthode est appelée *binary search* et consiste à découper une liste en deux lots égaux.
+
+![exemple de la recherche binaire sur Wikipédia](https://en.wikipedia.org/wiki/File:Binary-search-work.gif)
+
+Tentative | Bornes | Possibilités
+--------- | ------ | ------------
+n°0 | 1 à 1000 | 1000
+n°1 | 1 à 500 | 500
+n°2 | 1 à 250 | 250
+n°3 | 125 à 250 | 125
+n°4 | 188 à 250 | 62
+n°5 | 188 à 219 | 31
+n°6 | 188 à 204 | 16
+n°7 | 188 à 196 | 8
+n°8 | 192 à 196 | 4
+n°9 | 192 à 194 | 2
+n°10 | 193 | 1
+
+Pour le joueur, il ne lui reste qu'à faire une estimation initiale et à appuyer frénétiquement sur "Entrée" pour finir la partie.
+
+```powershell
+if ($CalcBot.IsPresent) {
+    $textboxResponse.Text = [int](($labelMax.Content+$labelMin.Content)/2)
+}
+```
+
+### Rendre le bouton "Meilleurs scores" fonctionnel
+
+### Améliorer le tableau des scores
+
 ## Correction
+
+```powershell
+param(
+    [switch]$CalcBot
+)
+
+Add-Type -AssemblyName PresentationFramework
+$uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/assets/files/interface.xaml"
+[xml]$Global:xaml = (Invoke-WebRequest -Uri $uri).Content
+$Global:interface = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $xaml))
+$xaml.SelectNodes("//*[@Name]") | ForEach-Object { 
+    Set-Variable -Name ($_.Name) -Value $interface.FindName($_.Name) -Scope Global
+}
+
+$progressbarCoupsRestants.Value = 0
+$labelMin.Content = 1
+$labelMax.Content = 1000
+$Global:allAnswers = [System.Collections.Generic.List[int]]@()
+$Global:stopwatch  = [System.Diagnostics.Stopwatch]::New()
+$Global:random     = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
+
+$textboxResponse.Add_KeyDown({
+    if ($_.Key -eq "Return") {
+        $answer = [int]($textboxResponse.Text)
+        $textboxResponse.Text = $null
+        
+        $progressbarCoupsRestants.Value++
+        if ($stopwatch.IsRunning -eq $false) { $stopwatch.Start() }
+        $allAnswers.Add($answer)
+        if ($random -gt $answer) { 
+            $labelText.Content = "Le nombre aléatoire est plus grand que $answer"
+            $labelMin.Content = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object | Select-Object -Last 1
+        } elseif ($random -lt $answer) {
+            $labelText.Content = "Le nombre aléatoire est plus petit que $answer"
+            $labelMax.Content = $allAnswers | Where-Object {$_ -gt $random} | Sort-Object | Select-Object -First 1
+        } else {
+            $labelText.Content = "VICTOIRE ! Vous avez deviné le nombre aléatoire"
+            $stackpanelButtons.Visibility = "Visible"
+            $textboxResponse.Text = $random
+            $textboxResponse.IsEnabled = $false
+            $stopwatch.Stop()
+        }
+
+        if ($progressbarCoupsRestants.Value -eq $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
+            $stackpanelButtons.Visibility = "Visible"
+            $textboxResponse.Text = $random
+            $textboxResponse.IsEnabled = $false
+            $labelText.Content = "DEFAITE ! Le nombre etait : $random"
+            $stopwatch.Stop()
+        }
+
+        if ($CalcBot.IsPresent) {
+            $textboxResponse.Text = [int](($labelMax.Content+$labelMin.Content)/2)
+        }
+    }
+})
+
+$null = $Global:interface.ShowDialog()
+```
