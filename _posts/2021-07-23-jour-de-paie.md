@@ -24,11 +24,11 @@ En bref : elle est où la moulaga ?
 
 Les règles de ce défis sont très simple : on cherche à obtenir le jour ouvré (hors samedi et dimanche) le plus proche du 25e jour du mois. Exclure les jours fériés est facultatif et ne sera pas explicité dans les solutions proposées.
 
-Pour les plus motivés d'entre-vous, voici plusieurs défis supplémentaires :
+Pour les plus motivés d'entre-vous, voici plusieurs défis supplémentaires (du plus facile au plus dur) :
 
-1. (FACILE) Faire la version la plus courte possible : tous les coups syntaxique sont permis. Vous serez probablement amené à tester tous les types de boucles (`for`, `ForEach-Object`, `while`, `do/until`, etc.) pour obtenir ou battre le record actuel : 63 caractères, espaces inclus.
-2. (MEDIUM) Utiliser l'[API de l'Etat Français sur les jours fériés](https://api.gouv.fr/documentation/jours-feries) pour les exclure des résultats. Je n'ai pas eu le courage de le faire personnellement, mais ça peut être un bon moyen d'aborder les API en PowerShell.
-3. (DIFFICILE) Créer une version du script en utilisant le [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
+- faire la version la plus courte possible : tous les coups syntaxique sont permis. Vous serez probablement amené à tester tous les types de boucles (`for`, `ForEach-Object`, `while`, `do/until`, etc.) pour obtenir ou battre le record actuel : 63 caractères, espaces inclus.
+- utiliser l'[API de l'Etat Français sur les jours fériés](https://api.gouv.fr/documentation/jours-feries) pour les exclure des résultats. Je n'ai pas eu le courage de le faire personnellement, mais ça peut être un bon moyen d'aborder les API en PowerShell.
+- créer une version du script en utilisant le [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
 
 ## Ressources utiles
 
@@ -36,7 +36,7 @@ Voici quelques ressources qui pourraient vous être utiles :
 
 - la documentation officielle de Microsoft sur la [commande `Get-Date`](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date) qui permet d'obtenir une date
 - la documentation officielle de Microsoft sur [les opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
-- - un article de IT Connect sur les [les boucles `do/until` et `do/while`](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
+- un article de IT Connect sur les [les boucles `do/until` et `do/while`](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
 
 ## Résultats attendus pour l'année 2022
 
