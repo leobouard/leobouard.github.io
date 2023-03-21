@@ -6,31 +6,44 @@ prevLink:
   id: "/2021/07/23/jour-de-paie"
 ---
 
-## Version Do/Until
+## Différentes boucles
 
-Simple et efficace : on va directement au 25e jour du mois et on vérifie qu'il ne s'agit pas d'un samedi ou d'un dimanche. On determine ça via la propriété "DayOfWeek" qui nous retourne le jour de la semaine en anglais (même si la culture de votre terminal de commande est en français). 
+Comme indiqué dans la consigne, différentes boucles sont possibles pour obtenir le résultat demandé.
 
-Et ça tombe bien que la valeur de "DayOfWeek" soit en anglais, parce que du coup c'est très facile d'identifier le week-end : le jour commence par un S (saturday & sunday).
+Voici un tableau récapitulatif des méthodes les plus courtes :
 
-Si le 25e jour du mois tombe un week-end, on essaye le jour d'avant jusqu'à ce qu'on soit sur un jour ouvré !
+Boucle | Logique | Nb caractère
+------ | ------- | ------------
+`for` | On commence au 25e jour et remonte jusqu'à tomber sur un jour ouvré | 66
+`while` | On commence au 25e jour et remonte jusqu'à tomber sur un jour ouvré | 65
+`do/until` | | 63
+`do/while` | | 60
+`ForEach-Object` | | 54
+
+### Version `for`
+
+Cette boucle est assez peu répandue en PowerShell, si bien qu'on a tendance à l'oublier. Elle permet de faire en une seule ligne :
+
+- une situation de départ : `$i = 25`
+- la condition pour rester dans la boucle : `$null -eq $d`
+- l'action a effectuer pour chaque traitement : `$i--`
+
+Le reste de la boucle est alors assez simple : on ajoute la date du jour à la variable `$d` si celle-ci n'est pas un samedi ou un dimanche.
 
 ```powershell
-$i = 25
-do {
-    $d = Get-Date -Day $i
-    $i--
-} until ($d.DayOfWeek -notlike "S*")
+for ($i = 25; $null -eq $d ; $i--) {
+    $d = Get-Date -Day $i | Where-Object {$_.DayOfWeek -notlike "S*"}
+}
 $d
 ```
 
-En version compressée on obtient :
+Version courte à 66 caractères : `for($i=25;!$d;$i--){$d=date -day $i|?{$_.DayOfWeek-notlike"s*"}}$d`
 
-```powershell
-# 63 caractères de long
-$i=25;do{$d=date -Day $i;$i--}until($d.DayOfWeek-notlike"S*")$d
-```
+### Version `while`
 
-Version alternative avec une boucle While :
+C'est une boucle assez commune, mais qui peut être cause de boucles infinies si la condition n'est jamais remplie. Elle a donné son nom à un album : [while(1<2) par deadmau5](https://open.spotify.com/album/4NQRw9HthpcLg4vYQ6yJFu), qui est un bon exemple de boucle infinie.
+
+Le traitement est donc simple : on récupère la date du 25e jour du mois en cours, et si celle-ci est un samedi ou un dimanche, alors on remonte un jour en arrière via la méthode `.AddDays(-1)` jusqu'à ce que le jour soit ouvré.
 
 ```powershell
 $d = Get-Date -Day 25
@@ -40,42 +53,49 @@ while ($d.DayOfWeek -like "S*") {
 $d
 ```
 
----
+Version courte à 65 caractères : `$d=date -Day 25;while($d.DayOfWeek-like"s*"){$d=$d.AddDays(-1)}$d`
 
-## Version ForEach-Object
+### Version `do/until` et `do/while`
 
-`1..25` : on instancie un tableau de 1 à 25 puis on va effectuer un traitement pour chaque élement du tableau (récupérer la date associée 1er jour du mois, puis le 2eme, puis le 3e...) via le Foreach-Object
+Le fonctionnement est relativement proche de la boucle `while`, mais cette fois-ci on tombe obligatoirement dans la boucle de traitement (il n'y a pas de condition en entrée, uniquement en sortie). La différence entre le `do/until` (faire X jusqu'à ce que Y) et le `do/while` (faire X tant que Z) réside simplement dans la différence de la comparaison :
 
-`Where-Object {$_.DayOfWeek -notlike "S*"}` : on ne stocke la date associée que si le jour de la semaine ne commence pas par un "S" (par exemple : Wednesday c'est OK, mais pas Sunday)
+- `until ($d.DayOfWeek -notlike "S*")`
+- `while ($d.DayOfWeek -like "S*")`
 
-`$d` : la variable contient alors tous les jours ouvrés jusqu'au 25e du mois
-
-`Select-Object -Last 1` : on récupère la dernière valeur du tableau contenant tous les jours ouvrés
-
-```powershell
-$d = @()
-1..25 | ForEach-Object { 
-    $d += Get-Date -Day $_ | Where-Object {$_.DayOfWeek -notlike "S*"} 
-}
-$d | Select-Object -Last 1
-```
-
-Version alternative avec une boucle For :
+Dans l'objectif de faire le script le plus court possible, c'est `do/while` qui est plus intéressant.
 
 ```powershell
-for ($i = 25; $null -eq $d ; $i--) {
-    $d = Get-Date -Day $i | Where-Object {$_.DayOfWeek -notlike "S*"}
-}
+$i = 25
+do {
+    $d = Get-Date -Day $i
+    $i--
+} while ($d.DayOfWeek -like "S*")
 $d
 ```
 
----
+Version courte à 60 caractères : `$i=25;do{$d=date -Day $i;$i--}while($d.DayOfWeek-like"S*")$d`
 
-## Version avec modulo
+### Version `ForEach-Object`
 
-Trouvé par [@Ludovic]()
+La boucle la plus répandue en PowerShell : on a une liste et on applique un traitement pour chaque élément de la liste. Ce script a très clairement été réalisé pour obtenir la commande la plus courte possible, donc la logique est particulière.
 
-On se base sur la version avec la boucle Do/Until, mais on modifie la condition de sortie pour quelque chose de plus exotique
+L'objectif est d'avoir un tableau de tous les jours ouvrés du mois en cours, pour ensuite afficher le premier résultat. Le fait d'avoir une liste inversée (`25..1`) nous permet d'éviter d'avoir à recourir au paramètre `-Last` de la commande `Select-Object` (sur laquelle il n'y a pas de syntaxe courte).
+
+Ici pas besoin de variable `$d`, on utilise le pipeline au maximum (pour économiser de précieux caractères).
+
+```powershell
+25..1 | ForEach-Object { 
+    Get-Date -Day $_ | Where-Object {$_.DayOfWeek -notlike "S*"}
+} | Select-Object -First 1
+```
+
+Version courte à 54 caractères : `(25..1|%{date -Day $_|?{$_.DayOfWeek-notlike"S*"}})[0]`
+
+## Utilisation du modulo
+
+Trouvé par [@Ludovic Morin](https://www.linkedin.com/in/ludovic-morin-193a44144/).
+
+On se base sur la version avec la boucle `do/until`, mais on modifie la condition de sortie pour quelque chose de plus exotique :
 
 ```powershell
 $i = 25
