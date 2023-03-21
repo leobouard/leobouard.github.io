@@ -12,13 +12,13 @@ Comme indiqué dans la consigne, différentes boucles sont possibles pour obteni
 
 Voici un tableau récapitulatif des méthodes les plus courtes :
 
-Boucle | Logique | Nb caractère
------- | ------- | ------------
-`for` | On commence au 25e jour et remonte jusqu'à tomber sur un jour ouvré | 66
-`while` | On commence au 25e jour et remonte jusqu'à tomber sur un jour ouvré | 65
-`do/until` | | 63
-`do/while` | | 60
-`ForEach-Object` | | 54
+Boucle | Longueur
+------ | --------
+`for` | 66 caractères
+`while` | 65 caractères
+`do/until` | 63 caractères
+`do/while` | 60 caractères
+`ForEach-Object` | 54 caractères
 
 ### Version `for`
 

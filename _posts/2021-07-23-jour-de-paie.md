@@ -26,7 +26,7 @@ Les règles de ce défis sont très simple : on cherche à obtenir le jour ouvr�
 
 Pour les plus motivés d'entre-vous, voici plusieurs défis supplémentaires (du plus facile au plus dur) :
 
-- faire la version la plus courte possible : tous les coups syntaxique sont permis. Vous serez probablement amené à tester tous les types de boucles (`for`, `ForEach-Object`, `while`, `do/until`, etc.) pour obtenir ou battre le record actuel : 63 caractères, espaces inclus.
+- faire la version la plus courte possible : tous les coups syntaxique sont permis. Vous serez probablement amené à tester tous les types de boucles (`for`, `ForEach-Object`, `while`, `do/until`, etc.) pour obtenir ou battre le record actuel : 54 caractères, espaces inclus.
 - utiliser l'[API de l'Etat Français sur les jours fériés](https://api.gouv.fr/documentation/jours-feries) pour les exclure des résultats. Je n'ai pas eu le courage de le faire personnellement, mais ça peut être un bon moyen d'aborder les API en PowerShell.
 - créer une version du script en utilisant le [modulo](https://devblogs.microsoft.com/scripting/powertip-return-remainder-after-dividing-two-numbers/)
 
