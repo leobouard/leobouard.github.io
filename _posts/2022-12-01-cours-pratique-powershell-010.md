@@ -25,7 +25,43 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 
 ### Rendre le bouton "Recommencer" fonctionnel
 
+Le fait de recommencer une nouvelle partie implique de réinitialiser un bon nombre d'éléments de l'interface graphique : la barre de progression, les bornes supérieures et inférieures, les boutons supplémentaires, etc. Pour éviter de répéter des lignes de code, il convient donc de créer une fonction.
+
+Nous utiliserons donc la fonction `Reset-UI` pour regrouper les actions déjà effectuées en début de script (comme la génération du nombre aléatoire, la définition des valeurs maximum et minimum, la réinitialisation du chronomètre et de la barre de progression, etc.) et d'autres actions spécifiques à une nouvelle partie comme :
+
+- rendre les boutons "Recommencer" et "Meilleurs scores" invisibles
+- vider le contenu de la boite de texte et la rendre active
+- réinitialiser la valeur du label qui indique "Le nombre est plus petit / grand que ..."
+
+```powershell
+function Reset-UI {
+    # ...
+    $stackpanelButtons.Visibility = "Hidden"
+    $textboxResponse.IsEnabled = $true
+    $textboxResponse.Text = $null
+    $labelText.Content = "Le nombre est plus..."
+    # ...
+}
+Reset-UI
+```
+
+Il ne reste plus qu'à déclarer une action pour le bouton "Recommencer" :
+
+```powershell
+$buttonRetry.Add_Click({ Reset-UI })
+```
+
 ### Réimplémenter le mode facile
+
+On ajoute le paramètre `[switch]$EasyMode` pour réduire la complexité du nombre aléatoire : celui-ci est forcément un multiple de 5.
+
+```powershell
+if ($EasyMode.IsPresent) {
+    while ($random % 5 -ne 0) {
+        $Global:random = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
+    }
+}
+```
 
 ### Création du mode triche
 
@@ -51,7 +87,7 @@ Pour le joueur, il ne lui reste qu'à faire une estimation initiale et à appuye
 
 ```powershell
 if ($CalcBot.IsPresent) {
-    $textboxResponse.Text = [int](($labelMax.Content+$labelMin.Content)/2)
+    $textboxResponse.Text = [math]::Round((($labelMax.Content+$labelMin.Content)/2),0)
 }
 ```
 
