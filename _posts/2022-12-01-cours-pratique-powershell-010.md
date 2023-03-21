@@ -31,23 +31,21 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 
 On ajoute le paramètre `[switch]$CalcBot` pour invoquer le mode triche : celui-ci va calculer pour nous la valeur moyenne entre la borne inférieure et la borne supérieure, puis l'inscrire directement dans la boite de texte.
 
-Calculer la valeur moyenne des bornes est la meilleure méthode pour parvenir à la victoire de manière assurée, puisque 2¹⁰ = 1024. Cette méthode est appelée *binary search* et consiste à découper une liste en deux lots égaux.
-
-![exemple de la recherche binaire sur Wikipédia](https://en.wikipedia.org/wiki/File:Binary-search-work.gif)
+Calculer la valeur moyenne des bornes est la meilleure méthode pour parvenir à la victoire de manière assurée, puisque 2¹⁰ = 1024. Cette méthode est appelée *[binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm)* et consiste à découper une liste en deux lots égaux pour exclure le maximum de résultats à chaque tour, et donc de diviser le nombre de possibilités par deux. Au bout de 10 tours, il ne reste qu'une seule possibilité :
 
 Tentative | Bornes | Possibilités
 --------- | ------ | ------------
-n°0 | 1 à 1000 | 1000
-n°1 | 1 à 500 | 500
-n°2 | 1 à 250 | 250
-n°3 | 125 à 250 | 125
-n°4 | 188 à 250 | 62
-n°5 | 188 à 219 | 31
-n°6 | 188 à 204 | 16
-n°7 | 188 à 196 | 8
-n°8 | 192 à 196 | 4
-n°9 | 192 à 194 | 2
-n°10 | 193 | 1
+n°0 | 1 à 1000 | 1000 ≃ 2¹⁰
+n°1 | 1 à 500 | 500 ≃ 2⁹
+n°2 | 1 à 250 | 250 ≃ 2⁸
+n°3 | 125 à 250 | 125 ≃ 2⁷
+n°4 | 188 à 250 | 62 ≃ 2⁶
+n°5 | 188 à 219 | 31 ≃ 2⁵
+n°6 | 188 à 204 | 16 = 2⁴
+n°7 | 188 à 196 | 8 = 2³
+n°8 | 192 à 196 | 4 = 2²
+n°9 | 192 à 194 | 2 = 2¹
+n°10 | 193 | 1 = 2⁰
 
 Pour le joueur, il ne lui reste qu'à faire une estimation initiale et à appuyer frénétiquement sur "Entrée" pour finir la partie.
 
