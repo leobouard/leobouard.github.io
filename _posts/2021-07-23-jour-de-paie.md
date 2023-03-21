@@ -38,21 +38,23 @@ Voici quelques ressources qui pourraient vous être utiles :
 - la documentation officielle de Microsoft sur [les opérateurs de comparaisons](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
 - un article de IT Connect sur les [les boucles `do/until` et `do/while`](https://www.it-connect.fr/powershell-boucle-do-until-et-do-while/)
 
-## Résultats attendus pour l'année 2022
+## Résultats attendus pour l'année 2023
+
+Les résultats ignorent les jours fériés
 
 Mois | Jour attendu
 ---- | ------------
-Janvier 2022 | mardi 25 janvier
-Février 2022 | vendredi 25 février
-Mars 2022 | vendredi 25 mars
-Avril 2022 | lundi 25 avril
-Mai 2022 | mercredi 25 mai
-Juin 2022 | vendredi 24 juin
-Juillet 2022 | lundi 25 juillet
-Août 2022 | jeudi 25 août
-Septembre 2022 | vendredi 23 septembre
-Octobre 2022 | mardi 25 octobre
-Novembre 2022 | vendredi 25 novembre
-Décembre 2022 | vendredi 23 décembre
+Janvier | mercredi 25 janvier
+Février | vendredi 24 février
+Mars | vendredi 24 mars
+Avril | mardi 25 avril
+Mai | jeudi 25 mai
+Juin | vendredi 23 juin
+Juillet | mardi 25 juillet
+Août | vendredi 25 août
+Septembre | lundi 25 septembre
+Octobre | mercredi 25 octobre
+Novembre | vendredi 24 novembre
+Décembre | lundi 25 décembre
 
 A vous de jouer !
