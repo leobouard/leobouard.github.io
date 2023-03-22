@@ -183,6 +183,17 @@ main {
         max-width: 100%;
         min-width: 50%;
     }
+
+    details {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        user-select: none;
+    }
+
+    summary {
+        list-style: none;
+        padding: 10px;
+    }
 }
 
 div.cookieInfo {
