@@ -83,7 +83,7 @@ n°8 | 192 à 196 | 4 = 2²
 n°9 | 192 à 194 | 2 = 2¹
 n°10 | 193 | 1 = 2⁰
 
-Pour le joueur, il ne lui reste qu'à faire une estimation initiale et à appuyer frénétiquement sur "Entrée" pour finir la partie.
+Pour le joueur, il ne lui reste qu'à faire une estimation initiale (500 par exemple) et à appuyer frénétiquement sur "Entrée" pour finir la partie.
 
 ```powershell
 if ($CalcBot.IsPresent) {
@@ -93,13 +93,63 @@ if ($CalcBot.IsPresent) {
 
 ### Rendre le bouton "Meilleurs scores" fonctionnel
 
-### Améliorer le tableau des scores
+#### Création des statistiques
+
+Quelques modifications nécessaires sont à apporter à l'ancien objet :
+
+- modification du format de la date pour qu'il puisse être trier de manière alphabétique (exemple : `1999-31-12T23:59:59Z`)
+- convertir la valeur "Tentatives" en entier qui se base sur la barre de progression
+- adapter la valeur "Temps moyen par tentative" pour ne plus utiliser la variable `$i`
+- ajout de la propriété "Tricheur" qui indique si le paramètre `-CalcBot` a été invoqué
+
+```powershell
+[PSCustomObject]@{
+    "Joueur"                    = $env:USERNAME
+    "Date"                      = Get-Date -Format 'yyyy-MM-ddTHH:mm:ssZ'
+    "Nombre aléatoire"          = $random
+    "Réponses"                  = $allAnswers -join ','
+    "Réponse moyenne"           = [int]($allAnswers | Measure-Object -Average).Average
+    "Tentatives"                = [int]($progressbarCoupsRestants.Value)
+    "Temps de résolution (sec)" = [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
+    "Temps moyen par tentative" = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $progressbarCoupsRestants.Value),3)
+    "Mode facile"               = $EasyMode.IsPresent
+    "Tricheur"                  = $CalcBot.IsPresent
+}
+```
+
+#### Sauvegarde des données
+
+On va profiter du changement de script pour modifier le format dans lequel on enregistre nos données : passage du CSV au JSON.
+
+Le JSON a beaucoup d'avantages par rapport au CSV, mais celui qui nous intéresse dans ce cas c'est la capacité du JSON à différencier un numéro d'une chaine de caractère (ce qui va est pratique pour tirer les données).
+
+Pour extraire des données d'un fichier JSON, on utilise la combinaison des commandes `Get-Content` et `ConvertFrom-Json`.
+
+```powershell
+if (Test-Path -Path $HighScorePath) { 
+    $results = [System.Collections.Generic.List[PSCustomObject]](Get-Content $HighScorePath | ConvertFrom-Json)
+} else {
+    $results = [System.Collections.Generic.List[PSCustomObject]]@()
+}
+# ...
+if ($HighScorePath) { $results | ConvertTo-Json | Set-Content -Path $HighScorePath -Encoding UTF8 }
+```
+
+#### Affichage des données
+
+Il ne nous reste plus qu'à afficher les données lors que le bouton "Meilleurs scores" est cliqué. On ajoute un filtre avec `Where-Object` pour ne pas voir les parties avec le mode triche et on affiche le résultat avec `Out-GridView`.
+
+```powershell
+$buttonHighScore.Add_Click({ $results | Where-Object {$_.Tricheur -eq $false} | Sort-Object -Property 'Temps de résolution (sec)' | Out-GridView })
+```
 
 ## Correction
 
 ```powershell
 param(
-    [switch]$CalcBot
+    [switch]$CalcBot,
+    [switch]$EasyMode,
+    [System.IO.FileInfo]$HighScorePath = "$PSScriptRoot\highscore.json"
 )
 
 Add-Type -AssemblyName PresentationFramework
@@ -110,12 +160,31 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object {
     Set-Variable -Name ($_.Name) -Value $interface.FindName($_.Name) -Scope Global
 }
 
-$progressbarCoupsRestants.Value = 0
-$labelMin.Content = 1
-$labelMax.Content = 1000
-$Global:allAnswers = [System.Collections.Generic.List[int]]@()
-$Global:stopwatch  = [System.Diagnostics.Stopwatch]::New()
-$Global:random     = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
+function Reset-UI {
+    $progressbarCoupsRestants.Value = 0
+    $labelMin.Content = 1
+    $labelMax.Content = 1000
+    $stackpanelButtons.Visibility = "Hidden"
+    $textboxResponse.IsEnabled = $true
+    $textboxResponse.Text = $null
+    $labelText.Content = "Le nombre est plus..."
+    $Global:allAnswers = [System.Collections.Generic.List[int]]@()
+    $Global:stopwatch  = [System.Diagnostics.Stopwatch]::New()
+    $Global:random     = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
+    if ($EasyMode.IsPresent) {
+        while ($random % 5 -ne 0) {
+            $Global:random = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
+        }
+    }
+}
+
+if (Test-Path -Path $HighScorePath) { 
+    $results = [System.Collections.Generic.List[PSCustomObject]](Get-Content $HighScorePath | ConvertFrom-Json)
+} else {
+    $results = [System.Collections.Generic.List[PSCustomObject]]@()
+}
+
+Reset-UI
 
 $textboxResponse.Add_KeyDown({
     if ($_.Key -eq "Return") {
@@ -137,6 +206,20 @@ $textboxResponse.Add_KeyDown({
             $textboxResponse.Text = $random
             $textboxResponse.IsEnabled = $false
             $stopwatch.Stop()
+
+            $results.Add([PSCustomObject]@{
+                "Joueur"                    = $env:USERNAME
+                "Date"                      = Get-Date -Format 'yyyy-MM-ddTHH:mm:ssZ'
+                "Nombre aléatoire"          = $random
+                "Réponses"                  = $allAnswers -join ','
+                "Réponse moyenne"           = [int]($allAnswers | Measure-Object -Average).Average
+                "Tentatives"                = [int]($progressbarCoupsRestants.Value)
+                "Temps de résolution (sec)" = [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
+                "Temps moyen par tentative" = [System.Math]::Round(($stopwatch.Elapsed.TotalSeconds / $progressbarCoupsRestants.Value),3)
+                "Mode facile"               = $EasyMode.IsPresent
+                "Tricheur"                  = $CalcBot.IsPresent
+            })
+            if ($HighScorePath) { $results | ConvertTo-Json | Set-Content -Path $HighScorePath -Encoding UTF8 }
         }
 
         if ($progressbarCoupsRestants.Value -eq $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
@@ -148,10 +231,14 @@ $textboxResponse.Add_KeyDown({
         }
 
         if ($CalcBot.IsPresent) {
-            $textboxResponse.Text = [int](($labelMax.Content+$labelMin.Content)/2)
+            $textboxResponse.Text = [math]::Round((($labelMax.Content+$labelMin.Content)/2),0)
         }
     }
 })
+
+$buttonRetry.Add_Click({ Reset-UI })
+
+$buttonHighScore.Add_Click({ $results | Where-Object {$_.Tricheur -eq $false} | Sort-Object -Property 'Temps de résolution (sec)' | Out-GridView })
 
 $null = $Global:interface.ShowDialog()
 ```
