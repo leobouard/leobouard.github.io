@@ -124,31 +124,7 @@ Pour arrondir un nombre décimal en PowerShell, le plus simple est de le convert
 
 ## Correction
 
-```powershell
-$i = 0
-$allAnswers = [System.Collections.Generic.List[int]]@()
-$random = Get-Random -Minimum 1 -Maximum 1000
-do {
-    $i++
-    $answer = Read-Host "Deviner le nombre"
-    $allAnswers.Add($answer)
-    if ($random -gt $answer) { 
-        Write-Host "??? est plus grand que $answer"
-    } elseif ($random -lt $answer) {
-        Write-Host "??? est plus petit que $answer"
-    } else {
-        Write-Host "VICTOIRE ! Vous avez deviné le nombre aléatoire"
-    }
-} until ($answer -eq $random -or $i -ge 10)
-
-if ($answer -ne $random) { 
-    Write-Host "DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire"
-}
-
-[PSCustomObject]@{
-    "Nombre aléatoire" = $random
-    "Réponses"         = $allAnswers
-    "Réponse moyenne"  = [int]($allAnswers | Measure-Object -Average).Average
-    "Tentatives"       = $i
-} | Format-List
-```
+<details>
+    <summary>Voir la solution</summary>
+    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-003.ps1">cours-pratique-powershell-003.ps1</a>
+</details>

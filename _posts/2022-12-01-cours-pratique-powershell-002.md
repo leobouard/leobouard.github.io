@@ -128,28 +128,7 @@ Dans le `PSCustomObject` affiché à la fin, on ajoute une nouvelle propriété 
 
 ## Correction
 
-```powershell
-$i = 0
-$random = Get-Random -Minimum 1 -Maximum 1000
-do {
-    $i++
-    $answer = Read-Host "Deviner le nombre"
-    if ($random -gt $answer) { 
-        Write-Host "??? est plus grand que $answer"
-    } elseif ($random -lt $answer) {
-        Write-Host "??? est plus petit que $answer"
-    } else {
-        Write-Host "VICTOIRE ! Vous avez deviné le nombre aléatoire"
-    }
-} until ($answer -eq $random -or $i -ge 10)
-
-if ($answer -ne $random) { 
-    Write-Host "DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire"
-}
-
-[PSCustomObject]@{
-    "Nombre aléatoire" = $random
-    "Dernière réponse" = $answer
-    "Tentative"        = $i
-} | Format-List
-```
+<details>
+    <summary>Voir la solution</summary>
+    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-002.ps1">cours-pratique-powershell-002.ps1</a>
+</details>
