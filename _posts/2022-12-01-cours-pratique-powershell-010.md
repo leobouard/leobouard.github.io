@@ -12,10 +12,10 @@ prevLink:
 
 Il nous reste encore quelques éléments à implémenter au script graphique pour le déclarer comme terminé :
 
-- Rendre le bouton "Recommencer" fonctionnel
-- Réimplémenter le mode facile
-- Créer un mode triche
-- 
+- faire en sorte que le bouton "Recommencer" puisse permettre de relancer une partie, avec un nouveau nombre aléatoire
+- réimplémenter le mode facile, qui génère uniquement des nombres aléatoires qui sont multiples de 5
+- ajouter un nouveau paramètre `CalcBot` qui va calculer la meilleure réponse possible pour chaque tour, et l'inscrire directement dans la boite de texte
+- rendre fonctionnel l'affichage des meilleurs scores, en s'assurant que les parties dans lesquelles le paramètre `CalcBot` a été utilisé ne soit pas affichées
 
 ### Résultat attendu
 
@@ -95,10 +95,10 @@ if ($CalcBot.IsPresent) {
 
 #### Création des statistiques
 
-Quelques modifications nécessaires sont à apporter à l'ancien objet :
+Quelques modifications sont à apporter à l'ancien objet :
 
 - modification du format de la date pour qu'il puisse être trier de manière alphabétique (exemple : `1999-31-12T23:59:59Z`)
-- convertir la valeur "Tentatives" en entier qui se base sur la barre de progression
+- convertir la valeur "Tentatives" en un entier qui se base sur la barre de progression
 - adapter la valeur "Temps moyen par tentative" pour ne plus utiliser la variable `$i`
 - ajout de la propriété "Tricheur" qui indique si le paramètre `-CalcBot` a été invoqué
 
@@ -121,7 +121,7 @@ Quelques modifications nécessaires sont à apporter à l'ancien objet :
 
 On va profiter du changement de script pour modifier le format dans lequel on enregistre nos données : passage du CSV au JSON.
 
-Le JSON a beaucoup d'avantages par rapport au CSV, mais celui qui nous intéresse dans ce cas c'est la capacité du JSON à différencier un numéro d'une chaine de caractère (ce qui va est pratique pour tirer les données).
+Le JSON a beaucoup d'avantages par rapport au CSV, mais celui qui nous intéresse dans ce cas c'est la capacité du JSON à différencier un numéro d'une chaine de caractère (ce qui va est pratique pour tirer les données et faire en sorte que la valeur '9' soit plus petite que la valeur '22', ce qui n'est pas le cas si l'on considère qu'il s'agit d'une chaine de caractère).
 
 Pour extraire des données d'un fichier JSON, on utilise la combinaison des commandes `Get-Content` et `ConvertFrom-Json`.
 
