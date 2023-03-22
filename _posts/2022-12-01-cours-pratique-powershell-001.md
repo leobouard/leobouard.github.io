@@ -137,24 +137,11 @@ Par défaut, l'objet va s'afficher sous forme de tableau puisqu'il n'y a que deu
 $result | Format-List
 ```
 
-## Correction 
+## Correction
 
 Encore une fois un petit rappel : il n'y a pas une seule bonne méthode donc si votre script ne ressemble pas au mien mais qu'il fonctionne, tant-mieux !
 
-```powershell
-$random = Get-Random -Minimum 1 -Maximum 1000
-$answer = Read-Host "Deviner le nombre"
-
-if ($random -gt $answer) { 
-    Write-Host "??? est plus grand que $answer"
-} elseif ($random -lt $answer) {
-    Write-Host "??? est plus petit que $answer"
-} else {
-    Write-Host "VICTOIRE ! Vous avez deviné le nombre aléatoire"
-}
-
-[PSCustomObject]@{
-    "Nombre aléatoire" = $random
-    "Dernière réponse" = $answer
-} | Format-List
-```
+<details>
+    <summary>Voir la solution</summary>
+    <a href="/assets/scripts/cours-pratique-powershell-001.ps1"></a>
+</details>
