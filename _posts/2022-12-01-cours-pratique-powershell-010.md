@@ -23,6 +23,14 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 
 ## Etape par étape
 
+1. Rendre le bouton "Recommencer" fonctionnel
+2. Réimplémenter le mode facile
+3. Création du mode triche
+4. Rendre le bouton "Meilleurs scores" fonctionnel
+   1. Création des statistiques
+   2. Sauvegarde des données
+   3. Affichage des données
+
 ### Rendre le bouton "Recommencer" fonctionnel
 
 Le fait de recommencer une nouvelle partie implique de réinitialiser un bon nombre d'éléments de l'interface graphique : la barre de progression, les bornes supérieures et inférieures, les boutons supplémentaires, etc. Pour éviter de répéter des lignes de code, il convient donc de créer une fonction.
