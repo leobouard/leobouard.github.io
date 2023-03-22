@@ -77,5 +77,5 @@ Même chose dans l'affichage de l'information, on utilise simplement la proprié
 
 <details>
     <summary>Voir la solution</summary>
-    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-006.ps1">cours-pratique-powershell-006.ps1</a>
+    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-006.ps1" target="_blank">cours-pratique-powershell-006.ps1</a>
 </details>

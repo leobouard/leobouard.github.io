@@ -126,5 +126,5 @@ Pour arrondir un nombre décimal en PowerShell, le plus simple est de le convert
 
 <details>
     <summary>Voir la solution</summary>
-    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-003.ps1">cours-pratique-powershell-003.ps1</a>
+    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-003.ps1" target="_blank">cours-pratique-powershell-003.ps1</a>
 </details>

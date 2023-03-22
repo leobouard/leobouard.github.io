@@ -117,5 +117,5 @@ if ($decision -eq 0) {
 
 <details>
     <summary>Voir la solution</summary>
-    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-007.ps1">cours-pratique-powershell-007.ps1</a>
+    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-007.ps1" target="_blank">cours-pratique-powershell-007.ps1</a>
 </details>
