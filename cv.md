@@ -81,7 +81,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     <div id="div-metsys" style="margin-bottom: 35px;">
         <div class="enterprise">
             <div>
-                <img src="https://media.licdn.com/dms/image/C4D0BAQE5KJZV7v44vQ/company-logo_100_100/0/1538657927471?e=1679529600&v=beta&t=C0AKNt7hlOi_nbmOehAyNUP-WsWZV-KXsA_4qu3c66w" alt="logo METSYS">
+                <img src="/assets/images/metsys.jpg" alt="logo METSYS">
             </div>
             <div>
                 <h3>METSYS</h3>
@@ -113,7 +113,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     <div id="div-groupe-roullier" style="margin-bottom: 35px;">
         <div class="enterprise">
             <div>
-                <img src="https://media.licdn.com/dms/image/C4D0BAQFkmJTRk_252A/company-logo_100_100/0/1519856575710?e=1679529600&v=beta&t=v_nlqf7lNxTTqaS9pt_JsaplD2czF-X5or0H4KnYciM" alt="logo Groupe Roullier">
+                <img src="/assets/images/groupe-roullier.jpg" alt="logo Groupe Roullier">
             </div>
             <div>
                 <h3>Groupe Roullier</h3>
@@ -166,7 +166,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     <div id="div-geves" style="margin-bottom: 35px;">
         <div class="enterprise">
             <div>
-                <img src="https://media.licdn.com/dms/image/C4D0BAQHzTFbiS8dAmw/company-logo_100_100/0/1536567798460?e=1679529600&v=beta&t=_F8Px6eDUS1KjEUejb89ii5FC13Cj2FoLBH9aikgvyU" alt="logo GEVES">
+                <img src="/assets/images/geves.jpg" alt="logo GEVES">
             </div>
             <div>
                 <h3>GEVES</h3>
@@ -193,11 +193,11 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 ## Formation
 
 <div style="display: block;">
-    <!-- METSYS -->
-    <div id="div-metsys" style="margin-bottom: 35px;">
+    <!-- IUT La Roche-sur-Yon -->
+    <div id="div-iut-la-roche-sur-yon" style="margin-bottom: 35px;">
         <div class="enterprise">
             <div>
-                <img src="https://media.licdn.com/dms/image/C4E0BAQHYwJXHq0sifw/company-logo_100_100/0/1649151202556?e=1679529600&v=beta&t=HjExswgziINC--7m_cSrLjqTdu15B6a7oa8kS_nrQGQ" alt="logo IUT de La Roche-sur-Yon">
+                <img src="/assets/images/iut-la-roche-sur-yon.jpg" alt="logo IUT de La Roche-sur-Yon">
             </div>
             <div>
                 <h3>IUT de La Roche-sur-Yon</h3>
