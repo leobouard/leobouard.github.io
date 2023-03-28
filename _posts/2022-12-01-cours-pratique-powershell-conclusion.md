@@ -8,7 +8,9 @@ prevLink:
   id: "/2022/12/01/cours-pratique-powershell-010"
 ---
 
-Si vous avez pris le temps de faire ce cours pratique jusqu'au bout : bravo à vous ! 
+Si vous avez pris le temps de faire ce cours pratique jusqu'au bout : bravo à vous !
+
+![ça se fête](https://i.giphy.com/media/rY93u9tQbybks/giphy.webp)
 
 J'espère que vous avez apprécié les explications fournies et que vous aurez appris des choses. A travers ce jeu, on aura pu aborder les différentes conditions, les boucles, les `PSCustomObjects`, les `Arrays`, les paramètres de script et les interfaces XAML. En bref : plein de choses qui devrait pouvoir vous aider dans vos tâches d'administration et d'automatisation.
 
