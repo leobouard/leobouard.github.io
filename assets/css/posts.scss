@@ -9,7 +9,7 @@
 
 article {
     margin: 15px;
-    height: 320px;
+    height: 300px;
     max-width: 230px;
     flex: 1;
     flex-basis: 200px;
@@ -40,6 +40,7 @@ article > small {
 article:hover {
     box-shadow: 0 0 5px 0 #00000040;
     filter: grayscale(0) saturate(1.2);
+    border-color: #6f6cb1;
 
     div.articleThumbnail {
         background: linear-gradient(45deg,#e4e4f1, #fefaec);
@@ -263,7 +264,7 @@ a.solution {
     border-radius: 5px;
 }
 
-a.solution {
+a.solution:hover {
     background: linear-gradient(45deg, #E4E4F1, #FEFAEC);
 }
 
