@@ -126,7 +126,4 @@ if ($progressbarCoupsRestants.Value -eq $progressbarCoupsRestants.Maximum -and $
 
 ## Correction
 
-<details>
-    <summary>Voir la solution</summary>
-    <a href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-009.ps1" target="_blank">cours-pratique-powershell-009.ps1</a>
-</details>
+<a class="solution" href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-pratique-powershell-009.ps1" target="_blank">Voir le script complet</a>
