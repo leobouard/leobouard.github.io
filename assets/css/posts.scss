@@ -263,6 +263,10 @@ a.solution {
     border-radius: 5px;
 }
 
+a.solution {
+    background: linear-gradient(45deg, #E4E4F1, #FEFAEC);
+}
+
 @media print, screen and (max-width: 950px) {
 
     .postBanner {
