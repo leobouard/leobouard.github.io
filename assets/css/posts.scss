@@ -231,7 +231,6 @@ div.summary > span {
     color: #fff;
 }
 
-
 div.side_buttons {
     position: fixed;
     flex-direction: column;
@@ -254,6 +253,14 @@ div.side_buttons > a {
 div.side_buttons > a:hover {
     background-color: #6f6cb1;
     text-decoration: none;
+}
+
+a.solution {
+    display: block;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 @media print, screen and (max-width: 950px) {
