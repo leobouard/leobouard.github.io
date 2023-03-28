@@ -8,11 +8,11 @@
 
 html {
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     height: 100%;
-    letter-spacing: 0.3px;
-    line-height: 160%;
+    letter-spacing: 0.25px;
+    line-height: 155%;
 }
 
 body {
@@ -259,7 +259,6 @@ footer {
 @media print, screen and (max-width: 950px) {
 
     html {
-        font-size: 14px;
         font-weight: 400;
         height: 100%;
         letter-spacing: 0.2px;
