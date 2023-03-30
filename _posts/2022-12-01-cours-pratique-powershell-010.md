@@ -22,6 +22,14 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 
 ### Résultat attendu
 
+Démonstration du mode standard :
+
+![Démonstration du résultat attendu pour la partie 10](/assets/images/resultat-cours-powershell-010.webp)
+
+Démonstration du mode triche :
+
+![Démonstration du résultat attendu pour la partie 10 (mode triche actif)](/assets/images/resultat-cours-powershell-010-mode-triche.webp)
+
 ---
 
 ## Etape par étape

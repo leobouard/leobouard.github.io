@@ -25,6 +25,12 @@ On continue d'adapter notre script pour convenir à l'interface graphique. Dans 
 
 ### Résultat attendu
 
+Voici une démonstration du résultat attendu :
+
+![Démonstration du résultat attendu pour la partie 9](/assets/images/resultat-cours-powershell-009.webp)
+
+On note que les boutons "Recommencer" et "Meilleurs scores" n'ont pas a être fonctionnels, ils doivent simplement être rendus visible.
+
 ---
 
 ## Etape par étape

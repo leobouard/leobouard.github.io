@@ -17,7 +17,7 @@ L'idée est simple : **créer un petit jeu avec PowerShell** mais qu'on va emmen
 
 Simple non ? Normalement vous aurez fini la base en moins de 10 minutes, mais c'est la suite qui va être intéressante. On va explorer un maximum de chose avec PowerShell via ce jeu : les différents types de boucle, les conditions, les collections d'objets et on finira en beauté par l'ajout d'une interface graphique avec WPF.
 
-![Interface graphique finale en WPF](/assets/images/resultat-final.webp)
+![Interface graphique finale en WPF](/assets/images/resultat-cours-powershell-010.webp)
 
 Quelques précisions avant de commencer :
 
