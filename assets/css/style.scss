@@ -128,14 +128,14 @@ main {
 
     blockquote {
         background-color: #342E37;
-        border-left: 5px solid #000;
+        border-left: 5px solid #6f6cb1;
         border-radius: 5px;
         color: #fafafa;
         margin-inline: 0;
         padding: 5px 15px;
     }
 
-    pre, code {
+    pre, code, blockquote {
         font-family: 'Martian Mono', monospace;
         font-size: 12px;
     }
