@@ -17,8 +17,8 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 
 - faire en sorte que le bouton "Recommencer" puisse permettre de relancer une partie, avec un nouveau nombre aléatoire
 - réimplémenter le mode facile, qui génère uniquement des nombres aléatoires qui sont multiples de 5
-- ajouter un nouveau paramètre `CalcBot` qui va calculer la meilleure réponse possible pour chaque tour, et l'inscrire directement dans la boite de texte
-- rendre fonctionnel l'affichage des meilleurs scores, en s'assurant que les parties dans lesquelles le paramètre `CalcBot` a été utilisé ne soit pas affichées
+- ajouter un nouveau paramètre `-CalcBot` qui va calculer la meilleure réponse possible pour chaque tour, et l'inscrire directement dans la boite de texte
+- rendre fonctionnel l'affichage des meilleurs scores, en s'assurant que les parties dans lesquelles le paramètre `-CalcBot` a été utilisé ne soit pas affichées
 
 ### Résultat attendu
 
