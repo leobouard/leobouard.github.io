@@ -78,7 +78,7 @@ function Test-Parallel {
 }
 ```
 
-## Toujours utiliser la version la plus récente de PowerShell
+## Utiliser les bons outils
 
 Vous aurez beau optimiser votre code comme jamais et suivre toutes les bonnes pratiques possibles, un script exécuté avec Windows PowerShell 2.0 sera toujours moins performant qu'un même script exécuté en PowerShell v7. Les versions les plus récentes embarquent toujours leurs lot d'améliorations, autant au niveau des performances qu'au niveau des fonctionnalités.
 
