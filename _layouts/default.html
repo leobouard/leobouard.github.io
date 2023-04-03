@@ -32,11 +32,6 @@
         <a href="/blog">Articles</a>
       </nav>
     </header>
-    {% if page.layout == "post" %}
-    <div class="postBanner">
-      {{ page.icon }}
-    </div>
-    {% endif %}
     <main {% if page.title == "Accueil" %} style="background: linear-gradient(45deg, #FEFAEC, #E4E4F1);" {% endif %}>
       {{ content }}
       <div class="cookieInfo" id="cookieInfo">
