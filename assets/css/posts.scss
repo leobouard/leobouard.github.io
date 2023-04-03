@@ -40,7 +40,7 @@ article > small {
 article:hover {
     box-shadow: 0 0 5px 0 #00000040;
     filter: grayscale(0) saturate(1.2);
-    border-color: #6f6cb1;
+    border-color: #6B70B5;
 
     div.articleThumbnail {
         background: linear-gradient(45deg,#e4e4f1, #fefaec);
@@ -118,7 +118,7 @@ span.articleDescription {
     margin-top: -50px;
     height: 225px;
     font-size: 90px;
-    background: linear-gradient(45deg, #E4E4F1, #FEFAEC);
+    background: #6B70B5; /*linear-gradient(45deg, #E4E4F1, #FEFAEC);/
     user-select: none;
     z-index: -1;
 }
@@ -253,7 +253,7 @@ div.side_buttons > a {
 }
 
 div.side_buttons > a:hover {
-    background-color: #6f6cb1;
+    background-color: #6B70B5;
     text-decoration: none;
 }
 
