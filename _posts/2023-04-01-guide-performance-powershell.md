@@ -11,7 +11,7 @@ listed: true
 
 différence entre Array, ArrayList et GenericList
 
-Pour tout savoir sur les Array et les collections : [Building Arrays and Collections in PowerShell | Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
+Pour tout savoir sur les Array et les collections : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
 
 ## Création d'objet
 
@@ -27,7 +27,7 @@ L'avantage et l'inconvénient du `ForEach-Object`, c'est qu'il s'utilise avec un
 
 En résumé : si vous la liste de données à traiter est instantanément disponible (genre un fichier CSV), alors préférez l'utilisation de `foreach`. Si les données arrivent au fur et à mesure (comme pour une requête API par exemple), alors préférez le pipeline et `ForEach-Object`.
 
-Pour tout savoir sur le pipeline : [Understanding PowerShell Pipeline | PowerShell One](https://powershell.one/powershell-internals/scriptblocks/powershell-pipeline)
+Pour tout savoir sur le pipeline : [Understanding PowerShell Pipeline \| PowerShell One](https://powershell.one/powershell-internals/scriptblocks/powershell-pipeline)
 
 ## Connaître son ennemi
 
@@ -82,7 +82,7 @@ function Test-Parallel {
 
 Vous aurez beau optimiser votre code comme jamais et suivre toutes les bonnes pratiques possibles, un script exécuté avec Windows PowerShell 2.0 sera toujours moins performant qu'un même script exécuté en PowerShell v7. Les versions les plus récentes embarquent toujours leurs lot d'améliorations, autant au niveau des performances qu'au niveau des fonctionnalités.
 
-Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview?view=powershell-7.3)
+Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview?view=powershell-7.3)
 
 ## Se méfier de l'affichage dans la console
 
