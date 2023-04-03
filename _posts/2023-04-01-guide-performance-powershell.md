@@ -44,7 +44,7 @@ $stats | Measure-Object -Property 'TotalSeconds' -Average
 
 ## Filtrer correctement
 
-Tous les filtres ne se valent pas ! Une règle de base peut être facilement utilisée : faire les filtres les plus stricts (ceux qui éliminerons le plus d'objets) en amont. Moins votre collection sera grande, plus votre script sera performant. 
+Tous les filtres ne se valent pas ! Une règle de base peut être facilement utilisée : faire les filtres les plus stricts (ceux qui éliminerons le plus d'objets) en amont. Moins votre collection sera grande, plus votre script sera performant.
 
 Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutile. L'idée c'est de raisonner en terme de poids total de votre collection, ce qui importe c'est le nombre d'objets et le nombre de propriétés par objet.
 
@@ -83,6 +83,16 @@ function Test-Parallel {
 ## Utiliser les bons outils
 
 Vous aurez beau optimiser votre code comme jamais et suivre toutes les bonnes pratiques possibles, un script exécuté avec Windows PowerShell 2.0 sera toujours moins performant qu'un même script exécuté en PowerShell v7. Les versions les plus récentes embarquent toujours leurs lot d'améliorations, autant au niveau des performances qu'au niveau des fonctionnalités.
+
+Voici un comparatif de temps de traitement sur plusieurs scripts différents, exécutés sur la même machine, sur des données locales uniquement (moyenne sur 100 exécutions) :
+
+Version | Script n°1 | Script n°2 | Script n°3
+------- | ---------- | ---------- | ----------
+PowerShell 2.0 | 65ms | 70ms | 85ms
+PowerShell 5.1 | 49ms | 49ms | 70ms
+PowerShell 7.3 | 15ms | 10ms | 14ms
+
+On observe PowerShell 7.3 fonctionne en moyenne **4x plus rapidement** que son ancêtre PowerShell 2.0, avec un script identique (donc sans utiliser la parallélisation).
 
 Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview?view=powershell-7.3)
 
