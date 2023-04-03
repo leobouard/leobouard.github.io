@@ -108,4 +108,12 @@ Cependant, avant de tomber dans le dogmatisme je tiens à préciser quelque chos
 2. Il ne faut pas sous-estimer la puissance d'une barre de progression pour le cerveau humain : le temps vous semblera infiniment moins long avec une barre qui se remplie petit à petit, plutôt qu'une console vierge qui ne montre pas le moindre signe de progression.
 3. Priorisez l'optimisation de vos performances : supprimer tout affichage dans votre script ne le rendra probablement pas deux fois plus performant. Essayer de trouver la cause du ralentissement avant de dégommer tous les `Write-Output` de votre script, car il y a de grandes chances pour ça ne soit pas la cause principale.
 
+## Manger ~~bio~~ local
+
+Une requête AD pour obtenir 10000 utilisateurs est moins coûteuse que 10000 requêtes d'un seul utilisateur.
+
+Morale de l'histoire : faire une grosse requête pour requêter ensuite à l'intérieur du résultat plutôt que de faire une requête à chaque fois.
+
+Pour MSGraph : des rapports CSV sont disponibles (notamment pour les statistiques emails) qui permettent de gagner beaucoup de temps par rapport à des requêtes individuelles.
+
 ## Conclusion
