@@ -31,7 +31,7 @@ Pour tout savoir sur le pipeline : [Understanding PowerShell Pipeline \| PowerSh
 
 ## Connaître son ennemi
 
-Utilisation de la commande `Measure-Object`
+Pour optimiser votre code, le plus important est d'identifier le goulot d'étranglement. Pour ça, vous pouvez utiliser la commande `Measure-Object` qui va mesurer le temps d'execution du code qui va se trouver entre les deux accolades. Certaines commandes sont plus gourmandes que d'autres (notamment les requêtes API, les cmdlet Exchange et Microsoft Graph) et le `Measure-Object` peut vous permettre de calculer précisément le temps d'execution global, pour faire ensuite une belle barre de progression avec `Write-Progress` (notamment via le paramètre `-SecondsRemaining`).
 
 Voici un petit script qui permet de mesurer la durée moyenne d'exécution d'une commande ou d'un script PowerShell sur 100 itérations :
 
@@ -44,7 +44,9 @@ $stats | Measure-Object -Property 'TotalSeconds' -Average
 
 ## Filtrer correctement
 
-Tous les filtres ne se valent pas !
+Tous les filtres ne se valent pas ! Une règle de base peut être facilement utilisée : faire les filtres les plus stricts (ceux qui éliminerons le plus d'objets) en amont. Moins votre collection sera grande, plus votre script sera performant. 
+
+Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutile. L'idée c'est de raisonner en terme de poids total de votre collection, ce qui importe c'est le nombre d'objets et le nombre de propriétés par objet.
 
 ## Utiliser la parallélisation à bon escient
 
