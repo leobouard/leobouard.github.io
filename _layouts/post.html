@@ -3,7 +3,8 @@ layout: default
 ---
 
 <div class="postBanner">
-    {{ page.icon }}
+    <h1>{{ page.title }}</h1>
+    <small>Publié le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
 </div>
 <section>
     <div class="side_buttons">
@@ -22,8 +23,6 @@ layout: default
             <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>{{ page.nextLink.name }} →</a>
         {% endif %}
     </div>
-    <h1>{{ page.title }}</h1>
-    <small>Publié le {{ page.date | date: "%d/%m/%Y" }} par {{ site.author }}</small>
     {{ content }}
     <div class="div_bottomnav_buttons">
         {% if page.prevLink %}
