@@ -280,7 +280,8 @@ footer {
         padding: 15px;
         min-height: 80%;
         overflow-x: scroll;
-        max-width: 90%;
+        max-width: -webkit-fill-available;
+        margin: 0px 5px;
     }
 
     header, section { 
