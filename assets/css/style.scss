@@ -280,7 +280,7 @@ footer {
         padding: 15px;
         min-height: 80%;
         overflow-x: scroll;
-        max-width: -webkit-fill-available, -moz-available, 90%;
+        max-width: -webkit-fill-available; /*, -moz-available, 90%; */
         margin: 0px 5px;
     }
 
