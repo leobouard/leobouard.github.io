@@ -7,7 +7,7 @@ icon: 💡
 listed: true
 ---
 
-L'emplacement dans l'aborescence Active Directory est souvent très important et peu s'avérer utile pour la génération de rapports. L'attribut le plus utilisé pour determiner cette information est le "Distinguished Name", mais si vous ne connaissez pas son cousin le "Canonical Name", cet article est fait pour vous !
+L'emplacement dans l'arborescence Active Directory est souvent très important et peu s'avérer utile pour la génération de rapports. L'attribut le plus utilisé pour déterminer cette information est le "Distinguished Name", mais si vous ne connaissez pas son cousin le "Canonical Name", cet article est fait pour vous !
 
 ## Arborescence Active Directory
 
@@ -34,7 +34,7 @@ Pour donner un exemple, voici les DistinguishedName des comptes utilisateurs Joh
 - CN=John Smith,OU=Users,OU=US,OU=LBB,DC=labouabouate,DC=com
 - CN=Pierre Dupont,OU=Users,OU=Rennes,OU=FR,OU=LBB,DC=labouabouate,DC=com
 
-**On part de l'objet cible pour remonter ensuite vers la racine du domaine**. On remarque que les élements de l'aborescence sont séparés entre eux par des virgules et que la nature de l'objet est spécifiée à chaque fois (d'où la présence des "OU=", "DN=" et "CN=").
+**On part de l'objet cible pour remonter ensuite vers la racine du domaine**. On remarque que les éléments de l'arborescence sont séparés entre eux par des virgules et que la nature de l'objet est spécifiée à chaque fois (d'où la présence des "OU=", "DN=" et "CN=").
 
 Voici un tableau synthèse sur les différents type d'objets que l'on retrouve couramment dans les DistinguishedName :
 
@@ -66,7 +66,7 @@ Les CanonicalName des deux utilisateurs :
 - labouabouate.com/LBB/US/Users/John Smith
 - labouabouate.com/LBB/FR/Rennes/Users/Pierre Dupont
 
-Beaucoup plus lisible que le DistinguishedName, **on part de la racine du domaine pour descendre vers l'objet cible**. Les élements sont séparés entre eux par des "/" et c'est tout. Simple et efficace !
+Beaucoup plus lisible que le DistinguishedName, **on part de la racine du domaine pour descendre vers l'objet cible**. Les éléments sont séparés entre eux par des "/" et c'est tout. Simple et efficace !
 
 ## Cas pratique
 
@@ -95,11 +95,11 @@ Mais si on retourne notre méthode et que l'on lit le DistinguishedName de droit
 $root = "OU=LBB,DC=labouabouate,DC=com"
 $dn = "CN=John Smith,OU=Users,OU=US,$root","CN=Pierre Dupont,OU=Users,OU=Rennes,OU=FR,$root"
 $dn | ForEach-Object {
-  (($_ -split ',' | Select-Object -Last 4)[0] -split '=')[1]
+  (($_ -split ',')[-4] -split '=')[1]
 }
 ```
 
-Comme vous pouvez le voir, ça se fait mais y'a plus simple. 
+Comme vous pouvez le voir, ça se fait mais y'a plus simple.
 
 ### Parser le CanonicalName
 
