@@ -9,9 +9,43 @@ listed: true
 
 ## Bien choisir ses tableaux
 
-différence entre Array, ArrayList et GenericList
+Je le connais, vous le connaissez, tout le monde le connait et l'utilise. Et pourtant, c'est la méthode la moins performante que l'on puisse choisir !
 
-Pour tout savoir sur les Array et les collections : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
+```powershell
+$array = @()
+1..10 | % { $array += $_ }
+```
+
+Comment ça marche ? Et bien la syntaxe très simple cache en fait un fonctionnement assez complexe.
+
+Avec `@()`, vous allez créer une collection de taille fixe avec une capacité maximum de 0 élément. Comment agrandir la collection alors ? Grâce à l'opérateur `+=`, on ne va pas ajouter un élément à la collection existante (puisque ce n'est pas possible) mais plutôt :
+
+- créer une nouvelle collection de taille fixe avec une capacité suffisante pour accueillir tous les éléments de l'ancienne collection + 1
+- peupler la nouvelle collection en additionnant entre eux les éléments de l'ancienne collection et le nouvel élément à ajouter
+- supprimer l'ancienne collection
+
+En bref : un processus bien plus complexe que la syntaxe ne peut le laisser deviner. Pour résumé, le `+=` pourrait être expliqué avec la syntaxe suivante :
+
+```powershell
+$array = @()
+1..10 | % { $array = $array + @($_)}
+```
+
+Si vous voulez tout comprendre, voici l'article original : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
+
+Lorsque vous créer un array avec cette méthode, vous allez générer un tableau d'une taille fixe qui peut contenir un maximum de 0 élément. Impossible donc d'y ajouter un membre avec la méthode `.Add()` qui donne l'erreur suivante : *Exception lors de l'appel de «Add» avec «1» argument(s): «La collection était d'une taille fixe.»*.
+
+Comment faire pour ajouter un nouvel élément ? Avec l'opérateur `+=` voyons ! Et comment est-ce que cet opérateur fonctionne ? De la manière la plus simple possible.
+
+Comme il n'est pas possible d'agrandir l'array existant (qui est d'une taille fixe), la solution est donc de créer un nouvel array 
+
+PowerShell's + and += operators are designed to work with arrays in a relatively unusual way. When you try to add items to an array like this, what actually happens goes something like this:
+
+PowerShell checks the size of the collection in $array and the number of items being added to it (in this case, just one each time).
+PowerShell creates a completely different array of the correct size.
+The original array is copied into this new array, along with the new item(s).
+This is also why it's perfectly possible to join two arrays together with the + or += operators.
+
 
 ## Création d'objet
 
@@ -24,6 +58,22 @@ On lit souvent que `foreach` est plus performant que `ForEach-Object`, ce n'est 
 La boucle `foreach` est en effet plus performante si toutes les données à traiter ont déjà été récupérées.
 
 L'avantage et l'inconvénient du `ForEach-Object`, c'est qu'il s'utilise avec un pipeline. Le pipeline (qui pourrait être traduit grossièrement en *tuyau*) permet d'envoyer de la donnée dès qu'elle est disponible. Donc si vous faites une requête avec 10000 objets en résultat, le traitement via le pipeline permettra de commencer le travail dès que le premier objet est reçu.
+
+Vous pouvez visualiser la différence avec les scripts suivants :
+
+```powershell
+function Test-Pipeline {
+    1..100 | ForEach-Object { $_ ; Start-Sleep -Milliseconds 100 }
+}
+
+Test-Pipeline | ForEach-Object { 
+    Write-Progress -Activity "Using 'ForEach-Object'" -PercentComplete $_
+}
+
+foreach ($_ in (Test-Pipeline)) { 
+    Write-Progress -Activity "Using 'foreach()'" -PercentComplete $_
+}
+```
 
 En résumé : si vous la liste de données à traiter est instantanément disponible (genre un fichier CSV), alors préférez l'utilisation de `foreach`. Si les données arrivent au fur et à mesure (comme pour une requête API par exemple), alors préférez le pipeline et `ForEach-Object`.
 

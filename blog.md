@@ -14,14 +14,12 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
     {% for post in listed_posts %}
         <a class="noDecoration" href="{{ post.id }}">
             <article>
-                {% if post.favorite %}<div class="favoriteMarker">⭐</div>{% endif %}
                 <small>{{ post.tags }}</small>
                 <div class="articleThumbnail">
-                    <span class="articleIcon">{{ post.icon }}</span>
+                    <span class="articleTitle">{{ post.title }}</span>
                 </div>
                 <div class="articleText">
                     <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
-                    <span class="articleTitle">{{ post.title }}</span>
                     <span class="articleDescription">{{ post.description }}</span>
                 </div>
             </article>

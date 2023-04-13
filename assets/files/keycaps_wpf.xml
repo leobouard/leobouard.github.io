@@ -1,0 +1,29 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title=" " MinHeight="230" Height="232" MinWidth="300" Width="368">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            
+            <Border Width="70px" Height="50px" CornerRadius="5" BorderBrush="IndianRed" BorderThickness="3px 0 3 8" Margin="2">
+                <Border Background="#9a4545" CornerRadius="3" Margin="0px 0 0 -2">
+                    <Button Content="Tab." BorderBrush="Transparent" Background="Transparent" Foreground="LightGray" FontWeight="ExtraBold"/>
+                </Border>
+            </Border>
+            <Border Width="50px" Height="50px" CornerRadius="5" BorderBrush="LightGray" BorderThickness="3px 0 3 8" Margin="2">
+                <Border Background="#bbb" CornerRadius="3" Margin="0px 0 0 -2">
+                    <Button Content="A" BorderBrush="Transparent" Background="Transparent" Foreground="White" FontWeight="ExtraBold"/>
+                </Border>
+            </Border>
+            <Border Width="50px" Height="50px" CornerRadius="5" BorderBrush="#2EB270" BorderThickness="3px 0 3 8" Margin="2">
+                <Border Background="#26925C" CornerRadius="3" Margin="0px 0 0 -2">
+                    <Button Content="Z" BorderBrush="Transparent" Background="Transparent" Foreground="White" FontWeight="ExtraBold"/>
+                </Border>
+            </Border>
+            <Border Width="50px" Height="50px" CornerRadius="5" BorderBrush="#417A9F" BorderThickness="3px 0 3 8" Margin="2">
+                <Border Background="#2F5874" CornerRadius="3" Margin="0px 0 0 -2">
+                    <Button Content="E" BorderBrush="Transparent" Background="Transparent" Foreground="White" FontWeight="ExtraBold"/>
+                </Border>
+            </Border>
+        </StackPanel>
+    </StackPanel>
+</Window>
