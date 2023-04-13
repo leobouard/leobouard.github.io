@@ -19,7 +19,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
                     <span class="articleTitle">{{ post.title }}</span>
                 </div>
                 <div class="articleText">
-                    <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
+                    <!-- <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span> -->
                     <span class="articleDescription">{{ post.description }}</span>
                 </div>
             </article>
