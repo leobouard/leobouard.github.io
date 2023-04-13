@@ -63,8 +63,8 @@ div.favoriteMarker {
 }
 
 div.articleThumbnail {
-    background: #ffc862;
-    height: 110px;
+    background: #6B70B5;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,7 +85,8 @@ span.articleDate {
 }
 
 span.articleTitle {
-    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
     font-weight: 600;
     margin: 10px;
     color: #fff;
