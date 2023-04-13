@@ -2,8 +2,7 @@
 layout: post
 title: "Qui a le nom le plus long ?"
 description: "Saurez-vous retrouver la personne avec le nom complet (prénom et nom) le plus long de la liste ?"
-tags: DÉFI
-icon: 🆔
+tags: challenge
 listed: true
 nextLink:
   name: "Voir la solution"

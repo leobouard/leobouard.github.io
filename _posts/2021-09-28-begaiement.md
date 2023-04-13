@@ -2,8 +2,7 @@
 layout: post
 title: "Bégaiement"
 description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
-tags: DÉFI
-icon: 🗨️
+tags: challenge
 listed: true
 nextLink:
   name: "Voir la solution"

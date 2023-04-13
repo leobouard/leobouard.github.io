@@ -2,8 +2,7 @@
 layout: post
 title: "CanonicalName & DN"
 description: "Et si on prennait la racine du domaine en point de départ pour une fois ?"
-tags: AD
-icon: 💡
+tags: active-directory
 listed: true
 ---
 

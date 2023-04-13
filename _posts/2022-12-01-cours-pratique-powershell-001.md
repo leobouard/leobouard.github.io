@@ -2,7 +2,6 @@
 layout: post
 title: "Cours PowerShell #1 - Simple. Basique."
 description: "Création de la base du script PowerShell : générer un nombre aléatoire et le comparer avec l'estimation du joueur"
-icon: 🎓
 nextLink:
   name: "Partie 2"
   id: "/2022/12/01/cours-pratique-powershell-002"

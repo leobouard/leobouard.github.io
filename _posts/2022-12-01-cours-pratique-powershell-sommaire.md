@@ -2,7 +2,6 @@
 layout: post
 title: "Sommaire"
 description: "Table des matières pour le cours pratique"
-icon: 🎓
 nextLink:
   name: "Partie 1"
   id: "/2022/12/01/cours-pratique-powershell-001"

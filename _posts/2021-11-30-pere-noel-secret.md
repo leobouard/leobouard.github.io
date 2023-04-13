@@ -2,8 +2,7 @@
 layout: post
 title: "Père Noël aléatoire"
 description: "Une variante du 'secret santa' : faire un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
-tags: DÉFI
-icon: 🎅
+tags: challenge
 listed: true
 nextLink:
   name: "Voir la solution"

@@ -2,8 +2,7 @@
 layout: post
 title: "Impossible de contacter un utilisateur externe sur Teams"
 description: "L'utilisateur ne peut plus contacter des comptes externes à l'organisation"
-tag: TEAMS
-icon: 🤔
+tag: microsoft-teams
 listed: true
 ---
 

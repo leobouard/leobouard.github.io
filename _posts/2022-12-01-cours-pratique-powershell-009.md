@@ -2,7 +2,6 @@
 layout: post
 title: "Cours PowerShell #9 - Réparation"
 description: "Adaptation du script à la nouvelle interface graphique WPF, en tirant partie des éléments qui la compose comme la barre de progression ou les différents labels."
-icon: 🎓
 nextLink:
   name: "Partie 10"
   id: "/2022/12/01/cours-pratique-powershell-010"

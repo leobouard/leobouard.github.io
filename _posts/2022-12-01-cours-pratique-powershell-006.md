@@ -2,7 +2,6 @@
 layout: post
 title: "Cours PowerShell #6 - EasyMode"
 description: "On ajoute un paramètre qui permet de diminuer la difficulté du jeu en faisant en sorte que le nombre aléatoire soit toujours un mutliple de 5"
-icon: 🎓
 nextLink:
   name: "Partie 7"
   id: "/2022/12/01/cours-pratique-powershell-007"

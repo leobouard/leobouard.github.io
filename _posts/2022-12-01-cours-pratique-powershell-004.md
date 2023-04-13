@@ -2,7 +2,6 @@
 layout: post
 title: "Cours PowerShell #4 - Mais on est où là ?"
 description: "Ajout de bornes inférieure et supérieure pour aider le joueur à deviner le nombre aléatoire"
-icon: 🎓
 nextLink:
   name: "Partie 5"
   id: "/2022/12/01/cours-pratique-powershell-005"

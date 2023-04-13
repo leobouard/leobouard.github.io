@@ -2,7 +2,6 @@
 layout: post
 title: "Cours PowerShell #3 - Historique de navigation"
 description: "Toutes les tentatives du joueur sont gardées en mémoire pour pouvoir afficher plus d'informations sur la partie"
-icon: 🎓
 nextLink:
   name: "Partie 4"
   id: "/2022/12/01/cours-pratique-powershell-004"

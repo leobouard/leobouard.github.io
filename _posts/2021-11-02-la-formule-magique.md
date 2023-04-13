@@ -2,8 +2,7 @@
 layout: post
 title: "La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
-tags: DÉFI
-icon: 🎩
+tags: challenge
 listed: true
 nextLink:
   name: "Voir la solution"
