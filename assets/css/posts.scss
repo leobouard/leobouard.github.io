@@ -30,10 +30,10 @@ article > small {
     font-weight: 400;
     border-radius: 5px;
     padding: 0px 5px;
-    background-color: #fff;
-    position: absolute;
-    top: 15px;
-    left: 15px;
+    background-color: #f2f2f2;
+    position: fixed;
+    bottom: 0;
+    margin: 5px;
     user-select: none;
 }
 
