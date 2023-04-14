@@ -1,7 +1,7 @@
 ---
 permalink: /blog
 layout: standard
-title: "Articles"
+title: "Tous mes articles"
 description: "Tous les articles, cours et défis sur PowerShell et d'autres technologies Microsoft"
 ---
 
