@@ -71,6 +71,9 @@ main {
 
     section {
         min-height: 85%;
+        max-width: -moz-available;          /* WebKit-based browsers will ignore this. */
+        max-width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        max-width: fill-available;
         background-color: #fff;
         border-radius: 5px;
         padding: 30px 50px;
@@ -280,9 +283,6 @@ footer {
         padding: 15px;
         min-height: 80%;
         overflow-x: scroll;
-        max-width: -moz-available;          /* WebKit-based browsers will ignore this. */
-        max-width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-        max-width: fill-available;
         margin: 0px 5px;
     }
 
