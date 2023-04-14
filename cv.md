@@ -1,11 +1,9 @@
 ---
 permalink: /cv
 layout: standard
-title: "CV"
+title: "Léo Bouard | CV"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
-
-# Léo Bouard
 
 ## Résumé
 

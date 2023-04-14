@@ -5,8 +5,6 @@ title: "Tous mes articles"
 description: "Tous les articles, cours et défis sur PowerShell et d'autres technologies Microsoft"
 ---
 
-# Articles
-
 <div class="posts">
     {% assign listed_posts = site.posts | where: "listed", true %}
     {% for post in listed_posts %}
