@@ -5,8 +5,6 @@ title: "A propos"
 description: "Plus d'informations sur le site web et moi-même"
 ---
 
-# A propos
-
 Bienvenue sur LaBouaBouate ! 👋
 
 Ce site web est un projet personnel pour monter en compétence sur le développement web statique (HTML, CSS et Liquid) et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Je ne prend pas ce projet particulièrement au sérieux, donc excusez-moi des quelques mauvais jeux de mots que vous pourrez trouver dans mes différents contenus.
