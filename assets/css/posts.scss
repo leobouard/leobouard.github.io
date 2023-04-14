@@ -30,8 +30,8 @@ div.articleTags {
     span {
         background: #fafafa;
         border-radius: 5px;
-        padding: 0px 5px;
-        font-weight: 400px;
+        padding: 2px 5px;
+        font-weight: 400;
         border: 1px solid #ddd;
         margin: 1px;
         font-size: smaller;
@@ -305,6 +305,10 @@ a.solution:hover {
 
     .posts {
         grid-template-columns: 1fr;
+    }
+
+    article {
+        max-width: 100%;
     }
 
 }
