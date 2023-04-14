@@ -3,7 +3,7 @@ layout: post
 title: "Bégaiement"
 description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
 background: "#d7edc2"
-tags: challenge
+tags: ['challenge','powershell']
 listed: true
 nextLink:
   name: "Voir la solution"
