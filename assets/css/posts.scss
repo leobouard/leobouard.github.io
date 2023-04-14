@@ -2,23 +2,19 @@
 ---
 
 .posts {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
 }
 
 article {
-    margin: 5px;
     height: 260px;
     max-width: 290px;
-    flex: 1;
-    flex-basis: 200px;
     border-radius: 5px;
     border: 1px solid #ddd;
     box-shadow: 0 0 1px 0 #00000040;
     color: #000;
-    transition: all 150ms ease-in-out;
-    border-radius: 5px;
     overflow: hidden;
     position: relative;
     filter: grayscale(0.3);
@@ -299,10 +295,18 @@ a.solution:hover {
 }
 */
 
-@media print, screen and (max-width: 560px) {
+@media print, screen and (max-width: 880px) {
 
-    article {
-        max-width: 100%;
+    .posts {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media print, screen and (max-width: 550px) {
+
+    .posts {
+        grid-template-columns: 1fr 1fr;
     }
 
 }
