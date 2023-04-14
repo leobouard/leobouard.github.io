@@ -19,7 +19,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
                     <span class="articleDescription">{{ post.description }}</span>
                 </div>
                 <div class="articleTags">
-                    {% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}
+                    {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
                 </div>
             </article>
         </a>
