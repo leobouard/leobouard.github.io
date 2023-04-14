@@ -13,7 +13,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
         <a class="noDecoration" href="{{ post.id }}">
             <article>
                 <small>{{ post.tags }}</small>
-                <div class="articleThumbnail">
+                <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
                     <span class="articleTitle">{{ post.title }}</span>
                 </div>
                 <div class="articleText">

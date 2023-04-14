@@ -2,6 +2,7 @@
 layout: post
 title: "La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
+background: "#f7f7d2"
 tags: challenge
 listed: true
 nextLink:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Solution - Père Noël aléatoire"
+background: "#dfabdf"
 prevLink:
   name: "Retour au défi"
   id: "/2021/11/30/pere-noel-secret"
