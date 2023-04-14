@@ -15,9 +15,9 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
                 <small>{{ post.tags }}</small>
                 <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
                     <span class="articleTitle">{{ post.title }}</span>
+                    <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
                 </div>
                 <div class="articleText">
-                    <!-- <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span> -->
                     <span class="articleDescription">{{ post.description }}</span>
                 </div>
             </article>
