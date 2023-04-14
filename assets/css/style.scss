@@ -71,14 +71,14 @@ main {
 
     section {
         min-height: 85%;
-        max-width: -moz-available;          /* WebKit-based browsers will ignore this. */
-        max-width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-        max-width: fill-available;
         background-color: #fff;
         border-radius: 5px;
         padding: 30px 50px;
         margin: auto;
         max-width: 950px;
+        width: -moz-available;          /* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        width: fill-available;
         overflow-x: hidden;
         overflow-y: hidden;
         box-shadow: 0px 0px 5px 0px #00000030;
