@@ -12,13 +12,15 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
     {% for post in listed_posts %}
         <a class="noDecoration" href="{{ post.id }}">
             <article>
-                <small>{{ post.tags }}</small>
                 <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
                     <span class="articleTitle">{{ post.title }}</span>
                     <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
                 </div>
                 <div class="articleText">
                     <span class="articleDescription">{{ post.description }}</span>
+                </div>
+                <div class="articleTags">
+                    {% for tag in post.tags %}<small>{{ tag }}</small>{% endfor %}
                 </div>
             </article>
         </a>
