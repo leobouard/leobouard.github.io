@@ -259,11 +259,13 @@ div.side_buttons > a {
     font-size: 25px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #00000030;
+    border: 1px solid #ddd;
 }
 
 div.side_buttons > a:hover {
-    background-color: #ddd;
+    background-color: #fafafa;
     text-decoration: none;
+    border-color: #333;
 }
 
 a.solution {
