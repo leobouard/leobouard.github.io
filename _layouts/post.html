@@ -34,12 +34,7 @@ layout: default
     </div>
 </section>
 
-{% if page.nextlink.id %}
-<section style="margin-top: 15px">
+
+<section style="margin-top: 15px; {% if page.nextlink == null %}display: none;{% endif %}">
     <span>Pas de recommandation d'article</span>
 </section>
-{% else %}
-<section style="margin-top: 15px">
-    <span>Recommandation d'article !</span>
-</section>
-{% endif %}
