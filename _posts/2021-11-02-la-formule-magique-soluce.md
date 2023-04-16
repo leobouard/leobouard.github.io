@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Solution - La formule magique"
-background: "#f7f7d2"
+background: "#bac9ff"
 prevLink:
   name: "Retour au défi"
   id: "/2021/11/02/la-formule-magique"
