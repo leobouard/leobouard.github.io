@@ -1,7 +1,7 @@
 ---
 permalink: /cv
 layout: standard
-title: "Léo Bouard | CV"
+title: "Léo Bouard"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
 
