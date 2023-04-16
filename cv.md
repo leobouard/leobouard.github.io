@@ -54,7 +54,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 ## Examens et certifications
 
-<div class="posts">
+<div style="display: flex; justify-content: center;">
     <div class="certification">
         <img src="/assets/images/certification-exam.svg" alt="logo Microsoft Exam">
         <small>novembre 2022</small>
