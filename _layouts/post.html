@@ -34,25 +34,27 @@ layout: default
     </div>
 </section>
 
-{% if page.nextlink %} <!-- Pas de recommandation d'article --> {% else %}
-<section style="display: flex; margin-top: 15px; justify-content: flex-end;">
-    <span style="font-size: x-large; max-width: 350px; text-align: right; font-family: 'Manrope', sans-serif; line-height: 140%; margin: 30px;">Peut-être que cet article pourrait également vous intéresser :</span>
-    {% assign listed_posts = site.posts | where: "listed", true | first %}
-    {% for post in listed_posts %}
-    <a class="noDecoration" href="{{ post.id }}">
-        <article>
-            <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
-                <span class="articleTitle">{{ post.title }}</span>
-                <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
-            </div>
-            <div class="articleText">
-                <span class="articleDescription">{{ post.description }}</span>
-            </div>
-            <div class="articleTags">
-                {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
-            </div>
-        </article>
-    </a>
-    {% endfor %}
-</section>
+{% if page.nextlink %} 
+    <!-- Pas de recommandation d'article -->
+{% else %}
+    <section style="display: flex; margin-top: 15px; justify-content: flex-end;">
+        <span style="font-size: x-large; max-width: 350px; text-align: right; font-family: 'Manrope', sans-serif; line-height: 140%; margin: 30px;">Peut-être que cet article pourrait également vous intéresser :</span>
+        {% assign listed_posts = site.posts | where: "listed", true | first 1 %}
+        {% for post in listed_posts %}
+        <a class="noDecoration" href="{{ post.id }}">
+            <article>
+                <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
+                    <span class="articleTitle">{{ post.title }}</span>
+                    <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
+                </div>
+                <div class="articleText">
+                    <span class="articleDescription">{{ post.description }}</span>
+                </div>
+                <div class="articleTags">
+                    {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
+                </div>
+            </article>
+        </a>
+        {% endfor %}
+    </section>
 {% endif %}
