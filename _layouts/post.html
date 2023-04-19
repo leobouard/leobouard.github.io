@@ -36,7 +36,7 @@ layout: default
 
 {% if page.nextLink == nil %}
 <section class="recommandation">
-    {% assign post = site.posts | where: "listed", true | where: "title", "!=", page.Title | sample %}
+    {% assign post = site.posts | where: "listed", true | sample %}
     <span>Cet article pourrait-il vous intéressez ?</span>
     <a class="noDecoration" href="{{ post.id }}">
         {% if post.selection == true %}<span class="articleSelection">⭐ Sélection</span>{% endif %}
