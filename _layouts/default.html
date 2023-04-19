@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ page.description }}">
     {% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/homepage.css?v=" | append: site.github.build_revision | relative_url }}">
-    {% if page.title == 'Léo Bouard' %}<link rel="stylesheet" href="{{ "/assets/css/cv.css?v=" | append: site.github.build_revision | relative_url }}">{% endif %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">
+    <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">
+    <link rel="stylesheet" href="{{ "/assets/css/homepage.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">
+    {% if page.title == 'Léo Bouard' %}<link rel="stylesheet" href="{{ "/assets/css/cv.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">{% endif %}
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Poppins&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <script rel="preload" src="/assets/js/checkCookie.js"></script>
-    <script rel="preload" src="/assets/js/setCookie.js"></script>
+    <!-- <script rel="preload" src="/assets/js/checkCookie.js"></script> -->
+    <!-- <script rel="preload" src="/assets/js/setCookie.js"></script> -->
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Poppins&display=swap">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins&display=swap">
@@ -34,10 +34,10 @@
     </header>
     <main {% if page.title == "Accueil" %} style="background: linear-gradient(45deg, #FEFAEC, #E4E4F1);" {% endif %}>
       {{ content }}
-      <div class="cookieInfo" id="cookieInfo">
+      <!-- <div class="cookieInfo" id="cookieInfo">
         <p>🍪 Ce site utilise deux cookies pour son fonctionnement : l'un pour savoir si vous avez lu cette information et l'autre pour garder en mémoire votre préférence pour le thème (sombre ou clair).</p>
         <button id="cookie" onclick="setCookie()">OK</button>
-      </div>
+      </div> -->
     </main>
     <footer>
       <div>
