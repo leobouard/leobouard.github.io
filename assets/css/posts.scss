@@ -296,7 +296,7 @@ section.recommandation > span {
     margin: 20px;
 }
 
-@media print, screen and (max-width: 880px) {
+@media screen and (max-width: 880px) {
 
     .posts {
         grid-template-columns: 1fr 1fr;
@@ -304,7 +304,22 @@ section.recommandation > span {
 
 }
 
-@media print, screen and (max-width: 550px) {
+@media screen and (max-width: 650px) {
+
+    section.recommandation {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    section.recommandation > span {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
 
     .posts {
         grid-template-columns: 1fr;
