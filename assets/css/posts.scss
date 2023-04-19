@@ -280,31 +280,21 @@ a.solution:hover {
     background: linear-gradient(45deg, #E4E4F1, #FEFAEC);
 }
 
-/*
-@media print, screen and (max-width: 950px) {
+section.recommandation {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
 
-    article {
-        margin: 10px;
+    span {
+        font-family: 'Manrope';
+        max-width: 300px;
+        font-size: x-large;
+        text-align: right;
+        line-height: 160%;
+        margin: 20px;
     }
-
 }
-
-@media print, screen and (max-width: 560px) {
-
-    article {
-        max-width: 100%;
-        margin: 0.5em 0px;
-        flex: none;
-        display: flex;
-        height: 150px;
-    }
-
-    div.articleThumbnail {
-        height: 100%;
-    }
-
-}
-*/
 
 @media print, screen and (max-width: 880px) {
 
