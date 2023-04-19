@@ -285,15 +285,15 @@ section.recommandation {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-end;
+}
 
-    span {
-        font-family: 'Manrope';
-        max-width: 300px;
-        font-size: x-large;
-        text-align: right;
-        line-height: 160%;
-        margin: 20px;
-    }
+section.recommandation > div > span {
+    font-family: 'Manrope';
+    max-width: 300px;
+    font-size: x-large;
+    text-align: right;
+    line-height: 160%;
+    margin: 20px;
 }
 
 @media print, screen and (max-width: 880px) {
