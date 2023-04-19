@@ -36,6 +36,21 @@ layout: default
 
 {% if page.nextLink == nil %}
 <section style="margin-top: 15px;">
-    <span>Recommandation d'article</span>
+    {% assign post = site.posts | where: "listed", true | sample %}
+    <a class="noDecoration" href="{{ post.id }}">
+        {% if post.selection == true %}<span class="articleSelection">⭐ Sélection</span>{% endif %}
+        <article>
+            <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
+                <span class="articleTitle">{{ post.title }}</span>
+                <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
+            </div>
+            <div class="articleText">
+                <span class="articleDescription">{{ post.description }}</span>
+            </div>
+            <div class="articleTags">
+                {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
+            </div>
+        </article>
+    </a>
 </section>
 {% endif %}
