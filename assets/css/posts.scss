@@ -296,6 +296,13 @@ section.recommandation > span {
     margin: 20px;
 }
 
+section.recommandation > span > img {
+    rotate: 54deg;
+    transform: scaleY(-1);
+    width: 150px;
+    margin-right: 10px;
+}
+
 @media screen and (max-width: 880px) {
 
     .posts {
@@ -304,7 +311,7 @@ section.recommandation > span {
 
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
 
     section.recommandation {
         margin-top: 15px;
@@ -315,6 +322,10 @@ section.recommandation > span {
     
     section.recommandation > span {
         text-align: center;
+    }
+
+    section.recommandation > span > img {
+        display: none;
     }
 
 }
