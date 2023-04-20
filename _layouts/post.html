@@ -37,7 +37,7 @@ layout: default
 {% if page.nextLink == nil %}
 <section class="recommandation">
     {% assign post = site.posts | where: "listed", true | sample %}
-    <span>Cet article pourrait-il vous intéressez ?
+    <span>Est-ce que cet article pourrait vous intéresser ?
         <img src="https://www.labouabouate.fr/assets/doodles/Arrow%2011.svg" alt="sketch arrow"/>
     </span>
     <a class="noDecoration" href="{{ post.id }}">
