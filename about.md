@@ -14,7 +14,7 @@ description: "Plus d'informations sur le site web et moi-même"
     <img src="/assets/images/profile-picture.jpg" alt="Photo de profil" height="100" width="100">
 </div>
 
-<!-- Personnal links section -->
+<!-- Personal links section -->
 
 <div class="personalLinks">
     <a href="{{ site.linkedin }}" target="_blank" class="linkedIn">
