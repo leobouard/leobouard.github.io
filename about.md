@@ -26,7 +26,7 @@ description: "Plus d'informations sur le site web et moi-même"
         <span>Mon CV</span>
     </a>
     <a href="mailto:{{ site.emailAddress }}" class="emailAddress">
-        <img src="/assets/images/email.svg" alt="M'envoyez un email" width="32px">
+        <img src="/assets/images/email.svg" alt="Mon email" width="32px">
         <span>Mon adresse email</span>
     </a>
 </div>
