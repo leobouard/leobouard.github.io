@@ -13,9 +13,11 @@ J'aime bien partager des trucs et apprendre des choses, et c'est ce que j'essaie
 
 <img src="/assets/images/profile-picture.jpg" alt="Photo de profil" style="border-radius: 100px;">
 
-- [mon profil LinkedIn]({{ site.linkedin }})
-- [mon adresse email](mailto:{{ site.emailAddress }})
-- [mon CV](/cv)
+<div style="display: flex; justify-content: center;">
+    <a href="{{ site.linkedin }}"><img src="/assets/images/linkedin.svg" alt="Profil LinkedIn"></a>
+    <a href="/cv"><img src="/assets/images/resume.svg" alt="Mon CV"></a>
+    <a href="mailto:{{ site.emailAddress }}"><img src="/assets/images/email.svg" alt="M'envoyez un email"></a>
+<div>
 
 ## A propos du site web
 
