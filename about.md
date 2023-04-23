@@ -5,14 +5,20 @@ title: "A propos"
 description: "Plus d'informations sur le site web et moi-même"
 ---
 
-Bienvenue sur LaBouaBouate ! 👋
+## A propos de moi
 
-Ce site web est un projet personnel pour monter en compétence sur le développement web statique (HTML, CSS et Liquid) et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Je ne prend pas ce projet particulièrement au sérieux, donc excusez-moi des quelques mauvais jeux de mots que vous pourrez trouver dans mes différents contenus.
+Je m'appelle Léo et je suis ingénieur système spécialisé dans les infrastructures et l'écosystème Microsoft. Je travaille depuis plus de 5 ans dans ce domaine et mon expertise se concentre principalement sur la gestion d'identité avec Active Directory et Azure AD ainsi que l'automatisation de processus avec PowerShell et Power Automate.
+
+J'aime bien partager des trucs et apprendre des choses, et c'est ce que j'essaie de faire dans mon quotidien et avec ce site web.
+
+![Photo de profil](./assets/images/profile-picture.jpg)
+
+- [mon profil LinkedIn]({{ site.linkedin }}
+- [mon adresse email](mailto:{{ site.emailAddress }})
+- [mon CV](/cv)
+
+## A propos du site web
+
+Ce site web est un projet personnel pour **monter en compétence sur le développement web** et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose sur le moteur [Jekyll](https://jekyllrb.com/docs/). Tout le code HTML & CSS est fait maison, avec la simplicité comme mot d'ordre (je ne suis pas un développeur web professionnel).
 
 Ici vous ne trouvez pas de publicité ou de tracker, juste un peu de contenu qui j'espère vous sera utile.
-
-Le meilleur moyen de me contacter au sujet d'un article est de m'envoyer un message sur [mon profil LinkedIn]({{ site.linkedin }}) ou de m'envoyer [un email](mailto:{{ site.emailAddress }}). Si vous voulez en savoir plus sur moi, vous pouvez jeter un coup d'oeil à [mon CV](/cv).
-
-## Comment est fait le site web ?
-
-Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose sur le moteur [Jekyll](https://jekyllrb.com/docs/). Tout le code HTML & CSS est fait maison, avec la simplicité comme mot d'ordre (je ne suis pas un développeur web professionnel).
