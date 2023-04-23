@@ -13,7 +13,7 @@ J'aime bien partager des trucs et apprendre des choses, et c'est ce que j'essaie
 
 ![Photo de profil](./assets/images/profile-picture.jpg)
 
-- [mon profil LinkedIn]({{ site.linkedin }}
+- [mon profil LinkedIn]({{ site.linkedin }})
 - [mon adresse email](mailto:{{ site.emailAddress }})
 - [mon CV](/cv)
 
