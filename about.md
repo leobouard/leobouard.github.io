@@ -17,7 +17,7 @@ J'aime bien partager des trucs et apprendre des choses, et c'est ce que j'essaie
     <a href="{{ site.linkedin }}" target="_blank"><img src="/assets/images/linkedin.svg" alt="Profil LinkedIn"></a>
     <a href="/cv"><img src="/assets/images/resume.svg" alt="Mon CV"></a>
     <a href="mailto:{{ site.emailAddress }}"><img src="/assets/images/email.svg" alt="M'envoyez un email"></a>
-<div>
+</div>
 
 ## A propos du site web
 
