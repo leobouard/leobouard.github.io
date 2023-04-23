@@ -31,14 +31,16 @@ description: "Plus d'informations sur le site web et moi-même"
     <p>Ici vous ne trouvez pas de publicité ou de tracker, juste un peu de contenu qui j'espère vous sera utile.</p>
 </div>
 
-### Design et graphisme
+### Ressources utilisées
 
-- [Vérification des contrastes \| Adobe Contrast Analyzer](https://color.adobe.com/fr/create/color-contrast-analyzer)
-- [Générateur de palettes \| Coolors](https://coolors.co/generate)
-- [Flèches et doodles \| HIGHLIGHTS Design](https://www.highlights.design/)
+#### Design et graphisme
 
-### Technique 
+- [Vérification des contrastes](https://color.adobe.com/fr/create/color-contrast-analyzer)
+- [Générateur de palettes](https://coolors.co/generate)
+- [Flèches et doodles](https://www.highlights.design/)
 
-- [Documentation officielle Liquid](https://shopify.github.io/liquid/)
-- [Documentation officielle Jekyll](https://jekyllrb.com/docs/)
-- [Vérification des bonnes pratiques HTML & CSS \| Google Lighthouse](https://pagespeed.web.dev/)
+#### Technique
+
+- [Documentation Liquid](https://shopify.github.io/liquid/)
+- [Documentation Jekyll](https://jekyllrb.com/docs/)
+- [Bonnes pratiques HTML & CSS](https://pagespeed.web.dev/)
