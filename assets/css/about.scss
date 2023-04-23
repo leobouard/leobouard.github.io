@@ -28,12 +28,18 @@ div.personalLinks {
 }
 
 div.personalLinks > a {
-    margin: 10px;
+    margin: 5px;
     display: flex;
     background-color: #333;
     padding: 2px 5px;
     border-radius: 5px;
+    color: #FFF;
 }
+
+div.personalLinks > a:hover {
+    color: #FFF;
+}
+
 
 div.personalLinks > a > span {
     margin: auto;
@@ -41,7 +47,7 @@ div.personalLinks > a > span {
 }
 
 div.personalLinks > a.linkedIn {
-
+    background-color: #0a66c2;
 }
 
 div.personalLinks > a.linkedIn {
