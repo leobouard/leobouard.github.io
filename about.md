@@ -5,14 +5,13 @@ title: "A propos"
 description: "Plus d'informations sur le site web et moi-même"
 ---
 
-## A propos de moi
-
-<div style="display: flex;">
+<div class="aboutMe">
     <div>
+        <h2 id="a-propos-de-moi">A propos de moi</h2>
         <p>Je m’appelle Léo Bouard et je suis ingénieur système spécialisé dans les infrastructures et l’écosystème Microsoft. Je travaille depuis plus de 5 ans dans ce domaine et mon expertise se concentre principalement sur la gestion d’identité avec Active Directory et Azure AD ainsi que l’automatisation de processus avec PowerShell et Power Automate.</p>
         <p>J’aime bien partager des trucs et apprendre des choses, et c’est ce que j’essaie de faire dans mon quotidien et avec ce site web.</p>
     </div>
-    <img src="/assets/images/profile-picture.jpg" alt="Photo de profil" style="border-radius: 100px;">
+    <img src="/assets/images/profile-picture.jpg" alt="Photo de profil" height="100" width="100">
 </div>
 
 <!-- Personnal links section -->

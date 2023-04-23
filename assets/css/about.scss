@@ -1,0 +1,22 @@
+---
+---
+
+div.aboutMe {
+    display: flex;
+}
+
+div.aboutMe > div {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 350px;
+    max-width: 100%;
+    text-align: justify;
+}
+
+div.aboutMe > img {
+    border-radius: 100px;
+    margin: auto;
+    padding: 30px;
+    height: 150px;
+    width: 150px;
+}
