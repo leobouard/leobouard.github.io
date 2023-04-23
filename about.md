@@ -7,11 +7,17 @@ description: "Plus d'informations sur le site web et moi-même"
 
 ## A propos de moi
 
-Je m'appelle Léo Bouard et je suis ingénieur système spécialisé dans les infrastructures et l'écosystème Microsoft. Je travaille depuis plus de 5 ans dans ce domaine et mon expertise se concentre principalement sur la gestion d'identité avec Active Directory et Azure AD ainsi que l'automatisation de processus avec PowerShell et Power Automate.
+<div style="display: flex;">
+    <div>
+        <p>Je m’appelle Léo Bouard et je suis ingénieur système spécialisé dans les infrastructures et l’écosystème Microsoft. Je travaille depuis plus de 5 ans dans ce domaine et mon expertise se concentre principalement sur la gestion d’identité avec Active Directory et Azure AD ainsi que l’automatisation de processus avec PowerShell et Power Automate.</p>
+        <p>J’aime bien partager des trucs et apprendre des choses, et c’est ce que j’essaie de faire dans mon quotidien et avec ce site web.</p>
+    </div>
+    <div>
+        <img src="/assets/images/profile-picture.jpg" alt="Photo de profil" style="border-radius: 100px;">
+    </div>
+</div>
 
-J'aime bien partager des trucs et apprendre des choses, et c'est ce que j'essaie de faire dans mon quotidien et avec ce site web.
-
-<img src="/assets/images/profile-picture.jpg" alt="Photo de profil" style="border-radius: 100px;">
+<!-- Personnal links section -->
 
 <div style="display: flex; justify-content: center;">
     <a href="{{ site.linkedin }}" target="_blank"><img src="/assets/images/linkedin.svg" alt="Profil LinkedIn" width="32px"></a>
