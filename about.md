@@ -19,6 +19,6 @@ J'aime bien partager des trucs et apprendre des choses, et c'est ce que j'essaie
 
 ## A propos du site web
 
-Ce site web est un projet personnel pour **monter en compétence sur le développement web** et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose sur le moteur [Jekyll](https://jekyllrb.com/docs/). Tout le code HTML & CSS est fait maison, avec la simplicité comme mot d'ordre (je ne suis pas un développeur web professionnel).
+Ce site web est un projet personnel pour **monter en compétence sur le développement web** et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages) et repose sur le moteur [Jekyll](https://jekyllrb.com/docs/). Tout le code HTML & CSS est fait maison, avec la simplicité et l'accessibilité comme mots d'ordre.
 
 Ici vous ne trouvez pas de publicité ou de tracker, juste un peu de contenu qui j'espère vous sera utile.
