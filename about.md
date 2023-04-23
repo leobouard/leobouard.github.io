@@ -25,7 +25,6 @@ description: "Plus d'informations sur le site web et moi-même"
 ## A propos du site web
 
 <div style="display: flex;">
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo GitHub" width="300px;">
     <div>
         <p>Ce site web est un projet personnel pour <b>monter en compétence sur le développement web</b> et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Le site est hébergé sur <a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages</a>. Tout le code HTML & CSS est fait maison, avec la simplicité et l'accessibilité comme mots d'ordre.</p>
         <p>Ici vous ne trouvez pas de publicité ou de tracker, juste un peu de contenu qui j'espère vous sera utile.</p>
