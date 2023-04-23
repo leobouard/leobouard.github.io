@@ -11,7 +11,7 @@ Je m'appelle Léo Bouard et je suis ingénieur système spécialisé dans les in
 
 J'aime bien partager des trucs et apprendre des choses, et c'est ce que j'essaie de faire dans mon quotidien et avec ce site web.
 
-![Photo de profil](./assets/images/profile-picture.jpg)
+<img src="/assets/images/profile-picture.jpg" alt="Photo de profil" style="border-radius: 100px;">
 
 - [mon profil LinkedIn]({{ site.linkedin }})
 - [mon adresse email](mailto:{{ site.emailAddress }})
