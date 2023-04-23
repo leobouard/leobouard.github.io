@@ -16,10 +16,19 @@ description: "Plus d'informations sur le site web et moi-même"
 
 <!-- Personnal links section -->
 
-<div style="display: flex; justify-content: center;">
-    <a href="{{ site.linkedin }}" target="_blank"><img src="/assets/images/linkedin.svg" alt="Profil LinkedIn" width="32px"></a>
-    <a href="/cv"><img src="/assets/images/resume.svg" alt="Mon CV" width="32px"></a>
-    <a href="mailto:{{ site.emailAddress }}"><img src="/assets/images/email.svg" alt="M'envoyez un email" width="32px"></a>
+<div class="personalLinks">
+    <a href="{{ site.linkedin }}" target="_blank" class="linkedIn">
+        <img src="/assets/images/linkedin.svg" alt="Profil LinkedIn" width="32px">
+        <span>LinkedIn</span>
+    </a>
+    <a href="/cv" class="cv">
+        <img src="/assets/images/resume.svg" alt="Mon CV" width="32px">
+        <span>Mon CV</span>
+    </a>
+    <a href="mailto:{{ site.emailAddress }}" class="emailAddress">
+        <img src="/assets/images/email.svg" alt="M'envoyez un email" width="32px">
+        <span>Mon adresse email</span>
+    </a>
 </div>
 
 ## A propos du site web

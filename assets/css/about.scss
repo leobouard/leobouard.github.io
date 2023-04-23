@@ -3,7 +3,7 @@
 
 div.aboutMe {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 
 div.aboutMe > div {
@@ -20,4 +20,25 @@ div.aboutMe > img {
     padding: 30px;
     height: 150px;
     width: 150px;
+}
+
+div.personalLinks {
+    display: flex;
+    justify-content: center;
+}
+
+div.personalLinks > a {
+    margin: 10px;
+}
+
+div.personalLinks > a.linkedIn {
+
+}
+
+div.personalLinks > a.linkedIn {
+
+}
+
+div.personalLinks > a.linkedIn {
+
 }
