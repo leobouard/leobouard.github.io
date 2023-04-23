@@ -25,6 +25,8 @@ div.aboutMe > img {
 div.personalLinks {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px
 }
 
 div.personalLinks > a {
@@ -34,6 +36,7 @@ div.personalLinks > a {
     padding: 2px 5px;
     border-radius: 5px;
     color: #FFF;
+    font-weight: 400;
 }
 
 div.personalLinks > a:hover {
