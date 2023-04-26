@@ -57,18 +57,24 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
     <div class="certification">
         <img src="/assets/images/certification-exam.svg" alt="logo Microsoft Exam">
-        <small>novembre 2022</small>
-        <span>Microsoft 365 Identity and Services</span>
+        <span class="certifDate">novembre 2022</span>
+        <span class="certifTitle">Microsoft 365 Identity and Services</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
-        <small>août 2022</small>
-        <span>Microsoft 365 Fundamentals</span>
+        <span class="certifDate">août 2022</span>
+        <span class="certifTitle">Microsoft 365 Fundamentals</span>
+        <span class="certifStatus">
+            <span class="active">Active</span>
+        </span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
-        <small>juin 2021</small>
-        <span>Azure Fundamentals</span>
+        <span class="certifDate">juin 2021</span>
+        <span class="certifTitle">Azure Fundamentals</span>
+        <span class="certifStatus">
+            <span class="active">Active</span>
+        </span>
     </div>
 </div>
 
