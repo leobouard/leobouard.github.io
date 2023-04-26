@@ -64,17 +64,13 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
         <span class="certifDate">août 2022</span>
         <span class="certifTitle">Microsoft 365 Fundamentals</span>
-        <span class="certifStatus">
-            <span class="active">Active</span>
-        </span>
+        <span class="certifStatusActive">Active</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
         <span class="certifDate">juin 2021</span>
         <span class="certifTitle">Azure Fundamentals</span>
-        <span class="certifStatus">
-            <span class="active">Active</span>
-        </span>
+        <span class="certifStatusActive">Active</span>
     </div>
 </div>
 
