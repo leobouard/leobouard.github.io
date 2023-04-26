@@ -59,6 +59,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         <img src="/assets/images/certification-exam.svg" alt="logo Microsoft Exam">
         <span class="certifDate">novembre 2022</span>
         <span class="certifTitle">Microsoft 365 Identity and Services</span>
+        <span class="certifStatusWaiting">En attente</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">

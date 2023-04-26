@@ -38,8 +38,13 @@ span.certifStatusActive {
     bottom: 0;
     right: 0;
     margin: 10px;
-    border-radius: 100%;
+    border-radius: 100px;
     padding: 2px 10px;
+}
+
+span.certifStatusWaiting {
+    background-color: #757575;
+    color: #FFF;
 }
 
 span.certifStatusActive {
