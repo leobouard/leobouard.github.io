@@ -97,7 +97,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
         </div>
         <div>
-            <p>Entreprise de services numériques (ESN) de plus de 450 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
+            <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
         </div>
         <div class="experience">
             <h4>Lead consultant</h4>
