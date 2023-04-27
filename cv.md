@@ -56,6 +56,12 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
     <div class="certification">
+        <img src="/assets/images/microsoft-certified-associate-badge.svg" alt="logo Microsoft Certified Associate">
+        <span class="certifDate">avril 2023</span>
+        <span class="certifTitle">Identity and Access Administrator Associate</span>
+        <span class="certifStatusActive">Active</span>
+    </div>
+    <div class="certification">
         <img src="/assets/images/certification-exam.svg" alt="logo Microsoft Exam">
         <span class="certifDate">novembre 2022</span>
         <span class="certifTitle">Microsoft 365 Identity and Services</span>
