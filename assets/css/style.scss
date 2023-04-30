@@ -189,6 +189,7 @@ main {
         border: 1px solid #ddd;
         border-radius: 5px;
         user-select: none;
+        overflow: hidden;
     }
 
     details > summary {
