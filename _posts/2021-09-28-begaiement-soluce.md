@@ -32,6 +32,8 @@ function ConvertTo-Stutter {
 
 Pour tout savoir sur les fonctions PowerShell :  [Fonctions - PowerShell \| Microsoft Learn](https://learn.microsoft.com/powershell/scripting/learn/ps101/09-functions)
 
+## Version complexe
+
 <!--
 
 ## Version "j'ai poussé un peu trop loin pour un simple défi"
