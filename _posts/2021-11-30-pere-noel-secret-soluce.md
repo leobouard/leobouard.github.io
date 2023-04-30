@@ -7,7 +7,7 @@ prevLink:
   id: "/2021/11/30/pere-noel-secret"
 ---
 
-Encore une fois on tire partie au maximum des PSCustomObject pour ajouter une propriété "Random" qui va nous pemettre de mélanger la liste aléatoirement. Une fois que l'on a fait ça, on suit simplement le nouvel ordre aléatoire de la liste pour annoncer "A offre son cadeau à B", puis "B offre son cadeau à C", etc...
+Encore une fois on tire partie au maximum des PSCustomObject pour ajouter une propriété "Random" qui va nous pemettre de mélanger la liste aléatoirement. Une fois que l'on a fait ça, on suit simplement le nouvel ordre aléatoire de la liste pour annoncer "A offre son cadeau à B", puis "B offre son cadeau à C", etc
 
 ```powershell
 function PereNoelAleatoire {
@@ -56,23 +56,3 @@ function PereNoelAleatoire {
 
 - la commande CMD "pause" (fonctionnement similaire)
 - un "Start-Sleep -Second 1" pour afficher la ligne suivante après une seconde d'attente
-
-## Exemple d'utilisation
-
-``` 
-
-PS C:\> PereNoelAleatoire -Participants Jake,Rosa,Terry,Amy,Charles,Holt
-
-#0 Jake offre son cadeau à Terry
-
-#1 Terry offre son cadeau à Holt
-
-#2 Holt offre son cadeau à Amy
-
-#3 Amy offre son cadeau à Rosa
-
-#4 Rosa offre son cadeau à Charles
-
-#5 Charles offre son cadeau à Jake
-
-```
