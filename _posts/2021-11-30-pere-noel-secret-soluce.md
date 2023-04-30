@@ -9,7 +9,10 @@ prevLink:
 
 ```powershell
 function Get-SecretSanta {
-    param([array]$People)
+    param(
+        [array]$People,
+        [switch]$Pause
+    )
 
     $i = 0
     $random = 1..$People.Count | Get-Random -Count $People.Count
@@ -27,7 +30,7 @@ function Get-SecretSanta {
         if (!$giftTo) { $giftTo = ($People | Where-Object {$_.ID -eq 1}).Name }
 
         "#{0} {1} offre son cadeau à {2}" -f $_.ID,$_.Name,$giftTo
-        pause
+        if ($Pause.IsPresent) { $null = Read-Host }
     }
 }
 ```
