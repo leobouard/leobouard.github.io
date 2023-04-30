@@ -31,11 +31,11 @@ function ConvertTo-Stutter {
 
 Ça peut paraître sans importance, mais si vous comptez réutiliser vos fonctions dans différents environnements ou scripts, il est important de bien les nommer. Pour ça, le plus simple est d'utiliser la convention de nommage de Microsoft : `<ApprovedVerb>-<Prefix><SingularNoun>`.
 
-Partie | Traduction | Explication
------- | ---------- | -----------
-ApprovedVerb | Verbe approuvé | Liste de *verbe* approuvés par Microsoft (comme Get, Set ou Remove par exemple). Vous pouvez obtenir la liste complète des verbes ainsi que leur catégorie et un descriptif avec la commande `Get-Verb`.
-Prefix | Préfixe | Le préfixe est ajouté à l'ensemble des commandes d'un module lorsque celui-ci est importé avec la commande `Import-Module -Prefix 'TEST'`. Ce préfix permet d'indiquer la provenance d'une commande et surtout d'éviter les conflits de cmdlets identiques entre différents modules.
-SingularNoun | Nom singulier | Descriptif court sur l'action de la commande. Celui-ci doit être unique au niveau du module.
+Partie | Explication
+------ | -----------
+ApprovedVerb | *Verbe* approuvé par Microsoft (comme Get, Set ou Remove par exemple). Vous pouvez obtenir la liste complète des verbes ainsi que leur catégorie et un descriptif avec la commande `Get-Verb`.
+Prefix | Le préfixe est ajouté à l'ensemble des commandes d'un module lorsque celui-ci est importé avec la commande `Import-Module -Prefix 'TEST'`. Ce préfix permet d'indiquer la provenance d'une commande et surtout d'éviter les conflits de cmdlets identiques entre différents modules.
+SingularNoun | Descriptif court sur l'action de la commande. Celui-ci doit être unique au niveau du module.
 
 Dans notre cas, on va prendre un texte pour le transformer. J'ai donc choisi le verbe `ConvertTo` qui indique une transformation unidirectionnelle d'un format A en format B. Pour le nom singulier, on utilise la traduction anglaise de "Bégailler".
 
