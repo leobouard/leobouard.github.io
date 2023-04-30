@@ -243,7 +243,6 @@ div.summary > span {
 
 div.side_buttons {
     position: fixed;
-    flex-direction: column;
     margin-left: -90px;
     margin-top: -35px;
 }
@@ -301,6 +300,15 @@ section.recommandation > span > img {
     transform: scaleY(-1);
     width: 120px;
     margin-right: 10px;
+}
+
+@media screen and (max-width: 950px) {
+    div.side_buttons {
+        margin-left: -30px;
+        margin-top: 0px;
+        top: 50px;
+    }
+    
 }
 
 @media screen and (max-width: 880px) {
