@@ -27,7 +27,7 @@ Vous devrez créer une fonction PowerShell pour appliquer un bégaiement sur un 
 Si vous souhaitez corser un peu le défi, vous pouvez faire en sorte que PowerShell *identifie* les syllabes pour obtenir un résultat plus naturel. Par exemple :
 
 - avancer → a…a…avancer
-- mauvais → mau…mau…mauvaise
+- mauvaise → mau…mau…mauvaise
 - beaucoup → beau…beau…beaucoup
 
 ## Résultats attendus

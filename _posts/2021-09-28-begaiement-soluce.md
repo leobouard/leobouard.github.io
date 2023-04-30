@@ -20,7 +20,7 @@ function ConvertTo-Stutter {
 
     $finalText = $Text -split ' ' | ForEach-Object {
         if ($_ -match '^[A-z]{5}' -and ((0..100 | Get-Random) -le $Frequency)) {
-            "$($_.Substring(0,2))… "*2 + $_
+            "$($_.Substring(0,2))…"*2 + $_
         } else { $_ }
     }
     return ($finalText -join " ")
@@ -34,7 +34,7 @@ function ConvertTo-Stutter {
 Partie | Explication
 ------ | -----------
 ApprovedVerb | *Verbe* approuvé par Microsoft (comme Get, Set ou Remove par exemple). Vous pouvez obtenir la liste complète des verbes ainsi que leur catégorie et un descriptif avec la commande `Get-Verb`.
-Prefix | Le préfixe est ajouté à l'ensemble des commandes d'un module lorsque celui-ci est importé avec la commande `Import-Module -Prefix 'TEST'`. Ce préfix permet d'indiquer la provenance d'une commande et surtout d'éviter les conflits de cmdlets identiques entre différents modules.
+Prefix | Le préfixe est ajouté à l'ensemble des commandes d'un module lorsque celui-ci est importé avec la commande `Import-Module -Prefix 'TEST'`. Ce préfixe permet d'indiquer la provenance d'une commande et surtout d'éviter les conflits de cmdlets identiques entre différents modules.
 SingularNoun | Descriptif court sur l'action de la commande. Celui-ci doit être unique au niveau du module.
 
 Dans notre cas, on va prendre un texte pour le transformer. J'ai donc choisi le verbe `ConvertTo` qui indique une transformation unidirectionnelle d'un format A en format B. Pour le nom singulier, on utilise la traduction anglaise de "Bégailler".
@@ -69,7 +69,7 @@ Si le mot ne correspond pas au critère, alors il ne sera pas soumis à modifica
 
 ### Création de la nouvelle chaine de caractère
 
-Le traitement est le suivant : `"$($_.Substring(0,2))… "*2 + $_` qui est composé de trois parties :
+Le traitement est le suivant : `"$($_.Substring(0,2))…"*2 + $_` qui est composé de trois parties :
 
 1. `$_.Substring(0,2)` : on récupère les deux premiers caractères du mot. Les paramètres de la méthode indiquent que l'on commence au caractère 0 pour s'arrêter au bout de 2 lettres.
 2. `"…"*2` : on va répéter deux fois la chaine de caractère entre guillemets
@@ -77,9 +77,11 @@ Le traitement est le suivant : `"$($_.Substring(0,2))… "*2 + $_` qui est compo
 
 Ce qui nous permet de convertir le mot "bonjour" en "bo…bo…bonjour".
 
-<!--
+---
 
-## Version "j'ai poussé un peu trop loin pour un simple défi"
+## Version complexe
+
+Place à la version plus "aboutie" qui va essayer (j'insiste sur le fait d'essayer uniquement) de délimiter les syllabes du mot.
 
 ```powershell
 function ConvertTo-Stutter {
@@ -89,51 +91,17 @@ function ConvertTo-Stutter {
         [switch]$OutLoud
     )
 
-    $finalText = @()
+    $vowels = 'a','e','i','o','u','y','h'
 
-    # Définition des valeurs par défaut
-    if (!$MinimalWordLength) { $MinimalWordLength = 5 }
-    if (!$StutterFrequency)  { $StutterFrequency = 50 }
-    if (!$StutterCharacter)  { $StutterCharacter = "…" }
-    $vowels = 'a','e','i','o','u','y','h' # Je sais que le H n'est pas une voyelle !
-
-    # Convertion du texte en tableau (séparation à chaque espace)
-    $array = $Text -split ' '
-
-    # Pour chaque mot...
-    $array | ForEach-Object {
-
-        $word = $PSItem
-
-        # Condition d'entrée : le mot commence par au moins 3 lettres consécutives & mesure la taille minimale
-        if ($word -match '^[A-z]{3}' -and $word.Length -gt $MinimalWordLength) { 
-
-            # Provoque le bégayement selon le pourcentage défini
-            $stutter = (Get-Random -Minimum 0 -Maximum 100) -le $StutterFrequency
-            if ($stutter -eq $true) {
-
-                $cutWord = $word[0]
-                $isVowel = $null
-                $i = 1
- 
-                do {
-                    $letter = $word[$i]
-                    if ($letter -in $vowels) { 
-                        $cutWord += $letter 
-                        $isVowel = $true
-                    } else {
-                        $isVowel = $false
-                    }
-                    $i++
-                } until ($isVowel -eq $false)
-                
-                # Assemblage de la partie du mot à bégayer, du caractère de liaison et du mot entier
-                $word = $cutWord + $StutterCharacter + $cutWord + $StutterCharacter + $word
-            }
-        }
-        $finalText += $word
-        Remove-Variable word
+    $finalText = $Text -split ' ' | ForEach-Object {
+        if ($_ -match '^[A-z]{5}' -and ((0..100 | Get-Random) -le $Frequency)) {
+            $cutWord = $_[0]
+            $cutWord += for ($i = 1 ; $_[$i] -in $vowels ; $i++) { $_[$i] }
+            "$($cutWord -replace ' ','')…"*2 + $_
+        } else { $_ }
     }
+
+    $finalText = $finalText -join ' '
 
     if ($OutLoud.IsPresent) {
         Add-Type -AssemblyName System.Speech
@@ -141,11 +109,26 @@ function ConvertTo-Stutter {
         $speak.Speak($finalText)
     }
 
-    # Assemblage final du texte
-    $finalText = $finalText -join " "
-
     return $finalText
 }
 ```
 
--->
+Si l'on reprend les exemples donnés dans la consigne (avancer → a…a…avancer, mauvaise → mau…mau…mauvaise, beaucoup → beau…beau…beaucoup), on remarque que le bégaillement s'arrête dès que l'on rencontre une consonne.
+
+### Modification du traitement
+
+On va modifier la boucle de traitement pour que celle-ci arrête de couper à deux caractères de manière systématique et qu'elle applique le nouveau traitement qui est de couper à la première consonne.
+
+```powershell
+$vowels = 'a','e','i','o','u','y','h'
+
+$cutWord = $_[0]
+$cutWord += for ($i = 1 ; $_[$i] -in $vowels ; $i++) { $_[$i] }
+"$($cutWord -replace ' ','')…"*2 + $_
+```
+
+On commence par récupérer le premier caractère du mot avec `$_[0]`. On poursuit avec une boucle `for()` qui va continuer à construire le mot "coupé" jusqu'à ce que le caractère en cours ne fasse pas partie de la liste de voyelle que l'on a défini précédemment. On termine alors le traitement en créant le mot final.
+
+### Ajout d'un nouveau paramètre
+
+Vous avez peut-être déjà remarqué, mais un nouveau paramètre a fait son apparition : `-OutLoud`. Celui-ci permet de lire le texte à voix haute via `System.Speech`. Rien de très complexe là-dedans, c'est surtout pour partager le fait qu'il est possible de lire un texte avec PowerShell.
