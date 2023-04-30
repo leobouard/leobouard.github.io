@@ -10,7 +10,7 @@ nextLink:
   id: "/2021/09/28/begaiement-soluce"
 ---
 
-Un classique des exercices de programmation : faire bégayer un texte, c'est-à-dire répéter deux à trois fois les premières lettres d'un mot. On doit alors fournir les informations à notre code pour qu'il puisse fonctionner : le texte à traiter et la probabilité du bégaiement (car on veut éviter que le bégaillement soit systématique). Un autre élément à prendre en compte est la longueur des mots minimum pour être "eligible" au bégaillement : pour être crédible, il faudra éviter de faire bégayer des mots trop courts en moins de quatre lettres par exemple.
+Un classique des exercices de programmation : **faire bégayer un texte**, c'est-à-dire répéter deux à trois fois les premières lettres d'un mot. On doit alors fournir les informations à notre code pour qu'il puisse fonctionner : le texte à traiter et la probabilité du bégaiement (car on veut éviter que le bégaillement soit systématique). Un autre élément à prendre en compte est la longueur des mots minimum pour être "eligible" au bégaillement : pour être crédible, il faudra éviter de faire bégayer des mots trop courts en moins de cinq lettres par exemple.
 
 Avec tous ces éléments, on peut distinguer une structure qui pourrait convenir parfaitement à notre code : une fonction avec plusieurs paramètres. Et pour tester cette fonction, quoi de mieux qu'une réplique culte ?
 
