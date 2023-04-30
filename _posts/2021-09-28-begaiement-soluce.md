@@ -62,10 +62,10 @@ Pour le deuxième paramètre `-Frequency` : on ajoute un paramètre de type "ent
 
 On ne veut pas apporter un traitement à tout les mots de notre phrase : il faut que ceux-ci correspondent à certains critères :
 
-- `$_ -match '^[A-z]{3}'` : on vérifie via une expression régulière que le mot commence par 5 lettres consécutives. Cette méthode est meilleure que le fait de mesure la longueur de la chaine de caractère (avec `.Length`), puisqu'elle permet en plus d'éliminer les mots qui contiennent un apostrophe ou un tiret (comme *rez-de-chaussée* ou *j'adore*)
-- `((0..100 | Get-Random) -le $Frequency)` : ici on va tier au sort pour savoir si le mot doit être soumis au traitement. Plus la valeur du paramètre `-Frequency` est élevée, plus il y a de chances que le mot soit soumis au traitement.
+- `$_ -match '^[A-z]{5}'` : on vérifie via une expression régulière (RegEx) que le mot commence par 5 lettres consécutives. Cette méthode est meilleure que la mesure de la longueur d'une chaine de caractère (avec `.Length`) puisqu'elle permet en plus d'éliminer les mots qui contiennent un apostrophe ou un tiret (comme *rez-de-chaussée* ou *j'adore*).
+- `((0..100 | Get-Random) -le $Frequency)` : ici on va tirer au sort pour savoir si le mot doit être soumis au traitement. Plus la valeur du paramètre `-Frequency` est élevée, plus il y a de chances que le mot soit soumis au traitement.
 
-Si le mot ne correspond pas au critère, alors il ne sera pas soumis à une modification.
+Si le mot ne correspond pas au critère, alors il ne sera pas soumis à modification.
 
 ### Création de la nouvelle chaine de caractère
 

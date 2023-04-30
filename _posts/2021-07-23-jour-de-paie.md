@@ -15,7 +15,7 @@ Admettons la situation suivante : votre salaire vous est versé sur votre compte
 
 En bref : elle est où la moulaga ?
 
-![le jour après la paye](https://media2.giphy.com/media/ZWiIwPxJ9JGW4/giphy.gif?cid=ecf05e47tztz1sa2magi8gsof2idlq05bmu1qvxiofkxia0q&rid=giphy.gif&ct=g)
+![Léonardo Di Caprio qui jette des billets dans Le Loup de Wallstreet](https://media2.giphy.com/media/ZWiIwPxJ9JGW4/giphy.gif?cid=ecf05e47tztz1sa2magi8gsof2idlq05bmu1qvxiofkxia0q&rid=giphy.gif&ct=g)
 
 <div style="text-align: center">
   <i>Environ 5 min après avoir reçu votre salaire</i>
