@@ -7,38 +7,32 @@ prevLink:
   id: "/2021/09/28/begaiement"
 ---
 
-Petit rappel de la tirade complète :
+## Version simple
+
+Cette version est simple et efficace, avec un nombre de paramètres limités. Elle ne prends pas en compte les syllabes et répète bêtement les deux premières lettres du mot :
 
 ```powershell
-$text = "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi. Et c’est assez curieux de se dire que les hasards, les rencontres forgent une destinée… Parce que quand on a le goût de la chose, quand on a le goût de la chose bien faite, le beau geste, parfois on ne trouve pas l’interlocuteur en face je dirais, le miroir qui vous aide à avancer. Alors ça n’est pas mon cas, comme je disais là, puisque moi au contraire, j’ai pu : et je dis merci à la vie, je lui dis merci, je chante la vie, je danse la vie… je ne suis qu’amour ! Et finalement, quand beaucoup de gens aujourd’hui me disent « Mais comment fais-tu pour avoir cette humanité ? », et bien je leur réponds très simplement, je leur dis que c’est ce goût de l’amour ce goût donc qui m’a poussé aujourd’hui à entreprendre une construction mécanique, mais demain qui sait ? Peut-être simplement à me mettre au service de la communauté, à faire le don, le don de soi…"
-```
+function ConvertTo-Stutter {
+    param([Parameter(Mandatory,ValueFromPipeline)][string]$Text)
 
-...comme ça on part sur la même base !
-
-## Version "simple"
-
-Je vous propose une première version "innocente" et la plus simple possible. 
-
-```powershell
-function Begaiement {
-
-    param([string]$Text)
-
-    $array = $text -split ' '
-    $finalText = @()
-    $array | % {
-        $word = $PSItem
-        if ($word -match '^[A-z]{3}' -and $word.Length -gt 5) { 
-            if (($true,$false | Get-Random) -eq $true) {
-                $cutWord = "$($word.Substring(0,2))… "
-                $word    = $cutWord + $cutWord + $word
-            }
-        }
-        $finalText += $word
+    $finalText = $Text -split ' ' | ForEach-Object {
+        if ($_ -match '^[A-z]{3}' -and $_.Length -gt 5 -and ((0,1 | Get-Random) -eq 1)) {
+                "$($_.Substring(0,2))… "*2 + $_
+        } else { $_ }
     }
     return ($finalText -join " ")
 }
 ```
+
+1. Analyser le nom de la fonction en lui-même
+2. Rappel sur les paramètes, notamment la récupération via pipeline
+3. Transformation du texte en array pour appliquer un traitement pour chaque item
+4. Créer la condition du IF()
+5. Création du mot bégaiement
+
+Pour tout savoir sur les fonctions PowerShell :  [Fonctions - PowerShell \| Microsoft Learn](https://learn.microsoft.com/powershell/scripting/learn/ps101/09-functions)
+
+<!--
 
 ## Version "j'ai poussé un peu trop loin pour un simple défi"
 
@@ -79,12 +73,6 @@ function Begaiement {
                 $isVowel = $null
                 $i = 1
  
-                <# La partie du mot à bégayer continue jusqu'à rencontrer une consonne
-                    Exemples :
-                        - avancer  --> a…a…avancer
-                        - mauvais  --> mau…mau…mauvaise
-                        - beaucoup --> beau…beau…beaucoup
-                #>
                 do {
                     $letter = $word[$i]
                     if ($letter -in $vowels) { 
@@ -116,3 +104,5 @@ function Begaiement {
     return $finalText
 }
 ```
+
+-->
