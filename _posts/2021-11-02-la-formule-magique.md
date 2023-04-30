@@ -2,7 +2,7 @@
 layout: post
 title: "La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
-background: "#bac9ff"
+background: "#f9e084"
 tags: ['challenge','powershell']
 listed: true
 nextLink:
