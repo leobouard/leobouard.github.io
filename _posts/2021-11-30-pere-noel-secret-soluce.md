@@ -7,52 +7,27 @@ prevLink:
   id: "/2021/11/30/pere-noel-secret"
 ---
 
-Encore une fois on tire partie au maximum des PSCustomObject pour ajouter une propriété "Random" qui va nous pemettre de mélanger la liste aléatoirement. Une fois que l'on a fait ça, on suit simplement le nouvel ordre aléatoire de la liste pour annoncer "A offre son cadeau à B", puis "B offre son cadeau à C", etc
-
 ```powershell
-function PereNoelAleatoire {
+function Get-SecretSanta {
+    param([array]$People)
 
-    param([array]$Participants)
-
-    # Creation des objets
-    $users = @()
-    $Participants | ForEach-Object {
-        $users += [PSCustomObject]@{
-            Name   = $_
-            Random = $null
-        }
-    }
-
-    # Génération d'un liste aléatoire de chiffres entre 0 et le nombre d'utilisateurs
-    $count  = ($users | Measure-Object).Count
-    $random = 0..$count | Get-Random -Count $count
     $i = 0
-
-    # Ajout de la colonne avec le chiffre aléatoire
-    $users | ForEach-Object {
-        $_.Random = $random[$i]
+    $random = 1..$People.Count | Get-Random -Count $People.Count
+    $People = $People | ForEach-Object {
+        [PSCustomObject]@{
+            Name = $_
+            ID = $random[$i]
+        }
         $i++
-    }
+    } | Sort-Object -Property ID
+    
+    $People | ForEach-Object {
+        $index = $_.ID+1
+        $giftTo   = ($People | Where-Object {$_.ID -eq $index}).Name
+        if (!$giftTo) { $giftTo = ($People | Where-Object {$_.ID -eq 1}).Name }
 
-    # Triage des utilisateurs selon leur chiffre aléatoire
-    $users = $users | Sort-Object -Property Random
-
-    # Boucle afficher le résultat (nRandom offre à nRandom+1)
-    0..($count-1) | ForEach-Object {
-        $index = $_ + 1
-        if ($index -ge $count) { $index = $count - $index }
-        $giftTo   = ($users[$index]).Name
-        $giftFrom = ($users[$_]).Name
-
-        "#{0} {1} offre son cadeau à {2}" -f $_,$giftFrom,$giftTo
-        Read-Host | Out-Null
+        "#{0} {1} offre son cadeau à {2}" -f $_.ID,$_.Name,$giftTo
+        pause
     }
 }
 ```
-
-`if ($index -ge $count) { $index = $count - $index }` : ce petit bout de code permet de dire que quand on arrive à la dernière personne de la liste, celle-ci doit offrir son cadeau à la première personne.
-
-`Read-Host | Out-Null` : permet d'attendre une action utilisateur avant d'afficher le prochain résultat. On pourrait tout à fait le remplacer par :
-
-- la commande CMD "pause" (fonctionnement similaire)
-- un "Start-Sleep -Second 1" pour afficher la ligne suivante après une seconde d'attente
