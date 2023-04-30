@@ -16,9 +16,14 @@ Pour ce défi, vous allez devoir résoudre une petite énigme avant de passer à
 - 5143 en entrée donne 13 en sortie
 - 8543 en entrée donne 20 en sortie
 
-L'énigme n'est pas très complexe, donc pas besoin d'aller chercher bien loin. Si vous n'avez pas d'idée, <details><summary>voici la solution</summary><p>Il suffit d'additionner les chiffres qui composent le nombre entre eux. Pour reprendre le premier exemple : <b>2568 devient 21</b> parce que 2+5+6+8 = 21</p></details>
-
 ![Il faut un peu cogiter](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
+
+L'énigme n'est pas très complexe, donc pas besoin d'aller chercher bien loin. Si vous rencontrez des difficultés pour résoudre l'énigme, la solution est disponible ici :
+
+<details>
+  <summary>Solution de l'énigme</summary>
+  <p>Il suffit d'additionner les chiffres qui composent le nombre entre eux. Pour reprendre le premier exemple : <b>2568 devient 21</b> parce que 2+5+6+8 = 21</p>
+</details>
 
 ## Consigne
 
