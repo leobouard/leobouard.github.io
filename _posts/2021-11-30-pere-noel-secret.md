@@ -18,9 +18,9 @@ Donner une liste de personne en entrée, et obtenir un tirage qui défini qui of
 
 ## Résultat attendu
 
-> #0 Jake offre son cadeau à Terry
-> #1 Terry offre son cadeau à Holt
-> #2 Holt offre son cadeau à Amy
-> #3 Amy offre son cadeau à Rosa
-> #4 Rosa offre son cadeau à Charles
+> #0 Jake offre son cadeau à Terry\
+> #1 Terry offre son cadeau à Holt\
+> #2 Holt offre son cadeau à Amy\
+> #3 Amy offre son cadeau à Rosa\
+> #4 Rosa offre son cadeau à Charles\
 > #5 Charles offre son cadeau à Jake
