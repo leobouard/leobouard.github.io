@@ -191,9 +191,18 @@ main {
         user-select: none;
     }
 
-    summary {
+    details > summary {
         list-style: none;
         padding: 10px;
+        background: #fafafa;
+    }
+
+    details:open > summary {
+        border-bottom: 1px solid #ddd;
+    }
+
+    details > p {
+        margin: 15px;
     }
 }
 
