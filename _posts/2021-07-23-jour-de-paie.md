@@ -5,7 +5,6 @@ description: "Calculer le jour exact où vous recevrez votre salaire, en prenant
 background: "#a7d1ba"
 tags: ['challenge','powershell']
 listed: true
-capsule: "💪 Le meilleur défi"
 nextLink:
   name: "Voir la solution"
   id: "/2021/07/23/jour-de-paie-soluce"
