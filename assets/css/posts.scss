@@ -354,10 +354,12 @@ section.recommandation > span > img {
     div.articleText {
         padding: 5px;
         margin: auto 0px;
+        width: 50%;
     }
 
-    div.articleDescription {
+    span.articleDescription {
         font-size: small;
+        line-height: 140%;
     }
 
     span.articleDate {
