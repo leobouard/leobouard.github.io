@@ -2,7 +2,7 @@
 layout: post
 title: "Défi - La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
-background: "#f9e084"
+background: "#fbe888"
 tags: ['challenge','powershell']
 listed: true
 capsule: "👍 Le plus facile"

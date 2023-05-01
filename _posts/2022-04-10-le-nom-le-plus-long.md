@@ -2,7 +2,7 @@
 layout: post
 title: "Défi - Qui a le nom le plus long ?"
 description: "Saurez-vous retrouver la personne avec le nom complet (prénom et nom) le plus long de la liste ?"
-background: "#e5a8a8"
+background: "#F292A5"
 tags: ['challenge','powershell']
 listed: true
 nextLink:

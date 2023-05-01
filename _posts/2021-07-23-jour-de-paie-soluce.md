@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Solution - Le jour de paie"
-background: "#a7d1ba"
+background: "#8af1b9"
 prevLink:
   name: "Retour au défi"
   id: "/2021/07/23/jour-de-paie"

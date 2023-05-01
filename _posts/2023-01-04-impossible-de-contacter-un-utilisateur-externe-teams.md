@@ -2,7 +2,7 @@
 layout: post
 title: "Impossible de contacter un utilisateur externe sur Teams"
 description: "L'utilisateur ne peut plus contacter des comptes externes à l'organisation"
-background: "#f7c07d"
+background: "#F69A79"
 tag: microsoft-teams
 listed: true
 ---

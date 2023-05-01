@@ -2,7 +2,7 @@
 layout: post
 title: "Retrouver la source du problème"
 description: "Une requête Active Directory bloquée à cause d'une erreur sur un compte utilisateur ou ordinateur"
-background: "#c3c3dd"
+background: "#9A96C5"
 tags: active-directory
 listed: true
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Défi - Bégaiement"
 description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
-background: "#f7a4dd"
+background: "#5398dd"
 tags: ['challenge','powershell']
 listed: true
 nextLink:
