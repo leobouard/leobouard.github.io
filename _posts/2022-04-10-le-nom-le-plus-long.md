@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Qui a le nom le plus long ?"
+title: "Défi - Qui a le nom le plus long ?"
 description: "Saurez-vous retrouver la personne avec le nom complet (prénom et nom) le plus long de la liste ?"
 background: "#e5a8a8"
 tags: ['challenge','powershell']
@@ -27,7 +27,7 @@ Est-ce que c'est le comptable d'origine indienne ? Ou votre collègue sud-améri
 Vous trouvez ça trop facile ? Je comprends, du coup je vous propose d'essayer une version qui n'utilise aucune boucle. Donc pas le droit d'utiliser :
 
 - foreach
-- ForEach-Object 
+- ForEach-Object
 - for
 - while
 - do-while ou do-until
@@ -48,4 +48,4 @@ $uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/ass
 $users = (Invoke-WebRequest -Uri $uri).Content | ConvertFrom-Csv -Delimiter ';'
 ```
 
-...ou télécharger le fichier directement sur [GitHub](https://github.com/leobouard/leobouard.github.io/blob/main/assets/files/users.csv)
+…ou télécharger le fichier directement sur [GitHub](https://github.com/leobouard/leobouard.github.io/blob/main/assets/files/users.csv)

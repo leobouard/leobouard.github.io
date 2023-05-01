@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Père Noël aléatoire"
+title: "Défi - Père Noël aléatoire"
 description: "Une variante du 'secret santa' : faire un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
 background: "#cae4ff"
 tags: ['challenge','powershell']
