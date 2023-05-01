@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Solution - Bégaiement"
-background: "#5398dd"
+background: "#69a9e9"
 prevLink:
   name: "Retour au défi"
   id: "/2021/09/28/begaiement"
