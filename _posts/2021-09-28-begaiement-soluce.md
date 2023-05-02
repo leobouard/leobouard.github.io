@@ -9,7 +9,7 @@ prevLink:
 
 ## Version simple
 
-Cette version est simple et efficace, avec un nombre de paramètres limités. Elle ne prends pas en compte les syllabes et répète bêtement les deux premières lettres du mot :
+Cette version est simple et efficace, avec un nombre de paramètres limités. Elle ne prend pas en compte les syllabes et répète bêtement les deux premières lettres du mot :
 
 ```powershell
 function ConvertTo-Stutter {
@@ -37,7 +37,7 @@ ApprovedVerb | *Verbe* approuvé par Microsoft (comme Get, Set ou Remove par exe
 Prefix | Le préfixe est ajouté à l'ensemble des commandes d'un module lorsque celui-ci est importé avec la commande `Import-Module -Prefix 'TEST'`. Ce préfixe permet d'indiquer la provenance d'une commande et surtout d'éviter les conflits de cmdlets identiques entre différents modules.
 SingularNoun | Descriptif court sur l'action de la commande. Celui-ci doit être unique au niveau du module.
 
-Dans notre cas, on va prendre un texte pour le transformer. J'ai donc choisi le verbe `ConvertTo` qui indique une transformation unidirectionnelle d'un format A en format B. Pour le nom singulier, on utilise la traduction anglaise de "Bégailler".
+Dans notre cas, on va prendre un texte pour le transformer. J'ai donc choisi le verbe `ConvertTo` qui indique une transformation unidirectionnelle d'un format A en format B. Pour le nom singulier, on utilise la traduction anglaise de "Bégayer".
 
 Pour aller plus loin sur le nommage : [Dénomination - Fonctions - PowerShell \| Microsoft Learn](https://learn.microsoft.com/fr-fr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.3#naming)
 
@@ -60,9 +60,9 @@ Pour le deuxième paramètre `-Frequency` : on ajoute un paramètre de type "ent
 
 ### Condition de traitement
 
-On ne veut pas apporter un traitement à tout les mots de notre phrase : il faut que ceux-ci correspondent à certains critères :
+On ne veut pas apporter un traitement à tous les mots de notre phrase : il faut que ceux-ci correspondent à certains critères :
 
-- `$_ -match '^[A-z]{5}'` : on vérifie via une expression régulière (RegEx) que le mot commence par 5 lettres consécutives. Cette méthode est meilleure que la mesure de la longueur d'une chaine de caractère (avec `.Length`) puisqu'elle permet en plus d'éliminer les mots qui contiennent un apostrophe ou un tiret (comme *rez-de-chaussée* ou *j'adore*).
+- `$_ -match '^[A-z]{5}'` : on vérifie via une expression régulière (RegEx) que le mot commence par 5 lettres consécutives. Cette méthode est meilleure que la mesure de la longueur d'une chaine de caractère (avec `.Length`) puisqu'elle permet en plus d'éliminer les mots qui contiennent une apostrophe ou un tiret (comme *rez-de-chaussée* ou *j'adore*).
 - `((0..100 | Get-Random) -le $Frequency)` : ici on va tirer au sort pour savoir si le mot doit être soumis au traitement. Plus la valeur du paramètre `-Frequency` est élevée, plus il y a de chances que le mot soit soumis au traitement.
 
 Si le mot ne correspond pas au critère, alors il ne sera pas soumis à modification.
@@ -71,7 +71,7 @@ Si le mot ne correspond pas au critère, alors il ne sera pas soumis à modifica
 
 Le traitement est le suivant : `"$($_.Substring(0,2))…"*2 + $_` qui est composé de trois parties :
 
-1. `$_.Substring(0,2)` : on récupère les deux premiers caractères du mot. Les paramètres de la méthode indiquent que l'on commence au caractère 0 pour s'arrêter au bout de 2 lettres.
+1. `$_.Substring(0,2)` : on récupère les deux premiers caractères du mot. Les paramètres de la méthode indiquent que l'on commence au caractère 0 pour s'arrêter au bout de deux lettres.
 2. `"…"*2` : on va répéter deux fois la chaine de caractère entre guillemets
 3. `+ $_` : on ajoute notre mot complet à la fin
 
@@ -113,7 +113,7 @@ function ConvertTo-Stutter {
 }
 ```
 
-Si l'on reprend les exemples donnés dans la consigne (avancer → a…a…avancer, mauvaise → mau…mau…mauvaise, beaucoup → beau…beau…beaucoup), on remarque que le bégaillement s'arrête dès que l'on rencontre une consonne.
+Si l'on reprend les exemples donnés dans la consigne (avancer → a…a…avancer, mauvaise → mau…mau…mauvaise, beaucoup → beau…beau…beaucoup), on remarque que le bégaiement s'arrête dès que l'on rencontre une consonne.
 
 ### Modification du traitement
 

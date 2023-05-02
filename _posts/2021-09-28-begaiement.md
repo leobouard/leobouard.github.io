@@ -10,11 +10,11 @@ nextLink:
   id: "/2021/09/28/begaiement-soluce"
 ---
 
-Un classique des exercices de programmation : **faire bégayer un texte**, c'est-à-dire répéter deux à trois fois les premières lettres d'un mot. On doit alors fournir les informations à notre code pour qu'il puisse fonctionner : le texte à traiter et la probabilité du bégaiement (car on veut éviter que le bégaillement soit systématique). Un autre élément à prendre en compte est la longueur des mots minimum pour être "eligible" au bégaillement : pour être crédible, il faudra éviter de faire bégayer des mots trop courts en moins de cinq lettres par exemple.
+Un classique des exercices de programmation : **faire bégayer un texte**, c'est-à-dire répéter deux à trois fois les premières lettres d'un mot. On doit alors fournir les informations à notre code pour qu'il puisse fonctionner : le texte à traiter et la probabilité du bégaiement (car on veut éviter que le bégaiement soit systématique). Un autre élément à prendre en compte est la longueur des mots minimum pour être "éligible" au bégaiement : pour être crédible, il faudra éviter de faire bégayer des mots trop courts en moins de cinq lettres par exemple.
 
 Avec tous ces éléments, on peut distinguer une structure qui pourrait convenir parfaitement à notre code : une fonction avec plusieurs paramètres. Et pour tester cette fonction, quoi de mieux qu'une réplique culte ?
 
-![Edouard Baer dans Astérix Mission Cléopatre avec la réplique culte "Vous savez, moi je ne crois pas qu'il y ait de bonnes ou de mauvaises situations"](https://c.tenor.com/3J9KbV6Gt1sAAAAC/asterix-obelix.gif)
+![Edouard Baer dans Astérix Mission Cléopâtre avec la réplique culte "Vous savez, moi je ne crois pas qu'il y ait de bonnes ou de mauvaises situations"](https://c.tenor.com/3J9KbV6Gt1sAAAAC/asterix-obelix.gif)
 
 ## Consignes
 
