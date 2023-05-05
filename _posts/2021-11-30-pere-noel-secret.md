@@ -16,7 +16,16 @@ Ce défi peut paraitre facile au premier abord, mais attention : il y a assez pe
 
 ## Consignes
 
-Vos participants s'apellent Jake, Terry, Holt, Amy, Rosa et Charles
+Faire une fonction ou un script qui prend en paramètre le nom de chaque participant et donne en résultat un affichage progressif qui affiche dans la console "*A offre son cadeau à B*". La ligne suivante n'est affichée qu'après une action de l'utilisateur (comme l'appui sur une touche par exemple). Le résultat doit être complétement aléatoire.
+
+Pour votre liste de participants, vous pouvez utiliser l'équipe de Brooklyn 99 : Jake, Terry, Holt, Amy, Rosa et Charles.
+
+### Contraintes
+
+On considère que le nombre minimum de participants est de trois. Les situations suivantes ne doivent alors pas se produire :
+
+- une personne ne peut pas s'offrir de cadeau à elle-même. Exemple : *A offre son cadeau à A*.
+- deux personnes ne peuvent pas s'offrir de cadeau mutuellement. Exemple : *A offre son cadeau à B et B offre son cadeau à A*.
 
 ## Résultat attendu
 
