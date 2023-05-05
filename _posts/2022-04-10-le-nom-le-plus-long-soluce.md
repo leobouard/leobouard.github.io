@@ -34,7 +34,7 @@ $users | Foreach-Object {
 
 C'est bien sympa mais dans ce modèle, il ne peut y avoir qu'un seul "record" (même si dans la réalité la première place est peut-être partagée entre plusieurs noms).
 
-On pourrait modifier le comportement du script en lui demandant d'afficher le texte *"Pierre Dupont est le nom le plus long avec 13 caractères"* à chaque fois que le record est battu ou égalé :
+On pourrait modifier le comportement du script en lui demandant d'afficher le texte *"Pierre Dupont est le nom le plus long avec 13 caractères"* à chaque fois que le record est battu ou égalé. On peut faire ça en modifiant l'opérateur de comparaison de `-gt` (plus grand que) à `-ge` (plus grand ou égal) :
 
 ```powershell
 $longestName = ""
@@ -63,30 +63,24 @@ $users | ForEach-Object {
 $users | Sort-Object -Property nameLength -Descending | Select-Object -First 10 | Format-Table displayName,country,city,nameLength
 ```
 
-Pour ça, on ajoute une nouvelle propriété "nameLength" à notre objet de base. Une fois que tous les utilisateurs ont reçu cette nouvelle propriété, il suffit simplement de trier les objets du nom le plus long au nom le plus court... et c'est bon !
+Pour ça, on ajoute une nouvelle propriété "nameLength" à notre objet de base. Une fois que tous les utilisateurs ont reçu cette nouvelle propriété, il suffit simplement de trier les objets du nom le plus long au nom le plus court… et c'est bon !
 
 Simple et efficace :
 
-```
-displayName             country city                nameLength
------------             ------- ----                ----------
-Alexandrin Courtemanche FR      BELFORT                     23
-Alphonsine De La Vergne FR      AUXERRE                     23
-Christophe Deslauriers  CH      STECKBORN                   22
-```
+> displayName             country city                nameLength\
+> -----------             ------- ----                ----------\
+> Alexandrin Courtemanche FR      BELFORT                     23\
+> Alphonsine De La Vergne FR      AUXERRE                     23\
+> Christophe Deslauriers  CH      STECKBORN                   22
 
 <div style="text-align: center">
   <i>Ne vous attachez pas trop au résultat affiché, il est probable que le fichier CSV utilisé ai été modifié entre temps</i>
 </div>
 
-<br>
-
 On pourrait même faire une version dérivée qui se passerait de la boucle `ForEach-Object`. Pour ça, on utilise la commande `Select-Object` pour calculer la propriété "nameLength" à la volée :
 
 ```powershell
 $users | Select-Object displayName,@{Name='nameLength';Expression={($_.displayName).Length}} | Sort-Object nameLength -Descending | Select-Object -First 10 | Format-Table
-# ...ou en version condensée (attention c'est pas beau)
-($users|select displayName,@{N='l';E={($_.displayName).Length}}|sort l -d)[0..5]
 ```
 
-Et tout ça en une seule ligne ! 😄
+Et on peut même envisager une version condensée : `($users|select displayName,@{N='l';E={($_.displayName).Length}}|sort l -d)[0..5]`

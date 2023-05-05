@@ -10,31 +10,15 @@ nextLink:
   id: "/2022/04/10/le-nom-le-plus-long-soluce"
 ---
 
-Bon bah là pas besoin de broder... Tout est dans le titre ! 😄
+PowerShell est un outil fantastique pour faire du reporting dans Active Directory : il permet de fournir des statistiques, épingler les comptes inactifs ou répondre à des questions que personne ne se pose !
 
-Vous avez une liste d'utilisateurs (type annuaire Active Directory) et vous voulez savoir qui a le nom le plus long ?
-
-Est-ce que c'est le comptable d'origine indienne ? Ou votre collègue sud-américaine avec plus de prénoms que vous n'avez de lettres dans votre nom de famille ? Ou alors simplement un présentateur TV bien connu avec un nom à particule...
-
-![eminem-my-name-is](https://media2.giphy.com/media/xUOxf9Gau3L2B0kMPC/giphy.gif?cid=ecf05e4752pf5db8at27ms7voi8coytccw6il1v27e8o3mke&rid=giphy.gif&ct=g)
-
-<div style="text-align: center">
-  <i>🎶 Hi, my name is, what? My name is, who?<br>My name is, chka-chka, "Bernard de la Villardière" 🎵</i>
-</div>
+La question du jour : **qui a le nom le plus long de l'annuaire ?** Si vous n'avez pas d'Active Directory (ou d'Azure AD) sous la main, pas d'inquiétude je vous fourni un fichier CSV qui vous permettra de réaliser l'exercice.
 
 ## Un peu plus de défi
 
-Vous trouvez ça trop facile ? Je comprends, du coup je vous propose d'essayer une version qui n'utilise aucune boucle. Donc pas le droit d'utiliser :
+Si vous souhaitez augmenter la difficulté, je vous proposer de faire une version qui n'utilise aucune forme de boucle "conventionnelle". Donc pas le droit au `foreach`, `ForEach-Object`, `for` ou n'importe quelle version de `while/until`.
 
-- foreach
-- ForEach-Object
-- for
-- while
-- do-while ou do-until
-
-(Et oui c'est quand même faisable ! 😁)
-
-Pour ne pas vous laisser sans rien, voici deux indices :
+Si vous ne savez pas comment faire, voici deux indices :
 
 1. [La commande qui peut-être utilisée pour faire ça](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object)
 2. [Comment l'utiliser dans ce contexte](https://docs.microsoft.com/fr-fr/powershell/scripting/samples/selecting-parts-of-objects--select-object-)
