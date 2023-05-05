@@ -20,10 +20,10 @@ La question du jour : **qui a le nom le plus long de l'annuaire ?** Si vous n'av
 
 Si vous souhaitez augmenter la difficulté, je vous proposer de faire une version qui n'utilise aucune forme de boucle "conventionnelle". Donc pas le droit au `foreach`, `ForEach-Object`, `for` ou n'importe quelle version de `while/until`.
 
-Si vous ne savez pas comment faire, voici deux indices :
+Si vous n'avez pas d'idée sur la méthode à utiliser, voici deux indices :
 
-1. [La commande qui peut-être utilisée pour faire ça](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object)
-2. [Comment l'utiliser dans ce contexte](https://docs.microsoft.com/fr-fr/powershell/scripting/samples/selecting-parts-of-objects--select-object-)
+1. [La commande qui peut-être utilisée pour faire ça](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-object)
+2. [Et comment l'utiliser dans ce contexte](https://docs.microsoft.com/powershell/scripting/samples/selecting-parts-of-objects--select-object-)
 
 ## Liste d'utilisateurs
 
