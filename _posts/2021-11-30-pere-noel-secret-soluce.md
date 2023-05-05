@@ -37,7 +37,11 @@ function Get-SecretSanta {
 
 ### Modifier l'ordre de la liste
 
-La première étape est de mélanger la liste pour s'assurer que l'ordre diffère de la liste initiale qui a été envoyée en paramètre. Pour ça, c'est très simple : `$People | Get-Random -Count $People.Count`
+La première étape est de mélanger la liste pour s'assurer que l'ordre diffère de la liste initiale qui a été envoyée en paramètre. Pour ça, c'est très simple :
+
+```powershell
+$People | Get-Random -Count $People.Count
+```
 
 ### Appliquer le traitement
 
