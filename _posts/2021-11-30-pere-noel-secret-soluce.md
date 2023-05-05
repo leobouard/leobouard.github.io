@@ -17,35 +17,49 @@ function Get-SecretSanta {
     )
 
     $i = 0
-    $random = 1..$People.Count | Get-Random -Count $People.Count
-    $People = $People | ForEach-Object {
-        [PSCustomObject]@{
-            Name = $_
-            ID = $random[$i]
-        }
-        $i++
-    } | Sort-Object -Property ID
-    
+    $People = $People | Get-Random -Count $People.Count
     $People | ForEach-Object {
-        $index = $_.ID+1
-        $giftTo   = ($People | Where-Object {$_.ID -eq $index}).Name
-        if (!$giftTo) { $giftTo = ($People | Where-Object {$_.ID -eq 1}).Name }
-
-        "#{0} {1} offre son cadeau à {2}" -f $_.ID,$_.Name,$giftTo
+        $giftFrom = $People[$i]
+        $giftTo   = $People[$i+1]
+        if (!$giftTo) { $giftTo = $People[0] }
+        "#{0} {1} offre son cadeau à {2}" -f $i,$giftFrom,$giftTo
         if ($Pause.IsPresent) { $null = Read-Host }
+        $i++
     }
 }
 ```
 
 ## Explication de code
 
-### Paramètres
+L'objectif de la fonction est simple : mélanger l'ordre de la liste des participants pour ensuite afficher un texte qui va simplement dire que la personne en cours de traitement dans 
 
-### Première boucle
+### Modifier l'ordre de la liste
 
-### Deuxième boucle
+La première étape est de mélanger la liste pour s'assurer que l'ordre diffère de la liste initiale qui a été envoyée en paramètre. Pour ça, c'est très simple : `$People | Get-Random -Count $People.Count`
+
+### Appliquer le traitement
+
+On va utiliser un fonctionnement basique : la première personne de la liste mélangée va offrir son cadeau à la personne suivante et ainsi de suite.
+
+Pour faire ça en PowerShell, on va utiliser la boucle `ForEach-Object` pour appliquer un traitement à chaque élément. On va ensuite utiliser l'index de la liste qui va nous permettre d'obtenir facilement la première valeur de la liste (`$People[0]`), puis la deuxième (`$People[1]`), puis la troisième (`$People[2]`), etc. Notre index sera représenté par la variable `$i` qui commence à zéro et qui est incrémentée de 1 à fin de boucle.
+
+Pour obtenir le participant qui offre, on utilise `$People[$i]` et pour trouver le participant suivant (celui qui reçoit le cadeau), on utilise `$People[$i+1]`.
+
+…mais si l'on arrive à la fin de la liste et qu'il n'y a personne après ? Dans ce cas, le résultat de  `$People[$i+1]` est vide, donc on créé une condition pour gérer cette situation et forcer le dernier participant à offrir son cadeau au premier participant :
+
+```powershell
+if (!$giftTo) { $giftTo = $People[0] }
+```
 
 ### Affichage progressif
+
+Pour afficher plusieurs variables dans un texte, il est possible d'utiliser la méthode avec le `-f` qui va remplacer tous les *placeholders* du type {0}, {1} et {2} dans le texte par la valeur des variables situées à droite du `-f`.
+
+Dans ce cas, il était également possible de faire simplement appel à un `Write-Host` :
+
+```powershell
+Write-Host "#$i $giftFrom offre son cadeau à $giftTo"
+```
 
 Dans mon cas, l'affichage progressif doit être invoqué avec le paramètre `-Pause` de la fonction. Si ce paramètre est actif, alors on va attendre que l'utilisateur appuie sur la touche "Entrée" du clavier via une utilisation détournée du `Read-Host`. On peut également utiliser directement la commande `pause` qui fonctionne exactement de la même manière mais qui a comme désavantage d'imposer un texte dans la console : "*Cliquez sur Entrée pour continuer...:*".
 
