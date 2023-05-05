@@ -73,10 +73,6 @@ Alexandrin Courtemanche | FR | BELFORT | 23
 Alphonsine De La Vergne | FR | AUXERRE | 23
 Christophe Deslauriers | CH | STECKBORN | 22
 
-<div style="text-align: center">
-  <i>Ne vous attachez pas trop au résultat affiché, il est probable que le fichier CSV utilisé ai été modifié entre temps</i>
-</div>
-
 On pourrait même faire une version dérivée qui se passerait de la boucle `ForEach-Object`. Pour ça, on utilise la commande `Select-Object` pour calculer la propriété "nameLength" à la volée :
 
 ```powershell
