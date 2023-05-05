@@ -67,11 +67,11 @@ Pour ça, on ajoute une nouvelle propriété "nameLength" à notre objet de base
 
 Simple et efficace :
 
-> displayName             country city                nameLength\
-> -----------             ------- ----                ----------\
-> Alexandrin Courtemanche FR      BELFORT                     23\
-> Alphonsine De La Vergne FR      AUXERRE                     23\
-> Christophe Deslauriers  CH      STECKBORN                   22
+DisplayName | Country | City | NameLength
+----------- | ------- | ---- | ----------
+Alexandrin Courtemanche | FR | BELFORT | 23
+Alphonsine De La Vergne | FR | AUXERRE | 23
+Christophe Deslauriers | CH | STECKBORN | 22
 
 <div style="text-align: center">
   <i>Ne vous attachez pas trop au résultat affiché, il est probable que le fichier CSV utilisé ai été modifié entre temps</i>
