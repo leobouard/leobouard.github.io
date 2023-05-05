@@ -14,6 +14,8 @@ PowerShell est un outil fantastique pour faire du reporting dans Active Director
 
 La question du jour : **qui a le nom le plus long de l'annuaire ?** Si vous n'avez pas d'Active Directory (ou d'Azure AD) sous la main, pas d'inquiétude je vous fourni un fichier CSV qui vous permettra de réaliser l'exercice.
 
+![Willie le jardinier dans Les Simpson qui se demande pourquoi est-ce que c'est toujours les gamins avec les noms les plus long qui font des conneries](https://media0.giphy.com/media/3o6MbjqOVQNVwuaIx2/giphy.gif?cid=ecf05e47juiie0foc3cipfq12mxibd8fg6n88sn6wvuird8x&ep=v1_gifs_search&rid=giphy.gif&ct=g)
+
 ## Un peu plus de défi
 
 Si vous souhaitez augmenter la difficulté, je vous proposer de faire une version qui n'utilise aucune forme de boucle "conventionnelle". Donc pas le droit au `foreach`, `ForEach-Object`, `for` ou n'importe quelle version de `while/until`.

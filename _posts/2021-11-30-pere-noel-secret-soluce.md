@@ -72,7 +72,7 @@ Dans mon cas, l'affichage progressif doit être invoqué avec le paramètre `-Pa
 Au passage, si vous souhaitez vérifier quel est le code d'une fonction, vous pouvez le faire très simplement avec la commande `Get-Command` :
 
 > PS C:\> Get-Command 'pause' | Format-List
->\
+> \
 > Name        : Pause\
 > CommandType : Function\
 > Definition  : $null = Read-Host 'Cliquez sur Entrée pour continuer...'
