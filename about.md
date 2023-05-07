@@ -26,6 +26,14 @@ description: "Plus d'informations sur le site web et moi-même"
             <i class="fa-brands fa-github"></i>
             <span>GitHub</span>
         </a>
+        <a href="{{ site.reddit }}>" target="_blank" class="reddit">
+            <i class="fa-brands fa-reddit"></i>
+            <span>Reddit</span>
+        </a>
+        <a href="{{ site.twitter }}>" target="_blank" class="twitter">
+            <i class="fa-brands fa-twitter"></i>
+            <span>Twitter</span>
+        </a>
         <a href="/cv" class="cv">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>CV</span>
