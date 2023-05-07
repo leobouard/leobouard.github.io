@@ -40,7 +40,7 @@ div.personalLinks > a {
     justify-content: center;
     align-items: center;
     background-color: #333;
-    padding: 15px;
+    padding: 10px 20px;
     border-radius: 5px;
     color: #FFF;
     font-weight: 400;
@@ -49,14 +49,14 @@ div.personalLinks > a {
 
 div.personalLinks > a:hover {
     color: #FFF;
-
-    i {
-        text-decoration: none;
-    }
 }
 
 div.personalLinks > a > i {
     font-size: 30px;
+}
+
+div.personalLinks > a:hover > i {
+    text-decoration: none;
 }
 
 div.personalLinks > a > span {
