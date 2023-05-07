@@ -4,6 +4,10 @@
 div.aboutMe {
     display: flex;
     flex-wrap: wrap-reverse;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+    padding: 15px;
 }
 
 div.aboutMe > div {
