@@ -28,8 +28,7 @@ div.personalLinks {
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    margin: auto;
-    max-width: fit-content;
+    margin: auto -15px;
 }
 
 div.personalLinks::-webkit-scrollbar {
