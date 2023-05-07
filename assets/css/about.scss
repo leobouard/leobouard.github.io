@@ -49,14 +49,15 @@ div.personalLinks > a {
 
 div.personalLinks > a:hover {
     color: #FFF;
+    text-decoration: none;
+
+    span {
+        text-decoration: underline;
+    }
 }
 
 div.personalLinks > a > i {
     font-size: 30px;
-}
-
-div.personalLinks > a:hover > i {
-    text-decoration: none;
 }
 
 div.personalLinks > a > span {
