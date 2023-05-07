@@ -18,16 +18,20 @@ description: "Plus d'informations sur le site web et moi-même"
 
 <div class="personalLinks">
     <a href="{{ site.linkedin }}" target="_blank" class="linkedIn">
-        <img src="/assets/images/linkedin.svg" alt="Logo LinkedIn" width="32px">
+        <i class="fa-brands fa-linkedin"></i>
         <span>LinkedIn</span>
     </a>
+    <a href="{{ site.github.owner_url }}>" target="_blank" class="github">
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+    </a>
     <a href="/cv" class="cv">
-        <img src="/assets/images/resume.svg" alt="Logo CV" width="32px">
-        <span>Mon CV</span>
+        <i class="fa-solid fa-file-user"></i>
+        <span>CV</span>
     </a>
     <a href="mailto:{{ site.emailAddress }}" class="emailAddress">
-        <img src="/assets/images/email.svg" alt="Logo email" width="32px">
-        <span>Mon email</span>
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
     </a>
 </div>
 
