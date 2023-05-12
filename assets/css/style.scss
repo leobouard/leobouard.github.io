@@ -38,6 +38,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #FFF;
+    position: relative;
     box-shadow: 0px 0px 5px 0px #00000030;
 
     nav {
@@ -318,7 +319,6 @@ footer {
     }
 
     footer {
-        justify-content: left;
 
         span {
             font-size: small;
