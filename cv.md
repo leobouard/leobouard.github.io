@@ -58,7 +58,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     <div class="certification">
         <img src="/assets/images/microsoft-certified-expert-badge.svg" alt="logo Microsoft Certified Expert">
         <span class="certifDate">juin 2023</span>
-        <span class="certifTitle">Microsoft 365 Expert</span>
+        <span class="certifTitle">Microsoft 365 Enterprise Administrator Expert</span>
         <span class="certifStatusActive">Active</span>
     </div>
     <div class="certification">
