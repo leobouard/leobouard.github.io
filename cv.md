@@ -7,7 +7,7 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 ## Résumé
 
-Ingénieur système spécialisé dans les infrastructures, technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, de sécurisation et d'automatisation. J'accorde beaucoup d'importance à la documentation et j'essaie de faire en sorte que mon travail soit toujours en accord avec les bonnes pratiques, à l'épreuve du temps et le plus simple possible.
+Ingénieur système spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, de sécurisation et d'automatisation. J'accorde beaucoup d'importance à la documentation et j'essaie de faire en sorte que mon travail soit toujours en accord avec les bonnes pratiques, à l'épreuve du temps et le plus simple possible.
 
 Je partage également mes connaissances (notamment sur PowerShell) avec mon site web [LaBouaBouate](https://www.labouabouate.fr).
 
@@ -56,16 +56,16 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
     <div class="certification">
+        <img src="/assets/images/microsoft-certified-expert-badge.svg" alt="logo Microsoft Certified Expert">
+        <span class="certifDate">juin 2023</span>
+        <span class="certifTitle">Microsoft 365 Expert</span>
+        <span class="certifStatusActive">Active</span>
+    </div>
+    <div class="certification">
         <img src="/assets/images/microsoft-certified-associate-badge.svg" alt="logo Microsoft Certified Associate">
         <span class="certifDate">avril 2023</span>
         <span class="certifTitle">Identity and Access Administrator Associate</span>
         <span class="certifStatusActive">Active</span>
-    </div>
-    <div class="certification">
-        <img src="/assets/images/certification-exam.svg" alt="logo Microsoft Exam">
-        <span class="certifDate">novembre 2022</span>
-        <span class="certifTitle">Microsoft 365 Identity and Services</span>
-        <span class="certifStatusWaiting">En attente</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
