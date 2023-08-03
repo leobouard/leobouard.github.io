@@ -31,7 +31,7 @@ description: "Plus d'informations sur le site web et moi-même"
             <span>GitHub</span>
         </a>
         <a href="/cv" class="cv">
-            <i class="fa-solid fa-files"></i>
+            <i class="fa-solid fa-file"></i>
             <span>CV</span>
         </a>
         <a href="mailto:{{ site.emailAddress }}" class="emailAddress">
