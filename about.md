@@ -22,7 +22,7 @@ description: "Plus d'informations sur le site web et moi-même"
             <i class="fa-brands fa-linkedin"></i>
             <span>LinkedIn</span>
         </a>
-        <a href="https://www.credly.com/users/leo-bouard/badges" target="_blank" class="credly">
+        <a href="{{ site.credly }}" target="_blank" class="credly">
             <i class="fa-solid fa-shield"></i>
             <span>Credly</span>
         </a>
@@ -31,7 +31,7 @@ description: "Plus d'informations sur le site web et moi-même"
             <span>GitHub</span>
         </a>
         <a href="/cv" class="cv">
-            <i class="fa-solid fa-graduation-cap"></i>
+            <i class="fa-solid fa-files"></i>
             <span>CV</span>
         </a>
         <a href="mailto:{{ site.emailAddress }}" class="emailAddress">
