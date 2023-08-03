@@ -40,15 +40,15 @@ div.personalLinks::-webkit-scrollbar {
 div.personalLinks > a {
     margin: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: unset;
     justify-content: center;
     align-items: center;
     background-color: #333;
-    padding: 8px 20px;
+    padding: 5px 15px;
     border-radius: 5px;
     color: #FFF;
     font-weight: 400;
-    min-width: 70px;
+    /*min-width: 70px;*/
 }
 
 div.personalLinks > a:hover {
@@ -61,7 +61,7 @@ div.personalLinks > a:hover {
 }
 
 div.personalLinks > a > i {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 div.personalLinks > a > span {
@@ -73,7 +73,7 @@ div.personalLinks > a.linkedIn {
     background-color: #0a66c2;
 }
 
-div.personalLinks > a.certifications {
+div.personalLinks > a.credly {
     background-color: #0f4338;
 }
 
