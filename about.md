@@ -22,6 +22,10 @@ description: "Plus d'informations sur le site web et moi-même"
             <i class="fa-brands fa-linkedin"></i>
             <span>LinkedIn</span>
         </a>
+        <a href="https://www.credly.com/users/leo-bouard/badges" target="_blank" class="certifications">
+            <i class="fa-solid fa-shield"></i>
+            <span>Certifications</span>
+        </a>
         <a href="{{ site.github.owner_url }}" target="_blank" class="github">
             <i class="fa-brands fa-github"></i>
             <span>GitHub</span>
