@@ -7,7 +7,10 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
 
 <div class="posts">
     {% assign listed_posts = site.posts | where: "listed", true %}
-    {% for post in listed_posts %}
+    {% assign challenge_posts = listed_posts | where: "tags" contains "challenge" %}
+    <h2>Mes cours et articles</h2>
+    <h2>Mes défis à relever</h2>
+    {% for post in challenge_posts %}
         <a class="noDecoration" href="{{ post.id }}">
             {% if post.capsule %}<span class="articlePill">{{ post.capsule }}</span>{% endif %}
             <article>
