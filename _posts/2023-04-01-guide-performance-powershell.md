@@ -7,6 +7,89 @@ tags: powershell
 listed: true
 ---
 
+## Introduction
+
+Bon, on va être franc : PowerShell a beau avoir plein de qualité, la performance n'en fait pas partie, et elle peut varier considérablement en fonction de la façon dont vous écrivez et exécutez vos scripts.
+
+Dans cet article, nous plongerons dans l'univers de la performance en PowerShell. Nous allons explorer des astuces, des meilleures pratiques et des techniques avancées pour maximiser l'efficacité de vos scripts. Ce guide vous aidera à comprendre comment tirer le meilleur parti de ce langage, en garantissant des scripts plus rapides, plus efficaces et moins gourmands en ressources.
+
+On commencera donc par des conseils généraux, simples à comprendre et facile à implémenter pour ensuite se concentrer sur des techniques plus avancées qui nécessitent de se mettre à jour sur votre syntaxe ou sur les méthodes que vous avez toujours utilisées.
+
+## Table des matières
+
+- [Introduction](#introduction)
+- [Table des matières](#table-des-matières)
+- [Conseils généraux](#conseils-généraux)
+  - [Filtrer correctement](#filtrer-correctement)
+  - [Manger ~~bio et~~ local](#manger-bio-et-local)
+  - [Se méfier de l'affichage dans la console](#se-méfier-de-laffichage-dans-la-console)
+  - [Connaître son ennemi](#connaître-son-ennemi)
+  - [Utiliser les bons outils](#utiliser-les-bons-outils)
+- [Bien choisir ses tableaux](#bien-choisir-ses-tableaux)
+  - [Le cas du `+=`](#le-cas-du-)
+  - [Par quoi le remplacer ?](#par-quoi-le-remplacer-)
+  - [Tableau comparatif](#tableau-comparatif)
+- [Bien comprendre le pipeline](#bien-comprendre-le-pipeline)
+- [Utiliser la parallélisation à bon escient](#utiliser-la-parallélisation-à-bon-escient)
+- [Quelques idées reçues](#quelques-idées-reçues)
+  - [`Out-Null` est moins performant que `$null =`](#out-null-est-moins-performant-que-null-)
+  - [`New-Object` est moins performant que `[PSCustomObject]@{}`](#new-object-est-moins-performant-que-pscustomobject)
+
+## Conseils généraux
+
+### Filtrer correctement
+
+Tous les filtres ne se valent pas ! Une règle de base peut être facilement utilisée : faire les filtres les plus stricts (ceux qui éliminerons le plus d'objets) en amont. Moins votre collection sera grande, plus votre script sera performant.
+
+Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutiles. L'idée c'est de raisonner en terme de "poids total" de votre collection : ce qui importe c'est le nombre d'objets et le nombre de propriétés par objet.
+
+### Manger ~~bio et~~ local
+
+De manière générale, une requête pour obtenir 10 000 utilisateurs est moins coûteuse que 10 000 requêtes d'un seul utilisateur.
+
+Morale de l'histoire : faire une grosse requête pour requêter ensuite à l'intérieur du résultat plutôt que de faire une requête à chaque fois.
+
+Pour Microsoft Graph : des rapports CSV sont disponibles (notamment pour les statistiques d'usage des boîtes aux lettres) et permettent de gagner beaucoup de temps par rapport à des requêtes individuelles, beaucoup plus coûteuses.
+
+### Se méfier de l'affichage dans la console
+
+N'importe quel type d'affichage dans une console va vous coûter du temps de traitement ! Que ce soit du `Format-Table`, du `Write-Progress` ou du `Write-Output` : rien à faire, vous perdrez en performance.
+
+Cependant, avant de tomber dans le dogmatisme je tiens à préciser quelque chose d'important : la perte en temps vaut probablement le coup, et ça pour plusieurs raisons :
+
+1. L'affichage dans la console est utile pour la journalisation et le débuggage d'un script. Un script qui s'exécute vite, c'est bien. Un script qui fonctionne et qui est facile à maintenir, c'est mieux !
+1. Il ne faut pas sous-estimer la puissance d'une barre de progression pour le cerveau humain : le temps vous semblera infiniment moins long avec une barre qui se remplie petit à petit, plutôt qu'une console vierge qui ne montre pas le moindre signe de progression.
+1. Priorisez l'optimisation de vos performances : supprimer tout affichage dans votre script ne le rendra probablement pas deux fois plus performant. Essayer de trouver la cause du ralentissement avant de dégommer tous les `Write-Output` de votre script, car il y a de grandes chances pour ça ne soit pas la cause principale.
+
+### Connaître son ennemi
+
+Pour optimiser votre code, le plus important est d'identifier le goulot d'étranglement. Pour ça, vous pouvez utiliser la commande `Measure-Object` qui va mesurer le temps d'execution du code qui va se trouver entre les deux accolades. Certaines commandes sont plus gourmandes que d'autres (notamment les requêtes API, les cmdlet Exchange et Microsoft Graph) et le `Measure-Object` peut vous permettre de calculer précisément le temps d'execution global, pour faire ensuite une belle barre de progression avec `Write-Progress` (notamment via le paramètre `-SecondsRemaining`).
+
+Voici un petit script qui permet de mesurer la durée moyenne d'exécution d'une commande ou d'un script PowerShell sur 100 itérations :
+
+```powershell
+$stats = foreach ($_ in 1..100) {
+    Measure-Command -Expression { Get-LocalGroup }
+}
+$stats | Measure-Object -Property 'TotalSeconds' -Average
+```
+
+### Utiliser les bons outils
+
+Vous aurez beau optimiser votre code comme jamais et suivre toutes les bonnes pratiques possibles, un script exécuté avec Windows PowerShell 2.0 sera toujours moins performant qu'un même script exécuté en PowerShell v7. Les versions les plus récentes embarquent toujours leurs lot d'améliorations, autant au niveau des performances qu'au niveau des fonctionnalités.
+
+Voici un comparatif de temps de traitement sur plusieurs scripts différents, exécutés sur la même machine, sur des données locales uniquement (moyenne sur 100 exécutions) :
+
+Version | Script n°1 | Script n°2 | Script n°3
+------- | ---------- | ---------- | ----------
+PowerShell 2.0 | 65ms | 70ms | 85ms
+PowerShell 5.1 | 49ms | 49ms | 70ms
+PowerShell 7.3 | 15ms | 10ms | 14ms
+
+On observe PowerShell 7.3 fonctionne en moyenne **4x plus rapidement** que son ancêtre PowerShell 2.0, avec un script identique (donc sans utiliser la parallélisation).
+
+Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview)
+
 ## Bien choisir ses tableaux
 
 ### Le cas du `+=`
@@ -93,25 +176,6 @@ En résumé : si la liste de données à traiter est instantanément disponible 
 
 Pour tout savoir sur le pipeline : [Understanding PowerShell Pipeline \| PowerShell One](https://powershell.one/powershell-internals/scriptblocks/powershell-pipeline)
 
-## Connaître son ennemi
-
-Pour optimiser votre code, le plus important est d'identifier le goulot d'étranglement. Pour ça, vous pouvez utiliser la commande `Measure-Object` qui va mesurer le temps d'execution du code qui va se trouver entre les deux accolades. Certaines commandes sont plus gourmandes que d'autres (notamment les requêtes API, les cmdlet Exchange et Microsoft Graph) et le `Measure-Object` peut vous permettre de calculer précisément le temps d'execution global, pour faire ensuite une belle barre de progression avec `Write-Progress` (notamment via le paramètre `-SecondsRemaining`).
-
-Voici un petit script qui permet de mesurer la durée moyenne d'exécution d'une commande ou d'un script PowerShell sur 100 itérations :
-
-```powershell
-$stats = foreach ($_ in 1..100) {
-    Measure-Command -Expression { Get-LocalGroup }
-}
-$stats | Measure-Object -Property 'TotalSeconds' -Average
-```
-
-## Filtrer correctement
-
-Tous les filtres ne se valent pas ! Une règle de base peut être facilement utilisée : faire les filtres les plus stricts (ceux qui éliminerons le plus d'objets) en amont. Moins votre collection sera grande, plus votre script sera performant.
-
-Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutiles. L'idée c'est de raisonner en terme de "poids total" de votre collection : ce qui importe c'est le nombre d'objets et le nombre de propriétés par objet.
-
 ## Utiliser la parallélisation à bon escient
 
 Avec l'arrivée de PowerShell v7, la commande `ForEach-Object` récupère un nouveau paramètre : `-Parallel`. Ce paramètre permet (comme son nom l'indique) de paralléliser et donc de diviser le temps de traitement par le nombre d'instances (en général : le nombre de CPU +1).
@@ -144,45 +208,7 @@ function Test-Parallel {
 }
 ```
 
-## Utiliser les bons outils
-
-Vous aurez beau optimiser votre code comme jamais et suivre toutes les bonnes pratiques possibles, un script exécuté avec Windows PowerShell 2.0 sera toujours moins performant qu'un même script exécuté en PowerShell v7. Les versions les plus récentes embarquent toujours leurs lot d'améliorations, autant au niveau des performances qu'au niveau des fonctionnalités.
-
-Voici un comparatif de temps de traitement sur plusieurs scripts différents, exécutés sur la même machine, sur des données locales uniquement (moyenne sur 100 exécutions) :
-
-Version | Script n°1 | Script n°2 | Script n°3
-------- | ---------- | ---------- | ----------
-PowerShell 2.0 | 65ms | 70ms | 85ms
-PowerShell 5.1 | 49ms | 49ms | 70ms
-PowerShell 7.3 | 15ms | 10ms | 14ms
-
-On observe PowerShell 7.3 fonctionne en moyenne **4x plus rapidement** que son ancêtre PowerShell 2.0, avec un script identique (donc sans utiliser la parallélisation).
-
-Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview)
-
-## Se méfier de l'affichage dans la console
-
-N'importe quel type d'affichage dans une console va vous coûter du temps de traitement ! Que ce soit du `Format-Table`, du `Write-Progress` ou du `Write-Output` : rien à faire, vous perdrez en performance.
-
-Cependant, avant de tomber dans le dogmatisme je tiens à préciser quelque chose d'important : la perte en temps vaut probablement le coup, et ça pour plusieurs raisons :
-
-1. L'affichage dans la console est utile pour la journalisation et le débuggage d'un script. Un script qui s'exécute vite, c'est bien. Un script qui fonctionne et qui est facile à maintenir, c'est mieux !
-2. Il ne faut pas sous-estimer la puissance d'une barre de progression pour le cerveau humain : le temps vous semblera infiniment moins long avec une barre qui se remplie petit à petit, plutôt qu'une console vierge qui ne montre pas le moindre signe de progression.
-3. Priorisez l'optimisation de vos performances : supprimer tout affichage dans votre script ne le rendra probablement pas deux fois plus performant. Essayer de trouver la cause du ralentissement avant de dégommer tous les `Write-Output` de votre script, car il y a de grandes chances pour ça ne soit pas la cause principale.
-
-## Manger ~~bio et~~ local
-
-De manière générale, une requête pour obtenir 10 000 utilisateurs est moins coûteuse que 10 000 requêtes d'un seul utilisateur.
-
-> ~~On peut tromper mille fois mille personnes~~
-> ~~On peut tromper une fois mille personnes, mais on ne peut pas tromper mille fois mille personnes~~
-> ~~On peut tromper une fois mille personne mais on peut pas tromper mille fois une personne~~
-
-Morale de l'histoire : faire une grosse requête pour requêter ensuite à l'intérieur du résultat plutôt que de faire une requête à chaque fois.
-
-Pour Microsoft Graph : des rapports CSV sont disponibles (notamment pour les statistiques d'usage des boîtes aux lettres) et permettent de gagner beaucoup de temps par rapport à des requêtes individuelles, beaucoup plus coûteuses.
-
-## Quelques tests en vrac
+## Quelques idées reçues
 
 ### `Out-Null` est moins performant que `$null =`
 
@@ -203,7 +229,3 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 ```
 
 **❌ PLUTÔT FAUX** : Lorsqu'il s'agit de créer un nouveau PSCustomObject, je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
-
-## Conclusion
-
-
