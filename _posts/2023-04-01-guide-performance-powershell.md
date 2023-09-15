@@ -32,8 +32,8 @@ On commencera donc par des conseils généraux, simples à comprendre et facile 
 - [Bien comprendre le pipeline](#bien-comprendre-le-pipeline)
 - [Utiliser la parallélisation à bon escient](#utiliser-la-parallélisation-à-bon-escient)
 - [Quelques idées reçues](#quelques-idées-reçues)
-  - [`Out-Null` est moins performant que `$null =`](#out-null-est-moins-performant-que-null-)
-  - [`New-Object` est moins performant que `[PSCustomObject]@{}`](#new-object-est-moins-performant-que-pscustomobject)
+  - ["Out-Null" est moins performant que "$null ="](#out-null-est-moins-performant-que-null-)
+  - ["New-Object" est moins performant que "\[PSCustomObject\]@{}"](#new-object-est-moins-performant-que-pscustomobject)
 
 ## Conseils généraux
 
@@ -210,7 +210,7 @@ function Test-Parallel {
 
 ## Quelques idées reçues
 
-### `Out-Null` est moins performant que `$null =`
+### "Out-Null" est moins performant que "$null ="
 
 ```powershell
 Get-Command | Out-Null
@@ -220,7 +220,7 @@ $null = Get-Command
 
 **✅ VRAI** : La commande `Out-Null` permet de *mettre à la poubelle/ne pas afficher* le résultat d'une commande. Son utilisation reste relativement rare, mais si vous l'utilisez vous pouvez gagner 25% de performance en le remplaçant par `$null =`.
 
-### `New-Object` est moins performant que `[PSCustomObject]@{}`
+### "New-Object" est moins performant que "[PSCustomObject]@{}"
 
 ```powershell
 New-Object -TypeName 'PSCustomObject' -Property @{}
