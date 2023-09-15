@@ -9,6 +9,8 @@ listed: true
 
 ## Bien choisir ses tableaux
 
+### Le cas du `+=`
+
 Je le connais, vous le connaissez, tout le monde le connait et l'utilise. Et pourtant, c'est la méthode la moins performante que l'on puisse choisir !
 
 ```powershell
@@ -18,38 +20,50 @@ $array = @()
 
 Comment ça marche ? Et bien la syntaxe très simple cache en fait un fonctionnement assez complexe.
 
-Avec `@()`, vous allez créer une collection de taille fixe avec une capacité maximum de 0 élément. Comment agrandir la collection alors ? Grâce à l'opérateur `+=`, on ne va pas ajouter un élément à la collection existante (puisque ce n'est pas possible) mais plutôt :
+Avec `@()`, vous allez créer une collection de taille fixe avec une capacité maximum de 0 élément. Comment agrandir la collection alors ? En tout cas on ne peut pas y ajouter d'éléments aevc la méthode `.Add()` puisque celle-ci nous donne l'erreur : *Exception lors de l'appel de «Add» avec «1» argument(s): «La collection était d'une taille fixe.»*.
 
-- créer une nouvelle collection de taille fixe avec une capacité suffisante pour accueillir tous les éléments de l'ancienne collection + 1
-- peupler la nouvelle collection en additionnant entre eux les éléments de l'ancienne collection et le nouvel élément à ajouter
-- supprimer l'ancienne collection
+On va donc utiliser l'opérateur `+=`, qui ne va pas ajouter un élément à la collection existante (puisque ce n'est pas possible) mais plutôt :
 
-En bref : un processus bien plus complexe que la syntaxe ne peut le laisser deviner. Pour résumé, le `+=` pourrait être expliqué avec la syntaxe suivante :
+1. Créer une nouvelle collection de taille fixe avec une capacité suffisante pour accueillir tous les éléments de l'ancienne collection + 1
+1. Peupler la nouvelle collection en additionnant entre eux les éléments de l'ancienne collection et le nouvel élément à ajouter
+1. Supprimer l'ancienne collection
+
+En bref : un processus bien plus complexe que la syntaxe ne peut le laisser deviner. Pour résumer, le `+=` pourrait être expliqué avec la syntaxe suivante :
 
 ```powershell
 $array = @()
 1..10 | % { $array = $array + @($_)}
 ```
 
-Si vous voulez tout comprendre, voici l'article original : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
+### Par quoi le remplacer ?
 
-Lorsque vous créer un array avec cette méthode, vous allez générer un tableau d'une taille fixe qui peut contenir un maximum de 0 élément. Impossible donc d'y ajouter un membre avec la méthode `.Add()` qui donne l'erreur suivante : *Exception lors de l'appel de «Add» avec «1» argument(s): «La collection était d'une taille fixe.»*.
+La solution est donnée dans l'article de blog cité plus haut, mais pour faire une version rapide, on peut retenir deux options :
 
-Comment faire pour ajouter un nouvel élément ? Avec l'opérateur `+=` voyons ! Et comment est-ce que cet opérateur fonctionne ? De la manière la plus simple possible.
+1. Les tableaux `List<T>`
+1. L'aspiration via pipeline
 
-Comme il n'est pas possible d'agrandir l'array existant (qui est d'une taille fixe), la solution est donc de créer un nouvel array 
+Voici un exemple rapide d'utilisation pour les deux méthodes :
 
-PowerShell's + and += operators are designed to work with arrays in a relatively unusual way. When you try to add items to an array like this, what actually happens goes something like this:
+```powershell
+# List<T>
+$list = [System.Collections.Generic.List[int]]@{}
+1..100 | ForEach-Object { $list.Add($_) }
 
-PowerShell checks the size of the collection in $array and the number of items being added to it (in this case, just one each time).
-PowerShell creates a completely different array of the correct size.
-The original array is copied into this new array, along with the new item(s).
-This is also why it's perfectly possible to join two arrays together with the + or += operators.
+# Aspiration via pipeline
+$list = 1..100 | ForEach-Object { $_ }
+```
 
+### Tableau comparatif
 
-## Création d'objet
+Voici un tableau qui récapitule vos options pour la création d'un tableau :
 
-New-Object -TypeName 'psobject' ... vs [PSCustomObject]@{}
+Méthode | Compatibilité | Performance | Simplicité | Fonctionnalités
+------- | ------------- | ----------- | ---------- | ---------------
+`@()` | 🟢 Bonne | 🔴 Mauvaise | 🟡 Moyenne | 🟡 Moyenne
+`List<T>` | 🔴 Mauvaise | 🟢 Bonne | 🔴 Mauvaise | 🟢 Bonne
+Aspiration via pipeline | 🟢 Bonne | 🟡 Moyenne | 🟢 Bonne | 🟡 Moyenne
+
+Et si ça vous intéresse, je ne peux que vous recommander de lire l'article original : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
 
 ## Bien comprendre le pipeline
 
@@ -75,7 +89,7 @@ foreach ($_ in (Test-Pipeline)) {
 }
 ```
 
-En résumé : si vous la liste de données à traiter est instantanément disponible (genre un fichier CSV), alors préférez l'utilisation de `foreach`. Si les données arrivent au fur et à mesure (comme pour une requête API par exemple), alors préférez le pipeline et `ForEach-Object`.
+En résumé : si la liste de données à traiter est instantanément disponible (un fichier CSV par exemple), alors préférez l'utilisation de `foreach`. Si les données arrivent au fur et à mesure (comme pour une requête API par exemple), alors préférez le pipeline et `ForEach-Object`.
 
 Pour tout savoir sur le pipeline : [Understanding PowerShell Pipeline \| PowerShell One](https://powershell.one/powershell-internals/scriptblocks/powershell-pipeline)
 
@@ -96,7 +110,7 @@ $stats | Measure-Object -Property 'TotalSeconds' -Average
 
 Tous les filtres ne se valent pas ! Une règle de base peut être facilement utilisée : faire les filtres les plus stricts (ceux qui éliminerons le plus d'objets) en amont. Moins votre collection sera grande, plus votre script sera performant.
 
-Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutile. L'idée c'est de raisonner en terme de poids total de votre collection, ce qui importe c'est le nombre d'objets et le nombre de propriétés par objet.
+Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutiles. L'idée c'est de raisonner en terme de "poids total" de votre collection : ce qui importe c'est le nombre d'objets et le nombre de propriétés par objet.
 
 ## Utiliser la parallélisation à bon escient
 
@@ -144,11 +158,9 @@ PowerShell 7.3 | 15ms | 10ms | 14ms
 
 On observe PowerShell 7.3 fonctionne en moyenne **4x plus rapidement** que son ancêtre PowerShell 2.0, avec un script identique (donc sans utiliser la parallélisation).
 
-Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview?view=powershell-7.3)
+Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview)
 
 ## Se méfier de l'affichage dans la console
-
-null = ... plutôt que Out-Null
 
 N'importe quel type d'affichage dans une console va vous coûter du temps de traitement ! Que ce soit du `Format-Table`, du `Write-Progress` ou du `Write-Output` : rien à faire, vous perdrez en performance.
 
@@ -158,12 +170,40 @@ Cependant, avant de tomber dans le dogmatisme je tiens à préciser quelque chos
 2. Il ne faut pas sous-estimer la puissance d'une barre de progression pour le cerveau humain : le temps vous semblera infiniment moins long avec une barre qui se remplie petit à petit, plutôt qu'une console vierge qui ne montre pas le moindre signe de progression.
 3. Priorisez l'optimisation de vos performances : supprimer tout affichage dans votre script ne le rendra probablement pas deux fois plus performant. Essayer de trouver la cause du ralentissement avant de dégommer tous les `Write-Output` de votre script, car il y a de grandes chances pour ça ne soit pas la cause principale.
 
-## Manger ~~bio~~ local
+## Manger ~~bio et~~ local
 
-Une requête AD pour obtenir 10000 utilisateurs est moins coûteuse que 10000 requêtes d'un seul utilisateur.
+De manière générale, une requête pour obtenir 10 000 utilisateurs est moins coûteuse que 10 000 requêtes d'un seul utilisateur.
+
+> ~~On peut tromper mille fois mille personnes~~
+> ~~On peut tromper une fois mille personnes, mais on ne peut pas tromper mille fois mille personnes~~
+> ~~On peut tromper une fois mille personne mais on peut pas tromper mille fois une personne~~
 
 Morale de l'histoire : faire une grosse requête pour requêter ensuite à l'intérieur du résultat plutôt que de faire une requête à chaque fois.
 
-Pour MSGraph : des rapports CSV sont disponibles (notamment pour les statistiques emails) qui permettent de gagner beaucoup de temps par rapport à des requêtes individuelles.
+Pour Microsoft Graph : des rapports CSV sont disponibles (notamment pour les statistiques d'usage des boîtes aux lettres) et permettent de gagner beaucoup de temps par rapport à des requêtes individuelles, beaucoup plus coûteuses.
+
+## Quelques tests en vrac
+
+### `Out-Null` est moins performant que `$null =`
+
+```powershell
+Get-Command | Out-Null
+# vs.
+$null = Get-Command
+```
+
+**✅ VRAI** : La commande `Out-Null` permet de *mettre à la poubelle/ne pas afficher* le résultat d'une commande. Son utilisation reste relativement rare, mais si vous l'utilisez vous pouvez gagner 25% de performance en le remplaçant par `$null =`.
+
+### `New-Object` est moins performant que `[PSCustomObject]@{}`
+
+```powershell
+New-Object -TypeName 'PSCustomObject' -Property @{}
+# vs.
+[PSCustomObject]@{}
+```
+
+**❌ PLUTÔT FAUX** : Lorsqu'il s'agit de créer un nouveau PSCustomObject, je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
 
 ## Conclusion
+
+
