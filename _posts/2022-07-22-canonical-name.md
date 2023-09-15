@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CanonicalName & DN"
+title: "CanonicalName & DistinguishedName"
 description: "Et si on prennait la racine du domaine en point de départ pour une fois ?"
 background: "#B4CFB4"
 tags: active-directory
@@ -27,7 +27,7 @@ Pour illustrer mon propos, on va prendre l'exemple suivant. C'est une arborescen
 
 ## DistinguishedName
 
-Le DistinguishedName fait partie des propriétés affichées par défaut lors d'une requête PowerShell, notamment avec la commande `Get-ADUser` par exemple.
+La propriété DistinguishedName dans Active Directory est un attribut fondamental qui identifie de manière unique chaque objet au sein de l'annuaire. Il s'agit d'une chaîne de caractères représentant le chemin complet de l'objet, depuis la racine de l'annuaire jusqu'à son emplacement spécifique. L'attribut DistinguishedName est essentiel pour la localisation et la gestion des objets dans un environnement Active Directory. Il permet de référencer précisément un objet, même s'il partage un nom commun avec d'autres objets, en garantissant son unicité grâce à la hiérarchie de l'annuaire. Les opérations de recherche, d'administration et de liaison d'objets utilisent couramment cette propriété pour identifier et accéder aux ressources de l'annuaire, ce qui en fait un élément clé de l'infrastructure informatique des entreprises utilisant Active Directory.
 
 Pour donner un exemple, voici les DistinguishedName des comptes utilisateurs John Smith et Pierre Dupont :
 
@@ -42,7 +42,7 @@ Identifiant | Type d'attribut
 ----------- | ---------------
 DC | domainComponent
 CN | commonName
-OU | organizationalUnitName
+OU | organizationalUnit
 
 Et le tableau complet est disponible ici : [Distinguished Names - Microsoft Docs](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names)
 
@@ -54,6 +54,8 @@ labouabouate.com | DC=labouabouate,DC=com
 ldap.lbb.com | DC=ldap,DC=lbb,DC=com
 
 ## CanonicalName
+
+La propriété CanonicalName dans Active Directory est un attribut qui stocke le chemin d'accès complet d'un objet dans la hiérarchie de l'annuaire. Il représente un moyen de référencer un objet de manière unique et permet de spécifier son emplacement précis dans la structure de l'Active Directory. Le CanonicalName est souvent utilisé pour effectuer des opérations de recherche et de localisation d'objets au sein de l'annuaire, en garantissant un accès précis et fiable.
 
 Cette propriété est malheureusement en "option" lors des requêtes Active Directory. Il faut donc la spécifier pour l'obtenir lors des requêtes `Get-ADUser` :
 
