@@ -7,7 +7,7 @@ background: "#007cbe"
 listed: true
 nextLink:
   name: "Sommaire"
-  id: "/2023/10/01/cours-msgraph-sommaire"
+  id: "/2022/09/17/cours-msgraph-sommaire"
 ---
 
 ## Introduction
