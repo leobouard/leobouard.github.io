@@ -4,7 +4,7 @@ title: "Sommaire"
 description: "Table des matières pour le cours"
 nextLink:
   name: "Partie 1"
-  id: "/2023/09/17/cours-msgraph-001"
+  id: "2023/09/17/cours-msgraph-001"
 prevLink:
   name: "Introduction"
   id: "2023/09/17/cours-msgraph-introduction"
