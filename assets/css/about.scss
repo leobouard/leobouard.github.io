@@ -24,20 +24,13 @@ div.aboutMe > img {
 div.personalLinks {
     display: flex;
     padding: 15px 0px;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-div.personalLinks::-webkit-scrollbar {
-    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 div.personalLinks > a {
     margin: 5px;
     display: flex;
-    flex-direction: unset;
-    justify-content: center;
     align-items: center;
     background-color: #f2f2f2;
     padding: 0px 10px;
