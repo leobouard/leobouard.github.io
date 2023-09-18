@@ -253,6 +253,7 @@ div.side_buttons > a {
     height: 48px;
     width: 48px;
     background-color: #fff;
+    color: #333;
     margin: 5px;
     justify-content: center;
     align-items: center;
@@ -265,6 +266,7 @@ div.side_buttons > a {
 div.side_buttons > a:hover {
     background-color: #fafafa;
     text-decoration: none;
+    color: #000;
 }
 
 a.solution {
@@ -308,7 +310,7 @@ section.recommandation > span > img {
         margin-left: 0;
         margin-top: 0;
         bottom: 0;
-        right: -15px;
+        right: -10px;
     }
 
 }
