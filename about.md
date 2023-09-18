@@ -28,12 +28,12 @@ description: "Plus d'informations sur le site web et moi-même"
         <span>GitHub</span>
     </a>
     <a href="/cv" class="cv">
-        <i class="fa-solid fa-file"></i>
-        <span>CV</span>
+        <i class="fa-regular fa-file-lines"></i>
+        <span>Consulter mon CV</span>
     </a>
     <a href="mailto:{{ site.emailAddress }}">
-        <i class="fa-solid fa-envelope"></i>
-        <span>Email</span>
+        <i class="fa-regular fa-envelope"></i>
+        <span>M'envoyez un email</span>
     </a>
 </div>
 
