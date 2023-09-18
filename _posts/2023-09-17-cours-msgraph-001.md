@@ -4,10 +4,10 @@ title: "Cours Microsoft Graph #1"
 description: "???"
 nextLink:
   name: "Partie 2"
-  id: "/2022/09/17/cours-msgraph-002"
+  id: "/2023/09/17/cours-msgraph-002"
 prevLink:
   name: "Sommaire"
-  id: "/2022/09/17/cours-msgraph-sommaire"
+  id: "/2023/09/17/cours-msgraph-sommaire"
 ---
 
 ### Définition d'une API
