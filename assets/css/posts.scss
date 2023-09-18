@@ -195,6 +195,10 @@ div.summary > span {
     justify-content: space-between;
 }
 
+.div_bottomnav_buttons {
+    margin-top: 4em;
+}
+
 .div_topnav_buttons > a , .div_bottomnav_buttons > a {
     padding: 6px 15px;
     border-radius: 5px;
@@ -261,7 +265,6 @@ div.side_buttons > a {
 div.side_buttons > a:hover {
     background-color: #fafafa;
     text-decoration: none;
-    border-color: #333;
 }
 
 a.solution {
