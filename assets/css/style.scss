@@ -26,7 +26,7 @@ html {
 }
 
 body {
-    background-color: --main-bg-color;
+    background-color: #f2f2f2;
     height: 100%;
     margin: 0;
     width: auto;
@@ -313,5 +313,28 @@ footer {
             margin: 5px 0px;
             height: 2em;
         }
+    }
+}
+
+@media print {
+
+    body {
+        background-color: #fff;
+    }
+    
+    header {
+        display: none;
+    }
+    
+    div.postBanner {
+        background: none;
+    }
+    
+    section {
+        box-shadow: none;
+    }
+    
+    footer {
+        display: none;
     }
 }
