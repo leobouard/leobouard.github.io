@@ -2,7 +2,6 @@
 layout: post
 title: "Cours Microsoft Graph"
 description: "Bien commencer et progresser rapidement sur la nouvelle méthode d'administration via PowerShell des services cloud Microsoft"
-tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 tags: microsoft-graph
 background: "#bd93d8"
 listed: true
