@@ -112,10 +112,11 @@ span.certifStatusActive {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    border: 1px solid #ddd;
 }
 
 .progressBarContent {
     height: 100%;
-    background: linear-gradient(45deg, #6B70B5 0%, #858BE1 100%);
-    border-radius: 5px;
+    background: #6f6cb1;
+    border-right: 1px solid #ddd;
 }
