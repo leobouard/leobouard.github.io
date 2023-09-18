@@ -190,27 +190,24 @@ div.summary > span {
     color: #000;
 }
 
-.div_topnav_buttons {
+.div_topnav_buttons, .div_bottomnav_buttons {
     display: flex;
     justify-content: space-between;
-    margin: 0px 0px 15px;
+}
+
+.div_topnav_buttons > a , .div_bottomnav_buttons > a {
+    padding: 8px 15px;
+    border-radius: 5px;
 }
 
 .div_topnav_buttons > a {
-    padding: 8px 15px;
-    color: #424242;
-    border-radius: 5px;
+    color: #333;
+    border: 1px solid #ddd;
 }
 
 .div_topnav_buttons > a:hover {
     background-color: #f2f2f2;
-    color: #424242;
-}
-
-.div_bottomnav_buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 45px 0px 0px;
+    color: #000;
 }
 
 .a_button_prev, .a_button_next {
@@ -219,11 +216,13 @@ div.summary > span {
     align-items: center;
 }
 
+.div_bottomnav_buttons > a { 
+    border: 1px solid #6b70b5;
+}
+
 .a_button_prev {
-    padding: 7px 15px;
     background-color: #fff;
     color: #6B70B5;
-    border: 2px solid;
 }
 
 .a_button_prev:hover {
@@ -231,7 +230,6 @@ div.summary > span {
 }
 
 .a_button_next {
-    padding: 8px 15px;
     background-color: #6B70B5;
     color: #fff;
 }
@@ -263,6 +261,7 @@ div.side_buttons > a {
 div.side_buttons > a:hover {
     background-color: #fafafa;
     text-decoration: none;
+    border-color: #333;
 }
 
 a.solution {
