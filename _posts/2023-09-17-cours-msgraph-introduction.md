@@ -14,7 +14,7 @@ nextLink:
 
 Ce cours est dédié aux administrateurs systèmes en charge de l'administration des services cloud de Microsoft (Entra, Microsoft 365, etc...).
 
-Microsoft Graph est la nouvelle plateforme de programmation qui connecte la plupart des services et des données de Microsoft 365. Cette nouvelle plateforme incarne **un changement de paradigme pour l'administration système** : si auparavant nous bénéficions de modules PowerShell dédiés à nos tâches, nous devons maintenant utiliser une API REST plus généraliste et avec un fonctionnement qui convient mieux au travail d'un développeur.
+Microsoft Graph est la nouvelle plateforme de programmation qui connecte la plupart des services et des données de Microsoft 365. Cette nouvelle plateforme incarne **un changement de paradigme pour l'administration système** : si auparavant nous bénéficions de modules PowerShell dédiés à nos tâches, nous devons maintenant utiliser une API REST plus généralistes et avec un fonctionnement qui convient mieux au travail d'un développeur.
 
 Avec [la fin de vie des modules PowerShell AzureAD et MSOnline](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270), il est donc important de mettre à jour ses connaissances et d'en développer de nouvelles, pour pouvoir commencer ou continuer à automatiser votre travail d'administration sur les services cloud de Microsoft.
 
