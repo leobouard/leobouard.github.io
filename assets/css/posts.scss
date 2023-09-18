@@ -302,6 +302,15 @@ section.recommandation > span > img {
     margin-right: 10px;
 }
 
+@media screen and (max-width: 950px) {
+
+    div.side_buttons {
+        margin-left: -35px;
+        margin-top: -150px;
+    }
+
+}
+
 @media screen and (max-width: 880px) {
 
     .posts {
