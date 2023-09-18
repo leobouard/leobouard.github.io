@@ -26,7 +26,7 @@ html {
 }
 
 body {
-    background-color: #F2F2F2;
+    background-color: --main-bg-color;
     height: 100%;
     margin: 0;
     width: auto;
@@ -262,7 +262,7 @@ footer {
     }
 }
 
-@media print, screen and (max-width: 950px) {
+@media screen and (max-width: 950px) {
 
     html {
         font-weight: 400;
