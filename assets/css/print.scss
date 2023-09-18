@@ -1,22 +1,25 @@
 ﻿---
 ---
 
-body {
-    background-color: #fff;
-}
+@media print {
 
-header {
-    display: none;
-}
-
-div.postBanner {
-    background: none;
-}
-
-section {
-    box-shadow: none;
-}
-
-footer {
-    display: none;
+    body {
+        background-color: #fff;
+    }
+    
+    header {
+        display: none;
+    }
+    
+    div.postBanner {
+        background: none;
+    }
+    
+    section {
+        box-shadow: none;
+    }
+    
+    footer {
+        display: none;
+    }
 }
