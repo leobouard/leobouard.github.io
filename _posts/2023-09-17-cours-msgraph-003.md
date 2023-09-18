@@ -2,6 +2,7 @@
 layout: post
 title: "Cours Microsoft Graph #3"
 description: "???"
+tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
   name: "Partie 4"
   id: "/2023/09/17/cours-msgraph-004"
