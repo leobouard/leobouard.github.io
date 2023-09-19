@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "Cours Microsoft Graph #1 - Qu'est-ce qu'une API ?"
+title: "Cours Microsoft Graph #1 - Les bases de l'API"
 description: "Concepts et principes de base pour l'utilisation d'une API RESTful"
 tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
