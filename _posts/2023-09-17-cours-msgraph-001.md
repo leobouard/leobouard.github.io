@@ -28,8 +28,6 @@ Il existe différents types d'API, mais le standard le plus répandu pour les AP
 
 On peut également retrouver un Body (corps de message) et un Header (entête) pour envoyer de la donnée et s'authentifier.
 
-Groso modo : on envoie une re
-
 ### Méthode
 
 Il existe quatres méthodes principales :
@@ -81,30 +79,4 @@ A l'aide de [l'API Découpage Administratif](https://api.gouv.fr/documentation/a
 
 Vous pouvez utiliser PowerShell avec la commande `Invoke-RestMethod`, Postman ou encore l'outil intégré à la documentation de l'API.
 
-```powershell
-# Combien y'a-t'il de communes dans le département 75 ?
-Invoke-RestMethod -Method GET -Uri 'https://geo.api.gouv.fr/departements/75/communes'
-
-# Combien y'a-t'il d'habitants à Louvemont-Côte-du-Poivre ?
-Invoke-RestMethod -Method GET -Uri 'https://geo.api.gouv.fr/communes/55307'
-
-# Récupérer la liste des départements de votre région de naissance
-Invoke-RestMethod -Method GET -Uri 'https://geo.api.gouv.fr/regions'
-Invoke-RestMethod -Method GET -Uri 'https://geo.api.gouv.fr/regions/52/departements'
-
-# BONUS : Lister les cinq plus grandes villes de votre département de naissance
-$result = Invoke-RestMethod -Method GET -Uri 'https://geo.api.gouv.fr/departements/85/communes'
-$result | Sort-Object population -Descending | Select-Object nom,code,population -First 5
-
-# BONUS : Quelle est la région la moins peuplée ?
-$regions = Invoke-RestMethod -Method GET -Uri 'https://geo.api.gouv.fr/regions'
-$regions | ForEach-Object { 
-    $dpts = Invoke-RestMethod -Method GET -Uri "https://geo.api.gouv.fr/regions/$($_.code)/departements"
-    $villes = $dpts | ForEach-Object {
-        Invoke-RestMethod -Method GET -Uri "https://geo.api.gouv.fr/departements/$($_.code)/communes"
-    }
-    $pop = $villes.population | Measure-Object -Sum
-    $_ | Add-Member -MemberType NoteProperty -Name 'population' -Value $pop.Sum
-}
-$regions | Sort-Object population | Select-Object nom,code,population
-```
+<a class="solution" href="https://github.com/leobouard/leobouard.github.io/blob/main/assets/scripts/cours-msgraph-001.ps1" target="_blank">Voir la solution</a>
