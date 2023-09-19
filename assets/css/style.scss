@@ -276,12 +276,8 @@ footer {
         word-wrap: break-word;
     }
 
-    nav {
-        padding: 0px 5px;
-    }
-    
-    nav a {
-        padding: 15px 10px;
+    nav > a:first-child > span {
+        display: none;
     }
 
     main section {
