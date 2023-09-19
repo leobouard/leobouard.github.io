@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Cours Microsoft Graph #1 - Qu'est-ce qu'une API ?"
-description: "???"
+description: "Concepts et principes de base pour l'utilisation d'une API RESTful"
 tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
   name: "Partie 2"
@@ -19,7 +19,7 @@ Définition de la CNIL :
 
 Dans la plupart des cas, une API est positionnée comme un intermédiaire permettant de faciliter les échanges entre clients et serveurs. Les clients savent comment récupérer l'information et le serveur sait comment la formater correctement. Les deux peuvent donc communiquer de manière standardisée, sans nécessiter plus d'information sur le contexte de l'un ou de l'autre.
 
-### Standard REST
+## Standard REST
 
 Il existe différents types d'API, mais le standard le plus répandu pour les API web est le REST (*Representational State Transfer*). Chaque API RESTful est différente puisqu'il ne s'agit que de lignes directrices, mais elles s'articulent obligatoirement autour de ces deux élements :
 
@@ -30,7 +30,7 @@ On peut également retrouver un Body (corps de message) et un Header (entête) p
 
 Groso modo : on envoie une re
 
-#### Méthode
+### Méthode
 
 Il existe quatres méthodes principales :
 
@@ -41,19 +41,13 @@ Il existe quatres méthodes principales :
 
 Il en existe d'autre, mais les quatres cités précédemment représentent plus de 90% des requêtes.
 
-#### URI
+### URI
 
 Une URI (*Uniform Ressource Identifier*), elle se compose en général de trois parties :
 
-Partie | Description | Exemple
------- | ----------- | -------
-FQDN | *Fully Qualified Domain Name* du site web | `http://www.reddit.com/`
-Ressource |
-Paramètres de requête | 
-
-1. Le FQDN du site web que l'on veut requêter : `http://www.reddit.com/`
-1. La ressource qui nous intéresse : `r/midjourney`
-1. Les paramètres de requête pour filtrer, sélectionner ou trier : `/top.json?t=month`
+1. Le **FQDN** du site web que l'on veut requêter : `http://www.reddit.com/`
+2. La **chemin vers la ressource** qui nous intéresse : `r/midjourney`
+3. Les **paramètres de requête** pour filtrer, sélectionner ou trier : `/top.json?t=month`
 
 On obtient alors notre URI complète : `http://www.reddit.com/r/midjourney/top.json?t=month`
 
@@ -61,18 +55,31 @@ On obtient alors notre URI complète : `http://www.reddit.com/r/midjourney/top.j
 
 Le client API REST le plus connu est [Postman](https://www.postman.com/downloads/?utm_source=postman-home), mais vous pouvez aussi requêter des API depuis PowerShell avec les commandes `Invoke-RestMethod` et `Invoke-WebRequest`.
 
-### Exercice pratique n°1
+### Faire une requête API
+
+Pour faire une requête via PowerShell, vous pouvez utiliser la commande `Invoke-RestMethod` puis indiquer votre méthode et l'URI :
+
+```powershell
+Invoke-RestMethod -Method 'GET' -Uri 'https://restcountries.com/v3.1/alpha/FR'
+```
+
+Vous pouvez également utiliser Postman pour effectuer votre requête :
+
+![Exemple de requête via Postman](/assets/images/postman-001.png)
+
+## Exercice pratique
+
+Nous allons mettre en pratique les différents éléments abordés dans un exercice utilisant une API RESTful très simple à utiliser. L'idée de cet exercice est de faire des requêtes `GET` depuis PowerShell ou un client (comme Postman) sur une API simple et ouverte à tous.
 
 A l'aide de [l'API Découpage Administratif](https://api.gouv.fr/documentation/api-geo), vous devez répondre aux questions suivantes :
 
 - Combien y'a-t'il de communes dans le département 75 ?
 - Combien y'a-t'il d'habitants à Louvemont-Côte-du-Poivre (code : 55307) ?
 - Récupérer la liste des départements de votre région de naissance
-- BONUS :
-  - Lister les cinq plus grandes villes de votre département de naissance
-  - Quelle est la région la moins peuplée ?
+- *(BONUS) Lister les cinq plus grandes villes de votre département de naissance*
+- *(SUPER BONUS) Quelle est la région la moins peuplée ?*
 
-Vous pouvez utiliser PowerShell avec la commande `Invoke-RestMethod`, POSTMAN ou encore l'outil intégré à la documentation de l'API.
+Vous pouvez utiliser PowerShell avec la commande `Invoke-RestMethod`, Postman ou encore l'outil intégré à la documentation de l'API.
 
 ```powershell
 # Combien y'a-t'il de communes dans le département 75 ?
