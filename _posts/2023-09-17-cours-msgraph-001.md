@@ -61,7 +61,7 @@ Pour de la récupération de données (méthode `GET`) sur une API ouverte à to
 
 ### Résultat
 
-Le résultat d'une requête sera fourni dans un language structuré. Le plus souvent, les résultats seront donnés en JSON, mais dans la plupart des cas le format sera indiqué dans la réponse de l'API.
+Le résultat d'une requête sera fourni dans un language structuré. Le plus souvent, les résultats seront donnés en JSON (avec souvent une indication sur le format de réponse utilisé).
 
 ### Faire une requête HTTP
 
