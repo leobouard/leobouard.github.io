@@ -35,33 +35,28 @@ body {
 header {
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
     background-color: #FFF;
-    position: relative;
     box-shadow: 0px 0px 5px 0px #00000030;
 
     nav {
         width: 100%;
+        padding: 0px 1em;
     }
 
     nav > a {
-        color: #342E37;
-        text-align: center;
+        color: #333;
         font-weight: bold;
-        padding: 15px 10px;
+        margin: 5px 0px;
+        padding: 6px 15px;
         float: right;
-        text-decoration: none;
-        text-decoration-color: transparent;
         transition: all 400ms ease-in-out;
+        text-decoration: none;
+        border: 1px solid #ddd;
     }
 
-    nav > a:hover, nav > a:first-child {
-        text-decoration: underline;
-        text-underline-position: below;
-        text-underline-offset: 3px;
-        text-decoration-thickness: 3px;
-        text-decoration-color: #f9c80e;
+    nav > a:hover {
+        background-color: #f2f2f2;
+        color: #000;
     }
 
     nav > a:first-child {
