@@ -67,6 +67,10 @@ header {
         font-weight: 700;
         font-size: 22px;
     }
+
+    nav > a:first-child > i {
+        margin-right: 5px;
+    }
 }
 
 main {
