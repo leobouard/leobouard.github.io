@@ -28,6 +28,8 @@ Il existe différents types d'API, mais le standard le plus répandu pour les AP
 
 On peut également retrouver un Body (corps de message) et un Header (entête) pour envoyer de la donnée et s'authentifier.
 
+Ces éléments vont permettre de construire une **requête HTTP** pour pouvoir interagir avec une donnée précise.
+
 ### Méthode
 
 Il existe quatres méthodes principales :
@@ -51,9 +53,17 @@ On obtient alors notre URI complète : `http://www.reddit.com/r/midjourney/top.j
 
 ### Clients REST
 
-Le client API REST le plus connu est [Postman](https://www.postman.com/downloads/?utm_source=postman-home), mais vous pouvez aussi requêter des API depuis PowerShell avec les commandes `Invoke-RestMethod` et `Invoke-WebRequest`.
+Le client API REST le plus connu est [Postman](https://www.postman.com/downloads/?utm_source=postman-home), qui permet d'avoir une interface utilisateur simple et de requêter sans avoir besoin de coder
 
-### Faire une requête API
+Si vous souhaitez coder, quasiment tous les languages de programmation modernes proposent une méthode pour envoyer des requêtes HTTP vers une API. Pour PowerShell, vous pouvez utiliser les commandes `Invoke-RestMethod` et/ou `Invoke-WebRequest`.
+
+Pour de la récupération de données (méthode `GET`) sur une API ouverte à tous, vous pouvez même utiliser simplement votre navigateur et aller à l'URL indiquée pour consulter le résultat.
+
+### Résultat
+
+Le résultat d'une requête sera fourni dans un language structuré. Le plus souvent, les résultats seront donnés en JSON, mais dans la plupart des cas le format sera indiqué dans la réponse de l'API.
+
+### Faire une requête HTTP
 
 Pour faire une requête via PowerShell, vous pouvez utiliser la commande `Invoke-RestMethod` puis indiquer votre méthode et l'URI :
 
