@@ -276,10 +276,6 @@ footer {
         word-wrap: break-word;
     }
 
-    header > nav > a:first-child > span {
-        display: none;
-    }
-
     main section {
         padding: 15px;
         min-height: 80%;
@@ -311,6 +307,14 @@ footer {
             height: 2em;
         }
     }
+}
+
+@media screen and (max-width: 550px) {
+
+    header > nav > a:first-child > span {
+        display: none;
+    }
+    
 }
 
 @media print {
