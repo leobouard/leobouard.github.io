@@ -55,7 +55,7 @@ header {
         border-radius: 5px;
     }
 
-    nav > a:hover {
+    nav > a:hover, nav > a:first-child {
         background-color: #f2f2f2;
         color: #000;
         border-color: #ddd;
@@ -314,7 +314,7 @@ footer {
     header > nav > a:first-child > span {
         display: none;
     }
-    
+
 }
 
 @media print {
