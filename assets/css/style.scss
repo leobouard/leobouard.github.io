@@ -68,8 +68,8 @@ header {
         font-size: 22px;
     }
 
-    nav > a:first-child > i {
-        margin-right: 5px;
+    nav > a:first-child > span {
+        margin-left: 5px;
     }
 }
 
@@ -276,12 +276,8 @@ footer {
         word-wrap: break-word;
     }
 
-    nav > a:first-child > span {
+    header > nav > a:first-child > span {
         display: none;
-    }
-
-    nav > a:first-child > i {
-        margin-right: 0px;
     }
 
     main section {
