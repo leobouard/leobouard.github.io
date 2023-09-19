@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "Cours Microsoft Graph #1"
+title: "Cours Microsoft Graph #1 - Qu'est-ce qu'une API ?"
 description: "???"
 tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
@@ -11,41 +11,45 @@ prevLink:
   id: "/2023/09/17/cours-msgraph-sommaire"
 ---
 
-### Définition d'une API
+## Définition d'une API
 
 Définition de la CNIL :
 
-> Une API (application programming interface ou « interface de programmation d’application ») est une interface logicielle qui permet de « connecter » un logiciel ou un service à un autre logiciel ou service afin d’échanger des données et des fonctionnalités.
+  *Une API (application programming interface ou « interface de programmation d’application ») est une interface logicielle qui permet de « connecter » un logiciel ou un service à un autre logiciel ou service afin d’échanger des données et des fonctionnalités.*
 
-Dans la plupart des cas, une API est positionnée comme un intermédiaire permettant de faciliter les échanges entre clients et serveurs. Les clients savent comment récupérer l'information et le serveur sait comment la formater correctement. Les deux peuvent donc communiquer de manière standardisée et sans avoir plus d'information sur le contexte de l'un ou de l'autre.
+Dans la plupart des cas, une API est positionnée comme un intermédiaire permettant de faciliter les échanges entre clients et serveurs. Les clients savent comment récupérer l'information et le serveur sait comment la formater correctement. Les deux peuvent donc communiquer de manière standardisée, sans nécessiter plus d'information sur le contexte de l'un ou de l'autre.
 
 ### Standard REST
 
-> Representational State Transfer : REST
+Il existe différents types d'API, mais le standard le plus répandu pour les API web est le REST (*Representational State Transfer*). Chaque API RESTful est différente puisqu'il ne s'agit que de lignes directrices, mais elles s'articulent obligatoirement autour de ces deux élements :
 
-Il existe différent type d'API, mais le standard le plus répandu pour les API web est le REST (API REST). Chaque API REST est différente puisqu'il ne s'agit que de lignes directrices, mais elles s'articulent souvent autour de ces deux élements :
+1. La méthode : comment voulez-vous interragir avec la donnée
+2. L'URI : pour identifier la ressource que vous voulez requêter
 
-1. La méthode : comment voulez-vous interragir avec l'information
-1. L'URI : quelle ressource voulez-vous interroger
+On peut également retrouver un Body (corps de message) et un Header (entête) pour envoyer de la donnée et s'authentifier.
 
-On peut également retrouver un Body (corps de message) et un Header (entête) pour envoyer de l'information et s'authentifier.
+Groso modo : on envoie une re
 
 #### Méthode
 
 Il existe quatres méthodes principales :
 
-- `GET` pour consulter de l'information
-- `POST` pour ajouter de l'information
-- `PATCH` pour mettre à jour de l'information
-- `DELETE` pour supprimer de l'information
+- `GET` pour récupérer de la donnée
+- `POST` pour ajouter de la donnée
+- `PATCH` pour mettre à jour de la donnée
+- `DELETE` pour supprimer de la donnée
 
 Il en existe d'autre, mais les quatres cités précédemment représentent plus de 90% des requêtes.
 
 #### URI
 
-> Uniform Ressource Identifier
+Une URI (*Uniform Ressource Identifier*), elle se compose en général de trois parties :
 
-Pour l'URI, elle se compose en général de trois parties :
+Partie | Description | Exemple
+------ | ----------- | -------
+FQDN | *Fully Qualified Domain Name* du site web | `http://www.reddit.com/`
+Ressource |
+Paramètres de requête | 
 
 1. Le FQDN du site web que l'on veut requêter : `http://www.reddit.com/`
 1. La ressource qui nous intéresse : `r/midjourney`
