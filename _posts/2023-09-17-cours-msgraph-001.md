@@ -79,11 +79,11 @@ Vous pouvez également utiliser Postman pour effectuer votre requête :
 
 Nous allons mettre en pratique les différents éléments abordés dans un exercice utilisant une API RESTful très simple à utiliser. L'idée de cet exercice est de faire des requêtes `GET` depuis PowerShell ou un client (comme Postman) sur une API simple et ouverte à tous.
 
-A l'aide de [l'API Découpage Administratif](https://api.gouv.fr/documentation/api-geo), vous devez répondre aux questions suivantes :
+A l'aide de [l'API Découpage Administratif (api.gouv.fr)](https://api.gouv.fr/documentation/api-geo), vous devez répondre aux questions suivantes :
 
 - Combien y'a-t'il de communes dans le département 75 ?
 - Combien y'a-t'il d'habitants à Louvemont-Côte-du-Poivre (code : 55307) ?
-- Récupérer la liste des départements de votre région de naissance
+- Récupérer la liste des départements d'une des régions française
 - *(BONUS) Lister les cinq plus grandes villes de votre département de naissance*
 - *(SUPER BONUS) Quelle est la région la moins peuplée ?*
 
