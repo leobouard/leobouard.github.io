@@ -1,16 +1,6 @@
 ---
 ---
 
-::root {
-    --text-color: #000;
-    --box-shadow: 
-    --title-color: #342E37;
-    --border-color: #DDD;
-    --main-bg-color: #F2F2F2;
-    --accent-bg-color: #FAFAFA;
-    --content-bg-color: #FFF;
-}
-
 ::selection {
     background-color: #6B70B5;
     color: #fff;
@@ -23,6 +13,8 @@ html {
     height: 100%;
     letter-spacing: 0.25px;
     line-height: 155%;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
 }
 
 body {
