@@ -51,7 +51,6 @@ header {
         font-weight: bold;
         margin: 5px;
         padding: 5px 10px;
-        float: right;
         transition: all 400ms ease-in-out;
         text-decoration: none;
         border: 1px solid transparent;
@@ -64,15 +63,14 @@ header {
         border-color: #ddd;
     }
 
-    nav a:first-child {
-        float: left;
+    nav a.home {
         font-family: 'Kanit', sans-serif;
         font-weight: 700;
         font-size: 22px;
         border-color: #ddd;
     }
 
-    nav a:first-child span {
+    nav a.home span {
         margin-left: 5px;
     }
 }
