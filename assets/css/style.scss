@@ -41,9 +41,12 @@ header {
     nav {
         width: 100%;
         padding: 0px 1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    nav > a {
+    nav a {
         color: #333;
         font-weight: bold;
         margin: 5px;
@@ -55,13 +58,13 @@ header {
         border-radius: 5px;
     }
 
-    nav > a:hover {
+    nav a:hover {
         background-color: #f2f2f2;
         color: #000;
         border-color: #ddd;
     }
 
-    nav > a:first-child {
+    nav a:first-child {
         float: left;
         font-family: 'Kanit', sans-serif;
         font-weight: 700;
@@ -69,7 +72,7 @@ header {
         border-color: #ddd;
     }
 
-    nav > a:first-child > span {
+    nav a:first-child span {
         margin-left: 5px;
     }
 }
@@ -229,7 +232,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #333;
+    background-color: #0d0d0d;
     position: relative;
     z-index: -1;
     color: #fafafa;
