@@ -46,20 +46,18 @@ header {
         transition: all 400ms ease-in-out;
         text-decoration: none;
         border: 1px solid transparent;
-        border-radius: 5px;
+        border-radius: 30px;
     }
 
     nav a:hover {
-        background-color: #f2f2f2;
         color: #000;
-        border-color: #ddd;
+        background: rgba(0,0,0,.1);
     }
 
     nav a.home {
         font-family: 'Kanit', sans-serif;
         font-weight: 700;
         font-size: 22px;
-        border-color: #ddd;
     }
 
     nav a.home span {
