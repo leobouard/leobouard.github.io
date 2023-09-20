@@ -55,7 +55,7 @@ header {
         border-radius: 5px;
     }
 
-    nav > a:hover, nav > a:first-child {
+    nav > a:hover {
         background-color: #f2f2f2;
         color: #000;
         border-color: #ddd;
@@ -66,6 +66,7 @@ header {
         font-family: 'Kanit', sans-serif;
         font-weight: 700;
         font-size: 22px;
+        border-color: #ddd;
     }
 
     nav > a:first-child > span {
