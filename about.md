@@ -15,25 +15,20 @@ description: "Plus d'informations sur le site web et moi-même"
 </div>
 
 <div class="personalLinks">
-    <a href="{{ site.linkedin }}" target="_blank">
+    <a href="{{ site.linkedin }}" target="_blank" title="LinkedIn">
         <i class="fa-brands fa-linkedin"></i>
-        <span>LinkedIn</span>
     </a>
-    <a href="{{ site.credly }}" target="_blank">
+    <a href="{{ site.credly }}" target="_blank" title="Credly">
         <i class="fa-solid fa-shield"></i>
-        <span>Credly</span>
     </a>
-    <a href="{{ site.github.owner_url }}" target="_blank">
+    <a href="{{ site.github.owner_url }}" target="_blank" title="GitHub">
         <i class="fa-brands fa-github"></i>
-        <span>GitHub</span>
     </a>
-    <a href="/cv" class="cv">
+    <a href="/cv" class="cv" title="CV">
         <i class="fa-regular fa-file-lines"></i>
-        <span>Consulter mon CV</span>
     </a>
-    <a href="mailto:{{ site.emailAddress }}">
+    <a href="mailto:{{ site.emailAddress }}" title="Email">
         <i class="fa-regular fa-envelope"></i>
-        <span>M'envoyez un email</span>
     </a>
 </div>
 
