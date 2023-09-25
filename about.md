@@ -16,7 +16,7 @@ description: "Plus d'informations sur le site web et moi-même"
 
 <div class="personalLinks">
     <a href="{{ site.linkedin }}" target="_blank" title="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
     </a>
     <a href="{{ site.credly }}" target="_blank" title="Credly">
         <i class="fa-solid fa-shield"></i>
@@ -25,10 +25,10 @@ description: "Plus d'informations sur le site web et moi-même"
         <i class="fa-brands fa-github"></i>
     </a>
     <a href="/cv" class="cv" title="CV">
-        <i class="fa-regular fa-file-lines"></i>
+        <i class="fa-solid fa-file-lines"></i>
     </a>
     <a href="mailto:{{ site.emailAddress }}" title="Email">
-        <i class="fa-regular fa-envelope"></i>
+        <i class="fa-solid fa-envelope"></i>
     </a>
 </div>
 
