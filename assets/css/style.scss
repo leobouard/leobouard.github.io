@@ -219,43 +219,14 @@ main {
 
 footer {
     margin-top: -50px;
-    padding: 60px 50px 0px 50px;
+    padding: 65px 0px 15px 0px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     background-color: #0d0d0d;
-    position: relative;
     z-index: -1;
-    color: #fafafa;
-
-    div {
-        padding: 15px;
-    }
-
-    span {
-        font-size: 15px;
-        font-weight: bold;
-    }
-
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    i {
-        margin-left: 5px;
-    }
-
-    a:hover {
-        text-decoration: underline;
-        transition: all 400ms ease-in-out;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        font-size: small;
-    }
+    color: #f2f2f2;
+    font-size: smaller;
 }
 
 @media screen and (max-width: 950px) {
@@ -286,22 +257,6 @@ footer {
     pre {
         padding: 10px;
     }
-
-    footer {
-
-        span {
-            font-size: small;
-        }
-
-        ul {
-            font-size: smaller;
-        }
-
-        li {
-            margin: 5px 0px;
-            height: 2em;
-        }
-    }
 }
 
 @media screen and (max-width: 550px) {
@@ -309,11 +264,6 @@ footer {
     header > nav > a:first-child > span {
         display: none;
     }
-
-    footer {
-        justify-content: flex-start;
-    }
-
 }
 
 @media print {

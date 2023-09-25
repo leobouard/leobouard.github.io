@@ -41,22 +41,9 @@
       {{ content }}
     </main>
     <footer>
-      <div>
-        <span>Informations générales</span>
-        <ul>
-          <li>Hébergé sur <a href="https://pages.github.com/" target="_blank">GitHub Pages<i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a></li>
-          <li>Fait avec ❤️ par Léo Bouard</li>
-        </ul>
-      </div>
-      <div>
-        <span>Envie d'en savoir plus sur moi ?</span>
-        <ul>
-          <li><a href="mailto:{{ site.emailAddress }}">M'envoyer un email</a></li>
-          <li><a href="{{ site.linkedin }}" target="_blank">Voir mon profil LinkedIn<i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a></li>
-          <li><a href="{{ site.github.owner_url }}" target="_blank">Voir mes projets sur GitHub<i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a></li>
-          <li><a href="/cv">Consulter mon CV</a></li>
-        </ul>
-      </div>
+      {% assign current_year = 'now' | date: '%Y' %}
+      <p>Fait avec ❤️ par Léo Bouard<br>Hébergé sur GitHub Pages</p>
+      <small>LaBouaBouate | 2021-{{current_year}}</small>
     </footer>
   </body>
 </html>
