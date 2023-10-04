@@ -62,7 +62,7 @@
     color: #6f6cb1;
 }
 
-@media print, screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
 
     .div_hero_image > span {
         font-size: 100px;
@@ -71,7 +71,7 @@
 
 }
 
-@media print, screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
 
     .div_hero_image > span {
         display: none;

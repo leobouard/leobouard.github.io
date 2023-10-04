@@ -8,8 +8,11 @@ layout: default
 </div>
 <section>
     <div class="side_buttons">
-        <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" title="Retour en haut de page">🚀</a>
-        <a href="/blog" title="Retour aux articles">🏠</a>
+        <a href="/blog" title="Retour aux articles"><i class="fa-solid fa-house"></i></a>
+        {% if page.tableOfContent %}
+            <a href="{{ page.tableOfContent }}" title="Voir le sommaire"><i class="fa-solid fa-list"></i></a>
+        {% endif %}
+        <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" title="Retour en haut de page"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
     <div class="div_topnav_buttons">
         {% if page.prevLink %}

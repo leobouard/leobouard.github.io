@@ -22,7 +22,7 @@ article {
     height: 260px;
     max-width: 290px;
     border-radius: 5px;
-    border: 1px solid #333;
+    border: 1px solid #ddd;
     box-shadow: 0 0 1px 0 #00000040;
     color: #000;
     overflow: hidden;
@@ -41,7 +41,7 @@ div.articleTags {
         border-radius: 5px;
         padding: 2px 5px;
         font-weight: 400;
-        border: 1px solid #333;
+        border: 1px solid #ddd;
         margin: 1px;
         font-size: smaller;
     }
@@ -124,14 +124,15 @@ span.articleDescription {
     user-select: none;
     width: 100%;
     z-index: -1;
-    margin: -50px 0px;
-    min-height: 250px;
+    margin: -100px 0px;
+    min-height: 350px;
 }
 
 .postBanner > h1 {
     text-decoration: none;
     text-align: center;
     max-width: 600px;
+    line-height: 120%;
     margin: 15px;
 }
 
@@ -194,27 +195,28 @@ div.summary > span {
     color: #000;
 }
 
-.div_topnav_buttons {
+.div_topnav_buttons, .div_bottomnav_buttons {
     display: flex;
     justify-content: space-between;
-    margin: 0px 0px 15px;
+}
+
+.div_bottomnav_buttons {
+    margin-top: 4em;
+}
+
+.div_topnav_buttons > a , .div_bottomnav_buttons > a {
+    padding: 6px 15px;
+    border-radius: 5px;
 }
 
 .div_topnav_buttons > a {
-    padding: 8px 15px;
-    color: #424242;
-    border-radius: 5px;
+    color: #333;
+    border: 1px solid #ddd;
 }
 
 .div_topnav_buttons > a:hover {
     background-color: #f2f2f2;
-    color: #424242;
-}
-
-.div_bottomnav_buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 45px 0px 0px;
+    color: #000;
 }
 
 .a_button_prev, .a_button_next {
@@ -223,11 +225,13 @@ div.summary > span {
     align-items: center;
 }
 
+.div_bottomnav_buttons > a { 
+    border: 1px solid #6b70b5;
+}
+
 .a_button_prev {
-    padding: 7px 15px;
     background-color: #fff;
     color: #6B70B5;
-    border: 2px solid;
 }
 
 .a_button_prev:hover {
@@ -235,7 +239,6 @@ div.summary > span {
 }
 
 .a_button_next {
-    padding: 8px 15px;
     background-color: #6B70B5;
     color: #fff;
 }
@@ -246,28 +249,28 @@ div.summary > span {
 
 div.side_buttons {
     position: fixed;
-    margin-left: -90px;
-    margin-top: -35px;
+    margin-left: -75px;
+    margin-top: -2.5em;
 }
 
 div.side_buttons > a {
     display: flex;
-    height: 48px;
-    width: 48px;
+    height: 35px;
+    width: 35px;
     background-color: #fff;
+    color: #333;
+    font-size: 15px;
     margin: 5px;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #00000030;
-    border: 1px solid #ddd;
 }
 
 div.side_buttons > a:hover {
     background-color: #fafafa;
     text-decoration: none;
-    border-color: #333;
+    color: #000;
 }
 
 a.solution {
@@ -303,6 +306,23 @@ section.recommandation > span > img {
     transform: scaleY(-1);
     width: 120px;
     margin-right: 10px;
+}
+
+@media screen and (max-width: 950px) {
+
+    div.side_buttons {
+        margin-left: 0;
+        margin-top: 0;
+        bottom: 0;
+        right: -10px;
+    }
+
+    div.side_buttons > a {
+        height: 45px;
+        width: 45px;
+        font-size: 20px;
+    }
+
 }
 
 @media screen and (max-width: 880px) {

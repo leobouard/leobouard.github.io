@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ page.description }}">
     {% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">
-    <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">
-    <link rel="stylesheet" href="{{ "/assets/css/homepage.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">
-    {% if page.title == 'Léo Bouard' %}<link rel="stylesheet" href="{{ "/assets/css/cv.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">{% endif %}
-    {% if page.title == 'A propos' %}<link rel="stylesheet" href="{{ "/assets/css/about.css?v=" | append: site.github.build_revision | relative_url }}" media="screen">{% endif %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">
+    <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">
+    <link rel="stylesheet" href="{{ "/assets/css/homepage.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">
+    {% if page.title == 'Léo Bouard' %}<link rel="stylesheet" href="{{ "/assets/css/cv.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
+    {% if page.title == 'A propos' %}<link rel="stylesheet" href="{{ "/assets/css/about.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,31 +27,23 @@
   <body>
     <header id="top">
       <nav>
-        <a href="{{ "/" | absolute_url }}">LaBouaBouate</a>
-        <a href="/about">A propos</a>
-        <a href="/blog">Articles</a>
+        <a class="home" href="{{ "/" | absolute_url }}">
+          <i class="fa-solid fa-cube"></i>
+          <span>LaBouaBouate</span>
+        </a>
+        <div>
+          <a href="/blog">Articles</a>
+          <a href="/about">A propos</a>
+        </div>
       </nav>
     </header>
     <main>
       {{ content }}
     </main>
     <footer>
-      <div>
-        <span>Informations générales</span>
-        <ul>
-          <li>Hébergé sur <a href="https://pages.github.com/" target="_blank">GitHub Pages<i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a></li>
-          <li>Fait avec ❤️ par Léo Bouard</li>
-        </ul>
-      </div>
-      <div>
-        <span>Envie d'en savoir plus sur moi ?</span>
-        <ul>
-          <li><a href="mailto:{{ site.emailAddress }}">M'envoyer un email</a></li>
-          <li><a href="{{ site.linkedin }}" target="_blank">Voir mon profil LinkedIn<i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a></li>
-          <li><a href="{{ site.github.owner_url }}" target="_blank">Voir mes projets sur GitHub<i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a></li>
-          <li><a href="/cv">Consulter mon CV</a></li>
-        </ul>
-      </div>
+      {% assign current_year = 'now' | date: '%Y' %}
+      <p>Fait avec ❤️ par Léo Bouard<br>Hébergé sur GitHub Pages</p>
+      <small>LaBouaBouate | 2021-{{current_year}}</small>
     </footer>
   </body>
 </html>

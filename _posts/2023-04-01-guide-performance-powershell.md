@@ -41,13 +41,13 @@ On commencera donc par des conseils généraux, simples à comprendre et facile 
 
 Tous les filtres ne se valent pas ! Une règle de base peut être facilement utilisée : faire les filtres les plus stricts (ceux qui éliminerons le plus d'objets) en amont. Moins votre collection sera grande, plus votre script sera performant.
 
-Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutiles. L'idée c'est de raisonner en terme de "poids total" de votre collection : ce qui importe c'est le nombre d'objets et le nombre de propriétés par objet.
+Point bonus : si votre collection est composée de PSCustomObject, évitez de garder des propriétés inutiles. L'idée est de raisonner en termes de "poids total" de votre collection : ce qui importe, c'est le nombre d'objets et le nombre de propriétés par objet.
 
 ### Manger ~~bio et~~ local
 
 De manière générale, une requête pour obtenir 10 000 utilisateurs est moins coûteuse que 10 000 requêtes d'un seul utilisateur.
 
-Morale de l'histoire : faire une grosse requête pour requêter ensuite à l'intérieur du résultat plutôt que de faire une requête à chaque fois.
+Morale de l'histoire : faire une grosse requête pour rechercher ensuite à l'intérieur du résultat plutôt que de faire une requête à chaque fois.
 
 Pour Microsoft Graph : des rapports CSV sont disponibles (notamment pour les statistiques d'usage des boîtes aux lettres) et permettent de gagner beaucoup de temps par rapport à des requêtes individuelles, beaucoup plus coûteuses.
 
@@ -57,13 +57,13 @@ N'importe quel type d'affichage dans une console va vous coûter du temps de tra
 
 Cependant, avant de tomber dans le dogmatisme je tiens à préciser quelque chose d'important : la perte en temps vaut probablement le coup, et ça pour plusieurs raisons :
 
-1. L'affichage dans la console est utile pour la journalisation et le débuggage d'un script. Un script qui s'exécute vite, c'est bien. Un script qui fonctionne et qui est facile à maintenir, c'est mieux !
+1. L'affichage dans la console est utile pour la journalisation et le débogage d'un script. Un script qui s'exécute vite, c'est bien. Un script qui fonctionne et qui est facile à maintenir, c'est mieux !
 1. Il ne faut pas sous-estimer la puissance d'une barre de progression pour le cerveau humain : le temps vous semblera infiniment moins long avec une barre qui se remplie petit à petit, plutôt qu'une console vierge qui ne montre pas le moindre signe de progression.
 1. Priorisez l'optimisation de vos performances : supprimer tout affichage dans votre script ne le rendra probablement pas deux fois plus performant. Essayer de trouver la cause du ralentissement avant de dégommer tous les `Write-Output` de votre script, car il y a de grandes chances pour ça ne soit pas la cause principale.
 
 ### Connaître son ennemi
 
-Pour optimiser votre code, le plus important est d'identifier le goulot d'étranglement. Pour ça, vous pouvez utiliser la commande `Measure-Object` qui va mesurer le temps d'execution du code qui va se trouver entre les deux accolades. Certaines commandes sont plus gourmandes que d'autres (notamment les requêtes API, les cmdlet Exchange et Microsoft Graph) et le `Measure-Object` peut vous permettre de calculer précisément le temps d'execution global, pour faire ensuite une belle barre de progression avec `Write-Progress` (notamment via le paramètre `-SecondsRemaining`).
+Pour optimiser votre code, le plus important est d'identifier le goulot d'étranglement. Pour ça, vous pouvez utiliser la commande `Measure-Object` qui va mesurer le temps d'exécution du code qui va se trouver entre les deux accolades. Certaines commandes sont plus gourmandes que d'autres (notamment les requêtes API, les cmdlet Exchange et Microsoft Graph) et le `Measure-Object` peut vous permettre de calculer précisément le temps d'exécution global, pour faire ensuite une belle barre de progression avec `Write-Progress` (notamment via le paramètre `-SecondsRemaining`).
 
 Voici un petit script qui permet de mesurer la durée moyenne d'exécution d'une commande ou d'un script PowerShell sur 100 itérations :
 
@@ -76,7 +76,7 @@ $stats | Measure-Object -Property 'TotalSeconds' -Average
 
 ### Utiliser les bons outils
 
-Vous aurez beau optimiser votre code comme jamais et suivre toutes les bonnes pratiques possibles, un script exécuté avec Windows PowerShell 2.0 sera toujours moins performant qu'un même script exécuté en PowerShell v7. Les versions les plus récentes embarquent toujours leurs lot d'améliorations, autant au niveau des performances qu'au niveau des fonctionnalités.
+Vous aurez beau optimiser votre code comme jamais et suivre toutes les bonnes pratiques possibles, un script exécuté avec Windows PowerShell 2.0 sera toujours moins performant qu'un même script exécuté en PowerShell v7. Les versions les plus récentes embarquent toujours leurs lots d'améliorations, autant au niveau des performances qu'au niveau des fonctionnalités.
 
 Voici un comparatif de temps de traitement sur plusieurs scripts différents, exécutés sur la même machine, sur des données locales uniquement (moyenne sur 100 exécutions) :
 
@@ -101,9 +101,9 @@ $array = @()
 1..10 | % { $array += $_ }
 ```
 
-Comment ça marche ? Et bien la syntaxe très simple cache en fait un fonctionnement assez complexe.
+Comment ça marche ? La syntaxe très simple cache en fait un fonctionnement assez complexe.
 
-Avec `@()`, vous allez créer une collection de taille fixe avec une capacité maximum de 0 élément. Comment agrandir la collection alors ? En tout cas on ne peut pas y ajouter d'éléments aevc la méthode `.Add()` puisque celle-ci nous donne l'erreur : *Exception lors de l'appel de «Add» avec «1» argument(s): «La collection était d'une taille fixe.»*.
+Avec `@()`, vous allez créer une collection de taille fixe avec une capacité maximum de 0 élément. Comment agrandir la collection alors ? En tout cas on ne peut pas y ajouter d'éléments avec la méthode `.Add()` puisque celle-ci nous donne l'erreur : *Exception lors de l'appel de «Add» avec «1» argument(s): «La collection était d'une taille fixe.»*.
 
 On va donc utiliser l'opérateur `+=`, qui ne va pas ajouter un élément à la collection existante (puisque ce n'est pas possible) mais plutôt :
 
