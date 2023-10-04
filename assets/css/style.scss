@@ -1,10 +1,20 @@
 ---
 ---
-@import "variables";
+
+::root {
+    --text: #000;
+    --title: #333;
+    --bodybg: #f2f2f2;
+    --primary: #2f4883;
+    --secondary: #c7bfe8;
+    --textbg: #fff;
+    --accent: #4f3aa1;
+    --border: #ddd;
+}
 
 ::selection {
-    background-color: #6B70B5;
-    color: #fff;
+    background-color: var(--accent);
+    color: var(--textbg);
 }
 
 html {
