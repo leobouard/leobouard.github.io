@@ -11,7 +11,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
         <a class="noDecoration" href="{{ post.id }}">
             {% if post.capsule %}<span class="articlePill">{{ post.capsule }}</span>{% endif %}
             <article>
-                <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
+                <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}}; background-size: cover;" {% endif %}>
                     <span class="articleTitle">{{ post.title }}</span>
                     <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
                 </div>

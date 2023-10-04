@@ -69,8 +69,6 @@ div.articleThumbnail {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-size: cover;
-    background-position: right;
 }
 
 div.articleText {
@@ -119,8 +117,6 @@ span.articleDescription {
     align-items: center;
     justify-content: center;
     background: #ffc862;
-    background-position: right;
-    background-size: cover;
     user-select: none;
     width: 100%;
     z-index: -1;
