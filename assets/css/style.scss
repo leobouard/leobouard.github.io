@@ -101,7 +101,7 @@ main {
     }
 
     a {
-        color: $accent;
+        color: var(--accent);
         font-weight: 500;
         text-decoration: none;
         transition: all 100ms ease-in-out;
@@ -114,7 +114,7 @@ main {
     }
 
     h1, h2, h3, h4, h5 {
-        color: #333;
+        color: var(--title);
     }
 
     h1 {
