@@ -3,7 +3,7 @@ layout: post
 title: "Cours Microsoft Graph"
 description: "Bien commencer et progresser rapidement sur la nouvelle méthode d'administration via PowerShell des services cloud Microsoft"
 tags: microsoft-graph
-background: "#bd93d8"
+background: "url(/assets/images/graph-banner.png)"
 listed: true
 nextLink:
   name: "Sommaire"
