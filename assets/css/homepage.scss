@@ -10,6 +10,28 @@ main {
     min-height: 100vh;
 }
 
+h1 {
+    font-size: 50px;
+    text-align: center
+}
+
+ul > li > a {
+    font-weight: bold;
+    margin: 5px 0px;
+    padding: 10px 15px;
+    transition: all 100ms ease-in-out;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+ul > li:first-child > a {
+    background: var(--primary);
+}
+
+ul > li:last-child > a {
+    background: var(--secondary);
+}
+
 footer {
     padding: 15px 0px;
 }
