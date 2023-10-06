@@ -8,6 +8,7 @@ body {
 main {
     justify-content: center;
     min-height: 100vh;
+    padding: 15px;
 }
 
 main > h1 {
@@ -24,17 +25,19 @@ main > h1 > span {
 }
 
 ul {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
 }
 
 li {
     list-style: none;
-    display: inline;
+    margin: 5px;
+    line-height: 275%;
 }
 
 ul > li > a {
     font-weight: normal;
-    font-size: large;
     padding: 10px 15px;
     transition: all 100ms ease-in-out;
     text-decoration: none;
