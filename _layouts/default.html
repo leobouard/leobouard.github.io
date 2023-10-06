@@ -9,8 +9,9 @@
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">
     <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">
-    {% if page.title == 'Léo Bouard' %}<link rel="stylesheet" href="{{ "/assets/css/cv.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
-    {% if page.title == 'A propos' %}<link rel="stylesheet" href="{{ "/assets/css/about.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
+    {% if page.title == 'Accueil' %}    <link rel="stylesheet" href="{{ "/assets/css/homepage.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
+    {% if page.title == 'Léo Bouard' %} <link rel="stylesheet" href="{{ "/assets/css/cv.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
+    {% if page.title == 'A propos' %}   <link rel="stylesheet" href="{{ "/assets/css/about.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
