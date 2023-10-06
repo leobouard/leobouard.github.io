@@ -15,13 +15,22 @@ h1 {
     text-align: center
 }
 
+ul {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    display: inline;
+}
+
 ul > li > a {
     font-weight: bold;
-    margin: 5px 0px;
     padding: 10px 15px;
     transition: all 100ms ease-in-out;
     text-decoration: none;
     border-radius: 30px;
+    color: var(--textbg)
 }
 
 ul > li:first-child > a {
