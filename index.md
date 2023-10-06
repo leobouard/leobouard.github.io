@@ -1,18 +1,13 @@
 ---
 permalink: /
+layout: "homepage"
 title: "Accueil"
 description: "Blog technique sur PowerShell et les technologies Microsoft pour l'administration système"
 ---
 
-<div class="div_hero">
-    <div class="div_hero_image">
-        <span>👌</span>
-    </div>
-    <div class="div_hero_text">
-        <h1 id="bienvenue">Bienvenue sur un blog qui se prend pas trop au sérieux</h1>
-        <p>Ici on parle de PowerShell et d'autres technologies Microsoft, avec des cours, des défis et des retours d'expériences.</p>
-        <br>
-        <a class="a_hero_button_1" href="/blog">Voir mes articles</a>
-        <a class="a_hero_button_2" href="/cv">Mon CV</a>
-    </div>
-</div>
+# Blog technique d'un sysadmin Microsoft
+
+Ici on parle de PowerShell et d'autres technologies Microsoft avec des cours, des défis et des retours d'expériences.
+
+- [Voir mes articles](/blog)
+- [Mon CV](/cv)
