@@ -51,10 +51,16 @@ ul > li > a {
 
 ul > li:first-child > a {
     background: var(--primary);
+    color: var(--textbg)
 }
 
 ul > li:last-child > a {
     background: var(--secondary);
+    color: var(--primary)
+}
+
+ul > li > a:hover {
+    background-color: rgba(0,0,0,0.1);
 }
 
 footer {
