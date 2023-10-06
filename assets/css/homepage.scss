@@ -33,11 +33,12 @@ li {
 }
 
 ul > li > a {
-    font-weight: bold;
+    font-weight: normal;
+    font-size: large;
     padding: 10px 15px;
     transition: all 100ms ease-in-out;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 5px;
     color: var(--textbg)
 }
 

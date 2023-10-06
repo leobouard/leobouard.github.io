@@ -3,7 +3,8 @@
 
 :root {
     --text: #000;
-    --footer: #0d0d0d;
+    --footer: #fff;
+    --footerbg: #0d0d0d;
     --title: #333;
     --bodybg: #f2f2f2;
     --accentbg: #fafafa;
@@ -28,6 +29,7 @@ html {
     line-height: 155%;
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
+    color: var(--text);
 }
 
 body {
@@ -236,9 +238,9 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--footer);
+    background-color: var(--footerbg);
     z-index: -1;
-    color: var(--textbg);
+    color: var(--footer);
 }
 
 @media screen and (max-width: 950px) {
