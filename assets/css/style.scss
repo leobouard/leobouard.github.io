@@ -3,13 +3,15 @@
 
 :root {
     --text: #000;
+    --footer: #0d0d0d;
     --title: #333;
     --bodybg: #f2f2f2;
+    --accentbg: #fafafa;
     --primary: #2f4883;
     --secondary: #c7bfe8;
     --textbg: #fff;
     --accent: #4f3aa1;
-    --border: #ddd;
+    --border: 1px solid #ddd;
 }
 
 ::selection {
@@ -29,7 +31,7 @@ html {
 }
 
 body {
-    background-color: #f2f2f2;
+    background-color: var(--bodybg);
     height: 100%;
     margin: 0;
     width: auto;
@@ -50,7 +52,7 @@ header {
     }
 
     nav a {
-        color: #333;
+        color: var(--title);
         font-weight: bold;
         margin: 5px 0px;
         padding: 10px 15px;
@@ -60,7 +62,7 @@ header {
     }
 
     nav a:hover {
-        color: #000;
+        color: var(--text);
         background: rgba(0,0,0,.1);
     }
 
@@ -88,7 +90,7 @@ main {
 
     section {
         min-height: 85%;
-        background-color: #fff;
+        background-color: var(--textbg);
         border-radius: 5px;
         padding: 30px;
         max-width: 950px;
@@ -126,7 +128,7 @@ main {
     }
 
     h2 {
-        border-bottom: 1px solid #ddd;
+        border-bottom: var(--border);
         padding-bottom: 5px;
     }
 
@@ -143,15 +145,14 @@ main {
     }
 
     hr {
-        border: 1px solid #ddd;
+        border: var(--border);
         margin: 50px 0px;
     }
 
     blockquote {
-        background-color: #333;
-        border-left: 5px solid #6B70B5;
+        background-color: var(--accentbg);
+        border-left: 5px solid var(--accent);
         border-radius: 5px;
-        color: #fafafa;
         margin-inline: 0;
         padding: 5px 15px;
     }
@@ -163,8 +164,8 @@ main {
 
     pre {
         border-radius: 5px;
-        background-color: #fafafa;
-        border: 1px solid #ddd;
+        background-color: var(--accentbg);
+        border: var(--border);
         padding: 10px;
         overflow-x: auto;
         overflow-y: hidden;
@@ -185,19 +186,19 @@ main {
 
     p > code, li > code, main table > tbody > tr > td > code {
         border-radius: 5px;
-        background-color: #f2f2f2;
+        background-color: var(--accentbg);
         padding: 2px;
-        border: 1px solid #ddd;
+        border: var(--border);
     }
 
     table, td, tr, th {
-        border: 1px solid #ddd;
+        border: var(--border);
         padding: 10px;
         border-collapse: collapse;
     }
 
     th {
-        background-color: #fafafa;
+        background-color: var(--accentbg);
         text-align: left;
     }
 
@@ -207,7 +208,7 @@ main {
     }
 
     details {
-        border: 1px solid #ddd;
+        border: var(--border);
         border-radius: 5px;
         user-select: none;
         overflow: hidden;
@@ -216,11 +217,11 @@ main {
     details > summary {
         list-style: none;
         padding: 10px;
-        background: #fafafa;
+        background: var(--accentbg);
     }
 
     details[open] > summary {
-        border-bottom: 1px solid #ddd;
+        border-bottom: var(--border);
     }
 
     details > p {
@@ -235,9 +236,9 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #0d0d0d;
+    background-color: var(--footer);
     z-index: -1;
-    color: #f2f2f2;
+    color: var(--textbg);
 }
 
 @media screen and (max-width: 950px) {
@@ -280,7 +281,7 @@ footer {
 @media print {
 
     body {
-        background-color: #fff;
+        background-color: var(--textbg);
     }
     
     header {
