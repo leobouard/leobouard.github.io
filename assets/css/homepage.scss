@@ -11,8 +11,16 @@ main {
 }
 
 main > h1 {
-    font-size: 50px;
-    text-align: center
+    font-size: 5vh;
+    line-height: 125%;
+    text-align: center;
+}
+
+main > h1 > span {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 ul {
