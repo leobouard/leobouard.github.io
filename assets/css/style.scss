@@ -13,6 +13,7 @@
     --textbg: #fff;
     --accent: #4f3aa1;
     --border: 1px solid #ddd;
+    --borderradius: 5px;
 }
 
 ::selection {
@@ -60,7 +61,7 @@ header {
         padding: 10px 15px;
         transition: all 100ms ease-in-out;
         text-decoration: none;
-        border-radius: 30px;
+        border-radius: var(--borderradius);
     }
 
     nav a:hover {
@@ -93,7 +94,7 @@ main {
     section {
         min-height: 85%;
         background-color: var(--textbg);
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         padding: 30px;
         max-width: 950px;
         width: -moz-available;          /* WebKit-based browsers will ignore this. */
@@ -154,7 +155,7 @@ main {
     blockquote {
         background-color: var(--accentbg);
         border-left: 5px solid var(--accent);
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         margin-inline: 0;
         padding: 5px 15px;
     }
@@ -165,7 +166,7 @@ main {
     }
 
     pre {
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         background-color: var(--accentbg);
         border: var(--border);
         padding: 10px;
@@ -187,7 +188,7 @@ main {
     }
 
     p > code, li > code, main table > tbody > tr > td > code {
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         background-color: var(--accentbg);
         padding: 2px;
         border: var(--border);
@@ -211,7 +212,7 @@ main {
 
     details {
         border: var(--border);
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         user-select: none;
         overflow: hidden;
     }

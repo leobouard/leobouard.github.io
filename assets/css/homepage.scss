@@ -60,7 +60,7 @@ ul > li:last-child > a {
 }
 
 ul > li > a:hover {
-    background-color: rgba(0,0,0,0.1);
+    filter: brightness(1.25);
 }
 
 footer {
