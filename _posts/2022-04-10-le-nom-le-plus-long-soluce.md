@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solution - Le nom le plus long"
+title: "Le nom le plus long"
 background: "#F292A5"
 prevLink:
   name: "Retour au défi"

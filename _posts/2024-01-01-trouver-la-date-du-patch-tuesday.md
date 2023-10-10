@@ -41,7 +41,7 @@ function Get-PatchTuesdayDate_Leo2 {
 
 ## Version de ChatGPT
 
-Obtenu avec la question suivante : 
+Obtenu avec la question suivante :
 
 > find the second tuesday of the month in PowerShell
 
@@ -71,7 +71,7 @@ Write-Output "The second Tuesday of the month is $secondTuesdayString"
 
 This will output the second Tuesday of the month in the format "MM/dd/yyyy". You can use a different format string if desired. For example, to output the date in the format "dd-MM-yyyy", you can use -Format "dd-MM-yyyy" instead
 
-### Adaptation de la réponse à notre modèle 
+### Adaptation de la réponse à notre modèle
 
 ```powershell
 function Get-PatchTuesdayDate_ChatGPT {

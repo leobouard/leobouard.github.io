@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solution - La formule magique"
+title: "La formule magique"
 background: "#fbe888"
 prevLink:
   name: "Retour au défi"

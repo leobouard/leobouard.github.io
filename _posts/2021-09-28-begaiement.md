@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Défi - Bégaiement"
+title: "Bégaiement"
 description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
 background: "#69a9e9"
 tags: ['challenge','powershell']

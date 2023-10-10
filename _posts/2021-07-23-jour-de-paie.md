@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Défi - Le jour de paie"
+title: "Le jour de paie"
 description: "Calculer le jour exact où vous recevrez votre salaire, en prenant en compte les jours ouvrés uniquement"
 background: "#8af1b9"
 tags: ['challenge','powershell']

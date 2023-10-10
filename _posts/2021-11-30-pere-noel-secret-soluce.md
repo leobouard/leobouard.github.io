@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solution - Père Noël aléatoire"
+title: "Secret santa"
 background: "#f78787"
 prevLink:
   name: "Retour au défi"

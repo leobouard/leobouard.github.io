@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Défi - Père Noël aléatoire"
-description: "Jeu du Secret Santa : faire un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
+title: "Secret santa"
+description: "Créer un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
 background: "#f78787"
 tags: ['challenge','powershell']
 listed: true

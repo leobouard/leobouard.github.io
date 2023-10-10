@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solution - Bégaiement"
+title: "Bégaiement"
 background: "#69a9e9"
 prevLink:
   name: "Retour au défi"

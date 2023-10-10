@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solution - Le jour de paie"
+title: "Le jour de paie"
 background: "#8af1b9"
 prevLink:
   name: "Retour au défi"

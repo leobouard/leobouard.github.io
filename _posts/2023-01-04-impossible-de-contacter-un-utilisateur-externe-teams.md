@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Impossible de contacter un utilisateur externe sur Teams"
+title: "Problème SIP Teams"
 description: "L'utilisateur ne peut plus contacter des comptes externes à l'organisation"
 background: "#F69A79"
 tag: microsoft-teams

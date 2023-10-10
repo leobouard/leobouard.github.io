@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Défi - La formule magique"
+title: "La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
 background: "#fbe888"
 tags: ['challenge','powershell']
