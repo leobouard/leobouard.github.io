@@ -12,12 +12,9 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
             {% if post.capsule %}<span class="articlePill">{{ post.capsule }}</span>{% endif %}
             <article>
                 <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}}; background-size: cover;" {% endif %}>
-                    <span class="articleTitle">{{ post.title }}</span>
-                    <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
                 </div>
-                <div class="articleText">
-                    <span class="articleDescription">{{ post.description }}</span>
-                </div>
+                <span class="articleTitle">{{ post.title }}</span>
+                <span class="articleDescription">{{ post.description }}</span>
                 <div class="articleTags">
                     {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
                 </div>
