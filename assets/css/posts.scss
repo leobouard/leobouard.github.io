@@ -64,7 +64,7 @@ a.noDecoration:hover {
 }
 
 div.articleThumbnail {
-    background: #ffc862;
+    background: var(--bodybg);
     height: 150px;
     display: flex;
     justify-content: center;
@@ -94,7 +94,7 @@ span.articleTitle {
     font-size: 18px;
     font-weight: 600;
     margin: 1rem;
-    color: #000;
+    color: var(--text);
 }
 
 span.articleDescription {
