@@ -4,6 +4,7 @@
 .posts {
     display: grid;
     grid-gap: 2rem;
+    padding: 1rem;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
 }
