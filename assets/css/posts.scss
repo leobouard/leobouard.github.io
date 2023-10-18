@@ -66,10 +66,6 @@ a.noDecoration:hover {
 div.articleThumbnail {
     background: var(--accentbg);
     aspect-ratio: 16/9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
 }
 
 div.articleText {
