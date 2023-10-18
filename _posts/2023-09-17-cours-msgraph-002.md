@@ -32,4 +32,24 @@ Ce sont également les paramètres de requêtes qui vont nous permettre de tourn
 
 #### Authentification
 
-...
+---
+
+## Questions
+
+**Qu’est-ce qu’une API ?**
+
+- [ ] Une interface de programmation d’application
+- [ ] Un langage de programmation
+- [ ] Un système d’exploitation
+
+**Quel est le rôle principal d’une API ?**
+
+- [ ] Faciliter la communication entre deux logiciels
+- [ ] Créer des interfaces utilisateur
+- [ ] Stocker des données
+
+**Quels sont les types courants de requêtes HTTP utilisées dans les API REST ?**
+
+- [ ] GET, POST, DELETE
+- [ ] GET, SET, REMOVE
+- [ ] READ, WRITE, ERASE
