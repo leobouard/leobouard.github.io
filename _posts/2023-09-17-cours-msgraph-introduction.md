@@ -14,13 +14,18 @@ nextLink:
 
 Ce cours est dédié aux administrateurs systèmes en charge de l'administration des services cloud de Microsoft (Entra, Microsoft 365, etc...).
 
-Microsoft Graph est la nouvelle plateforme de programmation qui connecte la plupart des services et des données de Microsoft 365. Cette nouvelle plateforme incarne **un changement de paradigme pour l'administration système** : si auparavant nous bénéficions de modules PowerShell dédiés à nos tâches, nous devons maintenant utiliser une API REST plus généralistes et avec un fonctionnement qui convient mieux au travail d'un développeur.
+Microsoft Graph est la nouvelle plateforme de programmation qui connecte la plupart des services et des données de Microsoft 365. Cette nouvelle plateforme incarne **un changement de paradigme pour l'administration système** : si auparavant nous bénéficions de modules PowerShell dédiés à nos tâches, nous devons maintenant utiliser une API REST plus généraliste et avec un fonctionnement qui convient mieux au travail d'un développeur.
 
-Avec [la fin de vie des modules PowerShell AzureAD et MSOnline](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270), il est donc important de mettre à jour ses connaissances et d'en développer de nouvelles, pour pouvoir commencer ou continuer à automatiser votre travail d'administration sur les services cloud de Microsoft.
+Avec [la fin de vie des modules PowerShell AzureAD et MSOnline](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270), il est donc important de mettre à jour ses connaissances et en développer de nouvelles, pour pouvoir commencer (ou continuer) à automatiser votre travail.
+
+### Prérequis
 
 Pour ce cours, je considère que vous maitrisez les bases du scripting PowerShell et l'administration de Microsoft 365, sans avoir pour autant de connaissances sur les anciens modules.
 
-Egalement, si vous pouvez avoir accès à un tenant Microsoft 365 de test (via [https://demo.microsoft.com](https://cdx.transform.microsoft.com/)) en tant qu'administrateur global, cela vous permettra de mieux prendre en main et pratiquer sur Microsoft Graph.
+Pour réaliser les exercices pratiques, vous devrez avoir accès à un tenant Microsoft 365 (de test de préférence). Si vous n'en avez pas, vous pouvez en obtenir avec :
+
+- [Microsoft 365 Developer Program](https://developer.microsoft.com/en-us/microsoft-365/dev-program), disponible pour tout le monde
+- [Microsoft Customer Digital Experiences](https://cdx.transform.microsoft.com/), disponible si votre entreprise est un partenaire Microsoft
 
 ## Liens utiles
 

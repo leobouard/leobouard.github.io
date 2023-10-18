@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "Cours MSGraph #2"
+title: "MSGRAPH #2"
 description: "???"
 tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
