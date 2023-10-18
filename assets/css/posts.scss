@@ -16,13 +16,13 @@ span.articlePill {
     z-index: 1;
     margin: -5px;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
 }
 
 article {
     height: 350px;
     max-width: 300px;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
     border: var(--border);
     box-shadow: 0 0 1px 0 #00000040;
     color: var(--text);
@@ -41,7 +41,7 @@ div.articleTags {
     
     span {
         background: #fafafa;
-        border-radius: 5px;
+        border-radius: var(--borderradius);
         padding: 2px 5px;
         font-weight: 400;
         border: var(--border);
@@ -133,7 +133,7 @@ span.articleDescription {
 div.information {
     background-color: #CDE0F4;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
     margin: 15px 0px;
 }
 
@@ -155,7 +155,7 @@ div.summary > a {
     display: block;
     padding: 10px;
     border: var(--border);
-    border-radius: 5px;
+    border-radius: var(--borderradius);
     margin: 10px 0px;
 
     h3 {
@@ -199,7 +199,7 @@ div.summary > span {
 
 .div_topnav_buttons > a , .div_bottomnav_buttons > a {
     padding: 6px 15px;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
 }
 
 .div_topnav_buttons > a {
@@ -213,7 +213,7 @@ div.summary > span {
 }
 
 .a_button_prev, .a_button_next {
-    border-radius: 5px;
+    border-radius: var(--borderradius);
     display: inline-flex;
     align-items: center;
 }
@@ -256,7 +256,7 @@ div.side_buttons > a {
     margin: 5px;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
     box-shadow: 0px 0px 5px 0px #00000030;
 }
 
@@ -271,7 +271,7 @@ a.solution {
     border: var(--border);
     text-align: center;
     padding: 8px;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
 }
 
 a.solution:hover {
