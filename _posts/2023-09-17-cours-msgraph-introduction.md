@@ -3,7 +3,7 @@ layout: post
 title: "Cours MSGraph"
 description: "Bien commencer sur Microsoft Graph pour les administrateurs systèmes"
 tags: microsoft-graph
-background: "url(/assets/images/graph-banner.png) center center"
+thumbnail: "/assets/thumbnail/cours-msgraph.png"
 listed: true
 nextLink:
   name: "Sommaire"

@@ -53,3 +53,9 @@ Ce sont également les paramètres de requêtes qui vont nous permettre de tourn
 - [ ] GET, POST, DELETE
 - [ ] GET, SET, REMOVE
 - [ ] READ, WRITE, ERASE
+
+**Qu’est-ce que JSON dans le contexte d’une API ?**
+
+- [ ] Un format pour envoyer et recevoir des données
+- [ ] Un protocole de transfert de données
+- [ ] Un type de base de données**
