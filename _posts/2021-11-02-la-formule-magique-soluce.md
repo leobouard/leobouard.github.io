@@ -80,7 +80,7 @@ On commence par découper notre nombre via un `-split ''` qui a un avantage et u
 > 8\
 > \
 
-Si vous ne voyez pas les six items, sachez qu'il y a un item vide avant le 2 et un item vide après le 8. Vous pouvez vous en débarrasser avec la méthode `.Trim()` si ça vous dérange, mais dans notre cas ils n'auront aucun impact sur notre calcul puisque 0+2+5+6+8+0 donne le même résultat que 2+5+6+8. Il ne nous reste plus qu'à calculer la somme de tous nos chiffres, et pour ça on utilise la commande `Measure-Object` qui permet de faire bien plus que simplement compter le nombres d'items dans une collection.
+Si vous ne voyez pas les six items, sachez qu'il y a un item vide avant le 2 et un item vide après le 8. Vous pouvez vous en débarrasser avec la méthode `.Trim()` si ça vous dérange, mais dans notre cas ils n'auront aucun impact sur notre calcul puisque 0+2+5+6+8+0 donne le même résultat que 2+5+6+8. Il ne nous reste plus qu'à calculer la somme de tous nos chiffres, et pour ça on utilise la commande `Measure-Object` qui permet de faire bien plus que simplement compter le nombre d'items dans une collection.
 
 En effet, `Measure-Object` permet de :
 
