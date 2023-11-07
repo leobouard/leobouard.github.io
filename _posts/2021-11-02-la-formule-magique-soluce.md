@@ -16,10 +16,8 @@ Ma fonction :
 ```powershell
 function LaFormuleMagique {
     param([Int64]$i)
-
     $expression = ([string]$i).ToCharArray() -join '+'
     $result = Invoke-Expression -Command $expression
-
     return $result
 }
 ```
@@ -64,11 +62,8 @@ Ici pas le temps de niaiser, on va aller directement à la solution sans cherche
 
 ```powershell
 function LaFormuleMagique {
-
     param([Int64]$i)
-
     $result = $i -split '' | Measure-Object -Sum
-
     return $result.Sum
 }
 ```
@@ -77,13 +72,13 @@ function LaFormuleMagique {
 
 On commence par découper notre nombre via un `-split ''` qui a un avantage et un inconvénient par rapport à la méthode que j'ai utilisé. D'un côté il n'y a pas besoin de convertir notre nombre en une chaine de caractère, mais de l'autre côté : découper un nombre de quatre chiffres nous donne 6 items en résultat :
 
-> PS C:\> 2568 -split ''
-> 
-> 2
-> 5
-> 6
-> 8
->
+> PS C:\> 2568 -split ''\
+> \
+> 2\
+> 5\
+> 6\
+> 8\
+> \
 
 Si vous ne voyez pas les six items, sachez qu'il y a un item vide avant le 2 et un item vide après le 8. Vous pouvez vous en débarrasser avec la méthode `.Trim()` si ça vous dérange, mais dans notre cas ils n'auront aucun impact sur notre calcul puisque 0+2+5+6+8+0 donne le même résultat que 2+5+6+8. Il ne nous reste plus qu'à calculer la somme de tous nos chiffres, et pour ça on utilise la commande `Measure-Object` qui permet de faire bien plus que simplement compter le nombres d'items dans une collection.
 
