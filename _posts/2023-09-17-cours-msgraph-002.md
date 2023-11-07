@@ -25,12 +25,13 @@ L'un des objectifs de n'importe quelle API est de pouvoir interagir avec de la d
 
 Chaque page peut contenir un nombre maximum de données. Cela varie suivant l'API et il n'y a pas de règles strictes. Dans tous les cas, lorsqu'une API utilise de la pagination, l'une des propriétés retournée servira à indiquer l'adresse de la prochaine page (sous forme d'URI le plus souvent), que l'on devra inclure dans notre prochaine requête.
 
-Voici un exemple de réponse de Microsoft Graph avec une indication du "nextLink" pour obtenir les données de la page suivante.
+Voici un exemple de réponse de Microsoft Graph avec une indication sur l'adresse de la page suivante avec la propriété `@odata.nextLink`.
 
-```json{
-    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('********-****-****-****-**************')/messages",
+```json
+{
+    "@odata.context": "https://graph.microsoft.com/v1.0/...",
     "value": [{...}],
-    "@odata.nextLink": "https://graph.microsoft.com/v1.0/me/messages?%24top=1&%24skip=1"
+    "@odata.nextLink": "https://graph.microsoft.com/v1.0/..."
 }
 ```
 
