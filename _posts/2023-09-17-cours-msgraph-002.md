@@ -40,6 +40,18 @@ Pour éviter de demander de l'information qui ne nous est pas utile, on peut for
 
 Les paramètres de requête vont se placer à la fin de notre URI
 
+Nom |	Description
+--- | -----------
+$count | Récupère le nombre total de ressources correspondantes
+$expand	| Récupère les ressources connexes
+$filter	| Filtre les résultats (lignes)
+$format	| Renvoie les résultats dans le format de média spécifié
+$orderby | Classe les résultats
+$search | Renvoie les résultats en fonction des critères de recherche
+$select | Filtre les propriétés (colonnes)
+$skip | Indexe dans un jeu de résultats. Également utilisé par certaines API pour implémenter la pagination et peut être utilisé avec $top pour pager manuellement les résultats
+$top | Définit la taille de la page de résultats
+
 Toutes les informations sur les paramètres de requêtes généraux pour Microsoft Graph sont disponibles ici : [Utilisation de paramètres de requête pour personnaliser des réponses](https://learn.microsoft.com/graph/query-parameters)
 
 ### Authentification
