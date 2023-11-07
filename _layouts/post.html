@@ -43,15 +43,13 @@ layout: default
         <img src="https://www.labouabouate.fr/assets/doodles/Arrow%2011.svg" alt="sketch arrow"/>
     </span>
     <a class="noDecoration" href="{{ post.id }}">
-        {% if post.selection == true %}<span class="articleSelection">⭐ Sélection</span>{% endif %}
+        {% if post.capsule %}<span class="articlePill">{{ post.capsule }}</span>{% endif %}
         <article>
-            <div class="articleThumbnail" {% if post.background %} style="background: {{post.background}};" {% endif %}>
-                <span class="articleTitle">{{ post.title }}</span>
-                <span class="articleDate">{{ post.date | date: "%d/%m/%Y" }}</span>
+            <div class="articleThumbnail">
+                <img src="{{ post.thumbnail }}">
             </div>
-            <div class="articleText">
-                <span class="articleDescription">{{ post.description }}</span>
-            </div>
+            <span class="articleTitle">{{ post.title }}</span>
+            <span class="articleDescription">{{ post.description }}</span>
             <div class="articleTags">
                 {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
             </div>
