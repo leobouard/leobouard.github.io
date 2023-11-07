@@ -33,7 +33,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         </div>
     </div>
     <div class="skill">
-        <span>Azure AD</span>
+        <span>Entra ID</span>
         <div class="progressBar">
             <div class="progressBarContent" style="width: 70%;"></div>
         </div>
@@ -100,9 +100,9 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
         </div>
         <div class="experience">
-            <h4>Lead consultant</h4>
+            <h4>Responsable d'équipe</h4>
             <small>depuis septembre 2021</small>
-            <p>Référent technique sur PowerShell et gestion d'une équipe de 5 personnes.<br>Mes différentes missions sont :
+            <p>Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.<br>Mes différentes missions sont :
             <ul>
                 <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels</li>
                 <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
@@ -111,7 +111,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </ul></p>
         </div>
         <div class="experience">
-            <h4>Associate consultant</h4>
+            <h4>Consultant</h4>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
             <p>Membre de l'unité "Infrastructure et services".<br>Spécialisé sur Active Directory, PowerShell et Microsoft 365.</p>
         </div>
