@@ -119,13 +119,16 @@ main {
         text-underline-offset: 1px;
     }
 
-    h1, h2, h3, h4, h5 {
+    h2, h3, h4, h5 {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        margin: 2em 0px 1em 0px;
         color: var(--title);
     }
 
     h1 {
         font-family: 'Manrope', sans-serif;
-        font-size: xx-large;
+        font-size: 2em;
         font-weight: 800;
         line-height: 100%;
         margin: 15px 0px;
@@ -134,12 +137,19 @@ main {
     h2 {
         border-bottom: var(--border);
         padding-bottom: 5px;
+        font-size: 1.75em;
     }
 
-    h2, h3, h4, h5 {
-        font-family: 'Manrope', sans-serif;
-        font-weight: 700;
-        margin: 2em 0px 1em 0px;
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    h4 {
+        font-size: 1.25em;
+    }
+
+    h5 {
+        font-size: 1.10em;
     }
 
     img {
