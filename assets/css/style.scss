@@ -169,11 +169,16 @@ main {
         border-radius: var(--borderradius);
         margin-inline: 0;
         padding: 5px 15px;
+        background-image: url(/assets/images/quote-solid.svg);
     }
 
     pre, code, blockquote {
         font-family: 'Martian Mono', monospace;
         font-size: 11px;
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-blend-mode: soft-light;
+        background-size: contain;
     }
 
     pre {
@@ -183,6 +188,7 @@ main {
         padding: 10px;
         overflow-x: auto;
         overflow-y: hidden;
+        background-image: url(/assets/images/code-solid.svg);
     }
 
     pre > code {
