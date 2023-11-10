@@ -92,8 +92,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>METSYS</h3>
-                <small>Depuis 2018</small><br>
-                <small>Rennes, Ille-et-Vilaine (35)</small>
+                <small>Depuis 2018 • Rennes, Ille-et-Vilaine (35)</small>
             </div>
         </div>
         <div>
@@ -124,8 +123,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>Groupe Roullier</h3>
-                <span>Depuis 2019</span><br>
-                <span>Dinard, Ille-et-Vilaine (35)</span>
+                <small>Depuis 2019 • Dinard, Ille-et-Vilaine (35)</small>
             </div>
         </div>
         <div>
@@ -177,8 +175,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>GEVES</h3>
-                <span>De 2017 à 2018</span><br>
-                <span>Beaucouzé, Maine-et-Loire (49)</span>
+                <small>De 2017 à 2018 • Beaucouzé, Maine-et-Loire (49)</small>
             </div>
         </div>
         <div>
@@ -208,8 +205,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>IUT de La Roche-sur-Yon</h3>
-                <span>De 2015 à 2018</span><br>
-                <span>La Roche-sur-Yon, Vendée (85)</span>
+                <small>De 2015 à 2018 • La Roche-sur-Yon, Vendée (85)</small>
             </div>
         </div>
         <div class="experience">
