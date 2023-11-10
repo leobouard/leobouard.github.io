@@ -214,12 +214,12 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         </div>
         <div class="experience">
             <h4>Licence professionnelle A2SR</h4>
-            <small>2017 à 2018</small>
+            <small>Promotion 2017-2018</small>
             <p>Licence professionnelle administration et sécurité des systèmes et des réseaux.<br>Alternance au GEVES en tant qu'administrateur système.</p>
         </div>
         <div class="experience">
             <h4>DUT réseaux et télécommunications</h4>
-            <small>2015 à 2017</small>
+            <small>Promotion 2015-2017</small>
             <p>Projet tutoré : initiation de lycéens à la cybersécurité avec des ateliers de sensibilisation et des travaux pratiques.<br>Stage de fin d'année au GEVES en tant qu'administrateur système.</p>
         </div>
     </div>
