@@ -70,6 +70,7 @@ span.certifStatusActive {
     border-radius: 5px;
     align-items: center;
     border: var(--border);
+    background: var(--accentbg);
 }
 
 .enterprise > div {
@@ -81,7 +82,8 @@ span.certifStatusActive {
 }
 
 .enterprise > div > img {
-    height: 64px;
+    height: 5em;
+    mix-blend-mode: darken;
 }
 
 .skills {
