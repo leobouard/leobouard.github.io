@@ -92,8 +92,8 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>METSYS</h3>
-                <span>Depuis 2018</span><br>
-                <span>Rennes, Ille-et-Vilaine (35)</span>
+                <small>Depuis 2018</small><br>
+                <small>Rennes, Ille-et-Vilaine (35)</small>
             </div>
         </div>
         <div>
