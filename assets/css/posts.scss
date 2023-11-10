@@ -40,7 +40,7 @@ div.articleTags {
     text-transform: lowercase;
     
     span {
-        background: #fafafa;
+        background: var(--accentbg);
         border-radius: var(--borderradius);
         padding: 2px 5px;
         font-weight: 400;
@@ -151,7 +151,7 @@ div.summary {
 }
 
 div.summary > a {
-    background: #fff;
+    background: var(--textbg);
     display: block;
     padding: 10px;
     border: var(--border);
@@ -208,8 +208,8 @@ div.summary > span {
 }
 
 .div_topnav_buttons > a:hover {
-    background-color: #f2f2f2;
-    color: #000;
+    background-color: var(--bodybg);
+    color: var(--text);
 }
 
 .a_button_prev, .a_button_next {
@@ -250,7 +250,7 @@ div.side_buttons > a {
     display: flex;
     height: 35px;
     width: 35px;
-    background-color: #fff;
+    background-color: var(--textbg);
     color: var(--title);
     font-size: 15px;
     margin: 5px;
@@ -261,7 +261,7 @@ div.side_buttons > a {
 }
 
 div.side_buttons > a:hover {
-    background-color: #fafafa;
+    background-color: var(--accentbg);
     text-decoration: none;
     color: var(--text);
 }
