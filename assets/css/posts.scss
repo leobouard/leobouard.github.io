@@ -242,17 +242,17 @@ div.summary > span {
 
 div.side_buttons {
     position: fixed;
-    margin-left: -5em;
+    margin-left: -6em;
     margin-top: -2.3em;
 }
 
 div.side_buttons > a {
     display: flex;
-    height: 35px;
-    width: 35px;
+    aspect-ratio: 1;
     background-color: var(--textbg);
     color: var(--title);
-    font-size: 15px;
+    font-size: 1.5em;
+    padding: 0.5em;
     margin: 5px;
     justify-content: center;
     align-items: center;
