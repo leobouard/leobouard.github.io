@@ -337,11 +337,20 @@ footer {
 
 // MENU
 
-.menu:hover > .submenu,
 .menu:focus-within > .submenu {
     display: block;
 }
 
 .submenu {
     display: none;
+    background: var(--textbg);
+    position: fixed;
+    height: 100%;
+    list-style: none;
+
+    li {
+        border-collapse: collapse;
+        border-bottom: var(--border);
+        border-top: var(--border);
+    }
 }
