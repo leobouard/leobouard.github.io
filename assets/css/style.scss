@@ -111,6 +111,8 @@ header {
     right: 0;
     margin: 0;
     height: 100%;
+    min-width: 50vw;
+    opacity: 0.95;
     list-style: none;
     box-shadow: 0 0 5px 0 var(--boxshadow);
 
