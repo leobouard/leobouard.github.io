@@ -7,31 +7,55 @@ layout: default
 </div>
 <section>
     <div class="side-buttons">
-        <a href="/blog" title="Retour aux articles"><i class="fa-solid fa-house"></i></a>
+        <a href="/blog" title="Retour aux articles">
+            <i class="fa-solid fa-house"></i>
+        </a>
         {% if page.tableOfContent %}
-            <a href="{{ page.tableOfContent }}" title="Voir le sommaire"><i class="fa-solid fa-list"></i></a>
+            <a href="{{ page.tableOfContent }}" title="Voir le sommaire">
+                <i class="fa-solid fa-list"></i>
+            </a>
         {% endif %}
-        <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" title="Retour en haut de page"><i class="fa-solid fa-arrow-up"></i></a>
+        <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" title="Retour en haut de page">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
     </div>
     <div class="top-buttons">
         {% if page.prevLink %}
-            <a href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
+            <a href="{{ page.prevLink.id }}">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>{{ page.prevLink.name }}</span>
+            </a>
         {% else %}
-            <a href="/blog">← Tous les articles</a>
+            <a href="/blog">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Tous les articles</span>
+            </a>
         {% endif %}
         {% if page.nextLink %}
-            <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>{{ page.nextLink.name }} →</a>
+            <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>
+                <span>{{ page.nextLink.name }}</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
         {% endif %}
     </div>
     {{ content }}
     <div class="bottom-buttons">
         {% if page.prevLink %}
-            <a class="a_button_prev" href="{{ page.prevLink.id }}">← {{ page.prevLink.name }}</a>
+            <a class="a_button_prev" href="{{ page.prevLink.id }}">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>{{ page.prevLink.name }}</span>
+            </a>
         {% else %}
-            <a class="a_button_prev" href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});">↑ Haut de page</a>
+            <a class="a_button_prev" href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});">
+                <i class="fa-solid fa-arrow-up"></i>
+                <span>{{ page.prevLink.name }}</span>
+            </a>
         {% endif %}
         {% if page.nextLink %}
-            <a class="a_button_next" href="{{ page.nextLink.id }}">{{ page.nextLink.name }} →</a>
+            <a class="a_button_next" href="{{ page.nextLink.id }}">
+                <span>{{ page.nextLink.name }}</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
         {% endif %}
     </div>
 </section>
