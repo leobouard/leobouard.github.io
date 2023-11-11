@@ -337,15 +337,9 @@ footer {
 
 // MENU
 
-.menu:hover, .menu:focus-within {
-
-    .submenu {
-        display: block;
-    }
-
-    h1 {
-        color: var(--secondary)
-    }
+.menu:hover > .submenu,
+.menu:focus-within > .submenu {
+    display: block;
 }
 
 .submenu {
