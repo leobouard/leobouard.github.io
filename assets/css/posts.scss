@@ -229,13 +229,13 @@ div.summary > span {
     border: 1px solid var(--primary);
 }
 
-.bottom-buttons > a:first-child {
-    color: var(--primary);
-}
-
 .bottom-buttons > a:last-child {
     color: var(--textbg);
     background-color: var(--primary);
+}
+
+.bottom-buttons > a:first-child {
+    color: var(--primary);
 }
 
 // SIDE BUTTONS
