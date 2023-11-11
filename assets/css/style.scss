@@ -345,13 +345,15 @@ footer {
 .submenu {
     display: none;
     background: var(--textbg);
-    position: fixed;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
     height: 100%;
     list-style: none;
 
     li {
-        border-collapse: collapse;
-        border-bottom: var(--border);
-        border-top: var(--border);
+        padding: 1em;
+        text-align: right;
     }
 }
