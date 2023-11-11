@@ -222,7 +222,7 @@ div.summary > span {
 // BOTTOM BUTTONS ONLY
 
 .bottom-buttons {
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
 .bottom-buttons > a { 
@@ -356,7 +356,8 @@ section.recommandation > span > img {
 
     .top-buttons,
     .bottom-buttons {
-        margin: 0 -1em;
+        margin-left: -1em;
+        margin-right: -1em;
     }
 
     .top-buttons > a > span,
