@@ -209,6 +209,10 @@ div.summary > span {
 
 // TOP BUTTONS ONLY
 
+.top-buttons {
+    margin-bottom: 3em;
+}
+
 .top-buttons > a {
     color: var(--title);
     border: var(--border);
