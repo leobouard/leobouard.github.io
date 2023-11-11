@@ -65,7 +65,7 @@ header {
         border-radius: var(--borderradius);
     }
 
-    nav a:hover, nav .menu {
+    nav a:hover {
         color: var(--text);
         background: rgba(0,0,0,.1);
     }
