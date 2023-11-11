@@ -337,7 +337,8 @@ footer {
 
 // MENU
 
-.menu:focus-within > .submenu {
+.menu:focus-within > .submenu,
+.menu:hover > .submenu {
     display: block;
 }
 
