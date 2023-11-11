@@ -345,7 +345,8 @@ footer {
 .submenu {
     display: none;
     background: var(--textbg);
-    position: absolute;
+    position: fixed;
+    z-index: 1000;
     padding-top: 3em;
     top: 0;
     right: 0;
