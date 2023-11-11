@@ -308,6 +308,14 @@ footer {
     header > nav > a:first-child > span {
         display: none;
     }
+
+    .horizontal-menu {
+        display: none;
+    }
+
+    .vertical-menu {
+        display: inline;
+    }
 }
 
 @media print {
@@ -337,12 +345,12 @@ footer {
 
 // MENU
 
-.menu {
-    display: inline;
+.vertical-menu {
+    display: none;
 }
 
-.menu:focus-within > .submenu,
-.menu:hover > .submenu {
+.vertical-menu:focus-within > .submenu,
+.vertical-menu:hover > .submenu {
     display: block;
 }
 
@@ -351,7 +359,7 @@ footer {
     padding-top: 3em;
     background: var(--textbg);
     position: fixed;
-    z-index: 1000;
+    z-index: 10;
     top: 0;
     right: 0;
     margin: 0;
