@@ -83,6 +83,36 @@ header {
     nav a.home span {
         margin-left: 5px;
     }
+
+    // MENU
+
+    .vertical-menu {
+        display: none;
+    }
+
+    .vertical-menu:focus-within > .submenu,
+    .vertical-menu:hover > .submenu {
+        display: block;
+    }
+
+    .submenu {
+        display: none;
+        padding-top: 3em;
+        background: var(--textbg);
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        margin: 0;
+        height: 100%;
+        list-style: none;
+        box-shadow: 0 0 5px 0 var(--boxshadow);
+
+        li {
+            padding: 1em;
+            text-align: right;
+        }
+    }
 }
 
 main {
@@ -340,35 +370,5 @@ footer {
     
     footer {
         display: none;
-    }
-}
-
-// MENU
-
-.vertical-menu {
-    display: none;
-}
-
-.vertical-menu:focus-within > .submenu,
-.vertical-menu:hover > .submenu {
-    display: block;
-}
-
-.submenu {
-    display: none;
-    padding-top: 3em;
-    background: var(--textbg);
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: 0;
-    margin: 0;
-    height: 100%;
-    list-style: none;
-    box-shadow: 0 0 5px 0 var(--boxshadow);
-
-    li {
-        padding: 1em;
-        text-align: right;
     }
 }
