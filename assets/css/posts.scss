@@ -188,26 +188,26 @@ div.summary > span {
     color: var(--text);
 }
 
-.div_topnav_buttons, .div_bottomnav_buttons {
+.top-buttons, .bottom-buttons {
     display: flex;
     justify-content: space-between;
 }
 
-.div_bottomnav_buttons {
+.bottom-buttons {
     margin-top: 4em;
 }
 
-.div_topnav_buttons > a , .div_bottomnav_buttons > a {
+.top-buttons > a , .bottom-buttons > a {
     padding: 6px 15px;
     border-radius: var(--borderradius);
 }
 
-.div_topnav_buttons > a {
+.top-buttons > a {
     color: var(--title);
     border: var(--border);
 }
 
-.div_topnav_buttons > a:hover {
+.top-buttons > a:hover {
     background-color: var(--bodybg);
     color: var(--text);
 }
@@ -218,7 +218,7 @@ div.summary > span {
     align-items: center;
 }
 
-.div_bottomnav_buttons > a { 
+.bottom-buttons > a { 
     border: 1px solid #6b70b5;
 }
 
@@ -240,13 +240,13 @@ div.summary > span {
     color: #fff;
 }
 
-div.side_buttons {
+.side-buttons {
     position: fixed;
     margin-left: -6em;
     margin-top: -2.3em;
 }
 
-div.side_buttons > a {
+.side-buttons > a {
     display: flex;
     aspect-ratio: 1;
     background-color: var(--textbg);
@@ -260,7 +260,7 @@ div.side_buttons > a {
     box-shadow: 0px 0px 5px 0px #00000030;
 }
 
-div.side_buttons > a:hover {
+.side-buttons > a:hover {
     background-color: var(--accentbg);
     text-decoration: none;
     color: var(--text);
@@ -304,7 +304,7 @@ section.recommandation > span > img {
 
 @media screen and (max-width: 950px) {
 
-    div.side_buttons {
+    side-buttons {
         margin-left: 0;
         margin-top: 0;
         bottom: 0;
