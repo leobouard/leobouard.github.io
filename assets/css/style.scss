@@ -55,7 +55,7 @@ header {
         justify-content: space-between;
     }
 
-    nav a {
+    nav a, nav .menu {
         color: var(--title);
         font-weight: bold;
         margin: 5px 0px;
@@ -65,7 +65,7 @@ header {
         border-radius: var(--borderradius);
     }
 
-    nav a:hover {
+    nav a:hover, nav .menu {
         color: var(--text);
         background: rgba(0,0,0,.1);
     }
@@ -337,6 +337,10 @@ footer {
 
 // MENU
 
+.menu {
+    display: inline;
+}
+
 .menu:focus-within > .submenu,
 .menu:hover > .submenu {
     display: block;
@@ -347,7 +351,6 @@ footer {
     background: var(--textbg);
     position: fixed;
     z-index: 1000;
-    padding-top: 3em;
     top: 0;
     right: 0;
     margin: 0;
