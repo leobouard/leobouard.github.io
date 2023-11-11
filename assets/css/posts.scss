@@ -188,14 +188,12 @@ div.summary > span {
     color: var(--text);
 }
 
+// TOP & BOTTOM BUTTONS FOR NEXT & PREVIOUS
+
 .top-buttons,
 .bottom-buttons {
     display: flex;
     justify-content: space-between;
-}
-
-.bottom-buttons {
-    margin-top: 4em;
 }
 
 .top-buttons > a ,
@@ -209,6 +207,8 @@ div.summary > span {
     margin: 0px 5px;
 }
 
+// TOP BUTTONS ONLY
+
 .top-buttons > a {
     color: var(--title);
     border: var(--border);
@@ -219,34 +219,26 @@ div.summary > span {
     color: var(--text);
 }
 
-.a_button_prev,
-.a_button_next {
-    border-radius: var(--borderradius);
-    display: inline-flex;
-    align-items: center;
+// BOTTOM BUTTONS ONLY
+
+.bottom-buttons {
+    margin-top: 4em;
 }
 
 .bottom-buttons > a { 
-    border: 1px solid #6b70b5;
+    border: 1px solid var(--primary);
 }
 
-.a_button_prev {
-    background-color: #fff;
-    color: #6B70B5;
+.bottom-buttons > a:first-child {
+    color: var(--primary);
 }
 
-.a_button_prev:hover {
-    color: #6B70B5;
+.bottom-buttons > a:last-child {
+    color: var(--textbg);
+    background-color: var(--primary);
 }
 
-.a_button_next {
-    background-color: #6B70B5;
-    color: #fff;
-}
-
-.a_button_next:hover {
-    color: #fff;
-}
+// SIDE BUTTONS
 
 .side-buttons {
     position: fixed;

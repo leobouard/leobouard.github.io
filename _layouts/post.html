@@ -41,18 +41,18 @@ layout: default
     {{ content }}
     <div class="bottom-buttons">
         {% if page.prevLink %}
-            <a class="a_button_prev" href="{{ page.prevLink.id }}">
+            <a href="{{ page.prevLink.id }}">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>{{ page.prevLink.name }}</span>
             </a>
         {% else %}
-            <a class="a_button_prev" href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});">
+            <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});">
                 <i class="fa-solid fa-arrow-up"></i>
                 <span>Haut de page</span>
             </a>
         {% endif %}
         {% if page.nextLink %}
-            <a class="a_button_next" href="{{ page.nextLink.id }}">
+            <a href="{{ page.nextLink.id }}">
                 <span>{{ page.nextLink.name }}</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
