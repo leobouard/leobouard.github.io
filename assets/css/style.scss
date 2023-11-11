@@ -351,6 +351,7 @@ footer {
     margin: 0;
     height: 100%;
     list-style: none;
+    box-shadow: 0 0 5px 0 var(--boxshadow);
 
     li {
         padding: 1em;
