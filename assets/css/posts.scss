@@ -188,7 +188,8 @@ div.summary > span {
     color: var(--text);
 }
 
-.top-buttons, .bottom-buttons {
+.top-buttons,
+.bottom-buttons {
     display: flex;
     justify-content: space-between;
     margin: 0 -1em;
@@ -198,22 +199,26 @@ div.summary > span {
     margin-top: 4em;
 }
 
-.top-buttons > a , .bottom-buttons > a {
-    padding: 6px 15px;
+.top-buttons > a ,
+.bottom-buttons > a {
+    padding: 5px 10px;
     border-radius: var(--borderradius);
 }
 
-.top-buttons > a {
+.top-buttons > a
+.bottom-buttons > a {
     color: var(--title);
     border: var(--border);
 }
 
-.top-buttons > a:hover {
+.top-buttons > a:hover,
+.bottom-buttons > a:hover {
     background-color: var(--bodybg);
     color: var(--text);
 }
 
-.a_button_prev, .a_button_next {
+.a_button_prev,
+.a_button_next {
     border-radius: var(--borderradius);
     display: inline-flex;
     align-items: center;
@@ -355,7 +360,8 @@ section.recommandation > span > img {
         font-size: x-large;
     }
 
-    .top-buttons > a > span, .bottom-buttons > a > span {
+    .top-buttons > a > span,
+    .bottom-buttons > a > span {
         display: none;
     }
 }
