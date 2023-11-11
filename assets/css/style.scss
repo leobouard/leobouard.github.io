@@ -73,7 +73,7 @@ header {
     nav a.home {
         font-family: 'Kanit', sans-serif;
         font-weight: 700;
-        font-size: 22px;
+        font-size: 1.5em;
     }
 
     nav a.home:hover {
@@ -88,6 +88,10 @@ header {
 // MENU
 .vertical-menu {
     display: none;
+}
+
+.vertical-menu {
+    font-size: 1.5em;
 }
 
 .vertical-menu:focus-within > .submenu,
