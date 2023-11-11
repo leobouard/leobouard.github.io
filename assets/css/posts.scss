@@ -204,6 +204,11 @@ div.summary > span {
     border-radius: var(--borderradius);
 }
 
+.top-buttons > a > i,
+.bottom-buttons > a > i {
+    margin: 0px 5px;
+}
+
 .top-buttons > a {
     color: var(--title);
     border: var(--border);
