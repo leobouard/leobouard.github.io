@@ -343,10 +343,11 @@ footer {
         display: block;
     }
 
-
+    h1 {
+        color: var(--secondary)
+    }
 }
 
 .submenu {
-
     display: none;
 }
