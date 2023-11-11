@@ -354,4 +354,8 @@ section.recommandation > span > img {
     div.postBanner > h1 {
         font-size: x-large;
     }
+
+    .top-buttons > a > span, .bottom-buttons > a > span {
+        display: none;
+    }
 }
