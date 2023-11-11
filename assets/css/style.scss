@@ -172,7 +172,9 @@ main {
         background-image: url(/assets/images/quote-solid.svg);
     }
 
-    pre, code, blockquote {
+    pre,
+    code,
+    blockquote {
         font-family: 'Martian Mono', monospace;
         font-size: 11px;
         background-position: center right;
@@ -204,14 +206,19 @@ main {
         .mi           { color: #01633F; } /*Entiers*/ 
     }
 
-    p > code, li > code, main table > tbody > tr > td > code {
+    p > code,
+    li > code,
+    main table > tbody > tr > td > code {
         border-radius: var(--borderradius);
         background-color: var(--accentbg);
         padding: 2px;
         border: var(--border);
     }
 
-    table, td, tr, th {
+    table,
+    td,
+    tr,
+    th {
         border: var(--border);
         padding: 10px;
         border-collapse: collapse;
@@ -280,7 +287,8 @@ footer {
         margin: 1rem;
     }
 
-    header, section { 
+    header,
+    section { 
         margin: auto;
         max-width: 950px;
     }
