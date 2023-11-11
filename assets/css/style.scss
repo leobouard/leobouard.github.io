@@ -102,6 +102,8 @@ header {
 .submenu {
     display: none;
     padding-top: 3em;
+    padding-bottom: 3em;
+    padding-inline-start: 0;
     background: var(--textbg);
     position: fixed;
     z-index: 10;
