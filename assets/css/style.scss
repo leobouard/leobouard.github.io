@@ -334,3 +334,19 @@ footer {
         display: none;
     }
 }
+
+// MENU
+
+.menu:hover, .menu:focus-within {
+
+    .submenu {
+        display: block;
+    }
+
+
+}
+
+.submenu {
+
+    display: none;
+}
