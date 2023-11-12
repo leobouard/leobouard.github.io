@@ -11,14 +11,12 @@ prevLink:
   id: "/2023/09/17/cours-msgraph-002"
 ---
 
-## Qu'est-ce que Microsoft Graph ?
+## Versions d'API
 
-### Possibilités
+### V1.0
 
-Possibilités de requêter dans n'importe quel language
+### BETA
 
-### Utilisation via PowerShell
+## Permissions et étendues (scope)
 
-Installation des modules
-
-### 
+### Consentement

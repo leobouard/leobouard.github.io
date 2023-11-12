@@ -76,6 +76,35 @@ Vous pouvez également utiliser Postman pour effectuer votre requête :
 
 ![Exemple de requête via Postman](/assets/images/postman-001.png)
 
+<!--
+## Questions
+
+**Qu’est-ce qu’une API ?**
+
+- [x] Une interface de programmation d’application
+- [ ] Un langage de programmation
+- [ ] Un système d’exploitation
+
+**Quel est le rôle principal d’une API ?**
+
+- [x] Faciliter la communication entre deux logiciels
+- [ ] Créer des interfaces utilisateur
+- [ ] Stocker des données
+
+**Quels sont les types courants de requêtes HTTP utilisées dans les API REST ?**
+
+- [x] GET, POST, DELETE
+- [ ] GET, SET, REMOVE
+- [ ] READ, WRITE, ERASE
+
+**Qu’est-ce que JSON dans le contexte d’une API ?**
+
+- [x] Un format pour envoyer et recevoir des données
+- [ ] Un protocole de transfert de données
+- [ ] Un type de base de données**
+
+-->
+
 ## Exercice pratique
 
 Nous allons mettre en pratique les différents éléments abordés dans un exercice utilisant une API RESTful très simple à utiliser. L'idée de cet exercice est de faire des requêtes `GET` depuis PowerShell ou un client (comme Postman) sur une API simple et ouverte à tous.

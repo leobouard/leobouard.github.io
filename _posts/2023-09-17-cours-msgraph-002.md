@@ -86,36 +86,36 @@ Toutes les informations sur les paramètres de requêtes généraux pour Microso
 
 ### Authentification
 
-Je ne vais pas développer cette partie pour l'instant puisque l'authentification sur Microsoft Graph se fait de manière plutôt transparente à la fois sur Microsoft Graph Explorer et en PowerShell.
+Je ne vais pas développer cette partie pour l'instant puisque l'authentification sur Microsoft Graph se fait de manière plutôt transparente à la fois sur Microsoft Graph Explorer (via une simple connexion avec votre compte) et en PowerShell via les modules dédiés et la commande `Connect-MgGraph`.
 
-Sachez simplement que Microsoft Graph est une API web **protégée** et qui donc n'est pas accessible à n'importe qui. Si vous voulez accéder aux données de votre tenant, il faudra donc vous authentifier.
+Sachez simplement que Microsoft Graph est une API web **protégée** et qui donc n'est pas accessible à n'importe qui. Si vous voulez accéder aux données de votre tenant, il faudra donc vous authentifier avec votre compte ou via une application en obtenant un jeton (token)) que vous ajouterez dans l'entête (header) de vos requêtes API. Si vous voulez faire les curieux et comprendre comment fonctionne l'authentification sur une API de manière générale, vous pouvez vous amuser avec [l'API de la NASA](https://api.nasa.gov/).
 
-Si vous voulez faire les curieux et comprendre comment fonctionne l'authentification sur une API, vous pouvez vous amuser avec [l'API de la NASA](https://api.nasa.gov/).
+Sinon, voici un exemple de code PowerShell pour s'authentifier et faire une requête sans utiliser le module Microsoft Graph :
 
----
+```powershell
+# Get token
+$tenantID       = '************'
+$clientID       = '************'
+$clientSecret   = '************' | ConvertTo-SecureString
 
-## Questions
+# Create a hashtable for the body, the data needed for the token request
+$body = @{
+    'tenant'        = $tenantID
+    'client_id'     = $clientID
+    'scope'         = "https://graph.microsoft.com/.default"
+    'client_secret' = $clientSecret
+    'grant_type'    = "client_credentials"
+}
+# Assemble a hashtable for splatting parameters, for readability
+$params = @{
+    'Uri'           = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token"
+    'Method'        = 'Post'
+    'Body'          = $body
+    'ContentType'   = 'application/x-www-form-urlencoded'
+}
+$authResponse = Invoke-RestMethod @params
+$headers = @{'Authorization' = "Bearer $($authResponse.access_token)"}
 
-**Qu’est-ce qu’une API ?**
-
-- [x] Une interface de programmation d’application
-- [ ] Un langage de programmation
-- [ ] Un système d’exploitation
-
-**Quel est le rôle principal d’une API ?**
-
-- [x] Faciliter la communication entre deux logiciels
-- [ ] Créer des interfaces utilisateur
-- [ ] Stocker des données
-
-**Quels sont les types courants de requêtes HTTP utilisées dans les API REST ?**
-
-- [x] GET, POST, DELETE
-- [ ] GET, SET, REMOVE
-- [ ] READ, WRITE, ERASE
-
-**Qu’est-ce que JSON dans le contexte d’une API ?**
-
-- [x] Un format pour envoyer et recevoir des données
-- [ ] Un protocole de transfert de données
-- [ ] Un type de base de données**
+# Make an API request
+Invoke-RestMethod -Method GET -Headers $headers -Uri 'https://graph.microsoft.com/v1.0/...'
+```
