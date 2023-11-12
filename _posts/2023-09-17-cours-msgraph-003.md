@@ -1,7 +1,7 @@
 ﻿---
 layout: post
-title: "MSGRAPH #3"
-description: "???"
+title: "MSGRAPH #3 - L'API Microsoft Graph"
+description: "Les spécificités de l'API web de Microsoft"
 tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
   name: "Partie 4"
