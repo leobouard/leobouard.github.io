@@ -1,7 +1,7 @@
 ﻿---
 layout: post
-title: "MSGRAPH #4 - Explorer et modules PowerShell"
-description: "Commencer les requêtes via Microsoft Graph Explorer et les modules PowerShell dédiés"
+title: "MSGRAPH #4 - Les modules PowerShell"
+description: "Travailler avec Microsoft Graph en PowerShell via les modules dédiés"
 tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
   name: "Partie 5"

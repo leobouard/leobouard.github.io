@@ -38,7 +38,6 @@ Pour réaliser les exercices pratiques, vous devrez avoir accès à un tenant Mi
 
 <!--
 
-
 ## Présentation de Microsoft Graph
 
 ### Produits supportés
@@ -63,23 +62,5 @@ Il est possible de continuer à utiliser Microsoft Graph via des modules PowerSh
 Install-Module -Name 'Microsoft.Graph'
 Get-InstalledModule 
 ```
-
-Cependant, ces modules sont de plutôt mauvaise qualité car ils ont été générés automatiquement par Microsoft en se basant sur l'API.
-
-- les commandes peuvent changer de nom d'une version à l'autre (voir même disparaitre) : quatre sous-modules ont été supprimés entre la version 1.28.0 et la version 2.2.0
-- la documentation associée aux commandes PowerShell est de bien moins bonne qualité de la documentation de l'API
-- les commandes PowerShell ne retournent pas toujours le même résultat qu'une requête sur l'API correspondante
-- les paramètres de commandes sont génériques et n'ont pas été pensés pour la praticité
-
-Exemple de la commande la plus longue en version 2.2.0 : `Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDeviceIdCount`
-
-## Liens utiles
-
-- [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
-- [Paramètres de requêtes](https://learn.microsoft.com/fr-fr/graph/query-parameters?tabs=http)
-- [Correspondance MSOnline/AzureAD vers MSGraph](https://learn.microsoft.com/en-us/powershell/microsoftgraph/azuread-msoline-cmdlet-map?view=graph-powershell-1.0)
-- [Liste complète de toutes les API v1.0](https://learn.microsoft.com/fr-fr/graph/api/overview?view=graph-rest-1.0)
-- [Parcours de formation Microsoft Graph Fundamentals](https://learn.microsoft.com/en-us/training/paths/m365-msgraph-fundamentals/)
-- [Extension Edge/Chrome pour récupérer des requêtes Graph](https://microsoftedge.microsoft.com/addons/detail/graph-xray/oplgganppgjhpihgciiifejplnnpodak)
 
 -->
