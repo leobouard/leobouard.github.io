@@ -24,7 +24,7 @@
 
 html {
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     height: 100%;
     letter-spacing: 0.25px;
@@ -55,7 +55,7 @@ header {
         justify-content: space-between;
     }
 
-    nav a {
+    nav a, nav .menu {
         color: var(--title);
         font-weight: bold;
         margin: 5px 0px;
@@ -73,7 +73,7 @@ header {
     nav a.home {
         font-family: 'Kanit', sans-serif;
         font-weight: 700;
-        font-size: 22px;
+        font-size: 1.5em;
     }
 
     nav a.home:hover {
@@ -82,6 +82,44 @@ header {
 
     nav a.home span {
         margin-left: 5px;
+    }
+}
+
+// MENU
+.vertical-menu {
+    display: none;
+}
+
+.vertical-menu > i {
+    font-size: 1.5em;
+}
+
+.vertical-menu:focus-within > .submenu,
+.vertical-menu:hover > .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-inline-start: 0;
+    background: var(--accentbg);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 100%;
+    min-width: 50vw;
+    opacity: 0.95;
+    list-style: none;
+    box-shadow: 0 0 5px 0 var(--boxshadow);
+
+    li {
+        padding: 1em;
+        text-align: right;
+        border-top: var(--border);
     }
 }
 
@@ -96,7 +134,7 @@ main {
         min-height: 85%;
         background-color: var(--textbg);
         border-radius: var(--borderradius);
-        padding: 30px;
+        padding: 2rem;
         max-width: 950px;
         width: -moz-available;          /* WebKit-based browsers will ignore this. */
         width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
@@ -119,13 +157,16 @@ main {
         text-underline-offset: 1px;
     }
 
-    h1, h2, h3, h4, h5 {
+    h2, h3, h4, h5 {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        margin: 2em 0px 1em 0px;
         color: var(--title);
     }
 
     h1 {
         font-family: 'Manrope', sans-serif;
-        font-size: xx-large;
+        font-size: 2.5em;
         font-weight: 800;
         line-height: 100%;
         margin: 15px 0px;
@@ -134,12 +175,19 @@ main {
     h2 {
         border-bottom: var(--border);
         padding-bottom: 5px;
+        font-size: 1.75em;
     }
 
-    h2, h3, h4, h5 {
-        font-family: 'Manrope', sans-serif;
-        font-weight: 700;
-        margin: 2em 0px 1em 0px;
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    h4 {
+        font-size: 1.25em;
+    }
+
+    h5 {
+        font-size: 1.10em;
     }
 
     img {
@@ -159,11 +207,18 @@ main {
         border-radius: var(--borderradius);
         margin-inline: 0;
         padding: 5px 15px;
+        background-image: url(/assets/images/quote-solid.svg);
     }
 
-    pre, code, blockquote {
+    pre,
+    code,
+    blockquote {
         font-family: 'Martian Mono', monospace;
         font-size: 11px;
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-blend-mode: soft-light;
+        background-size: 10em;
     }
 
     pre {
@@ -173,6 +228,7 @@ main {
         padding: 10px;
         overflow-x: auto;
         overflow-y: hidden;
+        background-image: url(/assets/images/code-solid.svg);
     }
 
     pre > code {
@@ -188,14 +244,19 @@ main {
         .mi           { color: #01633F; } /*Entiers*/ 
     }
 
-    p > code, li > code, main table > tbody > tr > td > code {
+    p > code,
+    li > code,
+    main table > tbody > tr > td > code {
         border-radius: var(--borderradius);
         background-color: var(--accentbg);
         padding: 2px;
         border: var(--border);
     }
 
-    table, td, tr, th {
+    table,
+    td,
+    tr,
+    th {
         border: var(--border);
         padding: 10px;
         border-collapse: collapse;
@@ -262,10 +323,10 @@ footer {
         min-height: 80%;
         overflow-x: scroll;
         margin: 1rem;
-        padding: 1rem;
     }
 
-    header, section { 
+    header,
+    section { 
         margin: auto;
         max-width: 950px;
     }
@@ -277,8 +338,21 @@ footer {
 
 @media screen and (max-width: 550px) {
 
+    main section {
+        margin: 0;
+        border-radius: 0;
+    }
+
     header > nav > a:first-child > span {
         display: none;
+    }
+
+    .horizontal-menu {
+        display: none;
+    }
+
+    .vertical-menu {
+        display: inline;
     }
 }
 

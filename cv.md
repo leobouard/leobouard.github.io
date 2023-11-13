@@ -33,7 +33,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         </div>
     </div>
     <div class="skill">
-        <span>Azure AD</span>
+        <span>Entra ID</span>
         <div class="progressBar">
             <div class="progressBarContent" style="width: 70%;"></div>
         </div>
@@ -92,17 +92,16 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>METSYS</h3>
-                <span>Depuis 2018</span><br>
-                <span>Rennes, Ille-et-Vilaine (35)</span>
+                <span>Depuis 2018 • Rennes, Ille-et-Vilaine (35)</span>
             </div>
         </div>
         <div>
             <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
         </div>
         <div class="experience">
-            <h4>Lead consultant</h4>
+            <h4>Responsable d'équipe</h4>
             <small>depuis septembre 2021</small>
-            <p>Référent technique sur PowerShell et gestion d'une équipe de 5 personnes.<br>Mes différentes missions sont :
+            <p>Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.<br>Mes différentes missions sont :
             <ul>
                 <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels</li>
                 <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
@@ -111,7 +110,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </ul></p>
         </div>
         <div class="experience">
-            <h4>Associate consultant</h4>
+            <h4>Consultant</h4>
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
             <p>Membre de l'unité "Infrastructure et services".<br>Spécialisé sur Active Directory, PowerShell et Microsoft 365.</p>
         </div>
@@ -124,8 +123,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>Groupe Roullier</h3>
-                <span>Depuis 2019</span><br>
-                <span>Dinard, Ille-et-Vilaine (35)</span>
+                <span>Depuis 2019 • Dinard, Ille-et-Vilaine (35)</span>
             </div>
         </div>
         <div>
@@ -177,8 +175,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>GEVES</h3>
-                <span>De 2017 à 2018</span><br>
-                <span>Beaucouzé, Maine-et-Loire (49)</span>
+                <span>De 2017 à 2018 • Beaucouzé, Maine-et-Loire (49)</span>
             </div>
         </div>
         <div>
@@ -208,18 +205,17 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             </div>
             <div>
                 <h3>IUT de La Roche-sur-Yon</h3>
-                <span>De 2015 à 2018</span><br>
-                <span>La Roche-sur-Yon, Vendée (85)</span>
+                <span>De 2015 à 2018 • La Roche-sur-Yon, Vendée (85)</span>
             </div>
         </div>
         <div class="experience">
             <h4>Licence professionnelle A2SR</h4>
-            <small>2017 à 2018</small>
+            <small>Promotion 2017-2018</small>
             <p>Licence professionnelle administration et sécurité des systèmes et des réseaux.<br>Alternance au GEVES en tant qu'administrateur système.</p>
         </div>
         <div class="experience">
             <h4>DUT réseaux et télécommunications</h4>
-            <small>2015 à 2017</small>
+            <small>Promotion 2015-2017</small>
             <p>Projet tutoré : initiation de lycéens à la cybersécurité avec des ateliers de sensibilisation et des travaux pratiques.<br>Stage de fin d'année au GEVES en tant qu'administrateur système.</p>
         </div>
     </div>

@@ -94,7 +94,7 @@ Version courte à 54 caractères : `(25..1|%{date -Day $_|?{$_.DayOfWeek-notlike
 
 ## Utilisation du modulo
 
-Trouvé par [@Ludovic Morin](https://www.linkedin.com/in/ludovic-morin-193a44144/).
+*Trouvé par [@Ludovic Morin](https://www.linkedin.com/in/ludovic-morin-193a44144/).*
 
 On se base sur la version avec la boucle `do/until`, mais on modifie la condition de sortie pour quelque chose de plus exotique :
 

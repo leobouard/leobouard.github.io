@@ -1,7 +1,7 @@
 ﻿---
 layout: post
-title: "Cours MSGraph #3"
-description: "???"
+title: "MSGRAPH #3 - Microsoft Graph Explorer"
+description: "Prendre en main efficacement l'outil web de requête d'API"
 tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
 nextLink:
   name: "Partie 4"
@@ -11,14 +11,18 @@ prevLink:
   id: "/2023/09/17/cours-msgraph-002"
 ---
 
-## Qu'est-ce que Microsoft Graph ?
+## Microsoft Graph Explorer
 
-### Possibilités
+### Lancer Microsoft Graph Explorer
 
-Possibilités de requêter dans n'importe quel language
+### Se connecter à votre tenant
 
-### Utilisation via PowerShell
+### Créer un utilisateur (POST)
 
-Installation des modules
+### Rechercher un utilisateur (GET)
 
-### 
+### Mettre à jour un utilisateur (PATCH)
+
+### Supprimer un utilisateur (DELETE)
+
+### Passage en version BETA
