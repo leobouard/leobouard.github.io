@@ -144,10 +144,12 @@ Cependant, pour les étendues limitées à votre seule personne; il n'y a pas be
 
 ## Versions d'API
 
-Microsoft travaille de manière continue pour ajouter des nouvelles API à Microsoft Graph.
+Microsoft propose deux versions distinctes de Microsoft Graph en simultané : la **version v1.0** (stable) et la **version beta** (développement).
 
-### Passage de l'un à l'autre
+La version v1.0 est la version stable et est recommandée pour une utilisation en production. Elle est soutenue par Microsoft, ce qui signifie que Microsoft s’engage à ne pas rompre le contrat d’API et à maintenir les services derrière elle opérationnels. Si vous écrivez des scripts destinés à la production, il est recommandé de toujours utiliser Microsoft Graph v1.0.
 
-### V1.0
+La version beta, en revanche, est là où Microsoft rend disponibles de nouvelles fonctionnalités pour obtenir des retours. Elle expose de nouvelles propriétés qui ne sont pas encore disponibles en production. Cependant, l’utilisation de ces API dans des applications de production n’est pas recommandée car elles sont susceptibles de changer. Dans la théorie, vous n'êtes pas censé utiliser la version beta pour faire vos scripts, mais dans la réalité vous n'avez parfois pas le choix.
 
-### BETA
+L'écart entre la version v1.0 et la version beta tant à se réduire, avec de plus en plus de propriétés qui sont portés du développement vers le stable.
+
+Le passage de l'un à l'autre se fait très simplement et on verra le côté technique en détail dans la [partie 3](2023/09/17/cours-msgraph-003) et la partie 4](2023/09/17/cours-msgraph-004)).
