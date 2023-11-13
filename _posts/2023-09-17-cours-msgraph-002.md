@@ -11,6 +11,14 @@ prevLink:
   id: "/2023/09/17/cours-msgraph-001"
 ---
 
+## Contexte
+
+Microsoft doit gérer et maintenir de très nombreux produits cloud et a une volonté de rationnaliser et automatiser au maximum, réduire les coûts et améliorer la sécurité/qualité/maintenance de ses produits. La solution qui a été choisie par Microsoft est de faire reposer l'intégralité des interfaces (console web et ligne de commande) sur une API REST : Microsoft Graph.
+
+Microsoft Graph est donc un point de terminaison unique pour administrer la plupart des produits cloud de Microsoft. Il reste encore quelques produits qui reposent sur des API différentes, mais l'objectif est de tout centraliser à terme sur cette interface.
+
+Ainsi, lorsque vous faites une action depuis le portail Azure ou depuis la console Entra ID, ce sont des appels API qui sont executés. Une extension de navigateur permet d'ailleurs de capter facilement quelle API a été utilisée : - [Graph XRay](https://microsoftedge.microsoft.com/addons/detail/graph-xray/oplgganppgjhpihgciiifejplnnpodak)
+
 ## Pagination
 
 L'un des objectifs de n'importe quelle API est de pouvoir interagir avec de la donnée le plus rapidement possible. Pour cela, la plupart des API REST utilisent un principe de pagination : toutes les données ne sont pas disponibles dès la première requête : il va falloir faire défiler les pages.
@@ -140,11 +148,9 @@ Cependant, pour les étendues limitées à votre seule personne; il n'y a pas be
 
 ## Versions d'API
 
-Microsoft travaille de manière continue pour ajouter des nouvelles API à Microsoft Graph. Pour permettre 
+Microsoft travaille de manière continue pour ajouter des nouvelles API à Microsoft Graph.
 
 ### Passage de l'un à l'autre
-
-Microsoft.Graph.Beta*
 
 ### V1.0
 
