@@ -17,7 +17,7 @@ Si vous aviez l'habitude d'administrer votre tenant avec les modules `MSOnline` 
 
 ### Différences avec les anciens modules
 
-Les modules sont de moins bonne qualité que ceux qu'ils remplacent car ils ont été générés automatiquement à partir de l'API. Voici quelques points d'attention à connaître avant de commencer.
+Les modules Microsoft Graph sont assez différent des modules qu'ils remplacent. Voici quelques points d'attention à connaître avant de commencer.
 
 #### Mises à jour des modules
 
@@ -33,17 +33,19 @@ Les commandes PowerShell ne retournent parfois pas le même résultat qu'une req
 
 #### Les commandes
 
+Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes à partir de l'API. On appelle cette méthode un "wrap".
 
-Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs comme `Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause` (vu en mars 2022). Cette commande a depuis disparue des modules, cf. [Mises à jour des modules](#mises-a-jour-des-modules)
-
-- Les paramètres de commandes sont génériques et n'ont pas été pensés pour la praticité, donc il faut très régulièrement utiliser l'ID d'un utilisateur plutôt le UserPrincipalName par exemple.
-- 
-
-Vous pouvez d'ailleurs inspecter comment les commandes ont été créées en regardant le code qui les composent via la commande :
+Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toute les fonctions Microsoft Graph :
 
 ```powershell
 (Get-Command -Name 'Get-MgUser').Definition
 ```
+
+Ceci donne lieux à deux effets de bords principaux : la génération du nom des commandes et les paramètres associés.
+
+Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, ce qui impacte très fortement la lisibilité de votre code. Un exemple de mars 2022 est la commande `Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause`, qui a disparu depuis (cf. [Mises à jour des modules](#mises-a-jour-des-modules)).
+
+Les paramètres de commandes sont génériques et n'ont pas été pensés pour la praticité. Il faut très régulièrement utiliser l'ID d'un utilisateur plutôt le UserPrincipalName par exemple.
 
 ### Installer les modules
 
@@ -69,49 +71,47 @@ Get-InstalledModule -Name 'Microsoft.Graph*'
 
 Voici la liste des modules pour la version 2.8.0 :
 
-Name | Description
----- | -----------
-Microsoft.Graph | Microsoft Graph PowerShell module
-Microsoft.Graph.Applications | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Authentication | Microsoft Graph PowerShell Authentication Module.
-Microsoft.Graph.Bookings | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Calendar | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.ChangeNotifications | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.CloudCommunications | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Compliance | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.CrossDeviceExperiences | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.DeviceManagement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.DeviceManagement.Actions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.DeviceManagement.Administration | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.DeviceManagement.Enrollment | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.DeviceManagement.Functions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Devices.CloudPrint | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Devices.CorporateManagement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Devices.ServiceAnnouncement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.DirectoryObjects | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Education | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Files | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Groups | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Identity.DirectoryManagement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Identity.Governance | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Identity.Partner | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Identity.SignIns | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Mail | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Notes | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.People | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.PersonalContacts | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Planner | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Reports | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.SchemaExtensions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Search | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Security | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Sites | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Teams | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Users | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Users.Actions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Users.Functions | Microsoft Graph PowerShell Cmdlets
-
-
+Nom
+----
+Microsoft.Graph
+Microsoft.Graph.Applications
+Microsoft.Graph.Authentication
+Microsoft.Graph.Bookings
+Microsoft.Graph.Calendar
+Microsoft.Graph.ChangeNotifications
+Microsoft.Graph.CloudCommunications
+Microsoft.Graph.Compliance
+Microsoft.Graph.CrossDeviceExperiences
+Microsoft.Graph.DeviceManagement
+Microsoft.Graph.DeviceManagement.Actions
+Microsoft.Graph.DeviceManagement.Administration
+Microsoft.Graph.DeviceManagement.Enrollment
+Microsoft.Graph.DeviceManagement.Functions
+Microsoft.Graph.Devices.CloudPrint
+Microsoft.Graph.Devices.CorporateManagement
+Microsoft.Graph.Devices.ServiceAnnouncement
+Microsoft.Graph.DirectoryObjects
+Microsoft.Graph.Education
+Microsoft.Graph.Files
+Microsoft.Graph.Groups
+Microsoft.Graph.Identity.DirectoryManagement
+Microsoft.Graph.Identity.Governance
+Microsoft.Graph.Identity.Partner
+Microsoft.Graph.Identity.SignIns
+Microsoft.Graph.Mail
+Microsoft.Graph.Notes
+Microsoft.Graph.People
+Microsoft.Graph.PersonalContacts
+Microsoft.Graph.Planner
+Microsoft.Graph.Reports
+Microsoft.Graph.SchemaExtensions
+Microsoft.Graph.Search
+Microsoft.Graph.Security
+Microsoft.Graph.Sites
+Microsoft.Graph.Teams
+Microsoft.Graph.Users
+Microsoft.Graph.Users.Actions
+Microsoft.Graph.Users.Functions
 
 ### Se connecter en PowerShell
 
@@ -145,43 +145,43 @@ Invoke-MgGraphRequest
 Voici la liste des modules BETA pour la version 2.8.0 :
 
 Microsoft.Graph.Beta | Microsoft Graph PowerShell module
-Microsoft.Graph.Beta.Applications | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Bookings | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Calendar | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.ChangeNotifications | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.CloudCommunications | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Compliance | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.CrossDeviceExperiences | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.DeviceManagement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.DeviceManagement.Actions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.DeviceManagement.Administration | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.DeviceManagement.Enrollment | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.DeviceManagement.Functions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Devices.CloudPrint | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Devices.CorporateManagement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Devices.ServiceAnnouncement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.DirectoryObjects | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Education | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Files | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Financials | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Groups | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Identity.DirectoryManagement | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Identity.Governance | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Identity.Partner | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Identity.SignIns | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Mail | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.ManagedTenants | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Notes | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.People | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.PersonalContacts | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Planner | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Reports | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.SchemaExtensions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Search | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Security | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Sites | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Teams | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Users | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Users.Actions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.Users.Functions | Microsoft Graph PowerShell Cmdlets
-Microsoft.Graph.Beta.WindowsUpdates | Microsoft Graph PowerShell Cmdlets
+Microsoft.Graph.Beta.Applications
+Microsoft.Graph.Beta.Bookings
+Microsoft.Graph.Beta.Calendar
+Microsoft.Graph.Beta.ChangeNotifications
+Microsoft.Graph.Beta.CloudCommunications
+Microsoft.Graph.Beta.Compliance
+Microsoft.Graph.Beta.CrossDeviceExperiences
+Microsoft.Graph.Beta.DeviceManagement
+Microsoft.Graph.Beta.DeviceManagement.Actions
+Microsoft.Graph.Beta.DeviceManagement.Administration
+Microsoft.Graph.Beta.DeviceManagement.Enrollment
+Microsoft.Graph.Beta.DeviceManagement.Functions
+Microsoft.Graph.Beta.Devices.CloudPrint
+Microsoft.Graph.Beta.Devices.CorporateManagement
+Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Microsoft.Graph.Beta.DirectoryObjects
+Microsoft.Graph.Beta.Education
+Microsoft.Graph.Beta.Files
+Microsoft.Graph.Beta.Financials
+Microsoft.Graph.Beta.Groups
+Microsoft.Graph.Beta.Identity.DirectoryManagement
+Microsoft.Graph.Beta.Identity.Governance
+Microsoft.Graph.Beta.Identity.Partner
+Microsoft.Graph.Beta.Identity.SignIns
+Microsoft.Graph.Beta.Mail
+Microsoft.Graph.Beta.ManagedTenants
+Microsoft.Graph.Beta.Notes
+Microsoft.Graph.Beta.People
+Microsoft.Graph.Beta.PersonalContacts
+Microsoft.Graph.Beta.Planner
+Microsoft.Graph.Beta.Reports
+Microsoft.Graph.Beta.SchemaExtensions
+Microsoft.Graph.Beta.Search
+Microsoft.Graph.Beta.Security
+Microsoft.Graph.Beta.Sites
+Microsoft.Graph.Beta.Teams
+Microsoft.Graph.Beta.Users
+Microsoft.Graph.Beta.Users.Actions
+Microsoft.Graph.Beta.Users.Functions
+Microsoft.Graph.Beta.WindowsUpdates

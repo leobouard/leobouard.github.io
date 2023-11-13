@@ -57,9 +57,9 @@ $top | Définit la taille de la page de résultats
 
 URI | Description
 --- | -----------
-<https://graph.microsoft.com/v1.0/me/messages?$count=true> | Ajoute une propriété `@odata.count` pour indiquer le nombre total de messages
-<https://graph.microsoft.com/v1.0/me/messages?$top=10&$skip=10> | Récupère les messages n°10 à 20
-<https://graph.microsoft.com/v1.0/me/messages?$orderby=subject desc&$select=createdDateTime,subject,sender> | Tri des messages selon l'objet (par ordre décroissant) et limite la vue sur les propriétés `createdDateTime`, `subjet` et `sender`
+</me/messages?$count=true> | Ajoute une propriété `@odata.count` pour indiquer le nombre total de messages
+</me/messages?$top=10&$skip=10> | Récupère les messages n°10 à 20
+</me/messages?$orderby=subject desc&$select=createdDateTime,subject,sender> | Tri des messages selon l'objet (par ordre décroissant) et limite la vue sur les propriétés `createdDateTime`, `subjet` et `sender`
 
 #### Note sur les paramètres avec Microsoft Graph
 
