@@ -43,7 +43,19 @@ Vous pouvez inspecter le code qui compose une commande et constater que la struc
 
 Ceci donne lieux à deux effets de bords principaux : la génération du nom des commandes et les paramètres associés.
 
-Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, ce qui impacte très fortement la lisibilité de votre code. Un exemple de mars 2022 est la commande `Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause`, qui a disparu depuis (cf. [Mises à jour des modules](#mises-a-jour-des-modules)).
+Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, ce qui impacte très fortement la lisibilité de votre code. Voici un exemple d'une commande que j'ai trouvé en mars 2022 et qui a disparu depuis (cf. [Mises à jour des modules](#mises-a-jour-des-modules)) :
+
+```powershell
+Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause
+```
+
+Vous pouvez regarder quelle est la commande la plus longue de votre version avec ce script :
+
+```powershell
+Get-Command -Module Microsoft.Graph* |
+  Select-Object Name,Module,@{N='Length';E={($_.Name).Length}} |
+  Sort-Object Length
+```
 
 Les paramètres de commandes sont génériques et n'ont pas été pensés pour la praticité. Il faut très régulièrement utiliser l'ID d'un utilisateur plutôt le UserPrincipalName par exemple.
 
