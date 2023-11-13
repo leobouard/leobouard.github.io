@@ -45,7 +45,7 @@ Cette méthode de génération a des avantages et des inconvénients. Côté ava
 
 Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés.
 
-Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, ce qui impacte très fortement la lisibilité de votre code. Voici un exemple d'une commande que j'ai trouvé en mars 2022 et qui a disparu depuis (cf. [Mises à jour des modules](#mises-a-jour-des-modules)) :
+Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, ce qui impacte très fortement la lisibilité de votre code. Voici un exemple d'une commande que j'ai trouvé en mars 2022 et qui a disparu depuis (cf. [Mises à jour des modules](#mises-à-jour-des-modules)) :
 
 ```powershell
 Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause
