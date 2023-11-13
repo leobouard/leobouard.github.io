@@ -65,9 +65,9 @@ $top | Définit la taille de la page de résultats
 
 URI | Description
 --- | -----------
-</me/messages?$count=true> | Ajoute une propriété `@odata.count` pour indiquer le nombre total de messages
-</me/messages?$top=10&$skip=10> | Récupère les messages n°10 à 20
-</me/messages?$orderby=subject desc&$select=createdDateTime,subject,sender> | Tri des messages selon l'objet (par ordre décroissant) et limite la vue sur les propriétés `createdDateTime`, `subjet` et `sender`
+/me/messages?$count=true | Ajoute une propriété `@odata.count` pour indiquer le nombre total de messages
+/me/messages?$top=10&$skip=10 | Récupère les messages n°10 à n°20
+/me/messages?$orderby=subject desc | Tri des messages selon l'objet par ordre décroissant
 
 #### Note sur les paramètres avec Microsoft Graph
 
@@ -103,17 +103,13 @@ Si vous voulez faire les curieux et comprendre comment fonctionne l'authentifica
 Pour Microsoft Graph, voici un exemple de code PowerShell pour s'authentifier sans utiliser le module Microsoft.Graph.Authentication :
 
 ```powershell
-# Get token
-$tenantID       = '************'
-$clientID       = '************'
-$clientSecret   = '************' | ConvertTo-SecureString
-
+$tenantID = '************'
 # Create a hashtable for the body, the data needed for the token request
 $body = @{
     'tenant'        = $tenantID
-    'client_id'     = $clientID
+    'client_id'     = '************'
     'scope'         = "https://graph.microsoft.com/.default"
-    'client_secret' = $clientSecret
+    'client_secret' = '************'
     'grant_type'    = "client_credentials"
 }
 # Assemble a hashtable for splatting parameters, for readability
