@@ -13,21 +13,6 @@ prevLink:
 
 ## Microsoft Graph Explorer
 
-### Structure d'une URI
-
-Simple rappel de [la partie 1](/2023/09/17/cours-msgraph-001#uri), mais appliqué à Microsoft Graph.
-
-```
-https://graph.microsoft.com/{version}/{ressource}?{paramètres-de-requête}
-```
-
-Section | Exemples
-------- | --------
-FQDN | <https://graph.microsoft.com>
-Version | `v1.0` ou `beta`
-Ressource | `users`
-Paramètres de requête | `$count=true`
-
 ### Lancer Microsoft Graph Explorer
 
 ### Se connecter à votre tenant

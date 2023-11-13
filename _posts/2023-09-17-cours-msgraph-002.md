@@ -146,10 +146,26 @@ Cependant, pour les étendues limitées à votre seule personne; il n'y a pas be
 
 Microsoft propose deux versions distinctes de Microsoft Graph en simultané : la **version v1.0** (stable) et la **version beta** (développement).
 
+### Différences
+
 La version v1.0 est la version stable et est recommandée pour une utilisation en production. Elle est soutenue par Microsoft, ce qui signifie que Microsoft s’engage à ne pas rompre le contrat d’API et à maintenir les services derrière elle opérationnels. Si vous écrivez des scripts destinés à la production, il est recommandé de toujours utiliser Microsoft Graph v1.0.
 
 La version beta, en revanche, est là où Microsoft rend disponibles de nouvelles fonctionnalités pour obtenir des retours. Elle expose de nouvelles propriétés qui ne sont pas encore disponibles en production. Cependant, l’utilisation de ces API dans des applications de production n’est pas recommandée car elles sont susceptibles de changer. Dans la théorie, vous n'êtes pas censé utiliser la version beta pour faire vos scripts, mais dans la réalité vous n'avez parfois pas le choix.
 
 L'écart entre la version v1.0 et la version beta tant à se réduire, avec de plus en plus de propriétés qui sont portés du développement vers le stable.
 
-Le passage de l'un à l'autre se fait très simplement et on verra le côté technique en détail dans la [partie 3](2023/09/17/cours-msgraph-003) et la [partie 4](2023/09/17/cours-msgraph-004)).
+### Passage en v1.0 ou en beta
+
+Pour changer de version sur votre appel API, vous n'avez qu'à modifier l'URI de votre requête :
+
+- Version stable : <https://graph.microsoft.com/v1.0/users/>
+- Version beta : <https://graph.microsoft.com/beta/users>
+
+Si vous utilisez les commandes PowerShell, vous n'avez qu'à ajouter le prefix "Beta" à votre commande (attention : toutes les commandes ne disposent pas de leur version beta !).
+
+- Version stable : `Get-MgUser`
+- Version beta : `Get-MgBetaUser`
+
+### Dernières notes
+
+La version de l'API et la version de votre module PowerShell sont deux choses différentes ! Au moment de l'écriture, les modules Microsoft Graph sont en version 2.8.0 et fonctionnent parfaitement avec la version v1.0 de l'API.
