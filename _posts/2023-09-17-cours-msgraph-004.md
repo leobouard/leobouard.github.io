@@ -71,47 +71,47 @@ Get-InstalledModule -Name 'Microsoft.Graph*'
 
 Voici la liste des modules pour la version 2.8.0 :
 
-Nom
-----
-Microsoft.Graph
-Microsoft.Graph.Applications
-Microsoft.Graph.Authentication
-Microsoft.Graph.Bookings
-Microsoft.Graph.Calendar
-Microsoft.Graph.ChangeNotifications
-Microsoft.Graph.CloudCommunications
-Microsoft.Graph.Compliance
-Microsoft.Graph.CrossDeviceExperiences
-Microsoft.Graph.DeviceManagement
-Microsoft.Graph.DeviceManagement.Actions
-Microsoft.Graph.DeviceManagement.Administration
-Microsoft.Graph.DeviceManagement.Enrollment
-Microsoft.Graph.DeviceManagement.Functions
-Microsoft.Graph.Devices.CloudPrint
-Microsoft.Graph.Devices.CorporateManagement
-Microsoft.Graph.Devices.ServiceAnnouncement
-Microsoft.Graph.DirectoryObjects
-Microsoft.Graph.Education
-Microsoft.Graph.Files
-Microsoft.Graph.Groups
-Microsoft.Graph.Identity.DirectoryManagement
-Microsoft.Graph.Identity.Governance
-Microsoft.Graph.Identity.Partner
-Microsoft.Graph.Identity.SignIns
-Microsoft.Graph.Mail
-Microsoft.Graph.Notes
-Microsoft.Graph.People
-Microsoft.Graph.PersonalContacts
-Microsoft.Graph.Planner
-Microsoft.Graph.Reports
-Microsoft.Graph.SchemaExtensions
-Microsoft.Graph.Search
-Microsoft.Graph.Security
-Microsoft.Graph.Sites
-Microsoft.Graph.Teams
-Microsoft.Graph.Users
-Microsoft.Graph.Users.Actions
-Microsoft.Graph.Users.Functions
+| Nom |
+| --- |
+| Microsoft.Graph |
+| Microsoft.Graph.Applications |
+| Microsoft.Graph.Authentication |
+| Microsoft.Graph.Bookings |
+| Microsoft.Graph.Calendar |
+| Microsoft.Graph.ChangeNotifications |
+| Microsoft.Graph.CloudCommunications |
+| Microsoft.Graph.Compliance |
+| Microsoft.Graph.CrossDeviceExperiences |
+| Microsoft.Graph.DeviceManagement |
+| Microsoft.Graph.DeviceManagement.Actions |
+| Microsoft.Graph.DeviceManagement.Administration |
+| Microsoft.Graph.DeviceManagement.Enrollment |
+| Microsoft.Graph.DeviceManagement.Functions |
+| Microsoft.Graph.Devices.CloudPrint |
+| Microsoft.Graph.Devices.CorporateManagement |
+| Microsoft.Graph.Devices.ServiceAnnouncement |
+| Microsoft.Graph.DirectoryObjects |
+| Microsoft.Graph.Education |
+| Microsoft.Graph.Files |
+| Microsoft.Graph.Groups |
+| Microsoft.Graph.Identity.DirectoryManagement |
+| Microsoft.Graph.Identity.Governance |
+| Microsoft.Graph.Identity.Partner |
+| Microsoft.Graph.Identity.SignIns |
+| Microsoft.Graph.Mail |
+| Microsoft.Graph.Notes |
+| Microsoft.Graph.People |
+| Microsoft.Graph.PersonalContacts |
+| Microsoft.Graph.Planner |
+| Microsoft.Graph.Reports |
+| Microsoft.Graph.SchemaExtensions |
+| Microsoft.Graph.Search |
+| Microsoft.Graph.Security |
+| Microsoft.Graph.Sites |
+| Microsoft.Graph.Teams |
+| Microsoft.Graph.Users |
+| Microsoft.Graph.Users.Actions |
+| Microsoft.Graph.Users.Functions |
 
 ### Se connecter en PowerShell
 
