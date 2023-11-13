@@ -52,9 +52,9 @@ Les paramètres peuvent se combiner entre-eux et se placent directement à la fi
 Nom | Description
 --- | -----------
 $count | Compte le nombre de résultat
-$expand	| Récupère les ressources connexes
-$filter	| Filtre les résultats (lignes)
-$format	| Renvoie les résultats dans le format de média spécifié
+$expand | Récupère les ressources connexes
+$filter | Filtre les résultats (lignes)
+$format | Renvoie les résultats dans le format de média spécifié
 $orderby | Classe les résultats, ajouter "desc" pour trier dans l'ordre décroissant
 $search | Renvoie les résultats en fonction des critères de recherche
 $select | Filtre les propriétés (colonnes)
