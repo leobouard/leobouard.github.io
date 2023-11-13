@@ -13,13 +13,31 @@ prevLink:
 
 ## Microsoft Graph en PowerShell
 
-Si vous aviez l'habitude d'administrer votre tenant avec les modules `MSOnline` et `AzureAD`, cette partie est pour vous. Cependant, ces modules sont de moins bonne qualité que ceux qu'ils remplacent car ils ont été générés automatiquement à partir de l'API. Voici quelques choses à savoir avant de commencer :
+Si vous aviez l'habitude d'administrer votre tenant avec les modules `MSOnline` et `AzureAD`, cette partie est pour vous. 
 
-- Les commandes peuvent changer de nom d'une version à l'autre (voir même disparaitre). Par exemple, quatre modules (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0
-- La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base.
-- Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tant à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
+### Différences avec les anciens modules
+
+Les modules sont de moins bonne qualité que ceux qu'ils remplacent car ils ont été générés automatiquement à partir de l'API. Voici quelques points d'attention à connaître avant de commencer.
+
+#### Mises à jour des modules
+
+Les commandes peuvent changer de nom d'une version à l'autre (voir même disparaitre). Par exemple, quatre modules (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0.
+
+#### Documentation officielle
+
+La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base.
+
+#### Différences entre commandes et API
+
+Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tant à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
+
+#### Les commandes
+
+
+Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs comme `Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause` (vu en mars 2022). Cette commande a depuis disparue des modules, cf. [Mises à jour des modules](#mises-a-jour-des-modules)
+
 - Les paramètres de commandes sont génériques et n'ont pas été pensés pour la praticité, donc il faut très régulièrement utiliser l'ID d'un utilisateur plutôt le UserPrincipalName par exemple.
-- Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs comme `Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause` (vu en mars 2022). Cette commande a depuis disparue des modules.
+- 
 
 Vous pouvez d'ailleurs inspecter comment les commandes ont été créées en regardant le code qui les composent via la commande :
 
