@@ -11,12 +11,18 @@ prevLink:
   id: "/2023/09/17/cours-msgraph-002"
 ---
 
-## Versions d'API
+## Microsoft Graph Explorer
 
-### V1.0
+### Lancer Microsoft Graph Explorer
 
-### BETA
+### Se connecter à votre tenant
 
-## Permissions et étendues (scope)
+### Créer un utilisateur (POST)
 
-### Consentement
+### Rechercher un utilisateur (GET)
+
+### Mettre à jour un utilisateur (PATCH)
+
+### Supprimer un utilisateur (DELETE)
+
+### Passage en version BETA
