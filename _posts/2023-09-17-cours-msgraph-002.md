@@ -152,4 +152,4 @@ La version beta, en revanche, est là où Microsoft rend disponibles de nouvelle
 
 L'écart entre la version v1.0 et la version beta tant à se réduire, avec de plus en plus de propriétés qui sont portés du développement vers le stable.
 
-Le passage de l'un à l'autre se fait très simplement et on verra le côté technique en détail dans la [partie 3](2023/09/17/cours-msgraph-003) et la partie 4](2023/09/17/cours-msgraph-004)).
+Le passage de l'un à l'autre se fait très simplement et on verra le côté technique en détail dans la [partie 3](2023/09/17/cours-msgraph-003) et la [partie 4](2023/09/17/cours-msgraph-004)).
