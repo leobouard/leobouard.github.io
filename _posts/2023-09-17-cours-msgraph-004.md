@@ -41,7 +41,9 @@ Vous pouvez inspecter le code qui compose une commande et constater que la struc
 (Get-Command -Name 'Get-MgUser').Definition
 ```
 
-Ceci donne lieux à deux effets de bords principaux : la génération du nom des commandes et les paramètres associés.
+Cette méthode de génération a des avantages et des inconvénients. Côté avantages, les mises à jour des modules PowerShell se font très rapidement, ce qui permet d'obtenir des commandes seulement quelques jours après la publication d'une API (en théorie).
+
+Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés.
 
 Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, ce qui impacte très fortement la lisibilité de votre code. Voici un exemple d'une commande que j'ai trouvé en mars 2022 et qui a disparu depuis (cf. [Mises à jour des modules](#mises-a-jour-des-modules)) :
 
@@ -57,7 +59,7 @@ Get-Command -Module Microsoft.Graph* |
   Sort-Object Length
 ```
 
-Les paramètres de commandes sont génériques et n'ont pas été pensés pour la praticité. Il faut très régulièrement utiliser l'ID d'un utilisateur plutôt le UserPrincipalName par exemple.
+Pour les paramètres de commandes, ils sont en général très nombreux (et tant mieux) mais ils n'ont pas été pensés pour la praticité. Il faut par exemple très régulièrement utiliser l'ID d'un utilisateur car le UserPrincipalName n'est pas accepté.
 
 ### Installer les modules
 
@@ -127,7 +129,15 @@ Voici la liste des modules pour la version 2.8.0 :
 
 ### Se connecter en PowerShell
 
+```powershell
+Connect-MgGraph -Scopes Group.ReadWrite.All
+```
+
 ### Créer un groupe et ajouter un membre (POST)
+
+```powershell
+New-MgGroup
+```
 
 ### Rechercher un groupe et les membres d'un groupe (GET)
 
@@ -140,7 +150,9 @@ Vous devriez avoir une limite de 1000 résultats sur votre requête `Get-MgGroup
 
 ### Mettre à jour un groupe (PATCH)
 
-Cette fois-ci, pas de cmdlet tout prêt pour faire une requête, il va donc falloir utiliser la commande qui peut remplacer toutes les autres : `Invoke-MgGraphRequest`.
+```powershell
+Update-MgGroup
+```
 
 ```powershell
 Invoke-MgGraphRequest
