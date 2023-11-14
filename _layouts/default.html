@@ -31,35 +31,35 @@
           <i class="fa-solid fa-cube"></i>
           <span>LaBouaBouate</span>
         </a>
-        <div>
-          <div class="horizontal-menu">
-            <a href="/blog">Articles</a>
-            <a href="/about">A propos</a>
+        <a href="/blog">Articles</a>
+        <a href="/about">A propos</a>
+        <a class="dark-mode" title="Mode sombre" href="javascript:document.documentElement.classList.add('dark');">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </a>
+        <a class="light-mode" title="Mode clair" href="javascript:document.documentElement.classList.remove('dark');">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </a>
+        <a class="vertical-menu" title="Menu" href="javascript:document.querySelectorAll('.submenu').forEach(el => el.style.display = 'block');">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+        <ul class="submenu">
+          <li>
+            <a href="javascript:document.querySelectorAll('.submenu').forEach(el => el.style.display = 'none');">
+              <i class="fa-solid fa-xmark"></i>
+            </a>
+          </li>
+          <li><a href="/blog">Articles</a></li>
+          <li><a href="/about">A propos</a></li>
+          <li><a href="/cv">Mon CV</a></li>
+          <li>
             <a class="dark-mode" title="Mode sombre" href="javascript:document.documentElement.classList.add('dark');">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </a>
             <a class="light-mode" title="Mode clair" href="javascript:document.documentElement.classList.remove('dark');">
               <i class="fa-solid fa-circle-half-stroke"></i>
-            </a>
-          </div>
-          <div class="vertical-menu">
-            <i class="fa-solid fa-bars"></i>
-            <ul class="submenu">
-                <li><i class="fa-solid fa-xmark" style="font-size: 1.5em;"></i></li>
-                <li><a href="/blog">Articles</a></li>
-                <li><a href="/about">A propos</a></li>
-                <li><a href="/cv">Mon CV</a></li>
-                <li>
-                  <a class="dark-mode" title="Mode sombre" href="javascript:document.documentElement.classList.add('dark');">
-                    <i class="fa-solid fa-circle-half-stroke"></i>
-                  </a>
-                  <a class="light-mode" title="Mode clair" href="javascript:document.documentElement.classList.remove('dark');">
-                    <i class="fa-solid fa-circle-half-stroke"></i>
-                  </a></li>
-                </li>
-            </ul>
-          </div>
-        </div>
+            </a></li>
+          </li>
+        </ul>
       </nav>
     </header>
     <main>
