@@ -83,50 +83,6 @@ Vous pouvez lister les modules `Microsoft.Graph` installés sur votre ordinateur
 Get-InstalledModule -Name 'Microsoft.Graph*'
 ```
 
-Voici la liste des modules pour la version 2.8.0 :
-
-| Nom |
-| --- |
-| Microsoft.Graph |
-| Microsoft.Graph.Applications |
-| Microsoft.Graph.Authentication |
-| Microsoft.Graph.Bookings |
-| Microsoft.Graph.Calendar |
-| Microsoft.Graph.ChangeNotifications |
-| Microsoft.Graph.CloudCommunications |
-| Microsoft.Graph.Compliance |
-| Microsoft.Graph.CrossDeviceExperiences |
-| Microsoft.Graph.DeviceManagement |
-| Microsoft.Graph.DeviceManagement.Actions |
-| Microsoft.Graph.DeviceManagement.Administration |
-| Microsoft.Graph.DeviceManagement.Enrollment |
-| Microsoft.Graph.DeviceManagement.Functions |
-| Microsoft.Graph.Devices.CloudPrint |
-| Microsoft.Graph.Devices.CorporateManagement |
-| Microsoft.Graph.Devices.ServiceAnnouncement |
-| Microsoft.Graph.DirectoryObjects |
-| Microsoft.Graph.Education |
-| Microsoft.Graph.Files |
-| Microsoft.Graph.Groups |
-| Microsoft.Graph.Identity.DirectoryManagement |
-| Microsoft.Graph.Identity.Governance |
-| Microsoft.Graph.Identity.Partner |
-| Microsoft.Graph.Identity.SignIns |
-| Microsoft.Graph.Mail |
-| Microsoft.Graph.Notes |
-| Microsoft.Graph.People |
-| Microsoft.Graph.PersonalContacts |
-| Microsoft.Graph.Planner |
-| Microsoft.Graph.Reports |
-| Microsoft.Graph.SchemaExtensions |
-| Microsoft.Graph.Search |
-| Microsoft.Graph.Security |
-| Microsoft.Graph.Sites |
-| Microsoft.Graph.Teams |
-| Microsoft.Graph.Users |
-| Microsoft.Graph.Users.Actions |
-| Microsoft.Graph.Users.Functions |
-
 ### Se connecter en PowerShell
 
 ```powershell
@@ -166,48 +122,8 @@ Invoke-MgGraphRequest
 
 #### Liste des modules BETA
 
-Voici la liste des modules BETA pour la version 2.8.0 :
+Vous pouvez lister les modules `Microsoft.Graph.Beta` installés sur votre ordinateur avec la commande suivante :
 
-| Nom |
-| --- |
-| Microsoft.Graph.Beta |
-| Microsoft.Graph.Beta.Applications |
-| Microsoft.Graph.Beta.Bookings |
-| Microsoft.Graph.Beta.Calendar |
-| Microsoft.Graph.Beta.ChangeNotifications |
-| Microsoft.Graph.Beta.CloudCommunications |
-| Microsoft.Graph.Beta.Compliance |
-| Microsoft.Graph.Beta.CrossDeviceExperiences |
-| Microsoft.Graph.Beta.DeviceManagement |
-| Microsoft.Graph.Beta.DeviceManagement.Actions |
-| Microsoft.Graph.Beta.DeviceManagement.Administration |
-| Microsoft.Graph.Beta.DeviceManagement.Enrollment |
-| Microsoft.Graph.Beta.DeviceManagement.Functions |
-| Microsoft.Graph.Beta.Devices.CloudPrint |
-| Microsoft.Graph.Beta.Devices.CorporateManagement |
-| Microsoft.Graph.Beta.Devices.ServiceAnnouncement |
-| Microsoft.Graph.Beta.DirectoryObjects |
-| Microsoft.Graph.Beta.Education |
-| Microsoft.Graph.Beta.Files |
-| Microsoft.Graph.Beta.Financials |
-| Microsoft.Graph.Beta.Groups |
-| Microsoft.Graph.Beta.Identity.DirectoryManagement |
-| Microsoft.Graph.Beta.Identity.Governance |
-| Microsoft.Graph.Beta.Identity.Partner |
-| Microsoft.Graph.Beta.Identity.SignIns |
-| Microsoft.Graph.Beta.Mail |
-| Microsoft.Graph.Beta.ManagedTenants |
-| Microsoft.Graph.Beta.Notes |
-| Microsoft.Graph.Beta.People |
-| Microsoft.Graph.Beta.PersonalContacts |
-| Microsoft.Graph.Beta.Planner |
-| Microsoft.Graph.Beta.Reports |
-| Microsoft.Graph.Beta.SchemaExtensions |
-| Microsoft.Graph.Beta.Search |
-| Microsoft.Graph.Beta.Security |
-| Microsoft.Graph.Beta.Sites |
-| Microsoft.Graph.Beta.Teams |
-| Microsoft.Graph.Beta.Users |
-| Microsoft.Graph.Beta.Users.Actions |
-| Microsoft.Graph.Beta.Users.Functions |
-| Microsoft.Graph.Beta.WindowsUpdates |
+```powershell
+Get-InstalledModule -Name 'Microsoft.Graph.Beta*'
+```
