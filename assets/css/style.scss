@@ -117,23 +117,23 @@ header {
     }
 }
 
+// LIGHT & DARK MODE
+a.light-mode, a.dark-mode {
+    font-size: 1.25em;
+}
+
 // MENU
 .vertical-menu {
     display: none;
 }
 
-.vertical-menu > i {
+.vertical-menu > i, .close-menu {
     font-size: 1.5em;
 }
 
 .vertical-menu:focus-within > .submenu,
 .vertical-menu:hover > .submenu {
     display: block;
-}
-
-// LIGHT & DARK MODE
-a.light-mode, a.dark-mode {
-    font-size: 1.25em;
 }
 
 .submenu {
