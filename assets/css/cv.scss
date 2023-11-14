@@ -83,7 +83,8 @@ span.certifStatusActive {
 
 .enterprise > div > img {
     height: 5em;
-    mix-blend-mode: darken;
+    /*mix-blend-mode: darken;*/
+    max-width: fit-content;
 }
 
 .skills {
