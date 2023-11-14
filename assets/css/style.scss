@@ -158,6 +158,13 @@ a.light-mode, a.dark-mode {
         padding: 1em;
         text-align: right;
         border-top: var(--border);
+        width: -webkit-fill-available;
+    }
+
+    li:last-child {
+        text-align: center;
+        position: fixed;
+        bottom: 0;
     }
 }
 
