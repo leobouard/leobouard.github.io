@@ -36,11 +36,11 @@ div.personalLinks > a {
     border-radius: 100%;
     aspect-ratio: 1;
     height: 35px;
-    color: #333;
+    color: var(--title);
 }
 
 div.personalLinks > a:hover {
-    color: #000;
+    color: var(--text);
     background: rgba(0,0,0,.1);
     text-decoration: none;
 }
