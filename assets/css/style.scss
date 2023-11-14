@@ -1,7 +1,7 @@
 ---
 ---
 
-:root {
+html {
     --text: #000;
     --footer: #fff;
     --footerbg: #0d0d0d;
@@ -15,6 +15,16 @@
     --border: 1px solid #ddd;
     --borderradius: 5px;
     --boxshadow: #00000075;
+}
+
+html.dark {
+    --text: #e6e6e6;
+    --title: #f2f2f2;
+    --bodybg: #2f2f2f;
+    --accentbg: #282828;
+    --textbg: #171717;
+    --border: 1px solid #333;
+    --boxshadow: #ffffff75;
 }
 
 ::selection {
