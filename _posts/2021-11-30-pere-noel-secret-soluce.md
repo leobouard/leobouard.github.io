@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Secret santa"
-background: "#f78787"
 prevLink:
   name: "Retour au défi"
   id: "/2021/11/30/pere-noel-secret"

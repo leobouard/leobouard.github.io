@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Le jour de paie"
-background: "#8af1b9"
 prevLink:
   name: "Retour au défi"
   id: "/2021/07/23/jour-de-paie"

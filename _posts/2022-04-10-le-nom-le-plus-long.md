@@ -2,7 +2,6 @@
 layout: post
 title: "Le nom le plus long"
 description: "Saurez-vous retrouver la personne avec le nom le plus long de votre annuaire ?"
-background: "#F292A5"
 tags: ['challenge','powershell']
 listed: true
 nextLink:

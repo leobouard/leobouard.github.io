@@ -2,7 +2,6 @@
 layout: post
 title: "Problème SIP Teams"
 description: "L'utilisateur ne peut plus contacter des comptes externes à l'organisation"
-background: "#F69A79"
 tag: microsoft-teams
 listed: true
 ---

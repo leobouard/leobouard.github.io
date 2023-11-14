@@ -2,7 +2,6 @@
 layout: post
 title: "Triangulation AD"
 description: "Une requête Active Directory bloquée à cause d'une erreur sur un compte utilisateur ou ordinateur"
-background: "#9A96C5"
 tags: active-directory
 listed: true
 ---

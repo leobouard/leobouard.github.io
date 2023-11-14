@@ -2,7 +2,6 @@
 layout: post
 title: "CanonicalName & DistinguishedName"
 description: "Et si on prennait la racine du domaine en point de départ pour une fois ?"
-background: "#B4CFB4"
 tags: active-directory
 listed: true
 ---
