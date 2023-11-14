@@ -158,6 +158,11 @@ a.light-mode, a.dark-mode {
         width: -webkit-fill-available;
     }
 
+    li:first-child {
+        padding: 13px 16.5px;
+        font-size: 1.5em;
+    }
+
     li:last-child {
         text-align: center;
         position: fixed;
