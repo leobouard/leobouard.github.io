@@ -125,6 +125,11 @@ header {
     display: block;
 }
 
+// LIGHT & DARK MODE
+a.light-mode, a.dark-mode {
+    border-radius: 100%;
+}
+
 .submenu {
     display: none;
     padding-top: 3em;
