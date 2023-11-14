@@ -19,6 +19,10 @@ html {
     a.light-mode {
         display: none;
     }
+
+    a.dark-mode {
+        display: inline;
+    }
 }
 
 html.dark {
@@ -32,6 +36,10 @@ html.dark {
 
     a.dark-mode {
         display: none;
+    }
+
+    a.light-mode {
+        display: inline;
     }
 }
 
