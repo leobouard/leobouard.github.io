@@ -125,6 +125,10 @@ header {
 // LIGHT & DARK MODE
 a.light-mode, a.dark-mode {
     font-size: 1.25em;
+    margin: 0;
+    padding: 10px;
+    aspect-ratio: 1;
+    border-radius: 100%;
 }
 
 // MENU
