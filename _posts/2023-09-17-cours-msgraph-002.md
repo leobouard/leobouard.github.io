@@ -41,6 +41,14 @@ Voici un exemple de réponse de Microsoft Graph avec une indication sur l'adress
 
 Pour éviter de demander de l'information qui ne nous est pas utile, on peut formater la donnée avant qu'elle nous soit envoyée. Pour cela on utilise donc les paramètres de requêtes. Ceux-ci vont nous permettre de trier, filtrer, compter ou formater de la donnée avant que celle-ci ne soit reçu. Cela permet donc d'améliorer grandement l'efficacité de nos requêtes.
 
+Microsoft vous incite même à utiliser des paramètres de requête dans le résultats de certains appels (exemple ci-dessous pour l'API `/devices`) :
+
+```json
+{
+    "@microsoft.graph.tips": "Use $select to choose only the properties your app needs, as this can lead to performance improvements. For example: GET devices?$select=accountEnabled,alternativeSecurityIds"
+}
+```
+
 ### Microsoft Graph
 
 Sur l'API Microsoft Graph, c'est la syntaxe OData qui est utilisé.
