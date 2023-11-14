@@ -39,13 +39,13 @@ span.certifStatusActive, span.certifStatusWaiting {
 }
 
 span.certifStatusWaiting {
-    background-color: #757575;
-    color: #FFF;
+    background-color: var(--neutral);
+    color: var(--textbg);
 }
 
 span.certifStatusActive {
-    background-color: #1f7f0b;
-    color: #FFF;
+    background-color: var(--positive);
+    color: var(--textbg);
 }
 
 .experience {
