@@ -48,6 +48,10 @@ html.dark {
     a.light-mode {
         display: inline-flex;
     }
+
+    .bottom-buttons > a:last-child {
+        color: var(--text);
+    }
 }
 
 ::selection {
