@@ -27,18 +27,20 @@
   <body>
     <header id="top">
       <nav>
-        <a class="home" href="{{ "/" | absolute_url }}">
-          <i class="fa-solid fa-cube"></i>
-          <span>LaBouaBouate</span>
-        </a>
-        <a href="/blog">Articles</a>
-        <a href="/about">A propos</a>
-        <a class="dark-mode" title="Mode sombre" href="javascript:document.documentElement.classList.add('dark');">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </a>
-        <a class="light-mode" title="Mode clair" href="javascript:document.documentElement.classList.remove('dark');">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </a>
+        <div class="horizontal-menu">
+          <a class="home" href="{{ "/" | absolute_url }}">
+            <i class="fa-solid fa-cube"></i>
+            <span>LaBouaBouate</span>
+          </a>
+          <a href="/blog">Articles</a>
+          <a href="/about">A propos</a>
+          <a class="dark-mode" title="Mode sombre" href="javascript:document.documentElement.classList.add('dark');">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </a>
+          <a class="light-mode" title="Mode clair" href="javascript:document.documentElement.classList.remove('dark');">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </a>
+        </div>
         <a class="vertical-menu" title="Menu" href="javascript:document.querySelectorAll('.submenu').forEach(el => el.style.display = 'block');">
           <i class="fa-solid fa-bars"></i>
         </a>
