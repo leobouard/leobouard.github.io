@@ -24,7 +24,7 @@ html {
     }
 
     a.dark-mode {
-        display: inline;
+        display: inline-flex;
     }
 }
 
@@ -46,7 +46,7 @@ html.dark {
     }
 
     a.light-mode {
-        display: inline;
+        display: inline-flex;
     }
 }
 
@@ -130,11 +130,6 @@ a.light-mode, a.dark-mode {
 
 .vertical-menu > i {
     font-size: 1.5em;
-}
-
-.vertical-menu:focus-within > .submenu,
-.vertical-menu:hover > .submenu {
-    display: block;
 }
 
 .submenu {
