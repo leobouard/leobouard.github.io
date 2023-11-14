@@ -8,10 +8,10 @@ html {
     --title: #333;
     --bodybg: #f2f2f2;
     --accentbg: #fafafa;
-    --primary: #2f4883;
-    --secondary: #c7bfe8;
+    --primary: #423196;
+    --secondary: #DCBEEA;
     --textbg: #fff;
-    --accent: #4f3aa1;
+    --accent: #365BA6;
     --border: 1px solid #ddd;
     --borderradius: 5px;
     --boxshadow: #00000075;
@@ -29,13 +29,16 @@ html {
 }
 
 html.dark {
-    --text: #e6e6e6;
-    --title: #f2f2f2;
+    --text: #F9FAF0;
+    --title: #F9FAF0;
     --bodybg: #2f2f2f;
-    --accentbg: #282828;
-    --textbg: #171717;
+    --accentbg: #0d0a18;
+    --textbg: #030401;
     --border: 1px solid #333;
     --boxshadow: #ffffff75;
+    --primary: #423196;
+    --secondary: #331541;
+    --accent: #597FC9;
 
     a.dark-mode {
         display: none;
@@ -181,15 +184,11 @@ main {
 
     a {
         color: var(--accent);
-        font-weight: 500;
         text-decoration: none;
-        transition: all 100ms ease-in-out;
     }
 
     a:hover {
-        color: #3a75af;
         text-decoration: underline;
-        text-underline-offset: 1px;
     }
 
     h2, h3, h4, h5 {
