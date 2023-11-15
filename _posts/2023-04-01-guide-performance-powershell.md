@@ -34,6 +34,8 @@ On commencera donc par des conseils généraux, simples à comprendre et facile 
 - [Quelques idées reçues](#quelques-idées-reçues)
   - ["Out-Null" est moins performant que "$null ="](#out-null-est-moins-performant-que-null-)
   - ["New-Object" est moins performant que "\[PSCustomObject\]@{}"](#new-object-est-moins-performant-que-pscustomobject)
+  - ["Get-Unique" est moins performant que "Select-Object -Unique"](#get-unique-est-moins-performant-que-select-object--unique)
+  - ["Where-Object" est moins performant que la méthode "GetEnumerator.Where()"](#where-object-est-moins-performant-que-la-méthode-getenumeratorwhere)
 
 ## Conseils généraux
 
@@ -229,3 +231,23 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 ```
 
 **❌ PLUTÔT FAUX** : Lorsqu'il s'agit de créer un nouveau PSCustomObject, je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
+
+### "Get-Unique" est moins performant que "Select-Object -Unique"
+
+```powershell
+1..10000 -replace '0','' | Sort-Object | Get-Unique
+# vs.
+1..10000 -replace '0','' | Select-Object -Unique
+```
+
+**❌ FAUX** : Très très faux même (en PowerShell 7) ! Si vous souhaitez dédupliquer une liste, alors apprenez à utiliser la commande `Get-Unique` (qui doit s'accompagner d'un `Sort-Object` positionné en amont) : vous allez gagner énormément en temps de traitement !
+
+### "Where-Object" est moins performant que la méthode "GetEnumerator.Where()"
+
+```powershell
+$list | Where-Object {$_.Property -eq $value}
+# vs.
+$list.GetEnumerator.Where({$_.Property -eq $value})
+```
+
+**✅ VRAI** : en PowerShell 7, faire 500 recherches différentes avec `Where-Object` dans une collection de +15000 items est deux fois plus lent que la méthode `GetEnumerator.Where()`.
