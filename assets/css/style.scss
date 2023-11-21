@@ -3,13 +3,13 @@
 
 html {
     --text: #000;
-    --footer: #fff;
-    --footerbg: #0d0d0d;
+    --footer: #888;
+    --footerbg: #e5e5e5;
     --title: #333;
     --bodybg: #f2f2f2;
     --accentbg: #fafafa;
-    --primary: #423196;
-    --secondary: #DCBEEA;
+    --primary: #846BFF;
+    --secondary: #75F4F4;
     --textbg: #fff;
     --accent: #365BA6;
     --border: 1px solid #ddd;
@@ -352,6 +352,7 @@ footer {
     background-color: var(--footerbg);
     z-index: -1;
     color: var(--footer);
+    border: var(--border);
 }
 
 @media screen and (max-width: 950px) {
