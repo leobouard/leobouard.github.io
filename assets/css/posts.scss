@@ -69,23 +69,6 @@ div.articleThumbnail {
     aspect-ratio: 16/9;
 }
 
-div.articleText {
-    padding: 10px;
-}
-
-div.articleText > span {
-    display: block;
-}
-
-span.articleDate {
-    font-size: small;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 5px;
-    font-weight: 400;
-}
-
 span.articleTitle {
     font-family: 'Manrope', sans-serif;
     font-size: 18px;
@@ -99,13 +82,6 @@ span.articleDescription {
     font-size: 14px;
     letter-spacing: normal;
     margin: 0 1rem;
-}
-
-.articleIcon {
-    text-align: center;
-    font-size: 60px;
-    user-select: none;
-    padding: 5px;
 }
 
 .postBanner {
