@@ -55,7 +55,10 @@ Modifier le JSON pour remplacer {domain} par le domaine de votre tenant puis lan
 
 Celui-ci devrait tomber en erreur :
 
-<blockquote style="background: #fde7e9;border-color: red;">
+<blockquote style="
+    background: var(--negative);
+    border-color: red;
+">
   <p>Forbidden - 403. Either the signed-in user does not have sufficient privileges, or you need to consent to one of the permissions on the Modify permissions tab</p>
 </blockquote>
 
@@ -69,7 +72,7 @@ Vous devriez alors recevoir le message de confirmation suivant :
 
 <blockquote style="
     border-color: green;
-    background: #dff6dd;
+    background: var(--positive);
 ">
   <p>Success - Scope consent successful</p>
 </blockquote>
@@ -111,7 +114,7 @@ Si vous n'avez pas d'erreur, vous devez reçevoir un objet de retour vide avec l
 
 <blockquote style="
     border-color: green;
-    background: #dff6dd;
+    background: var(--positive);
 ">
   <p>No Content - 204</p>
 </blockquote>

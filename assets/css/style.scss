@@ -16,8 +16,8 @@ html {
     --borderradius: 5px;
     --boxshadow: #00000075;
     --neutral: #757575;
-    --positive: #1f7f0b;
-    --negative: #f24100;
+    --positive: #dff6dd;
+    --negative: #fde7e9;
 
     a.light-mode {
         display: none;
@@ -41,6 +41,8 @@ html.dark {
     --primary: #423196;
     --secondary: #331541;
     --accent: #597FC9;
+    --positive: #17470d;
+    --negative:  #5b1d24;
 
     a.dark-mode {
         display: none;
