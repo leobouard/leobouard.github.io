@@ -92,7 +92,7 @@ span.articleDescription {
     justify-content: center;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     user-select: none;
-    max-width: 1550px;
+    min-width: 1550px;
     z-index: -1;
     margin: -100px 0px;
     min-height: 350px;
