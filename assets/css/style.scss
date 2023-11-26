@@ -69,7 +69,7 @@ html {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
     color: var(--text);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
