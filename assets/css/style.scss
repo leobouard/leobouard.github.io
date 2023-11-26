@@ -42,7 +42,11 @@ html.dark {
     --secondary: #331541;
     --accent: #597FC9;
 
-    banner {
+    .banner {
+        border: var(--border);
+    }
+
+    .side-buttons > a {
         border: var(--border);
     }
 
