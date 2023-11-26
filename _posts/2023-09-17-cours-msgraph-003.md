@@ -69,7 +69,7 @@ Vous devriez alors recevoir le message de confirmation suivant :
 
 Il n'y a maintenant plus aucun obstacle pour créer votre utilisateur.
 
-![Création de l'utilisateur](/assets/files/msgraph-308.png)
+![Création de l'utilisateur](/assets/images/msgraph-308.png)
 
 ### Rechercher un utilisateur (GET)
 
