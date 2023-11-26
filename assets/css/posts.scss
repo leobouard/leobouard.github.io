@@ -223,8 +223,8 @@ div.summary > span {
 
 .side-buttons {
     position: fixed;
-    margin-left: -5.5em;
-    margin-top: -2.3em;
+    margin-left: -84px;
+    margin-top: -36px;
 }
 
 .side-buttons > a {
@@ -239,6 +239,7 @@ div.summary > span {
     align-items: center;
     border-radius: var(--borderradius);
     box-shadow: 0px 0px 5px 0px var(--boxshadow);
+    border: var(--border);
 }
 
 .side-buttons > a:hover {

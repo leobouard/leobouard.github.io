@@ -42,14 +42,6 @@ html.dark {
     --secondary: #331541;
     --accent: #597FC9;
 
-    section {
-        border: var(--border);
-    }
-
-    .side-buttons > a {
-        border: var(--border);
-    }
-
     a.dark-mode {
         display: none;
     }
@@ -201,6 +193,7 @@ main {
         overflow-x: hidden;
         overflow-y: hidden;
         box-shadow: 0px 0px 5px 0px var(--boxshadow);
+        border: var(--border);
     }
 
     a {
