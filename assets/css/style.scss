@@ -42,6 +42,10 @@ html.dark {
     --secondary: #331541;
     --accent: #597FC9;
 
+    banner {
+        border: var(--border);
+    }
+
     a.dark-mode {
         display: none;
     }
