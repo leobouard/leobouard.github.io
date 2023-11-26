@@ -84,7 +84,7 @@ span.articleDescription {
     margin: 0 1rem;
 }
 
-.postBanner {
+div.banner {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@ span.articleDescription {
     border-radius: 0 0 15em 15em;
 }
 
-.postBanner > h1 {
+div.banner > h1 {
     text-decoration: none;
     text-align: center;
     max-width: 600px;
@@ -290,6 +290,12 @@ section.recommandation > span > img {
         right: 0;
     }
 
+    div.banner {
+        min-width: none;
+        width: 100%;
+        border-radius: 0;
+    }
+
 }
 
 @media screen and (max-width: 880px) {
@@ -302,7 +308,7 @@ section.recommandation > span > img {
 
 @media screen and (max-width: 700px) {
 
-    div.postBanner > h1 {
+    div.banner > h1 {
         font-size: x-large;
     }
 
@@ -329,7 +335,7 @@ section.recommandation > span > img {
         grid-template-columns: 1fr;
     }
 
-    div.postBanner > h1 {
+    div.banner > h1 {
         font-size: x-large;
     }
 
