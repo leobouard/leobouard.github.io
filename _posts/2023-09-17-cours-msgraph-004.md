@@ -198,11 +198,11 @@ Dernière étape de l'exercice : supprimer le groupe que vous avez créé. Pour 
 Remove-MgGroup -GroupId {groupId}
 ```
 
-## Passer à l'API BETA
+## Passer à l'API Beta
 
-L'utilisation de l'API BETA via PowerShell a été modifiée depuis la version 2.0.0. Ici je ne parlerai que de la nouvelle méthode de passage à la BETA, mais si vous êtes curieux vous pouvez lire cet article : [Microsoft Graph V2 - PowerShell : Nouveautés, migration v1/V2 et avenir des modules AzureAD/MSOnline \| IT-Connect](https://www.it-connect.fr/powershell-microsoft-graph-v2-nouveautes-migration-avenir-modules-actuels/).
+L'utilisation de l'API Beta via PowerShell a été modifiée depuis la version 2.0.0. Ici je ne parlerai que de la nouvelle méthode de passage à la Beta, mais si vous êtes curieux vous pouvez lire cet article : [Microsoft Graph V2 PowerShell \| IT-Connect](https://www.it-connect.fr/powershell-microsoft-graph-v2-nouveautes-migration-avenir-modules-actuels/).
 
-Le passage sur l'API BETA est très simple en PowerShell, mais il nécessite l'installation (et la mise à jour régulière) de modules dédiés : les modules `Microsoft.Graph.Beta`.
+Le passage sur l'API Beta est très simple en PowerShell, mais il nécessite l'installation (et la mise à jour régulière) de modules dédiés : les modules `Microsoft.Graph.Beta`.
 
 ### Installation des modules
 
@@ -212,7 +212,7 @@ Vous pouvez installer les modules avec la commande suivante :
 Install-Module -Name 'Microsoft.Graph.Beta'
 ```
 
-Vous pouvez ensuite lister les modules BETA installés sur votre ordinateur avec la commande suivante :
+Vous pouvez ensuite lister les modules Beta installés sur votre ordinateur avec la commande suivante :
 
 ```powershell
 Get-InstalledModule -Name 'Microsoft.Graph.Beta*'
