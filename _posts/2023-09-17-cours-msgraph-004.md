@@ -13,29 +13,19 @@ prevLink:
 
 ## Microsoft Graph en PowerShell
 
-Si vous aviez l'habitude d'administrer votre tenant avec les modules `MSOnline` et `AzureAD`, cette partie est pour vous. 
+Si vous aviez l'habitude d'administrer votre tenant avec les modules `MSOnline` et `AzureAD`, cette partie est pour vous.
 
 ### Différences avec les anciens modules
 
-Les modules Microsoft Graph sont assez différent des modules qu'ils remplacent. Voici quelques points d'attention à connaître avant de commencer.
+Les modules Microsoft Graph sont assez différent des modules qu'ils remplacent. Voici quelques points d'attention à connaître avant de commencer :
 
-#### Mises à jour des modules
+- **Mises à jour des modules** : Les commandes peuvent changer de nom d'une version à l'autre (voir même disparaitre). Par exemple, quatre modules (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0.
+- **Documentation officielle** : La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base.
+- **Différences entre commandes et API** : Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tant à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
 
-Les commandes peuvent changer de nom d'une version à l'autre (voir même disparaitre). Par exemple, quatre modules (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0.
+### Les commandes
 
-#### Documentation officielle
-
-La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base.
-
-#### Différences entre commandes et API
-
-Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tant à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
-
-#### Les commandes
-
-Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes à partir de l'API. On appelle cette méthode un "wrap".
-
-Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toute les fonctions Microsoft Graph :
+Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes à partir de l'API. On appelle cette méthode un "wrap". Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toute les fonctions Microsoft Graph :
 
 ```powershell
 (Get-Command -Name 'Get-MgUser').Definition
@@ -45,11 +35,7 @@ Cette méthode de génération a des avantages et des inconvénients. Côté ava
 
 Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés.
 
-Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, ce qui impacte très fortement la lisibilité de votre code. Voici un exemple d'une commande que j'ai trouvé en mars 2022 et qui a disparu depuis (cf. [Mises à jour des modules](#mises-à-jour-des-modules)) :
-
-```powershell
-Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause
-```
+Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple `Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause`.
 
 Vous pouvez regarder quelle est la commande la plus longue de votre version avec ce script :
 
@@ -59,7 +45,7 @@ Get-Command -Module Microsoft.Graph* |
   Sort-Object Length
 ```
 
-Pour les paramètres de commandes, ils sont en général très nombreux (et tant mieux) mais ils n'ont pas été pensés pour la praticité. Il faut par exemple très régulièrement utiliser l'ID d'un utilisateur car le UserPrincipalName n'est pas accepté.
+Pour les paramètres de commandes, ils sont en général très nombreux (et tant mieux) mais ils n'ont pas été pensés pour la praticité. Il faut par exemple très régulièrement utiliser l'ID d'une ressource plutôt que son DisplayName ou son UserPrincipalName (dans le cas d'un utilisateur).
 
 ### Installer les modules
 
@@ -86,13 +72,21 @@ Get-InstalledModule -Name 'Microsoft.Graph*'
 ### Se connecter en PowerShell
 
 ```powershell
-Connect-MgGraph -Scopes Group.ReadWrite.All
+Connect-MgGraph
 ```
 
-### Créer un groupe et ajouter un membre (POST)
+### Créer un groupe et ajouter des membres (POST)
 
 ```powershell
 New-MgGroup
+```
+
+```powershell
+Connect-MgGraph -Scopes Group.ReadWrite.All
+```
+
+```powershell
+Get-MgUser -Filter ''
 ```
 
 ### Rechercher un groupe et les membres d'un groupe (GET)
@@ -106,6 +100,8 @@ Vous devriez avoir une limite de 1000 résultats sur votre requête `Get-MgGroup
 
 ### Mettre à jour un groupe (PATCH)
 
+Si vous êtes habitué de PowerShell, vous êtes habitués à utiliser le verbe "Set" pour mettre à jour une ressource. Dans les modules Microsoft Graph, c'est plutôt le verbe "Update" qui est utilisé.
+
 ```powershell
 Update-MgGroup
 ```
@@ -116,9 +112,17 @@ Invoke-MgGraphRequest
 
 ### Supprimer un groupe (DELETE)
 
+```powershell
+Remove-MgGroup
+```
+
 ## Passer à la version BETA
 
 ### Installation des modules
+
+```powershell
+Install-Module -Name 'Microsoft.Graph.Beta'
+```
 
 #### Liste des modules BETA
 
