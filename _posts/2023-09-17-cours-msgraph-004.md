@@ -33,9 +33,11 @@ Pour industrialiser les processus, Microsoft a décidé de générer automatique
 
 Cette méthode de génération a des avantages et des inconvénients. Côté avantages, les mises à jour des modules PowerShell se font très rapidement, ce qui permet d'obtenir des commandes seulement quelques jours après la publication d'une API (en théorie).
 
-Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés.
+Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés. Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple :
 
-Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple `Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause`.
+```powershell
+Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause
+```
 
 Vous pouvez regarder quelle est la commande la plus longue de votre version avec ce script :
 
