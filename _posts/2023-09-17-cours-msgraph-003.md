@@ -119,7 +119,7 @@ Si vous n'avez pas d'erreur, vous devez reçevoir un objet de retour vide avec l
   <p>No Content - 204</p>
 </blockquote>
 
-Vous pouvez vérifier les modifications avec une requête GET :
+Vous pouvez vérifier les modifications avec la requête GET précédente. Vous pouvez accéder à l'historique de vos appels API avec l'onglet *"History"* présent dans le volet gauche.
 
 ![Vérification de la mise à jour](/assets/images/msgraph-315.png)
 
