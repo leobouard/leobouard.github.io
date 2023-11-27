@@ -95,7 +95,7 @@ Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/me'
 
 Par défaut, le retour de la commande est donné dans une hashtable. Il est possible de modifier le format de la réponse avec le paramètre `-OutputType`.
 
-### Créer un groupe et ajouter des membres (POST)
+### Créer un groupe
 
 Avec la commande `New-MgGroup` nous allons créer un groupe "Equipe A" avec les paramètres suivants :
 
@@ -131,16 +131,23 @@ Connect-MgGraph -Scopes Group.ReadWrite.All
 
 En rappelant la commande précédente vous devriez alors pouvoir créer votre groupe.
 
-### Rechercher un groupe et les membres d'un groupe (GET)
+### Ajouter des membres
+
+Pour ajouter des membres dans le groupe, il va d'abord falloir trouver les UserId de chaque membre. Pour cela, on utilise la commande `Get-MgUser` avec le paramètre `-Filter` pour obtenir tous les utilisateurs avec un nom qui commence par un "A".
 
 ```powershell
-Get-MgGroup
-Get-MgGroupMember
+$users = Get-MgUser -Filter "startsWith(displayName,'a')"
 ```
 
-Vous devriez avoir une limite de 1000 résultats sur votre requête `Get-MgGroup` si vous n'avez pas invoqué le paramètre `-All`. Cette limitation est liée au système de pagination de l'API sous-jacente.
+Puis d'ajouter les utilisateurs comme membre du groupe :
 
-### Mettre à jour un groupe (PATCH)
+```powershell
+$users | ForEach-Object {
+    New-MgGroupMember -GroupId {groupId} -DirectoryObjectId $_.Id
+}
+```
+
+### Mettre à jour le groupe
 
 Si vous êtes habitué de PowerShell, vous êtes habitués à utiliser le verbe "Set" pour mettre à jour une ressource. Dans les modules Microsoft Graph, c'est plutôt le verbe "Update" qui est utilisé.
 
@@ -148,11 +155,13 @@ Si vous êtes habitué de PowerShell, vous êtes habitués à utiliser le verbe 
 Update-MgGroup
 ```
 
+### Rechercher les membres d'un groupe
+
 ```powershell
-Invoke-MgGraphRequest
+Get-MgGroupMember -GroupId {groupId}
 ```
 
-### Supprimer un groupe (DELETE)
+### Supprimer le groupe
 
 ```powershell
 Remove-MgGroup
