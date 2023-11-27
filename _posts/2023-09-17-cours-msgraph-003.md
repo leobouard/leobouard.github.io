@@ -16,7 +16,7 @@ prevLink:
 Microsoft Graph Explorer est une application web qui vous permet d’apprendre et d’essayer les API Microsoft Graph. Voici quelques-unes de ses fonctionnalités principales :
 
 - **Tester les API Microsoft Graph** : Vous pouvez faire des requêtes pour récupérer, ajouter, supprimer et mettre à jour des données
-- Apprendre sur les permissions : Vous pouvez découvrir les permissions requises pour les différentes API.
+- **Apprendre sur les permissions** : Vous pouvez découvrir les permissions requises pour les différentes API.
 - **Explorer les ressources disponibles** : Microsoft Graph offre une multitude de ressources que vous pouvez explorer rapidement.
 - **Intégration des modules PowerShell** : Executer une requête vous permet d'obtenir la commande PowerShell associée.
 - **Gestion de l’authentification** : Graph Explorer gère le processus d’authentification pour vous et vous permet même de récupérer facilement un access token.
