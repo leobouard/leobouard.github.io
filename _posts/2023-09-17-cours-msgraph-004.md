@@ -19,7 +19,7 @@ Si vous aviez l'habitude d'administrer votre tenant avec les modules `MSOnline` 
 
 Les modules Microsoft Graph sont assez différent des modules qu'ils remplacent. Voici quelques points d'attention à connaître avant de commencer :
 
-- **Mises à jour des modules** : Les commandes peuvent changer de nom d'une version à l'autre (voir même disparaitre). Par exemple, quatre modules (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0.
+- **Mises à jour des modules** : Les modules Microsoft Graph sont mis à jour très régulièrement pour suivre l'API. Ces mises à jour peuvent impacter le nom des commandes, voir même les supprimer. Par exemple, quatre modules complets (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0 (deux mois d'écart entre les versions).
 - **Documentation officielle** : La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base.
 - **Différences entre commandes et API** : Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tant à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
 
@@ -69,6 +69,33 @@ Vous pouvez lister les modules `Microsoft.Graph` installés sur votre ordinateur
 Get-InstalledModule -Name 'Microsoft.Graph*'
 ```
 
+### Les paramètres de requêtes
+
+Les paramètres de requêtes sont toujours présents en PowerShell, sauf qu'au lieu de les ajouter à la fin de l'URI, ils prennent maintenant la forme de paramètres de commande. Vous retrouverez donc :
+
+- `-Filter` pour filtrer les résultats
+- `Select` pour limiter les résultats à certaines propriétés
+- `-Search` pour rechercher
+- `-Top` pour obtenir seulement les X premiers résultats
+- `-Skip` pour ignorer les X premiers résultats
+- `-Sort` pour trier l'information
+- `-CountVariable` pour compter le nombre de résultats
+
+Le paramètre que vous utiliserez le plus sera probablement le filtre, il est donc important d'en maitriser la syntaxe. En effet, on garde la syntaxe OData qui est donc différente des opérateurs de comparaison PowerShell classique.
+
+Voici quelques exemples sur la différence de syntaxe :
+
+PowerShell | OData | Description
+------------------ | ------------- | ----------
+`accountEnabled -eq $true` | `accountEnabled eq true` | Le compte est actif
+`displayName -like 'Ana*'` | startsWith(displayName, "Ana") | Le nom commence par "Ana"
+`displayName -like '*abe*'` | displayName contains "abe" | Le nom contient "abe"
+`displayName -like '*elle'` | endsWith(displayName,"elle") | Le nom se termine par "elle"
+
+Si vous êtes familier avec les règles d'appartenance sur les groupes dynamiques, il s'agit de la même syntaxe.
+
+Plus d'informations ici : [Utiliser un filtre \| Microsoft Graph](https://learn.microsoft.com/graph/filter-query-parameter)
+
 ## Exercice pratique
 
 ### Se connecter en PowerShell
@@ -97,16 +124,16 @@ Par défaut, le retour de la commande est donné dans une hashtable. Il est poss
 
 ### Créer un groupe
 
-Avec la commande `New-MgGroup` nous allons créer un groupe "Equipe A" avec les paramètres suivants :
+Avec la commande `New-MgGroup` nous allons créer un groupe "Equipe de nuit" avec les paramètres suivants :
 
-- DisplayName : Equipe A
+- DisplayName : Equipe de nuit
 - MailEnabled : False
 - MailNickname : equipe-a
 - SecurityEnabled : True
 
 ```powershell
 $params = @{
-    displayName     = "Equipe A"
+    displayName     = "Equipe de nuit"
     mailEnabled     = $false
     mailNickname    = "7427fc71-0"
     securityEnabled = $true
@@ -131,54 +158,77 @@ Connect-MgGraph -Scopes Group.ReadWrite.All
 
 En rappelant la commande précédente vous devriez alors pouvoir créer votre groupe.
 
-### Ajouter des membres
+### Ajouter un membre
 
-Pour ajouter des membres dans le groupe, il va d'abord falloir trouver les UserId de chaque membre. Pour cela, on utilise la commande `Get-MgUser` avec le paramètre `-Filter` pour obtenir tous les utilisateurs avec un nom qui commence par un "A".
+Pour ajouter un membre dans le groupe, il vous faudra connaitre l'identifiant du groupe que vous avez créé et l'identifiant de l'utilisateur que vous voulez ajouter (votre compte par exemple).
 
-```powershell
-$users = Get-MgUser -Filter "startsWith(displayName,'a')"
-```
-
-Puis d'ajouter les utilisateurs comme membre du groupe :
+Vous pouvez trouver ces deux informations dans votre historique PowerShell, dans le portail d'administration Entra ID ou via des requêtes Microsoft Graph.
 
 ```powershell
-$users | ForEach-Object {
-    New-MgGroupMember -GroupId {groupId} -DirectoryObjectId $_.Id
-}
+New-MgGroupMember -GroupId {groupId} -DirectoryObjectId {userId}
 ```
 
 ### Mettre à jour le groupe
 
-Si vous êtes habitué de PowerShell, vous êtes habitués à utiliser le verbe "Set" pour mettre à jour une ressource. Dans les modules Microsoft Graph, c'est plutôt le verbe "Update" qui est utilisé.
+Si vous travaillez souvent avec PowerShell, vous avez peut-être l'habitude d'utiliser des commandes avec le verbe "Set" pour mettre à jour de l'information. Dans les modules Microsoft Graph, c'est plutôt le verbe "Update" qui est utilisé.
+
+Pour mettre à jour les informations d'un groupe, on utilise la commande `Update-MgGroup` suivi du paramètre indiquant la propriété à mettre à jour (par exemple : `-Description`)
 
 ```powershell
-Update-MgGroup
+Update-MgGroup -GroupId {groupId} -Description 'Première équipe du soir pour les 3-8'
 ```
 
 ### Rechercher les membres d'un groupe
+
+Pour lister les membres d'un groupe, vous pouvez utiliser la commande `Get-MgGroupMember`.
 
 ```powershell
 Get-MgGroupMember -GroupId {groupId}
 ```
 
+#### Rappel pagination
+
+N'oubliez pas la pagination des résultats ! Sur l'ensemble des requêtes GET, vous serez limité à un certain nombre de résultats (1000 en général). Pour obtenir tous les résultats, vous devez bien spécifier le paramètre `-All`.
+
 ### Supprimer le groupe
 
+Dernière étape de l'exercice : supprimer le groupe que vous avez créé. Pour ça il n'y a qu'à utiliser la commande `Remove-MgGroup` en lui indiquant l'ID du groupe à supprimer.
+
 ```powershell
-Remove-MgGroup
+Remove-MgGroup -GroupId {groupId}
 ```
 
-## Passer à la version BETA
+## Passer à l'API BETA
+
+L'utilisation de l'API BETA via PowerShell a été modifiée depuis la version 2.0.0. Ici je ne parlerai que de la nouvelle méthode de passage à la BETA, mais si vous êtes curieux vous pouvez lire cet article : [Microsoft Graph V2 - PowerShell : Nouveautés, migration v1/V2 et avenir des modules AzureAD/MSOnline \| IT-Connect](https://www.it-connect.fr/powershell-microsoft-graph-v2-nouveautes-migration-avenir-modules-actuels/).
+
+Le passage sur l'API BETA est très simple en PowerShell, mais il nécessite l'installation (et la mise à jour régulière) de modules dédiés : les modules `Microsoft.Graph.Beta`.
 
 ### Installation des modules
+
+Vous pouvez installer les modules avec la commande suivante :
 
 ```powershell
 Install-Module -Name 'Microsoft.Graph.Beta'
 ```
 
-#### Liste des modules BETA
-
-Vous pouvez lister les modules `Microsoft.Graph.Beta` installés sur votre ordinateur avec la commande suivante :
+Vous pouvez ensuite lister les modules BETA installés sur votre ordinateur avec la commande suivante :
 
 ```powershell
 Get-InstalledModule -Name 'Microsoft.Graph.Beta*'
 ```
+
+### Utilisation de l'API Beta
+
+Les commandes issues des modules Beta fonctionnent de la même manière que ceux pour requêter l'API v1.0. Ils portent les mêmes noms, possèdent souvent les mêmes paramètres et fonctionnent dans la même session ouverte via `Connect-MgGraph`. Ils se distinguent simplement par le préfix "Beta" qui s'insère entre le préfix "Mg" et le nom de la commande.
+
+Voici quelques exemples :
+
+- Get-MgUser devient Get-Mg**Beta**User
+- Exemple 2
+- Exemple 3
+- Exemple 4
+
+Attention cependant : toutes les commandes n'ont pas forcément leur pendant "Beta"
+
+## Conclusion

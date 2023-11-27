@@ -138,3 +138,5 @@ Vous pouvez vérifier les modifications avec la requête GET précédente. Vous 
 Pour boucler la boucle, il ne nous reste plus qu'à utiliser la dernière méthode : DELETE. On va donc supprimer l'utilisateur que nous avons créé avec l'appel **"\[DELETE] delete user"**.
 
 ![Suppression de l'utilisateur](/assets/images/msgraph-316.png)
+
+## Conclusion
