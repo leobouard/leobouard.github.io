@@ -17,7 +17,7 @@ Microsoft doit gérer et maintenir de très nombreux produits cloud et a une vol
 
 Microsoft Graph est donc un point de terminaison unique pour administrer la plupart des produits cloud de Microsoft. Il reste encore quelques produits qui reposent sur des API différentes, mais l'objectif est de tout centraliser à terme sur cette interface.
 
-Ainsi, lorsque vous faites une action depuis le portail Azure ou depuis la console Entra ID, ce sont des appels API qui sont executés. Une extension de navigateur permet d'ailleurs de capter facilement quelle API a été utilisée : [Graph XRay](https://microsoftedge.microsoft.com/addons/detail/graph-xray/oplgganppgjhpihgciiifejplnnpodak)
+Ainsi, lorsque vous faites une action depuis le portail Azure ou depuis la console Entra ID, ce sont des appels API qui sont executés. Une extension de navigateur permet d'ailleurs de capter facilement quelle API a été utilisée : [Graph X-Ray](https://graphxray.merill.net/)
 
 ## Pagination
 

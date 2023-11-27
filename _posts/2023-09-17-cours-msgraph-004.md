@@ -63,25 +63,45 @@ L'installation peut être longue puisque l'on va installer *tout les modules* li
 
 Vous allez le constater, mais il y a beaucoup de modules (et encore plus de commandes) liés à Microsoft Graph. Chaque module représente une ressource de l'API (la partie après la version dans l'URI). Ainsi, toutes les commandes liées à la gestion des groupes vont se retrouver dans le module `Microsoft.Graph.Groups` puisqu'elles utilisent toutes une URI qui commence par <https://graph.microsoft.com/v1.0/groups>.
 
-#### Liste des modules
-
 Vous pouvez lister les modules `Microsoft.Graph` installés sur votre ordinateur avec la commande suivante :
 
 ```powershell
 Get-InstalledModule -Name 'Microsoft.Graph*'
 ```
 
+## Exercice pratique
+
 ### Se connecter en PowerShell
+
+Comme pour Microsoft Graph Explorer, la première étape est de vous connecter à votre tenant de test. On utilise la commande `Connect-MgGraph` disponible dans le module "Microsoft.Graph.Authentication" :
 
 ```powershell
 Connect-MgGraph
 ```
+
+Votre navigateur web se lance et vous devriez pouvoir selectionner votre compte d'administration pour autoriser l'application "Microsoft Graph Command Line Tools" à se connecter. Une fois l'authentification terminée, la page web affiche le message suivant : *Authentication complete. You can return to the application. Fell free to close this browser tab.*
+
+Côté PowerShell, vous devriez être accueilli par ce message :
+
+> Welcome To Microsoft Graph!
+
+### Votre première requête
+
+De la même manière que dans Microsoft Graph Explorer, il est possible de lancer n'importe quelle requête API avec la méthode et l'URI en utilisant la commande `Invoke-MgGraphRequest` :
+
+```powershell
+Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/me'
+```
+
+Par défaut, le retour de la commande est donné dans une hashtable. Il est possible de modifier le format de la réponse avec le paramètre `-OutputType`.
 
 ### Créer un groupe et ajouter des membres (POST)
 
 ```powershell
 New-MgGroup
 ```
+
+> New-MgGroup_CreateExpanded: Insufficient privileges to complete the operation.
 
 ```powershell
 Connect-MgGraph -Scopes Group.ReadWrite.All
