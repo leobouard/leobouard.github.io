@@ -97,19 +97,39 @@ Par défaut, le retour de la commande est donné dans une hashtable. Il est poss
 
 ### Créer un groupe et ajouter des membres (POST)
 
+Avec la commande `New-MgGroup` nous allons créer un groupe "Equipe A" avec les paramètres suivants :
+
+- DisplayName : Equipe A
+- MailEnabled : False
+- MailNickname : equipe-a
+- SecurityEnabled : True
+
 ```powershell
-New-MgGroup
+$params = @{
+    displayName     = "Equipe A"
+    mailEnabled     = $false
+    mailNickname    = "7427fc71-0"
+    securityEnabled = $true
+}
+New-MgGroup @params
 ```
 
-> New-MgGroup_CreateExpanded: Insufficient privileges to complete the operation.
+Cependant, la commande tombe en erreur :
+
+<blockquote style="
+    background: var(--negative);
+    border-color: red;
+">
+  <p>New-MgGroup_CreateExpanded: Insufficient privileges to complete the operation.</p>
+</blockquote>
+
+Si vous êtes encore tombé dans le piège, c'est que vous n'avez pas encore assimilé cette partie : [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes). Même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits intialement : il faut les demander. Pour demander une permission suplémentaire avec PowerShell, il faut se reconnecter via la commande `Connect-MgGraph` tout en spécifiant le scope dont vous avez besoin (en l'occurence : *Group.ReadWrite.All*).
 
 ```powershell
 Connect-MgGraph -Scopes Group.ReadWrite.All
 ```
 
-```powershell
-Get-MgUser -Filter ''
-```
+En rappelant la commande précédente vous devriez alors pouvoir créer votre groupe.
 
 ### Rechercher un groupe et les membres d'un groupe (GET)
 
