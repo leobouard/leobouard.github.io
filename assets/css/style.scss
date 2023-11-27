@@ -310,8 +310,9 @@ main {
     tr,
     th {
         border: var(--border);
-        padding: 10px;
+        padding: 5px;
         border-collapse: collapse;
+        font-size: 13px;
     }
 
     th {
