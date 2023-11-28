@@ -17,23 +17,21 @@ Si vous aviez l'habitude d'administrer votre tenant avec les modules `MSOnline` 
 
 ### Différences avec les anciens modules
 
-Les modules Microsoft Graph sont assez différent des modules qu'ils remplacent. Voici quelques points d'attention à connaître avant de commencer :
+Voici quelques points d'attention à connaître avant de commencer :
 
-- **Mises à jour des modules** : Les modules Microsoft Graph sont mis à jour très régulièrement pour suivre l'API. Ces mises à jour peuvent impacter le nom des commandes, voir même les supprimer. Par exemple, quatre modules complets (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0 (deux mois d'écart entre les versions).
-- **Documentation officielle** : La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base.
+- **Mises à jour des modules** : Les modules Microsoft Graph sont mis à jour très régulièrement pour suivre les évolutions de l'API. Ces mises à jour peuvent modifier ou supprimer des commandes. Par exemple, quatre modules complets (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0 (deux mois d'écart entre les versions).
+- **Documentation officielle** : La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base. Par exemple, vous ne retrouverez pas les permissions nécessaires pour exécuter une commande sur la documentation du cmdlet.
 - **Différences entre commandes et API** : Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tant à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
 
 ### Les commandes
 
-Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes à partir de l'API. On appelle cette méthode un "wrap". Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toute les fonctions Microsoft Graph :
+Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes en se basant sur les API. On appelle cette méthode un "wrap". Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toute les fonctions Microsoft Graph :
 
 ```powershell
 (Get-Command -Name 'Get-MgUser').Definition
 ```
 
-Cette méthode de génération a des avantages et des inconvénients. Côté avantages, les mises à jour des modules PowerShell se font très rapidement, ce qui permet d'obtenir des commandes seulement quelques jours après la publication d'une API.
-
-Vous pouvez d'ailleurs vérifier la fréquence de mise à jour des modules en regardant la [PSGallery](https://www.powershellgallery.com/packages/Microsoft.Graph#version-history).
+Cette méthode de génération a des avantages et des inconvénients. Côté avantage, les mises à jour des modules PowerShell se font très rapidement, ce qui permet d'obtenir des commandes seulement quelques jours après la publication d'une API (en théorie).
 
 Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés. Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple :
 
@@ -76,7 +74,7 @@ Get-InstalledModule -Name 'Microsoft.Graph*'
 Les paramètres de requêtes sont toujours présents en PowerShell, sauf qu'au lieu de les ajouter à la fin de l'URI, ils prennent maintenant la forme de paramètres de commande. Vous retrouverez donc :
 
 - `-Filter` pour filtrer les résultats
-- `Select` pour limiter les résultats à certaines propriétés
+- `-Select` pour limiter les résultats à certaines propriétés
 - `-Search` pour rechercher
 - `-Top` pour obtenir seulement les X premiers résultats
 - `-Skip` pour ignorer les X premiers résultats
@@ -92,7 +90,7 @@ PowerShell | OData | Description
 `accountEnabled -eq $true` | `accountEnabled eq true` | Le compte est actif
 `displayName -like 'Ana*'` | `startsWith(displayName, "Ana")` | Le nom commence par "Ana"
 `displayName -like '*abe*'` | `displayName contains "abe"` | Le nom contient "abe"
-`displayName -like '*elle'` | `endsWith(displayName, "elle")` | Le nom se termine par "elle"
+`displayName -like '*elle'` | `endsWith(displayName,"elle")` | Le nom se termine par "elle"
 
 Si vous êtes familier avec les règles d'appartenance sur les groupes dynamiques, il s'agit de la même syntaxe.
 
