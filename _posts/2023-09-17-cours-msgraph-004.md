@@ -31,7 +31,9 @@ Pour industrialiser les processus, Microsoft a décidé de générer automatique
 (Get-Command -Name 'Get-MgUser').Definition
 ```
 
-Cette méthode de génération a des avantages et des inconvénients. Côté avantage, les mises à jour des modules PowerShell se font très rapidement, ce qui permet d'obtenir des commandes seulement quelques jours après la publication d'une API (en théorie).
+Cette méthode de génération a des avantages et des inconvénients. Côté avantage, les mises à jour des modules PowerShell se font très rapidement, ce qui permet d'obtenir des commandes seulement quelques jours après la publication d'une API.
+
+Vous pouvez consulter la fréquence de mise à jour des modules en regardant la [PSGallery](https://www.powershellgallery.com/packages/Microsoft.Graph#version-history).
 
 Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés. Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple :
 
