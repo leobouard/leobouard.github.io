@@ -146,9 +146,25 @@ La liste complète des étendues est disponible ici : [Permissions reference - M
 
 ### Approbation de l'administrateur
 
-Pour la plupart des étendues, il vous faudra obtenir l'approbation de l'administrateur (admin consent) avant de pouvoir accéder aux données. Si vous êtes *Global Administrator* de votre tenant, vous pouvez alors vous autorisez vous-même.
+Pour la plupart des étendues, il vous faudra obtenir l'approbation de l'administrateur (admin consent) avant de pouvoir accéder aux données. Si vous êtes *Global Administrator* de votre tenant, vous pouvez alors vous autorisez vous-même. 
 
-Cependant, pour les étendues limitées à votre seule personne; il n'y a pas besoin de validation par l'administrateur (adminConsentRequired = FALSE). C'est le cas de *User.Read* pour consulter votre profil, ou *Files.Read* pour lire vos fichiers.
+Si ce n'est pas le cas et que l'option est activée sur votre tenant, vous pouvez demander une approbation de l'administrateur en entrant une justification :
+
+![fenêtre de demande d'approbation côté utilisateur](/assets/images/msgraph-203.png)
+
+Cette demande d'approbation pourra être examinée par les administrateurs dans le portail Azure dans la console suivante :
+
+![console pour approuver ou refuser les demandes côté administrateur](/assets/images/msgraph-204.png)
+
+#### Si vous ne pouvez pas demander d'approbation
+
+La capacité de demander une approbation par l'administrateur n'est pas activée par défaut sur les tenants Azure. Si ce n'est pas le cas, vous devrez vous connecter avec un compte à privilège ou demander un modification de la configuration du tenant Azure :
+
+![consentement et autorisation depuis le portail Azure](/assets/images/msgraph-202.png)
+
+### Permissions sans validation
+
+Pour les étendues limitées à votre seule personne; il n'y a pas besoin de validation par l'administrateur (adminConsentRequired = FALSE). C'est le cas de *User.Read* pour consulter votre profil, ou *Files.Read* pour lire vos fichiers.
 
 ## Versions d'API
 
