@@ -92,7 +92,8 @@ div.banner {
     justify-content: center;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     user-select: none;
-    min-width: 1550px;
+    max-width: 1550px;
+    width: -webkit-fill-available;
     z-index: -1;
     margin: -100px 0px;
     min-height: 350px;
