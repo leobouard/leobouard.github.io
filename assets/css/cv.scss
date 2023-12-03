@@ -40,12 +40,10 @@ span.certifStatusActive, span.certifStatusWaiting {
 
 span.certifStatusWaiting {
     background-color: var(--neutral);
-    color: var(--textbg);
 }
 
 span.certifStatusActive {
     background-color: var(--positive);
-    color: var(--textbg);
 }
 
 .experience {
