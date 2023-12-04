@@ -226,9 +226,9 @@ Les commandes issues des modules Beta fonctionnent de la même manière que ceux
 
 Voici quelques exemples :
 
-- `Get-MgUser` devient `Get-Mg**Beta**User`
-- `New-MgTeam` devient `New-Mg**Beta**Team`
-- `Remove-MgGroup` devient `Remove-Mg**Beta**Group`
+- `Get-MgUser` devient `Get-MgBetaUser`
+- `New-MgTeam` devient `New-MgBetaTeam`
+- `Remove-MgGroup` devient `Remove-MgBetaGroup`
 
 Attention cependant : toutes les commandes n'ont pas forcément leur pendant "Beta".
 
