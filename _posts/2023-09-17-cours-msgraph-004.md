@@ -87,12 +87,12 @@ Le paramètre que vous utiliserez le plus sera probablement le filtre, il est do
 
 Voici quelques exemples sur la différence de syntaxe :
 
-PowerShell | OData | Description
------------------- | ------------- | ----------
-`accountEnabled -eq $true` | `accountEnabled eq true` | Le compte est actif
-`displayName -like 'Ana*'` | `startsWith(displayName, "Ana")` | Le nom commence par "Ana"
-`displayName -like '*abe*'` | `displayName contains "abe"` | Le nom contient "abe"
-`displayName -like '*elle'` | `endsWith(displayName,"elle")` | Le nom se termine par "elle"
+PowerShell                  | OData                            | Description
+--------------------------- | -------------------------------- | ----------
+`accountEnabled -eq $true`  | `accountEnabled eq true`         | Le compte est actif
+`displayName -like 'Ana*'`  | `startsWith(displayName, "Ana")` | Le nom commence par "Ana"
+`displayName -like '*abe*'` | `contains(displayName, "abe")`   | Le nom contient "abe"
+`displayName -like '*elle'` | `endsWith(displayName, "elle")`  | Le nom se termine par "elle"
 
 Si vous êtes familier avec les règles d'appartenance sur les groupes dynamiques, il s'agit de la même syntaxe.
 
@@ -226,11 +226,10 @@ Les commandes issues des modules Beta fonctionnent de la même manière que ceux
 
 Voici quelques exemples :
 
-- Get-MgUser devient Get-Mg**Beta**User
-- Exemple 2
-- Exemple 3
-- Exemple 4
+- `Get-MgUser` devient `Get-Mg**Beta**User`
+- `New-MgTeam` devient `New-Mg**Beta**Team`
+- `Remove-MgGroup` devient `Remove-Mg**Beta**Group`
 
-Attention cependant : toutes les commandes n'ont pas forcément leur pendant "Beta"
+Attention cependant : toutes les commandes n'ont pas forcément leur pendant "Beta".
 
 ## Conclusion
