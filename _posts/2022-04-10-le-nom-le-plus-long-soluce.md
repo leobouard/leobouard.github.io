@@ -59,7 +59,9 @@ Cette fois-ci, on va un peu plus loin et on va venir dresser un classement des n
 $users | ForEach-Object {
     $_ | Add-Member -MemberType NoteProperty -Name nameLength -Value ($_.displayName).Length -Force
 }
-$users | Sort-Object -Property nameLength -Descending | Select-Object -First 10 | Format-Table displayName,country,city,nameLength
+$users | Sort-Object -Property nameLength -Descending |
+    Select-Object -First 10 |
+    Format-Table displayName,country,city,nameLength
 ```
 
 Pour ça, on ajoute une nouvelle propriété "nameLength" à notre objet de base. Une fois que tous les utilisateurs ont reçu cette nouvelle propriété, il suffit simplement de trier les objets du nom le plus long au nom le plus court… et c'est bon !
@@ -75,7 +77,14 @@ Christophe Deslauriers | CH | STECKBORN | 22
 On pourrait même faire une version dérivée qui se passerait de la boucle `ForEach-Object`. Pour ça, on utilise la commande `Select-Object` pour calculer la propriété "nameLength" à la volée :
 
 ```powershell
-$users | Select-Object displayName,@{Name='nameLength';Expression={($_.displayName).Length}} | Sort-Object nameLength -Descending | Select-Object -First 10 | Format-Table
+$users |Select-Object displayName,@{Name='nameLength';Expression={($_.displayName).Length}} |
+    Sort-Object nameLength -Descending |
+    Select-Object -First 10 |
+    Format-Table
 ```
 
-Et on peut même envisager une version condensée : `($users|select displayName,@{N='l';E={($_.displayName).Length}}|sort l -d)[0..5]`
+Et on peut même envisager une version condensée en seulement 80 caractères :
+
+```powershell
+($users|select displayName,@{N='l';E={($_.displayName).Length}}|sort l -d)[0..9]
+```
