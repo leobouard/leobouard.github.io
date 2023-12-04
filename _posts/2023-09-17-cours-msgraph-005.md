@@ -48,7 +48,9 @@ Il vous faudra vous munir de trois éléments pour pouvoir vous connecter à une
 #### Connexion via secret
 
 ```powershell
-"v0tr3SecR3tb1eNg4rDé" | ConvertTo-SecureString -AsPlainText | ConvertFrom-SecureString
+"v0tr3SecR3tb1eNg4rDé" |
+    ConvertTo-SecureString -AsPlainText |
+    ConvertFrom-SecureString
 ```
 
 <blockquote style="overflow-wrap: break-word;">
