@@ -7,7 +7,7 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 ## Résumé
 
-Ingénieur système spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, de sécurisation et d'automatisation. J'accorde beaucoup d'importance à la documentation et j'essaie de faire en sorte que mon travail soit toujours en accord avec les bonnes pratiques, à l'épreuve du temps et le plus simple possible.
+Ingénieur système spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, d'outils collaboratifs et d'automatisation.
 
 Je partage également mes connaissances (notamment sur PowerShell) avec mon site web [LaBouaBouate](https://www.labouabouate.fr).
 
