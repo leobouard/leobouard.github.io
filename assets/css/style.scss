@@ -415,6 +415,10 @@ footer {
 
 @media print {
 
+    html {
+        font-size: 13px;
+    }
+
     body {
         background-color: var(--textbg);
     }
@@ -431,6 +435,7 @@ footer {
     
     main section {
         box-shadow: none;
+        border: none;
     }
     
     footer {
