@@ -296,9 +296,9 @@ main {
         .mi           { color: #01633F; } /*Entiers*/ 
     }
 
-    p > code,
-    li > code,
-    main table > tbody > tr > td > code {
+    p code,
+    li code,
+    table code {
         border-radius: var(--borderradius);
         background-color: var(--accentbg);
         padding: 2px;
@@ -310,7 +310,7 @@ main {
     tr,
     th {
         border: var(--border);
-        padding: 5px;
+        padding: 7px;
         border-collapse: collapse;
         font-size: 13px;
         line-height: 125%;
