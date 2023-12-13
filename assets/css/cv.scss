@@ -118,6 +118,7 @@ span.certifStatusActive {
 
 .progressBarContent {
     height: 100%;
-    background: var(--accent);
+    background: var(--primary);
     border-right: var(--border);
+    opacity: 0.75;
 }
