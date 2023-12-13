@@ -146,14 +146,14 @@ a.light-mode, a.dark-mode {
 .submenu {
     display: none;
     padding-inline-start: 0;
-    background: var(--accentbg);
+    background: var(--textbg);
     position: fixed;
     z-index: 10;
     top: 0;
     right: 0;
     margin: 0;
     height: 100%;
-    min-width: 50vw;
+    min-width: 75%;
     opacity: 0.95;
     list-style: none;
     box-shadow: 0 0 5px 0 var(--boxshadow);

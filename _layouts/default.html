@@ -41,12 +41,12 @@
             <i class="fa-solid fa-circle-half-stroke"></i>
           </a>
         </div>
-        <a class="vertical-menu" title="Menu" href="javascript:document.querySelectorAll('.submenu').forEach(el => el.style.display = 'block');">
+        <a class="vertical-menu" title="Menu" href="javascript:document.querySelectorAll('.submenu').forEach(el => el.style.display = 'block'); document.querySelector('main').style.filter = 'blur(3px)'">
           <i class="fa-solid fa-bars"></i>
         </a>
         <ul class="submenu">
           <li>
-            <a href="javascript:document.querySelectorAll('.submenu').forEach(el => el.style.display = 'none');">
+            <a href="javascript:document.querySelectorAll('.submenu').forEach(el => el.style.display = 'none'); document.querySelector('main').style.filter = 'blur(0px)'">
               <i class="fa-solid fa-xmark"></i>
             </a>
           </li>
