@@ -134,10 +134,10 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             <small>depuis septembre 2021</small>
             <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
             <ul>
-                <li>segmentation des permissions dans Azure AD avec les unités administratives</li>
-                <li>migration du mode d'attribution des licences Microsoft 365</li>
+                <li>audit, sécurisation et mise en place du modèle N-tiers sur Active Directory</li>
                 <li>migration et déploiement de l'authentification multi-facteur</li>
-                <li>audit, sécurisation et mise en place du modèle N-tiers sur Active Directory (en cours)</li>
+                <li>migration du mode d'attribution des licences Microsoft 365</li>
+                <li>segmentation des permissions dans Azure AD avec les unités administratives</li>
             </ul></p>
         </div>
         <div class="experience">

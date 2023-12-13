@@ -4,11 +4,10 @@
 .certification {
     margin: 5px;
     height: 225px;
-    width: 130px;
+    width: 120px;
     border-radius: var(--borderradius);
     padding: 15px;
     border: var(--border);
-    overflow: hidden;
     position: relative;
 }
 
@@ -26,16 +25,18 @@ span.certifTitle {
     font-weight: 600;
     display: block;
     font-size: 14px;
+    line-height: 150%;
 }
 
 span.certifStatusActive, span.certifStatusWaiting {
     font-size: smaller;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    border-radius: 100px;
+    top: 0;
+    left: 0;
+    margin: -5px;
+    border-radius: 5px;
     padding: 2px 10px;
+    opacity: 0.85;
 }
 
 span.certifStatusWaiting {
@@ -120,5 +121,5 @@ span.certifStatusActive {
     height: 100%;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     border-right: var(--border);
-    opacity: 0.9;
+    opacity: 0.85;
 }
