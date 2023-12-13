@@ -208,16 +208,16 @@ div.summary > span {
 }
 
 .bottom-buttons > a { 
-    border: 1px solid var(--primary);
+    border: 1px solid var(--accent);
 }
 
 .bottom-buttons > a:first-child {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .bottom-buttons > a:last-child {
     color: var(--textbg);
-    background-color: var(--primary);
+    background-color: var(--accent);
 }
 
 // SIDE BUTTONS
