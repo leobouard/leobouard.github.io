@@ -76,7 +76,7 @@ $users | % { $_ | Add-Member -MemberType NoteProperty -Name "createdMonth" -Valu
 $users | Group-Object -Property createdMonth | Sort-Object Count -Descending
 ```
 
-## Si vous voulez aller plus loin 
+## Si vous voulez aller plus loin
 
 - Calculer le nombre d'arrivée par jour de la semaine (lundi, mardi, etc...) et par année
 - Calculer l'ancienneté de chaque employé et faire statistiques avec
