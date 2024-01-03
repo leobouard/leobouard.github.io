@@ -3,6 +3,7 @@ layout: post
 title: "Problème SIP Teams"
 description: "L'utilisateur ne peut plus contacter des comptes externes à l'organisation"
 tag: microsoft-teams
+thumbnail: "/assets/thumbnail/probleme-sip-teams.png"
 listed: true
 ---
 
