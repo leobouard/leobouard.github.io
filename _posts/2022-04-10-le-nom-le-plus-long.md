@@ -4,6 +4,7 @@ title: "Le nom le plus long"
 description: "Saurez-vous retrouver la personne avec le nom le plus long de votre annuaire ?"
 tags: ['challenge','powershell']
 listed: true
+thumnail: "assets/thumbnail/le-nom-le-plus-long.png"
 nextLink:
   name: "Voir la solution"
   id: "/2022/04/10/le-nom-le-plus-long-soluce"
