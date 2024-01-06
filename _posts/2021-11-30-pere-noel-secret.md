@@ -4,6 +4,7 @@ title: "Secret santa"
 description: "Créer un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
 tags: ['challenge','powershell']
 listed: true
+thumbnail:  "assets/thumbnail/secret-santa.png"
 nextLink:
   name: "Voir la solution"
   id: "/2021/11/30/pere-noel-secret-soluce"
