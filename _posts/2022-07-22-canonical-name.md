@@ -4,6 +4,7 @@ title: "CanonicalName & DistinguishedName"
 description: "Et si on prennait la racine du domaine en point de départ pour une fois ?"
 tags: active-directory
 listed: true
+thumbnail: "assets/thumbnail/canonicalname-distinguishedname.png"
 ---
 
 L'emplacement dans l'arborescence Active Directory est souvent très important et peu s'avérer utile pour la génération de rapports. L'attribut le plus utilisé pour déterminer cette information est le "Distinguished Name", mais si vous ne connaissez pas son cousin le "Canonical Name", cet article est fait pour vous !
