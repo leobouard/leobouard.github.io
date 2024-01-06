@@ -24,32 +24,26 @@ main > h1 > span {
     -webkit-text-fill-color: transparent;
 }
 
-/*
-
-ul {
-    text-align: center;
-}
 
 li {
     list-style: none;
-    display: inline;
+    display: inline-block;
 }
 
 ul > li > a {
-    font-weight: normal;
-    padding: 10px 15px;
-    transition: all 100ms ease-in-out;
-    text-decoration: none;
+    padding: 12px 20px;
     border-radius: 5px;
-    color: var(--textbg)
+    margin: 5px;
+    font-size: large;
 }
 
 ul > li:first-child > a {
-    background: var(--primary);
+    background: var(--accent);
+    color: white;
 }
 
 ul > li:last-child > a {
-    background: var(--secondary);
+    background: var(--bodybg);
 }
 
 */
