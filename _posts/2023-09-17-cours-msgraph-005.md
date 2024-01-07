@@ -66,25 +66,59 @@ Il vous faudra vous munir de trois éléments pour pouvoir vous connecter à vot
 
 Les deux premières informations sont disponibles facilement dans la section "Propriétés" de votre app Azure, et la troisière dépendera du type de permissions auquelles vous voulez accéder (déléguées ou application).
 
-#### Connexion en mode délégué
+### Connexion en mode délégué
 
-Pour vous connecter en mode délégué sur une application, vous devrez d'abors ajouter une URI de redirection pour que l'utilisateur puisse être rediriger correctement vers votre script PowerShell.
+#### URI de redirection
+
+Pour vous connecter en mode délégué sur une application, vous devrez d'abord ajouter une URI de redirection pour que l'utilisateur puisse être rediriger correctement vers votre script PowerShell.
 
 Pour cela, il faut se rendre dans Entra ID > Inscription d'application > Votre application > Authentification et ajouter une plateforme
 
-- Applications de bureau et mobiles
-- URI : <https://login.microsoftonline.com/common/oauth2/nativeclient>
+Cliquer sur "Applications de bureau et mobile" puis ajouter l'URI de redirection personnalisée : <http://localhost>
 
-Plus d'information ici : <https://aka.ms/redirectUriMismatchError>
+Cette URI de redirection nous permettra de revenir au script PowerShell une fois que l'authentification se sera faite dans le navigateur.
 
-#### Connexion en tant qu'application
+#### Connexion en PowerShell
 
-#### Certificat ou secret ?
+Une fois l'application configurée, vous pouvez alors vous y connecter en PowerShell en indiquant :
 
-- Durée de vie maximum d'un secret : 2 ans
-- Durée de vie maximum d'un certificat : 4 ans ?
+1. `-ClientId` : ID d'application (client)
+2. `-TenantId` : ID de l'annuaire (locataire)
+3. `-Scopes` : le ou les autorisation(s) que vous voulez utiliser parmi celles disponibles sur l'application (facultatif)
+
+```powershell
+Connect-MgGraph -ClientId <application-ID> -TenantId <locataire-ID> -Scopes 'User.Read'
+```
+
+Une fois connecté, vous pouvez consulter les informations de connexion avec la commande `Get-MgContext`.
+
+### Connexion en tant qu'application
+
+La connexion en tant qu'application propose deux méthodes pour s'authentifier : soit par certificat, soit par un secret (mot de passe).
+
+Microsoft recommande l'utilisation de certificats pour des questions de sécurité et de simplicité.
+
+Vous pouvez utiliser plusieurs certificats et/ou plusieurs secrets en même temps, ce qui peut être utile lors de la période de renouvellement du certificat ou du secret en cours d'utilisation.
+
+#### Connexion via certificat (recommandée)
+
+```powershell
+Connect-MgGraph -ClientId '10a52256-36f0-4bb7-973d-986630ee8e3c' -TenantId '0649f7a2-affe-49fa-8a7e-0bac64ebd21a' -CertificateThumbprint 'DBA124203B11CD54F03DBCE272574FF287A3ADDB'
+```
+
+<https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-self-signed-certificate>
 
 #### Connexion via secret
+
+Pour créer un secret, vous pouvez vous rendre dans la section "Certificats & secrets" puis cliquer sur "+ Nouveau secret client" dans l'onglet "Secrets client".
+
+Le secret est une chaine de 40 caractères généré automatiquement avec des lettres minuscules, majuscules, chiffres et caractères spéciaux comme `cqG8Q~bAkFf.qPZOfR~XLuIWIP6Zn4PvTJclxar6` par exemple.
+
+La durée de vie maximale d'un secret est de 730 jours soit environ deux ans.
+
+##### Sécurisation du secret
+
+Une fois que vous avez récupéré votre secret, il est impératif de le transformer en une chaine de caractère chiffrée avec la commande suivante :
 
 ```powershell
 "v0tr3SecR3tb1eNg4rDé" |
@@ -92,8 +126,22 @@ Plus d'information ici : <https://aka.ms/redirectUriMismatchError>
     ConvertFrom-SecureString
 ```
 
+Ce qui devrait donner un résultat de cette forme :
+
 <blockquote style="overflow-wrap: break-word;">
   <p>01000000d08c9ddf0115d1118c7a00c04fc297eb0100000095e99a1b60201a4db16911633fed29810000000002000000000003660000c000000010000000c2c7024dc2f0cbad69f5d305f752a91d0000000004800000a0000000100000001244c77406a80e93137f7d241e08525a10000000f8eaeca8a324cbb2c978146c7ef131ea14000000b7d3a8e0997d88fb47de646028570511952c3163</p>
 </blockquote>
 
-#### Connexion via certificat
+##### Récupération d'un token
+
+Impossible de se connecter avec un secret en utilisant uniquement le module Microsoft Graph. Il va donc falloir installer le module "Microsoft Authentication Library for PowerShell" ou dans sa version courte : `MSAL.PS`.
+
+```powershell
+Install-Module 'MSAL.PS'
+```
+
+Ce module nous permet d'avoir accès à la commande `Get-MsalToken` qui nous permet d'obtenir un "Access token" en se connectant avec un secret. Cet "Access token" pourra ensuite servir à la connexion à Microsoft Graph en utilisant la commande `Connect-MgGraph`.
+
+```powershell
+$token = Get-MsalToken -ClientId -ClientSecret -TenantId
+```
