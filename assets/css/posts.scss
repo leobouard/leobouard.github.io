@@ -293,7 +293,7 @@ ul.task-list {
 }
 
 li.task-list-item {
-    padding: 0.5em;
+    padding: 0.5em 2em;
     border: var(--border);
     border-radius: 5px;
     margin: 5px;
@@ -301,6 +301,10 @@ li.task-list-item {
 
 li.task-list-item:hover {
     background: var(--accentbg)
+}
+
+input.task-list-item-checkbox {
+    display: none;
 }
 
 @media screen and (max-width: 950px) {
