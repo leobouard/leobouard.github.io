@@ -7,8 +7,8 @@ listed: true
 thumbnail: "/assets/thumbnail/cours-pratique-pwsh.png"
 capsule: "⭐ Ma sélection"
 nextLink:
-  name: "Sommaire"
-  id: "/2022/12/01/cours-pratique-powershell-sommaire"
+  name: "Partie 1"
+  id: "/2022/12/01/cours-pratique-powershell-001"
 ---
 
 ## Introduction
@@ -32,3 +32,17 @@ Chaque partie sera similaire dans son organisation :
 - Un résumé du résultat à obtenir qui contient toutes les informations nécessaires pour réaliser l'exercice
 - Le détail pas-à-pas pour vous aider en cas de blocage
 - La fameuse *correction* en fin de page pour suivre le rythme en cas de problème
+
+## Table des matières
+
+{% assign posts = site.posts | sort: 'id' %}
+<div class="summary">
+  {% for post in posts %}
+    {% if post.title contains 'Cours PowerShell #' %}
+      <a href="{{ post.id }}">
+          <h3>{{ post.title }}</h3>
+          <span>{{ post.description}}</span>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

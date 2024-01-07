@@ -4,7 +4,7 @@ title: "Triangulation AD"
 description: "Une requête Active Directory bloquée à cause d'une erreur sur un compte utilisateur ou ordinateur"
 tags: active-directory
 listed: true
-thumbnail: "assets/thumbnail/triangulation-ad.png"
+thumbnail: "/assets/thumbnail/triangulation-ad.png"
 ---
 
 ## Contexte

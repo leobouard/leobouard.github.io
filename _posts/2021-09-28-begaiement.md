@@ -4,7 +4,7 @@ title: "Bégaiement"
 description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
 tags: ['challenge','powershell']
 listed: true
-thumbnail: "assets/thumbnail/begaiement.png"
+thumbnail: "/assets/thumbnail/begaiement.png"
 nextLink:
   name: "Voir la solution"
   id: "/2021/09/28/begaiement-soluce"
