@@ -2,7 +2,7 @@
 layout: post
 title: "MSGRAPH #7 - Questions"
 description: "Questions pour évaluer votre niveau de connaissance sur Microsoft Graph"
-tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
+tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
 prevLink:
   name: "Partie 6"
   id: "/2023/09/17/cours-msgraph-006"

@@ -2,7 +2,7 @@
 layout: post
 title: "MSGRAPH #4 - Les modules PowerShell"
 description: "Travailler avec Microsoft Graph en PowerShell via les modules dédiés"
-tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
+tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 5"
   id: "/2023/09/17/cours-msgraph-005"

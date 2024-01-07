@@ -2,7 +2,7 @@
 layout: post
 title: "MSGRAPH #6 - Exercices pratiques"
 description: "Travaux pratiques qui mobilisent l'ensemble des connaissances acquises"
-tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
+tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 7"
   id: "/2023/09/17/cours-msgraph-007"

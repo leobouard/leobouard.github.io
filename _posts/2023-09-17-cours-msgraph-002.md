@@ -2,7 +2,7 @@
 layout: post
 title: "MSGRAPH #2 - Les spécificités de Microsoft Graph"
 description: "Comprendre les éléments clés de l'API de Microsoft"
-tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
+tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 3"
   id: "/2023/09/17/cours-msgraph-003"
@@ -146,7 +146,7 @@ La liste complète des étendues est disponible ici : [Permissions reference - M
 
 ### Approbation de l'administrateur
 
-Pour la plupart des étendues, il vous faudra obtenir l'approbation de l'administrateur (admin consent) avant de pouvoir accéder aux données. Si vous êtes *Global Administrator* de votre tenant, vous pouvez alors vous autorisez vous-même. 
+Pour la plupart des étendues, il vous faudra obtenir l'approbation de l'administrateur (admin consent) avant de pouvoir accéder aux données. Si vous êtes *Global Administrator* de votre tenant, vous pouvez alors vous autorisez vous-même.
 
 Si ce n'est pas le cas et que l'option est activée sur votre tenant, vous pouvez demander une approbation de l'administrateur en entrant une justification :
 

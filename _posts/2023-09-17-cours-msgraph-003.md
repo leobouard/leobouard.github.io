@@ -2,7 +2,7 @@
 layout: post
 title: "MSGRAPH #3 - Microsoft Graph Explorer"
 description: "Prendre en main efficacement l'outil web de requête d'API"
-tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
+tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 4"
   id: "/2023/09/17/cours-msgraph-004"

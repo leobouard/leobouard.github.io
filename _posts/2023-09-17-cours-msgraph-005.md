@@ -2,7 +2,7 @@
 layout: post
 title: "MSGRAPH #5 - Applications Azure"
 description: "Découvrir le rôle et le fonctionnement d'une application Azure pour utiliser Microsoft Graph"
-tableOfContent: "/2023/09/17/cours-msgraph-sommaire"
+tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"
   id: "/2023/09/17/cours-msgraph-006"
