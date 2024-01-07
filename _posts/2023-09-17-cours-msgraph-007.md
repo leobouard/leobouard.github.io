@@ -96,3 +96,8 @@ Vrai ou faux : Toutes les permissions déléguées sont également disponibles e
 - [x] Faux
 
 ### Question #11
+
+Vrai ou faux : Vous n'avez pas besoin de demander d'approbation de l'administrateur lorsque vous avez le rôle d'administrateur global.
+
+- [ ] Vrai
+- [x] Faux
