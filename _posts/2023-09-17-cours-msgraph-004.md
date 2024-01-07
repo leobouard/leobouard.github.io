@@ -158,7 +158,13 @@ Si vous êtes encore tombé dans le piège, c'est que vous n'avez pas encore ass
 Connect-MgGraph -Scopes Group.ReadWrite.All
 ```
 
-En rappelant la commande précédente vous devriez alors pouvoir créer votre groupe.
+Vous pouvez consulter la liste des étendues autorisées ainsi que toutes les informations de connexion de votre session en cours avec la commande suivante :
+
+```powershell
+Get-MgContext
+```
+
+En rappelant la commande précédente `New-MgGroup` vous devriez alors pouvoir créer votre groupe.
 
 ### Ajouter un membre
 
@@ -233,3 +239,14 @@ Voici quelques exemples :
 Attention cependant : toutes les commandes n'ont pas forcément leur pendant "Beta".
 
 ## Conclusion
+
+L'utilisation des nouveaux modules PowerShell Microsoft Graph est plus complexe que l'utilisation des anciens modules AzureAD et MSOnline. Cette complexité est directement liée au fait que toutes les commandes (ou presque) sont générées automatiquement depuis l'API.
+
+Dans les choses à retenir, on peut noter que :
+
+- quasiment chaque action demande d'utiliser l'ID de la ressource plutôt que son nom d'affichage ou son UserPrincipalName dans le cas d'un utilisateur
+- la documentation de l'API sera toujours meilleure et plus utile que la documentation de la commande PowerShell associée
+- toutes les commandes `GET` sont soumises à la pagination, il est donc important de systématiquement utiliser le paramètre `-All` pour obtenir l'intégralité des résultats et pas uniquement les X premiers
+- l'utilisation des commandes `Beta` est souvent nécessaire pour obtenir certaines informations, même sur des scripts destinés à la production
+- la mise à jour des modules Microsoft Graph ne doit pas être prise à la légère : certaines commandes peuvent disparaitre sur les nouvelles versions
+- vous n'avez techniquement besoin que de deux commandes pour réaliser toutes vos actions : `Connect-MgGraph` et `Invoke-MgRequest`

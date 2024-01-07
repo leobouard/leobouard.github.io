@@ -140,3 +140,7 @@ Pour boucler la boucle, il ne nous reste plus qu'à utiliser la dernière métho
 ![Suppression de l'utilisateur](/assets/images/msgraph-316.png)
 
 ## Conclusion
+
+Microsoft Graph Explorer est un outil formidable pour tester des requêtes simples, valider la syntaxe des paramètres de requêtes ou vérifier la disponiblité de certains filtres. Il est accessible facilement depuis n'importe quel ordinateur et sans installation supplémentaire. Il permet d'accéder simplement à la liste des appels API disponibles ainsi qu'à la documentation associée.
+
+Il ne convient à un usage ponctuel, principalement pour consulter de l'information ou tester des appels APIs.

@@ -19,6 +19,8 @@ Si vous en voulez la preuve, vous pouvez consulter la section "Applications d'en
 
 ![toutes les applications de votre tenant](/assets/images/msgraph-501.png)
 
+Vous pouvez d'ailleurs consulter les étendues autorisées pour chaque application en cliquant l'application, puis "Autorisations" dans la catégorie "Sécurité".
+
 ## Création d'une application
 
 Pour faire de l'administration ponctuelle avec votre compte à privilège, il n'y a pas ou peu d'intérêt à passer par une autre application que celles du Graph Explorer ou des modules PowerShell. Cependant, créer votre propre application Azure peut vous permettre de déléguer des tâches d'administration ou mettre des scripts se connectant à Microsoft Graph en tâches planifiées.
@@ -31,13 +33,13 @@ Vous pouvez alors choisir le nom de votre application et qui peut l'utiliser. L'
 
 ![informations importantes de votre application](/assets/images/msgraph-503.png)
 
-Vous pouvez en profiter pour ajouter un logo sur votre application et une description.
+Vous pouvez en profiter pour ajouter un logo et une description sur votre application.
 
 ### Autorisations
 
 Par défaut et comme toujours avec Microsoft Graph, vous aurez comme seule permission de lire votre profil utilisateur. Si vous voulez consulter vos autorisations actuelles ou en ajouter de nouvelles (comme *Group.Read.All* ou *Directory.Read.All*), vous pouvez le faire dans le menu "API autorisées".
 
-Lorsque vous cliquer sur "+ Ajouter une autorisation", vous avez alors beaucoup de choix à votre disposition : Microsoft Graph, Dynamics CRM, Intune, Purview, OneNote, Power Automate, etc... Pour rester dans le sujet, on va s'en tenir à "Microsoft Graph".
+Lorsque vous cliquer sur "+ Ajouter une autorisation", vous avez alors beaucoup de choix à votre disposition : Microsoft Graph, Dynamics CRM, Intune, Purview, OneNote, Power Automate, etc... Pour rester dans notre sujet, on va s'en tenir à "Microsoft Graph".
 
 ![toutes les permissions disponibles](/assets/images/msgraph-504.png)
 
@@ -50,7 +52,7 @@ Il y a deux types de permissions différentes pour les API Microsoft Graph :
 
 > Toutes les autorisations déléguées n'ont pas forcément leur pendant en autorisations d'applications et inversement.
 
-Comme d'habitude, la plupart des autorisations nécessiterons une approbation de l'administrateur avant de fonctionner correctement.
+Comme d'habitude, la plupart des autorisations nécessiterons une approbation de l'administrateur pour être opérationnelles.
 
 ### Connexion à une application
 
@@ -65,6 +67,15 @@ Il vous faudra vous munir de trois éléments pour pouvoir vous connecter à vot
 Les deux premières informations sont disponibles facilement dans la section "Propriétés" de votre app Azure, et la troisière dépendera du type de permissions auquelles vous voulez accéder (déléguées ou application).
 
 #### Connexion en mode délégué
+
+Pour vous connecter en mode délégué sur une application, vous devrez d'abors ajouter une URI de redirection pour que l'utilisateur puisse être rediriger correctement vers votre script PowerShell.
+
+Pour cela, il faut se rendre dans Entra ID > Inscription d'application > Votre application > Authentification et ajouter une plateforme
+
+- Applications de bureau et mobiles
+- URI : <https://login.microsoftonline.com/common/oauth2/nativeclient>
+
+Plus d'information ici : <https://aka.ms/redirectUriMismatchError>
 
 #### Connexion en tant qu'application
 
