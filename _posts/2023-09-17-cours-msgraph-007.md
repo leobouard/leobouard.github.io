@@ -41,10 +41,10 @@ Vous êtes l'administrateur global de votre annuaire. Vous vous connectez pour l
 
 Vous effecutez une requête sur Microsoft Graph Explorer pour obtenir les groupes qui commencent par "Compta". Quelle est la bonne syntaxe pour votre paramètre de requête ?
 
-- [ ] `?$filter=displayName -like 'Compta*'`
-- [ ] `?$filter=displayName contains 'Compta'`
-- [x] `?$filter=startsWith(displayName,'Compta')`
-- [ ] `?$search=(displayName,'Compta*')`
+- [ ] [?$filter=displayName -like 'Compta*'](/)
+- [ ] [?$filter=displayName contains 'Compta'](/)
+- [x] [`?$filter=startsWith(displayName,'Compta')](/)
+- [ ] [?$search=(displayName,'Compta*')](/)
 
 ### Question #05
 
@@ -76,10 +76,10 @@ Toute votre équipe ainsi que vous-même utilisez systématiquement l'applicatio
 
 Plusieurs comptes Entra ID sont connectés sur votre ordinateur. Vous saisissez la commande `Connect-MgGraph` et celle-ci vous renvoie directement le texte *"Welcome To Microsoft Graph!"*. Vous souhaitez vérifier quel compte est utilisé pour la connexion. Quelle commande PowerShell pouvez vous utiliser ?
 
-- [x] Get-MgContext
-- [ ] Get-MgUser -Filter "identity eq 'me'"
-- [ ] Get-MgConnectedUser
-- [ ] Get-MgConnectionInformation
+- [x] `Get-MgContext`
+- [ ] `Get-MgUser -Filter "identity eq 'me'"`
+- [ ] `Get-MgConnectedUser`
+- [ ] `Get-MgConnectionInformation`
 
 ### Question #09
 
