@@ -5,6 +5,7 @@ description: "Une petite énigme a résoudre avant d'essayer de faire le script 
 tags: ['challenge','powershell']
 listed: true
 capsule: "👍 Le plus facile"
+thumbnail:  "assets/thumbnail/la-formule-magique.png"
 nextLink:
   name: "Voir la solution"
   id: "/2021/11/02/la-formule-magique-soluce"
