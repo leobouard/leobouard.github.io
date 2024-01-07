@@ -285,6 +285,24 @@ section.recommandation > span > img {
     margin-right: 10px;
 }
 
+// TASK-LIST
+
+ul.task-list {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+li.task-list-item {
+    padding: 0.5em;
+    border: var(--border);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+li.task-list-item:hover {
+    background: var(--accentbg)
+}
+
 @media screen and (max-width: 950px) {
 
     .side-buttons {
