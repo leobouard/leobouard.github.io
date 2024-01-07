@@ -102,11 +102,49 @@ Vous pouvez utiliser plusieurs certificats et/ou plusieurs secrets en même temp
 
 #### Connexion via certificat (recommandée)
 
+Pour plus de détails, vous pouvez consulter directement la documentation officielle de Microsoft : [Create a self-signed public certificate to authenticate your application \| Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-self-signed-certificate).
+
+##### Création du certificat
+
+Pour des questions d'accessibilité, nous allons utiliser des certificats auto-signés. Si vous avez accès à une autorité de certification (PKI), je vous recommande vivement de générer vos certificats via celle-ci.
+
+Pour générer un certificat autosigné, vous pouvez utiliser la commande suivante :
+
 ```powershell
-Connect-MgGraph -ClientId '10a52256-36f0-4bb7-973d-986630ee8e3c' -TenantId '0649f7a2-affe-49fa-8a7e-0bac64ebd21a' -CertificateThumbprint 'DBA124203B11CD54F03DBCE272574FF287A3ADDB'
+$certname = Read-Host -Prompt 'Nom du certificat'
+$cert = New-SelfSignedCertificate -Subject "CN=$certname" -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 -KeyAlgorithm RSA -HashAlgorithm SHA256
 ```
 
-<https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-self-signed-certificate>
+Par défaut, les certificats auto-signés ont une période de validité d'un an. Si vous voulez repousser l'expiration, vous pouvez ajouter le paramètre `-NotAfter`. Exemple pour obtenir un certificat valide pendant 48 mois :
+
+```powershell
+-NotAfter (Get-Date).AddMonths(48)
+```
+
+##### Téléchargement du certificat dans Azure
+
+Une fois votre certificat généré, vous devez maintenant exporter la clé publique à télécharger dans Azure :
+
+```powershell
+Export-Certificate -Cert $cert -FilePath "C:\temp\$certname.cer"
+```
+
+Vous n'avez plus qu'à déposer votre certificat sur Azure. Vous pouvez vous rendre dans la section "Certificats & secrets", dans l'onglet "Certificats" et enfin cliquer sur "↑ Télécharger le certificat".
+
+Azure supporte les certificats du type .CER, .PEM et .CRT.
+
+##### Utilisation du certificat pour la connexion
+
+Une fois le certificat téléchargé dans Azure, vous pouvez vous connecter à votre application en spécifiant l'ID d'application, l'ID de l'annuaire et l'empreinte numérique de votre certificat :
+
+```powershell
+$params = @{
+    ClientId = '10a52256-36f0-4bb7-973d-************'
+    TenantId = '0649f7a2-affe-49fa-8a7e-************'
+    CertificateThumbprint = 'DBA124203B11CD54F03DBCE272574FF287A3ADDB'
+}
+Connect-MgGraph @params
+```
 
 #### Connexion via secret
 
@@ -118,19 +156,23 @@ La durée de vie maximale d'un secret est de 730 jours soit environ deux ans.
 
 ##### Sécurisation du secret
 
-Une fois que vous avez récupéré votre secret, il est impératif de le transformer en une chaine de caractère chiffrée avec la commande suivante :
+Pour des raisons de sécurité évidentes, le secret ne doit pas être conservé en texte clair dans un script ou dans un fichier TXT.
+
+Pour sécuriser le mot de passe, je vous propose donc de le transformer en un hash et de stocker ce hash dans un fichier TXT :
 
 ```powershell
-"v0tr3SecR3tb1eNg4rDé" |
-    ConvertTo-SecureString -AsPlainText |
-    ConvertFrom-SecureString
+Read-Host -Prompt 'Entrer le secret' -AsSecureString |
+    ConvertFrom-SecureString |
+    Set-Content -Path 'C:\temp\secret.txt'
 ```
 
-Ce qui devrait donner un résultat de cette forme :
+Votre fichier "secret.txt" devrait ressembler à ça :
 
 <blockquote style="overflow-wrap: break-word;">
   <p>01000000d08c9ddf0115d1118c7a00c04fc297eb0100000095e99a1b60201a4db16911633fed29810000000002000000000003660000c000000010000000c2c7024dc2f0cbad69f5d305f752a91d0000000004800000a0000000100000001244c77406a80e93137f7d241e08525a10000000f8eaeca8a324cbb2c978146c7ef131ea14000000b7d3a8e0997d88fb47de646028570511952c3163</p>
 </blockquote>
+
+Ce hash n'est déchiffrable que par le compte utilisateur et uniquement depuis l'ordinateur qui a généré ce fichier.
 
 ##### Récupération d'un token
 
@@ -140,8 +182,16 @@ Impossible de se connecter avec un secret en utilisant uniquement le module Micr
 Install-Module 'MSAL.PS'
 ```
 
-Ce module nous permet d'avoir accès à la commande `Get-MsalToken` qui nous permet d'obtenir un "Access token" en se connectant avec un secret. Cet "Access token" pourra ensuite servir à la connexion à Microsoft Graph en utilisant la commande `Connect-MgGraph`.
+Ce module nous permet d'avoir accès à la commande `Get-MsalToken` qui nous permet d'obtenir un "Access token". Cet "Access token" pourra ensuite servir à la connexion à Microsoft Graph en utilisant la commande `Connect-MgGraph`.
 
 ```powershell
-$token = Get-MsalToken -ClientId -ClientSecret -TenantId
+$params = @{
+    ClientId = '10a52256-36f0-4bb7-973d-************'
+    TenantId = '0649f7a2-affe-49fa-8a7e-************'
+    ClientSecret = Get-Content -Path 'C:\temp\secret.txt' | ConvertTo-SecureString
+}
+$token = Get-MsalToken @params
+Connect-MgGraph -AccessToken $token.AccessToken
 ```
+
+Vous devriez maintenant être connecté à votre application. Vous pouvez vérifier les informations de connexion avec la commande `Get-MgContext`.
