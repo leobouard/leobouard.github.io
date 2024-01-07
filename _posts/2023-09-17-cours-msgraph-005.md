@@ -146,6 +146,8 @@ $params = @{
 Connect-MgGraph @params
 ```
 
+Vous devriez maintenant être connecté à votre application. Vous pouvez vérifier les informations de connexion avec la commande `Get-MgContext`.
+
 #### Connexion via secret
 
 Pour créer un secret, vous pouvez vous rendre dans la section "Certificats & secrets" puis cliquer sur "+ Nouveau secret client" dans l'onglet "Secrets client".

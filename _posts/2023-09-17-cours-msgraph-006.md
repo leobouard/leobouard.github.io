@@ -13,54 +13,26 @@ prevLink:
 
 ## Exercice pratique n°1
 
-### Contexte
+Le support de premier niveau (support N1) a besoin d'avoir accès au nombre de licences Microsoft 365 disponibles en temps réel. Les opérateurs du support n'ont pas de comptes d'administration sur Microsoft 365, uniquement des comptes standards sans accès au portails Azure ou Entra ID. Ceux-ci disposent cependant des modules PowerShell Microsoft Graph installés sur leurs postes de travail.
 
-utilisé par le support informatique de premier niveau et qui va nous donner les niveaux d'utilisation des licences Microsoft 365 de notre tenant
+Vous devez donc leur fournir un script PowerShell qui permettrait d'obtenir l'état des licences Microsoft 365 en s'authentifiant avec leurs comptes standards.
 
-### Ajout des permissions
+Pour obtenir les informations nécessaires pour la disponibilité des licences, vous pouvez utiliser l'API suivante : [List subscribedSkus \| Microsoft Graph REST API v1.0](https://learn.microsoft.com/en-us/graph/api/subscribedsku-list?view=graph-rest-1.0&tabs=http)
 
-[List subscribedSkus \| Microsoft Graph REST API v1.0](https://learn.microsoft.com/en-us/graph/api/subscribedsku-list?view=graph-rest-1.0&tabs=http)
+### Script PowerShell
 
-### Connexion à l'application
-
-### Réalisation du script
+L'intérêt de cet exercice se situe dans la configuration d'une application Azure et la connexion à celle-ci en PowerShell. Si vous le souhaitez, vous pouvez réaliser votre propre script, sinon voici une version basique déjà fonctionnelle :
 
 ```powershell
-$params = @{
-    
-}
-Connect-MgGraph @params
-Get-MgSubscribedSku | Select-Object SkuPartNumber | Out-GridView
+(Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/beta/subscribedskus' -OutputType PSObject).value |
+    Select-Object skuId,skuPartNumber,consumedUnits,
+        @{N='enabledUnits';E={$_.prepaidUnits.enabled}},
+        @{N='availableUnits';E={$_.prepaidUnits.enabled-$_.consumedUnits}} |
+    Out-GridView -Title "Microsoft 365 licenses subscriptions"
 ```
-
-### Suppression des permissions
-
----
 
 ## Exercice pratique n°2
 
-### Contexte
+Votre entreprise a récemment modifié son mode d'attribution des licences Microsoft 365 pour passer à des groupes d'attribution. Cependant, vous avez remarqué que vous aviez fréquement des erreurs d'attribution (plus assez de licences ou conflit avec une licence déjà attribuée). Vous voulez mettre en place un script en tâche planifiée pour vous prévenir par email lorsqu'une erreur d'attribution de licence est découverte sur votre tenant.
 
-un script PowerShell en tâche planifiée pour nous remonter les groupes d'attributions de licence avec des membres en erreur via un email
-
-### Ajout des permissions
-
-[Group licensing with PowerShell and Graph](https://learn.microsoft.com/en-us/entra/identity/users/licensing-ps-examples)
-
-> Réponses :
-> - autorisation d'application sur la permission *Group.Read.All*
-> - autorisation d'application sur la permission *Mail.Send*
-
-### Connexion à l'application
-
-#### Création du secret
-
-#### Création du certificat
-
-### Réalisation du script
-
-```powershell
-
-```
-
-### Suppression des permissions
+Vous pouvez vous baser sur l'article officiel de Microsoft sur le sujet pour la partie scripting PowerShell : [PowerShell and Microsoft Graph examples for group-based licensing in Microsoft Entra ID \| Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/users/licensing-ps-examples)
