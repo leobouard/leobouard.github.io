@@ -6,8 +6,8 @@ tags: microsoft-graph
 thumbnail: "/assets/thumbnail/cours-msgraph.png"
 listed: true
 nextLink:
-  name: "Sommaire"
-  id: "/2023/09/17/cours-msgraph-sommaire"
+  name: "Partie 1"
+  id: "/2023/09/17/cours-msgraph-001"
 ---
 
 ## Introduction
@@ -26,6 +26,20 @@ Pour réaliser les exercices pratiques, vous devrez avoir accès à un tenant Mi
 
 - [Microsoft 365 Developer Program](https://developer.microsoft.com/en-us/microsoft-365/dev-program), disponible pour tout le monde
 - [Microsoft Customer Digital Experiences](https://cdx.transform.microsoft.com/), disponible si votre entreprise est un partenaire Microsoft
+
+## Table des matières
+
+{% assign posts = site.posts | sort: 'id' %}
+<div class="summary">
+  {% for post in posts %}
+    {% if post.title contains 'MSGRAPH #' %}
+      <a href="{{ post.id }}">
+          <h3>{{ post.title }}</h3>
+          <span>{{ post.description}}</span>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
 
 ## Liens utiles
 
