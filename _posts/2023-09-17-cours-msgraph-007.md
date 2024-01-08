@@ -41,10 +41,10 @@ Vous êtes l'administrateur global de votre annuaire. Vous vous connectez pour l
 
 Vous effectuez une requête sur Microsoft Graph Explorer pour obtenir les groupes qui commencent par "Compta". Quelle est la bonne syntaxe pour votre paramètre de requête ?
 
-- [ ] [?$filter=displayName -like 'Compta*'](/)
-- [ ] [?$filter=displayName contains 'Compta'](/)
-- [x] [`?$filter=startsWith(displayName,'Compta')](/)
-- [ ] [?$search=(displayName,'Compta*')](/)
+- [ ] `?$filter=displayName -like 'Compta*'`
+- [ ] `?$filter=displayName contains 'Compta'`
+- [x] `?$filter=startsWith(displayName,'Compta')`
+- [ ] `?$search=(displayName,'Compta*')`
 
 ### Question #05
 
