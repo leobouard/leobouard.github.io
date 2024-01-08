@@ -292,8 +292,9 @@ main {
         background: var(--bordercolor);
         margin: -10px -10px 10px -10px;
         display: block;
-        padding: 5px;
+        padding: 5px 10px;
         font-size: 12px;
+        font-family: var(--fonts);
     }
 
     div.language-powershell:before {
