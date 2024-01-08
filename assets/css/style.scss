@@ -57,6 +57,19 @@ html.dark {
     .bottom-buttons > a:last-child {
         color: var(--text);
     }
+
+    pre > code {
+        white-space: pre;
+
+        /*PowerShell*/
+        .bp, .nv, .bp { color: #7cdcf0; } /*Variables*/
+        .n            { color: #dcdcaa; } /*Commandes*/
+        .nf           { color: #569cd6; } /*Type & Commandes*/
+        .s1, .s2, .sh { color: #ce9178; } /*Chaines*/
+        .kr           { color: #c586c0; } /*IF & ELSE*/
+        .c, .cm       { color: #6a9955; } /*Commentaires*/
+        .mi           { color: #b5cea8; } /*Entiers*/ 
+    }
 }
 
 ::selection {
