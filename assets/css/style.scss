@@ -2,6 +2,7 @@
 ---
 
 html {
+    --fonts: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"
     --text: #020227;
     --footer: #424242;
     --footerbg: #e5e5e5;
@@ -12,7 +13,8 @@ html {
     --secondary: lightcoral;
     --textbg: #ffffff;
     --accent: #D12600;
-    --border: 1px solid #ddd;
+    --bordercolor: #ddd;
+    --border: 1px solid var(--bordercolor);
     --borderradius: 5px;
     --boxshadow: #00000075;
     --neutral: #757575;
@@ -36,7 +38,7 @@ html.dark {
     --bodybg: #0d0a18;
     --accentbg: #0d0a18;
     --textbg: #030401;
-    --border: 1px solid #333;
+    --bordercolor: #333;
     --boxshadow: #42319675;
     --primary: #423196;
     --secondary: #55236C;
@@ -63,7 +65,7 @@ html.dark {
 }
 
 html {
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: var(--fonts);
     font-size: 15px;
     font-weight: 400;
     height: 100%;
@@ -262,7 +264,7 @@ main {
         background-image: url(/assets/images/quote-solid.svg);
     }
 
-    pre,
+    div.highlighter-rouge,
     code,
     blockquote {
         font-family: 'Martian Mono', monospace;
@@ -274,13 +276,28 @@ main {
     }
 
     pre {
-        border-radius: var(--borderradius);
+        margin: 0;
+    }
+
+    div.highlighter-rouge {
         background-color: var(--accentbg);
         border: var(--border);
         padding: 10px;
         overflow-x: auto;
         overflow-y: hidden;
         background-image: url(/assets/images/code-solid.svg);
+    }
+
+    div.highlighter-rouge:before {
+        background: var(--bordercolor);
+        margin: -10px -10px 10px -10px;
+        display: block;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    div.language-powershell:before {
+        content: "PowerShell"
     }
 
     pre > code {
@@ -299,10 +316,9 @@ main {
     p code,
     li code,
     table code {
-        border-radius: var(--borderradius);
-        background-color: var(--accentbg);
-        padding: 2px;
-        border: var(--border);
+        background-color: var(--bodybg);
+        padding: 5px;
+        border-radius: 2px;
         font-size: 12px;
     }
 
