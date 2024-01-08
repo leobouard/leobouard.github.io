@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cours MSGraph"
+title: "Cours Microsoft Graph"
 description: "Bien commencer sur Microsoft Graph pour les administrateurs systèmes"
 tags: microsoft-graph
 thumbnail: "/assets/thumbnail/cours-msgraph.png"
