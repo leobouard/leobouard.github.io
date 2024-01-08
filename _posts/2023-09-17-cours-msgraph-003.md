@@ -31,17 +31,17 @@ Je vous recommande de garder la console en anglais pour mieux suivre le cours et
 
 ### Se connecter à votre tenant
 
-Cliquer en haut à droite pour vous connecter sur votre tenant de test. Entrer votre nom d'utilisateur, votre mot de passe ou/et votre authentification multi-facteur.
+Cliquer en haut à droite pour vous connecter sur votre tenant de test. Entrer votre nom d'utilisateur, votre mot de passe ou/et votre authentification multifacteur.
 
 ![Connexion avec mot de passe](/assets/images/msgraph-301.png)
 
-Vous pouvez cocher la case "Consent on behalf of your organization" pour autoriser l'application Microsoft Graph à tous les utilisateurs de votre tenant. Si vous ne cocher pas la case, seul votre utilisateur pourra se connecter sans re-demander d'approbation.
+Vous pouvez cocher la case "Consent on behalf of your organization" pour autoriser l'application Microsoft Graph à tous les utilisateurs de votre tenant. Si vous ne cochez pas la case, seul votre utilisateur pourra se connecter sans re-demander d'approbation.
 
 ![Demande de permission](/assets/images/msgraph-302.png)
 
 ### Votre première requête
 
-Executer la requête par défaut `https://graph.microsoft.com/v1.0/me` avec le bouton "Run query" et consulter le résultat qui apparait dans la fenêtre "Response preview".
+Exécuter la requête par défaut `https://graph.microsoft.com/v1.0/me` avec le bouton "Run query" et consulter le résultat qui apparait dans la fenêtre "Response preview".
 
 L'appel API devrait afficher les informations relatives à votre profil.
 
@@ -49,7 +49,7 @@ L'appel API devrait afficher les informations relatives à votre profil.
 
 ### Passage en version BETA
 
-Selectionner le menu déroulant "v1.0" pour le modifier par "beta" puis executer la requête.
+Selectionner le menu déroulant "v1.0" pour le modifier par "beta" puis exécuter la requête.
 
 Vous pouvez observer alors que beaucoup d'informations supplémentaires sont disponibles en réponse.
 
@@ -72,7 +72,7 @@ Celui-ci devrait tomber en erreur :
   <p>Forbidden - 403. Either the signed-in user does not have sufficient privileges, or you need to consent to one of the permissions on the Modify permissions tab</p>
 </blockquote>
 
-Comme évoqué dans [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes), même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits intialement : il faut les demander. Vous pouvez demander l'accès à la permission *User.ReadWrite.All* dans le volet supérieur sur l'onglet *"Modify permissions"* puis l'approuver.
+Comme évoqué dans [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes), même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits initialement : il faut les demander. Vous pouvez demander l'accès à la permission *User.ReadWrite.All* dans le volet supérieur sur l'onglet *"Modify permissions"* puis l'approuver.
 
 ![Comment modifier les permissions](/assets/images/msgraph-305.png)
 
@@ -114,13 +114,13 @@ Problème : l'API prend notre demande au pied de la lettre et n'affiche plus que
 
 ### Mettre à jour un utilisateur (PATCH)
 
-Nous allons maintenant ajouter une information au compte que nous avons précédemment créé. Vous pouvez selectionner l'appel **"\[PATCH] update user"** pour charger les paramètes.
+Nous allons maintenant ajouter une information au compte que nous avons précédemment créé. Vous pouvez sélectionner l'appel **"\[PATCH] update user"** pour charger les paramètres.
 
 Remplacer `{id}` dans l'URI par le UserID ou le UserPrincipalName de l'utilisateur et modifier le JSON dans la fenêtre *"Request body"* pour indiquer la propriété "country" avec la valeur "Canada".
 
 ![Mise à jour d'un utilisateur](/assets/images/msgraph-313.png)
 
-Si vous n'avez pas d'erreur, vous devez reçevoir un objet de retour vide avec le code suivant :
+Si vous n'avez pas d'erreur, vous devez recevoir un objet de retour vide avec le code suivant :
 
 <blockquote style="
     border-color: green;
@@ -141,6 +141,6 @@ Pour boucler la boucle, il ne nous reste plus qu'à utiliser la dernière métho
 
 ## Conclusion
 
-Microsoft Graph Explorer est un outil formidable pour tester des requêtes simples, valider la syntaxe des paramètres de requêtes ou vérifier la disponiblité de certains filtres. Il est accessible facilement depuis n'importe quel ordinateur et sans installation supplémentaire. Il permet d'accéder simplement à la liste des appels API disponibles ainsi qu'à la documentation associée.
+Microsoft Graph Explorer est un outil formidable pour tester des requêtes simples, valider la syntaxe des paramètres de requêtes ou vérifier la disponibilité de certains filtres. Il est accessible facilement depuis n'importe quel ordinateur et sans installation supplémentaire. Il permet d'accéder simplement à la liste des appels API disponibles ainsi qu'à la documentation associée.
 
-Il ne convient à un usage ponctuel, principalement pour consulter de l'information ou tester des appels APIs.
+Il ne convient qu'à un usage ponctuel, principalement pour consulter de l'information ou tester des appels APIs.

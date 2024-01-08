@@ -12,7 +12,7 @@ nextLink:
 
 ## Introduction
 
-Ce cours est dédié aux administrateurs systèmes en charge de l'administration des services cloud de Microsoft (Entra, Microsoft 365, etc...).
+Ce cours est dédié aux administrateurs systèmes en charge de l'administration des services cloud de Microsoft (Entra ID, Microsoft 365...).
 
 Microsoft Graph est la nouvelle plateforme de programmation qui connecte la plupart des services et des données de Microsoft 365. Cette nouvelle plateforme incarne **un changement de paradigme pour l'administration système** : si auparavant nous bénéficions de modules PowerShell dédiés à nos tâches, nous devons maintenant utiliser une API REST plus généraliste et avec un fonctionnement qui convient mieux au travail d'un développeur.
 

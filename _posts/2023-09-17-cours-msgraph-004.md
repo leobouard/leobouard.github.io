@@ -21,11 +21,11 @@ Voici quelques points d'attention à connaître avant de commencer :
 
 - **Mises à jour des modules** : Les modules Microsoft Graph sont mis à jour très régulièrement pour suivre les évolutions de l'API. Ces mises à jour peuvent modifier ou supprimer des commandes. Par exemple, quatre modules complets (et les commandes qui vont avec) ont été supprimés entre la version 1.28.0 et la version 2.2.0 (deux mois d'écart entre les versions).
 - **Documentation officielle** : La documentation associée aux commandes PowerShell est quasiment systématiquement de moins bonne qualité de la documentation de l'API sur laquelle la commande se base. Par exemple, vous ne retrouverez pas les permissions nécessaires pour exécuter une commande sur la documentation du cmdlet.
-- **Différences entre commandes et API** : Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tant à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
+- **Différences entre commandes et API** : Les commandes PowerShell ne retournent parfois pas le même résultat qu'une requête sur l'API correspondante. Ce problème tend à être de moins en moins fréquent, mais j'ai eu dernièrement des différences de résultats entre la commande `Get-MgBookingBusinesses` et l'API <https://graph.microsoft.com/v1.0/solutions/bookingBusinesses>.
 
 ### Les commandes
 
-Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes en se basant sur les API. On appelle cette méthode un "wrap". Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toute les fonctions Microsoft Graph :
+Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes en se basant sur les API. On appelle cette méthode un "wrap". Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toutes les fonctions Microsoft Graph :
 
 ```powershell
 (Get-Command -Name 'Get-MgUser').Definition
@@ -35,7 +35,7 @@ Cette méthode de génération a des avantages et des inconvénients. Côté ava
 
 Vous pouvez consulter la fréquence de mise à jour des modules en regardant la [PSGallery](https://www.powershellgallery.com/packages/Microsoft.Graph#version-history).
 
-Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés. Le nom des commandes suit fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple :
+Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés. Les noms des commandes suivent fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple :
 
 ```powershell
 Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause
@@ -59,7 +59,7 @@ Vous pouvez installer les modules `Microsoft.Graph` depuis PSGallery avec cette 
 Install-Module 'Microsoft.Graph'
 ```
 
-L'installation peut être longue puisque l'on va installer *tout les modules* liés à Microsoft Graph mais sachez qu'il est possible de n'installer que les modules vraiment nécessaire à votre usage. En général, les modules `Microsoft.Graph` et `Microsoft.Graph.Authentication` sont les seuls modules incontournables.
+L'installation peut être longue puisque l'on va installer *tous les modules* liés à Microsoft Graph mais sachez qu'il est possible de n'installer que les modules vraiment nécessaires à votre usage. En général, les modules `Microsoft.Graph` et `Microsoft.Graph.Authentication` sont les seuls modules incontournables.
 
 #### Pourquoi autant de modules ?
 
@@ -83,7 +83,7 @@ Les paramètres de requêtes sont toujours présents en PowerShell, sauf qu'au l
 - `-Sort` pour trier l'information
 - `-CountVariable` pour compter le nombre de résultats
 
-Le paramètre que vous utiliserez le plus sera probablement le filtre, il est donc important d'en maitriser la syntaxe. En effet, on garde la syntaxe OData qui est donc différente des opérateurs de comparaison PowerShell classique.
+Le paramètre que vous utiliserez le plus sera probablement le filtre, il est donc important d'en maitriser la syntaxe. En effet, on garde la syntaxe OData qui est donc différente des opérateurs de comparaison PowerShell classiques.
 
 Voici quelques exemples sur la différence de syntaxe :
 
@@ -108,7 +108,7 @@ Comme pour Microsoft Graph Explorer, la première étape est de vous connecter �
 Connect-MgGraph
 ```
 
-Votre navigateur web se lance et vous devriez pouvoir selectionner votre compte d'administration pour autoriser l'application "Microsoft Graph Command Line Tools" à se connecter. Une fois l'authentification terminée, la page web affiche le message suivant : *Authentication complete. You can return to the application. Fell free to close this browser tab.*
+Votre navigateur web se lance et vous devriez pouvoir sélectionner votre compte d'administration pour autoriser l'application "Microsoft Graph Command Line Tools" à se connecter. Une fois l'authentification terminée, la page web affiche le message suivant : *Authentication complete. You can return to the application. Fell free to close this browser tab.*
 
 Côté PowerShell, vous devriez être accueilli par ce message :
 
@@ -126,9 +126,9 @@ Par défaut, le retour de la commande est donné dans une hashtable. Il est poss
 
 ### Créer un groupe
 
-Avec la commande `New-MgGroup` nous allons créer un groupe "Equipe de nuit" avec les paramètres suivants :
+Avec la commande `New-MgGroup` nous allons créer un groupe "Équipe de nuit" avec les paramètres suivants :
 
-- DisplayName : Equipe de nuit
+- DisplayName : Équipe de nuit
 - MailEnabled : False
 - MailNickname : equipe-a
 - SecurityEnabled : True
@@ -152,7 +152,7 @@ Cependant, la commande tombe en erreur :
   <p>New-MgGroup_CreateExpanded: Insufficient privileges to complete the operation.</p>
 </blockquote>
 
-Si vous êtes encore tombé dans le piège, c'est que vous n'avez pas encore assimilé cette partie : [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes). Même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits intialement : il faut les demander. Pour demander une permission suplémentaire avec PowerShell, il faut se reconnecter via la commande `Connect-MgGraph` tout en spécifiant le scope dont vous avez besoin (en l'occurence : *Group.ReadWrite.All*).
+Si vous êtes encore tombé dans le piège, c'est que vous n'avez pas encore assimilé cette partie : [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes). Même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits initialement : il faut les demander. Pour demander une permission supplémentaire avec PowerShell, il faut se reconnecter via la commande `Connect-MgGraph` tout en spécifiant le scope dont vous avez besoin (en l’occurrence : *Group.ReadWrite.All*).
 
 ```powershell
 Connect-MgGraph -Scopes Group.ReadWrite.All
@@ -244,9 +244,9 @@ L'utilisation des nouveaux modules PowerShell Microsoft Graph est plus complexe 
 
 Dans les choses à retenir, on peut noter que :
 
-- quasiment chaque action demande d'utiliser l'ID de la ressource plutôt que son nom d'affichage ou son UserPrincipalName dans le cas d'un utilisateur
-- la documentation de l'API sera toujours meilleure et plus utile que la documentation de la commande PowerShell associée
-- toutes les commandes `GET` sont soumises à la pagination, il est donc important de systématiquement utiliser le paramètre `-All` pour obtenir l'intégralité des résultats et pas uniquement les X premiers
-- l'utilisation des commandes `Beta` est souvent nécessaire pour obtenir certaines informations, même sur des scripts destinés à la production
-- la mise à jour des modules Microsoft Graph ne doit pas être prise à la légère : certaines commandes peuvent disparaitre sur les nouvelles versions
-- vous n'avez techniquement besoin que de deux commandes pour réaliser toutes vos actions : `Connect-MgGraph` et `Invoke-MgRequest`
+- Quasiment chaque action demande d'utiliser l'ID de la ressource plutôt que son nom d'affichage ou son UserPrincipalName dans le cas d'un utilisateur
+- La documentation de l'API sera toujours meilleure et plus utile que la documentation de la commande PowerShell associée
+- Toutes les commandes `GET` sont soumises à la pagination, il est donc important de systématiquement utiliser le paramètre `-All` pour obtenir l'intégralité des résultats et pas uniquement les X premiers
+- L'utilisation des commandes `Beta` est souvent nécessaire pour obtenir certaines informations, même sur des scripts destinés à la production
+- La mise à jour des modules Microsoft Graph ne doit pas être prise à la légère : certaines commandes peuvent disparaitre sur les nouvelles versions
+- Vous n'avez techniquement besoin que de deux commandes pour réaliser toutes vos actions : `Connect-MgGraph` et `Invoke-MgRequest`

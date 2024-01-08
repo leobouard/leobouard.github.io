@@ -23,7 +23,7 @@ Dans la plupart des cas, une API est positionnée comme un intermédiaire permet
 
 Il existe différents types d'API, mais le standard le plus répandu pour les API web est le REST (*Representational State Transfer*). Chaque API RESTful est différente puisqu'il ne s'agit que de lignes directrices, mais elles s'articulent obligatoirement autour de ces deux élements :
 
-1. La méthode : comment voulez-vous interragir avec la donnée
+1. La méthode : comment voulez-vous interagir avec la donnée
 2. L'URI : pour identifier la ressource que vous voulez requêter
 
 On peut également retrouver un Body (corps de message) et un Header (entête) pour envoyer de la donnée et s'authentifier.
@@ -32,21 +32,21 @@ Ces éléments vont permettre de construire une **requête HTTP** pour pouvoir i
 
 ### Méthode
 
-Il existe quatres méthodes principales :
+Il existe quatre méthodes principales :
 
 - `GET` pour récupérer de la donnée
 - `POST` pour ajouter de la donnée
 - `PATCH` pour mettre à jour de la donnée
 - `DELETE` pour supprimer de la donnée
 
-Il en existe d'autre, mais les quatres cités précédemment représentent plus de 90% des requêtes.
+Il en existe d'autre, mais les quatre cités précédemment représentent plus de 90% des requêtes.
 
 ### URI
 
 Une URI (*Uniform Ressource Identifier*), elle se compose en général de trois parties :
 
 1. Le **FQDN** du site web que l'on veut requêter : `http://www.reddit.com/`
-2. La **chemin vers la ressource** qui nous intéresse : `r/midjourney`
+2. Le **chemin vers la ressource** qui nous intéresse : `r/midjourney`
 3. Les **paramètres de requête** pour filtrer, sélectionner ou trier : `/top.json?t=month`
 
 On obtient alors notre URI complète : `http://www.reddit.com/r/midjourney/top.json?t=month`
@@ -55,13 +55,13 @@ On obtient alors notre URI complète : `http://www.reddit.com/r/midjourney/top.j
 
 Le client API REST le plus connu est [Postman](https://www.postman.com/downloads/?utm_source=postman-home), qui permet d'avoir une interface utilisateur simple et de requêter sans avoir besoin de coder
 
-Si vous souhaitez coder, quasiment tous les languages de programmation modernes proposent une méthode pour envoyer des requêtes HTTP vers une API. Pour PowerShell, vous pouvez utiliser les commandes `Invoke-RestMethod` et/ou `Invoke-WebRequest`.
+Si vous souhaitez coder, quasiment tous les langages de programmation modernes proposent une méthode pour envoyer des requêtes HTTP vers une API. Pour PowerShell, vous pouvez utiliser les commandes `Invoke-RestMethod` et/ou `Invoke-WebRequest`.
 
 Pour de la récupération de données (méthode `GET`) sur une API ouverte à tous, vous pouvez même utiliser simplement votre navigateur et aller à l'URL indiquée pour consulter le résultat.
 
 ### Résultat
 
-Le résultat d'une requête sera fourni dans un language structuré. Le plus souvent, les résultats seront donnés en JSON (avec souvent une indication sur le format de réponse utilisé).
+Le résultat d'une requête sera fourni dans un langage structuré. Le plus souvent, les résultats seront donnés en JSON (avec souvent une indication sur le format de réponse utilisé).
 
 ### Faire une requête HTTP
 
@@ -80,7 +80,7 @@ Vous pouvez également utiliser Postman pour effectuer votre requête :
 
 Nous allons mettre en pratique les différents éléments abordés dans un exercice utilisant une API RESTful très simple à utiliser. L'idée de cet exercice est de faire des requêtes `GET` depuis PowerShell ou un client (comme Postman) sur une API simple et ouverte à tous.
 
-A l'aide de [l'API Découpage Administratif (api.gouv.fr)](https://api.gouv.fr/documentation/api-geo), vous devez répondre aux questions suivantes :
+À l'aide de [l'API Découpage Administratif (api.gouv.fr)](https://api.gouv.fr/documentation/api-geo), vous devez répondre aux questions suivantes :
 
 - Combien y'a-t'il de communes dans le département 75 ?
 - Combien y'a-t'il d'habitants à Louvemont-Côte-du-Poivre (code : 55307) ?

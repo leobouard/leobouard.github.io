@@ -29,7 +29,7 @@ Pour créer votre propre application, vous pouvez vous rendre sur https://portal
 
 ![créer une nouvelle application Azure](/assets/images/msgraph-502.png)
 
-Vous pouvez alors choisir le nom de votre application et qui peut l'utiliser. L'URI de redirection ne nous concerne pas pour notre usage. Une fois votre nouvelle application inscrite, vous devriez avoir accès aux informations de celle-ci, notamment l'ID du client et de l'ID de votre tenant (locataire). Ces deux identifiants vous permettrons de vous connecter à votre application en PowerShell.
+Vous pouvez alors choisir le nom de votre application et qui peut l'utiliser. L'URI de redirection ne nous concerne pas pour notre usage. Une fois votre nouvelle application inscrite, vous devriez avoir accès aux informations de celle-ci, notamment l'ID du client et de l'ID de votre tenant (locataire). Ces deux identifiants vous permettront de vous connecter à votre application en PowerShell.
 
 ![informations importantes de votre application](/assets/images/msgraph-503.png)
 
@@ -47,8 +47,8 @@ Lorsque vous cliquer sur "+ Ajouter une autorisation", vous avez alors beaucoup 
 
 Il y a deux types de permissions différentes pour les API Microsoft Graph :
 
-- **Les autorisation déléguées** : Votre application doit accéder à l'API en tant qu'utilisateur connecté. Par exemple : un script ou une Power App pour déléguer l'attribution de licences Microsoft 365 à l'équipe support.
-- **Les autorisation d'application** : Votre application s'exécute en tant que service en arrière-plan ou démon sans utilisateur connecté. Par exemple : un script de reporting mis en tâche planifiée.
+- **Les autorisations déléguées** : Votre application doit accéder à l'API en tant qu'utilisateur connecté. Par exemple : un script ou une Power App pour déléguer l'attribution de licences Microsoft 365 à l'équipe support.
+- **Les autorisations d'application** : Votre application s'exécute en tant que service en arrière-plan ou démon sans utilisateur connecté. Par exemple : un script de reporting mis en tâche planifiée.
 
 > Toutes les autorisations déléguées n'ont pas forcément leur pendant en autorisations d'applications et inversement.
 
@@ -64,7 +64,7 @@ Il vous faudra vous munir de trois éléments pour pouvoir vous connecter à vot
   - avec votre compte si vous souhaitez accéder à des autorisations déléguées
   - avec un secret ou un certificat si vous souhaitez accéder à des autorisations d'application
 
-Les deux premières informations sont disponibles facilement dans la section "Propriétés" de votre app Azure, et la troisière dépendera du type de permissions auquelles vous voulez accéder (déléguées ou application).
+Les deux premières informations sont disponibles facilement dans la section "Propriétés" de votre application Azure, et la troisième dépendra du type de permissions auxquelles vous voulez accéder (déléguées ou application).
 
 ### Connexion en mode délégué
 

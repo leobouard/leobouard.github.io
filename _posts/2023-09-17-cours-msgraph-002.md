@@ -13,17 +13,17 @@ prevLink:
 
 ## Contexte
 
-Microsoft doit gérer et maintenir de très nombreux produits cloud et a une volonté de rationnaliser et automatiser au maximum, réduire les coûts et améliorer la sécurité/qualité/maintenance de ses produits. La solution qui a été choisie par Microsoft est de faire reposer l'intégralité des interfaces (console web et ligne de commande) sur une API REST : Microsoft Graph.
+Microsoft doit gérer et maintenir de très nombreux produits cloud et a une volonté de rationaliser et automatiser au maximum, réduire les coûts et améliorer la sécurité/qualité/maintenance de ses produits. La solution qui a été choisie par Microsoft est de faire reposer l'intégralité des interfaces (console web et ligne de commande) sur une API REST : Microsoft Graph.
 
 Microsoft Graph est donc un point de terminaison unique pour administrer la plupart des produits cloud de Microsoft. Il reste encore quelques produits qui reposent sur des API différentes, mais l'objectif est de tout centraliser à terme sur cette interface.
 
-Ainsi, lorsque vous faites une action depuis le portail Azure ou depuis la console Entra ID, ce sont des appels API qui sont executés. Une extension de navigateur permet d'ailleurs de capter facilement quelle API a été utilisée : [Graph X-Ray](https://graphxray.merill.net/)
+Ainsi, lorsque vous faites une action depuis le portail Azure ou depuis la console Entra ID, ce sont des appels API qui sont exécutés. Une extension de navigateur permet d'ailleurs de capter facilement quelle API a été utilisée : [Graph X-Ray](https://graphxray.merill.net/).
 
 ## Pagination
 
 L'un des objectifs de n'importe quelle API est de pouvoir interagir avec de la donnée le plus rapidement possible. Pour cela, la plupart des API REST utilisent un principe de pagination : toutes les données ne sont pas disponibles dès la première requête : il va falloir faire défiler les pages.
 
-Chaque page peut contenir un nombre maximum de données. Cela varie suivant l'API et il n'y a pas de règles strictes. Dans tous les cas, lorsqu'une API utilise de la pagination, l'une des propriétés retournée servira à indiquer l'adresse de la prochaine page (sous forme d'URI le plus souvent), que l'on devra inclure dans notre prochaine requête.
+Chaque page peut contenir un nombre maximum de données. Cela varie suivant l'API et il n'y a pas de règles strictes. Dans tous les cas, lorsqu'une API utilise de la pagination, l'une des propriétés retournées servira à indiquer l'adresse de la prochaine page (sous forme d'URI le plus souvent), que l'on devra inclure dans notre prochaine requête.
 
 Voici un exemple de réponse de Microsoft Graph avec une indication sur l'adresse de la page suivante avec la propriété `@odata.nextLink`.
 
@@ -41,7 +41,7 @@ Voici un exemple de réponse de Microsoft Graph avec une indication sur l'adress
 
 Pour éviter de demander de l'information qui ne nous est pas utile, on peut formater la donnée avant qu'elle nous soit envoyée. Pour cela on utilise donc les paramètres de requêtes. Ceux-ci vont nous permettre de trier, filtrer, compter ou formater de la donnée avant que celle-ci ne soit reçu. Cela permet donc d'améliorer grandement l'efficacité de nos requêtes.
 
-Microsoft vous incite même à utiliser des paramètres de requête dans le résultats de certains appels (exemple ci-dessous pour l'API `/devices`) :
+Microsoft vous incite même à utiliser des paramètres de requête dans le résultat de certains appels (exemple ci-dessous pour l'API `/devices`) :
 
 ```json
 {
@@ -53,13 +53,13 @@ Microsoft vous incite même à utiliser des paramètres de requête dans le rés
 
 Sur l'API Microsoft Graph, c'est la syntaxe OData qui est utilisé.
 
-Les paramètres peuvent se combiner entre-eux et se placent directement à la fin de l'URI de la requête. Le début du bloc des paramètres doit être indiqué par un `?` et l'enchainement de paramètres se fait avec le caractère `&`.
+Les paramètres peuvent se combiner entre eux et se placent directement à la fin de l'URI de la requête. Le début du bloc des paramètres doit être indiqué par un `?` et l'enchainement de paramètres se fait avec le caractère `&`.
 
 #### Liste des paramètres
 
 Nom | Description
 --- | -----------
-$count | Compte le nombre de résultat
+$count | Compte le nombre de résultats
 $expand | Récupère les ressources connexes
 $filter | Filtre les résultats (lignes)
 $format | Renvoie les résultats dans le format de média spécifié
@@ -136,11 +136,11 @@ Invoke-RestMethod -Method GET -Headers $headers -Uri 'https://graph.microsoft.co
 
 ### Permissions et étendues (scopes)
 
-Microsoft suit le principe des privilèges minimum (principle of least privilege) pour son API. Cela signifie concrètement que vous ne possèdez aucun droit par défaut lorsque vous vous connectez pour la première fois à Microsoft Graph (même si vous avez le rôle *Global Administrator*).
+Microsoft suit le principe des privilèges minimum (principle of least privilege) pour son API. Cela signifie concrètement que vous ne possédez aucun droit par défaut lorsque vous vous connectez pour la première fois à Microsoft Graph (même si vous avez le rôle *Global Administrator*).
 
 Par exemple, pour pouvoir lister des utilisateurs de votre tenant, il vous faudra invoquer l'étendue *User.Read.All* à la connexion. Si vous voulez faire des modifications sur les utilisateurs, il vous faudra ajouter l'étendue *User.ReadWrite.All*.
 
-Vous pouvez combiner les étendues entre-elles pour obtenir les permissions nécessaires pour votre travail.
+Vous pouvez combiner les étendues entre elles pour obtenir les permissions nécessaires pour votre travail.
 
 La liste complète des étendues est disponible ici : [Permissions reference - Microsoft Graph \| Microsoft Learn](https://learn.microsoft.com/graph/permissions-reference)
 
@@ -158,13 +158,13 @@ Cette demande d'approbation pourra être examinée par les administrateurs dans 
 
 #### Si vous ne pouvez pas demander d'approbation
 
-La capacité de demander une approbation par l'administrateur n'est pas activée par défaut sur les tenants Azure. Si ce n'est pas le cas, vous devrez vous connecter avec un compte à privilège ou demander un modification de la configuration du tenant Azure :
+La capacité de demander une approbation par l'administrateur n'est pas activée par défaut sur les tenants Azure. Si ce n'est pas le cas, vous devrez vous connecter avec un compte à privilège ou demander une modification de la configuration du tenant Azure :
 
 ![consentement et autorisation depuis le portail Azure](/assets/images/msgraph-202.png)
 
 ### Permissions sans validation
 
-Pour les étendues limitées à votre seule personne; il n'y a pas besoin de validation par l'administrateur (adminConsentRequired = FALSE). C'est le cas de *User.Read* pour consulter votre profil, ou *Files.Read* pour lire vos fichiers.
+Pour les étendues limitées à votre seule personne, il n'y a pas besoin de validation par l'administrateur (adminConsentRequired = FALSE). C'est le cas de *User.Read* pour consulter votre profil ou *Files.Read* pour lire vos fichiers.
 
 ## Versions d'API
 
@@ -185,7 +185,7 @@ Pour changer de version sur votre appel API, vous n'avez qu'à modifier l'URI de
 - Version stable : <https://graph.microsoft.com/v1.0/users/>
 - Version beta : <https://graph.microsoft.com/beta/users>
 
-Si vous utilisez les commandes PowerShell, vous n'avez qu'à ajouter le prefix "Beta" à votre commande (attention : toutes les commandes ne disposent pas de leur version beta !).
+Si vous utilisez les commandes PowerShell, vous n'avez qu'à ajouter le préfixe "Beta" à votre commande (attention : toutes les commandes ne disposent pas de leur version beta !).
 
 - Version stable : `Get-MgUser`
 - Version beta : `Get-MgBetaUser`

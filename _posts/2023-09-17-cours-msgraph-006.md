@@ -13,7 +13,7 @@ prevLink:
 
 ## Exercice pratique n°1
 
-Le support de premier niveau (support N1) a besoin d'avoir accès au nombre de licences Microsoft 365 disponibles en temps réel. Les opérateurs du support n'ont pas de comptes d'administration sur Microsoft 365, uniquement des comptes standards sans accès au portails Azure ou Entra ID. Ceux-ci disposent cependant des modules PowerShell Microsoft Graph installés sur leurs postes de travail.
+Le support de premier niveau (support N1) a besoin d'avoir accès au nombre de licences Microsoft 365 disponibles en temps réel. Les opérateurs du support n'ont pas de comptes d'administration sur Microsoft 365, uniquement des comptes standards sans accès aux portails Azure ou Entra ID. Ceux-ci disposent cependant des modules PowerShell Microsoft Graph installés sur leurs postes de travail.
 
 Vous devez donc leur fournir un script PowerShell qui permettrait d'obtenir l'état des licences Microsoft 365 en s'authentifiant avec leurs comptes standards.
 
