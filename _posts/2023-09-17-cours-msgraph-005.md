@@ -87,7 +87,12 @@ Une fois l'application configurée, vous pouvez alors vous y connecter en PowerS
 3. `-Scopes` : le ou les autorisation(s) que vous voulez utiliser parmi celles disponibles sur l'application (facultatif)
 
 ```powershell
-Connect-MgGraph -ClientId <application-ID> -TenantId <locataire-ID> -Scopes 'User.Read'
+$params = @{
+    ClientId = '10a52256-36f0-4bb7-973d-************'
+    TenantId = '0649f7a2-affe-49fa-8a7e-************'
+    Scopes = 'User.Read'
+}
+Connect-MgGraph @params
 ```
 
 Une fois connecté, vous pouvez consulter les informations de connexion avec la commande `Get-MgContext`.
