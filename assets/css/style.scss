@@ -296,8 +296,6 @@ main {
         background-color: var(--accentbg);
         border: var(--border);
         padding: 10px;
-        overflow-x: auto;
-        overflow-y: hidden;
         background-image: url(/assets/images/code-solid.svg);
     }
 
@@ -316,6 +314,8 @@ main {
 
     pre > code {
         white-space: pre;
+        overflow-x: auto;
+        overflow-y: hidden;
 
         /*PowerShell*/
         .bp, .nv, .bp { color: #001080; } /*Variables*/
