@@ -289,6 +289,8 @@ main {
 
     pre {
         margin: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
     div.highlighter-rouge {
@@ -313,8 +315,6 @@ main {
 
     pre > code {
         white-space: pre;
-        overflow-x: auto;
-        overflow-y: hidden;
 
         /*PowerShell*/
         .bp, .nv, .bp { color: #001080; } /*Variables*/
