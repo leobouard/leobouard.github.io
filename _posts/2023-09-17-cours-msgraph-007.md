@@ -30,12 +30,12 @@ L'utilisation d'applications Azure pour se connecter à Microsoft Graph est :
 
 ### Question #03
 
-Vous êtes l'administrateur global de votre annuaire. Vous vous connectez pour la première fois sur Microsoft Graph avec les modules PowerShell et vous lancer la commande `Get-MgUser`. Quel sera le résultat de la commande ?
+Vous êtes l'administrateur global de votre annuaire. Vous vous connectez pour la première fois sur Microsoft Graph avec les modules PowerShell et vous lancez la commande `Get-MgUser`. Quel sera le résultat de la commande ?
 
 - [ ] La liste de tous les utilisateurs de votre annuaire
 - [ ] Les 1000 premiers utilisateurs de votre annuaire
-- [ ] Les informations sur le compte avec lequel vous êtes connecté
-- [x] Une erreur : vous n'avez pas les permissions nécessaires7
+- [ ] Les informations sur le compte avec lequel vous vous êtes connecté
+- [x] Une erreur : vous n'avez pas les permissions nécessaires
 
 ### Question #04
 
