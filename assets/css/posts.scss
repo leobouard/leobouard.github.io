@@ -94,6 +94,7 @@ div.banner {
     user-select: none;
     max-width: 1550px;
     width: -webkit-fill-available;
+    width: -moz-available;
     z-index: -1;
     margin: -100px 0px;
     min-height: 350px;
