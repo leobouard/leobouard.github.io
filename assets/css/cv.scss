@@ -28,25 +28,6 @@ span.certifTitle {
     line-height: 150%;
 }
 
-span.certifStatusActive, span.certifStatusWaiting {
-    font-size: smaller;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -5px;
-    border-radius: 5px;
-    padding: 2px 10px;
-    opacity: 0.85;
-}
-
-span.certifStatusWaiting {
-    background-color: var(--neutral);
-}
-
-span.certifStatusActive {
-    background-color: var(--positive);
-}
-
 .experience {
     display: block;
     margin-left: 35px;

@@ -59,25 +59,21 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         <img src="/assets/images/microsoft-certified-expert-badge.svg" alt="logo Microsoft Certified Expert">
         <span class="certifDate">juin 2023</span>
         <span class="certifTitle">Microsoft 365 Enterprise Administrator Expert</span>
-        <span class="certifStatusActive">Active</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-associate-badge.svg" alt="logo Microsoft Certified Associate">
         <span class="certifDate">avril 2023</span>
         <span class="certifTitle">Identity and Access Administrator Associate</span>
-        <span class="certifStatusActive">Active</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
         <span class="certifDate">août 2022</span>
         <span class="certifTitle">Microsoft 365 Fundamentals</span>
-        <span class="certifStatusActive">Active</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-fundamentals-badge.svg" alt="logo Microsoft Certified Fundamentals">
         <span class="certifDate">juin 2021</span>
         <span class="certifTitle">Azure Fundamentals</span>
-        <span class="certifStatusActive">Active</span>
     </div>
 </div>
 
