@@ -222,10 +222,7 @@ Get-Command | Out-Null
 $null = Get-Command
 ```
 
-<details>
-<summary>Résultat</summary>
-La commande `$null =` est 25% plus rapide.
-</details>
+**Réponse :** C'est la commande `$null =` est 25% plus rapide, mais le gain en performance sur un script *de la vraie vie* reste minime.
 
 ### Création de PSCustomObject
 
@@ -237,11 +234,11 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 [PSCustomObject]@{}
 ```
 
-**Réponse :** je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
+**Réponse :** Je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
 
 ### Déduplication d'une liste
 
-La déduplication d'une liste est en général un processus assez gourmand en ressource et qui peut prendre plusieurs secondes (voir même minutes en fonction de la taille de la liste). Pour gagner du temps de traitement, quelle est la commande la plus performante : `Select-Object -Unique` ou le combo `Sort-Object | Get-Unique` ?
+La déduplication d'une liste est en général un processus assez gourmand en ressources et qui peut prendre plusieurs secondes (voir même minutes en fonction de la taille de la liste). Pour gagner du temps de traitement, quelle est la commande la plus performante : `Select-Object -Unique` ou le combo `Sort-Object | Get-Unique` ?
 
 ```powershell
 1..10000 -replace '0','' | Sort-Object | Get-Unique
@@ -249,11 +246,11 @@ La déduplication d'une liste est en général un processus assez gourmand en re
 1..10000 -replace '0','' | Select-Object -Unique
 ```
 
-**❌ FAUX** : Très très faux même (en PowerShell 7) ! Si vous souhaitez dédupliquer une liste, alors apprenez à utiliser la commande `Get-Unique` (qui doit s'accompagner d'un `Sort-Object` positionné en amont) : vous allez gagner énormément en temps de traitement !
+**Réponse :** Si vous souhaitez dédupliquer une liste, alors apprenez à utiliser la commande `Get-Unique` : j'ai mesuré un temps de traitement entre **15 et 20 fois plus rapide** que `Select-Object`.
 
 ### Filtrage
 
-`Where-Object` est moins performant que la méthode `GetEnumerator.Where()`
+Le filtrage est très utilisé en PowerShell et il est souvent responsable de "bottlenecks". Quelle est donc la façon la plus rapide de filtrer une collection : `Where-Object` ou la méthode plus complexe `GetEnumerator.Where()` ?
 
 ```powershell
 $list | Where-Object {$_.Property -eq $value}
@@ -261,4 +258,4 @@ $list | Where-Object {$_.Property -eq $value}
 $list.GetEnumerator.Where({$_.Property -eq $value})
 ```
 
-**✅ VRAI** : en PowerShell 7, faire 500 recherches différentes avec `Where-Object` dans une collection de +15000 items est deux fois plus lent que la méthode `GetEnumerator.Where()`.
+**Réponse :** Pour tester les deux filtres, j'ai réalisé un script qui doit faire 500 recherches différentes dans une collection d'environ 15 000 objets. Mes résultats montrent que `Where-Object` est deux fois plus lent que la méthode `GetEnumerator.Where()`.
