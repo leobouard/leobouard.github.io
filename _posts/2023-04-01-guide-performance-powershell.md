@@ -26,7 +26,7 @@ On commencera donc par des conseils généraux, simples à comprendre et facile 
   - [Connaître son ennemi](#connaître-son-ennemi)
   - [Utiliser les bons outils](#utiliser-les-bons-outils)
 - [Bien choisir ses tableaux](#bien-choisir-ses-tableaux)
-  - [Le cas du `+=`](#le-cas-du-)
+  - [Le cas du +=](#le-cas-du-)
   - [Par quoi le remplacer ?](#par-quoi-le-remplacer-)
   - [Tableau comparatif](#tableau-comparatif)
 - [Bien comprendre le pipeline](#bien-comprendre-le-pipeline)
@@ -88,13 +88,13 @@ PowerShell 2.0 | 65ms | 70ms | 85ms
 PowerShell 5.1 | 49ms | 49ms | 70ms
 PowerShell 7.3 | 15ms | 10ms | 14ms
 
-On observe PowerShell 7.3 fonctionne en moyenne **4x plus rapidement** que son ancêtre PowerShell 2.0, avec un script identique (donc sans utiliser la parallélisation).
+On observe PowerShell 7.3 fonctionne en moyenne **quatre fois plus rapidement** que son ancêtre PowerShell 2.0, avec un script identique (donc sans utiliser la parallélisation).
 
 Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new in PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/overview)
 
 ## Bien choisir ses tableaux
 
-### Le cas du `+=`
+### Le cas du +=
 
 Je le connais, vous le connaissez, tout le monde le connait et l'utilise. Et pourtant, c'est la méthode la moins performante que l'on puisse choisir !
 
