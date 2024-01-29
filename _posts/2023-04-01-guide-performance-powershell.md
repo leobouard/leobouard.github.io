@@ -32,10 +32,10 @@ On commencera donc par des conseils généraux, simples à comprendre et facile 
 - [Bien comprendre le pipeline](#bien-comprendre-le-pipeline)
 - [Utiliser la parallélisation à bon escient](#utiliser-la-parallélisation-à-bon-escient)
 - [Quelques idées reçues](#quelques-idées-reçues)
-  - ["Out-Null" est moins performant que "$null ="](#out-null-est-moins-performant-que-null-)
-  - ["New-Object" est moins performant que "\[PSCustomObject\]@{}"](#new-object-est-moins-performant-que-pscustomobject)
-  - ["Get-Unique" est moins performant que "Select-Object -Unique"](#get-unique-est-moins-performant-que-select-object--unique)
-  - ["Where-Object" est moins performant que la méthode "GetEnumerator.Where()"](#where-object-est-moins-performant-que-la-méthode-getenumeratorwhere)
+  - [Supprimer le retour d'une commande](#supprimer-le-retour-dune-commande)
+  - [Création de PSCustomObject](#création-de-pscustomobject)
+  - [Déduplication d'une liste](#déduplication-dune-liste)
+  - [Filtrage](#filtrage)
 
 ## Conseils généraux
 
@@ -144,9 +144,9 @@ Voici un tableau qui récapitule vos options pour la création d'un tableau :
 
 Méthode | Compatibilité | Performance | Simplicité | Fonctionnalités
 ------- | ------------- | ----------- | ---------- | ---------------
-`@()` | 🟢 Bonne | 🔴 Mauvaise | 🟡 Moyenne | 🟡 Moyenne
-`List<T>` | 🔴 Mauvaise | 🟢 Bonne | 🔴 Mauvaise | 🟢 Bonne
-Aspiration via pipeline | 🟢 Bonne | 🟡 Moyenne | 🟢 Bonne | 🟡 Moyenne
+`@()` | Bonne | Mauvaise | Moyenne | Moyenne
+`List<T>` | Mauvaise | Bonne | Mauvaise | Bonne
+Aspiration via pipeline | Bonne | Moyenne | Bonne | Moyenne
 
 Et si ça vous intéresse, je ne peux que vous recommander de lire l'article original : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
 
@@ -212,7 +212,9 @@ function Test-Parallel {
 
 ## Quelques idées reçues
 
-### "Out-Null" est moins performant que "$null ="
+### Supprimer le retour d'une commande
+
+Pour supprimer l'affichage ou la récupération du résultat d'une commande, quelle est la commande la plus performante : `Out-Null` ou `$null =` ?
 
 ```powershell
 Get-Command | Out-Null
@@ -220,9 +222,14 @@ Get-Command | Out-Null
 $null = Get-Command
 ```
 
-**✅ VRAI** : La commande `Out-Null` permet de *mettre à la poubelle/ne pas afficher* le résultat d'une commande. Son utilisation reste relativement rare, mais si vous l'utilisez vous pouvez gagner 25% de performance en le remplaçant par `$null =`.
+<details>
+<summary>Résultat</summary>
+La commande `$null =` est 25% plus rapide.
+</details>
 
-### "New-Object" est moins performant que "[PSCustomObject]@{}"
+### Création de PSCustomObject
+
+`New-Object` est moins performant que `[PSCustomObject]@{}`
 
 ```powershell
 New-Object -TypeName 'PSCustomObject' -Property @{}
@@ -232,7 +239,9 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 
 **❌ PLUTÔT FAUX** : Lorsqu'il s'agit de créer un nouveau PSCustomObject, je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
 
-### "Get-Unique" est moins performant que "Select-Object -Unique"
+### Déduplication d'une liste
+
+"Get-Unique" est moins performant que "Select-Object -Unique"
 
 ```powershell
 1..10000 -replace '0','' | Sort-Object | Get-Unique
@@ -242,7 +251,9 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 
 **❌ FAUX** : Très très faux même (en PowerShell 7) ! Si vous souhaitez dédupliquer une liste, alors apprenez à utiliser la commande `Get-Unique` (qui doit s'accompagner d'un `Sort-Object` positionné en amont) : vous allez gagner énormément en temps de traitement !
 
-### "Where-Object" est moins performant que la méthode "GetEnumerator.Where()"
+### Filtrage
+
+`Where-Object` est moins performant que la méthode `GetEnumerator.Where()`
 
 ```powershell
 $list | Where-Object {$_.Property -eq $value}
