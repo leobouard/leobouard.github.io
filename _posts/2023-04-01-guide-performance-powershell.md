@@ -229,7 +229,7 @@ La commande `$null =` est 25% plus rapide.
 
 ### Création de PSCustomObject
 
-`New-Object` est moins performant que `[PSCustomObject]@{}`
+Lorsqu'il s'agit de créer un nouveau PSCustomObject, quelle est la méthode la plus performante entre `New-Object` et `[PSCustomObject]@{}` ?
 
 ```powershell
 New-Object -TypeName 'PSCustomObject' -Property @{}
@@ -237,11 +237,11 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 [PSCustomObject]@{}
 ```
 
-**❌ PLUTÔT FAUX** : Lorsqu'il s'agit de créer un nouveau PSCustomObject, je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
+**Réponse :** je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
 
 ### Déduplication d'une liste
 
-"Get-Unique" est moins performant que "Select-Object -Unique"
+La déduplication d'une liste est en général un processus assez gourmand en ressource et qui peut prendre plusieurs secondes (voir même minutes en fonction de la taille de la liste). Pour gagner du temps de traitement, quelle est la commande la plus performante : `Select-Object -Unique` ou le combo `Sort-Object | Get-Unique` ?
 
 ```powershell
 1..10000 -replace '0','' | Sort-Object | Get-Unique
