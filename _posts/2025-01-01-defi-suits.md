@@ -1,34 +1,26 @@
 ﻿# SUITS S01E08 | 35min
 
 # Preparation des données
-$data = @()
-1..25 | ForEach-Object {
+
+```powershell
+$data = 1..25 | ForEach-Object {
     $random = Get-Random -Min 0.0 -Max 100.0 -SetSeed $_
-    $data += [PSCustomObject]@{
+    [PSCustomObject]@{
         Account = $_
         Balance = [math]::Round($random,2)
     }
-    Remove-Variable random
 }
+```
 
 # Récupération du chiffre cible
+
+```powershell
 $targetList = $data | Get-Random -Count 7
 $target = ($targetList.Balance | Measure-Object -Sum).Sum
 
-Write-Host "$target M€ ont été volés et repartis sur 7 différents comptes"
+Write-Host "La police vous donne l'information $target M€ ont été volés et repartis sur 7 différents comptes"
 Write-Host "A vous de jouer pour retrouver les comptes sur lesquels l'argent a été dissimulé"
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 # --- METHODE 1 ----
 
@@ -45,10 +37,6 @@ $time = Measure-Command {
 # Affichage du résultat
 "Target found in {0} attempts and {1} sec" -f $i,$time.TotalSeconds
 $data | Where-Object {$_.Account -in $list}
-
-
-
-
 
 # --- METHODE 2 ---
 

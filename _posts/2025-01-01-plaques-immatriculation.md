@@ -6,19 +6,16 @@ de AA-001-AA à ZZ-999-ZZ
 <https://immatriculation.ants.gouv.fr/tout-savoir/numero-logo-et-plaque>
 
 ```powershell
-$letters =  "A","B","C","D","E","F","J","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"
+$letters = 'ABCDEFGHJKLMNPQRSTVWXYZ'.ToCharArray()
 $numbers = 1..999
 
-$i = 1
-$AA  = $letters | ForEach-Object { $A = $_ ; $letters | ForEach-Object { "$A$_" } }
-$AA = $AA | Where-Object {$_ -ne 'SS'}
-$AA = $AA | ForEach-Object {
-    [PSCustomObject]@{
-        Letters = $_
-        Index   = $i
+$AA  = $letters | ForEach-Object {
+    $A = $_
+    $letters | ForEach-Object { 
+        "$A$_"
     }
-    $i++
 }
+$AA = $AA | Where-Object {$_ -ne 'SS'}
 
 $001 = $numbers | ForEach-Object {
     $i = "$_"
@@ -29,22 +26,6 @@ $001 = $numbers | ForEach-Object {
     }
 }
 
-
-function TEST {
-
-    $test = Read-Host "Donnez votre plaque d'immatriculation"
-    $test2 = $test -split '-'
-
-    $a = ($AA | ? {$_.Letters -eq $test2[0]}).Index
-    $b = $test2[1]
-    $c = ($AA | ? {$_.Letters -eq $test2[2]}).Index
-
-    $total = 528*999*528
-    $id = $a*$b*$c
-
-    "Votre plaque est la n° {0:N0}" -f $id
-
-}
 
 
 
@@ -66,16 +47,5 @@ $results = $AA | ForEach-Object {
         }
     }
 }
-
-<# 
-528 combinaisons de lettres
-999 combinaisons de chiffres
-528 combinaisons de lettres
-
-
-
-
-#>
-
 
 ```
