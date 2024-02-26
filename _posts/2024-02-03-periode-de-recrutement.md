@@ -1,12 +1,3 @@
----
-layout: post
-title: "Période de recrutement"
-description: "Trouver le mois avec le plus de création de comptes informatique"
-tags: ['challenge','powershell']
-thumbnail: null
-listed: true
----
-
 ## Consigne
 
 Trouver le mois avec le plus de création de compte dans l'année
