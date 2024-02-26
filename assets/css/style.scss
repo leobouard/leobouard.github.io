@@ -13,9 +13,9 @@ html {
     --secondary: lightcoral;
     --textbg: #ffffff;
     --accent: #D12600;
-    --bordercolor: #ddd;
+    --bordercolor: #eee;
     --border: 1px solid var(--bordercolor);
-    --borderradius: 5px;
+    --borderradius: 2px;
     --boxshadow: #00000075;
     --neutral: #757575;
     --positive: #77c571;
@@ -89,7 +89,6 @@ html {
 }
 
 body {
-    background-color: var(--bodybg);
     height: 100%;
     margin: 0;
     width: auto;
@@ -205,14 +204,12 @@ main {
         background-color: var(--textbg);
         border-radius: var(--borderradius);
         padding: 2rem;
-        max-width: 950px;
+        max-width: 800px;
         width: -moz-available;
         width: -webkit-fill-available;
         width: fill-available;
         overflow-x: hidden;
         overflow-y: hidden;
-        box-shadow: 0px 0px 5px 0px var(--boxshadow);
-        border: var(--border);
     }
 
     a {
@@ -379,8 +376,8 @@ main {
 }
 
 footer {
-    margin-top: -50px;
-    padding: 65px 0px 15px 0px;
+    border-top: 2px solid var(--primary);
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
