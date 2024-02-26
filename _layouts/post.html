@@ -2,11 +2,9 @@
 layout: default
 ---
 
-<div class="banner">
-    <h1>{{ page.title }}</h1>
-</div>
 <section>
-    <div class="side-buttons">
+    <h1>{{ page.title }}</h1>
+    <!-- <div class="side-buttons">
         <a href="/blog" title="Retour aux articles">
             <i class="fa-solid fa-house"></i>
         </a>
@@ -18,7 +16,7 @@ layout: default
         <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" title="Retour en haut de page">
             <i class="fa-solid fa-arrow-up"></i>
         </a>
-    </div>
+    </div> -->
     <div class="top-buttons">
         {% if page.prevLink %}
             <a href="{{ page.prevLink.id }}">
