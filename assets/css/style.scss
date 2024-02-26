@@ -13,9 +13,9 @@ html {
     --secondary: lightcoral;
     --textbg: #ffffff;
     --accent: #D12600;
-    --bordercolor: #ddd;
+    --bordercolor: #eee;
     --border: 1px solid var(--bordercolor);
-    --borderradius: 5px;
+    --borderradius: 2px;
     --boxshadow: #00000075;
     --neutral: #757575;
     --positive: #77c571;
@@ -376,8 +376,8 @@ main {
 }
 
 footer {
-    margin-top: -50px;
-    padding: 65px 0px 15px 0px;
+    border-top: 2px solid var(--primary);
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
