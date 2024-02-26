@@ -13,7 +13,7 @@ html {
     --secondary: lightcoral;
     --textbg: #ffffff;
     --accent: #D12600;
-    --bordercolor: #eee;
+    --bordercolor: #d9d9d9;
     --border: 1px solid var(--bordercolor);
     --borderradius: 2px;
     --boxshadow: #00000075;
@@ -98,10 +98,11 @@ header {
     display: flex;
     width: 100%;
     justify-content: center;
+    border-bottom: var(--border);
 
     nav {
         width: 100%;
-        max-width: 1500px;
+        max-width: 1200px;
         padding: 0px 1em 0 0;
         display: flex;
         align-items: center;
@@ -385,7 +386,6 @@ footer {
     background-color: var(--footerbg);
     z-index: -1;
     color: var(--footer);
-    border: var(--border);
 }
 
 @media screen and (max-width: 950px) {
