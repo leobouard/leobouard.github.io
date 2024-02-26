@@ -34,6 +34,7 @@ On commencera donc par des conseils généraux, simples à comprendre et facile 
 - [Quelques idées reçues](#quelques-idées-reçues)
   - [Supprimer le retour d'une commande](#supprimer-le-retour-dune-commande)
   - [Création de PSCustomObject](#création-de-pscustomobject)
+  - [Peuplement d'une liste](#peuplement-dune-liste)
   - [Déduplication d'une liste](#déduplication-dune-liste)
   - [Filtrage](#filtrage)
 
@@ -235,6 +236,52 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 ```
 
 **Réponse :** Je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
+
+### Peuplement d'une liste
+
+Ici on retrouve [le cas évoqué un peu plus tôt](#tableau-comparatif), avec un comparatif entre l'array classique, le GenericList et le Pipeline. La comparaison se fait sur plusieurs tailles de collections, en PowerShell 5.1 et PowerShell 7.4.
+
+```powershell
+$array = @()
+1..10000 | % { $array += $_ }
+# vs.
+$array = [System.Collections.Generic.List[int]]@()
+1..10000 | % { $array.Add($_) }
+# vs.
+$array = 1..10000 | % { $_ }
+```
+
+**Réponse pour PowerShell 5.1 :** Ex-aequo entre GenericList et Pipeline, les deux méthodes se valent.
+
+Taille | Array | GenericList | Pipeline
+------ | ----- | ----------- | --------
+100    | 4 ms | 4 ms | 4 ms
+200    | 9 ms | 3 ms | 2 ms
+400    | 25 ms | 4 ms | 5 ms
+800    | 55 ms | 8 ms | 9 ms
+1 600  | 190 ms | 19 ms | 18 ms
+3 200  | 494 ms | 36 ms | 35 ms
+6 400  | 1 435 ms | 74 ms | 66 ms
+12 800 | 4 805 ms | 154 ms | 190 ms
+25 600 | 18 784 ms | 317 ms | 314 ms
+
+![Courbe sur la différence de performance en fonction de la taille de la collection - PowerShell 5.1](/assets/images/perf-array-powershell5.png)
+
+**Réponse pour PowerShell 7.4 :** Le gagnant est le Pipeline qui tire parti des dernières améliorations de performance apportées avec PowerShell 7+.
+
+Taille | Array | GenericList | Pipeline
+------ | ----- | ----------- | --------
+100    | 1 ms | 4 ms | 2 ms
+200    | 1 ms | 4 ms | 1 ms
+400    | 3 ms | 9 ms | 1 ms
+800    | 11 ms | 15 ms | 2 ms
+1 600  | 29 ms | 28 ms | 3 ms
+3 200  | 111 ms | 54 ms | 9 ms
+6 400  | 469 ms | 118 ms | 18 ms
+12 800 | 2 069 ms | 222 ms | 36 ms
+25 600 | 9 698 ms | 440 ms | 64 ms
+
+![Courbe sur la différence de performance en fonction de la taille de la collection - PowerShell 7.4](/assets/images/perf-array-powershell7.png)
 
 ### Déduplication d'une liste
 
