@@ -145,8 +145,8 @@ Voici un tableau qui récapitule vos options pour la création d'un tableau :
 Méthode | Compatibilité | Performance | Simplicité | Fonctionnalités
 ------- | ------------- | ----------- | ---------- | ---------------
 `@()` | Bonne | Mauvaise | Moyenne | Moyenne
-`List<T>` | Mauvaise | Bonne | Mauvaise | Bonne
-Aspiration via pipeline | Bonne | Moyenne | Bonne | Moyenne
+`List<T>` | Mauvaise | Moyenne | Mauvaise | Bonne
+Aspiration via pipeline | Bonne | Bonne | Bonne | Moyenne
 
 Et si ça vous intéresse, je ne peux que vous recommander de lire l'article original : [Building Arrays and Collections in PowerShell \| Clear-Script](https://vexx32.github.io/2020/02/15/Building-Arrays-Collections/)
 
@@ -238,15 +238,25 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 
 ### Déduplication d'une liste
 
-La déduplication d'une liste est en général un processus assez gourmand en ressources et qui peut prendre plusieurs secondes (voir même minutes en fonction de la taille de la liste). Pour gagner du temps de traitement, quelle est la commande la plus performante : `Select-Object -Unique` ou le combo `Sort-Object | Get-Unique` ?
+La déduplication d'une liste est en général un processus assez gourmand en ressources et qui peut prendre plusieurs secondes (voir même minutes en fonction de la taille de la liste). Pour gagner du temps de traitement, quelle est la commande la plus performante ?
 
 ```powershell
+1..10000 -replace '0','' | Select-Object -Unique
+# vs.
 1..10000 -replace '0','' | Sort-Object | Get-Unique
 # vs.
-1..10000 -replace '0','' | Select-Object -Unique
+1..10000 -replace '0','' | Sort-Object -Unique
 ```
 
-**Réponse :** Si vous souhaitez dédupliquer une liste, alors apprenez à utiliser la commande `Get-Unique` : j'ai mesuré un temps de traitement entre **15 et 20 fois plus rapide** que `Select-Object`.
+**Réponse :** Voici le temps de traitement moyen sur dix exécutions :
+
+Méthode | PowerShell 5.1 | PowerShell 7.4
+------- | -------------- | --------------
+`Select-Object` | 5471 ms | 2282 ms
+`Get-Unique` | 307 ms | 85 ms
+`Sort-Object -Unique` | 155 ms | 81 ms
+
+Le grand gagnant est donc `Sort-Object -Unique`, qui est jusqu'à **35 fois plus rapide** que la méthode la plus lente.
 
 ### Filtrage
 
