@@ -11,6 +11,10 @@ nav.breadcrumb {
     padding: 1em;
 }
 
+nav.breadcrumb {
+    list-style: none;
+}
+
 nav.breadcrumb li:not(:first-child)::before {
     content: "⨠";
     margin: 0 10px;
