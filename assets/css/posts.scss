@@ -9,6 +9,11 @@ nav.breadcrumb {
     padding: 1em 0;
 }
 
+nav.breadcrumb ul {
+    margin: 0;
+    padding: 0;
+}
+
 nav.breadcrumb li {
     list-style: none;
     display: inline;
