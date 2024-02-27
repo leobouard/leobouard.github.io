@@ -2,8 +2,6 @@
 ---
 
 nav.breadcrumb {
-    display: flex;
-    justify-content: flex-start;
     width: 100%;
     font-size: small;
     color: #888;
@@ -11,8 +9,9 @@ nav.breadcrumb {
     padding: 1em 0;
 }
 
-nav.breadcrumb {
+nav.breadcrumb li {
     list-style: none;
+    display: inline;
 }
 
 nav.breadcrumb li:not(:first-child)::before {
