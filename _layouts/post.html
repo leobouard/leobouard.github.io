@@ -23,10 +23,12 @@ layout: default
 
   <!-- Path from home to current page -->
   <nav class="breadcrumb">
-    <li><a href="/">Accueil</a></li>
-    <li><a href="/blog">Articles</a></li>
-    {% if page.tableOfContent %}<li><a href="{{ page.tableOfContent }}">Sommaire</a></li>{% endif %}
-    <li><span>{{ page.title }}</span></li>
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/blog">Articles</a></li>
+      {% if page.tableOfContent %}<li><a href="{{ page.tableOfContent }}">Sommaire</a></li>{% endif %}
+      <li><span>{{ page.title }}</span></li>
+    </ul>
   </nav>
 
   <!-- Main title and content -->
