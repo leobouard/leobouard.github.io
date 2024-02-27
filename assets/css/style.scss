@@ -214,13 +214,12 @@ main {
     }
 
     a {
-        color: var(--accent);
-        font-weight: 500;
-        text-decoration: none;
+        color: inherit;
+        text-underline-offset: 4px;
     }
 
     a:hover {
-        text-decoration: underline;
+        text-decoration-thickness: 2px;
     }
 
     h2, h3, h4, h5 {
