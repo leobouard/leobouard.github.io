@@ -2,7 +2,18 @@
 ---
 
 nav.breadcrumb {
-    
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: small;
+    color: #888;
+    font-weight: 500;
+    padding: 1em;
+}
+
+nav.breadcrumb li:not(:first-child)::before {
+    content: "⨠";
+    margin: 0 10px;
 }
 
 .posts {
