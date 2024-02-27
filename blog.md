@@ -12,7 +12,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
             {% if post.capsule %}<span class="articlePill">{{ post.capsule }}</span>{% endif %}
             <article>
                 <div class="articleThumbnail">
-                    <img src="{{ post.thumbnail }}">
+                    <img src="{{ post.thumbnail }}" alt="">
                 </div>
                 <span class="articleTitle">{{ post.title }}</span>
                 <span class="articleDescription">{{ post.description }}</span>
