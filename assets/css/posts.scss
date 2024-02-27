@@ -127,7 +127,9 @@ div.information > p {
 }
 
 div.summary {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 div.summary > a {
@@ -136,7 +138,7 @@ div.summary > a {
     padding: 10px;
     border: var(--border);
     border-radius: var(--borderradius);
-    margin: 10px 0px;
+    text-decoration: none;
 
     h3 {
         font-size: 15px;
