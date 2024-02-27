@@ -2,8 +2,13 @@
 layout: default
 ---
 
+<nav class="breadcrumb">
+  <a href="/">Accueil</a>
+  <a href="/blog">Articles</a>
+  {% if page.tableOfContent %} <a href="{{ page.tableOfContent }}">Sommaire</a> {% endif %}
+</nav>
 <section>
-    <!-- <div class="side-buttons">
+  <!-- <div class="side-buttons">
         <a href="/blog" title="Retour aux articles">
             <i class="fa-solid fa-house"></i>
         </a>
@@ -16,66 +21,66 @@ layout: default
             <i class="fa-solid fa-arrow-up"></i>
         </a>
     </div> -->
-    <div class="top-buttons">
-        {% if page.prevLink %}
-            <a href="{{ page.prevLink.id }}">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span>{{ page.prevLink.name }}</span>
-            </a>
-        {% else %}
-            <a href="/blog">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span>Tous les articles</span>
-            </a>
-        {% endif %}
-        {% if page.nextLink %}
-            <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>
-                <span>{{ page.nextLink.name }}</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        {% endif %}
-    </div>
-    <h1>{{ page.title }}</h1>
-    {{ content }}
-    <div class="bottom-buttons">
-        {% if page.prevLink %}
-            <a href="{{ page.prevLink.id }}">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span>{{ page.prevLink.name }}</span>
-            </a>
-        {% else %}
-            <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});">
-                <i class="fa-solid fa-arrow-up"></i>
-                <span>Haut de page</span>
-            </a>
-        {% endif %}
-        {% if page.nextLink %}
-            <a href="{{ page.nextLink.id }}">
-                <span>{{ page.nextLink.name }}</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        {% endif %}
-    </div>
+  <div class="top-buttons">
+    {% if page.prevLink %}
+    <a href="{{ page.prevLink.id }}">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>{{ page.prevLink.name }}</span>
+    </a>
+    {% else %}
+    <a href="/blog">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Tous les articles</span>
+    </a>
+    {% endif %}
+    {% if page.nextLink %}
+    <a href="{{ page.nextLink.id }}" {% unless page.nextLink %} style="visibility: hidden;" {% endunless %}>
+      <span>{{ page.nextLink.name }}</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+    {% endif %}
+  </div>
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+  <div class="bottom-buttons">
+    {% if page.prevLink %}
+    <a href="{{ page.prevLink.id }}">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>{{ page.prevLink.name }}</span>
+    </a>
+    {% else %}
+    <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});">
+      <i class="fa-solid fa-arrow-up"></i>
+      <span>Haut de page</span>
+    </a>
+    {% endif %}
+    {% if page.nextLink %}
+    <a href="{{ page.nextLink.id }}">
+      <span>{{ page.nextLink.name }}</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+    {% endif %}
+  </div>
 </section>
 
 {% if page.nextLink == nil %}
 <section class="recommandation">
-    {% assign post = site.posts | where: "listed", true | sample %}
-    <span>Est-ce que cet article pourrait vous intéresser ?
-        <img src="https://www.labouabouate.fr/assets/doodles/Arrow%2011.svg" alt="sketch arrow"/>
-    </span>
-    <a class="noDecoration" href="{{ post.id }}">
-        {% if post.capsule %}<span class="articlePill">{{ post.capsule }}</span>{% endif %}
-        <article>
-            <div class="articleThumbnail">
-                <img src="{{ post.thumbnail }}">
-            </div>
-            <span class="articleTitle">{{ post.title }}</span>
-            <span class="articleDescription">{{ post.description }}</span>
-            <div class="articleTags">
-                {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
-            </div>
-        </article>
-    </a>
+  {% assign post = site.posts | where: "listed", true | sample %}
+  <span>Est-ce que cet article pourrait vous intéresser ?
+    <img src="https://www.labouabouate.fr/assets/doodles/Arrow%2011.svg" alt="sketch arrow" />
+  </span>
+  <a class="noDecoration" href="{{ post.id }}">
+    {% if post.capsule %}<span class="articlePill">{{ post.capsule }}</span>{% endif %}
+    <article>
+      <div class="articleThumbnail">
+        <img src="{{ post.thumbnail }}">
+      </div>
+      <span class="articleTitle">{{ post.title }}</span>
+      <span class="articleDescription">{{ post.description }}</span>
+      <div class="articleTags">
+        {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
+      </div>
+    </article>
+  </a>
 </section>
 {% endif %}
