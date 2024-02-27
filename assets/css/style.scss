@@ -20,14 +20,6 @@ html {
     --neutral: #757575;
     --positive: #77c571;
     --negative: #fde7e9;
-
-    a.light-mode {
-        display: none;
-    }
-
-    a.dark-mode {
-        display: inline-flex;
-    }
 }
 
 html.dark {
@@ -46,20 +38,7 @@ html.dark {
     --positive: #17470d;
     --negative:  #5b1d24;
 
-    a.dark-mode {
-        display: none;
-    }
-
-    a.light-mode {
-        display: inline-flex;
-    }
-
-    .bottom-buttons > a:last-child {
-        color: var(--text);
-    }
-
     pre > code {
-
         /*PowerShell*/
         .bp, .nv, .bp { color: #7cdcf0; } /*Variables*/
         .n            { color: #dcdcaa; } /*Commandes*/
@@ -104,25 +83,28 @@ header {
     nav {
         width: 100%;
         max-width: 1200px;
-        padding: 0px 1em 0 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    nav a, nav .menu {
+    nav a {
         color: var(--title);
-        font-weight: bold;
-        margin: 5px 0px;
+        font-weight: 500;
         padding: 10px 15px;
         transition: all 100ms ease-in-out;
         text-decoration: none;
         border-radius: var(--borderradius);
+        border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover, nav a:active {
+        color: var(--text);
+        border-bottom: 2px solid var(--accent);
     }
 
     nav a:hover {
-        color: var(--text);
-        background: rgba(0,0,0,.1);
+        background: var(--accentbg);
     }
 
     nav a.home {
