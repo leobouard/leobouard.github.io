@@ -56,7 +56,7 @@ div.articleTags {
     bottom: 0;
     margin: 1rem;
     text-transform: lowercase;
-    
+
     span {
         background: var(--accentbg);
         border-radius: var(--borderradius);
@@ -109,12 +109,12 @@ div.information {
     margin: 15px 0px;
 }
 
-div.information > span {
+div.information>span {
     font-weight: 600;
     font-size: 16px;
 }
 
-div.information > p {
+div.information>p {
     margin: 10px 0px 0px;
 }
 
@@ -124,7 +124,7 @@ div.summary {
     gap: 5px;
 }
 
-div.summary > a {
+div.summary>a {
     background: var(--textbg);
     display: block;
     padding: 10px;
@@ -143,7 +143,7 @@ div.summary > a {
     }
 }
 
-div.summary > a:hover {
+div.summary>a:hover {
     text-decoration: none;
     background: var(--accentbg);
 
@@ -157,7 +157,7 @@ div.summary > a:hover {
     }
 }
 
-div.summary > span {
+div.summary>span {
     font-weight: 400;
     color: var(--text);
 }
@@ -170,14 +170,14 @@ div.summary > span {
     justify-content: space-between;
 }
 
-.top-buttons > a ,
-.bottom-buttons > a {
+.top-buttons>a,
+.bottom-buttons>a {
     padding: 0.5em 1em;
     border-radius: var(--borderradius);
 }
 
-.top-buttons > a > i,
-.bottom-buttons > a > i {
+.top-buttons>a>i,
+.bottom-buttons>a>i {
     margin: 0px 5px;
 }
 
@@ -187,12 +187,12 @@ div.summary > span {
     margin-bottom: 3em;
 }
 
-.top-buttons > a {
+.top-buttons>a {
     color: var(--title);
     border: var(--border);
 }
 
-.top-buttons > a:hover {
+.top-buttons>a:hover {
     background-color: var(--bodybg);
     color: var(--text);
 }
@@ -203,15 +203,15 @@ div.summary > span {
     margin-top: 3em;
 }
 
-.bottom-buttons > a { 
+.bottom-buttons>a {
     border: 1px solid var(--accent);
 }
 
-.bottom-buttons > a:first-child {
+.bottom-buttons>a:first-child {
     color: var(--accent);
 }
 
-.bottom-buttons > a:last-child {
+.bottom-buttons>a:last-child {
     color: var(--textbg);
     background-color: var(--accent);
 }
@@ -224,7 +224,7 @@ div.summary > span {
     margin-top: -36px;
 }
 
-.side-buttons > a {
+.side-buttons>a {
     display: flex;
     aspect-ratio: 1;
     background-color: var(--textbg);
@@ -239,7 +239,7 @@ div.summary > span {
     border: var(--border);
 }
 
-.side-buttons > a:hover {
+.side-buttons>a:hover {
     background-color: var(--accentbg);
     text-decoration: none;
     color: var(--text);
@@ -267,7 +267,7 @@ section.recommandation {
     justify-content: flex-end;
 }
 
-section.recommandation > span {
+section.recommandation>span {
     font-family: 'Manrope';
     max-width: 310px;
     font-size: x-large;
@@ -276,7 +276,7 @@ section.recommandation > span {
     margin: 20px;
 }
 
-section.recommandation > span > img {
+section.recommandation>span>img {
     rotate: 54deg;
     transform: scaleY(-1);
     width: 120px;
@@ -330,7 +330,7 @@ input.task-list-item-checkbox {
 
 @media screen and (max-width: 700px) {
 
-    div.banner > h1 {
+    div.banner>h1 {
         font-size: x-large;
     }
 
@@ -340,12 +340,12 @@ input.task-list-item-checkbox {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
-    section.recommandation > span {
+
+    section.recommandation>span {
         text-align: center;
     }
 
-    section.recommandation > span > img {
+    section.recommandation>span>img {
         display: none;
     }
 
@@ -357,7 +357,7 @@ input.task-list-item-checkbox {
         grid-template-columns: 1fr;
     }
 
-    div.banner > h1 {
+    div.banner>h1 {
         font-size: x-large;
     }
 
@@ -367,8 +367,8 @@ input.task-list-item-checkbox {
         margin-right: -1em;
     }
 
-    .top-buttons > a > span,
-    .bottom-buttons > a > span {
+    .top-buttons>a>span,
+    .bottom-buttons>a>span {
         display: none;
     }
 }
