@@ -32,6 +32,10 @@ nav.breadcrumb li:not(:first-child)::before {
     justify-items: center;
 }
 
+.posts a {
+    text-decoration: none;
+}
+
 span.articlePill {
     position: absolute;
     background: var(--footerbg);
@@ -187,10 +191,6 @@ div.summary>span {
 }
 
 // TOP BUTTONS ONLY
-
-.top-buttons {
-    margin-bottom: 3em;
-}
 
 .top-buttons>a {
     color: var(--title);
