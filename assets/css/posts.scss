@@ -175,14 +175,15 @@ div.summary>span {
 
 .top-buttons,
 .bottom-buttons {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    height: 3em;
 }
 
 .top-buttons>a,
 .bottom-buttons>a {
     padding: 0.5em 1em;
     border-radius: var(--borderradius);
+    position: absolute;
 }
 
 .top-buttons>a>i,
