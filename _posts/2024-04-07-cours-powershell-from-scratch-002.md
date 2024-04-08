@@ -72,10 +72,12 @@ Certaines commandes possèdent des "alias" qui permette d'utiliser une commande 
 
 Voici quelques exemples :
 
-- `cd` pour se déplacer dans un répertoire (alias de `Set-Location`)
-- `ls` pour lister le contenu d'un dossier (alias de `Get-ChildItem`)
-- `mkdir` pour créer un dossier (alias de `New-Item`)
-- `cls` pour nettoyer l'affichage dans la console (alias de `Clear-Host`)
+Alias | Commande | Description
+----- | -------- | -----------
+`cd` | `Set-Location` | Se déplacer dans un répertoire
+`ls` | `Get-ChildItem` | Lister le contenu d'un dossier
+`mkdir` | `New-Item` | Créer un dossier
+`cls` | `Clear-Host` | Nettoyer l'affichage dans la console
 
 Les alias ne doivent pas être utilisé dans un script pour des raisons d'accessibilité. Ceux-ci ne doivent être utilisés que lorsque vous faites des requêtes dans la console.
 
