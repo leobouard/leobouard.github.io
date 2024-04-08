@@ -51,7 +51,7 @@ Get-Service | Select-Object -First 10
 Get-Service | Select-Object -Last 10
 ```
 
-### Exercice n°2 (partie A)
+### Exercice n°2A
 
 A l'aide des commandes `Select-Object` et `Get-Service`, afficher les 25 premiers services avec les informations suivantes :
 
@@ -94,7 +94,7 @@ Get-ChildItem -Path 'C:\Windows' | Measure-Object -Property Length -Sum -Average
 
 On observe que `Measure-Object` compte moins de résultats cette fois-ci, car il ne prend en compte que les éléments avec une propriété "Length".
 
-### Exercice n°2 (partie B)
+### Exercice n°2B
 
 A l'aide des commandes `Get-Process`, `Sort-Object` et `Measure-Object`, compter le nombre de processus unique sur votre ordinateur.
 
@@ -133,7 +133,7 @@ Get-LocalGroup | ForEach-Object {
 
 Dans l'exemple ci-dessus, la variable courante va contenir le groupe "Administrateurs", puis "Administrateur Hyper-V", puis "Duplicateurs", etc.
 
-### Exercice n°2 (partie C)
+### Exercice n°2C
 
 A l'aide des commandes et des connaissances que vous avez vu précédemment, réaliser votre premier script en suivant le pseudo-code indiqué :
 
