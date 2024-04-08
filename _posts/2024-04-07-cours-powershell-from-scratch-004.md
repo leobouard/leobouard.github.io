@@ -83,3 +83,6 @@ Vous pouvez utiliser n'importe quel nom pour votre variable (lettres, chiffres e
 Certaines variables sont utilisés par PowerShell pour stocker des informations importantes et nécessaires à son bon fonctionnement. Evitez de marcher sur les plate-bandes de PowerShell en utilisant ces variables pour stocker vos informations.
 
 Pour obtenir la liste de toutes la variables existantes, vous pouvez utiliser la commande `Get-Variable`.
+
+## Affichage dans du texte
+

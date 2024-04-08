@@ -30,16 +30,14 @@ Opérateur | Description
 
 ### Exercice n°4A
 
-Dans un premier temps, prédire le résultat de chaque comparaison puis vérifier avec PowerShell :
+Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
-Comparaison | Prévision | Résultat
------------ | --------- | --------
-`"bonjour" -eq "Bonjour"` | |
-`"bonjour" -ceq "Bonjour"` | |
-`"bonjour" -gt "123"` | |
-`10 -ge (5+5)` | |
-`"bonjour" -lt "azerty"` | |
-`152 -le -80` | |
+- `"bonjour" -eq "Bonjour"`
+- `"bonjour" -ceq "Bonjour"`
+- `"bonjour" -gt "123"`
+- `10 -ge (5+5)`
+- `"bonjour" -lt "azerty"`
+- `152 -le -80`
 
 ### Correspondance
 
@@ -91,16 +89,18 @@ Opérateur | Description
 $months = 'janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'
 ```
 
-Dans un premier temps, prédire le résultat de chaque comparaison puis vérifier avec PowerShell :
+Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
-Comparaison | Prévision | Résultat
------------ | --------- | --------
-`"avril" -in $months` | |
-`$months -in "avril"` | |
-`"avril" -contains $months` | |
-`$months -contains "avril"` | |
+- `"avril" -in $months`
+- `$months -in "avril"`
+- `"avril" -contains $months`
+- `$months -contains "avril"`
 
 ### Manipulation de texte
+
+`-replace`
+`-split`
+`-join`
 
 ### Exercice n°4D
 

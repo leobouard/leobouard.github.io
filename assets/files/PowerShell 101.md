@@ -11,9 +11,10 @@
     - [Exercice n°2B](#exercice-n2b)
     - [Exercice n°2C](#exercice-n2c)
     - [Travaux pratiques n°1](#travaux-pratiques-n1)
-  - [Variables, opérateurs et conditions](#variables-opérateurs-et-conditions)
+  - [Opérateurs en bref](#opérateurs-en-bref)
     - [Exercice n°4A](#exercice-n4a)
     - [Exercice n°4B](#exercice-n4b)
+    - [Exercice n°4C](#exercice-n4c)
 
 ## Commandes et paramètres
 
@@ -102,22 +103,24 @@ century13 | ``
 century14 | ``
 century15 | ``
 
-## Variables, opérateurs et conditions
+## Opérateurs en bref
 
 ### Exercice n°4A
 
-Dans un premier temps, prédire le résultat de chaque comparaison puis vérifier avec PowerShell :
+Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
-Comparaison | Prévision | Résultat
------------ | --------- | --------
-`"bonjour" -eq "Bonjour"` | |
-`"bonjour" -ceq "Bonjour"` | |
-`"bonjour" -gt "123"` | |
-`10 -ge (5+5)` | |
-`"bonjour" -lt "azerty"` | |
-`152 -le -80` | |
+- `"bonjour" -eq "Bonjour"`
+- `"bonjour" -ceq "Bonjour"`
+- `"bonjour" -gt "123"`
+- `10 -ge (5+5)`
+- `"bonjour" -lt "azerty"`
+- `152 -le -80`
 
 ### Exercice n°4B
+
+```powershell
+$days = 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
+```
 
 Trouver la bonne utilisation de `like` et `-notlike` pour obtenir les résultats suivants :
 
@@ -126,7 +129,15 @@ Trouver la bonne utilisation de `like` et `-notlike` pour obtenir les résultats
 3. Mardi et Mercredi
 4. Mardi, Mercredi et Jeudi
 
-```powershell
-$days = 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
+### Exercice n°4C
 
+```powershell
+$months = 'janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'
 ```
+
+Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
+
+- `"avril" -in $months`
+- `$months -in "avril"`
+- `"avril" -contains $months`
+- `$months -contains "avril"`
