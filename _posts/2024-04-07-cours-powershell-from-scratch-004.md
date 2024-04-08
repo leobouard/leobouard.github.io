@@ -74,13 +74,13 @@ $users[0].Name
 
 Vous pouvez utiliser n'importe quel nom pour votre variable (lettres, chiffres et tirets & underscore), mais voici quelques conseils :
 
-- Garder des noms simples et explicite sur leur contenu
+- Garder des noms simples et explicites sur leur contenu
 - Utiliser des majuscules régulières : `$disabledUsers` par exemple
 - Privilégier l'anglais
 
 ### Variables par défaut
 
-Certaines variables sont utilisés par PowerShell pour stocker des informations importantes et nécessaires à son bon fonctionnement. Evitez de marcher sur les plate-bandes de PowerShell pour éviter les soucis.
+Certaines variables sont utilisés par PowerShell pour stocker des informations importantes et nécessaires à son bon fonctionnement. Evitez de marcher sur les plate-bandes de PowerShell en utilisant ces variables pour stocker vos informations.
 
 Pour obtenir la liste de toutes la variables existantes, vous pouvez utiliser la commande `Get-Variable`.
 
@@ -88,18 +88,41 @@ Pour obtenir la liste de toutes la variables existantes, vous pouvez utiliser la
 
 ### Opérateurs de comparaison
 
-Il existe une multitude
+Les opérateurs de comparaison permettent de comparer deux éléments entre eux en retournant un booléen (vrai ou faux) en fonction du résultat. Il existe plusieurs types d'opérateurs de comparaison mais tous fonctionnent de la même manière. Il est possible de comparer n'importe quel type de donnée (nombres, texte, dates) entre elle.
+
+Par défaut, les opérateurs de comparaison ne sont pas sensible à la casse (dans le cas de comparaison sur du texte), mais une variante sensible à la casse est disponible en ajoutant un "C" avant l'opérateur habituel. Exemple : `-clike` est la version sensible à la casse de `-like`.
+
+#### Egalité
 
 Opérateur | Description
 --------- | -----------
-`-eq` | Egal à
-`-ne` | N'est pas égal à
-`-gt` | Strictement supérieur à
-`-ge` | Supérieur ou égal à
-`-lt` | Strictement inférieur à
-`-le` | Inférieur ou égal à
+`-eq`     | Egal à
+`-ne`     | N'est pas égal à
+`-gt`     | Strictement supérieur à
+`-ge`     | Supérieur ou égal à
+`-lt`     | Strictement inférieur à
+`-le`     | Inférieur ou égal à
 
-## Exercice n°4
+### Exercice n°4A
+
+Dans un premier temps
+
+Sans utiliser PowerShell, prédire le résultat de chaque comparaison puis vérifier avec PowerShell
+
+Comparaison | Prévision | Résultat
+----------- | --------- | --------
+`"bonjour" -eq "Bonjour"` |  | 
+`"bonjour" -ceq "Bonjour"` |  | 
+`"bonjour" -gt "123"` |  | 
+`10 -ge (5+5)` |  | 
+`"bonjour" -lt "azerty"` |  | 
+`152 -le -80` |  | 
+
+#### Correspondance
+
+#### Remplacement
+
+#### Appartenance
 
 ## Conditions
 

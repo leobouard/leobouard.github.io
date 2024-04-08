@@ -154,7 +154,7 @@ Get-Date -H 12 -Min 59 -Sec 00
 Get-Date -Hour 12 -Minute 59 -Second 00
 ```
 
-Egalement, certains paramètres sont utilisés par défaut si une valeur est spécifiée après une commande. Exemple :
+Egalement, certains paramètres sont utilisés par défaut si une valeur est spécifiée juste après une commande. Exemple :
 
 ```powershell
 Write-Host 'Hello world!'
