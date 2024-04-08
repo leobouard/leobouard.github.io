@@ -22,3 +22,9 @@ nextLink:
     {% endif %}
   {% endfor %}
 </div>
+
+## Téléchargements
+
+- [Téléchargement de PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows#msi)
+- [Téléchargement de Visual Studio Code](https://code.visualstudio.com/)
+- [Support Markdown pour les étudiants](/assets/files/PowerShell%20101.md)
