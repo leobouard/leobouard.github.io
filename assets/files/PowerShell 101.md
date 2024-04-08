@@ -12,6 +12,8 @@
     - [Exercice n°2C](#exercice-n2c)
     - [Travaux pratiques n°1](#travaux-pratiques-n1)
   - [Variables, opérateurs et conditions](#variables-opérateurs-et-conditions)
+    - [Exercice n°4A](#exercice-n4a)
+    - [Exercice n°4B](#exercice-n4b)
 
 ## Commandes et paramètres
 
@@ -101,3 +103,30 @@ century14 | ``
 century15 | ``
 
 ## Variables, opérateurs et conditions
+
+### Exercice n°4A
+
+Dans un premier temps, prédire le résultat de chaque comparaison puis vérifier avec PowerShell :
+
+Comparaison | Prévision | Résultat
+----------- | --------- | --------
+`"bonjour" -eq "Bonjour"` | |
+`"bonjour" -ceq "Bonjour"` | |
+`"bonjour" -gt "123"` | |
+`10 -ge (5+5)` | |
+`"bonjour" -lt "azerty"` | |
+`152 -le -80` | |
+
+### Exercice n°4B
+
+Trouver la bonne utilisation de `like` et `-notlike` pour obtenir les résultats suivants :
+
+1. Les jours du week-end
+2. Les jours de la semaine
+3. Mardi et Mercredi
+4. Mardi, Mercredi et Jeudi
+
+```powershell
+$days = 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
+
+```
