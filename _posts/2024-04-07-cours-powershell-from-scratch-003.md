@@ -144,9 +144,7 @@ A l'aide des commandes et des connaissances que vous avez vu précédemment, ré
 Le script n'utilise que des commandes simples, avec des pipeline entre chaque.
 
 ```powershell
-Get-ChildItem -Path 'C:\Windows' |
-    Where-Object {$_.Extension -eq '.exe'} |
-    ForEach-Object { Get-Acl -Path $_.FullName }
+
 ```
 
 ## Travaux pratiques n°1
@@ -176,6 +174,7 @@ L'objectif pour cette session est d'arriver jusqu'au **niveau 10**. Avant de com
 
 Commande | Description
 -------- | -----------
+$PSVersionTable | Obtenir la version de PowerShell
 Get-ADDomain | Donne les informations du domaine Active Directory
 Get-Alias | Trouve l'alias d'une commande et inversement
 Get-ChildItem | Liste les éléments d'un dossier

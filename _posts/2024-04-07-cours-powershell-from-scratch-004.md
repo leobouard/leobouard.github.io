@@ -21,7 +21,54 @@ $text = 'Voici un texte court'
 $number = 1032
 ```
 
-Pour consulter leur contenu, il suffit simplement de tapper la commande dans la console.
+### Interagir avec le contenu
+
+Pour consulter le contenu d'une variable, il suffit simplement de tapper le nom de la variable dans la console :
+
+```powershell
+$text
+Voici un texte court
+
+$number
+1032
+```
+
+### Index
+
+Pour les variables qui contiennent des collections d'objets, il est possible d'indiquer quel élément nous intéresse dans la liste en utilisant l'index. La syntaxe de l'index est plutôt simple puisqu'il suffit d'ajouter `[X]` (où *X* est le numéro d'index) directement après votre variable
+
+```powershell
+$array = 'Alpha','Bravo','Charlie','Delta'
+$array[1]
+```
+
+Index | Valeur(s) d'exemple | Description
+----- | ------------------- | -----------
+[0] | Alpha | Premier élément de la collection
+[1] | Bravo | Deuxième élément de la collection
+[1..3] | Bravo, Charlie, Delta | Deuxième au quatrième élément de la collection
+[0,2] | Alpha,Charlie | Premier et troisième élément de la collection
+[-2] | Charlie | Avant-dernier élément de la collection
+[-1] | Delta | Dernier élément de la collection
+
+> L'index peut être remplacé par la commande `Select-Object` avec les paramètres `-First`, `-Skip`, `-Last` et `-SkipLast` (vu précédemment).
+
+### Sous-propriétés
+
+Lorsqu'une variable contient un ou plusieurs objets complexes avec plusieurs propriétés, il est possible d'obtenir uniquement l'information qui nous intéresse en selectionnant directement la propriété. Pour ça, il suffit d'ajouter `.Property` (où *Property* est le nom de la propriété) directement après votre variable.
+
+```powershell
+$users = Get-LocalUser
+$users.Name
+```
+
+Il est possible de mixer les index et les sous-propriétés, par exemple :
+
+```powershell
+$users[0].Name
+```
+
+> Les sous-propriétés peuvent être remplacé par la commande `Select-Object` avec le paramètre `-ExpandProperty`.
 
 ### Conseils sur le nommage
 
@@ -33,7 +80,9 @@ Vous pouvez utiliser n'importe quel nom pour votre variable (lettres, chiffres e
 
 ### Variables par défaut
 
-Certaines variables sont utilisé par PowerShell pour stocker des informations importantes et nécessaires à son bon fonctionnement. Evitez de marcher sur les plate-bandes de PowerShell pour éviter les soucis.
+Certaines variables sont utilisés par PowerShell pour stocker des informations importantes et nécessaires à son bon fonctionnement. Evitez de marcher sur les plate-bandes de PowerShell pour éviter les soucis.
+
+Pour obtenir la liste de toutes la variables existantes, vous pouvez utiliser la commande `Get-Variable`.
 
 ## Opérateurs
 
