@@ -104,8 +104,6 @@ Comparaison | Prévision | Résultat
 
 ### Exercice n°4D
 
-
-
 ## Opérateurs logiques
 
 Les opérateurs logiques permettent de relier des comparaisons entre-elles
