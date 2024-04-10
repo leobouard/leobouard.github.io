@@ -39,24 +39,52 @@ else {
 }
 ```
 
-### Exercice n°5 (partie A)
+### Exercice n°6A
+
+Avec les commandes `Read-Host`, `Write-Host` et des conditions, réaliser un script qui donne une appréciation selon l'âge de la personne :
+
+- Moins de 18 ans : "Rien à faire ici !
+- Entre 18 et 25 ans : "Le bel âge !"
+- Entre 25 et 45 ans : "Salut les d'jeuns"
+- Entre entre 45 et 65 : "J'adore Nostalgie !"
+- Entre 65 et 80 ans : "Il serait temps de partir en retraite"
+- Plus de 80 ans : "Ça sent le sapin"
 
 ### SWITCH
 
 Le SWITCH permet de traiter un grand nombre de comparaison différentes dans une syntaxe très compacte.
 
 ```powershell
-switch ($lettre) {
-    'A' { Write-Host 'Alpha' }
-    'B' { Write-Host 'Bravo' }
-    'C' { Write-Host 'Charlie' }
-    'D' { Write-Host 'Delta' }
-    default { Write-Host "`n" }
+switch ($num) {
+    22 { Write-Host 'Finistère' }
+    31 { Write-Host 'Haute-Garonne' }
+    33 { Write-Host 'Gironde' }
+    35 { Write-Host 'Ille-et-Vilaine' }
+    44 { Write-Host 'Loire-Altantique' }
+    default { Write-Host "Numéro incorrect" -ForegroundColor Red }
 }
 ```
 
-### Exercice n°5 (partie B)
+### Exercice n°6B
 
-```powershell
+Ecrivez un script PowerShell qui permet de transformer une phrase en alphabet militaire.
 
+Vous aurez besoin d'utiliser des variables, une condition, une boucle, un opérateur de manipulation de texte et les commandes `Write-Host` et `Read-Host`.
+
+Le résultat attendu est le suivant :
+
+```text
+Entrer la phrase à convertir: HELLO WORLD
+
+H - Hotel
+E - Echo
+L - Lima
+L - Lima
+O - Oscar
+
+W - Whiskey
+O - Oscar
+R - Romeo
+L - Lima
+D - Delta
 ```

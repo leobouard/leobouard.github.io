@@ -98,12 +98,45 @@ Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
 ### Manipulation de texte
 
-`-replace`
-`-split`
-`-join`
+Certains opérateurs ne font pas de comparaison mais peuvent modifier des chaines de caractères. On peut en retenir trois principaux :
+
+1. `-replace` pour remplacer une chaine de caractères par une autre
+1. `-split` pour séparer une chaine de caractères suivant un délimiteur
+1. `-join` pour assembler une chaine de caractères avec un délimiteur
 
 ### Exercice n°4D
 
+Devinez le contenu de chaque variable :
+
+```powershell
+$replace = 'Je serai en avance' -replace 'avance','retard'
+$split1 = 'abcdefghijklmnopqrstuvwyz' -split ''
+$split2 = '192.168.0.1' -split '.'
+$join = 'Robert','Jimmy','John','John Paul' -join '+'
+```
+
 ## Opérateurs logiques
 
-Les opérateurs logiques permettent de relier des comparaisons entre-elles
+Les opérateurs logiques permettent de relier des comparaisons entre-elles. Les deux plus utilisés sont `-and` (ET) et `-or` (OU).
+
+### Exercice n°5
+
+Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
+
+- `15 -gt 10 -and "Testing" -like "*ing"`
+- `$true -eq $false -or (1,2,3) -contains 3`
+- `1 -le 10 -and ('bonjour' -like 'bon' -or 'test' -cne 'TEST')`
+
+### Travaux pratiques n°2
+
+Vous pouvez maintenant réaliser les 5 défis restants sur le "wargame" CENTURY.
+
+Vous pouvez vous rendre sur <https://underthewire.tech/century> et lancer votre connexion SSH avec la commande suivante :
+
+```text
+ssh century.underthewire.tech -l century9
+```
+
+Le mot de passe du premier compte "Century9" est `696`.
+
+Une fois que vous aurez trouvé le mot de passe du compte "Century10", vous pourrez quitter le SSH (commande `exit`) et lancer la même commande en modifiant le nom du compte.

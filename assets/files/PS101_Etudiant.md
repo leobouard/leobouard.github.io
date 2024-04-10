@@ -15,6 +15,8 @@
     - [Exercice n°4A](#exercice-n4a)
     - [Exercice n°4B](#exercice-n4b)
     - [Exercice n°4C](#exercice-n4c)
+    - [Exercice n°4D](#exercice-n4d)
+    - [Exercice n°5](#exercice-n5)
 
 ## Commandes et paramètres
 
@@ -141,3 +143,22 @@ Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 - `$months -in "avril"`
 - `"avril" -contains $months`
 - `$months -contains "avril"`
+
+### Exercice n°4D
+
+Devinez le contenu de chaque variable :
+
+```powershell
+$replace = 'Je serai en avance' -replace 'avance','retard'
+$split1 = 'abcdefghijklmnopqrstuvwyz' -split ''
+$split2 = '192.168.0.1' -split '.'
+$join = 'Robert','Jimmy','John','John Paul' -join '+'
+```
+
+### Exercice n°5
+
+Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
+
+- `15 -gt 10 -and "Testing" -like "*ing"`
+- `$true -eq $false -or (1,2,3) -contains 3`
+- `1 -le 10 -and ('bonjour' -like 'bon' -or 'test' -cne 'TEST')`

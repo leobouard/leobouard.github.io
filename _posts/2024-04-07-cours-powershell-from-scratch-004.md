@@ -86,3 +86,25 @@ Pour obtenir la liste de toutes la variables existantes, vous pouvez utiliser la
 
 ## Affichage dans du texte
 
+Pour afficher le contenu d'une variable dans un texte, le cas général est plutôt simple :
+
+- Si la chaine de caractère est entre des *simple-quotes*, alors la variable ne sera pas interprêtée
+- Si la chaine de caractères est entre des *double-quotes*, alors la variable sera interprêtée.
+
+Exemples :
+
+```powershell
+$test = 'PowerShell'
+Write-Host "$test est plutôt cool"
+# vs.
+Write-Host '$test est plutôt cool'
+```
+
+### Cas particuliers
+
+Si votre variable est plus complexe (vous ne voulez afficher que une sous-propriété ou/et un index), il faudra modifier un peu la syntaxe.
+
+```powershell
+$users = Get-LocalUser
+Write-Host "Le premier utilisateur de l'ordinateur est $($users[0].Name)"
+```
