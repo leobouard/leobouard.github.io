@@ -163,22 +163,23 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     <div>
     <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
     <details>
-        <summary>
+        <summary class="jobTitle">
         <h4>Responsable d'équipe</h4>
         <small>depuis septembre 2021</small>
         </summary>
         <div>
         <p>Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.<br>Mes différentes missions sont :
-        </p><ul>
+        <ul>
             <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels</li>
             <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
             <li>la qualification technique des candidats</li>
             <li>l'organisation des afterwork d'équipe</li>
-        </ul><p></p>
+        </ul>
+        </p>
         </div>
     </details>
     <details>
-        <summary>
+        <summary class="jobTitle">
         <h4>Consultant</h4>
         <small>septembre 2018 à septembre 2021 • 3 ans</small>
         </summary>

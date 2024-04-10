@@ -126,4 +126,9 @@ summary.company {
 img.companyLogo {
     display: inline-block;
     max-height: 5em;
+    margin: 0;
+}
+
+summary.jobTitle {
+    background-color: none;
 }
