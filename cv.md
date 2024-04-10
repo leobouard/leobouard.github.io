@@ -153,8 +153,8 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 <div>
 <details>
-    <summary>
-    <img src="/assets/images/metsys.jpg" alt="logo METSYS">
+    <summary class="company">
+    <img class="companyLogo" src="/assets/images/metsys.jpg" alt="logo METSYS">
     <div>
         <h3>METSYS</h3>
         <span>Rennes, Ille-et-Vilaine</span>

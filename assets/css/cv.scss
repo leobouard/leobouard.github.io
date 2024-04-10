@@ -104,3 +104,15 @@ span.certifTitle {
     border-right: var(--border);
     opacity: 0.85;
 }
+
+/* NOUVEAU CSS */
+
+summary.company {
+    display: flex;
+    flex-direction: row;
+}
+
+img.companyLogo {
+    display: inline-block;
+    margin: 1em;
+}
