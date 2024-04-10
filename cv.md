@@ -152,7 +152,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 ## Expériences v2.0
 
 <div class="experiences">
-<details>
+<details open>
     <summary class="company">
     <img class="companyLogo" src="/assets/images/metsys.jpg" alt="logo METSYS">
     <div>

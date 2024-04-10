@@ -120,9 +120,10 @@ div.experiences details {
 summary.company {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 img.companyLogo {
     display: inline-block;
-    margin: 1em;
+    max-height: 5em;
 }
