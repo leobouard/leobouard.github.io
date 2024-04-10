@@ -162,8 +162,8 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     </summary>
     <div>
     <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
-    <details>
-        <summary class="jobTitle">
+    <details class="jobTitle">
+        <summary>
         <h4>Responsable d'équipe</h4>
         <small>depuis septembre 2021</small>
         </summary>
@@ -178,8 +178,8 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         </p>
         </div>
     </details>
-    <details>
-        <summary class="jobTitle">
+    <details class="jobTitle">
+        <summary>
         <h4>Consultant</h4>
         <small>septembre 2018 à septembre 2021 • 3 ans</small>
         </summary>

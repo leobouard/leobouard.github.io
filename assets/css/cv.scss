@@ -129,6 +129,11 @@ img.companyLogo {
     margin: 0;
 }
 
-summary.jobTitle {
+details.jobTitle {
+    border-left: 1px solid var(--border);
+    margin-left: 2em;
+}
+
+details.jobTitle summary {
     background: none;
 }
