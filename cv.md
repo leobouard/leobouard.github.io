@@ -40,6 +40,22 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 <div style="display: block;">
     <!-- METSYS -->
+    <section>
+        <summary>
+            <div>
+                <img src="/assets/images/metsys.jpg" alt="logo METSYS">
+            </div>
+            <div>
+                <h3>METSYS</h3>
+                <span>Rennes, Ille-et-Vilaine (35)</span>
+            </div>
+        </summary>
+        <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
+        <div>
+
+        </div>
+    </section>
+    <!--
     <div id="div-metsys" style="margin-bottom: 35px;">
         <div class="enterprise">
             <div>
@@ -49,8 +65,7 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
                 <h3>METSYS</h3>
                 <span>Rennes, Ille-et-Vilaine (35)</span>
             </div>
-        </div>
-        <div>
+            <div>
             <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
         </div>
         <div class="experience">
@@ -69,7 +84,9 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
             <small>septembre 2018 à septembre 2021 • 3 ans</small>
             <p>Membre de l'unité "Infrastructure et services".<br>Spécialisé sur Active Directory, PowerShell et Microsoft 365.</p>
         </div>
+        </div>
     </div>
+    -->
     <!-- Groupe ROULLIER -->
     <div id="div-groupe-roullier" style="margin-bottom: 35px;">
         <div class="enterprise">
