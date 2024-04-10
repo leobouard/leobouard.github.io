@@ -149,6 +149,47 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     </div>
 </div>
 
+## Expériences v2.0
+
+<div>
+<details>
+    <summary>
+    <img src="/assets/images/metsys.jpg" alt="logo METSYS">
+    <div>
+        <h3>METSYS</h3>
+        <span>Rennes, Ille-et-Vilaine</span>
+    </div>
+    </summary>
+    <div>
+    <p>Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.</p>
+    <details>
+        <summary>
+        <h4>Responsable d'équipe</h4>
+        <small>depuis septembre 2021</small>
+        </summary>
+        <div>
+        <p>Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.<br>Mes différentes missions sont :
+        </p><ul>
+            <li>le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels</li>
+            <li>la formation et l'accompagnement des collaborateurs dans leur montée en compétence</li>
+            <li>la qualification technique des candidats</li>
+            <li>l'organisation des afterwork d'équipe</li>
+        </ul><p></p>
+        </div>
+    </details>
+    <details>
+        <summary>
+        <h4>Consultant</h4>
+        <small>septembre 2018 à septembre 2021 • 3 ans</small>
+        </summary>
+        <div>
+        <p>Membre de la division "Infrastructures et services".<br>Spécialisé sur Active Directory, PowerShell et Microsoft 365.</p>
+        </div>
+    </details>
+    </div>
+</details>
+</div>
+
 ## Formation
 
 <div style="display: block;">
