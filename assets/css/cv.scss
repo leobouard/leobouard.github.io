@@ -107,6 +107,16 @@ span.certifTitle {
 
 /* NOUVEAU CSS */
 
+div.experiences h2,
+div.experiences h3,
+div.experiences h4 {
+    margin: 0.25em 0;
+}
+
+div.experiences details {
+    border: 0;
+}
+
 summary.company {
     display: flex;
     flex-direction: row;
