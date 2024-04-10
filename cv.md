@@ -11,47 +11,6 @@ Ingénieur système spécialisé dans les infrastructures, les technologies et l
 
 Je partage également mes connaissances (notamment sur PowerShell) avec mon site web [LaBouaBouate](https://www.labouabouate.fr).
 
-## Compétences
-
-<div class="skills">
-    <div class="skill">
-        <span>PowerShell</span>
-        <div class="progressBar">
-            <div class="progressBarContent" style="width: 90%;"></div>
-        </div>
-    </div>
-    <div class="skill">
-        <span>Active Directory</span>
-        <div class="progressBar">
-            <div class="progressBarContent" style="width: 80%;"></div>
-        </div>
-    </div>
-    <div class="skill">
-        <span>Microsoft 365</span>
-        <div class="progressBar">
-            <div class="progressBarContent" style="width: 80%;"></div>
-        </div>
-    </div>
-    <div class="skill">
-        <span>Entra ID</span>
-        <div class="progressBar">
-            <div class="progressBarContent" style="width: 70%;"></div>
-        </div>
-    </div>
-    <div class="skill">
-        <span>Exchange</span>
-        <div class="progressBar">
-            <div class="progressBarContent" style="width: 60%;"></div>
-        </div>
-    </div>
-    <div class="skill">
-        <span>Teams</span>
-        <div class="progressBar">
-            <div class="progressBarContent" style="width: 50%;"></div>
-        </div>
-    </div>
-</div>
-
 ## Examens et certifications
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
