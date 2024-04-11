@@ -86,10 +86,10 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
         </div>
         <div class="experience">
             <h4>Ingénieur système</h4>
-            <small>depuis septembre 2021</small>
+            <small>septembre 2021 à mars 2024 • 2 ans et 6 mois</small>
             <p>Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture "Modern Workplace".<br>Mes principaux projets :
             <ul>
-                <li>audit, sécurisation et mise en place du modèle N-tiers sur Active Directory</li>
+                <li>audit, sécurisation et mise en place du modèle en tiers sur Active Directory</li>
                 <li>migration et déploiement de l'authentification multi-facteur</li>
                 <li>migration du mode d'attribution des licences Microsoft 365</li>
                 <li>segmentation des permissions dans Azure AD avec les unités administratives</li>
