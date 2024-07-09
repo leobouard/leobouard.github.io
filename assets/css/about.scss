@@ -21,34 +21,6 @@ div.aboutMe > img {
     width: 150px;
 }
 
-div.personalLinks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-div.personalLinks > a {
-    margin: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 100%;
-    aspect-ratio: 1;
-    height: 35px;
-    color: var(--title);
-}
-
-div.personalLinks > a:hover {
-    color: var(--text);
-    background: rgba(0,0,0,.1);
-    text-decoration: none;
-}
-
-div.personalLinks > a > i {
-    font-size: 25px;
-}
-
 @media print, screen and (max-width: 550px) {
 
     div.aboutMe > img {

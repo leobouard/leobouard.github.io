@@ -11,6 +11,26 @@ Ingénieur système spécialisé dans les infrastructures, les technologies et l
 
 Je partage également mes connaissances (notamment sur PowerShell) avec mon site web [LaBouaBouate](https://www.labouabouate.fr).
 
+## Liens
+
+<div class="personalLinks">
+    <a href="{{ site.linkedin }}" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a href="{{ site.credly }}" target="_blank" title="Credly">
+        <i class="fa-solid fa-shield"></i>
+    </a>
+    <a href="{{ site.github.owner_url }}" target="_blank" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+    </a>
+    <a href="/cv" class="cv" title="CV">
+        <i class="fa-solid fa-file-lines"></i>
+    </a>
+    <a href="mailto:{{ site.emailAddress }}" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+</div>
+
 ## Examens et certifications
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">

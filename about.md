@@ -14,24 +14,6 @@ description: "Plus d'informations sur le site web et moi-même"
     <img src="/assets/images/profile-picture.jpg" alt="Photo de profil" height="100" width="100">
 </div>
 
-<div class="personalLinks">
-    <a href="{{ site.linkedin }}" target="_blank" title="LinkedIn">
-        <i class="fa-brands fa-linkedin-in"></i>
-    </a>
-    <a href="{{ site.credly }}" target="_blank" title="Credly">
-        <i class="fa-solid fa-shield"></i>
-    </a>
-    <a href="{{ site.github.owner_url }}" target="_blank" title="GitHub">
-        <i class="fa-brands fa-github"></i>
-    </a>
-    <a href="/cv" class="cv" title="CV">
-        <i class="fa-solid fa-file-lines"></i>
-    </a>
-    <a href="mailto:{{ site.emailAddress }}" title="Email">
-        <i class="fa-solid fa-envelope"></i>
-    </a>
-</div>
-
 ## A propos du site web
 
 Ce site web est un projet personnel pour **monter en compétence sur le développement web** et centraliser les procédures, cours ou défis que j'ai pu faire sur des supports divers et variés. Le site est hébergé sur [GitHub Pages](https://docs.github.com/en/pages). Tout le code HTML & CSS est fait maison, avec la simplicité et l'accessibilité comme mots d'ordre.

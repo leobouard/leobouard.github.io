@@ -137,3 +137,33 @@ details.jobTitle {
 details.jobTitle summary {
     background: none;
 }
+
+/* PERSONAL LINKS */
+
+div.personalLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.personalLinks > a {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    border: var(--border);
+    aspect-ratio: 3/1;
+    height: 35px;
+    color: var(--title);
+}
+
+div.personalLinks > a:hover {
+    color: var(--text);
+    background: rgba(0,0,0,.1);
+    text-decoration: none;
+}
+
+div.personalLinks > a > i {
+    font-size: 25px;
+}
