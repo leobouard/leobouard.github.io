@@ -23,9 +23,6 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
     <a href="{{ site.github.owner_url }}" target="_blank" title="GitHub">
         <i class="fa-brands fa-github"></i>
     </a>
-    <a href="/cv" class="cv" title="CV">
-        <i class="fa-solid fa-file-lines"></i>
-    </a>
     <a href="mailto:{{ site.emailAddress }}" title="Email">
         <i class="fa-solid fa-envelope"></i>
     </a>
