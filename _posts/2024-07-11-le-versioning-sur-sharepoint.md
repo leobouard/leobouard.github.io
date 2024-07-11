@@ -3,7 +3,7 @@ layout: post
 title: "Le versioning sur SharePoint"
 description: "Comment récupérer des TB de données sur SharePoint"
 tags: sharepoint
-listed: true
+listed: false
 ---
 
 ## C'est quoi le versionning ?
