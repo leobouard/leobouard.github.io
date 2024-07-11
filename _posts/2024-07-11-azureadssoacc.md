@@ -24,7 +24,7 @@ En bref, Microsoft recommande les choses suivantes :
 - Le type de chiffrement Kerberos supporté par le compte soit `AES256_HMAC_SHA1`
 - Changement du mot de passe tous les 30 jours
 
-Si vous voulez un exemple d’attaque qui utilise ce compte AZUREADSSOACC, vous pouvez consulter : [Impersonating Office 365 Users With Mimikatz | DSInternals](https://www.dsinternals.com/en/impersonating-office-365-users-mimikatz/)
+Si vous voulez un exemple d’attaque qui utilise ce compte AZUREADSSOACC, vous pouvez consulter : [Impersonating Office 365 Users With Mimikatz \| DSInternals](https://www.dsinternals.com/en/impersonating-office-365-users-mimikatz/)
 
 ### Automatisation de la rotation
 
@@ -46,32 +46,33 @@ Pour faire la rotation du mot de passe de ce compte, vous devez disposer :
 
 Connectez-vous en tant qu’administrateur du domaine au serveur (où à l’un des serveurs) qui héberge l’Azure AD Connect :
 
-1. Lancer une console PowerShell en tant qu’administrateur
-2. Charger le module AzureADSSO avec la commande suivante :
+Lancer une console PowerShell en tant qu’administrateur
+
+Charger le module AzureADSSO avec la commande suivante :
 
 ```powershell
 Import-Module "$env:ProgramFiles\Microsoft Azure Active Directory Connect\AzureADSSO.psd1"
 ```
 
-3. Passer en TLS 1.2 :
+Passer en TLS 1.2 :
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 ```
 
-4. Connectez-vous en tant qu’administrateur général ou administrateur d’identité hybride avec la commande :
+Connectez-vous en tant qu’administrateur général ou administrateur d’identité hybride avec la commande :
 
 ```powershell
 New-AzureADSSOAuthenticationContext
 ```
 
-5. Vérifier que vous êtes bien sur la bonne forêt Active Directory avec la commande :
+Vérifier que vous êtes bien sur la bonne forêt Active Directory avec la commande :
 
 ```powershell
 Get-AzureADSSOStatus | ConvertFrom-Json
 ```
 
-6. Stocker ses identifiants administrateur du domaine dans la variable `$cred` avec la commande :
+Stocker ses identifiants administrateur du domaine dans la variable `$cred` avec la commande :
 
 ```powershell
 $cred = Get-Credential
@@ -81,7 +82,7 @@ $cred = Get-Credential
 >
 > ![Exemple de fenêtre d'authentification en PowerShell 5](/assets/images/credentials-azureadssoacc.png)
 
-7. Faire la rotation de mot de passe avec la commande :
+Faire la rotation de mot de passe avec la commande :
 
 ```powershell
 Update-AzureADSSOForest -OnPremCredentials $cred
