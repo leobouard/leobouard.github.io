@@ -80,8 +80,6 @@ $cred = Get-Credential
 
 > C’est le SamAccountName qui est attendu en nom d’utilisateur, avec le nom NETBIOS du domaine en préfixe. Exemple : `CONTOSO\admin`.
 
-<img src="/assets/images/credentials-azureadssoacc.png" alt="Exemple de fenêtre d'authentification en PowerShell 5" height="150px">
-
 Faire la rotation de mot de passe avec la commande :
 
 ```powershell
