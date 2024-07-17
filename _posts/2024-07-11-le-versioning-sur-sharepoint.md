@@ -3,7 +3,7 @@ layout: post
 title: "Le versioning sur SharePoint"
 description: "Comment récupérer des TB de données sur SharePoint"
 tags: sharepoint
-listed: false
+listed: true
 ---
 
 ## C'est quoi le versionning ?
@@ -96,6 +96,12 @@ Lorsque celui-ci est défini, il se passe deux choses (en silence) sur la config
 Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou *ExpireVersionsAfterDays* qui restent bloqués à leurs valeurs par défaut :
 
 > Set-PnPTenant: The parameter ExpireVersionsAfterDays can't be set because the Tenant has AutoExpiration enabled
+
+## Contrôle de la propagation de la configuration
+
+```powershell
+Get-PnPTenantSite | Select-Object Title,*version*
+```
 
 ## Suppression forcée des historiques de versions
 
