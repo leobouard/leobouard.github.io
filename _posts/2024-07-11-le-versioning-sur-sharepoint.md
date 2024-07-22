@@ -50,7 +50,7 @@ EnableVersionExpirationSetting  : False
 
 ### Modification de la configuration
 
-On commence par activer les fonctionnalités d'expiration de versions de fichier au niveau du tenant :
+On commence par activer les fonctionnalités d'expiration de version de fichier au niveau du tenant :
 
 ```powershell
 Set-PnPTenant -EnableVersionExpirationSetting:$true
@@ -107,7 +107,7 @@ Get-PnPTenantSite | Select-Object Title,*version*
 
 Comme vu précédemment, ce n'est pas le paramètre *EnableAutoExpirationVersionTrim* qui va nous sauvez cette fois-ci. Il va donc falloir se retrousser les manches et aller chercher ces GB vous-même.
 
-Bonne nouvelle pour vous, je vous ai préparer un script qui va vous permettre de faire ça plus ou moins rapidement : [Gist](https://gist.github.com/leobouard).
+Bonne nouvelle pour vous, je vous ai préparé un script qui va vous permettre de faire ça plus ou moins rapidement : [Gist](https://gist.github.com/leobouard).
 
 Pour vous rendre compte des temps d'exécution et des gains potentiels, voici les données que j'ai pu observer :
 
@@ -117,4 +117,4 @@ CONTOSO1 | 350 GB        | 1300     | 95 GB    | 27%     | 1h15
 CONTOSO2 | 425 GB        | 1200     | 65 GB    | 15%     | 2h25
 CONTOSO3 | 250 GB        | 570      | 35 GB    | 14%     | 0h15
 
-Comme plan d'attaque, je vous recommande de vous attaquer avant tout aux sites SharePoint avec **le pire ratio entre le nombre de fichiers et l'espace de stockage occupé**. Un site SharePoint qui contient 500 fichiers et pèse 1 TB fait une moyenne à 2 GB/fichier. A moins qu'ils s'agissent de fichiers lourds (comme de la vidéo par exemple), c'est probablement un site qui pourrait bénéficier d'un peu de ménage !
+Comme plan d'attaque, je vous recommande de vous attaquer en priorité aux sites SharePoint avec **le pire ratio entre le nombre de fichiers et l'espace de stockage occupé**. Un site SharePoint qui contient 500 fichiers et pèse 1 TB fait une moyenne à 2 GB par fichier. A moins qu'il s'agisse de fichiers lourds (comme de la vidéo par exemple), c'est probablement un site qui pourrait bénéficier d'un peu de ménage sur ses versions !
