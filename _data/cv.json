@@ -5,17 +5,17 @@
     "links":  [
         {
             "name":  "LinkedIn",
-            "url":  "{{ site.linkedin }}",
+            "url":  "https://www.linkedin.com/in/leo-bouard/",
             "icon":  "fa-brands fa-linkedin-in"
         },
         {
             "name":  "Microsoft",
-            "url":  "{{ site.microsoft }}",
+            "url":  "https://learn.microsoft.com/fr-fr/users/leo-bouard/credentials",
             "icon":  "fa-brands fa-microsoft"
         },
         {
             "name":  "GitHub",
-            "url":  "{{ site.github.owner_url }}",
+            "url":  "https://github.com/leobouard/",
             "icon":  "fa-brands fa-github"
         }
     ],
@@ -54,12 +54,14 @@
     "education":  [
         {
             "institution": "Université de Nantes",
+            "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
             "diploma": "Licence professionelle : Administration et Sécurité des Systèmes et des Réseaux",
             "startDate": "septembre 2015",
             "endDate": "juin 2017"
         },
         {
             "institution": "Université de Nantes",
+            "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
             "diploma": "DUT Réseaux et Télécommunications",
             "startDate": "septembre 2015",
             "endDate": "juin 2017"
@@ -75,6 +77,7 @@
                 {
                     "title":  "Responsable d'équipe",
                     "startDate":  "octobre 2021",
+                    "endDate":  "aujourd'hui",
                     "summary":  "Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.",
                     "highlights":  [
                         "le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels",
@@ -85,7 +88,8 @@
                 },
                 {
                     "title":  "Ingénieur systèmes",
-                    "startDate":  "octobre 2021"
+                    "startDate":  "octobre 2021",
+                    "endDate":  "aujourd'hui"
                 },
                 {
                     "title":  "Administrateur systèmes",
@@ -95,7 +99,7 @@
             ]
         },
         {
-            "name":  "Groupe ROULLIER",
+            "name":  "Groupe Roullier",
             "logo":  "/assets/images/groupe-roullier.jpg",
             "location":  "Dinard, Ille-et-Vilaine (35)",
             "summary":  "Groupe international présent sur 50 pays à travers 80 entités. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.",

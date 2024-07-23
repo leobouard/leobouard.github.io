@@ -1,11 +1,9 @@
 ---
 permalink: /cv2
 layout: standard
-title:  "Léo Bouard"
+title:  "{{ site.data.cv.name }}"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
-
-<h1>{{ site.data.cv.name }}</h1>
 
 <h2>Résumé</h2>
 
@@ -15,9 +13,7 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 <div class="personalLinks">
   {% for link in site.data.cv.links %}
-  <a href="{{ link.url }}" target="_blank" title="{{ link.name }}">
-    <i class="{{ link.icon }}"></i>
-  </a>
+  <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
   {% endfor %}
 </div>
 
@@ -53,7 +49,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <div class="experience">
       {% for position in company.positions %}
       <h4>{{ position.title }}</h4>
-      <small>{{ position.startDate }} à {{ position.endDate }}</small>
+      <small>{{ position.startDate }} • {{ position.endDate }}</small>
       <p>{{ position.summary }}
       <ul>
         {% for highlight in position.highlights %}
@@ -67,12 +63,14 @@ description: "Toutes mes expériences, mes formations et certifications"
   {% endfor %}
 </div>
 
+<!--
 <h2>Formation</h2>
 
 <div style="display: block;">
-  <!-- IUT La Roche-sur-Yon -->
-  <div id="div-iut-la-roche-sur-yon" style="margin-bottom: 35px;">
+   IUT La Roche-sur-Yon
+  <div style="margin-bottom: 35px;">
     <div class="enterprise">
+      {% for }
       <div>
         <img src="/assets/images/iut-la-roche-sur-yon.jpg" alt="logo IUT de La Roche-sur-Yon">
       </div>
@@ -95,3 +93,4 @@ description: "Toutes mes expériences, mes formations et certifications"
     </div>
   </div>
 </div>
+ -->
