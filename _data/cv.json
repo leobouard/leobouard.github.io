@@ -65,9 +65,9 @@
             "endDate": "juin 2017"
         }
     ],
-    "work":  [
+    "companies":  [
         {
-            "company":  "METSYS",
+            "name":  "METSYS",
             "logo":  "/assets/images/metsys.jpg",
             "location":  "Rennes, Ille-et-Vilaine (35)",
             "summary":  "Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.",
@@ -95,7 +95,7 @@
             ]
         },
         {
-            "company":  "Groupe ROULLIER",
+            "name":  "Groupe ROULLIER",
             "logo":  "/assets/images/groupe-roullier.jpg",
             "location":  "Dinard, Ille-et-Vilaine (35)",
             "summary":  "Groupe international présent sur 50 pays à travers 80 entités. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.",
@@ -138,7 +138,7 @@
             ]
         },
         {
-            "company":  "GEVES",
+            "name":  "GEVES",
             "logo":  "/assets/images/geves.jpg",
             "location":  "Beaucouzé, Maine-et-Loire (49)",
             "summary":  "Laboratoire d'analyse présent sur 6 sites en France. Environ 600 utilisateurs dans un environnement Active Directory et Office 365.",
