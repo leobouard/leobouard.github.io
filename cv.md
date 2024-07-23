@@ -30,11 +30,11 @@ Je partage également mes connaissances (notamment sur PowerShell) avec mon site
 
 ## Examens et certifications
 
-<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+<div style="display: flex; justify-content: center; flex-wrap: wrap; grid-gap: 5px;">
     <div class="certification">
         <img src="/assets/images/applied-skill.svg" alt="logo Applied Skills">
         <span class="certifDate">juillet 2024</span>
-        <span class="certifTitle">Applied skills: Administer Active Directory Domain Services</span>
+        <span class="certifTitle">Administer Active Directory Domain Services</span>
     </div>
     <div class="certification">
         <img src="/assets/images/microsoft-certified-expert-badge.svg" alt="logo Microsoft Certified Expert">
