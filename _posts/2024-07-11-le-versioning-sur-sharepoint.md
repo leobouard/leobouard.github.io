@@ -99,9 +99,13 @@ Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou 
 
 ## Contrôle de la propagation de la configuration
 
+Pour s'assurer que la configuration que vous venez de faire sur votre tenant s'est propagée correctement sur tous vos sites SharePoint, on utilise la commande suivante :
+
 ```powershell
-Get-PnPTenantSite | Select-Object Title,*version*
+Get-PnPTenantSite | Select-Object Title, *version*
 ```
+
+La valeur qui nous intéresse est InheritVersionPolicyFromTenant.
 
 ## Suppression forcée des historiques de versions
 
