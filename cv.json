@@ -1,0 +1,161 @@
+{
+    "name":  "Léo Bouard",
+    "title":  "Ingénieur systèmes",
+    "summary":  "Ingénieur systèmes spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, d'outils collaboratifs et d'automatisation.",
+    "links":  [
+        {
+            "name":  "LinkedIn",
+            "url":  "{{ site.linkedin }}",
+            "icon":  "fa-brands fa-linkedin-in"
+        },
+        {
+            "name":  "Microsoft",
+            "url":  "{{ site.microsoft }}",
+            "icon":  "fa-brands fa-microsoft"
+        },
+        {
+            "name":  "GitHub",
+            "url":  "{{ site.github.owner_url }}",
+            "icon":  "fa-brands fa-github"
+        }
+    ],
+    "certificates":  [
+        {
+            "name":  "Administer Active Directory Domain Services",
+            "date":  "juillet 2024",
+            "image":  "/assets/images/applied-skill.svg",
+            "url":  ""
+        },
+        {
+            "name":  "Microsoft 365 Certified: Administrator Expert",
+            "date":  "juin 2023",
+            "image":  "/assets/images/microsoft-certified-expert-badge.svg",
+            "url":  ""
+        },
+        {
+            "name":  "Microsoft Certified: Identity and Access Administrator Associate",
+            "date":  "avril 2023",
+            "image":  "/assets/images/microsoft-certified-associate-badge.svg",
+            "url":  ""
+        },
+        {
+            "name":  "Administer Active Directory Domain Services",
+            "date":  "août 2022",
+            "image":  "/assets/images/microsoft-certified-fundamentals-badge.svg",
+            "url":  ""
+        },
+        {
+            "name":  "Administer Active Directory Domain Services",
+            "date":  "juin 2021",
+            "image":  "/assets/images/microsoft-certified-fundamentals-badge.svg",
+            "url":  ""
+        }
+    ],
+    "education":  [
+        {
+            "institution": "Université de Nantes",
+            "diploma": "Licence professionelle : Administration et Sécurité des Systèmes et des Réseaux",
+            "startDate": "septembre 2015",
+            "endDate": "juin 2017"
+        },
+        {
+            "institution": "Université de Nantes",
+            "diploma": "DUT Réseaux et Télécommunications",
+            "startDate": "septembre 2015",
+            "endDate": "juin 2017"
+        }
+    ],
+    "work":  [
+        {
+            "company":  "METSYS",
+            "logo":  "/assets/images/metsys.jpg",
+            "location":  "Rennes, Ille-et-Vilaine (35)",
+            "summary":  "Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.",
+            "positions":  [
+                {
+                    "title":  "Responsable d'équipe",
+                    "startDate":  "octobre 2021",
+                    "summary":  "Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.",
+                    "highlights":  [
+                        "le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels",
+                        "la formation et l'accompagnement des collaborateurs dans leur montée en compétence",
+                        "la qualification technique des candidats",
+                        "l'organisation des afterwork d'équipe"
+                    ]
+                },
+                {
+                    "title":  "Ingénieur systèmes",
+                    "startDate":  "octobre 2021"
+                },
+                {
+                    "title":  "Administrateur systèmes",
+                    "startDate":  "septembre 2018",
+                    "endDate":  "septembre 2021"
+                }
+            ]
+        },
+        {
+            "company":  "Groupe ROULLIER",
+            "logo":  "/assets/images/groupe-roullier.jpg",
+            "location":  "Dinard, Ille-et-Vilaine (35)",
+            "summary":  "Groupe international présent sur 50 pays à travers 80 entités. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.",
+            "positions":  [
+                {
+                    "title":  "Ingénieur systèmes",
+                    "startDate":  "octobre 2021",
+                    "endDate":  "mars 2024",
+                    "summary":  "Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture des systèmes Microsoft.",
+                    "highlights":  [
+                        "audit, sécurisation et mise en place du modèle en tiers sur Active Directory",
+                        "migration et déploiement de l'authentification multi-facteur",
+                        "migration du mode d'attribution des licences Microsoft 365",
+                        "segmentation des permissions dans Azure AD avec les unités administratives"
+                    ]
+                },
+                {
+                    "title":  "Administrateur systèmes",
+                    "startDate":  "septembre 2019",
+                    "endDate":  "septembre 2021",
+                    "summary":  "Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture des systèmes Microsoft.",
+                    "highlights":  [
+                        "création d'un script PowerShell pour créer, mettre à jour et désactiver automatiquement les comptes Active Directory",
+                        "fourniture d'indicateurs clés pour la direction des services informatiques (KPI)",
+                        "adaptation multi-langue d'un script PowerShell de rappel d'expiration de mot de passe",
+                        "création d'une documentation technique pour la formation des équipes informatique internationales"
+                    ]
+                },
+                {
+                    "title":  "Support N2/N3",
+                    "startDate":  "janvier 2019",
+                    "endDate":  "août 2019",
+                    "summary":  "Dans le cadre d'une prestation METSYS pour l'équipe de support aux utilisateurs.",
+                    "highlights":  [
+                        "assistance et support aux utilisateurs (en anglais et français)",
+                        "création de plusieurs scripts PowerShell avec interface graphique pour faciliter les tâches du support",
+                        "administration Active Directory, Microsoft Exchange, Microsoft 365 et SCCM"
+                    ]
+                }
+            ]
+        },
+        {
+            "company":  "GEVES",
+            "logo":  "/assets/images/geves.jpg",
+            "location":  "Beaucouzé, Maine-et-Loire (49)",
+            "summary":  "Laboratoire d'analyse présent sur 6 sites en France. Environ 600 utilisateurs dans un environnement Active Directory et Office 365.",
+            "positions":  [
+                {
+                    "title":  "Administrateur systèmes (en alternance)",
+                    "startDate":  "août 2017",
+                    "endDate":  "septembre 2018",
+                    "summary":  "Alternance dans le cadre de la licence professionnelle A2SR."
+                },
+                {
+                    "title":  "Administrateur systèmes (en stage)",
+                    "startDate":  "avril 2017",
+                    "endDate":  "juin 2017",
+                    "summary":  "Stage dans le cadre de mon DUT réseaux et télécommunications."
+                }
+            ]
+        }
+    ]
+}
