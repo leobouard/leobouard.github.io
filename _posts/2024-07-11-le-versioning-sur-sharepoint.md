@@ -8,9 +8,9 @@ listed: true
 
 ## C'est quoi le versionning ?
 
-Par défaut, lorsqu'un fichier est modifié, SharePoint conserve sa version précédente pour permettre à n'importe qui de revenir en arrière ou de visualiser le fichier avant sa modification. Par défaut, SharePoint permet de conserver jusqu'à 500 versions d'un même fichier.
+Lorsqu'un fichier est modifié, SharePoint conserve sa version précédente pour permettre à n'importe qui de revenir en arrière ou de visualiser le fichier avant sa modification. Par défaut, SharePoint permet de conserver jusqu'à 500 versions d'un même fichier.
 
-C'est une fonctionnalité qui est très pratique mais qui a comme désavantage de consommer beaucoup d'espace. En effet, au lieu de conserver une version différentielle du fichier (comme un GIT par exemple), SharePoint sauvegarde le fichier complet. Sur certains sites SharePoint, cela peut donc mener à des multiplicateurs de 25 entre le poids réel des fichiers (100 GB par exemple) et le poids total des fichiers + leurs versions (2,5 TB dans cet exemple).
+C'est une fonctionnalité qui est très pratique mais qui a comme désavantage de consommer beaucoup d'espace de stockage. En effet, au lieu de conserver une version différentielle du fichier (comme un GIT par exemple), SharePoint sauvegarde le fichier complet. Sur certains sites, cela peut donc mener à des multiplicateurs de 25 entre le poids réel des fichiers (100 GB par exemple) et le poids total des fichiers et de leurs versions (2,5 TB dans cet exemple).
 
 ## Modification de la configuration du tenant
 
