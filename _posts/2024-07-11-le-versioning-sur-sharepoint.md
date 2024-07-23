@@ -115,13 +115,13 @@ Bonne nouvelle pour vous, je vous ai préparé un script qui va vous permettre d
 
 Pour vous rendre compte des gains potentiels, voici les données que j'ai pu observer :
 
-Nom du site | URL | Espace de stockage (GB) | Fichiers | Poids moyen par fichier (MB) | Récupération Trim100Max | Récupération Trim3Y | Pourcentage de récupération
------------ | --- | ----------------------- | -------- | ---------------------------- | ----------------------- | ------------------- | ---------------
-Marketing B2B | <https://contoso.sharepoint.com/sites/marketingb2b> | 730,06 | 339 | 2205,25 | 118,51 | 0,00 | 16%
-Accounting Team | <https://contoso.sharepoint.com/sites/accountingteam> | 689,74 | 919 | 786,55 | 294,17 | 9,15 | 44%
-Human Resources WorldWide | <https://contoso.sharepoint.com/sites/accountingteam> | 382,42 | 953 | 60,96 | 23,37 | 22%
-IT System & Infrastructure | <https://contoso.sharepoint.com/sites/itsystem-infrastructure> | 4470,54 | 13298 | 344,25 | 924,29 | 21%
-Logistics Germany | <https://contoso.sharepoint.com/sites/logisticsgermany> | 926,21 | 2150 | 441,13 | 295,06 | 12,82 | 33%
+Nom du site | Espace de stockage (GB) | Fichiers | Poids moyen par fichier (MB) | Récupération Trim100Max | Récupération Trim3Y | Pourcentage de récupération
+----------- | ----------------------- | -------- | ---------------------------- | ----------------------- | ------------------- | ---------------
+Retail Operations | 730,06 | 339 | 2205,25 | 118,51 | 0,00 | 16%
+Contoso marketing | 689,74 | 919 | 786,55 | 294,17 | 9,15 | 44%
+The Landing | 382,42 | 953 | 60,96 | 23,37 | 22%
+Digital Initiative Public Relations | 4470,54 | 13298 | 344,25 | 924,29 | 21%
+Mark 8 Project Team | 926,21 | 2150 | 441,13 | 295,06 | 12,82 | 33%
 
 Comme plan d'attaque, je vous recommande de vous attaquer en priorité aux sites SharePoint avec **le poids moyen par fichier le plus élevé**. Un site SharePoint qui contient 500 fichiers et qui occupe 1 TB donne une moyenne à 2 GB par fichier. A moins qu'il s'agisse de fichiers lourds (comme de la vidéo par exemple), c'est probablement un site qui pourrait bénéficier d'un peu de ménage sur ses versions !
 
