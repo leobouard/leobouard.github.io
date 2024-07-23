@@ -16,7 +16,7 @@ C'est une fonctionnalité qui est très pratique mais qui a comme désavantage d
 
 ### Contrôle de la configuration actuelle
 
-Avant de commencer à récupéré de l'espace de stockage, il faut arrêter l'hémoragie en réduisant le nombre maximal d'historique de version et/ou leur durée de conservation.
+Avant de commencer a récupéré de l'espace de stockage, il faut arrêter l'hémoragie en réduisant le nombre maximal d'historique de version et/ou leur durée de conservation.
 
 On commence par se connecter sur le portail d'administration de SharePoint avec PowerShell :
 
@@ -62,7 +62,7 @@ Une fois les fonctionnalités débloquées, il est enfin possible d'agir sur le 
 Set-PnPTenant -MajorVersionLimit 100
 ```
 
-On en profite aussi pour définir une durée de validité pour les versions. Dans ma configuration, trois ans après sa création, la version d'un fichier est suceptible d'être supprimée automatiquement :
+On en profite aussi pour définir une durée de validité pour les versions. Dans ma configuration, trois ans après sa création, la version d'un fichier est susceptible d'être supprimée :
 
 ```powershell
 Set-PnPTenant -ExpireVersionsAfterDays 1096
@@ -107,14 +107,18 @@ Get-PnPTenantSite | Select-Object Title,*version*
 
 Comme vu précédemment, ce n'est pas le paramètre *EnableAutoExpirationVersionTrim* qui va nous sauvez cette fois-ci. Il va donc falloir se retrousser les manches et aller chercher ces GB vous-même.
 
-Bonne nouvelle pour vous, je vous ai préparé un script qui va vous permettre de faire ça plus ou moins rapidement : [Gist](https://gist.github.com/leobouard).
+Bonne nouvelle pour vous, je vous ai préparé un script qui va vous permettre de faire ça plus ou moins rapidement : [Remove-PnPFileVersionPerFolder \| GitHub Gist](https://gist.github.com/leobouard).
 
-Pour vous rendre compte des temps d'exécution et des gains potentiels, voici les données que j'ai pu observer :
+Pour vous rendre compte des gains potentiels, voici les données que j'ai pu observer :
 
-Site     | Poids initial | Fichiers | GB récup | % récup | Temps d'exec
--------- | ------------- | -------- | -------- | ------- | ------------
-CONTOSO1 | 350 GB        | 1300     | 95 GB    | 27%     | 1h15
-CONTOSO2 | 425 GB        | 1200     | 65 GB    | 15%     | 2h25
-CONTOSO3 | 250 GB        | 570      | 35 GB    | 14%     | 0h15
+Nom du site | URL | Espace de stockage (GB) | Fichiers | Poids moyen par fichier (MB) | Récupération Trim100Max | Récupération Trim3Y | Pourcentage de récupération
+----------- | --- | ----------------------- | -------- | ---------------------------- | ----------------------- | ------------------- | ---------------
+Marketing B2B | <https://contoso.sharepoint.com/sites/marketingb2b> | 730,06 | 339 | 2205,25 | 118,51 | 0,00 | 16%
+Accounting Team | <https://contoso.sharepoint.com/sites/accountingteam> | 689,74 | 919 | 786,55 | 294,17 | 9,15 | 44%
+Human Resources WorldWide | <https://contoso.sharepoint.com/sites/accountingteam> | 382,42 | 953 | 60,96 | 23,37 | 22%
+IT System & Infrastructure | <https://contoso.sharepoint.com/sites/itsystem-infrastructure> | 4470,54 | 13298 | 344,25 | 924,29 | 21%
+Logistics Germany | <https://contoso.sharepoint.com/sites/logisticsgermany> | 926,21 | 2150 | 441,13 | 295,06 | 12,82 | 33%
 
-Comme plan d'attaque, je vous recommande de vous attaquer en priorité aux sites SharePoint avec **le pire ratio entre le nombre de fichiers et l'espace de stockage occupé**. Un site SharePoint qui contient 500 fichiers et pèse 1 TB fait une moyenne à 2 GB par fichier. A moins qu'il s'agisse de fichiers lourds (comme de la vidéo par exemple), c'est probablement un site qui pourrait bénéficier d'un peu de ménage sur ses versions !
+Comme plan d'attaque, je vous recommande de vous attaquer en priorité aux sites SharePoint avec **le poids moyen par fichier le plus élevé**. Un site SharePoint qui contient 500 fichiers et qui occupe 1 TB donne une moyenne à 2 GB par fichier. A moins qu'il s'agisse de fichiers lourds (comme de la vidéo par exemple), c'est probablement un site qui pourrait bénéficier d'un peu de ménage sur ses versions !
+
+Votre pire ennemi sur ce genre de remédiation sera le *throttling* sur SharePoint. Une fois que vous avez dépassé un certain nombre de requêtes, SharePoint va vous ralentir pour évitez que de saturer. Je vous recommande donc la lecture de cet article : [Avoid getting throttled or blocked in SharePoint Online \| Microsoft Learn](https://learn.microsoft.com/en-us/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online) et l'utilisation d'une application Entra ID (avec des permissions Microsoft Graph) pour l'exécution du script.
