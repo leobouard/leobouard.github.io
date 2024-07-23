@@ -20,6 +20,9 @@ html {
     --neutral: #757575;
     --positive: #77c571;
     --negative: #fde7e9;
+    --blockquoteColor: #01466C;
+    --blockquoteBGColor: #D3EFFF;
+    --blockquoteBorderColor: #0288D1;
 }
 
 html.dark {
@@ -249,8 +252,9 @@ main {
     }
 
     blockquote {
-        background-color: var(--accentbg);
-        border-left: 5px solid var(--accent);
+        color: var(--blockquoteColor);
+        background-color: var(--blockquoteBGColor);
+        border-left: 5px solid var(--blockquoteBorderColor);
         margin-inline: 0;
         padding: 5px 15px;
         background-image: url(/assets/images/quote-solid.svg);
