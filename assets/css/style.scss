@@ -263,12 +263,16 @@ main {
     div.highlighter-rouge,
     code,
     blockquote {
-        font-family: 'Martian Mono', monospace;
-        font-size: 11px;
         background-position: center right;
         background-repeat: no-repeat;
         background-blend-mode: soft-light;
         background-size: 10em;
+    }
+
+    div.highlighter-rouge,
+    code {
+        font-family: 'Martian Mono', monospace;
+        font-size: 11px;
     }
 
     pre {
