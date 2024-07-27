@@ -1,11 +1,11 @@
 <article class="post-preview">
-  <a href="{{ post.id }}">
-    <small>{{ post.date }}</small>
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.description }}</p>
+  <a href="{{ include.id }}">
+    <span>Publié le {{ include.date | date: "%d/%m/%Y" }}</span>
+    <h3>{{ include.title }}</h3>
+    <p>{{ include.description }}</p>
     <div class="article-tags">
-      {% for tag in post.tags %}
-        <span>#{{ tag }}</span>
+      {% for tag in include.tags %}
+      <span>#{{ tag }}</span>
       {% endfor %}
     </div>
   </a>
