@@ -32,6 +32,12 @@ section.blog-post, section.blog-page {
     overflow-y: hidden;
 }
 
+@media screen and (max-width: 550px) {
+    section.blog-post, section.blog-page {
+        padding: 1em;
+    }
+}
+
 div.all-posts {
     display: grid;
     width: 100%;
