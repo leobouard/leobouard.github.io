@@ -19,4 +19,4 @@ defaults:
       path: _pages
     values:
       is_post: false
-      layout: pages
+      layout: page
