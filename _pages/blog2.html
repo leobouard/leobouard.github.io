@@ -1,0 +1,13 @@
+---
+permalink: /blog2
+layout: standard
+title: "Tous mes articles"
+description: "Tous les articles, cours et défis sur PowerShell et d'autres technologies Microsoft"
+---
+
+<div class="all-posts">
+  {% assign listed_posts = site.posts | where: "listed", true %}
+  {% for post in listed_posts %}
+    {{ include post-preview.html}}
+  {% endfor %}
+</div>
