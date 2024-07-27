@@ -7,7 +7,7 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
 <p>Petit paragraphe d'introduction très rapide, pas besoin de faire compliqué.</p>
 <h2>Mes derniers articles</h2>
 <div class="all-posts">
-  {% assign latest_posts = site.posts | where: "listed", true | first 2 %}
+  {% assign latest_posts = site.posts | where: "listed", true | slice: 0, 2 %}
   {% for post in latest_posts %}
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
   {% endfor %}
