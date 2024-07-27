@@ -11,6 +11,10 @@ h1, h2, h3, h4, h5 {
     color: black;
 }
 
+h1 {
+    font-size: 2em;
+}
+
 h2 {
     border-bottom: 1px solid #DDD;
     padding-bottom: 5px;
@@ -20,9 +24,21 @@ h2 {
 
 div.all-posts {
     display: grid;
-    max-width: 950px;
+    width: 100%;
     grid-gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 880px) {
+    div.all-posts {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    div.all-posts {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ARTICLE POST PREVIEW */
