@@ -4,7 +4,6 @@ title: "Cours pratique PowerShell"
 description: "Création d'un jeu en PowerShell en utilisant un maximum de commandes et de techniques différentes"
 tags: powershell
 listed: true
-thumbnail: "/assets/thumbnail/cours-pratique-pwsh.png"
 capsule: "⭐ Ma sélection"
 nextLink:
   name: "Partie 1"

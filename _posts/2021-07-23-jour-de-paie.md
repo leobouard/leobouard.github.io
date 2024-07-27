@@ -4,7 +4,6 @@ title: "Le jour de paie"
 description: "Calculer le jour exact où vous recevrez votre salaire, en prenant en compte les jours ouvrés uniquement"
 tags: ['challenge','powershell']
 listed: true
-thumbnail: "/assets/thumbnail/le-jour-de-paie.png"
 nextLink:
   name: "Voir la solution"
   id: "/2021/07/23/jour-de-paie-soluce"
