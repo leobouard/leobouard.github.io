@@ -186,19 +186,6 @@ main {
     align-items: center;
     justify-content: flex-start;
 
-    section {
-        min-height: 85%;
-        background-color: var(--textbg);
-        border-radius: var(--borderradius);
-        padding: 2rem;
-        max-width: 800px;
-        width: -moz-available;
-        width: -webkit-fill-available;
-        width: fill-available;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
     a {
         color: inherit;
     }

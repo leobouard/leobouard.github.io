@@ -22,6 +22,16 @@ h2 {
 
 /* CONTAINERS & WRAPPERS */
 
+section.blog-post, section.blog-page {
+    padding: 2rem;
+    max-width: 800px;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 div.all-posts {
     display: grid;
     width: 100%;
