@@ -36,6 +36,7 @@ article.post-preview {
 
 article.post-preview:hover {
     background-color: #EEE;
+    box-shadow: inset 0 -2px 0 0 var(--accent);
 }
 
 article.post-preview a {
@@ -54,4 +55,5 @@ article.post-preview h3 {
 
 article.post-preview:hover h3 {
     text-decoration: underline;
+    color: var(--accent);
 }
