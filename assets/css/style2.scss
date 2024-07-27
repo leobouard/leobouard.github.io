@@ -26,19 +26,7 @@ div.all-posts {
     display: grid;
     width: 100%;
     grid-gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-@media screen and (max-width: 880px) {
-    div.all-posts {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    div.all-posts {
-        grid-template-columns: 1fr;
-    }
+    grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
 }
 
 /* ARTICLE POST PREVIEW */
@@ -46,8 +34,7 @@ div.all-posts {
 article.post-preview {
     background-color: #F2F2F2;
     text-decoration: none;
-    max-width: 18em;
-    aspect-ratio: 1/1;
+    min-width: 15em;
 }
 
 article.post-preview:hover {
