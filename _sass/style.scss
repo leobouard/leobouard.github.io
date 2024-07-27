@@ -2,9 +2,28 @@
 ---
 
 div.all-posts {
-    display: flex;
+    display: grid;
+    max-width: 950px;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 article.post-preview {
-    background-color: #fafafa;
+    background-color: #F2F2F2;
+    text-decoration: none;
+    max-width: 18em;
+    aspect-ratio: 1/1;
+}
+
+article.post-preview a {
+    text-decoration: inherit;
+    padding: 1em;
+}
+
+article.post-preview small {
+    color: #ddd;
+}
+
+article.post-preview h3 {
+    margin: 0;
 }
