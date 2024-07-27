@@ -1,48 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "fr-FR" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    {% if page.thumbnail %}<meta property="og:image" content="{{site.url}}{{page.thumbnail}}">{% endif %}
-    {% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">
-    <link rel="stylesheet" href="{{ "/assets/css/posts.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">
-    {% if page.title == 'Accueil' %} <link rel="stylesheet" href="{{ "/assets/css/homepage.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
-    {% if page.title == 'Léo Bouard' %}<link rel="stylesheet" href="{{ "/assets/css/cv.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
-    {% if page.title == 'A propos' %}<link rel="stylesheet" href="{{ "/assets/css/about.css?v=" | append: site.github.build_revision | relative_url }}" media="screen,print">{% endif %}
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Poppins&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <script src="https://kit.fontawesome.com/4f20968c9e.js" crossorigin="anonymous" async></script>
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Poppins&display=swap">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins&display=swap">
-    </noscript>
-  </head>
-  <body>
-    <header id="top">
-      <nav>
-        <a class="home" href="{{ "/" | absolute_url }}">
-          <i class="fa-solid fa-cube"></i>
-          <span>LaBouaBouate</span>
-        </a>
-        <a class="about" href="/about">
-          <i class="fa-regular fa-circle-question"></i>
-          <span>A propos</span>
-        </a>
-      </nav>
-    </header>
-    <main>
-      {{ content }}
-    </main>
-    <footer>
-      {% assign current_year = 'now' | date: '%Y' %}
-      <p>Fait avec ❤️ par Léo Bouard<br>Hébergé sur GitHub Pages</p>
-      <small>LaBouaBouate | 2021-{{current_year}}</small>
-    </footer>
-  </body>
+<html lang="{{ site.lang | default: " fr-FR" }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+
 </html>
