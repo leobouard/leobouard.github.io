@@ -1,0 +1,16 @@
+---
+---
+
+a.no-decoration {
+    text-decoration: none;
+}
+
+a.button-primary {
+    padding: 1em 2em;
+    border: 1px solid #DDD;
+}
+
+a.button-primary:hover {
+    text-decoration: underline;
+    color: var(--accent)
+}

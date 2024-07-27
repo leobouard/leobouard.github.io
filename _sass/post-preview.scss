@@ -1,0 +1,27 @@
+---
+---
+
+article.post-preview {
+    background-color: #F2F2F2;
+    text-decoration: none;
+    min-width: 15em;
+}
+
+article.post-preview a {
+    text-decoration: inherit;
+    padding: 1em;
+    display: block;
+}
+
+article.post-preview span {
+    color: #555;
+}
+
+article.post-preview h3 {
+    margin-top: 0.5em;
+}
+
+article.post-preview:hover h3 {
+    text-decoration: underline;
+    color: var(--accent);
+}
