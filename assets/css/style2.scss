@@ -1,12 +1,31 @@
 ---
 ---
 
+/* TITLES */
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    line-height: 120%;
+    margin: 2em 0 1em 0;
+    color: black;
+}
+
+h2 {
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 5px;
+}
+
+/* CONTAINERS & WRAPPERS */
+
 div.all-posts {
     display: grid;
     max-width: 950px;
     grid-gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+/* ARTICLE POST PREVIEW */
 
 article.post-preview {
     background-color: #F2F2F2;
