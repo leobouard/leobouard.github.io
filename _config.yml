@@ -5,6 +5,8 @@ linkedin: https://www.linkedin.com/in/leo-bouard/
 credly: https://www.credly.com/users/leo-bouard/badges/
 emailAddress: leo.bouard@hotmail.com
 include: [_pages]
+sass:
+    sass_dir: _sass
 defaults:
   -
     scope:
