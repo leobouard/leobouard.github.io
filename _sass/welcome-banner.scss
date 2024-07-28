@@ -18,7 +18,7 @@ div.welcome-banner p {
 
 div.welcome-banner svg {
     position: absolute;
-    right: 0;
+    right: 50px;
     height: 100%;
-    filter: blur(50px);
+    filter: blur(50px) saturate(0.8);
 }
