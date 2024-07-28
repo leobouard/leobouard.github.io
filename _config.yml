@@ -6,9 +6,9 @@ credly: https://www.credly.com/users/leo-bouard/badges/
 emailAddress: leo.bouard@hotmail.com
 include: [_pages]
 collection:
-    category:
-      output: true
-      permalink: /:collection/:name/index.html
+  category:
+    output: true
+    permalink: /:collection/:name/index.html
 sass:
     sass_dir: _sass
     style: compressed
@@ -27,3 +27,10 @@ defaults:
     values:
       is_post: false
       layout: page
+  -
+    scope:
+      type: category
+      path: ""
+    values:
+      is_post: false
+      layout: category
