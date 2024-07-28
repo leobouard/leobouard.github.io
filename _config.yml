@@ -27,3 +27,8 @@ defaults:
     values:
       is_post: false
       layout: page
+
+paginate: 5
+paginate_path: "/blog/:num"
+plugins:
+  - jekyll-paginate
