@@ -1,0 +1,24 @@
+div.welcome-banner {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+div.welcome-banner h1 {
+    font-size: 3em;
+}
+
+div.welcome-banner p {
+    font-size: 1.5em;
+    line-height: 150%;
+    margin: 0;
+}
+
+div.welcome-banner svg {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    filter: blur(50px);
+}
