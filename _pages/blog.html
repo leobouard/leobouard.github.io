@@ -5,11 +5,20 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
 ---
 
 <div class="all-posts">
-  {% assign posts = paginator.posts | where: "listed", true %}
+  {% assign posts = site.posts | where: "listed", true %}
   {% for post in posts %}
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
   {% endfor %}
 </div>
+<hr>
+
+<ul>
+{% for post in paginator.posts %}
+  <li><a href="{{ post.url}}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+<hr>
 
 <div class="paginator">
   {% if paginator.previous_page %}
