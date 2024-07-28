@@ -5,8 +5,26 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
 ---
 
 <div class="all-posts">
-  {% assign listed_posts = site.posts | where: "listed", true %}
-  {% for post in listed_posts %}
+  {% assign posts = paginator.posts | where: "listed", true %}
+  {% for post in posts %}
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
   {% endfor %}
+</div>
+
+<div class="paginator">
+  {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">
+      Précédent
+      </a>
+  {% else %}
+      <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number ">
+      Page: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% else %}
+      <span class="next ">Next</span>
+  {% endif %}
 </div>
