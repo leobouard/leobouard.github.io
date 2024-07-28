@@ -27,10 +27,3 @@ defaults:
     values:
       is_post: false
       layout: page
-  -
-    scope:
-      type: category
-      path: ""
-    values:
-      is_post: false
-      layout: category

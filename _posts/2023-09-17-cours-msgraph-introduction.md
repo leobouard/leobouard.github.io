@@ -2,7 +2,6 @@
 layout: post
 title: "Cours Microsoft Graph"
 description: "Bien commencer sur Microsoft Graph pour les administrateurs systèmes"
-categories: courses
 tags: microsoft-graph
 thumbnail: "/assets/thumbnail/cours-msgraph.png"
 listed: true
