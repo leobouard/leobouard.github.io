@@ -1,22 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 640 800" opacity="0.65">
+    xmlns:svgjs="http://svgjs.dev/svgjs">
     <defs>
-        <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+        <linearGradient gradientTransform="rotate(150, 0.5, 0.5)" x1="50%" y1="0%" x2="50%" y2="100%"
+            id="ffflux-gradient">
+            <stop stop-color="hsl(315, 100%, 72%)" stop-opacity="1" offset="0%"></stop>
+            <stop stop-color="hsl(227, 100%, 50%)" stop-opacity="1" offset="100%"></stop>
+        </linearGradient>
+        <filter id="ffflux-filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox"
             primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feGaussianBlur stdDeviation="10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
-                edgeMode="none" result="blur"></feGaussianBlur>
+            <feTurbulence type="fractalNoise" baseFrequency="0.005 0.003" numOctaves="1" seed="2" stitchTiles="stitch"
+                x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence>
+            <feGaussianBlur stdDeviation="20 0" x="0%" y="0%" width="100%" height="100%" in="turbulence"
+                edgeMode="duplicate" result="blur"></feGaussianBlur>
+            <feBlend mode="color-dodge" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blur"
+                result="blend"></feBlend>
+
         </filter>
     </defs>
-    <g filter="url(#bbblurry-filter)">
-        <ellipse rx="101" ry="102" cx="532.3629792675827" cy="431.50904642451906" fill="hsla(217, 100%, 61%, 1.00)">
-        </ellipse>
-        <ellipse rx="101" ry="102" cx="272.37302395791716" cy="560.7748307314785" fill="hsla(265, 83%, 57%, 1.00)">
-        </ellipse>
-        <ellipse rx="101" ry="102" cx="125.48054911873555" cy="192.29628458890033" fill="hsla(44, 100%, 52%, 1.00)">
-        </ellipse>
-        <ellipse rx="101" ry="102" cx="360.9267707015528" cy="323.33413431861186" fill="hsla(334, 100%, 50%, 1.00)">
-        </ellipse>
-        <ellipse rx="101" ry="102" cx="115.73159690336729" cy="436.87914609909075" fill="hsla(19, 97%, 51%, 1.00)">
-        </ellipse>
-    </g>
+    <rect width="10000" height="800" fill="url(#ffflux-gradient)" filter="url(#ffflux-filter)"></rect>
 </svg>

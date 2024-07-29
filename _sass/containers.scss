@@ -1,4 +1,4 @@
-section.blog-post, section.blog-page {
+section.blog-post, section.blog-page, section.recommandation, div.hero {
     padding: 2rem;
     max-width: 800px;
     width: -moz-available;
@@ -8,8 +8,15 @@ section.blog-post, section.blog-page {
     overflow-y: hidden;
 }
 
+section.recommandation {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin: 1em;
+}
+
 @media screen and (max-width: 550px) {
-    section.blog-post, section.blog-page {
+    section.blog-post, section.blog-page, section.recommandation, div.hero {
         padding: 1em;
     }
 }
