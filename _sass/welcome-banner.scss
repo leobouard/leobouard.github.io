@@ -1,8 +1,11 @@
 div.hero {
-    min-height: 25vh;
+    min-height: 50vh;
     position: relative;
-    width: 100%;
+    min-width: 100%;
     overflow: hidden;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 div.hero svg {
@@ -12,16 +15,16 @@ div.hero svg {
     z-index: -100;
 }
 
-div.hero div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+div.wrapper {
     color: white;
-    margin: 0 auto;
+    margin: auto;
+    max-width: 800px;
+    padding: 2em
 }
 
 div.hero h1 {
     font-size: 3em;
+    color: white;
 }
 
 div.hero p {
@@ -32,5 +35,9 @@ div.hero p {
 
 div.hero ul {
     list-style: none;
+    padding-inline-start: 0;
+    display: inline-flex;
+    grid-gap: 1em;
+    margin: 3em 0;
 }
 
