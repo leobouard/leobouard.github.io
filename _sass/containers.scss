@@ -1,4 +1,4 @@
-section.blog-post, section.blog-page, section.recommandation, div.hero {
+section.blog-post, section.blog-page, section.recommandation {
     padding: 2rem;
     max-width: 800px;
     width: -moz-available;
@@ -16,7 +16,7 @@ section.recommandation {
 }
 
 @media screen and (max-width: 550px) {
-    section.blog-post, section.blog-page, section.recommandation, div.hero {
+    section.blog-post, section.blog-page, section.recommandation {
         padding: 1em;
     }
 }
