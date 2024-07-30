@@ -44,16 +44,23 @@ div.highlighter-rouge:before {
     font-family: var(--fonts);
 }
 
-pre.highlight button {
-    opacity: 0;
+div.highlighter-rouge {
+    position: relative;
 }
 
-pre.highlight:hover button {
+div.highlighter-rouge button {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+
+div.highlighter-rouge:hover button {
     opacity: 1;
 }
 
-pre.highlight button:active,
-pre.highlight button:focus {
+div.highlighter-rouge button:active,
+div.highlighter-rouge button:focus {
     opacity: 1;
 }
 
