@@ -6,10 +6,10 @@ linkedin: https://www.linkedin.com/in/leo-bouard/
 credly: https://www.credly.com/users/leo-bouard/badges/
 emailAddress: leo.bouard@hotmail.com
 
-# Add '_pages' folders
+# Add '_pages' folder
 include: [_pages]
 
-# Kramdown Configuration      
+# Kramdown configuration      
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -48,3 +48,14 @@ defaults:
 plugins:
   - jekyll-paginate
   - jekyll-gist
+
+# Pagination
+pagination:
+  enabled: true
+  per_page: 3
+  offset: 2
+  permalink: '/page/:num/'
+  title: ':title - page :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: false
