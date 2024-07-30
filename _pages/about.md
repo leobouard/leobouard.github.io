@@ -32,3 +32,11 @@ Ici vous ne trouvez pas de publicité ou de tracker, juste un peu de contenu qui
 - [Documentation Liquid](https://shopify.github.io/liquid/)
 - [Documentation Jekyll](https://jekyllrb.com/docs/)
 - [Bonnes pratiques HTML & CSS](https://pagespeed.web.dev/)
+
+### Test
+
+~~~ ruby
+def what?
+  42
+end
+~~~
