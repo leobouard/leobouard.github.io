@@ -31,17 +31,17 @@ Vous pouvez télécharger le ZIP du projet GitHub ici : [Lien direct](https://gi
 
 Décompressez le fichier ZIP sur la machine à sécuriser, puis naviguer en PowerShell jusqu'à l'emplacement du dossier et exécuter la commande suivante pour charger le module :
 
-```powershell
+~~~powershell
 Import-Module .\HardeningKitty.psm1
-```
+~~~
 
 ### Audit de l'existant
 
 Une fois le module chargé, vous pouvez lancer un audit de l'existant avec la commande suivante :
 
-```powershell
+~~~powershell
 Invoke-HardeningKitty -Mode Audit -Log -Report -FileFindingList .\lists\finding_list_msft_security_baseline_windows_server_2022_21h2_member_machine.csv
-```
+~~~
 
 Le paramètre `-FileFindingList` permet de donner le référentiel à utiliser pour la sécurisation du serveur, en l'occurence : Microsoft Security Baseline for Windows Server 2022 21H1 (hors contrôleur de domaine).
 
@@ -62,9 +62,9 @@ Le score par défaut tourne fréquement autour de 3.
 
 Pour pouvoir revenir en arrière en cas de problème, HardeningKitty permet de sauvegarder la configuration actuelle avec la commande suivante :
 
-```powershell
+~~~powershell
 Invoke-HardeningKitty -Mode Config -Backup
-```
+~~~
 
 ### Application d'un modèle
 
@@ -74,9 +74,9 @@ Le plus simple pour faire ça est probablement d'utiliser l'interface web dispon
 
 Sinon, vous pouvez utiliser tel-quel les modèles par défaut qui se basent sur les recommandations de Microsoft, du DOD, du BSI ou du CIS.
 
-```powershell
+~~~powershell
 Invoke-HardeningKitty -Mode HailMary -Log -Report -FileFindingList .\lists\votre-fichier-de-regles.csv
-```
+~~~
 
 Un redémarrage est souvent requis après l'application des règles.
 
@@ -84,10 +84,10 @@ Un redémarrage est souvent requis après l'application des règles.
 
 Une fois le redémarrage terminé, vous pouvez relancer un audit pour vérifier le score :
 
-```powershell
+~~~powershell
 Import-Module .\HardeningKitty.psm1
 Invoke-HardeningKitty -Mode Audit -Log -Report -FileFindingList .\lists\finding_list_msft_security_baseline_windows_server_2022_21h2_member_machine.csv
-```
+~~~
 
 Votre score devrait maintenant se situer entre 5 et 6.
 

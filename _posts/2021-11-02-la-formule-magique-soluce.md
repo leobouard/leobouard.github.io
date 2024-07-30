@@ -12,14 +12,14 @@ Pour ça j'avais envie de vous partager une commande assez spécifique mais qui 
 
 Ma fonction :
 
-```powershell
+~~~powershell
 function LaFormuleMagique {
     param([Int64]$i)
     $expression = ([string]$i).ToCharArray() -join '+'
     $result = Invoke-Expression -Command $expression
     return $result
 }
-```
+~~~
 
 En version courte, le cœur de la fonction peut être résumé à : `iex("$i".ToCharArray()-join'+')`
 
@@ -59,13 +59,13 @@ Une fois notre chaine de caractère prête, il ne reste plus qu'à l'interpréte
 
 Ici pas le temps de niaiser, on va aller directement à la solution sans chercher à utiliser une commande aussi peu efficace que `Invoke-Expression`. On va utiliser une méthode différente pour découper notre nombre (via `-split`) et l'incontournable commande `Measure-Object` pour compter la somme de nos chiffres. Voilà ce que ça donne en code :
 
-```powershell
+~~~powershell
 function LaFormuleMagique {
     param([Int64]$i)
     $result = $i -split '' | Measure-Object -Sum
     return $result.Sum
 }
-```
+~~~
 
 ### Explications
 

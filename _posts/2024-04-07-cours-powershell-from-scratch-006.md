@@ -27,7 +27,7 @@ La structure du IF/ELSEIF/ELSE est la plus courante en PowerShell et permet de t
 2. IF/ELSE : pour faire un traitement si la condition est remplie et un autre si elle n'est pas remplie
 3. IF/ELSEIF/ELSE : pour faire un traitement suivant la condition qui sera remplie et un autre pour le reste
 
-```powershell
+~~~powershell
 if (condition) {
     # Traitement si la condition est remplie
 }
@@ -37,7 +37,7 @@ elseif (condition) {
 else {
     # Traitement si aucune condition n'a été remplie
 }
-```
+~~~
 
 ### Exercice n°6A
 
@@ -54,7 +54,7 @@ Avec les commandes `Read-Host`, `Write-Host` et des conditions, réaliser un scr
 
 Le SWITCH permet de traiter un grand nombre de comparaison différentes dans une syntaxe très compacte.
 
-```powershell
+~~~powershell
 switch ($num) {
     22 { Write-Host 'Finistère' }
     31 { Write-Host 'Haute-Garonne' }
@@ -63,7 +63,7 @@ switch ($num) {
     44 { Write-Host 'Loire-Altantique' }
     default { Write-Host "Numéro incorrect" -ForegroundColor Red }
 }
-```
+~~~
 
 ### Exercice n°6B
 
@@ -73,7 +73,7 @@ Vous aurez besoin d'utiliser des variables, une condition, une boucle, un opéra
 
 Le résultat attendu est le suivant :
 
-```text
+~~~plainttext
 Entrer la phrase à convertir: HELLO WORLD
 
 H - Hotel
@@ -87,4 +87,4 @@ O - Oscar
 R - Romeo
 L - Lima
 D - Delta
-```
+~~~

@@ -48,19 +48,19 @@ Ancienne variable | Composant XAML | Description
 `$min` | Label | Borne inférieure
 `$max` | Label | Borne supérieure
 
-```powershell
+~~~powershell
 $progressbarCoupsRestants.Value = 0
 $labelMin.Content = 1
 $labelMax.Content = 1000
-```
+~~~
 
 Pour les autres variables (`$allAnswers`, `$stopwatch` et `$random`) il va surtout s'agir de les passer dans l'étendue globale pour être sûr qu'elles puissent être utilisées n'importe où dans le script.
 
-```powershell
+~~~powershell
 $Global:allAnswers = [System.Collections.Generic.List[int]]@()
 $Global:stopwatch  = [System.Diagnostics.Stopwatch]::New()
 $Global:random     = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
-```
+~~~
 
 ### Intégration du traitement
 
@@ -72,7 +72,7 @@ Changements a effectuer :
 - Remplacer les anciennes variables par les nouvelles
 - Modifier les `Write-Host` pour que le texte soit affiché directement dans l'interface graphique via la variable `$labelText.Content`
 
-```powershell
+~~~powershell
 $progressbarCoupsRestants.Value++
 if ($stopwatch.IsRunning -eq $false) { $stopwatch.Start() }
 $allAnswers.Add($answer)
@@ -85,7 +85,7 @@ if ($random -gt $answer) {
 } else {
     $labelText.Content = "VICTOIRE ! Vous avez deviné le nombre aléatoire"
 }
-```
+~~~
 
 <div class="information">
     <span>Problème d'encodage</span>
@@ -101,12 +101,12 @@ Si vous testez le script à ce stade et que vous parvenez à trouver le nombre a
 - Désactiver la boite de texte
 - Arrêter le chronomètre
 
-```powershell
+~~~powershell
 $stackpanelButtons.Visibility = "Visible"
 $textboxResponse.Text = $random
 $textboxResponse.IsEnabled = $false
 $stopwatch.Stop()
-```
+~~~
 
 ### Gestion de la défaite
 
@@ -118,7 +118,7 @@ Dans l'état, la défaite n'est pas possible puisque si le joueur dépasse le no
 - Afficher un message  de défaite via la variable `$labelText.Content`
 - Arrêter le chronomètre
 
-```powershell
+~~~powershell
 if ($progressbarCoupsRestants.Value -eq $progressbarCoupsRestants.Maximum -and $textboxResponse.Text -ne $random) {
     $stackpanelButtons.Visibility = "Visible"
     $textboxResponse.Text = $random
@@ -126,7 +126,7 @@ if ($progressbarCoupsRestants.Value -eq $progressbarCoupsRestants.Maximum -and $
     $labelText.Content = "DEFAITE ! Le nombre etait : $random"
     $stopwatch.Stop()
 }
-```
+~~~
 
 ## Correction
 

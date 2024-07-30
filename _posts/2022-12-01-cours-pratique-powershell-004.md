@@ -46,19 +46,19 @@ C'est cette version qui sera conservée pour la correction. Elle a comme avantag
 
 L'objectif est de créer deux variables `$min` et `$max` qui vont contenir et afficher les bornes inférieure et supérieure. Comme lors de la première tentative, les bornes sont définies à 1 et 1000 respectivement, on peut les utiliser pour la génération du nombre aléatoire par la commande `Get-Random`. De cette manière, on centralise l'information.
 
-```powershell
+~~~powershell
 $min = 1
 $max = 1000
 Get-Random -Minimum $min -Maximum $max
-```
+~~~
 
 ### Modifier le texte affiché pour ajouter des bornes
 
 On va maintenant afficher la valeur des variables `$min` et `$max` dans le texte du `Read-Host` avec comme résultat : "Deviner le nombre (1 < ??? < 1000)"
 
-```powershell
+~~~powershell
 Read-Host "Deviner le nombre ($min < ??? < $max)"
-```
+~~~
 
 ### Mettre à jour les bornes inférieure et supérieure
 
@@ -89,10 +89,10 @@ Affichage dans la console :
 > ??? est plus petit que 350\
 > Deviner le nombre (300 < ??? < **350**):
 
-```powershell
+~~~powershell
 if ($random -gt $answer) { $min = $answer }
 elseif ($random -lt $answer) { $max = $answer }
-```
+~~~
 
 ### Point bonus : faire des bornes intelligentes
 
@@ -109,13 +109,13 @@ Le point faible des bornes "classiques", c'est que si le joueur commet une erreu
 
 On joint le tout avec des `|` (pipeline) pour envoyer le résultat de la commande vers la prochaine et on obtient un bloc assez compact et qui n'est pas impacté par les erreurs potentielles du joueur :
 
-```powershell
+~~~powershell
 if ($random -gt $answer) { 
     $min = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object | Select-Object -Last 1
 } elseif ($random -lt $answer) { 
     $max = $allAnswers | Where-Object {$_ -gt $random} | Sort-Object | Select-Object -First 1
 }
-```
+~~~
 
 ## Correction
 

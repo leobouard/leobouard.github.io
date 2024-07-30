@@ -30,12 +30,12 @@ Cette boucle est assez peu répandue en PowerShell, si bien qu'on a tendance à 
 
 Le reste de la boucle est alors assez simple : on ajoute la date du jour à la variable `$d` si celle-ci n'est pas un samedi ou un dimanche.
 
-```powershell
+~~~powershell
 for ($i = 25; $null -eq $d ; $i--) {
     $d = Get-Date -Day $i | Where-Object {$_.DayOfWeek -notlike "S*"}
 }
 $d
-```
+~~~
 
 Version courte à 66 caractères : `for($i=25;!$d;$i--){$d=date -day $i|?{$_.DayOfWeek-notlike"s*"}}$d`
 
@@ -45,13 +45,13 @@ C'est une boucle assez commune, mais qui peut être cause de boucles infinies si
 
 Le traitement est donc simple : on récupère la date du 25e jour du mois en cours, et si celle-ci est un samedi ou un dimanche, alors on remonte un jour en arrière via la méthode `.AddDays(-1)` jusqu'à ce que le jour soit ouvré.
 
-```powershell
+~~~powershell
 $d = Get-Date -Day 25
 while ($d.DayOfWeek -like "S*") {
     $d = $d.AddDays(-1)
 }
 $d
-```
+~~~
 
 Version courte à 65 caractères : `$d=date -Day 25;while($d.DayOfWeek-like"s*"){$d=$d.AddDays(-1)}$d`
 
@@ -64,14 +64,14 @@ Le fonctionnement est relativement proche de la boucle `while`, mais cette fois-
 
 Dans l'objectif de faire le script le plus court possible, c'est `do/while` qui est plus intéressant.
 
-```powershell
+~~~powershell
 $i = 25
 do {
     $d = Get-Date -Day $i
     $i--
 } while ($d.DayOfWeek -like "S*")
 $d
-```
+~~~
 
 Version courte à 60 caractères : `$i=25;do{$d=date -Day $i;$i--}while($d.DayOfWeek-like"S*")$d`
 
@@ -83,11 +83,11 @@ L'objectif est d'avoir un tableau de tous les jours ouvrés du mois en cours, po
 
 Ici pas besoin de variable `$d`, on utilise le pipeline au maximum (pour économiser de précieux caractères).
 
-```powershell
+~~~powershell
 25..1 | ForEach-Object { 
     Get-Date -Day $_ | Where-Object {$_.DayOfWeek -notlike "S*"}
 } | Select-Object -First 1
-```
+~~~
 
 Version courte à 54 caractères : `(25..1|%{date -Day $_|?{$_.DayOfWeek-notlike"S*"}})[0]`
 
@@ -97,14 +97,14 @@ Version courte à 54 caractères : `(25..1|%{date -Day $_|?{$_.DayOfWeek-notlike
 
 On se base sur la version avec la boucle `do/until`, mais on modifie la condition de sortie pour quelque chose de plus exotique :
 
-```powershell
+~~~powershell
 $i = 25
 do {
     $d = Get-Date -Day $i
     $i--
 } until (([int]$d.DayOfWeek+6)%7 -le 4)
 $d
-```
+~~~
 
 ### Explications
 
@@ -139,13 +139,13 @@ Dimanche | 0 | 6 | 6
 
 Au final, on si on n'avait utilisé le + 6) % 7, on aurait dû choisir la deuxième condition de sortie :
 
-```powershell
+~~~powershell
 $i = 25
 do {
     $d = Get-Date -Day $i
     $i--
 } until (([int]$d.DayOfWeek) -in 1..5)
 $d
-```
+~~~
 
 ...soit littéralement : si le jour de la semaine est compris en 1 et 5, alors on peut sortir. Mais avouez que c'est quand même moins fun que la première option !

@@ -34,15 +34,15 @@ Get-ComputerInfo |
 
 Trouver la commande pour générer un nombre aléatoire
 
-```powershell
+~~~powershell
 Get-Command
-```
+~~~
 
 Générer un nombre aléatoire entre 1 et 10
 
-```powershell
+~~~powershell
 
-```
+~~~
 
 ## Assembler les commandes entre-elles
 
@@ -55,17 +55,17 @@ A l’aide des commandes `Select-Object` et `Get-Service`, afficher les 25 premi
 3. Si le service peut être arrêté
 4. Si le service peut être éteint
 
-```powershell
+~~~powershell
 
-```
+~~~
 
 ### Exercice n°2B
 
 A l’aide des commandes `Get-Process`, `Sort-Object` et `Measure-Object`, compter le nombre de processus unique sur votre ordinateur.
 
-```powershell
+~~~powershell
 
-```
+~~~
 
 ### Exercice n°2C
 
@@ -77,9 +77,9 @@ A l’aide des commandes et des connaissances que vous avez vu précédemment, r
 
 Le script n’utilise que des commandes simples, avec des pipeline entre chaque.
 
-```powershell
+~~~powershell
 
-```
+~~~
 
 ### Travaux pratiques n°1
 
@@ -120,9 +120,9 @@ Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
 ### Exercice n°4B
 
-```powershell
+~~~powershell
 $days = 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
-```
+~~~
 
 Trouver la bonne utilisation de `like` et `-notlike` pour obtenir les résultats suivants :
 
@@ -133,9 +133,9 @@ Trouver la bonne utilisation de `like` et `-notlike` pour obtenir les résultats
 
 ### Exercice n°4C
 
-```powershell
+~~~powershell
 $months = 'janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'
-```
+~~~
 
 Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
@@ -148,12 +148,12 @@ Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
 Devinez le contenu de chaque variable :
 
-```powershell
+~~~powershell
 $replace = 'Je serai en avance' -replace 'avance','retard'
 $split1 = 'abcdefghijklmnopqrstuvwyz' -split ''
 $split2 = '192.168.0.1' -split '.'
 $join = 'Robert','Jimmy','John','John Paul' -join '+'
-```
+~~~
 
 ### Exercice n°5
 

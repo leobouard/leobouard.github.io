@@ -34,9 +34,9 @@ Je vous recommande fortement de lire l'article [about_Parameters - PowerShell \|
 
 Notre besoin est relativement simple : si le paramètre `-EasyMode` du script est invoqué, alors on modifie la génération du nombre aléatoire, sinon on ne change rien. Il s'agit donc d'un paramètre du type `[switch]` (soit il est présent, soit il est absent).
 
-```powershell
+~~~powershell
 param([switch]$EasyMode)
-```
+~~~
 
 ### Générer un nombre aléatoire "facile" à deviner
 
@@ -46,9 +46,9 @@ Pour vérifier qu'un nombre est un multiple, on utilise le modulo `%` (à ne pas
 
 On génère alors le nombre aléatoire jusqu'à trouver un multiple de 5 en mettant le `Get-Random` dans une boucle du type `while`. L'avantage de la boucle `while` est que l'on entre dans celle-ci uniquement si la condition de départ est remplie. Si le nombre aléatoire est déjà un multiple de 5, pas besoin de faire de traitement supplémentaire.
 
-```powershell
+~~~powershell
 while ($random % 5 -ne 0) { $random = Get-Random -Min $min -Max $max }
-```
+~~~
 
 ### Modifier la génération du nombre aléatoire en mode facile
 
@@ -57,21 +57,21 @@ Pour savoir si le paramètre `-EasyMode` a été invoqué, il suffit de vérifie
 - si la valeur est "vrai" : le paramètre a été invoqué
 - si la valeur est "faux" : le paramètre est absent
 
-```powershell
+~~~powershell
 if ($EasyMode.IsPresent) {
     # Génération du nombre aléatoire "facile" à deviner
 }
-```
+~~~
 
 ### Ajouter la difficulté dans l'objet de fin
 
 Même chose dans l'affichage de l'information, on utilise simplement la propriété `IsPresent` :
 
-```powershell
+~~~powershell
 [PSCustomObject]@{
     "Mode facile" = $EasyMode.IsPresent
 }
-```
+~~~
 
 ## Correction
 

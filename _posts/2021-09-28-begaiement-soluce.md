@@ -10,7 +10,7 @@ prevLink:
 
 Cette version est simple et efficace, avec un nombre de paramètres limités. Elle ne prend pas en compte les syllabes et répète bêtement les deux premières lettres du mot :
 
-```powershell
+~~~powershell
 function ConvertTo-Stutter {
     param(
         [Parameter(Mandatory,ValueFromPipeline)][string]$Text,
@@ -24,7 +24,7 @@ function ConvertTo-Stutter {
     }
     return ($finalText -join " ")
 }
-```
+~~~
 
 ### Choisir le nom de la fonction
 
@@ -82,7 +82,7 @@ Ce qui nous permet de convertir le mot "bonjour" en "bo…bo…bonjour".
 
 Place à la version plus "aboutie" qui va essayer (j'insiste sur le fait d'essayer uniquement) de délimiter les syllabes du mot.
 
-```powershell
+~~~powershell
 function ConvertTo-Stutter {
     param(
         [Parameter(Mandatory,ValueFromPipeline)][string]$Text,
@@ -110,7 +110,7 @@ function ConvertTo-Stutter {
 
     return $finalText
 }
-```
+~~~
 
 Si l'on reprend les exemples donnés dans la consigne (avancer → a…a…avancer, mauvaise → mau…mau…mauvaise, beaucoup → beau…beau…beaucoup), on remarque que le bégaiement s'arrête dès que l'on rencontre une consonne.
 
@@ -118,13 +118,13 @@ Si l'on reprend les exemples donnés dans la consigne (avancer → a…a…avanc
 
 On va modifier la boucle de traitement pour que celle-ci arrête de couper à deux caractères de manière systématique et qu'elle applique le nouveau traitement qui est de couper à la première consonne.
 
-```powershell
+~~~powershell
 $vowels = 'a','e','i','o','u','y','h'
 
 $cutWord = $_[0]
 $cutWord += for ($i = 1 ; $_[$i] -in $vowels ; $i++) { $_[$i] }
 "$($cutWord -replace ' ','')…"*2 + $_
-```
+~~~
 
 On commence par récupérer le premier caractère du mot avec `$_[0]`. On poursuit avec une boucle `for()` qui va continuer à construire le mot "coupé" jusqu'à ce que le caractère en cours ne fasse pas partie de la liste de voyelle que l'on a défini précédemment. On termine alors le traitement en créant le mot final.
 

@@ -30,12 +30,12 @@ Jane | Black | jane.black@labouabouate.fr | 22
 
 La version brute :
 
-```
+~~~
 givenName,surname,userPrincipalName,id
 John,Doe,john.doe@labouabouate.fr,51
 Jack,Smith,jack.smith@labouabouate.fr,85
 Jane,Black,jane.black@labouabouate.fr,22
-```
+~~~
 
 Le nom des colonnes est visible sur la première ligne et les colonnes sont indiquées par des virgules (ou des points-virgules, libre à vous de choisir le délimiteur qui vous convient le plus).
 
@@ -43,9 +43,9 @@ Le nom des colonnes est visible sur la première ligne et les colonnes sont indi
 
 Pour récupérer rapidement et facilement les données d'un fichier CSV en PowerShell, on peut utiliser la commande dédiée [Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv).
 
-```powershell
+~~~powershell
 Import-Csv -Path "C:\temp\export.csv" -Delimiter ',' -Encoding UTF8
-```
+~~~
 
 ...et on se retrouve ensuite avec un bel objet PowerShell facilement requêtable ! 🙂 Ou au moins c'est l'impression qu'il donne, mais le CSV possède tout de même quelques limitations.
 
@@ -60,50 +60,50 @@ Et bien oui, le CSV n'est pas parfait pour tous les besoins. Il possède notamme
 
 Malgré toutes ses qualités, les mathématiques ne sont pas le point fort du CSV. Pour les exemples suivants, on va se baser sur la variable $CSV suivante :
 
-```powershell
+~~~powershell
 $csv = @'
 givenName,surname,userPrincipalName,id
 John,Doe,john.doe@labouabouate.fr,51
 Jack,Smith,jack.smith@labouabouate.fr,85
 Jane,Black,jane.black@labouabouate.fr,22
 '@ | ConvertFrom-Csv -Delimiter ','
-```
+~~~
 
 #### Exemple 1 - Les comparaisons
 
 Ici on demande simplement de vérifier que chaque identifiant (colonne ID) est supérieur à 9. Le résultat attendu est donc 'True' à chaque fois, et pourtant...
 
-```powershell
+~~~powershell
 PS C:\> $csv | % {$_.id -gt 9}
 
 False
 False
 False
-```
+~~~
 
 #### Exemple 2 - Les additions
 
 Encore plus simple, on demande d'ajouter 1 à chacun des identifiants. On devrait donc retrouver les valeurs 52, 86 et 23, et pourtant...
 
-```powershell
+~~~powershell
 PS C:\> $csv | % {$_.id + 1}
 
 511
 851
 221
-```
+~~~
 
 #### Exemple 3 - Les multiplications
 
 On fait la même chose que d'habitude : on multiplie la valeur de chaque identifiant par deux :
 
-```powershell
+~~~powershell
 PS C:\> $csv | % {$_.id * 2}
 
 5151
 8585
 2222
-```
+~~~
 
 <div style="text-align: center">
   <i>A ce niveau, c'est un 0 pointé en maths</i>
@@ -117,9 +117,9 @@ Dans certains cas, PowerShell comprend que la valeur est en fait un nombre entie
 
 Pour corriger ça, on peut formater la "colonne" ID en amont en indiquant à PowerShell qu'il s'agit de nombres entiers et pas de chaines de caractères :
 
-```powershell
+~~~powershell
 $csv | % {$_.id = [int]($_.id)}
-```
+~~~
 
 ---
 

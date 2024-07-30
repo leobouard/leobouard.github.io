@@ -55,7 +55,7 @@ Nous utiliserons donc la fonction `Reset-UI` pour regrouper les actions déjà e
 - vider le contenu de la boite de texte et la rendre active
 - réinitialiser la valeur du label qui indique "Le nombre est plus petit / grand que ..."
 
-```powershell
+~~~powershell
 function Reset-UI {
     # ...
     $stackpanelButtons.Visibility = "Hidden"
@@ -65,25 +65,25 @@ function Reset-UI {
     # ...
 }
 Reset-UI
-```
+~~~
 
 Il ne reste plus qu'à déclarer une action pour le bouton "Recommencer" :
 
-```powershell
+~~~powershell
 $buttonRetry.Add_Click({ Reset-UI })
-```
+~~~
 
 ### Réimplémenter le mode facile
 
 On ajoute le paramètre `[switch]$EasyMode` pour réduire la complexité du nombre aléatoire : celui-ci est forcément un multiple de 5.
 
-```powershell
+~~~powershell
 if ($EasyMode.IsPresent) {
     while ($random % 5 -ne 0) {
         $Global:random = Get-Random -Minimum $labelMin.Content -Maximum $labelMax.Content
     }
 }
-```
+~~~
 
 ### Création du mode triche
 
@@ -107,11 +107,11 @@ n°10 | 193 | 1 = 2⁰
 
 Pour le joueur, il ne lui reste qu'à faire une estimation initiale (500 par exemple) et à appuyer frénétiquement sur "Entrée" pour finir la partie.
 
-```powershell
+~~~powershell
 if ($CalcBot.IsPresent) {
     $textboxResponse.Text = [math]::Round((($labelMax.Content+$labelMin.Content)/2),0)
 }
-```
+~~~
 
 ### Rendre le bouton "Meilleurs scores" fonctionnel
 
@@ -124,7 +124,7 @@ Quelques modifications sont à apporter à l'ancien objet :
 - adapter la valeur "Temps moyen par tentative" pour ne plus utiliser la variable `$i`
 - ajout de la propriété "Tricheur" qui indique si le paramètre `-CalcBot` a été invoqué
 
-```powershell
+~~~powershell
 [PSCustomObject]@{
     "Joueur"                    = $env:USERNAME
     "Date"                      = Get-Date -Format 'yyyy-MM-ddTHH:mm:ssZ'
@@ -137,7 +137,7 @@ Quelques modifications sont à apporter à l'ancien objet :
     "Mode facile"               = $EasyMode.IsPresent
     "Tricheur"                  = $CalcBot.IsPresent
 }
-```
+~~~
 
 #### Sauvegarde des données
 
@@ -147,7 +147,7 @@ Le JSON a beaucoup d'avantages par rapport au CSV, mais celui qui nous intéress
 
 Pour extraire des données d'un fichier JSON, on utilise la combinaison des commandes `Get-Content` et `ConvertFrom-Json`.
 
-```powershell
+~~~powershell
 if (Test-Path -Path $HighScorePath) { 
     $results = [System.Collections.Generic.List[PSCustomObject]](Get-Content $HighScorePath | ConvertFrom-Json)
 } else {
@@ -155,15 +155,15 @@ if (Test-Path -Path $HighScorePath) {
 }
 # ...
 if ($HighScorePath) { $results | ConvertTo-Json | Set-Content -Path $HighScorePath -Encoding UTF8 }
-```
+~~~
 
 #### Affichage des données
 
 Il ne nous reste plus qu'à afficher les données lors que le bouton "Meilleurs scores" est cliqué. On ajoute un filtre avec `Where-Object` pour ne pas voir les parties avec le mode triche et on affiche le résultat avec `Out-GridView`.
 
-```powershell
+~~~powershell
 $buttonHighScore.Add_Click({ $results | Where-Object {$_.Tricheur -eq $false} | Sort-Object -Property 'Temps de résolution (sec)' | Out-GridView })
-```
+~~~
 
 ## Correction
 

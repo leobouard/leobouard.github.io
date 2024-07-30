@@ -23,13 +23,13 @@ Pour obtenir les informations nécessaires pour la disponibilité des licences, 
 
 L'intérêt de cet exercice se situe dans la configuration d'une application Azure et la connexion à celle-ci en PowerShell. Si vous le souhaitez, vous pouvez réaliser votre propre script, sinon voici une version basique déjà fonctionnelle :
 
-```powershell
+~~~powershell
 (Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/beta/subscribedskus' -OutputType PSObject).value |
     Select-Object skuId,skuPartNumber,consumedUnits,
         @{N='enabledUnits';E={$_.prepaidUnits.enabled}},
         @{N='availableUnits';E={$_.prepaidUnits.enabled-$_.consumedUnits}} |
     Out-GridView -Title "Microsoft 365 licenses subscriptions"
-```
+~~~
 
 ## Exercice pratique n°2
 

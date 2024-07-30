@@ -152,58 +152,58 @@ Les paramètres servent à modifier ou affiner le résultat d'une commande, pour
 
 Le résultat par défaut :
 
-```powershell
+~~~powershell
 Get-Date
-```
+~~~
 
 Avec l'utilisation du paramètre `-Year`, on indique l'année qui nous intéresse :
 
-```powershell
+~~~powershell
 Get-Date -Year 2010
-```
+~~~
 
 Il est possible d'utiliser plusieurs paramètres en combinaison, pour obtenir la date au 1 janvier 2010 par exemple :
 
-```powershell
+~~~powershell
 Get-Date -Year 2010 -Month 01 -Day 01
-```
+~~~
 
 ---
 
 Si on veut indiquer une valeur plus complexe que de simple chiffres, il est souvent nécessaire d'utiliser des *double-quotes* pour encadrer la valeur à passer en paramètre, exemple :
 
-```powershell
+~~~powershell
 Get-Date -Date "15/12/1997"
-```
+~~~
 
 Certains paramètres n'ont pas besoin d'avoir une valeur définie pour être utilisé, c'est ce qu'on appelle un *switch* :
 
-```powershell
+~~~powershell
 Get-Date -AsUTC
-```
+~~~
 
 ---
 
 D'autres paramètres peuvent s'exclure entre-eux car ils ne peuvent pas être utilisé en combinaison, exemple :
 
-```powershell
+~~~powershell
 Get-Date -Format "dd/MM/yyyy"
 # vs.
 Get-Date -UFormat "%d/%m/%Y"
-```
+~~~
 
 ---
 
 Pour consulter la liste des paramètres disponibles, le plus simple est de tapper votre commande, ajouter un tiret et appuyer sur `Ctrl`+`Espace`.
 
-```text
+~~~plainttext
 PS C:\> Get-Date -
 Date                 Hour                 UFormat              ErrorAction          WarningVariable
 UnixTimeSeconds      Minute               Format               WarningAction        InformationVariable
 Year                 Second               AsUTC                InformationAction    OutVariable
 Month                Millisecond          Verbose              ProgressAction       OutBuffer
 Day                  DisplayHint          Debug                ErrorVariable        PipelineVariable
-```
+~~~
 
 ---
 
@@ -219,17 +219,17 @@ Certains paramètres sont des paramètres "par défaut" que vous retrouverez sur
 
 Vous n'avez pas besoin de spécifier le nom complet du paramètre. Dès lors qu'il n'y a plus qu'un choix possible, PowerShell comprendra implicitement le paramètre utilisé.
 
-```powershell
+~~~powershell
 Get-Date -H 12 -Min 59 -Sec 00
 # vs.
 Get-Date -Hour 12 -Minute 59 -Second 00
-```
+~~~
 
 Egalement, certains paramètres sont utilisés par défaut si une valeur est spécifiée juste après une commande. Exemple :
 
-```powershell
+~~~powershell
 Write-Host 'Hello world!'
-```
+~~~
 
 ---
 
@@ -239,9 +239,9 @@ Il y a une commande PowerShell qui permet de trouver toutes les autres : `Get-Co
 
 Pour trouver toutes les commandes qui contiennent le mot "culture" :
 
-```powershell
+~~~powershell
 Get-Command -Name "*culture*"
-```
+~~~
 
 > Suivant la présence ou la position des `*`, cela permet de modifier la requête pour demander les commandes qui commencent par un texte, finissent par un texte ou simplement contiennent un texte.
 
@@ -265,9 +265,9 @@ Get-Command -Name "*culture*"
 
 Le pipeline permet d'assembler des commandes entre-elles en envoyant le résultat d'une commande (ou autre chose) vers la suivante.
 
-```powershell
+~~~powershell
 Get-Content -Path '.\fichier.json' | ConvertFrom-Json
-```
+~~~
 
 ---
 
@@ -287,23 +287,23 @@ Ces commandes là vont vous suivre dans tous vos scripts et pour toujours ! Il e
 
 `Select-Object` permet de manipuler une collection. La plupart du temps, on se servira de cette commande pour limiter la vue à ce qui nous intéresse.
 
-```powershell
+~~~powershell
 Get-ComputerInfo | Select-Object BiosSerialNumber, CsManufacturer, CsModel, CsProcessors
-```
+~~~
 
 En utilisant un astérisque, on peut également afficher toutes les propriétés :
 
-```powershell
+~~~powershell
 Get-Service | Select-Object *
-```
+~~~
 
 On peut également sélectionner uniquement les X premiers ou X derniers éléments d'une collection :
 
-```powershell
+~~~powershell
 Get-Service | Select-Object -First 10
 # vs.
 Get-Service | Select-Object -Last 10
-```
+~~~
 
 ---
 
@@ -322,17 +322,17 @@ A l'aide des commandes `Select-Object` et `Get-Service`, afficher les 25 premier
 
 `Sort-Object` pour trier des données, selon un ordre ascendant ou descendant
 
-```powershell
+~~~powershell
 Get-Process | Sort-Object -Property CPU
 # vs.
 Get-Process | Sort-Object -Property CPU -Descending
-```
+~~~
 
 Il est également possible de dédupliquer une liste :
 
-```powershell
+~~~powershell
 Get-Process | Sort-Object -Property ProcessName -Unique
-```
+~~~
 
 ---
 
@@ -342,15 +342,15 @@ Get-Process | Sort-Object -Property ProcessName -Unique
 
 Pour compter le nombre d'objets :
 
-```powershell
+~~~powershell
 Get-ChildItem -Path 'C:\Windows' | Measure-Object
-```
+~~~
 
 Pour calculer une somme et une moyenne :
 
-```powershell
+~~~powershell
 Get-ChildItem -Path 'C:\Windows' | Measure-Object -Property Length -Sum -Average
-```
+~~~
 
 On observe que `Measure-Object` compte moins de résultats cette fois-ci, car il ne prend en compte que les éléments avec une propriété "Length".
 
@@ -368,21 +368,21 @@ A l'aide des commandes `Get-Process`, `Sort-Object` et `Measure-Object`, compter
 
 > `-eq` est un opérateur de comparaison pour savoir si un élément est égal à un autre
 
-```powershell
+~~~powershell
 Get-Service | Where-Object {$_.Status -eq 'Running'}
-```
+~~~
 
 ---
 
 > `-like` est un opérateur qui permet de rechercher une chaine de caractère. En fonction de la position de l'astérisque, cela permet de trouver des résultats qui commencent par un mot, contiennent un mot ou finissent par un mot en particulier :
 
-```powershell
+~~~powershell
 Get-Service | Where-Object {$_.Name -like 'win*'}
 # vs.
 Get-Service | Where-Object {$_.Description -like '*xbox*'}
 # vs.
 Get-Service | Where-Object {$_.Name -like '*svc'}
-```
+~~~
 
 ---
 
@@ -392,12 +392,12 @@ Get-Service | Where-Object {$_.Name -like '*svc'}
 
 `$_` est ce qu'on appelle la "variable courante" : elle contient l'objet en cours de traitement.
 
-```powershell
+~~~powershell
 Get-LocalGroup | ForEach-Object {
     Write-Host $_.Name -ForegroundColor Yellow
     Get-LocalGroupMember -Group $_ | Format-List
 }
-```
+~~~
 
 Dans l'exemple ci-dessus, la variable courante va contenir le groupe "Administrateurs", puis "Administrateur Hyper-V", puis "Duplicateurs", etc.
 
@@ -423,9 +423,9 @@ Dans ces premiers travaux pratiques nous allons jouer à un "wargame". L'idée e
 
 Vous pouvez vous rendre sur <https://underthewire.tech/century> et lancer votre première connexion SSH avec la commande suivante :
 
-```text
+~~~plainttext
 ssh century.underthewire.tech -l century1
-```
+~~~
 
 Le mot de passe du premier compte "Century1" est `century1`.
 
@@ -460,11 +460,11 @@ Get-Content | Récupère le contenu d'un fichier
 
 Les variables sont un composant majeur de n'importe quel language de programmation/scripting. Dans le cas de PowerShell, les variables sont très flexibles et simple à utiliser. On les déclare à n'importe quel moment avec un `$` et on peut y stocker n'importe quoi en utilisant `=` (résultat de commande, texte, collection, nombre...)
 
-```powershell
+~~~powershell
 $users = Get-LocalUser
 $text = 'Voici un texte court'
 $number = 1032
-```
+~~~
 
 ---
 
@@ -472,13 +472,13 @@ $number = 1032
 
 Pour consulter le contenu d'une variable, il suffit simplement de tapper le nom de la variable dans la console :
 
-```powershell
+~~~powershell
 $text
 Voici un texte court
 
 $number
 1032
-```
+~~~
 
 ---
 
@@ -486,10 +486,10 @@ $number
 
 Pour les variables qui contiennent des collections d'objets, il est possible d'indiquer quel élément nous intéresse dans la liste en utilisant l'index. La syntaxe de l'index est plutôt simple puisqu'il suffit d'ajouter `[X]` (où *X* est le numéro d'index) directement après votre variable
 
-```powershell
+~~~powershell
 $array = 'Alpha','Bravo','Charlie','Delta'
 $array[1]
-```
+~~~
 
 ---
 
@@ -510,16 +510,16 @@ Index | Valeur(s) d'exemple | Description
 
 Lorsqu'une variable contient un ou plusieurs objets complexes avec plusieurs propriétés, il est possible d'obtenir uniquement l'information qui nous intéresse en selectionnant directement la propriété. Pour ça, il suffit d'ajouter `.Property` (où *Property* est le nom de la propriété) directement après votre variable.
 
-```powershell
+~~~powershell
 $users = Get-LocalUser
 $users.Name
-```
+~~~
 
 Il est possible de mixer les index et les sous-propriétés, par exemple :
 
-```powershell
+~~~powershell
 $users[0].Name
-```
+~~~
 
 > Les sous-propriétés peuvent être remplacé par la commande `Select-Object` avec le paramètre `-ExpandProperty`.
 
@@ -552,12 +552,12 @@ Pour afficher le contenu d'une variable dans un texte, le cas général est plut
 
 Exemples :
 
-```powershell
+~~~powershell
 $test = 'PowerShell'
 Write-Host "$test est plutôt cool"
 # vs.
 Write-Host '$test est plutôt cool'
-```
+~~~
 
 ---
 
@@ -565,10 +565,10 @@ Write-Host '$test est plutôt cool'
 
 Si votre variable est plus complexe (vous ne voulez afficher que une sous-propriété ou/et un index), il faudra modifier un peu la syntaxe.
 
-```powershell
+~~~powershell
 $users = Get-LocalUser
 Write-Host "Le premier utilisateur de l'ordinateur est $($users[0].Name)"
-```
+~~~
 
 ---
 
@@ -632,9 +632,9 @@ L'ordre à une importance pour cet opérateur et inverser les deux parties ne do
 
 ### Exercice n°4B
 
-```powershell
+~~~powershell
 $days = 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
-```
+~~~
 
 Trouver la bonne utilisation de `like` et `-notlike` pour obtenir les résultats suivants :
 
@@ -660,9 +660,9 @@ Opérateur | Description
 
 ### Exercice n°4C
 
-```powershell
+~~~powershell
 $months = 'janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'
-```
+~~~
 
 Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
@@ -687,12 +687,12 @@ Certains opérateurs ne font pas de comparaison mais peuvent modifier des chaine
 
 Devinez le contenu de chaque variable :
 
-```powershell
+~~~powershell
 $replace = 'Je serai en avance' -replace 'avance','retard'
 $split1 = 'abcdefghijklmnopqrstuvwyz' -split ''
 $split2 = '192.168.0.1' -split '.'
 $join = 'Robert','Jimmy','John','John Paul' -join '+'
-```
+~~~
 
 ---
 
@@ -718,9 +718,9 @@ Vous pouvez maintenant réaliser les 5 défis restants sur le "wargame" CENTURY.
 
 Vous pouvez vous rendre sur <https://underthewire.tech/century> et lancer votre connexion SSH avec la commande suivante :
 
-```text
+~~~plainttext
 ssh century.underthewire.tech -l century9
-```
+~~~
 
 Le mot de passe du premier compte "Century9" est `696`.
 
@@ -748,7 +748,7 @@ La structure du IF/ELSEIF/ELSE est la plus courante en PowerShell et permet de t
 
 ---
 
-```powershell
+~~~powershell
 if (condition) {
     # Traitement si la condition est remplie
 }
@@ -758,7 +758,7 @@ elseif (condition) {
 else {
     # Traitement si aucune condition n'a été remplie
 }
-```
+~~~
 
 ---
 
@@ -779,7 +779,7 @@ Avec les commandes `Read-Host`, `Write-Host` et des conditions, réaliser un scr
 
 Le SWITCH permet de traiter un grand nombre de comparaison différentes dans une syntaxe très compacte.
 
-```powershell
+~~~powershell
 switch ($num) {
     22 { Write-Host 'Finistère' }
     31 { Write-Host 'Haute-Garonne' }
@@ -788,7 +788,7 @@ switch ($num) {
     44 { Write-Host 'Loire-Altantique' }
     default { Write-Host "Numéro incorrect" -ForegroundColor Red }
 }
-```
+~~~
 
 ---
 
@@ -802,7 +802,7 @@ Vous aurez besoin d'utiliser des variables, une condition, une boucle, un opéra
 
 Le résultat attendu est le suivant :
 
-```text
+~~~plainttext
 Entrer la phrase à convertir: HELLO WORLD
 
 H - Hotel
@@ -816,4 +816,4 @@ O - Oscar
 R - Romeo
 L - Lima
 D - Delta
-```
+~~~

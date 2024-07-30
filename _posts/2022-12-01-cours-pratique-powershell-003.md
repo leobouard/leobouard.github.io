@@ -64,7 +64,7 @@ Une fois dans la boucle, il ne reste plus qu'à ajouter des valeurs dans notre v
 - Pipeline : `$array = 1..10 | % { $_ }`
 - **List\<T\>** : `$list.Add(1)`
 
-```powershell
+~~~powershell
 # a. Avec "Array"
 $allAnswers = @()
 do {
@@ -88,27 +88,27 @@ do {
     $allAnswers.Add($answer)
 }
 until ()
-```
+~~~
 
 ### Afficher toutes les tentatives
 
 Dans le `PSCustomObject` affiché à la fin, on modifie la propriété `Réponse` en `Réponses` qui contient toutes les réponses (variable `$allAnswers`) du joueur.
 
-```powershell
+~~~powershell
 [PSCustomObject]@{
     "Nombre aléatoire"  = $random
     "Réponses" = $allAnswers
     "Tentatives"   = $i
 }
-```
+~~~
 
 ### Calculer l'estimation moyenne
 
 Avec toutes les réponses du joueur stockées dans une variable, on va maintenant calculer la valeur moyenne de toutes ses réponses. Par exemple : (500+750+875+800+850+862)/6 = 772,833. On peut le faire facilement en PowerShell avec la commande `Measure-Object` et le paramètre `-Average`.
 
-```powershell
+~~~powershell
 ($allAnswers | Measure-Object -Average).Average
-```
+~~~
 
 ### Afficher l'estimation moyenne
 
@@ -116,11 +116,11 @@ Dans le `PSCustomObject` affiché à la fin, on ajoute une nouvelle propriété 
 
 Pour arrondir un nombre décimal en PowerShell, le plus simple est de le convertir en utilisant le type `[int]`. Il est également possible d'utiliser la méthode `[math]:Round()`, que l'on utilisera plus tard.
 
-```powershell
+~~~powershell
 [PSCustomObject]@{
     "Réponse moyenne" = [int]($allAnswers | Measure-Object -Average).Average
 }
-```
+~~~
 
 ## Correction
 

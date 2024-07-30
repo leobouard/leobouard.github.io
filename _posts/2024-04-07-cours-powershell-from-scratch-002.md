@@ -91,52 +91,52 @@ Les paramètres servent à modifier ou affiner le résultat d'une commande, pour
 
 Le résultat par défaut :
 
-```powershell
+~~~powershell
 Get-Date
-```
+~~~
 
 Avec l'utilisation du paramètre `-Year`, on indique l'année qui nous intéresse :
 
-```powershell
+~~~powershell
 Get-Date -Year 2010
-```
+~~~
 
 Il est possible d'utiliser plusieurs paramètres en combinaison, pour obtenir la date au 1 janvier 2010 par exemple :
 
-```powershell
+~~~powershell
 Get-Date -Year 2010 -Month 01 -Day 01
-```
+~~~
 
 Si on veut indiquer une valeur plus complexe que de simple chiffres, il est souvent nécessaire d'utiliser des *double-quotes* pour encadrer la valeur à passer en paramètre, exemple :
 
-```powershell
+~~~powershell
 Get-Date -Date "15/12/1997"
-```
+~~~
 
 Certains paramètres n'ont pas besoin d'avoir une valeur définie pour être utilisé, c'est ce qu'on appelle un *switch* :
 
-```powershell
+~~~powershell
 Get-Date -AsUTC
-```
+~~~
 
 D'autres paramètres peuvent s'exclure entre-eux car ils ne peuvent pas être utilisé en combinaison, exemple :
 
-```powershell
+~~~powershell
 Get-Date -Format "dd/MM/yyyy"
 # vs.
 Get-Date -UFormat "%d/%m/%Y"
-```
+~~~
 
 Pour consulter la liste des paramètres disponibles, le plus simple est de tapper votre commande, ajouter un tiret et appuyer sur `Ctrl`+`Espace`.
 
-```text
+~~~plainttext
 PS C:\> Get-Date -
 Date                 Hour                 UFormat              ErrorAction          WarningVariable
 UnixTimeSeconds      Minute               Format               WarningAction        InformationVariable
 Year                 Second               AsUTC                InformationAction    OutVariable
 Month                Millisecond          Verbose              ProgressAction       OutBuffer
 Day                  DisplayHint          Debug                ErrorVariable        PipelineVariable
-```
+~~~
 
 Certains paramètres sont des paramètres "par défaut" que vous retrouverez sur quasiment toutes les commandes PowerShell, c'est le cas des paramètres suivants :
 
@@ -148,17 +148,17 @@ Certains paramètres sont des paramètres "par défaut" que vous retrouverez sur
 
 Vous n'avez pas besoin de spécifier le nom complet du paramètre. Dès lors qu'il n'y a plus qu'un choix possible, PowerShell comprendra implicitement le paramètre utilisé.
 
-```powershell
+~~~powershell
 Get-Date -H 12 -Min 59 -Sec 00
 # vs.
 Get-Date -Hour 12 -Minute 59 -Second 00
-```
+~~~
 
 Egalement, certains paramètres sont utilisés par défaut si une valeur est spécifiée juste après une commande. Exemple :
 
-```powershell
+~~~powershell
 Write-Host 'Hello world!'
-```
+~~~
 
 ## Trouver une commande
 
@@ -166,9 +166,9 @@ Il y a une commande PowerShell qui permet de trouver toutes les autres : `Get-Co
 
 Pour trouver toutes les commandes qui contiennent le mot "culture" :
 
-```powershell
+~~~powershell
 Get-Command -Name "*culture*"
-```
+~~~
 
 > Suivant la présence ou la position des `*`, cela permet de modifier la requête pour demander les commandes qui commencent par un texte, finissent par un texte ou simplement contiennent un texte.
 

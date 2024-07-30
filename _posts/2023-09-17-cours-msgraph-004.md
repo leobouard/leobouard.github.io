@@ -27,9 +27,9 @@ Voici quelques points d'attention à connaître avant de commencer :
 
 Pour industrialiser les processus, Microsoft a décidé de générer automatiquement les modules et commandes en se basant sur les API. On appelle cette méthode un "wrap". Vous pouvez inspecter le code qui compose une commande et constater que la structure est la même pour quasiment toutes les fonctions Microsoft Graph :
 
-```powershell
+~~~powershell
 (Get-Command -Name 'Get-MgUser').Definition
-```
+~~~
 
 Cette méthode de génération a des avantages et des inconvénients. Côté avantage, les mises à jour des modules PowerShell se font très rapidement, ce qui permet d'obtenir des commandes seulement quelques jours après la publication d'une API.
 
@@ -37,17 +37,17 @@ Vous pouvez consulter la fréquence de mise à jour des modules en regardant la 
 
 Les inconvénients sont principalement la génération du nom des commandes et les paramètres associés. Les noms des commandes suivent fidèlement l'API, ce qui peut donner les cmdlets extrêmement longs, comme par exemple :
 
-```powershell
+~~~powershell
 Invoke-MgExtendDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfigurationMicrosoftGraphWindowUpdateForBusinessConfigurationQualityUpdatePause
-```
+~~~
 
 Vous pouvez regarder quelle est la commande la plus longue de votre version avec ce script :
 
-```powershell
+~~~powershell
 Get-Command -Module Microsoft.Graph* |
   Select-Object Name,Module,@{N='Length';E={($_.Name).Length}} |
   Sort-Object Length
-```
+~~~
 
 Pour les paramètres de commandes, ils sont en général très nombreux (et tant mieux) mais ils n'ont pas été pensés pour la praticité. Il faut par exemple très régulièrement utiliser l'ID d'une ressource plutôt que son DisplayName ou son UserPrincipalName (dans le cas d'un utilisateur).
 
@@ -55,9 +55,9 @@ Pour les paramètres de commandes, ils sont en général très nombreux (et tant
 
 Vous pouvez installer les modules `Microsoft.Graph` depuis PSGallery avec cette commande PowerShell (à lancer dans un terminal en tant qu'administrateur) :
 
-```powershell
+~~~powershell
 Install-Module 'Microsoft.Graph'
-```
+~~~
 
 L'installation peut être longue puisque l'on va installer *tous les modules* liés à Microsoft Graph mais sachez qu'il est possible de n'installer que les modules vraiment nécessaires à votre usage. En général, les modules `Microsoft.Graph` et `Microsoft.Graph.Authentication` sont les seuls modules incontournables.
 
@@ -67,9 +67,9 @@ Vous allez le constater, mais il y a beaucoup de modules (et encore plus de comm
 
 Vous pouvez lister les modules `Microsoft.Graph` installés sur votre ordinateur avec la commande suivante :
 
-```powershell
+~~~powershell
 Get-InstalledModule -Name 'Microsoft.Graph*'
-```
+~~~
 
 ### Les paramètres de requêtes
 
@@ -104,9 +104,9 @@ Plus d'informations ici : [Utiliser un filtre \| Microsoft Graph](https://learn.
 
 Comme pour Microsoft Graph Explorer, la première étape est de vous connecter à votre tenant de test. On utilise la commande `Connect-MgGraph` disponible dans le module "Microsoft.Graph.Authentication" :
 
-```powershell
+~~~powershell
 Connect-MgGraph
-```
+~~~
 
 Votre navigateur web se lance et vous devriez pouvoir sélectionner votre compte d'administration pour autoriser l'application "Microsoft Graph Command Line Tools" à se connecter. Une fois l'authentification terminée, la page web affiche le message suivant : *Authentication complete. You can return to the application. Fell free to close this browser tab.*
 
@@ -118,9 +118,9 @@ Côté PowerShell, vous devriez être accueilli par ce message :
 
 De la même manière que dans Microsoft Graph Explorer, il est possible de lancer n'importe quelle requête API avec la méthode et l'URI en utilisant la commande `Invoke-MgGraphRequest` :
 
-```powershell
+~~~powershell
 Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/me'
-```
+~~~
 
 Par défaut, le retour de la commande est donné dans une hashtable. Il est possible de modifier le format de la réponse avec le paramètre `-OutputType`.
 
@@ -133,7 +133,7 @@ Avec la commande `New-MgGroup` nous allons créer un groupe "Équipe de nuit" av
 - MailNickname : equipe-a
 - SecurityEnabled : True
 
-```powershell
+~~~powershell
 $params = @{
     displayName     = "Equipe de nuit"
     mailEnabled     = $false
@@ -141,7 +141,7 @@ $params = @{
     securityEnabled = $true
 }
 New-MgGroup @params
-```
+~~~
 
 Cependant, la commande tombe en erreur :
 
@@ -154,15 +154,15 @@ Cependant, la commande tombe en erreur :
 
 Si vous êtes encore tombé dans le piège, c'est que vous n'avez pas encore assimilé cette partie : [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes). Même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits initialement : il faut les demander. Pour demander une permission supplémentaire avec PowerShell, il faut se reconnecter via la commande `Connect-MgGraph` tout en spécifiant le scope dont vous avez besoin (en l’occurrence : *Group.ReadWrite.All*).
 
-```powershell
+~~~powershell
 Connect-MgGraph -Scopes Group.ReadWrite.All
-```
+~~~
 
 Vous pouvez consulter la liste des étendues autorisées ainsi que toutes les informations de connexion de votre session en cours avec la commande suivante :
 
-```powershell
+~~~powershell
 Get-MgContext
-```
+~~~
 
 En rappelant la commande précédente `New-MgGroup` vous devriez alors pouvoir créer votre groupe.
 
@@ -172,9 +172,9 @@ Pour ajouter un membre dans le groupe, il vous faudra connaitre l'identifiant du
 
 Vous pouvez trouver ces deux informations dans votre historique PowerShell, dans le portail d'administration Entra ID ou via des requêtes Microsoft Graph.
 
-```powershell
+~~~powershell
 New-MgGroupMember -GroupId {groupId} -DirectoryObjectId {userId}
-```
+~~~
 
 ### Mettre à jour le groupe
 
@@ -182,17 +182,17 @@ Si vous travaillez souvent avec PowerShell, vous avez peut-être l'habitude d'ut
 
 Pour mettre à jour les informations d'un groupe, on utilise la commande `Update-MgGroup` suivi du paramètre indiquant la propriété à mettre à jour (par exemple : `-Description`)
 
-```powershell
+~~~powershell
 Update-MgGroup -GroupId {groupId} -Description 'Première équipe du soir pour les 3-8'
-```
+~~~
 
 ### Rechercher les membres d'un groupe
 
 Pour lister les membres d'un groupe, vous pouvez utiliser la commande `Get-MgGroupMember`.
 
-```powershell
+~~~powershell
 Get-MgGroupMember -GroupId {groupId}
-```
+~~~
 
 #### Rappel pagination
 
@@ -202,9 +202,9 @@ N'oubliez pas la pagination des résultats ! Sur l'ensemble des requêtes GET, v
 
 Dernière étape de l'exercice : supprimer le groupe que vous avez créé. Pour ça il n'y a qu'à utiliser la commande `Remove-MgGroup` en lui indiquant l'ID du groupe à supprimer.
 
-```powershell
+~~~powershell
 Remove-MgGroup -GroupId {groupId}
-```
+~~~
 
 ## Passer à l'API Beta
 
@@ -216,15 +216,15 @@ Le passage sur l'API Beta est très simple en PowerShell, mais il nécessite l'i
 
 Vous pouvez installer les modules avec la commande suivante :
 
-```powershell
+~~~powershell
 Install-Module -Name 'Microsoft.Graph.Beta'
-```
+~~~
 
 Vous pouvez ensuite lister les modules Beta installés sur votre ordinateur avec la commande suivante :
 
-```powershell
+~~~powershell
 Get-InstalledModule -Name 'Microsoft.Graph.Beta*'
-```
+~~~
 
 ### Utilisation de l'API Beta
 

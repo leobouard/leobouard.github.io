@@ -8,7 +8,7 @@ prevLink:
 
 Voici la fonction `Get-SecretSanta` pour obtenir notre tirage au sort :
 
-```powershell
+~~~powershell
 function Get-SecretSanta {
     param(
         [array]$People,
@@ -26,7 +26,7 @@ function Get-SecretSanta {
         $i++
     }
 }
-```
+~~~
 
 ## Explication de code
 
@@ -38,9 +38,9 @@ function Get-SecretSanta {
 
 La première étape est de mélanger la liste pour s'assurer que l'ordre diffère de la liste initiale qui a été envoyée en paramètre. Pour ça, c'est très simple :
 
-```powershell
+~~~powershell
 $People | Get-Random -Count $People.Count
-```
+~~~
 
 ### Appliquer le traitement
 
@@ -52,9 +52,9 @@ Pour obtenir le participant qui offre, on utilise `$People[$i]` et pour trouver 
 
 …mais si l'on arrive à la fin de la liste et qu'il n'y a personne après ? Dans ce cas, le résultat de  `$People[$i+1]` est vide, donc on créé une condition pour gérer cette situation et forcer le dernier participant à offrir son cadeau au premier participant :
 
-```powershell
+~~~powershell
 if (!$giftTo) { $giftTo = $People[0] }
-```
+~~~
 
 ### Affichage progressif
 
@@ -62,9 +62,9 @@ Pour afficher plusieurs variables dans un texte, il est possible d'utiliser la m
 
 On peut également utiliser `Write-Host` :
 
-```powershell
+~~~powershell
 Write-Host "#$i $giftFrom offre son cadeau à $giftTo"
-```
+~~~
 
 Dans mon cas, l'affichage progressif doit être invoqué avec le paramètre `-Pause` de la fonction. Si ce paramètre est actif, alors on va attendre que l'utilisateur appuie sur la touche "Entrée" du clavier via une utilisation détournée du `Read-Host` (qui permet normalement de récupérer du texte). On peut également utiliser directement la commande `pause` qui fonctionne exactement de la même manière mais qui a comme désavantage d'imposer un texte dans la console : "*Cliquez sur Entrée pour continuer...:*".
 

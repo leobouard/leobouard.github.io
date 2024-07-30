@@ -59,12 +59,12 @@ Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la 
 
 Il ne s'agit bien évidemment pas de connaitre ces commandes par cœur, l'idée est simplement de savoir à quoi elles servent.
 
-```powershell
+~~~powershell
 Add-Type -AssemblyName PresentationFramework
 $uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/assets/files/interface.xaml"
 [xml]$Global:xaml = (Invoke-WebRequest -Uri $uri).Content
 $Global:interface = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $xaml))
-```
+~~~
 
 ### Créer des variables pour chaque élément de l'interface graphique
 
@@ -72,11 +72,11 @@ Toutes les interactions que le code va avoir avec l'interface graphique vont se 
 
 On fait donc une boucle du type `ForEach-Object` pour créer une variable globale pour chaque élément XAML avec un attribut "Name" :
 
-```powershell
+~~~powershell
 $xaml.SelectNodes("//*[@Name]") | ForEach-Object { 
     Set-Variable -Name ($_.Name) -Value $interface.FindName($_.Name) -Scope Global
 }
-```
+~~~
 
 ### Afficher l'interface graphique
 
@@ -84,9 +84,9 @@ Une fois que toutes les étapes préliminaires sont terminées, on peut enfin af
 
 Le `$null =` avant la commande permet d'empêcher d'afficher un résultat dans la console.
 
-```powershell
+~~~powershell
 $null = $Global:interface.ShowDialog()
-```
+~~~
 
 ### Ajouter une action pour la boite de texte
 
@@ -99,7 +99,7 @@ Pour déclarer une action à faire pour un déclencheur, la syntaxe est la suiva
 1. On vide le contenu de la boite de texte pour permettre une nouvelle estimation
 2. On affiche l'estimation de l'utilisateur dans la console
 
-```powershell
+~~~powershell
 $textboxResponse.Add_KeyDown({
     if ($_.Key -eq "Return") {
         $answer = [int]($textboxResponse.Text)
@@ -107,7 +107,7 @@ $textboxResponse.Add_KeyDown({
         Write-Host $answer
     }
 })
-```
+~~~
 
 ## Correction
 
