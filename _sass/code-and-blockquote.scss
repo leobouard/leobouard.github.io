@@ -44,20 +44,16 @@ div.highlighter-rouge:before {
     font-family: var(--fonts);
 }
 
-div.language-powershell:before {
+div.language-powershell::before {
     content: "PowerShell"
+}
+
+div.language-json::before {
+    content: "JSON"
 }
 
 pre > code {
     white-space: pre;
-
-    .bp, .nv, .bp { color: #001080; } /* Variables */
-    .n            { color: #795e26; } /* Commandes */
-    .nf           { color: #0000ff; } /* Type & Commandes */
-    .s1, .s2, .sh { color: #a31515; } /* Chaines */
-    .kr           { color: #af00db; } /* IF & ELSE */
-    .c, .cm       { color: #008000; } /* Commentaires */
-    .mi           { color: #01633F; } /* Entiers  */
 }
 
 p code,
