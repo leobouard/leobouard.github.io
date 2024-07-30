@@ -4,3 +4,31 @@ languageCode: fr-FR
 linkedin: https://www.linkedin.com/in/leo-bouard/
 credly: https://www.credly.com/users/leo-bouard/badges/
 emailAddress: leo.bouard@hotmail.com
+include: [_pages]
+collection:
+  category:
+    output: true
+    permalink: /:collection/:name/index.html
+sass:
+    sass_dir: _sass
+    style: compressed
+defaults:
+  -
+    scope:
+      type: posts
+      path: _posts
+    values:
+      is_post: true
+      layout: post
+  -
+    scope:
+      type: pages
+      path: _pages
+    values:
+      is_post: false
+      layout: page
+
+paginate: 5
+paginate_path: "/blog/page:num"
+plugins:
+  - jekyll-paginate

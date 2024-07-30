@@ -186,19 +186,6 @@ main {
     align-items: center;
     justify-content: flex-start;
 
-    section {
-        min-height: 85%;
-        background-color: var(--textbg);
-        border-radius: var(--borderradius);
-        padding: 2rem;
-        max-width: 800px;
-        width: -moz-available;
-        width: -webkit-fill-available;
-        width: fill-available;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
     a {
         color: inherit;
     }
@@ -206,6 +193,8 @@ main {
     a:hover {
         text-decoration-thickness: 2px;
     }
+
+    /*
 
     h2, h3, h4, h5 {
         font-family: 'Manrope', sans-serif;
@@ -239,6 +228,8 @@ main {
     h5 {
         font-size: 1.10em;
     }
+
+    */
 
     img {
         display: block;

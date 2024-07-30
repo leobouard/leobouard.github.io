@@ -1,0 +1,35 @@
+section.blog-post, section.blog-page, section.recommandation {
+    padding: 2rem;
+    max-width: 800px;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+section.recommandation {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin: 1em;
+}
+
+@media screen and (max-width: 550px) {
+    section.blog-post, section.blog-page, section.recommandation {
+        padding: 1em;
+    }
+}
+
+div.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.all-posts {
+    display: grid;
+    width: 100%;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+}

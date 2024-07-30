@@ -1,0 +1,12 @@
+<article class="post-preview hover-bottom">
+  <a href="{{ include.id }}">
+    <span>Publié le {{ include.date | date: "%d/%m/%Y" }}</span>
+    <h3>{{ include.title }}</h3>
+    <p>{{ include.description }}</p>
+    <div class="article-tags">
+      {% for tag in include.tags %}
+      <span>#{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </a>
+</article>
