@@ -114,7 +114,9 @@ main {
     }
 
     hr {
-        border: var(--border);
+        border: 0;
+        border-top: 1px solid #ddd;
+        height: 1px;
         margin: 50px 0px;
     }
 
