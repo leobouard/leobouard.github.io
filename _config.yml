@@ -5,6 +5,12 @@ linkedin: https://www.linkedin.com/in/leo-bouard/
 credly: https://www.credly.com/users/leo-bouard/badges/
 emailAddress: leo.bouard@hotmail.com
 include: [_pages]
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 collection:
   category:
     output: true
