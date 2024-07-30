@@ -1,6 +1,6 @@
 <article class="post-preview hover-bottom">
   <a href="{{ include.id }}">
-    <span>Publié le {{ include.date | date: "%d %B %Y" }}</span>
+    <span>Publié le {% include format-date.html date=include.date %}</span>
     <h3>{{ include.title }}</h3>
     <p>{{ include.description }}</p>
     <div class="article-tags">

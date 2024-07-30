@@ -5,7 +5,6 @@ linkedin: https://www.linkedin.com/in/leo-bouard/
 credly: https://www.credly.com/users/leo-bouard/badges/
 emailAddress: leo.bouard@hotmail.com
 include: [_pages]
-timezone: Europe/Paris
 collection:
   category:
     output: true
