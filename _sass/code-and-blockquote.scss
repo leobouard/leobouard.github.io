@@ -1,0 +1,69 @@
+blockquote {
+    color: var(--blockquoteColor);
+    background-color: var(--blockquoteBGColor);
+    border-left: 5px solid var(--blockquoteBorderColor);
+    margin-inline: 0;
+    padding: 5px 15px;
+    background-image: url(/assets/images/quote-solid.svg);
+}
+
+div.highlighter-rouge,
+code,
+blockquote {
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    background-size: 10em;
+}
+
+div.highlighter-rouge,
+code {
+    font-family: 'Martian Mono', monospace;
+    font-size: 11px;
+}
+
+pre {
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+div.highlighter-rouge {
+    background-color: var(--accentbg);
+    border: var(--border);
+    padding: 10px;
+    background-image: url(/assets/images/code-solid.svg);
+}
+
+div.highlighter-rouge:before {
+    background: var(--bordercolor);
+    margin: -10px -10px 10px -10px;
+    display: block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: var(--fonts);
+}
+
+div.language-powershell:before {
+    content: "PowerShell"
+}
+
+pre > code {
+    white-space: pre;
+
+    .bp, .nv, .bp { color: #001080; } /* Variables */
+    .n            { color: #795e26; } /* Commandes */
+    .nf           { color: #0000ff; } /* Type & Commandes */
+    .s1, .s2, .sh { color: #a31515; } /* Chaines */
+    .kr           { color: #af00db; } /* IF & ELSE */
+    .c, .cm       { color: #008000; } /* Commentaires */
+    .mi           { color: #01633F; } /* Entiers  */
+}
+
+p code,
+li code,
+table code {
+    background-color: var(--bodybg);
+    padding: 4px;
+    border-radius: 2px;
+}

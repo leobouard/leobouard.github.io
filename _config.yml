@@ -9,7 +9,7 @@ emailAddress: leo.bouard@hotmail.com
 # Add '_pages' folders
 include: [_pages]
 
-#Kramdown Configuration      
+# Kramdown Configuration      
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -19,7 +19,7 @@ kramdown:
     span:
       line_numbers: false
     block:
-      line_numbers: true
+      line_numbers: false
       start_line: 1
 
 # SASS configuration

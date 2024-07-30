@@ -25,39 +25,6 @@ html {
     --blockquoteBorderColor: #0288D1;
 }
 
-html.dark {
-    --text: #F9FAF0;
-    --footer: #e5e5e5;
-    --footerbg: #000;
-    --title: #F9FAF0;
-    --bodybg: #0d0a18;
-    --accentbg: #0d0a18;
-    --textbg: #030401;
-    --bordercolor: #333;
-    --boxshadow: #42319675;
-    --primary: #423196;
-    --secondary: #55236C;
-    --accent: #597FC9;
-    --positive: #17470d;
-    --negative:  #5b1d24;
-
-    pre > code {
-        /*PowerShell*/
-        .bp, .nv, .bp { color: #7cdcf0; } /*Variables*/
-        .n            { color: #dcdcaa; } /*Commandes*/
-        .nf           { color: #569cd6; } /*Type & Commandes*/
-        .s1, .s2, .sh { color: #ce9178; } /*Chaines*/
-        .kr           { color: #c586c0; } /*IF & ELSE*/
-        .c, .cm       { color: #6a9955; } /*Commentaires*/
-        .mi           { color: #b5cea8; } /*Entiers*/ 
-    }
-}
-
-::selection {
-    background-color: var(--accent);
-    color: var(--textbg);
-}
-
 html {
     font-family: var(--fonts);
     font-size: 15px;
@@ -125,60 +92,6 @@ header {
     }
 }
 
-// LIGHT & DARK MODE
-a.light-mode, a.dark-mode {
-    font-size: 1.25em;
-    margin: 0;
-    padding: 10px;
-    aspect-ratio: 1;
-    border-radius: 100%;
-}
-
-// MENU
-.vertical-menu {
-    display: none;
-}
-
-.vertical-menu > i {
-    font-size: 1.5em;
-}
-
-.submenu {
-    display: none;
-    padding-inline-start: 0;
-    background: var(--textbg);
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: 0;
-    margin: 0;
-    height: 100%;
-    min-width: 75%;
-    opacity: 0.95;
-    list-style: none;
-    box-shadow: 0 0 5px 0 var(--boxshadow);
-
-    li {
-        padding: 1em;
-        text-align: right;
-        border-top: var(--border);
-        width: -webkit-fill-available;
-        width: -moz-available;
-        width: fill-available;
-    }
-
-    li:first-child {
-        padding: 13px 16.5px;
-        font-size: 1.5em;
-    }
-
-    li:last-child {
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-    }
-}
-
 main {
     min-height: 90%;
     display: flex;
@@ -194,43 +107,6 @@ main {
         text-decoration-thickness: 2px;
     }
 
-    /*
-
-    h2, h3, h4, h5 {
-        font-family: 'Manrope', sans-serif;
-        font-weight: 700;
-        margin: 2em 0px 1em 0px;
-        color: var(--title);
-    }
-
-    h1 {
-        font-family: 'Manrope', sans-serif;
-        font-size: 2.5em;
-        font-weight: 800;
-        line-height: 100%;
-        margin: 15px 0px;
-    }
-
-    h2 {
-        border-bottom: var(--border);
-        padding-bottom: 5px;
-        font-size: 1.75em;
-    }
-
-    h3 {
-        font-size: 1.5em;
-    }
-    
-    h4 {
-        font-size: 1.25em;
-    }
-
-    h5 {
-        font-size: 1.10em;
-    }
-
-    */
-
     img {
         display: block;
         max-width: 100%;
@@ -240,78 +116,6 @@ main {
     hr {
         border: var(--border);
         margin: 50px 0px;
-    }
-
-    blockquote {
-        color: var(--blockquoteColor);
-        background-color: var(--blockquoteBGColor);
-        border-left: 5px solid var(--blockquoteBorderColor);
-        margin-inline: 0;
-        padding: 5px 15px;
-        background-image: url(/assets/images/quote-solid.svg);
-    }
-
-    div.highlighter-rouge,
-    code,
-    blockquote {
-        background-position: center right;
-        background-repeat: no-repeat;
-        background-blend-mode: soft-light;
-        background-size: 10em;
-    }
-
-    div.highlighter-rouge,
-    code {
-        font-family: 'Martian Mono', monospace;
-        font-size: 11px;
-    }
-
-    pre {
-        margin: 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    div.highlighter-rouge {
-        background-color: var(--accentbg);
-        border: var(--border);
-        padding: 10px;
-        background-image: url(/assets/images/code-solid.svg);
-    }
-
-    div.highlighter-rouge:before {
-        background: var(--bordercolor);
-        margin: -10px -10px 10px -10px;
-        display: block;
-        padding: 5px 10px;
-        font-size: 12px;
-        font-family: var(--fonts);
-    }
-
-    div.language-powershell:before {
-        content: "PowerShell"
-    }
-
-    /*
-    pre > code {
-        white-space: pre;
-
-        .bp, .nv, .bp { color: #001080; } Variables
-        .n            { color: #795e26; } Commandes
-        .nf           { color: #0000ff; } Type & Commandes
-        .s1, .s2, .sh { color: #a31515; } Chaines
-        .kr           { color: #af00db; } IF & ELSE
-        .c, .cm       { color: #008000; } Commentaires
-        .mi           { color: #01633F; } Entiers 
-    }
-    */
-
-    p code,
-    li code,
-    table code {
-        background-color: var(--bodybg);
-        padding: 4px;
-        border-radius: 2px;
     }
 
     table,
