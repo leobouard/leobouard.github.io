@@ -1,8 +1,9 @@
 ---
-permalink: /
 layout: default
 title: "LaBouaBouate"
 description: "Blog technique sur PowerShell et les technologies Microsoft pour l'administration système"
+pagination:
+  enabled: true
 ---
 
 <div class="hero">
@@ -30,7 +31,10 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
   </div>
 </div>
 
-<h2>A propos</h2>
+<h2>Pagination</h2>
 
+<hr>
+<a href="{{paginator.previous_page_path}}">Page suivante</a>
+<a href="{{paginator.next_page_path}}">Page précédente</a>
 
 </section>
