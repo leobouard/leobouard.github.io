@@ -5,7 +5,7 @@
       .querySelectorAll('div.highlighter-rouge')
       .forEach(function (pre) {
         var button = document.createElement('button');
-        var copyText = 'Copy';
+        var copyText = 'Copier';
         button.className = 'copy';
         button.type = 'button';
         button.ariaLabel = 'Copy code to clipboard';
@@ -13,10 +13,10 @@
         button.addEventListener('click', function () {
           var code = pre.querySelector('code').innerText.trim();
           navigator.clipboard.writeText(code);
-          button.innerText = 'Copied';
+          button.innerText = '✅';
           setTimeout(function () {
             button.innerText = copyText;
-          }, 4000);
+          }, 1500);
         });
         pre.appendChild(button);
       });

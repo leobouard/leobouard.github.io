@@ -52,7 +52,12 @@ div.highlighter-rouge button {
     position: absolute;
     opacity: 0;
     top: 0;
-    left: 0;
+    right: 0;
+    border: 0;
+    height: 32px;
+    background: transparent;
+    font-size: 12px;
+    padding: 5px 10px;
 }
 
 div.highlighter-rouge:hover button {
