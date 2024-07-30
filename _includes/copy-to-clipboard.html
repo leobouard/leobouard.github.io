@@ -13,7 +13,7 @@
         button.addEventListener('click', function () {
           var code = pre.querySelector('code').innerText.trim();
           navigator.clipboard.writeText(code);
-          button.innerText = '✓ Copié';
+          button.innerText = 'Copié';
           setTimeout(function () {
             button.innerText = copyText;
           }, 1500);

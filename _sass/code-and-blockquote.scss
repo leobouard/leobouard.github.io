@@ -70,7 +70,7 @@ div.highlighter-rouge button:hover {
 }
 
 div.highlighter-rouge button:active,
-div.highlighter-rouge button:focus {
+div.highlighter-rouge button:focus-within {
     opacity: 1;
     background: green;
     color: white;
