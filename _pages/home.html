@@ -1,8 +1,35 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-pagination: 
+permalink: "/home"
+layout: default
+title: "LaBouaBouate"
+description: "Blog technique sur PowerShell et les technologies Microsoft pour l'administration système"
+pagination:
   enabled: true
 ---
+
+<div class="hero">
+  {% include hero-svg.html %}
+  <div class="wrapper">
+    <h1>Simple. Basique.</h1>
+    <p>Parce que l'administration système c'est des concepts simples sur des technologies complexes, ici on retourne aux basiques.</p>
+    <ul>
+      <li><a class="no-decoration button-primary hover-bottom" href="/blog">Voir les articles</a></li>
+      <li><a class="no-decoration button-primary hover-bottom" href="https://github.com/leobouard/leobouard.github.io" target="_blank">Projet GitHub</a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="blog-page">
+
+<h2>Les derniers articles</h2>
+<div class="all-posts">
+  {% assign latest_posts = site.posts | where: "listed", true | slice: 0, 5 %}
+  {% for post in latest_posts %}
+  {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
+  {% endfor %}
+  <div class="flex-center">
+    <a class="no-decoration button-primary hover-bottom" href="/blog">Tous les articles</a>
+  </div>
+</div>
+
+</section>
