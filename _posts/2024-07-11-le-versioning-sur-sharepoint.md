@@ -80,7 +80,7 @@ Donc dans un scénario où vous passez de 500 versions à 100 versions maximum, 
 
 > #### Pourquoi est-ce que ce paramètre fonctionne de cette manière ?
 >
-> La raison est plutôt simple : cela génèrerait trop de charge de travail pour SharePoint de lancer périodiquement le ménage des vieilles versions. Sur des tenants avec plusieurs centaines de TB de données, cela nécessiterait une énorme capacité de calcul côté SharePoint. Pour contourner ce problème, Microsoft profite donc de la création d'une nouvelle version d'un fichier pour faire le ménage dans les anciennes versions.
+> La raison est plutôt simple : cela génèrerait trop de charge de travail pour SharePoint de lancer périodiquement le ménage des vieilles versions. Sur des tenants avec plusieurs centaines de TB de données, cela nécessiterait une énorme capacité de calcul. Pour contourner ce problème, Microsoft profite donc de la création d'une nouvelle version d'un fichier pour faire le ménage dans les anciennes versions.
 
 Si le fonctionnement de ce paramètre vous convient toujours, vous pouvez l'utiliser de cette manière :
 
@@ -105,24 +105,10 @@ Pour s'assurer que la configuration que vous venez de faire sur votre tenant s'e
 Get-PnPTenantSite | Select-Object Title, *version*
 ~~~
 
-La valeur qui nous intéresse est InheritVersionPolicyFromTenant.
+La valeur qui nous intéresse est InheritVersionPolicyFromTenant qui devrait être à "True" partout.
 
 ## Suppression forcée des historiques de versions
 
 Comme vu précédemment, ce n'est pas le paramètre *EnableAutoExpirationVersionTrim* qui va nous sauvez cette fois-ci. Il va donc falloir se retrousser les manches et aller chercher ces GB vous-même.
 
-Bonne nouvelle pour vous, je vous ai préparé un script qui va vous permettre de faire ça plus ou moins rapidement : [Remove-PnPFileVersionPerFolder \| GitHub Gist](https://gist.github.com/leobouard).
-
-Pour vous rendre compte des gains potentiels, voici les données que j'ai pu observer :
-
-Nom du site | Espace de stockage (GB) | Fichiers | Poids moyen par fichier (MB) | Récupération Trim100Max | Récupération Trim3Y | Pourcentage de récupération
------------ | ----------------------- | -------- | ---------------------------- | ----------------------- | ------------------- | ---------------
-Retail Operations | 730,06 | 339 | 2205,25 | 118,51 | 0,00 | 16%
-Contoso marketing | 689,74 | 919 | 786,55 | 294,17 | 9,15 | 44%
-The Landing | 382,42 | 953 | 60,96 | 23,37 | 22%
-Digital Initiative Public Relations | 4470,54 | 13298 | 344,25 | 924,29 | 21%
-Mark 8 Project Team | 926,21 | 2150 | 441,13 | 295,06 | 12,82 | 33%
-
-Comme plan d'attaque, je vous recommande de vous attaquer en priorité aux sites SharePoint avec **le poids moyen par fichier le plus élevé**. Un site SharePoint qui contient 500 fichiers et qui occupe 1 TB donne une moyenne à 2 GB par fichier. A moins qu'il s'agisse de fichiers lourds (comme de la vidéo par exemple), c'est probablement un site qui pourrait bénéficier d'un peu de ménage sur ses versions !
-
-Votre pire ennemi sur ce genre de remédiation sera le *throttling* sur SharePoint. Une fois que vous avez dépassé un certain nombre de requêtes, SharePoint va vous ralentir pour évitez que de saturer. Je vous recommande donc la lecture de cet article : [Avoid getting throttled or blocked in SharePoint Online \| Microsoft Learn](https://learn.microsoft.com/en-us/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online) et l'utilisation d'une application Entra ID (avec des permissions Microsoft Graph) pour l'exécution du script.
+Bonne nouvelle pour vous, je vous ai préparé un script qui va vous permettre de faire ça plus ou moins rapidement et surtout de manière automatique : [leobouard/PnPObsoleteVersion (github.com)](https://github.com/leobouard/PnPObsoleteVersion).
