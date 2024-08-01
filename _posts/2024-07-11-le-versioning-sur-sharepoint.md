@@ -108,7 +108,9 @@ Lorsque celui-ci est défini, il se passe deux choses (en silence) sur la config
 
 Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou *ExpireVersionsAfterDays* qui restent bloqués à leurs valeurs par défaut :
 
-<p style="color: red;">Set-PnPTenant: The parameter ExpireVersionsAfterDays can't be set because the Tenant has AutoExpiration enabled</p>
+```
+Set-PnPTenant: The parameter ExpireVersionsAfterDays can't be set because the Tenant has AutoExpiration enabled
+```
 
 On retrouve donc la configuration évoquée précédemment, où pendant 30 jours, jusqu'à 500 versions peuvent être conservées.
 
