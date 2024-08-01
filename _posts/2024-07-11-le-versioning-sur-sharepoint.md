@@ -148,8 +148,6 @@ Ne garder que les 100 dernières versions des fichiers :
 New-PnPSiteFileVersionBatchDeleteJob -MajorVersionLimit 100
 ```
 
----
-
 Pour supprimer les versions qui ont plus d'un an :
 
 ```powershell
@@ -157,8 +155,6 @@ New-PnPSiteFileVersionBatchDeleteJob -DeleteBeforeDays 365
 ```
 
 > Limitation côté Microsoft : il n'est pas possible de conserver des versions créées avant le 01/01/2023.
-
----
 
 Utiliser la méthode automatique proposée par Microsoft :
 
