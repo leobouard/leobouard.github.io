@@ -1,0 +1,13 @@
+<script>
+  document
+    .querySelector('.post-content')
+    .querySelectorAll('h2,h3,h4,h5,h6')
+    .forEach(function (heading) {
+      if (heading.id)
+        heading.innerHTML =
+          '<a href="#' + heading.id + '">' +
+            heading.innerText +
+          '<\/a>' +
+          '<i class="fa-solid fa-link"><\/i>';
+    });
+</script>
