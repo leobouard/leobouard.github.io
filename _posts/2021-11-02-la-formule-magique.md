@@ -33,7 +33,7 @@ La consigne est très simple : réaliser une fonction qui permet de résoudre ce
 
 Si vous souhaitez l'utiliser, voici une structure de fonction :
 
-~~~powershell
+```powershell
 # Version à compléter
 function LaFormuleMagique {
     param([Int64]$i)
@@ -42,4 +42,4 @@ function LaFormuleMagique {
 
     return 
 }
-~~~
+```

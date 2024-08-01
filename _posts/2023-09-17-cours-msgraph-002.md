@@ -27,13 +27,13 @@ Chaque page peut contenir un nombre maximum de données. Cela varie suivant l'AP
 
 Voici un exemple de réponse de Microsoft Graph avec une indication sur l'adresse de la page suivante avec la propriété `@odata.nextLink`.
 
-~~~json
+```json
 {
     "@odata.context": "https://graph.microsoft.com/v1.0/...",
     "value": [{...}],
     "@odata.nextLink": "https://graph.microsoft.com/v1.0/..."
 }
-~~~
+```
 
 ## Paramètres de requête
 
@@ -43,11 +43,11 @@ Pour éviter de demander de l'information qui ne nous est pas utile, on peut for
 
 Microsoft vous incite même à utiliser des paramètres de requête dans le résultat de certains appels (exemple ci-dessous pour l'API `/devices`) :
 
-~~~json
+```json
 {
     "@microsoft.graph.tips": "Use $select to choose only the properties your app needs, as this can lead to performance improvements. For example: GET devices?$select=accountEnabled,alternativeSecurityIds"
 }
-~~~
+```
 
 ### Microsoft Graph
 
@@ -83,14 +83,14 @@ Petit point d'attention sur les paramètres : tous les paramètres ne sont pas d
 
 Voici par exemple le résultat pour la requête suivante : <https://graph.microsoft.com/v1.0/me/messages?$orderby=id>
 
-~~~json
+```json
 {
     "error": {
         "code": "ErrorInvalidProperty",
         "message": "The property 'id' does not support filtering."
     }
 }
-~~~
+```
 
 #### Plus d'informations
 
@@ -110,7 +110,7 @@ Si vous voulez faire les curieux et comprendre comment fonctionne l'authentifica
 
 Pour Microsoft Graph, voici un exemple de code PowerShell pour s'authentifier sans utiliser le module Microsoft.Graph.Authentication :
 
-~~~powershell
+```powershell
 $tenantID = '************'
 # Create a hashtable for the body, the data needed for the token request
 $body = @{
@@ -132,7 +132,7 @@ $headers = @{'Authorization' = "Bearer $($authResponse.access_token)"}
 
 # Make an API request
 Invoke-RestMethod -Method GET -Headers $headers -Uri 'https://graph.microsoft.com/v1.0/...'
-~~~
+```
 
 ### Permissions et étendues (scopes)
 

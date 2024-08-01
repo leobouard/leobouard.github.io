@@ -69,12 +69,12 @@ Pour optimiser votre code, le plus important est d'identifier le goulot d'étran
 
 Voici un petit script qui permet de mesurer la durée moyenne d'exécution d'une commande ou d'un script PowerShell sur 100 itérations :
 
-~~~powershell
+```powershell
 $stats = foreach ($_ in 1..100) {
     Measure-Command -Expression { Get-LocalGroup }
 }
 $stats | Measure-Object -Property 'TotalSeconds' -Average
-~~~
+```
 
 ### Utiliser les bons outils
 
@@ -98,10 +98,10 @@ Pour suivre les dernières nouveautés de PowerShell : [Overview of what's new i
 
 Je le connais, vous le connaissez, tout le monde le connait et l'utilise. Et pourtant, c'est la méthode la moins performante que l'on puisse choisir !
 
-~~~powershell
+```powershell
 $array = @()
 1..10 | % { $array += $_ }
-~~~
+```
 
 Comment ça marche ? La syntaxe très simple cache en fait un fonctionnement assez complexe.
 
@@ -115,10 +115,10 @@ On va donc utiliser l'opérateur `+=`, qui ne va pas ajouter un élément à la 
 
 En bref : un processus bien plus complexe que la syntaxe ne peut le laisser deviner. Pour résumer, le `+=` pourrait être expliqué avec la syntaxe suivante :
 
-~~~powershell
+```powershell
 $array = @()
 1..10 | % { $array = $array + @($_)}
-~~~
+```
 
 ### Par quoi le remplacer ?
 
@@ -129,14 +129,14 @@ La solution est donnée dans l'article de blog cité plus haut, mais pour faire 
 
 Voici un exemple rapide d'utilisation pour les deux méthodes :
 
-~~~powershell
+```powershell
 # List<T>
 $list = [System.Collections.Generic.List[int]]@{}
 1..100 | ForEach-Object { $list.Add($_) }
 
 # Aspiration via pipeline
 $list = 1..100 | ForEach-Object { $_ }
-~~~
+```
 
 ### Tableau comparatif
 
@@ -160,7 +160,7 @@ L'avantage et l'inconvénient du `ForEach-Object`, c'est qu'il s'utilise avec un
 
 Vous pouvez visualiser la différence avec les scripts suivants :
 
-~~~powershell
+```powershell
 function Test-Pipeline {
     1..100 | ForEach-Object { $_ ; Start-Sleep -Milliseconds 100 }
 }
@@ -172,7 +172,7 @@ Test-Pipeline | ForEach-Object {
 foreach ($_ in (Test-Pipeline)) { 
     Write-Progress -Activity "Using 'foreach()'" -PercentComplete $_
 }
-~~~
+```
 
 En résumé : si la liste de données à traiter est instantanément disponible (un fichier CSV par exemple), alors préférez l'utilisation de `foreach`. Si les données arrivent au fur et à mesure (comme pour une requête API par exemple), alors préférez le pipeline et `ForEach-Object`.
 
@@ -186,7 +186,7 @@ Si vous pouvez avoir accès à ce paramètre, vous pouvez l'utilisez pour diminu
 
 Ainsi, sur certaines boucles très rapides, vous ne verrez pas d'amélioration voir pire : une dégradation des performances. Si vous voulez vous amusez, vous pouvez tester la différence entre `ForEach-Object` et `ForEach-Object -Parallel` sur des commandes simples avec la fonction suivante :
 
-~~~powershell
+```powershell
 function Test-Parallel {
     param(
         [string]$Command = '$PSItem',
@@ -208,7 +208,7 @@ function Test-Parallel {
     }
     Write-Host "La boucle sans parallélisation est $dif`% plus $slowerOrFaster que la boucle avec parallélisation"
 }
-~~~
+```
 
 ## Quelques idées reçues
 
@@ -216,11 +216,11 @@ function Test-Parallel {
 
 Pour supprimer l'affichage ou la récupération du résultat d'une commande, quelle est la commande la plus performante : `Out-Null` ou `$null =` ?
 
-~~~powershell
+```powershell
 Get-Command | Out-Null
 # vs.
 $null = Get-Command
-~~~
+```
 
 **Réponse :** C'est la commande `$null =` est 25% plus rapide, mais le gain en performance sur un script *de la vraie vie* reste minime.
 
@@ -228,11 +228,11 @@ $null = Get-Command
 
 Lorsqu'il s'agit de créer un nouveau PSCustomObject, quelle est la méthode la plus performante entre `New-Object` et `[PSCustomObject]@{}` ?
 
-~~~powershell
+```powershell
 New-Object -TypeName 'PSCustomObject' -Property @{}
 # vs.
 [PSCustomObject]@{}
-~~~
+```
 
 **Réponse :** Je n'ai trouvé aucune différence de temps de traitement entre les deux syntaxes. Je conseillerai tout de même d'adopter la syntaxe la plus moderne qui reste plus simple à comprendre et à lire.
 
@@ -240,7 +240,7 @@ New-Object -TypeName 'PSCustomObject' -Property @{}
 
 Ici on retrouve [le cas évoqué un peu plus tôt](#tableau-comparatif), avec un comparatif entre l'array classique, le GenericList et le Pipeline. La comparaison se fait sur plusieurs tailles de collections, en PowerShell 5.1 et PowerShell 7.4.
 
-~~~powershell
+```powershell
 $array = @()
 1..10000 | % { $array += $_ }
 # vs.
@@ -248,7 +248,7 @@ $array = [System.Collections.Generic.List[int]]@()
 1..10000 | % { $array.Add($_) }
 # vs.
 $array = 1..10000 | % { $_ }
-~~~
+```
 
 **Réponse pour PowerShell 5.1 :** Ex-aequo entre GenericList et Pipeline, les deux méthodes se valent.
 
@@ -286,13 +286,13 @@ Taille | Array | GenericList | Pipeline
 
 La déduplication d'une liste est en général un processus assez gourmand en ressources et qui peut prendre plusieurs secondes (voir même minutes en fonction de la taille de la liste). Pour gagner du temps de traitement, quelle est la commande la plus performante ?
 
-~~~powershell
+```powershell
 1..10000 -replace '0','' | Select-Object -Unique
 # vs.
 1..10000 -replace '0','' | Sort-Object | Get-Unique
 # vs.
 1..10000 -replace '0','' | Sort-Object -Unique
-~~~
+```
 
 **Réponse :** Voici le temps de traitement moyen sur dix exécutions :
 
@@ -308,10 +308,10 @@ Le grand gagnant est donc `Sort-Object -Unique`, qui est jusqu'à **35 fois plus
 
 Le filtrage est très utilisé en PowerShell et il est souvent responsable de "bottlenecks". Quelle est donc la façon la plus rapide de filtrer une collection : `Where-Object` ou la méthode plus complexe `GetEnumerator.Where()` ?
 
-~~~powershell
+```powershell
 $list | Where-Object {$_.Property -eq $value}
 # vs.
 $list.GetEnumerator.Where({$_.Property -eq $value})
-~~~
+```
 
 **Réponse :** Pour tester les deux filtres, j'ai réalisé un script qui doit faire 500 recherches différentes dans une collection d'environ 15 000 objets. Mes résultats montrent que `Where-Object` est deux fois plus lent que la méthode `GetEnumerator.Where()`.

@@ -37,7 +37,7 @@ Principes à garder en mémoire :
 - Réduire au maximum le nombre d'unité d'organisation (OU). Une OU est un objet Active Directory qui permet deux choses : l'application de stratégies de groupes (GPO) ou la mise en place de délégations, les OU ne sont donc pas un objet de rangement.
 - Suivre le concept du privilège le moins élevé
 
-~~~
+```
 🌐 corp.lbb.com
   📁 INFRA
     📁 Tier 0
@@ -47,7 +47,7 @@ Principes à garder en mémoire :
       📁 Service accounts
     📁 Tier 1
     📁 Tier 2
-~~~
+```
 
 ### Revue des permissions
 

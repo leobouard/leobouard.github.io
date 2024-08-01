@@ -61,9 +61,9 @@ L'ordre à une importance pour cet opérateur et inverser les deux parties ne do
 
 ### Exercice n°4B
 
-~~~powershell
+```powershell
 $days = 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
-~~~
+```
 
 Trouver la bonne utilisation de `like` et `-notlike` pour obtenir les résultats suivants :
 
@@ -85,9 +85,9 @@ Opérateur | Description
 
 ### Exercice n°4C
 
-~~~powershell
+```powershell
 $months = 'janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'
-~~~
+```
 
 Sans utiliser PowerShell, prédire le résultat de chaque comparaison :
 
@@ -108,12 +108,12 @@ Certains opérateurs ne font pas de comparaison mais peuvent modifier des chaine
 
 Devinez le contenu de chaque variable :
 
-~~~powershell
+```powershell
 $replace = 'Je serai en avance' -replace 'avance','retard'
 $split1 = 'abcdefghijklmnopqrstuvwyz' -split ''
 $split2 = '192.168.0.1' -split '.'
 $join = 'Robert','Jimmy','John','John Paul' -join '+'
-~~~
+```
 
 ## Opérateurs logiques
 
@@ -133,9 +133,9 @@ Vous pouvez maintenant réaliser les 5 défis restants sur le "wargame" CENTURY.
 
 Vous pouvez vous rendre sur <https://underthewire.tech/century> et lancer votre connexion SSH avec la commande suivante :
 
-~~~plainttext
+```plaintext
 ssh century.underthewire.tech -l century9
-~~~
+```
 
 Le mot de passe du premier compte "Century9" est `696`.
 

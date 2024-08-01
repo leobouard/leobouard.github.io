@@ -67,11 +67,11 @@ Pour permettre au joueur d'avoir plusieurs tentatives, le plus simple est de met
 
 Pour le script exemple, j'ai choisi la boucle `do/until`.
 
-~~~powershell
+```powershell
 while ($answer -ne $random) { <#[...]#> }
 do { <#[...]#> } while ($answer -ne $random)
 do { <#[...]#> } until ($answer -eq $random)
-~~~
+```
 
 ### Ajouter un compteur de tentatives
 
@@ -80,12 +80,12 @@ Cette étape se décompose en deux parties :
 1. hors de la boucle : initier le compteur en créant une nouvelle variable `$i` dont la valeur initiale est 0 (par exemple)
 2. dans la boucle : incrémenter la variable à chaque nouvelle tentative avec l'opérateur `++`
 
-~~~powershell
+```powershell
 $i = 0
 do { 
     $i++
 } until ($answer -eq $random)
-~~~
+```
 
 ### Sortir de la boucle après 10 tentatives
 
@@ -97,11 +97,11 @@ Le plus simple est d'ajouter une deuxième condition de sortie à notre boucle `
 
 On arrive à la double condition suivante : "on reste dans la boucle jusqu'à ce que le joueur trouve le nombre aléatoire **ou** que le nombre de tentatives soit égal ou supérieur à 10", que l'on peut ensuite ajouter à notre boucle `do/until`.
 
-~~~powershell
+```powershell
 do {
 
 } until ($answer -eq $random -or $i -ge 10)
-~~~
+```
 
 <div class="information">
     <span>Autre possibilité : la boucle For</span>
@@ -112,19 +112,19 @@ do {
 
 A la fin de la boucle, si le joueur n'a pas trouvé le nombre aléatoire, on affiche un message de défaite dans la console avec la commande `Write-Host`. La condition avant l'affichage du message permet d'éviter le double message "VICTOIRE" puis "DEFAITE".
 
-~~~powershell
+```powershell
 if ($answer -ne $random) { Write-Host "DEFAITE" }
-~~~
+```
 
 ### Affichage du nombre de tentatives
 
 Dans le `PSCustomObject` affiché à la fin, on ajoute une nouvelle propriété `Count` pour montrer le nombre de tentatives (variable `$i`) utilisées par le joueur.
 
-~~~powershell
+```powershell
 [PSCustomObject]@{
     "Tentatives" = $i
 } | Format-List
-~~~
+```
 
 ## Correction
 

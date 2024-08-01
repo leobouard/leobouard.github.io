@@ -61,81 +61,81 @@ Si l'estimation est égale au nombre aléatoire :
 
 Pour générer un nombre aléatoire, on utilise la commande `Get-Random`, puis on spécifie les valeurs minimales et maximales possibles avec les paramètres `-Minimum` et `-Maximum`. Par défaut, la commande retourne un nombre entier, donc pas besoin de faire plus d'action.
 
-~~~powershell
+```powershell
 Get-Random -Minimum 1 -Maximum 1000
-~~~
+```
 
 ### Stocker le nombre aléatoire dans une variable
 
 On utilise la variable `$random` pour récupérer la valeur de la commande `Get-Random`.
 
-~~~powershell
+```powershell
 $random = Get-Random -Minimum 1 -Maximum 1000
-~~~
+```
 
 ### Demander au joueur de deviner le nombre
 
 On va maintenant inviter le joueur à entrer son estimation avec la commande `Read-Host`. On affiche un message au joueur avec le paramètre `-Prompt` et on stocke sa réponse dans la variable `$answer`. 
 
-~~~powershell
+```powershell
 $answer = Read-Host -Prompt "Deviner le nombre"
-~~~
+```
 
 ### Comparer le nombre aléatoire à l'estimation du joueur
 
 On compare les deux variables `$answer` et `$random` avec les opérateurs `-gt` (*greater than*, plus grand que) et `-lt` (*lower than*, plus petit que).
 
-~~~powershell
+```powershell
 # Aléatoire est supérieur au nb utilisateur
 $random -gt $answer
 $answer -lt $random
 # Aléatoire est plus petit que nb utilisateur
 $random -lt $answer
 $answer -gt $random
-~~~
+```
 
 #### random est supérieur à answer
 
 Si la condition `if` est remplie (`$random` est supérieur à `$answer`), on affiche un message au joueur avec la commande `Write-Host` pour indiquer que le nombre aléatoire est plus grand que son estimation.
 
-~~~powershell
+```powershell
 if ($random -gt $answer) { Write-Host "??? est plus grand que $answer" }
-~~~
+```
 
 #### random est inférieur à answer
 
 Si la condition `elseif` est remplie (`$random` est inférieur à `$answer`), on affiche un message au joueur avec la commande `Write-Host` pour indiquer que le nombre aléatoire est plus petit que son estimation.
 
-~~~powershell
+```powershell
 elseif ($random -lt $answer) { Write-Host "??? est plus petit que $answer" }
-~~~
+```
 
 #### random est égal à answer
 
 Si aucune des conditions précédentes (`if` et `elseif`) n'est remplie, alors on affiche un message de victoire avec la commande `Write-Host`.
 
-~~~powershell
+```powershell
 else { Write-Host "VICTOIRE ! Vous avez devinez le nombre aléatoire" }
-~~~
+```
 
 ### Affichage des données
 
 A la fin du script, on crée un objet `PSCustomObject` qui regroupe les informations principales : le nombre aléatoire et la réponse du joueur.
 
-~~~powershell
+```powershell
 $result = [PSCustomObject]@{
     "Nombre aléatoire" = $random
     "Dernière réponse" = $answer
 }
-~~~
+```
 
 ### Formater l'affichage en mode liste
 
 Par défaut, l'objet va s'afficher sous forme de tableau puisqu'il n'y a que deux valeurs. On formate donc la vue avec la commande `Format-List`.
 
-~~~powershell
+```powershell
 $result | Format-List
-~~~
+```
 
 ## Correction
 

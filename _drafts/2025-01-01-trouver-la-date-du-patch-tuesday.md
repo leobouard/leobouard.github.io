@@ -2,7 +2,7 @@
 
 ## Ma version
 
-~~~powershell
+```powershell
 # Version classique et facile à comprendre
 function Get-PatchTuesdayDate_Leo1 {
     param(
@@ -37,7 +37,7 @@ function Get-PatchTuesdayDate_Leo2 {
     if ($dayOfWeek -le 2) { $addDays = -$dayOfWeek+2 } else { $addDays = 7+(-$dayOfWeek+2) }
     return ($date.AddDays($addDays+7))
 }
-~~~
+```
 
 ## Version de ChatGPT
 
@@ -56,7 +56,7 @@ Use a while loop to check if the day of the week is not Tuesday. If it is not Tu
 When the day of the week is Tuesday, use the Get-Date cmdlet to format the date as desired and output it.
 Here is an example of how this could be done:
 
-~~~powershell
+```powershell
 $currentDate = Get-Date
 $firstDayOfMonth = Get-Date -Month $currentDate.Month -Year $currentDate.Year -Day 1
 $secondTuesday = $firstDayOfMonth.AddDays(7)
@@ -67,13 +67,13 @@ while ($secondTuesday.DayOfWeek -ne "Tuesday") {
 
 $secondTuesdayString = Get-Date -Date $secondTuesday -Format "MM/dd/yyyy"
 Write-Output "The second Tuesday of the month is $secondTuesdayString"
-~~~
+```
 
 This will output the second Tuesday of the month in the format "MM/dd/yyyy". You can use a different format string if desired. For example, to output the date in the format "dd-MM-yyyy", you can use -Format "dd-MM-yyyy" instead
 
 ### Adaptation de la réponse à notre modèle
 
-~~~powershell
+```powershell
 function Get-PatchTuesdayDate_ChatGPT {
 
     param(
@@ -92,13 +92,13 @@ function Get-PatchTuesdayDate_ChatGPT {
 
     return $secondTuesday
 }
-~~~
+```
 
 ## Combat final
 
 ### Comparatif des performances
 
-~~~powershell
+```powershell
 $measure = 1..100 | % {
         Measure-Command {
         foreach ($year in 2000..2022) {
@@ -109,7 +109,7 @@ $measure = 1..100 | % {
     }
 }
 $measure | Measure-Object -Average -Property TotalMilliseconds
-~~~
+```
 
 Version/Fonction | Léo n°1 | Léo n°2 | ChatGPT
 ---------------- | ------- | ------- | -------

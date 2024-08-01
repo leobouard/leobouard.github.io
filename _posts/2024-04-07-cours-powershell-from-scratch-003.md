@@ -15,9 +15,9 @@ prevLink:
 
 Le pipeline permet d'assembler des commandes entre-elles en envoyant le résultat d'une commande (ou autre chose) vers la suivante.
 
-~~~powershell
+```powershell
 Get-Content -Path '.\fichier.json' | ConvertFrom-Json
-~~~
+```
 
 ## Les commandes essentielles
 
@@ -33,23 +33,23 @@ Ces commandes là vont vous suivre dans tous vos scripts et pour toujours ! Il e
 
 `Select-Object` permet de manipuler une collection. La plupart du temps, on se servira de cette commande pour limiter la vue à ce qui nous intéresse.
 
-~~~powershell
+```powershell
 Get-ComputerInfo | Select-Object BiosSerialNumber, CsManufacturer, CsModel, CsProcessors
-~~~
+```
 
 En utilisant un astérisque, on peut également afficher toutes les propriétés :
 
-~~~powershell
+```powershell
 Get-Service | Select-Object *
-~~~
+```
 
 On peut également sélectionner uniquement les X premiers ou X derniers éléments d'une collection :
 
-~~~powershell
+```powershell
 Get-Service | Select-Object -First 10
 # vs.
 Get-Service | Select-Object -Last 10
-~~~
+```
 
 ### Exercice n°2A
 
@@ -64,17 +64,17 @@ A l'aide des commandes `Select-Object` et `Get-Service`, afficher les 25 premier
 
 `Sort-Object` pour trier des données, selon un ordre ascendant ou descendant
 
-~~~powershell
+```powershell
 Get-Process | Sort-Object -Property CPU
 # vs.
 Get-Process | Sort-Object -Property CPU -Descending
-~~~
+```
 
 Il est également possible de dédupliquer une liste :
 
-~~~powershell
+```powershell
 Get-Process | Sort-Object -Property ProcessName -Unique
-~~~
+```
 
 ### Measure-Object
 
@@ -82,15 +82,15 @@ Get-Process | Sort-Object -Property ProcessName -Unique
 
 Pour compter le nombre d'objets :
 
-~~~powershell
+```powershell
 Get-ChildItem -Path 'C:\Windows' | Measure-Object
-~~~
+```
 
 Pour calculer une somme et une moyenne :
 
-~~~powershell
+```powershell
 Get-ChildItem -Path 'C:\Windows' | Measure-Object -Property Length -Sum -Average
-~~~
+```
 
 On observe que `Measure-Object` compte moins de résultats cette fois-ci, car il ne prend en compte que les éléments avec une propriété "Length".
 
@@ -104,19 +104,19 @@ A l'aide des commandes `Get-Process`, `Sort-Object` et `Measure-Object`, compter
 
 > `-eq` est un opérateur de comparaison pour savoir si un élément est égal à un autre
 
-~~~powershell
+```powershell
 Get-Service | Where-Object {$_.Status -eq 'Running'}
-~~~
+```
 
 > `-like` est un opérateur qui permet de rechercher une chaine de caractère. En fonction de la position de l'astérisque, cela permet de trouver des résultats qui commencent par un mot, contiennent un mot ou finissent par un mot en particulier :
 
-~~~powershell
+```powershell
 Get-Service | Where-Object {$_.Name -like 'win*'}
 # vs.
 Get-Service | Where-Object {$_.Description -like '*xbox*'}
 # vs.
 Get-Service | Where-Object {$_.Name -like '*svc'}
-~~~
+```
 
 ### ForEach-Object
 
@@ -124,12 +124,12 @@ Get-Service | Where-Object {$_.Name -like '*svc'}
 
 `$_` est ce qu'on appelle la "variable courante" : elle contient l'objet en cours de traitement.
 
-~~~powershell
+```powershell
 Get-LocalGroup | ForEach-Object {
     Write-Host $_.Name -ForegroundColor Yellow
     Get-LocalGroupMember -Group $_ | Format-List
 }
-~~~
+```
 
 Dans l'exemple ci-dessus, la variable courante va contenir le groupe "Administrateurs", puis "Administrateur Hyper-V", puis "Duplicateurs", etc.
 
@@ -143,9 +143,9 @@ A l'aide des commandes et des connaissances que vous avez vu précédemment, ré
 
 Le script n'utilise que des commandes simples, avec des pipeline entre chaque.
 
-~~~powershell
+```powershell
 
-~~~
+```
 
 ## Travaux pratiques n°1
 
@@ -153,9 +153,9 @@ Dans ces premiers travaux pratiques nous allons jouer à un "wargame". L'idée e
 
 Vous pouvez vous rendre sur <https://underthewire.tech/century> et lancer votre première connexion SSH avec la commande suivante :
 
-~~~plainttext
+```plaintext
 ssh century.underthewire.tech -l century1
-~~~
+```
 
 Le mot de passe du premier compte "Century1" est `century1`.
 

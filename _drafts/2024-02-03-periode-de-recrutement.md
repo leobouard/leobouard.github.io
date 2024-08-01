@@ -8,15 +8,15 @@ Si vous n'avez pas d'annuaire Active Directory ou de tenant Microsoft 365 sous l
 
 Pour récupérer mon fichier CSV, voici la ligne de commande :
 
-~~~powershell
+```powershell
 # Get the user list
 $uri = "https://raw.githubusercontent.com/leobouard/leobouard.github.io/main/assets/files/users.csv"
 $users = (Invoke-WebRequest -Uri $uri).Content | ConvertFrom-Csv -Delimiter ';'
-~~~
+```
 
 Si vous le souhaitez, vous pouvez ajouter vous-même la propriété "created" à l'ensemble des utilisateurs avec une date aléatoire. Sinon, vous pouvez utiliser ce code qui va ajouter une date comprise entre il y a cinq ans et aujourd'hui :
 
-~~~powershell
+```powershell
 # Add the random 'created' date
 [int]$max = (New-TimeSpan -Start (Get-Date).AddYears(-5)).TotalDays
 $users | ForEach-Object {
@@ -24,7 +24,7 @@ $users | ForEach-Object {
     $date = (Get-Date -H 0 -Min 0 -S 0).AddDays(-$random)
     $_ | Add-Member -MemberType NoteProperty -Name 'Created' -Value $date -Force
 }
-~~~
+```
 
 ## Découverte de la commande
 
@@ -36,9 +36,9 @@ Une commande déjà existante correspond exactement à notre besoin : `Group-Obj
 
 Pour donner un cas pratique, voici une commande qui permet de lister le nombre de processus selon leur priorité (exemple issu de la documentation de Microsoft) :
 
-~~~powershell
+```powershell
 Get-Process | Group-Object PriorityClass | Sort-Object Count -D
-~~~
+```
 
 Et voici le résultat obtenu :
 
@@ -56,12 +56,12 @@ Lien vers la documentation complète : [Group Object - PowerShell \| Microsoft L
 
 Avant d'utiliser la commande, on doit modifier notre objet pour inclure
 
-~~~powershell
+```powershell
 $users |
     Select-Object DisplayName,@{N='Month';E={Get-Date $_.Created -Format 'MM_MMMM'}} |
     Group-Object Month |
     Sort-Object Name
-~~~
+```
 
 ## Autres applications
 

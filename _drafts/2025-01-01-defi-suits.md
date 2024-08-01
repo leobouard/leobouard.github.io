@@ -2,7 +2,7 @@
 
 # Preparation des données
 
-~~~powershell
+```powershell
 $data = 1..25 | ForEach-Object {
     $random = Get-Random -Min 0.0 -Max 100.0 -SetSeed $_
     [PSCustomObject]@{
@@ -10,17 +10,17 @@ $data = 1..25 | ForEach-Object {
         Balance = [math]::Round($random,2)
     }
 }
-~~~
+```
 
 # Récupération du chiffre cible
 
-~~~powershell
+```powershell
 $targetList = $data | Get-Random -Count 7
 $target = ($targetList.Balance | Measure-Object -Sum).Sum
 
 Write-Host "La police vous donne l'information $target M€ ont été volés et repartis sur 7 différents comptes"
 Write-Host "A vous de jouer pour retrouver les comptes sur lesquels l'argent a été dissimulé"
-~~~
+```
 
 # --- METHODE 1 ----
 

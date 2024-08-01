@@ -50,59 +50,59 @@ Lancer une console PowerShell en tant qu’administrateur
 
 Charger le module AzureADSSO avec la commande suivante :
 
-~~~powershell
+```powershell
 Import-Module "$env:ProgramFiles\Microsoft Azure Active Directory Connect\AzureADSSO.psd1"
-~~~
+```
 
 Passer en TLS 1.2 :
 
-~~~powershell
+```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-~~~
+```
 
 Connectez-vous en tant qu’administrateur général ou administrateur d’identité hybride avec la commande :
 
-~~~powershell
+```powershell
 New-AzureADSSOAuthenticationContext
-~~~
+```
 
 Vérifier que vous êtes bien sur la bonne forêt Active Directory avec la commande :
 
-~~~powershell
+```powershell
 Get-AzureADSSOStatus | ConvertFrom-Json
-~~~
+```
 
 Stocker ses identifiants administrateur du domaine dans la variable `$cred` avec la commande :
 
-~~~powershell
+```powershell
 $cred = Get-Credential
-~~~
+```
 
 > C’est le SamAccountName qui est attendu en nom d’utilisateur, avec le nom NETBIOS du domaine en préfixe. Exemple : `CONTOSO\admin`.
 
 Faire la rotation de mot de passe avec la commande :
 
-~~~powershell
+```powershell
 Update-AzureADSSOForest -OnPremCredentials $cred
-~~~
+```
 
 La dernière commande devrait vous donner les logs suivants :
 
-~~~plaintext
+```plaintext
 [12:00:00.245] [9] [INFORMATIONAL] UpdateComputerAccount: Locating SSO computer account in CONTOSO..
 [12:00:00.261] [9] [INFORMATIONAL] GetDesktopSsoComputerAccount: Searching in global catalog(forest) and CONTOSO for computer account AZUREADSSOACC
 [12:00:00.817] [9] [INFORMATIONAL] TrySearchAccountUnderGlobalCatalog: Object was found in global catalog(forest), hence skipping CONTOSO search
 [12:00:00.817] [9] [INFORMATIONAL] UpdateComputerAccount: Found SSO computer account at CN=AZUREADSSOACC,OU=Servers,OU=TIER 0,DC=CONTOSO,DC=com. Updating its properties..
 [12:00:00.817] [9] [INFORMATIONAL] UpdateComputerAccount: Granting full control to account admins and enterprise admins for computer account CN=AZUREADSSOACC,OU=Servers,OU=TIER 0,DC=CONTOSO,DC=com...
 [12:00:01.963] [9] [INFORMATIONAL] UpdateComputerAccount: Successfully updated SSO computer account properties. The operation completed successfully
-~~~
+```
 
 ### Vérification du changement de mot de passe
 
 Sur un serveur avec le module Active Directory installé, lancer une console PowerShell et utiliser la commande suivante :
 
-~~~powershell
+```powershell
 (Get-ADComputer AZUREADSSOACC -Properties PasswordLastSet).PasswordLastSet
-~~~
+```
 
 Vérifier que la valeur retournée correspond bien à la date du jour.

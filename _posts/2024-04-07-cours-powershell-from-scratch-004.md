@@ -15,32 +15,32 @@ prevLink:
 
 Les variables sont un composant majeur de n'importe quel language de programmation/scripting. Dans le cas de PowerShell, les variables sont très flexibles et simple à utiliser. On les déclare à n'importe quel moment avec un `$` et on peut y stocker n'importe quoi en utilisant `=` (résultat de commande, texte, collection, nombre...)
 
-~~~powershell
+```powershell
 $users = Get-LocalUser
 $text = 'Voici un texte court'
 $number = 1032
-~~~
+```
 
 ### Interagir avec le contenu
 
 Pour consulter le contenu d'une variable, il suffit simplement de tapper le nom de la variable dans la console :
 
-~~~powershell
+```powershell
 $text
 Voici un texte court
 
 $number
 1032
-~~~
+```
 
 ### Index
 
 Pour les variables qui contiennent des collections d'objets, il est possible d'indiquer quel élément nous intéresse dans la liste en utilisant l'index. La syntaxe de l'index est plutôt simple puisqu'il suffit d'ajouter `[X]` (où *X* est le numéro d'index) directement après votre variable
 
-~~~powershell
+```powershell
 $array = 'Alpha','Bravo','Charlie','Delta'
 $array[1]
-~~~
+```
 
 Index | Valeur(s) d'exemple | Description
 ----- | ------------------- | -----------
@@ -57,16 +57,16 @@ Index | Valeur(s) d'exemple | Description
 
 Lorsqu'une variable contient un ou plusieurs objets complexes avec plusieurs propriétés, il est possible d'obtenir uniquement l'information qui nous intéresse en selectionnant directement la propriété. Pour ça, il suffit d'ajouter `.Property` (où *Property* est le nom de la propriété) directement après votre variable.
 
-~~~powershell
+```powershell
 $users = Get-LocalUser
 $users.Name
-~~~
+```
 
 Il est possible de mixer les index et les sous-propriétés, par exemple :
 
-~~~powershell
+```powershell
 $users[0].Name
-~~~
+```
 
 > Les sous-propriétés peuvent être remplacé par la commande `Select-Object` avec le paramètre `-ExpandProperty`.
 
@@ -93,18 +93,18 @@ Pour afficher le contenu d'une variable dans un texte, le cas général est plut
 
 Exemples :
 
-~~~powershell
+```powershell
 $test = 'PowerShell'
 Write-Host "$test est plutôt cool"
 # vs.
 Write-Host '$test est plutôt cool'
-~~~
+```
 
 ### Cas particuliers
 
 Si votre variable est plus complexe (vous ne voulez afficher que une sous-propriété ou/et un index), il faudra modifier un peu la syntaxe.
 
-~~~powershell
+```powershell
 $users = Get-LocalUser
 Write-Host "Le premier utilisateur de l'ordinateur est $($users[0].Name)"
-~~~
+```

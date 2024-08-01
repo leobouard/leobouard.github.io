@@ -20,15 +20,15 @@ Avant de commencer a récupéré de l'espace de stockage, il faut arrêter l'hé
 
 On commence par se connecter sur le portail d'administration de SharePoint avec PowerShell :
 
-~~~powershell
+```powershell
 Connect-PnPOnline -Url 'https://contoso-admin.sharepoint.com' -Interactive
-~~~
+```
 
 On consulte la configuration actuelle pour évaluer les changements à faire avec la commande suivante :
 
-~~~powershell
+```powershell
 Get-PnPTenant | Select-Object *version* | Format-List
-~~~
+```
 
 On obtient alors les informations suivantes :
 
@@ -41,32 +41,32 @@ EnableVersionExpirationSetting | Disponibilité des paramètres d'expiration de 
 
 A titre d'exemple, voici les paramètres par défaut sur mon tenant de test :
 
-~~~plaintext
+```plaintext
 ExpireVersionsAfterDays         : 0
 MajorVersionLimit               : 500
 EnableAutoExpirationVersionTrim : False
 EnableVersionExpirationSetting  : False
-~~~
+```
 
 ### Modification de la configuration
 
 On commence par activer les fonctionnalités d'expiration de version de fichier au niveau du tenant :
 
-~~~powershell
+```powershell
 Set-PnPTenant -EnableVersionExpirationSetting:$true
-~~~
+```
 
 Une fois les fonctionnalités débloquées, il est enfin possible d'agir sur le nombre maximum de versions au niveau du tenant. Dans mon exemple, je descend de 500 à 100 versions majeures au maximum :
 
-~~~powershell
+```powershell
 Set-PnPTenant -MajorVersionLimit 100
-~~~
+```
 
 On en profite aussi pour définir une durée de validité pour les versions. Dans ma configuration, trois ans après sa création, la version d'un fichier est susceptible d'être supprimée :
 
-~~~powershell
+```powershell
 Set-PnPTenant -ExpireVersionsAfterDays 1096
-~~~
+```
 
 ### Le paramètre EnableAutoExpirationVersionTrim
 
@@ -84,9 +84,9 @@ Donc dans un scénario où vous passez de 500 versions à 100 versions maximum, 
 
 Si le fonctionnement de ce paramètre vous convient toujours, vous pouvez l'utiliser de cette manière :
 
-~~~powershell
+```powershell
 Set-PnPTenant -EnableAutoExpirationVersionTrim:$true
-~~~
+```
 
 Lorsque celui-ci est défini, il se passe deux choses (en silence) sur la configuration du tenant :
 
@@ -101,9 +101,9 @@ Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou 
 
 Pour s'assurer que la configuration que vous venez de faire sur votre tenant s'est propagée correctement sur tous vos sites SharePoint, on utilise la commande suivante :
 
-~~~powershell
+```powershell
 Get-PnPTenantSite | Select-Object Title, *version*
-~~~
+```
 
 La valeur qui nous intéresse est InheritVersionPolicyFromTenant qui devrait être à "True" partout.
 

@@ -67,10 +67,10 @@ Le résultat d'une requête sera fourni dans un langage structuré. Le plus souv
 
 Pour faire une requête via PowerShell, vous pouvez utiliser la commande `Invoke-RestMethod` puis indiquer votre méthode et l'URI :
 
-~~~powershell
+```powershell
 $uri = 'https://restcountries.com/v3.1/alpha/FR'
 Invoke-RestMethod -Method 'GET' -Uri $uri
-~~~
+```
 
 Vous pouvez également utiliser Postman pour effectuer votre requête :
 

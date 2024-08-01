@@ -86,14 +86,14 @@ Une fois l'application configurée, vous pouvez alors vous y connecter en PowerS
 2. `-TenantId` : ID de l'annuaire (locataire)
 3. `-Scopes` : le ou les autorisation(s) que vous voulez utiliser parmi celles disponibles sur l'application (facultatif)
 
-~~~powershell
+```powershell
 $params = @{
     ClientId = '10a52256-36f0-4bb7-973d-************'
     TenantId = '0649f7a2-affe-49fa-8a7e-************'
     Scopes = 'User.Read'
 }
 Connect-MgGraph @params
-~~~
+```
 
 Une fois connecté, vous pouvez consulter les informations de connexion avec la commande `Get-MgContext`.
 
@@ -115,24 +115,24 @@ Pour des questions d'accessibilité, nous allons utiliser des certificats auto-s
 
 Pour générer un certificat autosigné, vous pouvez utiliser la commande suivante :
 
-~~~powershell
+```powershell
 $certname = Read-Host -Prompt 'Nom du certificat'
 $cert = New-SelfSignedCertificate -Subject "CN=$certname" -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 -KeyAlgorithm RSA -HashAlgorithm SHA256
-~~~
+```
 
 Par défaut, les certificats auto-signés ont une période de validité d'un an. Si vous voulez repousser l'expiration, vous pouvez ajouter le paramètre `-NotAfter`. Exemple pour obtenir un certificat valide pendant 48 mois :
 
-~~~powershell
+```powershell
 -NotAfter (Get-Date).AddMonths(48)
-~~~
+```
 
 ##### Téléchargement du certificat dans Azure
 
 Une fois votre certificat généré, vous devez maintenant exporter la clé publique à télécharger dans Azure :
 
-~~~powershell
+```powershell
 Export-Certificate -Cert $cert -FilePath "C:\temp\$certname.cer"
-~~~
+```
 
 Vous n'avez plus qu'à déposer votre certificat sur Azure. Vous pouvez vous rendre dans la section "Certificats & secrets", dans l'onglet "Certificats" et enfin cliquer sur "↑ Télécharger le certificat".
 
@@ -142,14 +142,14 @@ Azure supporte les certificats du type .CER, .PEM et .CRT.
 
 Une fois le certificat téléchargé dans Azure, vous pouvez vous connecter à votre application en spécifiant l'ID d'application, l'ID de l'annuaire et l'empreinte numérique de votre certificat :
 
-~~~powershell
+```powershell
 $params = @{
     ClientId = '10a52256-36f0-4bb7-973d-************'
     TenantId = '0649f7a2-affe-49fa-8a7e-************'
     CertificateThumbprint = 'DBA124203B11CD54F03DBCE272574FF287A3ADDB'
 }
 Connect-MgGraph @params
-~~~
+```
 
 Vous devriez maintenant être connecté à votre application. Vous pouvez vérifier les informations de connexion avec la commande `Get-MgContext`.
 
@@ -167,11 +167,11 @@ Pour des raisons de sécurité évidentes, le secret ne doit pas être conservé
 
 Pour sécuriser le mot de passe, je vous propose donc de le transformer en un hash et de stocker ce hash dans un fichier TXT :
 
-~~~powershell
+```powershell
 Read-Host -Prompt 'Entrer le secret' -AsSecureString |
     ConvertFrom-SecureString |
     Set-Content -Path 'C:\temp\secret.txt'
-~~~
+```
 
 Votre fichier "secret.txt" devrait ressembler à ça :
 
@@ -185,13 +185,13 @@ Ce hash n'est déchiffrable que par le compte utilisateur et uniquement depuis l
 
 Impossible de se connecter avec un secret en utilisant uniquement le module Microsoft Graph. Il va donc falloir installer le module "Microsoft Authentication Library for PowerShell" ou dans sa version courte : `MSAL.PS`.
 
-~~~powershell
+```powershell
 Install-Module 'MSAL.PS'
-~~~
+```
 
 Ce module nous permet d'avoir accès à la commande `Get-MsalToken` qui nous permet d'obtenir un "Access token". Cet "Access token" pourra ensuite servir à la connexion à Microsoft Graph en utilisant la commande `Connect-MgGraph`.
 
-~~~powershell
+```powershell
 $params = @{
     ClientId = '10a52256-36f0-4bb7-973d-************'
     TenantId = '0649f7a2-affe-49fa-8a7e-************'
@@ -199,6 +199,6 @@ $params = @{
 }
 $token = Get-MsalToken @params
 Connect-MgGraph -AccessToken $token.AccessToken
-~~~
+```
 
 Vous devriez maintenant être connecté à votre application. Vous pouvez vérifier les informations de connexion avec la commande `Get-MgContext`.

@@ -5,7 +5,7 @@ de AA-001-AA à ZZ-999-ZZ
 
 <https://immatriculation.ants.gouv.fr/tout-savoir/numero-logo-et-plaque>
 
-~~~powershell
+```powershell
 $letters = 'ABCDEFGHJKLMNPQRSTVWXYZ'.ToCharArray()
 $numbers = 1..999
 
@@ -48,4 +48,4 @@ $results = $AA | ForEach-Object {
     }
 }
 
-~~~
+```

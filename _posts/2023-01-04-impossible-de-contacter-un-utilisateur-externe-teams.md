@@ -23,11 +23,11 @@ L'utilisateur concerné ne peut plus contacter des comptes externes à l'organis
 
 Comme le problème vient probablement de la configuration du compte, on vérifie l'état de celui-ci en PowerShell avec le module `MicrosoftTeams` :
 
-~~~powershell
+```powershell
 Install-Module MicrosoftTeams
 Connect-MicrosoftTeams
 (Get-CsOnlineUser -Identity 'leo@labouabouate.fr').UserValidationErrors
-~~~
+```
 
 La commande `Get-CsOnlineUser` retourne alors le résultat suivant : *CannotGenerateSipAddress: SipAddress format is invalid*. Il y a donc un problème sur l'adresse SIP.
 

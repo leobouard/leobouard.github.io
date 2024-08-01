@@ -50,14 +50,14 @@ Avant de lancer le chronomètre, on va juste s'assurer qu'un chronomètre n'est 
 - pour la technique `Get-Date`, on vérifie simplement que la variable `$startTime` existe
 - pour la technique `[System.Diagnostics.Stopwatch]`, il existe la propriété `IsRunning` qui permet de vérifier que le chronomètre est bien démarré
 
-~~~powershell
+```powershell
 # Pour "Get-Date" & "New-TimeSpan"
 if (!$startTime) { $startTime = Get-Date }
 
 # Pour "System.Diagnostics.Stopwatch"
 $stopwatch = [System.Diagnostics.Stopwatch]::New()
 if ($stopwatch.IsRunning -eq $false) { $stopwatch.Start() }
-~~~
+```
 
 ### Stopper le chronomètre
 
@@ -66,41 +66,41 @@ Pour arrêter le chronomètre, tout dépend du type de chronomètre que l'on uti
 - pour la technique avec le combo `Get-Date` & `New-TimeSpan` : on mesure le temps écoulé avec une comparaison via `New-TimeSpan`
 - pour la technique `[System.Diagnostics.Stopwatch]`, on utilise la méthode `Stop()`
 
-~~~powershell
+```powershell
 # Pour "Get-Date" & "New-TimeSpan"
 $stopwatch = New-TimeSpan -Start $startTime
 
 # Pour "System.Diagnostics.Stopwatch"
 $stopwatch.Stop()
-~~~
+```
 
 ### Afficher le temps de résolution
 
 Le temps total de résolution en secondes est stocké dans la propriété `TotalSeconds` du chronomètre.
 
-~~~powershell
+```powershell
 # Pour "Get-Date" & "New-TimeSpan"
 $stopwatch.TotalSeconds
 
 # Pour "System.Diagnostics.Stopwatch"
 $stopwatch.Elapsed.TotalSeconds
-~~~
+```
 
 ### Formater du temps de résolution
 
 Pour arrondir le temps total de résolution au millième de seconde (0.001 seconde), on utilise la classe .NET `[System.Math]` qui prend deux paramètres : le premier est la valeur à arrondir et le deuxième est le nombre de décimales que l'on doit conserver (dans notre cas : 3).
 
-~~~powershell
+```powershell
 [System.Math]::Round($stopwatch.Elapsed.TotalSeconds,3)
-~~~
+```
 
 ### Calculer et afficher le temps par coup
 
 L'étape la plus simple de cette partie : on divise avec l'opérateur `/` le nombre de secondes du chronomètre par le nombre de coups stockés dans la variable `$i`.
 
-~~~powershell
+```powershell
 $stopwatch.Elapsed.TotalSeconds / $i
-~~~
+```
 
 ## Correction
 
