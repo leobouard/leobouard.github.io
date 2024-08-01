@@ -213,11 +213,14 @@ $minimumSizeGB = 100
 
 # Entra ID app registration credentials
 $appSettings = @{
-    Thumbprint = "BD6F3814A74FC4F47E2BB75CA0295C44012093CD"
-    ClientId   = "10a52256-36f0-4bb7-973d-986630ee8e3c"
-    Tenant     = "0649f7a2-affe-49fa-8a7e-0bac64ebd21a"
-    Url        = $null
+    Thumbprint = 'BD6F3814A74FC4F47E2BB75CA0295C44012093CD'
+    ClientId   = '10a52256-36f0-4bb7-973d-986630ee8e3c'
+    Tenant     = '0649f7a2-affe-49fa-8a7e-0bac64ebd21a'
+    Url        = 'https://contoso-admin.sharepoint.com/'
 }
+
+# Connect to SharePoint admin center
+Connect-PnPOnline @appSettings
 
 # Get all site with over 100 GB of storage usage
 $sites = Get-PnPTenantSite
