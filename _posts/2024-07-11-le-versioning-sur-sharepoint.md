@@ -18,7 +18,6 @@ Si votre courbe d'usage de SharePoint monte en flèche et que vous allez bientô
 
 ### Contrôle de la configuration actuelle
 
-> [!NOTE]
 > Dans la suite de cet article, j'utilise le module `PnP.PowerShell` plutôt que le module "officiel" `Microsoft.Online.SharePoint.PowerShell` par préférence personnelle.
 
 On commence par installer le module `PnP.PowerShell` (uniquement disponible avec PowerShell dans ses dernières versions) :
@@ -109,8 +108,7 @@ Lorsque celui-ci est défini, il se passe deux choses (en silence) sur la config
 
 Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou *ExpireVersionsAfterDays* qui restent bloqués à leurs valeurs par défaut :
 
-> [!CAUTION]
-> Set-PnPTenant: The parameter ExpireVersionsAfterDays can't be set because the Tenant has AutoExpiration enabled
+<p style="color: red;">Set-PnPTenant: The parameter ExpireVersionsAfterDays can't be set because the Tenant has AutoExpiration enabled</p>
 
 On retrouve donc la configuration évoquée précédemment, où pendant 30 jours, jusqu'à 500 versions peuvent être conservées.
 
@@ -158,7 +156,6 @@ Pour supprimer les versions qui ont plus d'un an :
 New-PnPSiteFileVersionBatchDeleteJob -DeleteBeforeDays 365
 ```
 
-> [!WARNING]
 > Limitation côté Microsoft : il n'est pas possible de conserver des versions créées avant le 01/01/2023.
 
 ---
