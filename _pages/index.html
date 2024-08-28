@@ -30,4 +30,15 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
   </div>
 </div>
 
+<h2>A propos</h2>
+<p>Moi c'est Léo Bouard et je sais faire deux-trois trucs en PowerShell. Si je suis en galère sur un sujet, j'essaye d'en faire un article pour le moi du futur. Au lieu de garder ça pour moi je le met en accès libre ici.</p>
+<img src="/assets/images/profile-picture.jpg" alt="Photo de profil" height="100" width="100">
+<h3>Mes liens</h3>
+<div class="personalLinks">
+  {% for link in site.data.cv.links %}
+  <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
+  {% endfor %}
+</div>
+
 </section>
+
