@@ -12,15 +12,6 @@ include: [_pages]
 # Kramdown configuration      
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    span:
-      line_numbers: false
-    block:
-      line_numbers: false
-      start_line: 1
 
 # SASS configuration
 sass:
