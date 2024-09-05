@@ -9,36 +9,26 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
   {% include hero-svg.html %}
   <div class="wrapper">
     <h1>Simple. Basique.</h1>
-    <p>Parce que l'administration système c'est des concepts simples sur des technologies complexes, ici on retourne aux basiques.</p>
+    <p>Parce que l'administration système c'est des concepts simples sur des technologies complexes, ici on retourne aux
+      basiques.</p>
     <ul>
       <li><a class="no-decoration button-primary hover-bottom" href="/blog">Voir les articles</a></li>
-      <li><a class="no-decoration button-primary hover-bottom" href="https://github.com/leobouard/leobouard.github.io" target="_blank">Projet GitHub</a></li>
+      <li><a class="no-decoration button-primary hover-bottom" href="https://github.com/leobouard/leobouard.github.io"
+          target="_blank">Projet GitHub</a></li>
     </ul>
   </div>
 </div>
 
 <section class="blog-page">
-
-<h2>Les derniers articles</h2>
-<div class="all-posts">
-  {% assign latest_posts = site.posts | where: "listed", true | slice: 0, 5 %}
-  {% for post in latest_posts %}
-  {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
-  {% endfor %}
-  <div class="flex-center">
-    <a class="no-decoration button-primary hover-bottom" href="/blog">Tous les articles</a>
+  <h2>Les derniers articles</h2>
+  <div class="all-posts">
+    {% assign latest_posts = site.posts | where: "listed", true | slice: 0, 5 %}
+    {% for post in latest_posts %}
+    {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags
+    %}
+    {% endfor %}
+    <div class="flex-center">
+      <a class="no-decoration button-primary hover-bottom" href="/blog">Tous les articles</a>
+    </div>
   </div>
-</div>
-
-<h2>A propos</h2>
-<p>Moi c'est Léo Bouard et je sais faire deux-trois trucs en PowerShell. Si je suis en galère sur un sujet, j'essaye d'en faire un article pour le moi du futur. Au lieu de garder ça pour moi je le met en accès libre ici.</p>
-<img src="/assets/images/profile-picture.jpg" alt="Photo de profil" height="100" width="100">
-<h3>Mes liens</h3>
-<div class="personalLinks">
-  {% for link in site.data.cv.links %}
-  <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
-  {% endfor %}
-</div>
-
 </section>
-
