@@ -6,10 +6,10 @@
       .forEach(function (heading) {
         if (heading.id)
           heading.innerHTML =
+            '<i class="fa-solid fa-link"><\/i>' +
             '<a href="#' + heading.id + '">' +
             heading.innerText +
-            '<\/a>' +
-            '<i class="fa-solid fa-link"><\/i>';
+            '<\/a>';
       });
   });
 </script>
