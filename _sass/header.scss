@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-bottom: var(--border);
+}
+
+header a {
+    font-family: 'Manrope', sans-serif;
+    padding: 0.5em;
+    font-size: 1.25em;
+    text-decoration: none;
+}
+
+header a:hover {
+    background-color: #EEE;
+    box-shadow: inset 0 -2px 0 0 var(--accent);
+}

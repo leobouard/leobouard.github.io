@@ -44,54 +44,6 @@ body {
     background: var(--textbg);
 }
 
-header {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    border-bottom: var(--border);
-
-    nav {
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    nav a {
-        color: var(--title);
-        font-weight: 500;
-        padding: 10px 15px;
-        transition: all 100ms ease-in-out;
-        text-decoration: none;
-        border-radius: var(--borderradius);
-        border-bottom: 2px solid transparent;
-    }
-
-    nav a:hover, nav a:active {
-        color: var(--accent);
-        border-bottom: 2px solid var(--accent);
-    }
-
-    nav a:hover {
-        background: var(--accentbg);
-    }
-
-    nav a.home {
-        font-family: 'Kanit', sans-serif;
-        font-weight: 700;
-        font-size: 1.5em;
-    }
-
-    nav a.home:hover {
-        background: none;
-    }
-
-    nav a.home span {
-        margin-left: 5px;
-    }
-}
-
 main {
     min-height: 90%;
     display: flex;
