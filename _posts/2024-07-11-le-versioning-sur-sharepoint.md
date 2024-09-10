@@ -103,7 +103,7 @@ Set-PnPTenant -EnableAutoExpirationVersionTrim:$true
 
 Lorsque celui-ci est défini, il se passe deux choses (en silence) sur la configuration du tenant :
 
-1. Le paramètre *MajorVersionLimit* revient à sa valeur initiale (500 jours)
+1. Le paramètre *MajorVersionLimit* revient à sa valeur initiale (500)
 2. Le paramètre *ExpireVersionsAfterDays* passe quand à lui à 30 jours
 
 Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou *ExpireVersionsAfterDays* qui restent bloqués à leurs valeurs par défaut :
