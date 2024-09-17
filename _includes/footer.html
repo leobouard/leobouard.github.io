@@ -1,13 +1,19 @@
 <footer>
-  <div>
+  <div class="all-posts">
+
     <span>LaBouaBouate</span>
-    <span>Fait avec ❤️ par Léo Bouard</span>
-    {% assign current_year = 'now' | date: '%Y' %}
-    <small>2021-{{current_year}}</small>
+
+    <div>
+      <span>Fait avec ❤️ par Léo Bouard</span>
+      {% assign current_year = 'now' | date: '%Y' %}
+      <small>2021-{{current_year}}</small>
+    </div>
+
+    <div>
+      {% for link in site.data.cv.links %}
+      <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
+      {% endfor %}
+    </div>
+
   </div>
-  <div>
-    {% for link in site.data.cv.links %}
-    <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
-    {% endfor %}
-  </div>  
 </footer>

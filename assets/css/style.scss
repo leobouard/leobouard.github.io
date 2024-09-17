@@ -4,8 +4,6 @@
 html {
     --fonts: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     --text: #020227;
-    --footer: #424242;
-    --footerbg: #e5e5e5;
     --title: #333;
     --bodybg: #f2f2f2;
     --accentbg: #fafafa;
@@ -115,17 +113,7 @@ main {
     }
 }
 
-footer {
-    border-top: 2px solid var(--primary);
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--footerbg);
-    z-index: -1;
-    color: var(--footer);
-}
+
 
 @media screen and (max-width: 950px) {
 
@@ -203,9 +191,5 @@ footer {
     main section {
         box-shadow: none;
         border: none;
-    }
-    
-    footer {
-        display: none;
     }
 }
