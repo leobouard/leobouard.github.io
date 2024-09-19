@@ -14,12 +14,37 @@ div.footer-grid {
     text-align: center;
 }
 
+div.footer-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #ddd;
+}
+
 span.footer-logo {
     font-family: 'Manrope', sans-serif;
     text-align: left;
     line-height: 80%;
     font-size: 1.5em;
 }
+
+div.footer-links {
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+div.footer-links a {
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    height: 24px;
+    width: 24px;
+}
+
 
 @media print {
     footer {
