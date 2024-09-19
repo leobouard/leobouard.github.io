@@ -45,6 +45,14 @@ div.footer-links a {
     width: 24px;
 }
 
+@media screen and (max-width: 725px) {
+    div.footer-grid {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
 
 @media print {
     footer {
