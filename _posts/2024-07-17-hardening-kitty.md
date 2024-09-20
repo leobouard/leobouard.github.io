@@ -43,7 +43,7 @@ Une fois le module chargé, vous pouvez lancer un audit de l'existant avec la co
 Invoke-HardeningKitty -Mode Audit -Log -Report -FileFindingList .\lists\finding_list_msft_security_baseline_windows_server_2022_21h2_member_machine.csv
 ```
 
-Le paramètre `-FileFindingList` permet de donner le référentiel à utiliser pour la sécurisation du serveur, en l'occurence : Microsoft Security Baseline for Windows Server 2022 21H1 (hors contrôleur de domaine).
+Le paramètre `-FileFindingList` permet de donner le référentiel à utiliser pour la sécurisation du serveur, en l'occurence : Microsoft Security Baseline for Windows Server 2022 21H2 (hors contrôleur de domaine).
 
 L'audit vous donnera un score de 1 (insuffisant) à 6 (excellent) :
 
@@ -56,7 +56,7 @@ Score | P'tit chat | Signification
 2 | 🙀 | Insuffisant
 1 | 😾 | Insuffisant
 
-Le score par défaut tourne fréquement autour de 3.
+Le score par défaut tourne fréquemment autour de 3.
 
 ### Sauvegarde
 
@@ -68,9 +68,9 @@ Invoke-HardeningKitty -Mode Config -Backup
 
 ### Application d'un modèle
 
-Si vous avez un peu de temps à tuer, vous pouvez vous amuser à revoir chacune des règles de sécurité pour les modifier ou en supprimer quelques unes.
+Si vous avez un peu de temps à tuer, vous pouvez vous amuser à revoir chacune des règles de sécurité pour les modifier ou en supprimer quelques-unes.
 
-Le plus simple pour faire ça est probablement d'utiliser l'interface web disponible ici : [Hardening Interface](https://phi.cryptonit.fr/policies_hardening_interface/interface/windows)
+Le plus simple pour faire est d'utiliser l'interface web disponible ici : [Hardening Interface](https://phi.cryptonit.fr/policies_hardening_interface/interface/windows)
 
 Sinon, vous pouvez utiliser tel-quel les modèles par défaut qui se basent sur les recommandations de Microsoft, du DOD, du BSI ou du CIS.
 

@@ -34,7 +34,7 @@ Si l'estimation est plus petite que le nombre aléatoire :
 ```plaintext
 Deviner le nombre: 500
 ??? est plus grand que 500
-\
+
 Nombre aléatoire : 746
 Dernière réponse : 500
 ```

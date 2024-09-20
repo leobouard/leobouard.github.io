@@ -30,7 +30,7 @@ Deviner le nombre: 500
 [...]
 Deviner le nombre: 560
 VICTOIRE ! Vous avez deviné le nombre aléatoire
-\
+
 Nombre aléatoire : 560
 Dernière réponse : 560
 Tentatives       : 6
