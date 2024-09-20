@@ -17,11 +17,13 @@ Ajouter un mode facile au script qui permet de modifier la génération du nombr
 
 ### Résultat attendu
 
-> .\script.ps1 -EasyMode
+```plaintext
+.\script.ps1 -EasyMode
+```
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Ajouter le paramètre au script
 2. Générer un nombre aléatoire "facile" à deviner

@@ -44,10 +44,12 @@ Pour aller plus loin sur le nommage : [Dénomination - Fonctions - PowerShell \|
 
 Dans notre bloc `param()`, on va déclarer notre paramètre principal pour récupérer le texte à convertir. Pour suivre la consigne, on sait que l'on doit accepter que la valeur soit issue d'un pipeline. Pour ça, on ajoute simplement l'attribut `ValueFromPipeline` : `[Parameter(Mandatory,ValueFromPipeline)][string]$Text`.
 
-Ainsi, on s'assure que la fonction peut-être utilisée de deux manières différentes :
+Ainsi, on s'assure que la fonction peut être utilisée de deux manières différentes :
 
-> C:> ConvertTo-Stutter -Text "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation"\
-> C:> "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation" | ConvertTo-Stutter
+```plaintext
+C:> ConvertTo-Stutter -Text "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation"
+C:> "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation" | ConvertTo-Stutter
+```
 
 Pour tout comprendre sur le support du pipeline dans les fonctions : [Entrée de pipeline - Fonctions - PowerShell \| Microsoft Learn](https://learn.microsoft.com/fr-fr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.3#pipeline-input)
 

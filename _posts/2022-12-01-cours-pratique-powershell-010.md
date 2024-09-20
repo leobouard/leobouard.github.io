@@ -35,7 +35,7 @@ Il nous reste encore quelques éléments à implémenter au script graphique pou
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Rendre le bouton "Recommencer" fonctionnel
 2. Réimplémenter le mode facile

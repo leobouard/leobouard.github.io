@@ -17,10 +17,9 @@ Nouveau départ ! On va implémenter une interface graphique réalisée avec Win
 
 Dans un premier temps, on va juste vouloir lancer l'interface graphique et laisser le joueur entrer une estimation dans la boite de texte. Lorsque le joueur appuie sur la touchée "Entrée" de son clavier, l'estimation est affichée dans la console et la boite de texte est vidée de son contenu.
 
-<div class="information">
-  <span>Recommandation</span>
-  <p>Pour cette partie, je vous recommande de créer un nouveau script plutôt qu'adapter le script existant. De cette manière, vous pourrez créer la structure liée à l'interface graphique, puis copier-coller les bouts de code encore pertinents.</p>
-</div>
+> #### Recommandation
+>
+> Pour cette partie, je vous recommande de créer un nouveau script plutôt qu'adapter le script existant. De cette manière, vous pourrez créer la structure liée à l'interface graphique, puis copier-coller les bouts de code encore pertinents.
 
 ### Résultat attendu
 
@@ -37,7 +36,7 @@ Comme cette partie est relativement compliquée, je vous donne quelques ressourc
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Charger l'interface graphique
 2. Créer des variables pour chaque élément de l'interface graphique

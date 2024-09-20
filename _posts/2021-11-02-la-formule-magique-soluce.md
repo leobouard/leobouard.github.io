@@ -29,29 +29,38 @@ On va y aller étape par étape :
 
 `([string]$i)` : permet de convertir le nombre entier en une chaine de caractères
 
-> PS C:\> $i = [string]2568
+```plaintext
+PS C:\> $i = [string]2568
+```
 
 `.ToCharArray()` : une fois que l'entier est transformé, on peut utiliser la méthode ToCharArray pour convertir la chaine "2568" en un tableau avec les valeurs 2, 5, 6 et 8
 
-> PS C:\> $i = $i.ToCharArray()\
-> PS C:\> $i\
-> 2\
-> 5\
-> 6\
-> 8
+```plaintext
+PS C:\> $i = $i.ToCharArray()
+PS C:\> $i
+
+2
+5
+6
+8
+```
 
 `-join '+'` : on réassemble ensuite le tableau en joignant les caractères entre eux avec un "+"
 
-> PS C:\> $i = $i -join '+'\
-> PS C:\> $i\
-> \
-> 2+5+6+8
+```plaintext
+PS C:\> $i = $i -join '+'
+PS C:\> $i
+
+2+5+6+8
+```
 
 Une fois notre chaine de caractère prête, il ne reste plus qu'à l'interpréter comme une ligne de commande. Et pour ça on peut utiliser la commande `Invoke-Expression` (`iex` pour les intimes) :
 
-> PS C:\> Invoke-Expression $i\
-> \
-> 21
+```plaintext
+PS C:\> Invoke-Expression $i
+
+21
+```
 
 ## La solution droit au but
 
@@ -71,13 +80,14 @@ function LaFormuleMagique {
 
 On commence par découper notre nombre via un `-split ''` qui a un avantage et un inconvénient par rapport à la méthode que j'ai utilisé. D'un côté il n'y a pas besoin de convertir notre nombre en une chaine de caractère, mais de l'autre côté : découper un nombre de quatre chiffres nous donne 6 items en résultat :
 
-> PS C:\> 2568 -split ''\
-> \
-> 2\
-> 5\
-> 6\
-> 8\
->  
+```powershell
+PS C:\> 2568 -split ''
+
+2
+5
+6
+8
+```
 
 Si vous ne voyez pas les six items, sachez qu'il y a un item vide avant le 2 et un item vide après le 8. Vous pouvez vous en débarrasser avec la méthode `.Trim()` si ça vous dérange, mais dans notre cas ils n'auront aucun impact sur notre calcul puisque 0+2+5+6+8+0 donne le même résultat que 2+5+6+8. Il ne nous reste plus qu'à calculer la somme de tous nos chiffres, et pour ça on utilise la commande `Measure-Object` qui permet de faire bien plus que simplement compter le nombre d'items dans une collection.
 

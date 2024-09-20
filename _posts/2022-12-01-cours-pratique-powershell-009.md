@@ -31,7 +31,7 @@ On note que les boutons "Recommencer" et "Meilleurs scores" n'ont pas a être fo
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Adaptation des variables
 2. Intégration du traitement

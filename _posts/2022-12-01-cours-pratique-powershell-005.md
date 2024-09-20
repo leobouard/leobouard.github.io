@@ -17,18 +17,20 @@ On ajoute un chronomètre qui se lance après que le script ait reçu la premiè
 
 ### Résultat attendu
 
-> VICTOIRE ! Vous avez deviné le nombre aléatoire\
-> \
-> Nombre aléatoire          : 198\
-> Réponses                  : {500, 250, 125, 200...}\
-> Réponse moyenne           : 216\
-> Tentatives                : 10\
-> Temps de résolution (sec) : 16,036\
-> Temps moyen par tentative : 1,604
+```plaintext
+VICTOIRE ! Vous avez deviné le nombre aléatoire
+
+Nombre aléatoire          : 198
+Réponses                  : {500, 250, 125, 200...}
+Réponse moyenne           : 216
+Tentatives                : 10
+Temps de résolution (sec) : 16,036
+Temps moyen par tentative : 1,604
+```
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Créer et lancer un chronomètre
 2. Stopper le chronomètre

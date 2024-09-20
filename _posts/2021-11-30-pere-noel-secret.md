@@ -28,9 +28,11 @@ On considère que le nombre minimum de participants est de trois. Les situations
 
 ## Résultat attendu
 
-> #0 Jake offre son cadeau à Terry\
-> #1 Terry offre son cadeau à Holt\
-> #2 Holt offre son cadeau à Amy\
-> #3 Amy offre son cadeau à Rosa\
-> #4 Rosa offre son cadeau à Charles\
-> #5 Charles offre son cadeau à Jake
+```plaintext
+#0 Jake offre son cadeau à Terry
+#1 Terry offre son cadeau à Holt
+#2 Holt offre son cadeau à Amy
+#3 Amy offre son cadeau à Rosa
+#4 Rosa offre son cadeau à Charles
+#5 Charles offre son cadeau à Jake
+```

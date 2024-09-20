@@ -21,31 +21,37 @@ Un nombre aléatoire entier compris entre 1 et 1000 est généré par PowerShell
 
 Si l'estimation est plus grande que le nombre aléatoire :
 
-> Deviner le nombre: 500\
-> ??? est plus petit que 500\
-> \
-> Nombre aléatoire : 21\
-> Dernière réponse : 500
+```plaintext
+Deviner le nombre: 500
+??? est plus petit que 500
+
+Nombre aléatoire : 21
+Dernière réponse : 500
+```
 
 Si l'estimation est plus petite que le nombre aléatoire :
 
-> Deviner le nombre: 500\
-> ??? est plus grand que 500\
-> \
-> Nombre aléatoire : 746\
-> Dernière réponse : 500
+```plaintext
+Deviner le nombre: 500
+??? est plus grand que 500
+\
+Nombre aléatoire : 746
+Dernière réponse : 500
+```
 
 Si l'estimation est égale au nombre aléatoire :
 
-> Deviner le nombre: 500\
-> VICTOIRE ! Vous avez deviné le nombre aléatoire\
-> \
-> Nombre aléatoire : 500\
-> Dernière réponse : 500
+```plaintext
+Deviner le nombre: 500
+VICTOIRE ! Vous avez deviné le nombre aléatoire
+
+Nombre aléatoire : 500
+Dernière réponse : 500
+```
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Générer un nombre aléatoire entre 1 et 1000
 2. Stocker le nombre aléatoire dans une variable

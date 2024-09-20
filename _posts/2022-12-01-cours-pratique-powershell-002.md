@@ -24,32 +24,36 @@ Le script est maintenant pourvu d'une boucle qui permet au joueur d'avoir 10 ten
 
 Exemple de victoire :
 
-> Deviner le nombre: 500\
-> ??? est plus grand que 500\
-> [...]\
-> Deviner le nombre: 560\
-> VICTOIRE ! Vous avez deviné le nombre aléatoire\
-> \
-> Nombre aléatoire : 560\
-> Dernière réponse : 560\
-> Tentatives       : 6
+```plaintext
+Deviner le nombre: 500
+??? est plus grand que 500
+[...]
+Deviner le nombre: 560
+VICTOIRE ! Vous avez deviné le nombre aléatoire
+\
+Nombre aléatoire : 560
+Dernière réponse : 560
+Tentatives       : 6
+```
 
 Exemple de défaite :
 
-> Deviner le nombre: 500\
-> ??? est plus grand que 500\
-> [...]\
-> Deviner le nombre: 608\
-> ??? est plus petit que 608\
-> DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire\
-> \
-> Nombre aléatoire : 606\
-> Dernière réponse : 608\
-> Tentative        : 10
+```plaintext
+Deviner le nombre: 500
+??? est plus grand que 500
+[...]
+Deviner le nombre: 608
+??? est plus petit que 608
+DEFAITE. Vous n'avez pas réussi à trouver le nombre aléatoire
+
+Nombre aléatoire : 606
+Dernière réponse : 608
+Tentative        : 10
+```
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Mettre le code dans une boucle
 2. Ajouter un compteur de tentatives
@@ -103,10 +107,10 @@ do {
 } until ($answer -eq $random -or $i -ge 10)
 ```
 
-<div class="information">
-    <span>Autre possibilité : la boucle For</span>
-    <p>Pour réaliser la boucle, le compteur et la condition de sortie en une seule commande, il est possible d'utiliser la boucle <code>for</code>. Celle-ci peut s'avérer très utile dans certains cas (comme celui-ci) mais reste très rare en PowerShell.<br>Si cela vous intéresse, vous pouvez consulter la documentation disponible ici : <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_for" target="_blank">à propos de For - PowerShell | Microsoft Learn →</a></p>
-</div>
+> #### Autre possibilité : la boucle For
+>
+> Pour réaliser la boucle, le compteur et la condition de sortie en une seule commande, il est possible d'utiliser la boucle FOR. Celle-ci peut s'avérer très utile dans certains cas (comme celui-ci) mais reste très rare en PowerShell.
+> Si cela vous intéresse, vous pouvez consulter la documentation disponible ici : [à propos de For - PowerShell \| Microsoft Learn](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_for).
 
 ### Affichage d'un message de défaite
 

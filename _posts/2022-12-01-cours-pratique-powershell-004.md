@@ -19,23 +19,27 @@ Les paramètres "Minimum" et "Maximum" pour la commande "Get-Random" sont mainte
 
 Bornes classiques :
 
-> Deviner le nombre (1 < ??? < 1000): 500\
-> ??? est plus grand que 500\
-> Deviner le nombre (500 < ??? < 1000): 750\
-> ??? est plus petit que 750\
-> Deviner le nombre (500 < ??? < 750):
+```plaintext
+Deviner le nombre (1 < ??? < 1000): 500
+??? est plus grand que 500
+Deviner le nombre (500 < ??? < 1000): 750
+??? est plus petit que 750
+Deviner le nombre (500 < ??? < 750):
+```
 
 Bornes intelligentes (donne toujours l'écart le plus serré) :
 
-> Deviner le nombre (500 < ??? < 750): 800\
-> ??? est plus petit que 800\
-> Deviner le nombre (500 < ??? < 750):
+```plaintext
+Deviner le nombre (500 < ??? < 750): 800
+??? est plus petit que 800
+Deviner le nombre (500 < ??? < 750):
+```
 
 C'est cette version qui sera conservée pour la correction. Elle a comme avantage de conserver la borne la plus proche en cas d'erreur du joueur.
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Stocker les valeurs minimum et maximum dans des variables pour la génération du nombre aléatoire
 2. Modifier le texte affiché pour ajouter des bornes

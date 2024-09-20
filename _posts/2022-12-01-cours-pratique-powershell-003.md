@@ -20,19 +20,21 @@ Toutes les tentatives du joueur sont maintenant gardées en mémoire et l'objet 
 
 ### Résultat attendu
 
-> Deviner le nombre: 500\
-> ??? est plus grand que 500\
-> [...]\
-> VICTOIRE ! Vous avez deviné le nombre aléatoire\
-> \
-> Nombre aléatoire : 939\
-> Réponses         : {500, 750, 900, 950...}\
-> Réponse moyenne  : 864\
-> Tentatives       : 9
+```plaintext
+Deviner le nombre: 500
+??? est plus grand que 500
+[...]
+VICTOIRE ! Vous avez deviné le nombre aléatoire
+
+Nombre aléatoire : 939
+Réponses         : {500, 750, 900, 950...}
+Réponse moyenne  : 864
+Tentatives       : 9
+```
 
 ---
 
-## Etape par étape
+## Étape par étape
 
 1. Garder en mémoire toutes les estimations du joueur
 2. Afficher toutes les tentatives
