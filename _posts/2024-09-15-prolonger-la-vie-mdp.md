@@ -135,7 +135,7 @@ Un mot de passe expire lorsqu'on arrive 90 jours après la date indiquée dans l
 
 L'idée de cet abus n'est donc pas modifier le mot de passe, mais plutôt d'agir sur la date de définition de celui-ci. Et pour faire cela, il y a plusieurs méthodes.
 
-### User must change password at next logon
+### Avec la case à cocher
 
 Cette méthode est facile à réaliser car elle peut être faite depuis la console *Active Directory Users and Computers* (ou `dsa` pour les intimes).
 
@@ -147,12 +147,14 @@ Il suffit de cliquer sur le profil de l'utilisateur, naviguer dans l'onglet "Acc
 
 ...et voilà ! La durée de vie de votre mot de passe actuel a été prolongé de 90 jours.
 
+![La case à cocher en question](/assets/images/must-change-password-at-next-logon.jpg)
+
 Pour expliquer rapidement ce fonctionnement : 
 
 1. Cocher la case "User must change password at next logon" fait expirer instantanement le mot de passe du compte, pour forcer l'utilisateur a le changer lors de la prochaine connexion.
 2. Décocher la case supprime l'expiration du mot de passe, et comme Active Directory n'a pas gardé en mémoire l'ancienne valeur de `PasswordLastSet`, il défini la date de définition du mot de passe à aujourd'hui.
 
-### PasswordLastSet -1
+### Via PowerShell
 
 Ici on fait appel à un paramètre peu connu de la commande `Set-ADUser` pour modifier directement la date de définition du mot de passe sans passer par quatre chemins :
 
@@ -187,3 +189,6 @@ RealPasswordLastSet     : 22/06/2024 00:00:00
 TimeSpanBetweenPassword : 67
 CanonicalName           : contoso.com/CONTOSO/Users/Christie Cline
 ```
+
+## En résumé 
+
