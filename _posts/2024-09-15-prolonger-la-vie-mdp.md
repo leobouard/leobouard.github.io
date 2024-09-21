@@ -129,7 +129,7 @@ DistinguishedName : CN=Christie Cline,OU=Users,OU=CONTOSO,DC=contoso,DC=com
 
 Vous pouvez faire ce genre d'audit avec le module PowerShell [DSInternals](https://github.com/MichaelGrafnetter/DSInternals) de Michael Grafnetter par exemple.
 
-## Méthode 3 : Abus du PasswordLastSet
+## Méthode 3 : Abus du PasswordLastSet (ou PwdLastSet)
 
 Un mot de passe expire lorsqu'on arrive 90 jours après la date indiquée dans l'attribut `PasswordLastSet`, qui correspond à la date de définition du mot de passe.
 
@@ -159,8 +159,8 @@ Pour expliquer rapidement ce fonctionnement :
 Ici on fait appel à un paramètre peu connu de la commande `Set-ADUser` pour modifier directement la date de définition du mot de passe sans passer par quatre chemins :
 
 ```powershell
-$user = Get-ADUser christiec -Properties PasswordLastSet
-$user.PasswordLastSet = -1
+$user = Get-ADUser christiec -Properties PwdLastSet
+$user.PwdLastSet = -1
 Set-ADUser -Instance $user
 ```
 
@@ -190,5 +190,10 @@ TimeSpanBetweenPassword : 67
 CanonicalName           : contoso.com/CONTOSO/Users/Christie Cline
 ```
 
-## En résumé 
+## En résumé
 
+Méthode | Détection | Blocage
+------- | --------- | --------
+Bête et méchant | Event 4723 | Modifier la politique de mot de passe par défaut
+PasswordReset | Audit de la base NTDS | Impossible
+PasswordLastSet | Attribut `msds-replattributemetadata` | Impossible
