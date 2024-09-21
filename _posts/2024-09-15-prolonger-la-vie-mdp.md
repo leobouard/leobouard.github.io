@@ -11,7 +11,7 @@ La durée de vie des mots de passe et leur expiration en 2024, c'est un sujet co
 
 D'un côté, nous avons les recommandations du NIST ou de l'ANSSI qui ne préconisent plus une expiration fréquente de mot de passe pour les comptes sans privilèges. De l'autre, les assurances qui demande encore aux entreprises de définir une durée de vie maximum des mots de passe à 90 ou 180 jours. Au milieu de tout ça, il y a les utilisateurs, qui utilisent de nombreux stratagèmes pour contourner cette expiration et se faciliter la vie.
 
-## Rappels sur les politiques de mot de passe
+### Rappels sur les politiques de mot de passe
 
 Dans Active Directory, les politiques de mot de passe (qu'elles soient des *fine-grained password policy* ou la politique par défaut) se basent sur les critères suivants pour définir leurs exigences :
 
@@ -37,13 +37,11 @@ Durée de vie minimale du mot de passe | 0 jour
 Respect des exigences de complexité | Oui
 Longueur minimale du mot de passe | 10 caractères
 
-## Les différentes méthodes de contournement
+## Méthode 1 : Bête et méchant
 
-### Bête et méchant
+Sur cette méthode, l'utilisateur respecte toutes les règles définies, mais les exploite à son avantage. Comme la configuration actuelle ne définie pas d'âge minimum avant changement, l'utilisateur va changer 10 fois son mot de passe (pour respecter les règles d'historique) dans la même journée pour pouvoir redéfinir le même mot de passe que précedemment.
 
-Sur cette méthode, l'utilisateur respecte toutes les règles définies mais les exploite à son avantage. Comme la configuration actuelle ne définie pas d'âge minimum avant changement, l'utilisateur va changer 10 fois son mot de passe (pour respecter les règles d'historique) dans la même journée pour pouvoir redéfinir le même mot de passe que précedemment.
-
-Pour le mot de passe de passe initial `MotDePasse!` :
+Pour le mot de passe initial `MotDePasse!` :
 
 - Premier changement : `Temporaire1`
 - Deuxième changement : `Temporaire2`
@@ -51,21 +49,19 @@ Pour le mot de passe de passe initial `MotDePasse!` :
 - Avant-dernier changement : `Temporaire9`
 - Dernier changement : `Temporaire10`
 
-Après avoir défini 10 mots de passe *temporaires*, l'utilisateur peut maintenant redéfinir son mot de passe à `MotDePasse!` et pourra le conserver pendant 90 jours.
+Après avoir défini dix mots de passe *temporaires*, l'utilisateur peut maintenant redéfinir son mot de passe à `MotDePasse!` et pourra le conserver pendant 90 jours.
 
 > Pour résoudre ce problème, vous pouvez augmenter l'historique de mot de passe et/ou définir une durée de vie minimum du mot de passe.
 
-### Abus du "PasswordReset"
+## Méthode 2 : Abus du "PasswordReset"
 
-Lorsqu'un mot de passe arrive à expiration, on est censé le modifier pour un nouveau mot de passe que l'on a de préférence jamais utilisé auparavant. Pour s'assurer de cela, Active Directory conserve un historique des hashs de vos X anciens mots de passe (généralement 10), pour les comparer avec votre nouveau mot de passe.
+Lorsqu'un administrateur réinitialise le mot de passe d'un compte, la mécanique de vérification d'historique des hashs est ignorée (et c'est un comportement normal de Active Directory).
 
-Impossible donc de réutiliser votre dernier ou avant-dernier mot de passe en théorie.
+Sauf que certains peuvent abuser de cette exception pour conserver le même mot de passe indéfiniment, en contournant l'expiration. Cela peut provenir d'un administrateur qui a des droits sur son compte, ou d'un utilisateur qui abuse de la gentillesse du support.
 
-Sauf que lorsqu'un administrateur réinitialise le mot de passe d'un compte, cette mécanique de vérification d'historique est ignorée. Certains peuvent donc en abuser pour conserver le même mot de passe indéfiniment, en contournant l'expiration.
+Évidemment cette méthode laisse des traces derrière elle. Comme Active Directory conserve les hashs de vos anciens mots de passe (pour justement qu'on évite d'utiliser plusieurs fois le même), un simple audit de la base NTDS dévoile alors la supercherie : on retrouve plusieurs fois le même hash à la suite dans l'historique !
 
-Evidemment cette méthode laisse des traces derrière elle. Comme Active Directory conserve les hashs de vos anciens mots de passe, un simple audit de la base NTDS dévoile alors la supercherie : on retrouve plusieurs fois le même hash dans l'historique !
-
-Vous pouvez faire ce genre d'audit avec le module PowerShell DSInternals de Michael Grafnetter par exemple.
+Pour Christie Cline, on retrouve plusieurs fois de suite le hash `d96b085ea5c0d101101bb0a4d846d0df`, ce qui indique un potentiel abus de cette mécanique :
 
 ```plaintext
 DisplayName       : Christie Cline
@@ -77,9 +73,22 @@ IsAdministrator   : False
 DistinguishedName : CN=Christie Cline,OU=Users,OU=CONTOSO,DC=contoso,DC=com
 ```
 
-### Abus du "ChangePasswordAtLogon"
+> #### Attention
+> Attention cependant, retrouver plusieurs fois le même hash à la suite dans l'historique n'indique pas forcément une action malicieuse. Il est possible que le mot de passe ai été réinitalisé coup-sur-coup durant la même journée (et donc sans vouloir prolonger la vie du mot de passe).
 
-Le processus est simple :
+Vous pouvez faire ce genre d'audit avec le module PowerShell [DSInternals](https://github.com/MichaelGrafnetter/DSInternals) de Michael Grafnetter par exemple.
+
+## Méthode 3 : Abus du PasswordLastSet
+
+Un mot de passe expire lorsqu'on arrive 90 jours après la date indiquée dans l'attribut `PasswordLastSet`, qui correspond à la date de définition du mot de passe.
+
+L'idée de cet abus n'est donc pas modifier le mot de passe, mais plutôt d'agir sur la date de définition de celui-ci. Et pour faire cela, il y a plusieurs méthodes.
+
+### User must change password at next logon
+
+Cette méthode est facile à réaliser car elle peut être faite depuis la console *Active Directory Users and Computers* (ou `dsa` pour les intimes).
+
+Il suffit de cliquer sur le profil de l'utilisateur, naviguer dans l'onglet "Account" puis de :
 
 1. Cocher la case "User must change password at next logon"
 2. Cliquer sur "Apply"
@@ -87,7 +96,26 @@ Le processus est simple :
 
 ...et voilà ! La durée de vie de votre mot de passe actuel a été prolongé de 90 jours.
 
-Cette méthode n'est pas indétectable : ce genre d'opération génère une différence sur les données de réplication. Comme le mot de passe ne change pas, pas besoin de le répliquer sur les autres contrôleurs de domaine. On se retrouve donc avec une différence de date de réplication entre le mot de passe (unicodePwd) et la date de définition de celui-ci.
+Pour expliquer rapidement ce fonctionnement : 
+
+1. Cocher la case "User must change password at next logon" fait expirer instantanement le mot de passe du compte, pour forcer l'utilisateur a le changer lors de la prochaine connexion.
+2. Décocher la case supprime l'expiration du mot de passe, et comme Active Directory n'a pas gardé en mémoire l'ancienne valeur de `PasswordLastSet`, il défini la date de définition du mot de passe à aujourd'hui.
+
+### PasswordLastSet -1
+
+Ici on fait appel à un paramètre peu connu de la commande `Set-ADUser` pour modifier directement la date de définition du mot de passe sans passer par quatre chemins :
+
+```powershell
+$user = Get-ADUser christiec -Properties PasswordLastSet
+$user.PasswordLastSet = -1
+Set-ADUser -Instance $user
+```
+
+La valeur -1 permet de définir la date à aujourd'hui.
+
+Ces deux méthodes ne sont pas indétectables. Ce genre d'opération génère une différence sur les données de réplication entre les contrôleurs de domaine. Comme le mot de passe (attribut `unicodePwd`) ne change pas, pas besoin de le répliquer. En revanche, la nouvelle valeur de l'attribut `PasswordLastSet` est partagée sur tous les contrôleurs de domaine.
+
+Il suffit alors de trouver les comptes avec une différence de date de réplication entre les attributs `unicodePwd` et `PasswordLastSet`.
 
 Pour trouver les fraudeurs, vous pouvez lancer [Purple Knight de Semperis](https://www.semperis.com/purple-knight/) qui a un indicateur pour cela, ou alors utiliser mon script PowerShell : [Get-ADAbnormalPasswordRefresh.ps1 \| GitHub Gist](https://gist.github.com/leobouard/f6066b14db8199a864ff00620c08909d).
 

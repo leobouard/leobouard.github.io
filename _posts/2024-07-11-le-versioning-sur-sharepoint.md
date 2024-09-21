@@ -108,7 +108,7 @@ Lorsque celui-ci est défini, il se passe deux choses (en silence) sur la config
 
 Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou *ExpireVersionsAfterDays* qui restent bloqués à leurs valeurs par défaut :
 
-```
+```plaintext
 Set-PnPTenant: The parameter ExpireVersionsAfterDays can't be set because the Tenant has AutoExpiration enabled
 ```
 
@@ -156,7 +156,7 @@ Pour supprimer les versions qui ont plus d'un an :
 New-PnPSiteFileVersionBatchDeleteJob -DeleteBeforeDays 365
 ```
 
-> Limitation côté Microsoft : il n'est pas possible de conserver des versions créées avant le 01/01/2023.
+> Limitation côté Microsoft : il n'est pas possible de conserver des versions créées avant le 01 janvier 2023.
 
 Utiliser la méthode automatique proposée par Microsoft :
 
