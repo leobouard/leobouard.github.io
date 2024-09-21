@@ -117,6 +117,10 @@ Ces deux méthodes ne sont pas indétectables. Ce genre d'opération génère un
 
 Il suffit alors de trouver les comptes avec une différence de date de réplication entre les attributs `unicodePwd` et `PasswordLastSet`.
 
+> #### Information
+>
+> Vous pouvez consulter les données de réplication d'un utilisateur avec l'attribut `msds-replattributemetadata`.
+
 Pour trouver les fraudeurs, vous pouvez lancer [Purple Knight de Semperis](https://www.semperis.com/purple-knight/) qui a un indicateur pour cela, ou alors utiliser mon script PowerShell : [Get-ADAbnormalPasswordRefresh.ps1 \| GitHub Gist](https://gist.github.com/leobouard/f6066b14db8199a864ff00620c08909d).
 
 Exemple de résultat :
