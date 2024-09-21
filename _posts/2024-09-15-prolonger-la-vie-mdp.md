@@ -129,11 +129,16 @@ DistinguishedName : CN=Christie Cline,OU=Users,OU=CONTOSO,DC=contoso,DC=com
 
 Vous pouvez faire ce genre d'audit avec le module PowerShell [DSInternals](https://github.com/MichaelGrafnetter/DSInternals) de Michael Grafnetter par exemple.
 
-## Méthode 3 : Abus du PasswordLastSet (ou PwdLastSet)
+## Méthode 3 : Abus du PwdLastSet
 
-Un mot de passe expire lorsqu'on arrive 90 jours après la date indiquée dans l'attribut `PasswordLastSet`, qui correspond à la date de définition du mot de passe.
+L'attribut `PwdLastSet` contient la date de définition du mot de passe de l'utilisateur et permet à Active Directory de savoir si un mot de passe est expiré ou non. L'idée de cet abus n'est donc pas modifier le mot de passe, mais plutôt d'agir sur la date de définition de celui-ci. Pour cela, il y a deux méthodes qui se repose sur la même mécanique.
 
-L'idée de cet abus n'est donc pas modifier le mot de passe, mais plutôt d'agir sur la date de définition de celui-ci. Et pour faire cela, il y a plusieurs méthodes.
+L'attribut `PwdLastSet` ne peut prendre que deux valeurs en écriture :
+
+1. 0 qui fait expirer le mot de passe instantanément
+2. -1 qui permet de définir la date et l'heure actuelle
+
+L'idée est donc de modifier la valeur de l'attribut pour la passer à -1, et ainsi prolonger la vie du mot de passe en un clin d'oeil.
 
 ### Avec la case à cocher
 
@@ -141,36 +146,27 @@ Cette méthode est facile à réaliser car elle peut être faite depuis la conso
 
 Il suffit de cliquer sur le profil de l'utilisateur, naviguer dans l'onglet "Account" puis de :
 
-1. Cocher la case "User must change password at next logon"
-2. Cliquer sur "Apply"
-3. Décocher la case "User must change password at next logon"
+1. **Cocher la case "User must change password at next logon"** : cette action fait expirer instantanement le mot de passe (`PwdLastSet = 0`) pour forcer l'utilisateur a le changer lors de la prochaine connexion
+2. **Cliquer sur "Apply"**
+3. **Décocher la case "User must change password at next logon"** : cette action supprime l'expiration immédiate et comme Active Directory ne peut pas réinjecter la date précédente (seulement deux valeurs acceptées en écriture : 0 et -1), il est obligé de définir la valeur de `PwdLastSet` à -1 (donc la date actuelle).
 
 ...et voilà ! La durée de vie de votre mot de passe actuel a été prolongé de 90 jours.
 
 ![La case à cocher en question](/assets/images/must-change-password-at-next-logon.jpg)
 
-Pour expliquer rapidement ce fonctionnement : 
-
-1. Cocher la case "User must change password at next logon" fait expirer instantanement le mot de passe du compte, pour forcer l'utilisateur a le changer lors de la prochaine connexion.
-2. Décocher la case supprime l'expiration du mot de passe, et comme Active Directory n'a pas gardé en mémoire l'ancienne valeur de `PasswordLastSet`, il défini la date de définition du mot de passe à aujourd'hui.
-
 ### Via PowerShell
 
-Ici on fait appel à un paramètre peu connu de la commande `Set-ADUser` pour modifier directement la date de définition du mot de passe sans passer par quatre chemins :
+Ici on fait appel à la commande `Set-ADUser` pour modifier directement l'attribut `PwdLastSet` sans passer par quatre chemins :
 
 ```powershell
-$user = Get-ADUser christiec -Properties PwdLastSet
-$user.PwdLastSet = -1
-Set-ADUser -Instance $user
+Set-ADUser christiec -Replace @{PwdLastSet = -1}
 ```
-
-La valeur -1 permet de définir la date à aujourd'hui.
 
 ### Détection
 
-Ces deux méthodes ne sont pas indétectables. Ce genre d'opération génère une différence sur les données de réplication entre les contrôleurs de domaine. Comme le mot de passe (attribut `unicodePwd`) ne change pas, pas besoin de le répliquer. En revanche, la nouvelle valeur de l'attribut `PasswordLastSet` est partagée sur tous les contrôleurs de domaine.
+Ces deux méthodes ne sont pas indétectables. Ce genre d'opération génère une différence sur les données de réplication entre les contrôleurs de domaine. Comme le mot de passe (attribut `unicodePwd`) ne change pas, pas besoin de le répliquer. En revanche, la nouvelle valeur de l'attribut `PwdLastSet` est partagée sur tous les contrôleurs de domaine.
 
-Il suffit alors de trouver les comptes avec une différence de date de réplication entre les attributs `unicodePwd` et `PasswordLastSet`.
+Il suffit alors de trouver les comptes avec une différence de date de réplication entre les attributs `unicodePwd` et `PwdLastSet`.
 
 > #### Information
 >
