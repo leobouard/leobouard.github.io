@@ -1,7 +1,50 @@
+<script>
+  // Fonction pour créer un cookie
+  function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+
+  // Fonction pour lire un cookie
+  function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  // Fonction pour cacher la div et créer le cookie
+  function closeCookies() {
+    document.getElementById('shadow').style.display = 'none';
+    setCookie('cookiesAccepted', 'true', 30); // Cookie valable 30 jours
+  }
+
+  // Vérifier si le cookie existe au chargement de la page
+  window.onload = function () {
+    if (getCookie('cookiesAccepted')) {
+      document.getElementById('shadow').style.display = 'none';
+    }
+  }
+
+  // Ajouter un événement au bouton pour accepter les cookies
+  document.getElementById('accept-cookies-btn').addEventListener('click', closeCookies);
+</script>
+
+
 <div class="shadow">
   <div class="cookies">
     <span>Ce site utilise des cookies</span>
-    <p>LaBouaBouate utilise des cookies pour comprendre comment vous interragissez avec le contenu que je propose via Google Analytics.</p>
+    <p>LaBouaBouate utilise des cookies pour comprendre comment vous interragissez avec le contenu que je propose via
+      Google Analytics.</p>
     <button onclick="allConsentGranted()">Accepter</button>
     <button onclick="closeCookies()">
       <i class="fa-solid fa-xmark"></i>
