@@ -1,0 +1,30 @@
+div.shadow {
+    position: fixed;
+    background: linear-gradient(0deg, #00000030, transparent);
+    height: 500px;
+    width: 100%;
+    bottom: 0;
+    pointer-events: none;
+}
+
+div.cookies {
+    display: block;
+    position: absolute;
+    padding: 1em;
+    background: #fff;
+    position: fixed;
+    bottom: 1em;
+    transform: translate(-50%, 0);
+    left: 50%;
+    max-width: 800px;
+    pointer-events: all;
+}
+
+div.cookies span {
+    font-family: 'Manrope';
+    font-size: 1em;
+}
+
+div.cookies p {
+    font-size: smaller;
+}
