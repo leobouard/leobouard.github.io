@@ -60,8 +60,8 @@
   }
 
   if (readCookie('cookie-notice-option') == 'true') {
-    {% if site.google_analytics %}
-    {% include google - analytics.js %}
+    {% if jekyll.environment == "production" and site.google_analytics %}
+    {% include ga.js %}
     {% endif %}
   } else if (readCookie('cookie-notice-option') != 'false') {
     document.getElementById('cookie-notice').style.display = 'block';
