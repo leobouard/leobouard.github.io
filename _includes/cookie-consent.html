@@ -1,40 +1,16 @@
-<style>
-  #cookie-notice {
-    padding: 0.5rem 1rem;
-    display: none;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: calc(100% - 2rem);
-    background: #222;
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  #cookie-notice a {
-    display: inline-block;
-    cursor: pointer;
-    margin-left: 0.5rem;
-  }
-
-  @media (max-width: 767px) {
-    #cookie-notice span {
-      display: block;
-      padding-top: 3px;
-      margin-bottom: 1rem;
-    }
-
-    #cookie-notice a {
-      position: relative;
-      bottom: 4px;
-    }
-  }
-</style>
-<div id="cookie-notice"><span>We would like to use third party cookies and scripts to improve the functionality of this
-    website.</span>
-  <a id="cookie-notice-accept" class="btn btn-primary btn-sm">Approve</a>
-  <a id="cookie-notice-deny" class="btn btn-primary btn-sm">Deny</a>
-  <a href="/privacy" class="btn btn-primary btn-sm">More info</a>
+<div class="shadow" id="cookie-notice">
+  <div class="cookies">
+    <span>🍪 Ce site utilise des cookies</span>
+    <p>LaBouaBouate utilise Google Analytics pour mesurer le trafic sur le site web.</p>
+    <div class="cookie-buttons">
+      
+    </div>
+  </div>
+  <a id="cookie-notice-accept">Accepter</a>
+  <a id="cookie-notice-deny"><i class="fa-solid fa-xmark"></i></a>
+  <a href="/privacy"><i class="fa-solid fa-circle-info"></i></a>
 </div>
+
 <script>
   function createCookie(name, value, days) {
     var expires = "";
