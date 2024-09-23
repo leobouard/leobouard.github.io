@@ -20,6 +20,8 @@ Les adresses IP collectées sont anonymisées. Plus d'informations ici : [IP mas
 
 Aucune donnée n'est vendue ou partagée à un tiers.
 
+<a class="no-decoration button-primary hover-bottom" onclick="eraseCookie('cookie-notice-option');" href="#">Réinitialiser les cookies</a>
+
 ## Hébergement du site web
 
 Le site est hébergé gratuitement sur [GitHub Pages](https://pages.github.com/).
