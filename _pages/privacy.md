@@ -18,6 +18,8 @@ Les cookies sont utilisés pour mesurer certains événements via Google Analyti
 
 Les adresses IP collectées sont anonymisées. Plus d'informations ici : [IP masking in Universal Analytics - Analytics Help (google.com)](https://support.google.com/analytics/answer/2763052?sjid=13257524820651193844-EU).
 
+Aucune donnée n'est vendue ou partagée a un tier.
+
 ## Hébergement du site web
 
 Le site est hébergé gratuitement sur [GitHub Pages](https://pages.github.com/).
