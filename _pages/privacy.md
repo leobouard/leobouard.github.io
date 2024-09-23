@@ -20,7 +20,7 @@ Les adresses IP collectées sont anonymisées. Plus d'informations ici : [IP mas
 
 Aucune donnée n'est vendue ou partagée à un tiers.
 
-<p style="text-align: center;">
+<p style="text-align: center; margin-top: 1em;">
   <a class="no-decoration button-primary hover-bottom" onclick="eraseCookie('cookie-notice-option');" href="#">Réinitialiser les cookies</a>
 </p>
 
