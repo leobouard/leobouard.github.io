@@ -45,7 +45,7 @@
     {% include ga.js %}
     {% endif %}
   } else if (readCookie('cookie-notice-option') != 'false') {
-    document.getElementById('cookie-notice').style.display = 'block';
+    document.getElementById('cookie-notice').style.display = 'flex';
   }
 
   document.getElementById('cookie-notice-accept').addEventListener("click", function () {
