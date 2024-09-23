@@ -5,15 +5,12 @@ div.cookies-container {
     justify-content: center;
     width: 100%;
     padding: 1em;
+    bottom: 0;
 }
 
 div.cookies {
     background: #fff;
     padding: 1em;
-    max-width: 800px;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    width: fill-available;
 }
 
 div.cookies span {
