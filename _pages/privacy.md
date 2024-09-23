@@ -18,7 +18,15 @@ Les cookies sont utilisés pour mesurer certains événements via Google Analyti
 
 Les adresses IP collectées sont anonymisées. Plus d'informations ici : [IP masking in Universal Analytics - Analytics Help (google.com)](https://support.google.com/analytics/answer/2763052?sjid=13257524820651193844-EU).
 
-Aucune donnée n'est vendue ou partagée a un tier.
+Aucune donnée n'est vendue ou partagée à un tiers.
+
+<a id="cookie-notice-accept">Changer mes préférences</a>
+<script>
+document.getElementById('cookie-notice-show').addEventListener("click", function () {
+  document.getElementById('cookie-notice').style.display = 'flex';
+});
+</script>
+
 
 ## Hébergement du site web
 
