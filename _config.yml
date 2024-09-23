@@ -34,3 +34,6 @@ defaults:
     values:
       is_post: false
       layout: page
+
+# Google Analytics
+google_analytics: G-C2NF11X1GL
