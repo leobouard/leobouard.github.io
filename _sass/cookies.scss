@@ -22,6 +22,9 @@ div.cookies {
     left: 50%;
     max-width: 800px;
     pointer-events: all;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
 }
 
 div.cookies span {
