@@ -4,7 +4,7 @@ section.blog-post, section.blog-page, section.recommandation {
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
 }
 

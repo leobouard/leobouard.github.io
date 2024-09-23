@@ -1,0 +1,19 @@
+table,
+td,
+tr,
+th {
+    border: var(--border);
+    padding: 7px;
+    border-collapse: collapse;
+    line-height: 125%;
+}
+
+th {
+    background-color: var(--accentbg);
+    text-align: left;
+}
+
+table {
+    min-width: 50%;
+    margin: 1em 0;
+}
