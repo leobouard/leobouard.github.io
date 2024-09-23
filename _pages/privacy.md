@@ -27,4 +27,4 @@ Le site est hébergé gratuitement sur [GitHub Pages](https://pages.github.com/)
 Ce site web utilise les ressources suivantes :
 
 - [Font Awesome](https://fontawesome.com/) pour les icônes
-- [Browse Fonts - Google Fonts](https://fonts.google.com/) pour certaines polices d'écriture
+- [Google Fonts](https://fonts.google.com/) pour certaines polices d'écriture
