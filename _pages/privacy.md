@@ -4,6 +4,8 @@ title:  "Respect de la vie privée"
 description: ""
 ---
 
+# Respect de la vie privée
+
 ## Utilisation des cookies
 
 Les cookies sont utilisés pour mesurer certains événements via Google Analytics. Voici la liste exhaustive des événements capturés :
