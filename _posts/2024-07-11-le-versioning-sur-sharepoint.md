@@ -218,6 +218,8 @@ Voici un script qui permet de lancer un nettoyage des versions de plus d'un an s
 
 L'utilisation d'une application Entra ID est maintenant obligatoire. Vous aurez besoin de la permission déléguée SharePoint `AllSites.FullControl` et le rôle *SharePoint Administrator*.
 
+Attention : ce script ajoute l'utilisateur indiqué dans la variable `$upn` en tant que propriétaire de tous les sites SharePoint sur lesquels il doit invervenir. Pensez à faire un peu de ménage après l'exécution du script.
+
 ```powershell
 #Requires -Modules PnP.PowerShell
 #Requires -RunAsAdministrator
