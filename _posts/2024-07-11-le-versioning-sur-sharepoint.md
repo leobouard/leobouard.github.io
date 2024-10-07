@@ -10,7 +10,7 @@ listed: true
 
 Lorsqu'un fichier est modifié, SharePoint conserve sa version précédente pour permettre à n'importe qui de revenir en arrière ou de visualiser le fichier avant sa modification. Par défaut, SharePoint permet de conserver jusqu'à 500 versions d'un même fichier.
 
-C'est une fonctionnalité qui est très pratique mais qui a comme désavantage de consommer beaucoup d'espace de stockage. En effet, au lieu de conserver une version différentielle du fichier (comme un GIT par exemple), SharePoint sauvegarde le fichier complet. Sur certains sites, cela peut donc mener à des multiplicateurs de 25 entre le poids des fichiers seuls sans leurs versions (100 GB par exemple) et le poids total du site SharePoint (2,5 TB dans cet exemple).
+C'est une fonctionnalité qui est très pratique, mais qui a comme désavantage de consommer beaucoup d'espace de stockage. En effet, au lieu de conserver une version différentielle du fichier (comme un GIT par exemple), SharePoint sauvegarde le fichier complet. Sur certains sites, cela peut donc mener à des multiplicateurs de 25 entre le poids des fichiers seuls sans leurs versions (100 GB par exemple) et le poids total du site SharePoint (2,5 TB dans cet exemple).
 
 Si votre courbe d'usage de SharePoint monte en flèche et que vous allez bientôt être à court d'espace disponible, faire du ménage dans vos versions est une bonne idée pour gagner facilement des GB voir des TB de données.
 
@@ -26,12 +26,14 @@ On commence par installer le module `PnP.PowerShell` (uniquement disponible avec
 Install-Module PnP.PowerShell -Scope AllUsers
 ```
 
-Avant de commencer a récupérer de l'espace de stockage, il faut arrêter l'hémoragie en réduisant le nombre maximal d'historique de version et/ou leur durée de conservation.
+Avant de commencer à récupérer de l'espace de stockage, il faut arrêter l'hémorragie en réduisant le nombre maximal d'historiques de version et/ou leur durée de conservation.
 
-On commence par se connecter sur votre portail d'administration SharePoint avec PowerShell :
+> Depuis le mois de septembre 2024, l'utilisation du module PnP.PowerShell nécessite la création d'une application Entra ID dédiée : [Register an Entra ID Application to use with PnP PowerShell \| PnP PowerShell](https://pnp.github.io/powershell/articles/registerapplication.html)
+
+On commence par se connecter sur votre portail d'administration SharePoint avec PowerShell, en indiquant l'URL de votre portail d'administration SharePoint et le ClientId de votre application Entra ID pour PNP :
 
 ```powershell
-Connect-PnPOnline -Url 'https://contoso-admin.sharepoint.com' -Interactive
+Connect-PnPOnline -Url 'https://contoso-admin.sharepoint.com' -ClientId '10a52256-36f0-4bb7-973d-986630ee8e3c' -Interactive
 ```
 
 On consulte la configuration actuelle pour évaluer les changements à faire avec la commande suivante :
@@ -66,25 +68,29 @@ On commence par activer les fonctionnalités d'expiration de version de fichier 
 Set-PnPTenant -EnableVersionExpirationSetting:$true
 ```
 
-Une fois les fonctionnalités débloquées, il est enfin possible d'agir sur le nombre maximum de versions au niveau du tenant. Dans mon exemple, je descend de 500 à 100 versions majeures au maximum :
+Une fois les fonctionnalités débloquées, il est enfin possible d'agir sur le nombre maximum de versions au niveau du tenant. Dans mon exemple, je descends de 500 à 100 versions majeures au maximum :
 
 ```powershell
 Set-PnPTenant -MajorVersionLimit 100
 ```
 
-On en profite aussi pour définir une durée de validité pour les versions. Dans ma configuration, trois ans après sa création, la version d'un fichier est susceptible d'être supprimée :
+On en profite aussi pour définir une durée de validité pour les versions. Dans ma configuration, trois ans après sa création, la version d'un fichier est **susceptible** d'être supprimée :
 
 ```powershell
 Set-PnPTenant -ExpireVersionsAfterDays 1096
 ```
 
+> #### Pourquoi je dis qu'une version est "susceptible" d'être supprimée ?
+>
+> La suppression d'une version au bout d'un certain temps n'est pas garantie : elle dépend de l'activité sur le fichier. En effet, la suppression des *vieilles* versions n'est effectuée que lors de la création d'une nouvelle version du fichier (et dans la limite de ~20 versions supprimées par nouvel évènement).
+
 Cette configuration est appelée configuration "manuelle" par Microsoft, qui propose de son côté une méthode plus intelligente et automatique de gestion des versions avec le paramètre "EnableAutoExpirationVersionTrim".
 
 ### Le paramètre EnableAutoExpirationVersionTrim
 
-Microsoft propose un dernier paramètre pour gérer les versions : *EnableAutoExpirationVersionTrim*. Celui-ci permettrai une configuration plus intelligente et plus efficace que de simples seuils définis manuellement sur la durée de vie et/ou le nombre de versions.
+Microsoft propose un dernier paramètre pour gérer les versions : *EnableAutoExpirationVersionTrim*. Celui-ci permettrait une configuration plus intelligente et plus efficace que de simples seuils définis manuellement sur la durée de vie et/ou le nombre de versions.
 
-Avec ce paramètre, la conservation des versions se fait de manière différenciée suivant l'âge des versions:
+Avec ce paramètre, la conservation des versions se fait de manière différenciée suivant l'âge des versions :
 
 - **Pendant les 30 premiers jours** : toutes les versions sont conservées dans la limite de 500 versions
 - **Entre un et deux mois** : une seule version par heure du fichier est conservée
@@ -104,7 +110,7 @@ Set-PnPTenant -EnableAutoExpirationVersionTrim:$true
 Lorsque celui-ci est défini, il se passe deux choses (en silence) sur la configuration du tenant :
 
 1. Le paramètre *MajorVersionLimit* revient à sa valeur initiale (500)
-2. Le paramètre *ExpireVersionsAfterDays* passe quand à lui à 30 jours
+2. Le paramètre *ExpireVersionsAfterDays* passe quant à lui à 30 jours
 
 Il n'est alors plus possible de modifier les paramètres *MajorVersionLimit* ou *ExpireVersionsAfterDays* qui restent bloqués à leurs valeurs par défaut :
 
@@ -113,6 +119,10 @@ Set-PnPTenant: The parameter ExpireVersionsAfterDays can't be set because the Te
 ```
 
 On retrouve donc la configuration évoquée précédemment, où pendant 30 jours, jusqu'à 500 versions peuvent être conservées.
+
+> #### Rappel
+>
+> Le nettoyage des versions ne sera déclenché que lors de la création d'une nouvelle version du fichier (donc modification du fichier).
 
 ## Contrôle de la propagation de la configuration
 
@@ -206,32 +216,45 @@ Pour afficher la quantité de données récupérées (en GB) :
 
 Voici un script qui permet de lancer un nettoyage des versions de plus d'un an sur tous les sites SharePoint de plus de 100 GB.
 
-Je recommande très fortement l'utilisation d'une application Entra ID pour ce genre de script, en connexion par certificat et avec la permission API SharePoint `Sites.FullControl.All`.
+L'utilisation d'une application Entra ID est maintenant obligatoire. Vous aurez besoin de la permission déléguée SharePoint `AllSites.FullControl` et le rôle *SharePoint Administrator*.
 
 ```powershell
-$minimumSizeGB = 100
+#Requires -Modules PnP.PowerShell
+#Requires -RunAsAdministrator
+#Requires -Version 7.4.5
 
-# Entra ID app registration credentials
+Update-Module PnP.PowerShell
+
+$minimumSizeGB = 100
+$upn = 'admin@contoso.onmicrosoft.com'
+
+# PnP PowerShell Entra ID app settings
 $appSettings = @{
-    Thumbprint = 'BD6F3814A74FC4F47E2BB75CA0295C44012093CD'
-    ClientId   = '10a52256-36f0-4bb7-973d-986630ee8e3c'
-    Tenant     = '0649f7a2-affe-49fa-8a7e-0bac64ebd21a'
-    Url        = 'https://contoso-admin.sharepoint.com/'
+    ClientId    = '10a52256-36f0-4bb7-973d-986630ee8e3c'
+    Url         = 'https://contoso-admin.sharepoint.com/'
+    Interactive = $true
 }
 
 # Connect to SharePoint admin center
 Connect-PnPOnline @appSettings
 
-# Get all site with over 100 GB of storage usage
+# Get all sites with over 100 GB of storage usage
 $sites = Get-PnPTenantSite
 $limit = $minimumSizeGB * 1000
 $sites = $sites | Where-Object { $_.StorageUsageCurrent -gt $limit }
 
-# Connect to each SharePoint site to create a batch delete job
+# Add as admin for all needed sites
+$sites | ForEach-Object { Set-PnPTenantSite -Identity $_.Url -Owners $upn }
+
+# Create the batch delete job foreach site over X GB
 $sites | ForEach-Object {
+
+    # Connect to the SharePoint site
     Write-Host "$($_.Url)"
     $appSettings.Url = $_.Url
     Connect-PnPOnline @appSettings
+
+    # Create the batch delete job
     New-PnPSiteFileVersionBatchDeleteJob -DeleteBeforeDays 365 -Force
 }
 ```
