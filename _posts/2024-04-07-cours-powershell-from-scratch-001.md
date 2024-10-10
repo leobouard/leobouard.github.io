@@ -10,7 +10,7 @@ nextLink:
 
 ## La base de la base
 
-PowerShell est un language de scripting développé par Microsoft pour administrer les environnements techniques Microsoft (Windows, Hyper-V, Active Directory, Microsoft 365, Azure, etc.)
+PowerShell est un langage de scripting développé par Microsoft pour administrer les environnements techniques Microsoft (Windows, Hyper-V, Active Directory, Microsoft 365, Azure, etc.)
 
 Il est installé par défaut sur tous les Windows depuis Windows 7 avec deux composants :
 
