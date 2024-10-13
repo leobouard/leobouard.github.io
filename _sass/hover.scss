@@ -1,6 +1,4 @@
 .hover-bottom:hover {
-    background-color: var(--secondary);
+    background-color: var(--lightaccent);
     box-shadow: inset 0 -2px 0 0 var(--primary);
-    transform: translate(0, -3px);
-    transition: transform ease 0.2s;
 }
