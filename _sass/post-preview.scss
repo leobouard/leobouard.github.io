@@ -2,6 +2,7 @@ article.post-preview {
     background-color: var(--lightaccent);
     text-decoration: none;
     min-width: 15em;
+    transition: transform ease-in-out 200ms;
 }
 
 article.post-preview a {
