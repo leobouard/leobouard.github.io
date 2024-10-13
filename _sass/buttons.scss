@@ -4,7 +4,7 @@ a.no-decoration {
 
 a.button-primary {
     padding: 1em 2em;
-    border: 1px solid #DDD;
+    border: 1px solid var(--secondary);
 }
 
 a.button-primary:hover {

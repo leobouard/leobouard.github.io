@@ -1,8 +1,8 @@
 footer {
     border-top: 2px solid var(--primary);
     padding: 2em;
-    background-color: #333;
-    color: white;
+    background-color: var(--text);
+    color: var(--background);
     margin-top: 5em;
 }
 
@@ -20,7 +20,7 @@ div.footer-author {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    color: #ddd;
+    color: var(--secondary);
 }
 
 div.footer-author a {
@@ -46,9 +46,9 @@ div.footer-links {
 }
 
 div.footer-links a {
-    color: white;
+    color: var(--text);
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--secondary);
     height: 24px;
     width: 24px;
 }
