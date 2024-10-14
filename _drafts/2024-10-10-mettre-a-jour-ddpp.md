@@ -1,5 +1,5 @@
 ---
-title: "Mettre à niveau des DDPP & PSO"
+title: "Mettre à niveau les politiques de mots de passe"
 description: "Comment mettre à jour vos politiques de mots de passe Active Directory (en évitant de tout casser) ?"
 tags: active-directory
 listed: true
@@ -7,9 +7,19 @@ listed: true
 
 ## Introduction
 
+Les politiques de mots
+
 ## Définition des nouvelles politiques
 
 ### Default Domain Password Policy
+
+Paramètre                             | Valeur
+---------                             | ------
+Historique de mot de passe            | A votre convenance
+Durée de vie maximale du mot de passe | 500 jours
+Durée de vie minimale du mot de passe | 0 jour
+Respect des exigences de complexité   | Oui
+Longueur minimale du mot de passe     | 10 caractères
 
 ### PSO Administrateurs
 
