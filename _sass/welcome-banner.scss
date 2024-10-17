@@ -6,6 +6,7 @@ div.hero {
     display: flex;
     margin: 0;
     padding: 0;
+    background: linear-gradient(-57deg, #201a49,#201a49 , var(--primary))
 }
 
 div.hero svg {
@@ -18,8 +19,17 @@ div.hero svg {
 div.wrapper {
     color: white;
     margin: auto;
-    max-width: 800px;
-    padding: 2em
+    max-width: 1200px;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 3em;
+}
+
+div.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 div.hero h1 {
