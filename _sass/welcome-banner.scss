@@ -61,7 +61,7 @@ div.code-preview {
     max-width: min-content;
 }
 
-div.code-preview:before {
+div.code-preview::before {
     background: black;
     margin: -10px;
     display: block;
