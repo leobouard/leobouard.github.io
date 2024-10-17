@@ -62,12 +62,8 @@ div.code-preview {
     box-shadow: 5px 5px 80px 20px #433bff69;
 }
 
-div.code-preview::before {
-    background: black;
-    margin: -10px;
-    display: block;
-    padding: 5px 10px;
-    font-size: 12px;
-    font-family: var(--fonts);
+div.code-preview pre {
+    overflow-x: hidden !important;
+    padding: 0 1em !important;
 }
 
