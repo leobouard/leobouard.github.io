@@ -6,13 +6,42 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
 ---
 
 <div class="hero">
-  {% include hero-svg.html %}
   <div class="wrapper">
-    <h1>Prêt à relever le défi ?</h1>
-    <p>Est-ce que vous saurez trouver le nom le plus long d'une liste en une seule ligne de code PowerShell ?</p>
-    <ul>
-      <li><a class="no-decoration button-primary hover-bottom" href="/2022/04/10/le-nom-le-plus-long">Trop facile pour moi</a></li>
-    </ul>
+    <div class="hero-text">
+      <h1>Prêt à relever le défi ?</h1>
+      <p>Est-ce que vous saurez trouver le nom le plus long d'une liste en une seule ligne de code PowerShell ?</p>
+      <ul>
+        <li>
+          <a class="no-decoration button-primary hover-bottom" href="/2022/04/10/le-nom-le-plus-long">Trop facile pour
+            moi</a>
+        </li>
+      </ul>
+    </div>
+    <div class="code-preview">
+      <div class="language-powershell highlighter-rouge">
+        <pre>
+          <code>
+do {
+  $i++
+  $answer = Read-Host "Deviner le nombre ($min &lt; ??? &lt; $max)"
+  if ($stopwatch.IsRunning -eq $false) { $stopwatch.Start() }
+  $allAnswers.Add($answer)
+  if ($random -gt $answer) { 
+  <div style="margin: -2em 0em -5em 0; padding: 0; filter: blur(4px);">
+    Write-Host "??? est plus grand que $answer"
+    $min = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object | Select-Object -Last 1
+  } elseif ($random -lt $answer) {
+    Write-Host "??? est plus petit que $answer"
+    $max = $allAnswers | Where-Object {$_ -gt $random} | Sort-Object | Select-Object -First 1
+  } else {
+    Write-Host "VICTOIRE ! Vous avez deviné le nombre aléatoire"
+</div>
+  }
+} until ($answer -eq $random -or $i -ge 10)
+          </code>
+        </pre>
+      </div>
+    </div>
   </div>
 </div>
 
