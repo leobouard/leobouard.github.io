@@ -1,9 +1,12 @@
-section.blog-post, section.blog-page, section.recommandation {
-    padding: 2rem;
-    max-width: 800px;
+section.blog-post, section.blog-page, section.recommandation, .fill-available {
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
+}
+
+section.blog-post, section.blog-page, section.recommandation {
+    padding: 2rem;
+    max-width: 800px;
     overflow-x: auto;
     overflow-y: hidden;
 }
