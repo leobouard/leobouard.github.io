@@ -9,6 +9,8 @@ listed: true
 
 ### Définition
 
+- <https://blog.improsec.com/tech-blog/the-fundamentals-of-ad-tiering>
+
 ### Principe de base
 
 ### Gestion de projet
@@ -31,6 +33,8 @@ listed: true
 
 ### Choses à ne pas faire
 
+- <https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise>
+
 ### Modèle AGDLP
 
 ### Création des délégations
@@ -43,6 +47,28 @@ listed: true
 
 ### Création des GPO
 
+- <https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/initially-isolate-tier-0-assets-with-group-policy-to-start/ba-p/1184934>
+
 ### Priorisation des GPO
 
 ### Application des GPO
+
+## PAW et serveurs de rebond
+
+### PAW
+
+### Serveurs de rebond
+
+### Renforcement de l'OS
+
+## Migration des ressources
+
+### Cartographie des relations comptes & serveurs
+
+### Identification des ressources 
+
+- <https://specterops.github.io/TierZeroTable/>
+
+### Déplacement des ressources
+
+### 
