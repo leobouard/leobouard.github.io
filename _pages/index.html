@@ -26,7 +26,7 @@ do {
   if ($stopwatch.IsRunning -eq $false) { $stopwatch.Start() }
   $allAnswers.Add($answer)
   if ($random -gt $answer) { 
-  <div style="margin: -2em 0em -5em 0; padding: 0; filter: blur(4px);">
+  <div style="margin: -4em 0em -2em 0; filter: blur(4px);">
     Write-Host "??? est plus grand que $answer"
     $min = $allAnswers | Where-Object {$_ -lt $random} | Sort-Object | Select-Object -Last 1
   } elseif ($random -lt $answer) {
