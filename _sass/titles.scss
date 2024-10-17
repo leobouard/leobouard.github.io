@@ -3,7 +3,6 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
     line-height: 140%;
     margin: 2em 0 1em 0;
-    color: black;
 }
 
 h1 {
@@ -12,7 +11,7 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid var(--secondary);
+    border-bottom: 1px solid var(--mediumaccent);
     padding-bottom: 5px;
 }
 

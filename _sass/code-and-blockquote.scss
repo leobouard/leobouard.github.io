@@ -29,14 +29,14 @@ pre {
 }
 
 div.highlighter-rouge {
-    background-color: var(--accentbg);
+    background-color: var(--lightaccent);
     border: var(--border);
     padding: 10px;
     background-image: url(/assets/images/code-solid.svg);
 }
 
 div.highlighter-rouge:before {
-    background: var(--secondary);
+    background: var(--mediumaccent);
     margin: -10px -10px 10px -10px;
     display: block;
     padding: 5px 10px;
