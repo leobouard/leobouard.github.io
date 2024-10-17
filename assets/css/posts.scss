@@ -183,8 +183,6 @@ div.summary>span {
 
 .top-buttons>a,
 .bottom-buttons>a {
-    padding: 0.5em 1em;
-    border-radius: var(--borderradius);
     position: absolute;
 }
 
@@ -193,64 +191,10 @@ div.summary>span {
     margin: 0px 5px;
 }
 
-// TOP BUTTONS ONLY
-
-.top-buttons>a {
-    color: var(--title);
-    border: var(--border);
-}
-
-.top-buttons>a:hover {
-    background-color: var(--bodybg);
-    color: var(--text);
-}
-
 // BOTTOM BUTTONS ONLY
 
 .bottom-buttons {
     margin-top: 3em;
-}
-
-.bottom-buttons>a {
-    border: 1px solid var(--accent);
-}
-
-.bottom-buttons>a:first-child {
-    color: var(--accent);
-}
-
-.bottom-buttons>a:last-child {
-    color: var(--textbg);
-    background-color: var(--accent);
-}
-
-// SIDE BUTTONS
-
-.side-buttons {
-    position: fixed;
-    margin-left: -84px;
-    margin-top: -36px;
-}
-
-.side-buttons>a {
-    display: flex;
-    aspect-ratio: 1;
-    background-color: var(--textbg);
-    color: var(--title);
-    font-size: 1.25em;
-    padding: 0.5em;
-    margin: 5px;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--borderradius);
-    box-shadow: 0px 0px 5px 0px var(--boxshadow);
-    border: var(--border);
-}
-
-.side-buttons>a:hover {
-    background-color: var(--accentbg);
-    text-decoration: none;
-    color: var(--text);
 }
 
 a.solution {

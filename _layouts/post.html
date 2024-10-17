@@ -11,13 +11,13 @@ layout: default
   {% if page.prevLink or page.nextLink %}
   <div class="top-buttons">
     {% if page.prevLink %}
-    <a href="{{ page.prevLink.id }}" style="left: 0;">
+    <a href="{{ page.prevLink.id }}" class="no-decoration button-primary hover-bottom" style="left: 0;">
       <i class="fa-solid fa-arrow-left"></i>
       <span>{{ page.prevLink.name }}</span>
     </a>
     {% endif %}
     {% if page.nextLink %}
-    <a href="{{ page.nextLink.id }}" style="right: 0;">
+    <a href="{{ page.nextLink.id }}" class="no-decoration button-primary hover-bottom" style="right: 0;">
       <span>{{ page.nextLink.name }}</span>
       <i class="fa-solid fa-arrow-right"></i>
     </a>
@@ -43,18 +43,18 @@ layout: default
   {% if page.prevLink or page.nextLink %}
   <div class="bottom-buttons">
     {% if page.prevLink %}
-    <a href="{{ page.prevLink.id }}" style="left: 0;">
+    <a href="{{ page.prevLink.id }}" class="no-decoration button-primary hover-bottom" style="left: 0;">
       <i class="fa-solid fa-arrow-left"></i>
       <span>{{ page.prevLink.name }}</span>
     </a>
     {% else %}
-    <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" style="left: 0;">
+    <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" class="no-decoration button-primary hover-bottom" style="left: 0;">
       <i class="fa-solid fa-arrow-up"></i>
       <span>Haut de page</span>
     </a>
     {% endif %}
     {% if page.nextLink %}
-    <a href="{{ page.nextLink.id }}" style="right: 0;">
+    <a href="{{ page.nextLink.id }}" class="no-decoration button-primary hover-bottom" style="right: 0;">
       <span>{{ page.nextLink.name }}</span>
       <i class="fa-solid fa-arrow-right"></i>
     </a>
