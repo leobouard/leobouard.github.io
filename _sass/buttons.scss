@@ -5,9 +5,11 @@ a.no-decoration {
 a.button-primary {
     padding: 1em 2em;
     border: 1px solid var(--primary);
+    font-family: 'Manrope';
+    color: var(--primary);
+    background: var(--lightaccent);
 }
 
 a.button-primary:hover {
     text-decoration: underline;
-    color: var(--primary)
 }
