@@ -4,10 +4,10 @@ a.no-decoration {
 
 a.button-primary {
     padding: 1em 2em;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
 }
 
 a.button-primary:hover {
     text-decoration: underline;
-    color: var(--accent)
+    color: var(--primary)
 }
