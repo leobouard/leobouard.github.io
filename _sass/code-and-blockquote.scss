@@ -4,16 +4,6 @@ blockquote {
     border-left: 5px solid var(--blockquoteBorderColor);
     margin-inline: 0;
     padding: 5px 15px;
-    background-image: url(/assets/images/quote-solid.svg);
-}
-
-div.highlighter-rouge,
-code,
-blockquote {
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-blend-mode: soft-light;
-    background-size: 10em;
 }
 
 div.highlighter-rouge,
@@ -32,7 +22,6 @@ div.highlighter-rouge {
     background-color: var(--lightaccent);
     border: var(--border);
     padding: 10px;
-    background-image: url(/assets/images/code-solid.svg);
 }
 
 div.highlighter-rouge:before {
