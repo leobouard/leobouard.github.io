@@ -46,12 +46,17 @@ div.hero ul {
 }
 
 div.code-preview {
-    border-radius: 1em;
-    overflow: hidden;
     background: rgb(31, 31, 31);
     margin: auto;
     box-shadow: 5px 5px 80px 20px #433bff69;
     max-width: 600px;
+}
+
+div.code-preview img {  
+    position: absolute;
+    bottom: -3em;
+    right: 4em;
+    z-index: 1000;
 }
 
 div.code-preview pre {
