@@ -30,18 +30,3 @@ div.cookies-buttons {
     justify-content: center;
     grid-gap: 10px;
 }
-
-div.cookies-buttons a {
-    border: 1px solid var(--secondary);
-    padding: 0.25em 1em;
-    color: var(--text);
-    text-decoration: none;
-    font-size: smaller;
-}
-
-div.cookies-buttons a:hover {
-    text-decoration: underline;
-    color: var(--accent);
-    background-color: var(--secondary);
-    box-shadow: inset 0 -2px 0 0 var(--accent);
-}
