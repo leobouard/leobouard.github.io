@@ -10,6 +10,10 @@ a.button-primary {
     background: var(--background);
 }
 
+a.small {
+    padding: 0.5em 1em !important;
+}
+
 a.button-primary:hover {
     text-decoration: underline;
 }
