@@ -46,6 +46,7 @@ div.hero ul {
 }
 
 div.code-preview {
+    position: relative;
     background: rgb(31, 31, 31);
     margin: auto;
     box-shadow: 5px 5px 80px 20px #433bff69;
@@ -57,6 +58,7 @@ div.code-preview img {
     bottom: -3em;
     right: 4em;
     z-index: 1000;
+    height: 10em;
 }
 
 div.code-preview pre {
