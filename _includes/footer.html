@@ -15,7 +15,7 @@
 
     <div class="footer-links">
       {% for link in site.data.cv.links %}
-      <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
+      <a href="{{ link.url }}" target="_blank" class="hover-popout" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
       {% endfor %}
     </div>
 
