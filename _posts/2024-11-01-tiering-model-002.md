@@ -1,23 +1,14 @@
 ---
-title: "REX - Tiering Model"
-description: "Comment déployer le tiering model pour sécuriser votre Active Directory"
-tags: active-directory
-listed: true
+title: "TIERING #2"
+description: ""
+tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
+nextLink:
+  name: "Partie 3"
+  id: "/2024/11/01/tiering-model-003"
+prevLink:
+  name: "Partie 1"
+  id: "/2024/11/01/tiering-model-001"
 ---
-
-## Introduction
-
-J'ai longtemps hésité à faire cet article, car pour moi il existe depuis maintenant quelques années de très bonnes ressources sur le sujet. Si vous voulez lire un article plus court et très complet sur le tiering model, je vous recommande vivement <https://blog.improsec.com/tech-blog/the-fundamentals-of-ad-tiering>.
-
-### Définition
-
-Le tiering model est un concept de sécurité de l'Active Directory qui segmente les ressources (ordinateurs, utilisateurs, groupes) en différents niveaux, du plus critique (Tier 0) au moins critique (Tier 2).
-
-### Principe de base
-
-Le 
-
-### Gestion de projet
 
 ## Remédiation de l'environnement
 
@@ -94,116 +85,3 @@ Harden AD n'est pas un outil d'audit mais plutôt un framework pour déployer ra
 Source : <https://hardenad.net/>
 
 ### Renforcement des DC
-
----
-
-## Structure d'OU
-
-### Simplifier les OU existantes
-
-Une unité d'organisation ne sert techniquement qu'à deux choses : 
-
-1. Déléguer des permissions sur les objets enfants
-2. Appliquer une stratégie de groupe
-
-Si une OU ne fait aucune de ces deux choses, elle est donc 
-
-> Attention : changer l'emplacement d'objets Active Directory peut avoir un impact sur les applications qui se basent sur le chemin LDAP (*DistinguishedName*) de certains objets (souvent les groupes).
-
-```plaintext
-🌐 contoso.com
-  📁 CONTOSO
-    📁 Canada
-    📁 France
-      📁 Bretagne
-        📁 Brest
-        📁 Rennes
-        📁 Saint-Malo
-    📁 Germany
-    📁 India
-    📁 Italy
-```
-
-```plaintext
-🌐 contoso.com
-  📁 CONTOSO
-    📁 Canada
-    📁 France
-      📁 Bretagne
-        🧑‍💼 Martin DUPOND        Brest
-        🧑‍💼 Jeanne ROUSSEAU      Rennes
-        🧑‍💼 Charles DUMAT        Saint-Malo
-    📁 Germany
-    📁 India
-    📁 Italy
-```
-
-
-### Tier 0 / Tier 1 / Tier 2
-
-Voici un exemple de structure qui fonctionne très bien, à positionner directement à la racine du domaine :
-
-```plaintext
-🌐 contoso.com
-  📁 TIER0
-    📁 Administrators
-    📁 Groups
-    📁 Servers
-    📁 Service accounts
-  📁 TIER1
-    📁 Administrators
-    📁 Groups
-    📁 Servers
-    📁 Service accounts
-  📁 TIER2
-    📁 Administrators
-    📁 Groups
-    📁 Servers
-    📁 Service accounts
-```
-
-## Délégations Active Directory
-
-### Choses à ne pas faire
-
-Active Directory permet de déléguer beaucoup d'actions, mais 
-
-- Délégation générale du DNS <https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise>
-
-### Modèle AGDLP
-
-### Création des délégations
-
-### Création des rôles
-
-## Limiter les connexions
-
-### GPO vs. Authentication Silos
-
-### Création des GPO
-
-- <https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/initially-isolate-tier-0-assets-with-group-policy-to-start/ba-p/1184934>
-
-### Priorisation des GPO
-
-### Application des GPO
-
-## PAW et serveurs de rebond
-
-### PAW
-
-### Serveurs de rebond
-
-### Renforcement de l'OS
-
-## Migration des ressources
-
-### Cartographie des relations comptes & serveurs
-
-### Identification des ressources
-
-- <https://specterops.github.io/TierZeroTable/>
-
-### Déplacement des ressources
-
-### 
