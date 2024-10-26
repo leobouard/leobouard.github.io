@@ -10,7 +10,13 @@ prevLink:
   id: "/2024/11/01/tiering-model-002"
 ---
 
-## Structure d'OU
+## Structure d'unité d'organisation
+
+### Unités d'organisation existantes
+
+### 
+
+La racine du domaine, les containers par défaut (Users, BuiltIn, Domain Controllers, etc...) doivent être considérés comme du tier 0. Vous n'avez donc pas a déplacer les membres 
 
 ### Simplifier les OU existantes
 

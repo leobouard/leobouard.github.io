@@ -83,5 +83,3 @@ Source : <https://github.com/EvotecIT/GPOZaurr>
 Harden AD n'est pas un outil d'audit mais plutôt un framework pour déployer rapidement un environnement Active Directory renforcé, avec tout un ensemble de règles, de GPO et de délégations.
 
 Source : <https://hardenad.net/>
-
-### Renforcement des DC
