@@ -14,6 +14,8 @@ prevLink:
 
 Avant d'attaquer le déploiement du tiering model, il convient de faire le ménage votre domaine Active Directory. L'idée est de repartir sur des bases saines avant d'attaquer de plus grands travaux.
 
+Cette phase peut durer plusieurs mois si vous avez une dette technique importante, mais elle est indispensable à la sécurité de votre environnement. Si vous passez trop vite sur cet aspect, le tiering model ne sera qu'une facade en terme de sécurité et les attaquants trouverons d'autres moyens de compromission (comme l'utilisation de failles présentes dans des systèmes d'exploitation obsolètes).
+
 ### Bonnes pratiques
 
 Plus votre environnement Active Directory est simple, plus facile sera le déploiement du tiering model. Voici donc quelques pistes de travail pour faire un peu de ménage et essayer d'y voir plus clair :

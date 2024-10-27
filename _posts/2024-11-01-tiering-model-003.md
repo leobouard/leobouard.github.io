@@ -14,6 +14,10 @@ prevLink:
 
 ### Unités d'organisation existantes
 
+Vous avez déjà probablement une organisation déjà en place dans votre Active Directory, avec une arborescence sur laquelle se sont basées un bon nombre d'applications métiers
+
+L'idée lors de l'implémentation 
+
 ### 
 
 La racine du domaine, les containers par défaut (Users, BuiltIn, Domain Controllers, etc...) doivent être considérés comme du tier 0. Vous n'avez donc pas a déplacer les membres 
