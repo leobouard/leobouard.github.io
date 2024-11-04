@@ -1,5 +1,5 @@
 ---
-title: "TIERING #2"
+title: "TIERING #2 - Remédiation"
 description: ""
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 nextLink:
@@ -14,7 +14,7 @@ prevLink:
 
 Avant d'attaquer le déploiement du tiering model, il convient de faire le ménage votre domaine Active Directory. L'idée est de repartir sur des bases saines avant d'attaquer de plus grands travaux.
 
-Cette phase peut durer plusieurs mois si vous avez une dette technique importante, mais elle est indispensable à la sécurité de votre environnement. Si vous passez trop vite sur cet aspect, le tiering model ne sera qu'une facade en terme de sécurité et les attaquants trouverons d'autres moyens de compromission (comme l'utilisation de failles présentes dans des systèmes d'exploitation obsolètes).
+Cette phase peut durer plusieurs mois si vous avez une dette technique importante, mais elle est indispensable à la sécurité de votre environnement. Si vous passez trop vite sur cet aspect, le tiering model ne sera qu'une façade en termes de sécurité et les attaquants trouverons d'autres moyens de compromission (comme l'utilisation de failles présentes dans des systèmes d'exploitation obsolètes).
 
 ### Bonnes pratiques
 
@@ -23,12 +23,16 @@ Plus votre environnement Active Directory est simple, plus facile sera le déplo
 - Réduire le nombre d'administrateurs et leurs permissions
 - Faire le ménage dans les objets inactifs (utilisateurs, ordinateurs)
 - Faire le ménage des groupes vides et inutiles
+- Faire le ménage dans le DNS
+- Faire le ménage dans les certificats
 - Supprimer les unités d'organisation vides et inutiles
-- Supprimer les stratégies de groupes non-appliquées ou caduques
-- Dédupliquer les stratégies en double dans vos GPO
+- Supprimer les stratégies de groupes non appliquées ou caduques
+- Dé-dupliquer les paramètres en double dans vos GPO
 - Mettre à jour vos contrôleurs de domaine
 - Mettre à jour le niveau fonctionnel de votre domaine et de votre forêt
 - Remettre au propre les partages NTFS (via la méthode AGDLP et des racines DFS)
+- Mettre à jour vos ordinateurs et serveurs vers les dernières versions de Windows et Windows Server
+- Qualifier tous les comptes de service pour connaitre précisement leurs droits et utilité
 
 ### Outils d'audit
 

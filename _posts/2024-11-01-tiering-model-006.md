@@ -1,5 +1,5 @@
 ---
-title: "TIERING #6"
+title: "TIERING #6 - PAW"
 description: ""
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 nextLink:
@@ -10,10 +10,8 @@ prevLink:
   id: "/2024/11/01/tiering-model-005"
 ---
 
-## PAW et serveurs de rebond
+## Définition
 
-### PAW
+## Modèles de PAW
 
-### Serveurs de rebond
-
-### Renforcement de l'OS
+## Renforcement de l'OS

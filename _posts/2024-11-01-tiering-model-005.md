@@ -1,5 +1,5 @@
 ---
-title: "TIERING #5"
+title: "TIERING #5 - Limiter les connexions"
 description: ""
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 nextLink:
@@ -10,9 +10,9 @@ prevLink:
   id: "/2024/11/01/tiering-model-004"
 ---
 
-## Limiter les connexions
+## GPO vs. Authentication Silos
 
-### GPO vs. Authentication Silos
+## Avec les stratégies de groupe
 
 ### Création des GPO
 
