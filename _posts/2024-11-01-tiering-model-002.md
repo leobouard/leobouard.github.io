@@ -10,13 +10,11 @@ prevLink:
   id: "/2024/11/01/tiering-model-001"
 ---
 
-## Remédiation de l'environnement
-
 Avant d'attaquer le déploiement du tiering model, il convient de faire le ménage votre domaine Active Directory. L'idée est de repartir sur des bases saines avant d'attaquer de plus grands travaux.
 
 Cette phase peut durer plusieurs mois si vous avez une dette technique importante, mais elle est indispensable à la sécurité de votre environnement. Si vous passez trop vite sur cet aspect, le tiering model ne sera qu'une façade en termes de sécurité et les attaquants trouverons d'autres moyens de compromission (comme l'utilisation de failles présentes dans des systèmes d'exploitation obsolètes).
 
-### Bonnes pratiques
+## Bonnes pratiques
 
 Plus votre environnement Active Directory est simple, plus facile sera le déploiement du tiering model. Voici donc quelques pistes de travail pour faire un peu de ménage et essayer d'y voir plus clair :
 
@@ -34,11 +32,11 @@ Plus votre environnement Active Directory est simple, plus facile sera le déplo
 - Mettre à jour vos ordinateurs et serveurs vers les dernières versions de Windows et Windows Server
 - Qualifier tous les comptes de service pour connaitre précisement leurs droits et utilité
 
-### Outils d'audit
+## Outils d'audit
 
 Voici une petite sélection d'outils d'audit (tous sont gratuits d'utilisation si vous n'êtes pas un auditeur professionnel).
 
-#### Ping Castle by NETWRIX
+### Ping Castle by NETWRIX
 
 Ping Castle est un outil d'audit référence sur la partie configuration de l'Active Directory. Il se calque à 90% sur les recommandations de l'ANSSI et permet d'avoir une très bonne alternative à ORADAD pour les entreprises ne pouvant pas l'utiliser.
 
@@ -48,43 +46,43 @@ A titre personnel, c'est mon outil de travail principal lorsqu'il s'agit de fair
 
 Source : <https://www.pingcastle.com/download/>
 
-#### Purple Knight by SEMPERIS
+### Purple Knight by SEMPERIS
 
 Alternative à Ping Castle mais évalue certains éléments que Ping Castle ne mesure pas, donc c'est un bon complément.
 
 Source : <https://www.semperis.com/fr/purple-knight/>
 
-#### Forest Druid by SEMPERIS
+### Forest Druid by SEMPERIS
 
 Permet d'auditer les chemins d'attaque vers le Tier 0, alternative à Adalanche ou BloodHound.
 
 Source : <https://www.semperis.com/fr/forest-druid/>
 
-#### Adalanche
+### Adalanche
 
 Permet d'auditer et de visualiser les permissions dans Active Directory. Alternative à Forest Druid ou BloodHound.
 
 Source : <https://github.com/lkarlslund/Adalanche>
 
-#### BloodHound
+### BloodHound
 
 La référence pour auditer les chemins d'attaque vers des ressources critiques. Alternative à Adalanche et Forest Druid
 
 Source : <https://github.com/SpecterOps/BloodHound>
 
-#### PowerHuntShares
+### PowerHuntShares
 
 Permet de découvrir tous les partages de fichiers disponibles dans votre domaine.
 
 Source : <https://github.com/NetSPI/PowerHuntShares>
 
-#### GPOZaurr
+### GPOZaurr
 
 Outil d'audit de GPO, le plus complet disponible actuellement et très lisible. Ne fait pas directement de la sécurité mais permet de faire du ménage facilement.
 
 Source : <https://github.com/EvotecIT/GPOZaurr>
 
-#### Harden AD
+### Harden AD
 
 Harden AD n'est pas un outil d'audit mais plutôt un framework pour déployer rapidement un environnement Active Directory renforcé, avec tout un ensemble de règles, de GPO et de délégations.
 
