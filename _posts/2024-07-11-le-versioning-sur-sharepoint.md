@@ -48,7 +48,7 @@ Propriété | Explication
 --------- | -----------
 ExpireVersionAfterDays | Durée de validité d'une version (en jours)
 MajorVersionLimit | Nombre maximum de versions par fichier
-EnableAutoExpirationVersionTrim | Nettoyage automatique des versions caduques
+EnableAutoExpirationVersionTrim | Limite automatique et intelligente des versions proposée par Microsoft
 EnableVersionExpirationSetting | Disponibilité des paramètres d'expiration de versions
 
 A titre d'exemple, voici les paramètres par défaut sur mon tenant de test :
