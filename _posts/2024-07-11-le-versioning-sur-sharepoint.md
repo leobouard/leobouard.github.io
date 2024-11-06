@@ -6,7 +6,7 @@ tags: sharepoint
 listed: true
 ---
 
-## C'est quoi le versionning ?
+## C'est quoi le versioning ?
 
 Lorsqu'un fichier est modifié, SharePoint conserve sa version précédente pour permettre à n'importe qui de revenir en arrière ou de visualiser le fichier avant sa modification. Par défaut, SharePoint permet de conserver jusqu'à 500 versions d'un même fichier.
 
