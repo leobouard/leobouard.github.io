@@ -1,5 +1,5 @@
 ---
-title: "TIERING #3 - Unités d'organisation"
+title: "TIERING #3 - Zone d'atterissage"
 description: ""
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 nextLink:
@@ -51,7 +51,7 @@ Voici un exemple simple de structure, à positionner directement à la racine du
 
 ### Objets qui seront déplacés
 
-Comme indiqué précédemment, seul une minorité d'objets seront déplacés vers la nouvelle structure. Parmi ces objets à déplacer, on va retrouver :
+Comme indiqué précédemment, seule une minorité d'objets seront déplacés vers la nouvelle structure. Parmi ces objets à déplacer, on va retrouver :
 
 - tous les comptes administrateurs
 - tous les comptes de service
@@ -59,3 +59,13 @@ Comme indiqué précédemment, seul une minorité d'objets seront déplacés ver
 - les groupes d'accès à des ressources du Tier 0 et du Tier 1
 
 Vous ne devriez ne garder que des ressources du Tier 2 dans votre structure existante, comme des utilisateurs ou des groupes sans privilèges, des objets de messagerie, des ordinateurs, des serveurs sur lesquels les utilisateurs se connectent...
+
+## Groupes d'appartenance à un niveau
+
+Pour l'instant, nous allons avoir besoin de créer "seulement" trois nouveaux groupes :
+
+- Utilisateurs du TIER0
+- Utilisateurs du TIER1
+- Utilisateurs du TIER2
+
+Ces groupes vont nous permettre d'identifier les utilisateurs d'un niveau pour faire de l'isolation et empêcher les utilisateurs du Tier 1 de se connecter sur une ressource du Tier 2 par exemple.
