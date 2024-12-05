@@ -51,10 +51,9 @@ Dans un premier temps, on ajoute les prérequis nécessaires à l'affichage de n
 
 Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la dernière ligne de notre exemple pour créer un nouvel objet du type interface graphique, stocké dans la variable globale `$interface`.
 
-<div class="information">
-  <span>À propos des variables globales</span>
-  <p>Nous sommes obligé d'utiliser des variables du type <code>$Global:</code> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne pourront pas communiquer entre-elles.</p>
-</div>
+> #### À propos des variables globales
+>
+> Nous sommes obligé d'utiliser des variables du type <code>$Global:</code> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne pourront pas communiquer entre-elles.
 
 Il ne s'agit bien évidemment pas de connaitre ces commandes par cœur, l'idée est simplement de savoir à quoi elles servent.
 
