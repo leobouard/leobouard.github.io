@@ -16,10 +16,9 @@ L'utilisateur concerné ne peut plus contacter des comptes externes à l'organis
     <p><i>Avec un compte utilisateur touché par le problème, l'option "Rechercher <strong>leo@labouabouate.fr</strong> en externe" ne serait pas disponible.</i></p>
 </div>
 
-<div class="information">
-    <span>A vérifier avant de continuer</span>
-    <p>Évidemment, pensez à vérifier que votre organisation autorise bien les utilisateurs à communiquer avec des comptes externes. Vous pouvez vérifier ce paramètre dans <a href="https://admin.teams.microsoft.com/company-wide-settings/external-communications">Microsoft Teams admin center - Users - External access</a></p>
-</div>
+> #### A vérifier avant de continuer
+>
+> Évidemment, pensez à vérifier que votre organisation autorise bien les utilisateurs à communiquer avec des comptes externes. Vous pouvez vérifier ce paramètre dans [Microsoft Teams admin center - Users - External access](https://admin.teams.microsoft.com/company-wide-settings/external-communications)
 
 Comme le problème vient probablement de la configuration du compte, on vérifie l'état de celui-ci en PowerShell avec le module `MicrosoftTeams` :
 

@@ -87,10 +87,9 @@ if ($random -gt $answer) {
 }
 ```
 
-<div class="information">
-    <span>Problème d'encodage</span>
-    <p>Si vous rencontrez des problèmes avec l'affichage des accents à ce stade, il faut bien vérifier que votre script (c'est-à-dire le fichier <code>.ps1</code>) est enregistré au format UTF8-BOM.</p>
-</div>
+> #### Problème d'encodage
+>
+>Si vous rencontrez des problèmes avec l'affichage des accents à ce stade, il faut bien vérifier que votre script (c'est-à-dire le fichier `.ps1`) est enregistré au format UTF8-BOM.
 
 ### Gestion de la victoire
 
@@ -115,7 +114,7 @@ Dans l'état, la défaite n'est pas possible puisque si le joueur dépasse le no
 - Rendre les boutons "Recommencer" et "Meilleurs scores" visibles
 - Afficher le nombre aléatoire dans la boite de texte
 - Désactiver la boite de texte
-- Afficher un message  de défaite via la variable `$labelText.Content`
+- Afficher un message de défaite via la variable `$labelText.Content`
 - Arrêter le chronomètre
 
 ```powershell
