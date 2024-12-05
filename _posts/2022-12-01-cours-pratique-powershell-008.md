@@ -53,7 +53,7 @@ Une fois que l'on a tous les éléments en main, on peut maintenant utiliser la 
 
 > #### À propos des variables globales
 >
-> Nous sommes obligé d'utiliser des variables du type <code>$Global:</code> car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne pourront pas communiquer entre-elles.
+> Nous sommes obligés d'utiliser des variables du type `$Global:` car l'interface graphique et la console seront dans deux instances séparées. Sans cette indication d'étendue, les deux instances ne pourront pas communiquer entre elles.
 
 Il ne s'agit bien évidemment pas de connaitre ces commandes par cœur, l'idée est simplement de savoir à quoi elles servent.
 
@@ -90,9 +90,9 @@ $null = $Global:interface.ShowDialog()
 
 Avec une interface graphique, on va vouloir assigner des actions à certains éléments de l'interface. Par exemple : appuyer sur un bouton va afficher un message dans la console. Dans notre jeu, c'est quand le joueur soumet son chiffre que l'on veut déclencher une action. On pourrait très bien choisir d'assigner ça à un bouton, mais j'ai choisi d'opter pour un déclencheur via la boite de texte : on lance l'action dès que la touche "Entrée" est appuyée.
 
-Pour récupérer la liste de tous les déclencheurs possibles (car les déclencheurs ne sont pas les mêmes suivant si l'élément est un bouton, une liste déroulante, une case à cocher…) on utilise la commande PowerShell : `Get-Member -MemberType Event`. J'ai choisi le déclencheur "KeyDown" qui correspond à une touche appuyée, mais d'autres choix sont possibles.
+Pour récupérer la liste de tous les déclencheurs possibles (car les déclencheurs changent selon si il s'agit d'un bouton, d'une liste déroulante, d'une case à cocher…), on utilise la commande PowerShell : `Get-Member -MemberType Event`. J'ai choisi le déclencheur "KeyDown" qui correspond à une touche appuyée, mais d'autres choix sont possibles.
 
-Pour déclarer une action à faire pour un déclencheur, la syntaxe est la suivante : `$textboxResponse.Add_KeyDown({ ... })`. Ensuite on ajoute une condition `if` pour vérifier que la touche qui a été appuyé correspond bien à la touche "Entrée" puis :
+Pour déclarer une action à faire pour un déclencheur, la syntaxe est la suivante : `$textboxResponse.Add_KeyDown({ ... })`. Ensuite on ajoute une condition `if` pour vérifier que la touche qui a été appuyée correspond bien à la touche "Entrée" puis :
 
 1. On vide le contenu de la boite de texte pour permettre une nouvelle estimation
 2. On affiche l'estimation de l'utilisateur dans la console
