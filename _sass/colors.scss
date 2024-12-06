@@ -7,3 +7,13 @@
     --lightaccent: #f8f7ff;
     --mediumaccent: #c6c5cc;
 }
+
+:root.dark {
+    --text: #ebe9fc;
+    --background: #010104;
+    --primary: #3a31d8;
+    --secondary: green;
+    --accent: red;
+    --lightaccent: #bbb9c9;
+    --mediumaccent: #a3a2af; 
+}
