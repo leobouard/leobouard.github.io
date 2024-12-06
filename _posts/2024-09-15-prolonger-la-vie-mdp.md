@@ -63,7 +63,7 @@ Après avoir défini dix mots de passe *temporaires* en moins de 15 minutes, l'u
 Pour résoudre ce problème, vous pouvez augmenter l'historique de mot de passe et/ou définir une durée de vie minimum du mot de passe :
 
 - faire 50 changements de mots de passe dans la même journée avant de pouvoir réutiliser l'ancien demande beaucoup plus de détermination de la part de l'utilisateur
-- attendre une journée complète avant chaque changer de mot de passe implique d'attendre au moins deux semaines avant de pouvoir réutiliser l'ancien
+- attendre une journée complète avant chaque changement de mot de passe implique d'attendre au moins deux semaines avant de pouvoir réutiliser l'ancien
 
 ### Détection
 
