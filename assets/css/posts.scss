@@ -4,7 +4,7 @@
 nav.breadcrumb {
     width: 100%;
     font-size: small;
-    color: #666;
+    color: var(--mediumaccent);
     font-weight: 500;
     padding: 1em 0;
 }
@@ -33,22 +33,6 @@ nav.breadcrumb li:not(:first-child)::before {
 
 .posts a {
     text-decoration: none;
-}
-
-div.information {
-    background-color: #CDE0F4;
-    padding: 15px;
-    border-radius: var(--borderradius);
-    margin: 15px 0px;
-}
-
-div.information>span {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-div.information>p {
-    margin: 10px 0px 0px;
 }
 
 div.summary {
