@@ -1,8 +1,8 @@
 footer {
     border-top: 5px solid var(--primary);
     padding: 2em;
-    background-color: var(--text);
-    color: var(--mediumaccent);
+    background-color: var(--footerbackground);
+    color: var(--footertext);
     margin-top: 5em;
 }
 
@@ -45,7 +45,7 @@ div.footer-links {
 }
 
 div.footer-links a {
-    color: var(--lightaccent);
+    color: var(--footeraccent);
     padding: 10px;
     border: 1px solid;
     height: 24px;
