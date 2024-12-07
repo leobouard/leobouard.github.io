@@ -6,7 +6,7 @@
 }
 
 /* Light theme */
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: no-preference) {
     html {
         --text: #050315;
         --background: #fbfbfe;
