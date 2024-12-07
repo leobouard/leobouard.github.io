@@ -2,24 +2,6 @@
 ---
 
 html {
-    
-    --title: #333;
-    --bodybg: #f2f2f2;
-    --accentbg: #fafafa;
-    --textbg: #ffffff;
-    --bordercolor: #d9d9d9;
-    --border: 1px solid var(--bordercolor);
-    --borderradius: 2px;
-    --boxshadow: #00000075;
-    --neutral: #757575;
-    --positive: #77c571;
-    --negative: #fde7e9;
-    --blockquoteColor: #01466C;
-    --blockquoteBGColor: #D3EFFF;
-    --blockquoteBorderColor: #0288D1;
-}
-
-html {
     font-family: var(--textfont);
     font-size: 15px;
     font-weight: 400;
@@ -35,7 +17,7 @@ body {
     height: 100%;
     margin: 0;
     width: auto;
-    background: var(--textbg);
+    background: var(--background);
 }
 
 main {
@@ -76,7 +58,7 @@ main {
     details > summary {
         list-style: none;
         padding: 10px;
-        background: var(--accentbg);
+        background: var(--lightaccent);
     }
 
     details[open] > summary {
@@ -148,7 +130,7 @@ main {
     }
 
     body {
-        background-color: var(--textbg);
+        background-color: var(--background);
     }
     
     header {

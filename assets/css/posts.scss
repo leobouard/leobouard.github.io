@@ -58,7 +58,7 @@ div.summary {
 }
 
 div.summary>a {
-    background: var(--textbg);
+    background: var(--background);
     display: block;
     padding: 10px;
     border: var(--border);
@@ -78,7 +78,7 @@ div.summary>a {
 
 div.summary>a:hover {
     text-decoration: none;
-    background: var(--accentbg);
+    background: var(--lightaccent);
 
     h3 {
         text-decoration: underline;
@@ -131,7 +131,7 @@ a.solution {
 }
 
 a.solution:hover {
-    background: var(--accentbg);
+    background: var(--lightaccent);
 }
 
 section.recommandation {
@@ -172,7 +172,7 @@ li.task-list-item {
 }
 
 li.task-list-item:hover {
-    background: var(--accentbg)
+    background: var(--lightaccent)
 }
 
 input.task-list-item-checkbox {

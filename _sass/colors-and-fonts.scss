@@ -9,11 +9,13 @@
 :root {
     --text: #050315;
     --background: #fbfbfe;
-    --primary: #433bff;
+    --primary: #413bff;
     --secondary: green;
     --accent: red;
     --lightaccent: #f8f7ff;
     --mediumaccent: #c6c5cc;
+    --blockquote: #413bff80
+    --blockquoteborder: #2e29b2;
 }
 
 /* Dark theme */
@@ -25,4 +27,9 @@
     --accent: red;
     --lightaccent: #bbb9c9;
     --mediumaccent: #a3a2af; 
+}
+
+/* Other */
+:root {
+    --border: 1px solid var(--mediumaccent);
 }
