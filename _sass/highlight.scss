@@ -55,55 +55,58 @@
 
 /* Based on Visual Studio Dark theme in Visual Studio Code */
 
-/* $null and $_ */
-html.dark .highlight .bp {
-    color: #3e9cca;
-}
+@media (prefers-color-scheme: dark) {
 
-/* Comments */
-html.dark .highlight .c {
-    color: #6a9955;
-    font-style: italic;
-}
+    /* $null and $_ */
+    .highlight .bp {
+        color: #3e9cca;
+    }
 
-/* Functions, params and conditions */
-html.dark .highlight .kr {
-    color: #3f9cca;
-}
+    /* Comments */
+    .highlight .c {
+        color: #6a9955;
+        font-style: italic;
+    }
 
-/* Integers */
-html.dark .highlight .mi {
-    color: #b5cea8;
-}
+    /* Functions, params and conditions */
+    .highlight .kr {
+        color: #3f9cca;
+    }
 
-/* Commands and types */
-html.dark .highlight .n,
-html.dark .highlight .nf {
-    color: #dcdcaa;
-}
+    /* Integers */
+    .highlight .mi {
+        color: #b5cea8;
+    }
 
-/* Command parameters */
-html.dark .highlight .nt {
-    color: #d4d4d4;
-}
+    /* Commands and types */
+    .highlight .n,
+    .highlight .nf {
+        color: #dcdcaa;
+    }
 
-/* Variables */
-html.dark .highlight .nv {
-    color: #9cdcfe;
-}
+    /* Command parameters */
+    .highlight .nt {
+        color: #d4d4d4;
+    }
 
-/* Maths */
-html.dark .highlight .o {
-    color: #d4d4d4;
-}
+    /* Variables */
+    .highlight .nv {
+        color: #9cdcfe;
+    }
 
-/* Ponctuation */
-html.dark .highlight .p {
-    color: #d4d4d4;
-}
+    /* Maths */
+    .highlight .o {
+        color: #d4d4d4;
+    }
 
-/* String */
-html.dark .highlight .s1,
-html.dark .highlight .s2 {
-    color: #ce9178;
+    /* Ponctuation */
+    .highlight .p {
+        color: #d4d4d4;
+    }
+
+    /* String */
+    .highlight .s1,
+    .highlight .s2 {
+        color: #ce9178;
+    }
 }
