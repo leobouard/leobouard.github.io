@@ -141,43 +141,6 @@ section.recommandation>span>img {
     margin-right: 10px;
 }
 
-// TASK-LIST
-
-ul.task-list {
-    list-style: none;
-    padding-inline-start: 0;
-}
-
-li.task-list-item {
-    padding: 0.5em 2em;
-    border: var(--border);
-    border-radius: 5px;
-    margin: 5px;
-}
-
-li.task-list-item:hover {
-    background: var(--lightaccent)
-}
-
-input.task-list-item-checkbox {
-    display: none;
-}
-
-@media screen and (max-width: 950px) {
-
-    .side-buttons {
-        bottom: 0;
-        right: 0;
-    }
-
-    div.banner {
-        min-width: 0;
-        width: 100%;
-        border-radius: 0;
-    }
-
-}
-
 @media screen and (max-width: 880px) {
 
     .posts {
@@ -225,8 +188,8 @@ input.task-list-item-checkbox {
         margin-right: -1em;
     }
 
-    .top-buttons>a>span,
-    .bottom-buttons>a>span {
+    .top-buttons a span,
+    .bottom-buttons a span {
         display: none;
     }
 }

@@ -46,7 +46,6 @@ span.certifTitle {
     margin: 15px 0px;
     justify-content: left;
     padding: 5px;
-    border-radius: 5px;
     align-items: center;
     border: var(--border);
     background: var(--lightaccent);
@@ -62,7 +61,6 @@ span.certifTitle {
 
 .enterprise > div > img {
     height: 5em;
-    /*mix-blend-mode: darken;*/
     max-width: fit-content;
 }
 
@@ -111,7 +109,7 @@ img.companyLogo {
 }
 
 details.jobTitle {
-    border-left: 1px solid var(--border);
+    border-left: var(--border);
     margin-left: 2em;
 }
 
@@ -141,7 +139,7 @@ div.personalLinks > a {
 
 div.personalLinks > a:hover {
     color: var(--text);
-    background: rgba(0,0,0,.1);
+    background: var(--lightaccent);
     text-decoration: none;
 }
 
