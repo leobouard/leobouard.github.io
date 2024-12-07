@@ -15,10 +15,6 @@ En bref : elle est où la moulaga ?
 
 ![Léonardo Di Caprio qui jette des billets dans Le Loup de Wallstreet](https://media2.giphy.com/media/ZWiIwPxJ9JGW4/giphy.gif?cid=ecf05e47tztz1sa2magi8gsof2idlq05bmu1qvxiofkxia0q&rid=giphy.gif&ct=g)
 
-<div style="text-align: center">
-  <i>Environ 5 min après avoir reçu votre salaire</i>
-</div>
-
 ## Consignes
 
 Les règles de ce défis sont très simple : on cherche à obtenir le jour ouvré (hors samedi et dimanche) le plus proche du 25e jour du mois. Exclure les jours fériés est facultatif et ne sera pas explicité dans les solutions proposées.

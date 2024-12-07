@@ -65,12 +65,9 @@ Modifier le JSON pour remplacer {domain} par le domaine de votre tenant puis lan
 
 Celui-ci devrait tomber en erreur :
 
-<blockquote style="
-    background: var(--negative);
-    border-color: red;
-">
-  <p>Forbidden - 403. Either the signed-in user does not have sufficient privileges, or you need to consent to one of the permissions on the Modify permissions tab</p>
-</blockquote>
+```plaintext
+Forbidden - 403. Either the signed-in user does not have sufficient privileges, or you need to consent to one of the permissions on the Modify permissions tab
+```
 
 Comme évoqué dans [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes), même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits initialement : il faut les demander. Vous pouvez demander l'accès à la permission *User.ReadWrite.All* dans le volet supérieur sur l'onglet *"Modify permissions"* puis l'approuver.
 
@@ -80,12 +77,9 @@ Comme évoqué dans [Permissions et étendues (scope)](/2023/09/17/cours-msgraph
 
 Vous devriez alors recevoir le message de confirmation suivant : 
 
-<blockquote style="
-    border-color: green;
-    background: var(--positive);
-">
-  <p>Success - Scope consent successful</p>
-</blockquote>
+```plaintext
+Success - Scope consent successful
+```
 
 Il n'y a maintenant plus aucun obstacle pour créer votre utilisateur.
 
@@ -122,12 +116,9 @@ Remplacer `{id}` dans l'URI par le UserID ou le UserPrincipalName de l'utilisate
 
 Si vous n'avez pas d'erreur, vous devez recevoir un objet de retour vide avec le code suivant :
 
-<blockquote style="
-    border-color: green;
-    background: var(--positive);
-">
-  <p>No Content - 204</p>
-</blockquote>
+```plaintext
+No Content - 204
+```
 
 Vous pouvez vérifier les modifications avec la requête GET précédente. Vous pouvez accéder à l'historique de vos appels API avec l'onglet *"History"* présent dans le volet gauche.
 

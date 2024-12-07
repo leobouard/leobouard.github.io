@@ -145,12 +145,9 @@ New-MgGroup @params
 
 Cependant, la commande tombe en erreur :
 
-<blockquote style="
-    background: var(--negative);
-    border-color: red;
-">
-  <p>New-MgGroup_CreateExpanded: Insufficient privileges to complete the operation.</p>
-</blockquote>
+```plaintext
+New-MgGroup_CreateExpanded: Insufficient privileges to complete the operation.
+```
 
 Si vous êtes encore tombé dans le piège, c'est que vous n'avez pas encore assimilé cette partie : [Permissions et étendues (scope)](/2023/09/17/cours-msgraph-002#permissions-et-étendues-scopes). Même si vous êtes l'administrateur global de votre tenant vous n'avez pas tous les droits initialement : il faut les demander. Pour demander une permission supplémentaire avec PowerShell, il faut se reconnecter via la commande `Connect-MgGraph` tout en spécifiant le scope dont vous avez besoin (en l’occurrence : *Group.ReadWrite.All*).
 
