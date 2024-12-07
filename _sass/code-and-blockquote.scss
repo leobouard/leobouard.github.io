@@ -8,7 +8,7 @@ blockquote {
 
 div.highlighter-rouge,
 code {
-    font-family: 'Martian Mono', monospace;
+    font-family: var(--codefont);
     font-size: 11px;
 }
 
@@ -30,7 +30,7 @@ div.highlighter-rouge:before {
     display: block;
     padding: 5px 10px;
     font-size: 12px;
-    font-family: var(--fonts);
+    font-family: var(--textfont);
 }
 
 div.highlighter-rouge {

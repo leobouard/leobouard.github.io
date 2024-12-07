@@ -1,3 +1,11 @@
+/* Fonts */
+:root {
+    --textfont: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    --titlefont: Manrope;
+    --codefont: 'Martian Mono', monospace;
+}
+
+/* Light theme */
 :root {
     --text: #050315;
     --background: #fbfbfe;
@@ -8,6 +16,7 @@
     --mediumaccent: #c6c5cc;
 }
 
+/* Dark theme */
 :root.dark {
     --text: #ebe9fc;
     --background: #010104;

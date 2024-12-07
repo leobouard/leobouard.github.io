@@ -6,7 +6,7 @@ header {
 }
 
 header a {
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--titlefont);
     padding: 0.5em;
     font-size: 1.25em;
     text-decoration: none;

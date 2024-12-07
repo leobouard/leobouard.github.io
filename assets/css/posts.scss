@@ -142,7 +142,7 @@ section.recommandation {
 }
 
 section.recommandation>span {
-    font-family: 'Manrope';
+    font-family: var(--titlefont);
     max-width: 310px;
     font-size: x-large;
     text-align: right;

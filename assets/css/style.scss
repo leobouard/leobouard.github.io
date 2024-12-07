@@ -2,7 +2,7 @@
 ---
 
 html {
-    --fonts: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    
     --title: #333;
     --bodybg: #f2f2f2;
     --accentbg: #fafafa;
@@ -20,7 +20,7 @@ html {
 }
 
 html {
-    font-family: var(--fonts);
+    font-family: var(--textfont);
     font-size: 15px;
     font-weight: 400;
     height: 100%;
