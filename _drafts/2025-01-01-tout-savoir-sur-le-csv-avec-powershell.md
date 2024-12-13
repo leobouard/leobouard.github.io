@@ -105,10 +105,6 @@ PS C:\> $csv | % {$_.id * 2}
 2222
 ```
 
-<div style="text-align: center">
-  <i>A ce niveau, c'est un 0 pointé en maths</i>
-</div>
-
 #### Explication
 
 Vous l'avez probablement déjà deviné avec les trois exemples précédents, mais PowerShell considère que toutes les données contenues dans le fichier CSV sont des valeurs de type "texte" (même quand la valeur n'est composée que de chiffres).
@@ -120,14 +116,3 @@ Pour corriger ça, on peut formater la "colonne" ID en amont en indiquant à Pow
 ```powershell
 $csv | % {$_.id = [int]($_.id)}
 ```
-
----
-
-<div class="buttons">
-    <div class="buttonBack">
-        <a href="/2022/05/19/donnees-structurees-0">Précédent : Introduction</a>
-    </div>
-    <div class="buttonNext">
-        <a href="/2022/05/19/donnees-structurees-2">Suivant : JSON</a>
-    </div>
-</div>

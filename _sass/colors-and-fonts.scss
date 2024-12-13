@@ -1,0 +1,44 @@
+/* Fonts */
+:root {
+    --textfont: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    --titlefont: Manrope;
+    --codefont: 'Martian Mono', monospace;
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    html {
+        --text: #050315;
+        --background: #fbfbfe;
+        --primary: #413bff;
+        --secondary: green;
+        --accent: red;
+        --lightaccent: #f8f7ff;
+        --mediumaccent: #adacb2;
+        --heavyaccent: #626265;
+        --blockquote: #e4e4ff;
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    html {
+        --text: #ebe9fc;
+        --background: #010104;
+        --primary: #3a31d8;
+        --secondary: green;
+        --accent: red;
+        --lightaccent: #101010;
+        --mediumaccent: #191925;
+        --heavyaccent: #a3a3f3;
+        --blockquote: #090431;
+    }
+}
+
+/* Other */
+:root {
+    --footerbackground: #050315;
+    --footertext: #adacb2;
+    --footeraccent: #f8f7ff;
+    --border: 1px solid var(--mediumaccent);
+}

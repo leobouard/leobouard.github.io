@@ -4,7 +4,7 @@
 nav.breadcrumb {
     width: 100%;
     font-size: small;
-    color: #666;
+    color: var(--heavyaccent);
     font-weight: 500;
     padding: 1em 0;
 }
@@ -35,22 +35,6 @@ nav.breadcrumb li:not(:first-child)::before {
     text-decoration: none;
 }
 
-div.information {
-    background-color: #CDE0F4;
-    padding: 15px;
-    border-radius: var(--borderradius);
-    margin: 15px 0px;
-}
-
-div.information>span {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-div.information>p {
-    margin: 10px 0px 0px;
-}
-
 div.summary {
     display: flex;
     flex-direction: column;
@@ -58,7 +42,7 @@ div.summary {
 }
 
 div.summary>a {
-    background: var(--textbg);
+    background: var(--background);
     display: block;
     padding: 10px;
     border: var(--border);
@@ -78,7 +62,7 @@ div.summary>a {
 
 div.summary>a:hover {
     text-decoration: none;
-    background: var(--accentbg);
+    background: var(--lightaccent);
 
     h3 {
         text-decoration: underline;
@@ -131,7 +115,7 @@ a.solution {
 }
 
 a.solution:hover {
-    background: var(--accentbg);
+    background: var(--lightaccent);
 }
 
 section.recommandation {
@@ -142,7 +126,7 @@ section.recommandation {
 }
 
 section.recommandation>span {
-    font-family: 'Manrope';
+    font-family: var(--titlefont);
     max-width: 310px;
     font-size: x-large;
     text-align: right;
@@ -155,43 +139,6 @@ section.recommandation>span>img {
     transform: scaleY(-1);
     width: 120px;
     margin-right: 10px;
-}
-
-// TASK-LIST
-
-ul.task-list {
-    list-style: none;
-    padding-inline-start: 0;
-}
-
-li.task-list-item {
-    padding: 0.5em 2em;
-    border: var(--border);
-    border-radius: 5px;
-    margin: 5px;
-}
-
-li.task-list-item:hover {
-    background: var(--accentbg)
-}
-
-input.task-list-item-checkbox {
-    display: none;
-}
-
-@media screen and (max-width: 950px) {
-
-    .side-buttons {
-        bottom: 0;
-        right: 0;
-    }
-
-    div.banner {
-        min-width: 0;
-        width: 100%;
-        border-radius: 0;
-    }
-
 }
 
 @media screen and (max-width: 880px) {
@@ -241,8 +188,8 @@ input.task-list-item-checkbox {
         margin-right: -1em;
     }
 
-    .top-buttons>a>span,
-    .bottom-buttons>a>span {
+    .top-buttons a span,
+    .bottom-buttons a span {
         display: none;
     }
 }

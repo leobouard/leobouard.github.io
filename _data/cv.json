@@ -110,7 +110,7 @@
                     "endDate":  "mars 2024",
                     "summary":  "Dans le cadre d'une prestation METSYS pour l'équipe d'administration et d'architecture des systèmes Microsoft.",
                     "highlights":  [
-                        "audit, sécurisation et mise en place du modèle en tiers sur Active Directory",
+                        "audit, sécurisation et mise en place du tiering model sur Active Directory",
                         "migration et déploiement de l'authentification multi-facteur",
                         "migration du mode d'attribution des licences Microsoft 365",
                         "segmentation des permissions dans Azure AD avec les unités administratives"
