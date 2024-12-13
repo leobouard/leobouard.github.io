@@ -14,4 +14,21 @@ prevLink:
 
 ## Modèles de PAW
 
+Il existe principalement deux modèles pour les PAW :
+
+- avec un PC physique dédié
+- par un serveur de rebond sur lequel on se connecte avec un bastion
+
+### PC physique dédié
+
+L
+
+### Serveur de rebond & bastion
+
+C'est le modèle le moins contraignant.
+
+Dans ce scénario, vous reposer sur 
+
 ## Renforcement de l'OS
+
+J'ai déjà fait un article sur le sujet ici : [HardeningKitty \| LaBouaBouate](/2024/07/17/hardening-kitty)
