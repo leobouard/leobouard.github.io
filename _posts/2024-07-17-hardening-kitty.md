@@ -29,7 +29,7 @@ En l'absence de recommandations de l'ANSSI, il est préférable de se baser sur 
 
 Vous pouvez télécharger le ZIP du projet GitHub ici : [Lien direct](https://github.com/0x6d69636b/windows_hardening/archive/refs/heads/master.zip)
 
-Décompressez le fichier ZIP sur la machine à sécuriser, puis naviguer en PowerShell jusqu'à l'emplacement du dossier et exécuter la commande suivante pour charger le module :
+Décompressez le fichier ZIP sur la machine à sécuriser, puis naviguer avec une console PowerShell **lancée en tant qu'administrateur** jusqu'à l'emplacement du dossier et exécuter la commande suivante pour charger le module :
 
 ```powershell
 Import-Module .\HardeningKitty.psm1
@@ -43,7 +43,7 @@ Une fois le module chargé, vous pouvez lancer un audit de l'existant avec la co
 Invoke-HardeningKitty -Mode Audit -Log -Report -FileFindingList .\lists\finding_list_msft_security_baseline_windows_server_2022_21h2_member_machine.csv
 ```
 
-Le paramètre `-FileFindingList` permet de donner le référentiel à utiliser pour la sécurisation du serveur, en l'occurence : Microsoft Security Baseline for Windows Server 2022 21H2 (hors contrôleur de domaine).
+Le paramètre `-FileFindingList` permet de donner le référentiel à utiliser pour la sécurisation du serveur, en l'occurrence : Microsoft Security Baseline for Windows Server 2022 21H2 (hors contrôleur de domaine).
 
 L'audit vous donnera un score de 1 (insuffisant) à 6 (excellent) :
 
@@ -74,9 +74,23 @@ Le plus simple pour faire est d'utiliser l'interface web disponible ici : [Harde
 
 Sinon, vous pouvez utiliser tel-quel les modèles par défaut qui se basent sur les recommandations de Microsoft, du DOD, du BSI ou du CIS.
 
+#### Configuration locale uniquement
+
+Avec cette configuration, vous allez modifier localement toutes les clés de registre indiquées dans le fichier de référence :
+
 ```powershell
 Invoke-HardeningKitty -Mode HailMary -Log -Report -FileFindingList .\lists\votre-fichier-de-regles.csv
 ```
+
+#### Configuration via GPO
+
+Avec cette configuration, HardeningKitty va créer une nouvelle GPO (il n'est pas possible de modifier ou mettre à jour une GPO existante) pour pouvoir appliquer le renforcement au niveau du domaine, avec une configuration centralisée.
+
+```powershell
+Invoke-HardeningKitty -Mode GPO -GPOName 'HardeningKitty01' -Log -Report -FileFindingList .\lists\votre-fichier-de-regles.csv
+```
+
+> Pour pouvoir faire le renforcement par GPO, vous devez lancer HardeningKitty avec des droits suffisants pour créer une nouvelle GPO.
 
 Un redémarrage est souvent requis après l'application des règles.
 
@@ -86,7 +100,7 @@ Une fois le redémarrage terminé, vous pouvez relancer un audit pour vérifier 
 
 ```powershell
 Import-Module .\HardeningKitty.psm1
-Invoke-HardeningKitty -Mode Audit -Log -Report -FileFindingList .\lists\finding_list_msft_security_baseline_windows_server_2022_21h2_member_machine.csv
+Invoke-HardeningKitty -Mode Audit -Log -Report -FileFindingList .\lists\votre-fichier-de-regles.csv
 ```
 
 Votre score devrait maintenant se situer entre 5 et 6.
@@ -104,3 +118,9 @@ Vous pouvez donc supprimer ou modifier cette ligne sur le fichier CSV, ou suppri
 Le modèle `msft_security_baseline` pour Windows Server active le verrouillage de la session après 15 minutes d'inactivité. Il s'agit de la ligne de configuration suivante : *Interactive logon: Machine inactivity limit* (ID : 10208).
 
 Vous pouvez donc supprimer ou modifier cette ligne sur le fichier CSV, ou supprimer la clé de registre **InactivityTimeoutSecs** au chemin *Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System* après avoir renforcé l'OS.
+
+### Consoles avec blocage Internet Explorer
+
+Le modèle `msft_security_baseline` pour Windows Server active un paramètre de sécurité renforcé pour Internet Explorer, qui peut bloquer certaines fonctionnalités de lecture XML sur des consoles Microsoft comme la GPMC. Il s'agit de la ligne de configuration suivante : *Internet Control Panel: Advanced Page: Turn on Enhanced Protected Mode* (ID : 10817)
+
+Vous pouvez donc supprimer ou modifier cette ligne sur le fichier CSV, ou supprimer la clé de registre **Isolation** au chemin *Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main* après avoir renforcé l'OS.
