@@ -20,7 +20,7 @@ Dans l'une des étapes préalables, nous avons créé des groupes pour pouvoir c
 
 Ces groupes vont nous permettre d'empêcher les utilisateurs du TIER0 de pouvoir se connecter sur une ressource d'un autre niveau (même si ceux-ci ont les permissions nécessaires).
 
-Voici un article de Daniel Metzger de Microsoft sur le sujet : [Initially Isolate Tier 0 Assets with Group Policy to Start Administrative Tiering \ | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/initially-isolate-tier-0-assets-with-group-policy-to-start-administrative-tierin/1184934)
+Voici un article de Daniel Metzger de Microsoft sur le sujet : [Initially Isolate Tier 0 Assets with Group Policy to Start Administrative Tiering \| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/initially-isolate-tier-0-assets-with-group-policy-to-start-administrative-tierin/1184934)
 
 Pour cela, on utilise les paramètres d'attribution des droits utilisateurs (*User Rights Assignments*). Ces paramètres vont agir en négatif : à aucun moment on autorise explicitement les utilisateurs du TIER1 à pouvoir se connecter aux ressources du TIER1. À la place, on va plutôt interdire l'accès au TIER1 à tous les utilisateurs du TIER0 et du TIER2.
 
