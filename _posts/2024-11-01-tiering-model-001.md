@@ -22,7 +22,7 @@ Le concept du tiering model ne concerne pas uniquement Active Directory, c'est u
 
 Ces différents niveaux sont classés du plus critique (Tier 0) au moins critique (Tier 2). Habituellement, voici ce que contiennent les différentes couches :
 
-1. **Tier 0 :** regroupe les ressources critiques pour Active Directory comme les administrateurs du domaine et les contadministrateursaine.
+1. **Tier 0 :** regroupe les ressources critiques pour Active Directory comme les administrateurs du domaine, les contrôleurs de domaine et l'autorité de certification.
 2. **Tier 1 :** contient les serveurs applicatifs de l'entreprise et leurs administrateurs.
 3. **Tier 2 :** contient les utilisateurs sans privilèges, tous les périphériques sur lesquels ils se connectent et les administrateurs de stations de travail.
 
@@ -32,7 +32,9 @@ On retrouve habituellement trois couches, mais les modèles peuvent varier. Dans
 
 ### Objectifs du tiering model
 
-L'idée de cette segmentation est d'empêcher ou ralentir l'escalade d'une attaque vers les ressources sensibles et/ou critiques (Tier 1 et Tier 0). Le Tier 2 étant de très loin le plus exposé aux attaques de par :
+L'idée de cette segmentation est d'empêcher ou de ralentir la propagation d'une attaque partant du Tier 2 (le plus exposé) pour aller vers le Tier 0 (le plus critique).
+
+Le Tier 2 est de très loin le plus exposé aux attaques de par :
 
 - le nombre de ressources, qui représente souvent 90% des objets dans un domaine
 - l'exposition des utilisateurs standards à des attaques comme le hameçonnage
