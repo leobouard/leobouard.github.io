@@ -5,7 +5,7 @@
     "links":  [
         {
             "name":  "LinkedIn",
-            "url":  "https://www.linkedin.com/in/leo-bouard/",
+            "url":  "https://linkedin.com/in/leobouard/",
             "icon":  "fa-brands fa-linkedin-in"
         },
         {
@@ -20,7 +20,7 @@
         },
         {
             "name": "Reddit",
-            "url": "https://www.reddit.com/u/leobouard",
+            "url": "https://reddit.com/u/leobouard",
             "icon": "fa-brands fa-reddit"
         }
     ],
