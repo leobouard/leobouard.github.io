@@ -137,7 +137,12 @@ div.personalLinks > a {
     text-decoration: none;
 }
 
-div.personalLinks > a:hover {
+div.certification a {
+    text-decoration: none;
+}
+
+div.personalLinks a:hover,
+div.certification a:hover {
     color: var(--text);
     background: var(--lightaccent);
     text-decoration: none;

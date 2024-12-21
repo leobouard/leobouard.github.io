@@ -1,6 +1,6 @@
 ---
 permalink: /cv
-title:  "Léo Bouard"
+title: "Léo Bouard"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
 
@@ -21,9 +21,11 @@ description: "Toutes mes expériences, mes formations et certifications"
 <div style="display: flex; justify-content: center; flex-wrap: wrap; grid-gap: 5px;">
   {% for certificate in site.data.cv.certificates %}
   <div class="certification">
-    <img src="{{ certificate.image }}" alt="certification logo">
-    <span class="certifDate">{{ certificate.date }}</span>
-    <span class="certifTitle">{{ certificate.name }}</span>
+    <a href="{{ certificate.url }}" target="_blank">
+      <img src="{{ certificate.image }}" alt="certification logo">
+      <span class="certifDate">{{ certificate.date }}</span>
+      <span class="certifTitle">{{ certificate.name }}</span>
+    </a>
   </div>
   {% endfor %}
 </div>
