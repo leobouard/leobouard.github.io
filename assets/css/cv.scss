@@ -1,32 +1,6 @@
 ---
 ---
 
-.certification {
-    height: 225px;
-    width: 120px;
-    border-radius: var(--borderradius);
-    padding: 15px;
-    border: var(--border);
-    position: relative;
-}
-
-.certification > img {
-    height: 85px;
-}
-
-span.certifDate {
-    font-size: small;
-    margin-top: 15px;
-    display: block;
-}
-
-span.certifTitle {
-    font-weight: 600;
-    display: block;
-    font-size: 14px;
-    line-height: 150%;
-}
-
 .experience {
     display: block;
     margin-left: 35px;
@@ -137,12 +111,7 @@ div.personalLinks > a {
     text-decoration: none;
 }
 
-div.certification a {
-    text-decoration: none;
-}
-
-div.personalLinks a:hover,
-div.certification a:hover {
+div.personalLinks a:hover {
     color: var(--text);
     background: var(--lightaccent);
     text-decoration: none;
@@ -150,4 +119,42 @@ div.certification a:hover {
 
 div.personalLinks > a > i {
     font-size: 25px;
+}
+
+/* CERTIFICATIONS */
+
+div.certification {
+    height: 225px;
+    width: 120px;
+    border-radius: var(--borderradius);
+    padding: 15px;
+    border: var(--border);
+    position: relative;
+}
+
+div.certification a,
+div.certification a:hover {
+    text-decoration: none;
+    color: var(--text);
+}
+
+div.certification img {
+    height: 85px;
+}
+
+div.certification:hover {
+    background: var(--lightaccent);
+}
+
+span.certifDate {
+    font-size: small;
+    margin-top: 15px;
+    display: block;
+}
+
+span.certifTitle {
+    font-weight: 600;
+    display: block;
+    font-size: 14px;
+    line-height: 150%;
 }
