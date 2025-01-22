@@ -4,20 +4,18 @@ title: "Léo Bouard"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
 
-<h2>Résumé</h2>
+<h1>Léo Bouard</h1>
 
+<h2>Résumé</h2>
 {{ site.data.cv.summary }}
 
 <h2>Liens</h2>
-
 <div class="personalLinks">
   {% for link in site.data.cv.links %}
   <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
   {% endfor %}
 </div>
-
 <h2>Examens et certifications</h2>
-
 <div style="display: flex; justify-content: center; flex-wrap: wrap; grid-gap: 5px;">
   {% for certificate in site.data.cv.certificates %}
   <div class="certification">
@@ -31,7 +29,6 @@ description: "Toutes mes expériences, mes formations et certifications"
 </div>
 
 <h2>Expériences professionnelles</h2>
-
 <div style="display: block;">
   {% for company in site.data.cv.companies %}
   <div style="margin-bottom: 35px;">
