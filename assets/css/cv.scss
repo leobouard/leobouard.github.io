@@ -22,18 +22,18 @@
     padding: 5px;
     align-items: center;
     border: var(--border);
-    background: var(--lightaccent);
 }
 
-.enterprise > div {
+.enterprise div {
     margin: 5px;
 }
 
-.enterprise > div > h3 {
+.enterprise h3,
+.enterprise h4 {
     margin: 0.25em 0;
 }
 
-.enterprise > div > img {
+.enterprise img {
     height: 5em;
     max-width: fit-content;
 }
