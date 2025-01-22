@@ -80,6 +80,18 @@
             "summary":  "Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.",
             "positions":  [
                 {
+                    "title":  "Ingénieur systèmes (mode projet)",
+                    "startDate":  "avril 2024",
+                    "endDate":  "aujourd'hui",
+                    "summary":  "Mode projet et multi-clients sur les sujets d'identité, d'automatisation et de travail collaboratif",
+                    "highlights":  [
+                        "déploiement du tiering model dans plusieurs forêt Active Directory",
+                        "expertise PowerShell",
+                        "architecture et optimisation de tenant Microsoft 365",
+                        "conseils sur les solutions d'IAM"
+                    ]
+                },
+                {
                     "title":  "Responsable d'équipe",
                     "startDate":  "octobre 2021",
                     "endDate":  "aujourd'hui",
@@ -94,7 +106,7 @@
                 {
                     "title":  "Ingénieur systèmes",
                     "startDate":  "octobre 2021",
-                    "endDate":  "aujourd'hui"
+                    "endDate":  "mars 2024"
                 },
                 {
                     "title":  "Administrateur systèmes",
