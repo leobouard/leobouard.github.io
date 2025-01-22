@@ -85,7 +85,7 @@
                     "endDate":  "aujourd'hui",
                     "summary":  "Mode projet et multi-clients sur les sujets d'identité, d'automatisation et de travail collaboratif",
                     "highlights":  [
-                        "déploiement du tiering model dans plusieurs forêt Active Directory",
+                        "sécurisation de plusieurs forêts Active Directory",
                         "expertise PowerShell",
                         "architecture et optimisation de tenant Microsoft 365",
                         "conseils sur les solutions d'IAM"
