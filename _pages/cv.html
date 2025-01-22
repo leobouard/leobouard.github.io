@@ -60,34 +60,18 @@ description: "Toutes mes expériences, mes formations et certifications"
   </div>
   {% endfor %}
 </div>
-
-<!--
 <h2>Formation</h2>
-
 <div style="display: block;">
-   IUT La Roche-sur-Yon
-  <div style="margin-bottom: 35px;">
-    <div class="enterprise">
-      <div>
-        <img src="/assets/images/iut-la-roche-sur-yon.jpg" alt="logo IUT de La Roche-sur-Yon">
-      </div>
-      <div>
-        <h3>IUT de La Roche-sur-Yon</h3>
-        <span>La Roche-sur-Yon, Vendée (85)</span>
-      </div>
+  {% for school in site.data.cv.education %}
+  <div class="enterprise">
+    <div>
+      <img src="{{ school.logo }}" alt="school logo">
     </div>
-    <div class="experience">
-      <h4>Licence professionnelle A2SR</h4>
-      <small>Promotion 2017-2018</small>
-      <p>Licence professionnelle administration et sécurité des systèmes et des réseaux.<br>Alternance au GEVES en
-        tant qu'administrateur système.</p>
-    </div>
-    <div class="experience">
-      <h4>DUT réseaux et télécommunications</h4>
-      <small>Promotion 2015-2017</small>
-      <p>Projet tutoré : initiation de lycéens à la cybersécurité avec des ateliers de sensibilisation et des
-        travaux pratiques.<br>Stage de fin d'année au GEVES en tant qu'administrateur système.</p>
+    <div>
+      <h3>{{ school.institution }}</h3>
+      <h4>{{ school.diploma }}</h4>
+      <span>{{ school.startDate }} - {{ school.endDate }}</span>
     </div>
   </div>
+  {% endfor %}
 </div>
- -->

@@ -58,18 +58,18 @@
     ],
     "education":  [
         {
-            "institution": "Université de Nantes",
+            "institution": "IUT de la Roche-sur-Yon",
             "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
             "diploma": "Licence professionelle : Administration et Sécurité des Systèmes et des Réseaux",
-            "startDate": "septembre 2015",
-            "endDate": "juin 2017"
+            "startDate": "2017",
+            "endDate": "2018"
         },
         {
-            "institution": "Université de Nantes",
+            "institution": "IUT de la Roche-sur-Yon",
             "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
             "diploma": "DUT Réseaux et Télécommunications",
-            "startDate": "septembre 2015",
-            "endDate": "juin 2017"
+            "startDate": "2015",
+            "endDate": "2017"
         }
     ],
     "companies":  [
