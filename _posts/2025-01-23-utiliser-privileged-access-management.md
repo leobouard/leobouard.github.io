@@ -1,4 +1,9 @@
-# PAM dans Active Directory 2016
+---
+title: "Utiliser Privileged Access Management"
+description: "Comment bien maitriser l'ajout temporaire dans un groupe Active Directory ?"
+tags: active-directory
+listed: true
+---
 
 ## Contexte
 
