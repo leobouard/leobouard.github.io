@@ -9,7 +9,7 @@ listed: true
 
 PAM (Privileged Access Management) est une fonctionnalité apportée avec Active Directory dans la version Windows2016Forest. Elle permet d'ajouter de manière temporaire un utilisateur dans un groupe (et l'utilisateur sera supprimé automatiquement à la fin de la période définie).
 
-La durée de vie d'un membre dans un groupe est appelée "TTL" pour Time To Live (durée de vie).
+La durée de vie d'un membre dans un groupe est appelée "TTL" pour Time To Live.
 
 Il n'y a actuellement pas de méthode pour définir un membre temporaire dans un groupe avec l'interface graphique, il faut obligatoirement utiliser PowerShell.
 
