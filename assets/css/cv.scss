@@ -96,10 +96,10 @@ div.personalLinks {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    grid-gap: 5px;
 }
 
 div.personalLinks > a {
-    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
