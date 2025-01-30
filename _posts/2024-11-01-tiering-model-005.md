@@ -39,17 +39,21 @@ Il va falloir créer au moins quatre GPO pour empêcher les connexions :
 
 Pour chaque GPO, se rendre au chemin suivant : **Configuration ordinateur > Stratégies > Paramètres Windows > Paramètres de sécurité > Stratégies locales > Attribution des droits utilisateurs** et activer les quatre paramètres suivants :
 
+- Interdire l'accès à cet ordinateur à partir du réseau (*WinRM, partage de fichiers, MMC à distance*)
 - Interdire l'ouverture d'une session locale
 - Interdire l'ouverture de session en tant que service
-- Interdire l'ouverture de session en tant que tâche
+- Interdire l'ouverture de session en tant que tâche (*tâche planifiée*)
 - Interdire l'ouverture de session par les services Bureau à distance
 
-> Je déconseille l'utilisation du paramètre *Interdire l'accès à cet ordinateur à partir du réseau*, car même si celui-ci permet d'augmenter drastiquement le niveau de sécurité, il casse tout au passage en général (relation d'approbation au domaine, utilisation de service, etc).
+Pour se rendre compte des impacts de chaque paramètre, vous pouvez consulter ce lien : [Informations de référence sur les outils d’administration et les types d’ouverture de session - Windows Server \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/identity/securing-privileged-access/reference-tools-logon-types).
+
+L'interdiction d'accès depuis le réseau ne doit pas être appliquée sur vos contrôleurs de domaine.
 
 Ces paramètres doivent ensuite être remplis avec tous les groupes d'utilisateurs autres que ceux du niveau en question. Exemple avec la GPO d'accès au TIER1 :
 
 Stratégie | Paramètres de stratégie
 --------- | -----------------------
+Réseau | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
 Session locale | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
 Session en tant que service | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
 Session en tant que tâche | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
@@ -76,7 +80,7 @@ contoso.com/CONTOSO | Accès TIER2
 La méthode d'isolation par GPO a beau être simple et peu coûteuse à mettre en place et à maintenir, il faut tout de même être vigilant sur deux points :
 
 - **Appartenance à plusieurs niveaux** : lorsqu'un utilisateur appartient à plusieurs niveaux (exemple : TIER1 & TIER2), celui-ci ne pourra se connecter sur aucune ressource (ni du TIER1, ni du TIER2). Il s'agit donc d'une anomalie à corriger, mais celle-ci n'impacte pas la sécurité de votre Active Directory.
-- **Compte non-catégorisé dans un niveau** : dans ce cas, l'utilisateur ne sera pas soumis aux restrictions de connexion et pourra se balader librement sur tous les niveaux. Ça peut être utile dans le cas d'un compte de récupération, mais cela doit être surveillé régulièrement car il s'agit d'une grosse faille dans la sécurité de votre Active Directory. 
+- **Compte non catégorisé dans un niveau** : dans ce cas, l'utilisateur ne sera pas soumis aux restrictions de connexion et pourra se balader librement sur tous les niveaux. Ça peut être utile dans le cas d'un compte de récupération, mais cela doit être surveillé régulièrement, car il s'agit d'une grosse faille dans la sécurité de votre Active Directory.
 
 > L'utilisation de la méthode AGDLP permet d'associer les permissions (délégations Active Directory, droits d'administration locale des machines, etc) avec les contraintes (stratégie de mot de passe, restriction de connexion). De cette manière, l'un ne va pas sans l'autre.
 
