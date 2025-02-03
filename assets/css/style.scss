@@ -109,24 +109,12 @@ main {
         border-radius: 0;
         padding: 1.5em;
     }
-
-    header nav a span {
-        display: none;
-    }
-
-    .horizontal-menu {
-        display: none;
-    }
-
-    .vertical-menu {
-        display: inline;
-    }
 }
 
 @media print {
 
     html {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     body {
