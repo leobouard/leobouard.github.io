@@ -49,7 +49,7 @@ Propriété | Explication
 ExpireVersionAfterDays | Durée de validité d'une version (en jours)
 MajorVersionLimit | Nombre maximum de versions par fichier
 EnableAutoExpirationVersionTrim | Limite automatique et intelligente des versions proposée par Microsoft
-EnableVersionExpirationSetting | Disponibilité des paramètres d'expiration de versions
+EnableVersionExpirationSetting | Disponibilité des paramètres d'expiration de versions (n'existe plus)
 
 A titre d'exemple, voici les paramètres par défaut sur mon tenant de test :
 
@@ -57,27 +57,21 @@ A titre d'exemple, voici les paramètres par défaut sur mon tenant de test :
 ExpireVersionsAfterDays         : 0
 MajorVersionLimit               : 500
 EnableAutoExpirationVersionTrim : False
-EnableVersionExpirationSetting  : False
+EnableVersionExpirationSetting  : 
 ```
 
 ### Modification de la configuration
 
-On commence par activer les fonctionnalités d'expiration de version de fichier au niveau du tenant :
-
-```powershell
-Set-PnPTenant -EnableVersionExpirationSetting:$true
-```
-
-Une fois les fonctionnalités débloquées, il est enfin possible d'agir sur le nombre maximum de versions au niveau du tenant. Dans mon exemple, je descends de 500 à 100 versions majeures au maximum :
+Il est possible d'agir sur le nombre maximum de versions au niveau du tenant. Dans mon exemple, je descends de 500 à 100 versions majeures au maximum :
 
 ```powershell
 Set-PnPTenant -MajorVersionLimit 100
 ```
 
-On en profite aussi pour définir une durée de validité pour les versions. Dans ma configuration, trois ans après sa création, la version d'un fichier est **susceptible** d'être supprimée :
+On en profite aussi pour définir une durée de validité pour les versions. Dans ma configuration, un an après sa création, la version d'un fichier est **susceptible** d'être supprimée :
 
 ```powershell
-Set-PnPTenant -ExpireVersionsAfterDays 1096
+Set-PnPTenant -ExpireVersionsAfterDays 365
 ```
 
 > #### Pourquoi je dis qu'une version est "susceptible" d'être supprimée ?
