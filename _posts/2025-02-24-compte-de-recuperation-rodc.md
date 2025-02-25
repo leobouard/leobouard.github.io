@@ -98,7 +98,7 @@ Ce compte du domaine doit impérativement être considéré comme du Tier 0 et n
 
 #### Exemple
 
-```powershell
+```plaintext
 C:\Windows\system32\ntdsutil.exe: set dsrm password
 Reset DSRM Administrator Password: sync from domain account dsrm-dc01
 Password has been synchronized successfully.
@@ -156,5 +156,6 @@ Ces événements peuvent/doivent être surveillés pour des raisons de sécurit�
 Voici une commande PowerShell pour requêter les trois EventID indiqués précédemment :
 
 ```powershell
-Get-WinEvent -ProviderName Microsoft-Windows-Security-Auditing -FilterXPath 'Event[System[(EventID=4794) or (EventID=4795) or (EventID=4796)]]'
+$filterXPath = 'Event[System[(EventID=4794) or (EventID=4795) or (EventID=4796)]]'
+Get-WinEvent -ProviderName Microsoft-Windows-Security-Auditing -FilterXPath $filterXPath
 ```
