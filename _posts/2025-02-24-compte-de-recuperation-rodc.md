@@ -104,24 +104,11 @@ Reset DSRM Administrator Password: sync from domain account dsrm-dc01
 Password has been synchronized successfully.
 ```
 
-### Synchronisation du compte DSRM depuis un RODC
-
-Dans le cas d'un contrôleur de domaine en lecture seule, il faudra vous assurer que le mot de passe du compte ciblé (dsrm-dc01 dans mon exemple) est bien répliqué sur le RODC. Toutes les actions nécessaires peuvent être effectuées dans l'onglet "Password Replication Policy" de l'objet ordinateur du RODC.
-
-Si le mot de passe du compte n'est pas accessible par le RODC, la commande terminera avec l'erreur `WIN32 Error Code: 0x21ac`.
-
-```powershell
-PS C:\> ntdsutil 'set dsrm password' 'sync from domain account dsrm-dc01'
-C:\Windows\system32\ntdsutil.exe: set dsrm password
-Reset DSRM Administrator Password: sync from domain account dsrm-dc01
-Synchronizing password failed. Verify that
-    The source account is a user account in the Active Directory domain.
-    The source account is not marked as requiring smartcard for interactive logon.
-    The source account has not expired.
-    The source account password has not expired.
-    WIN32 Error Code: 0x21ac
-    Error Message: The local account store does not contain secret material for the specified account.
-```
+> #### Synchronisation du compte DSRM depuis un RODC
+> 
+> Dans le cas d'un contrôleur de domaine en lecture seule, il faudra vous assurer que le mot de passe du compte ciblé (dsrm-dc01 dans mon exemple) est bien répliqué sur le RODC. Toutes les actions nécessaires pour sauvegarder le mot de passe peuvent être effectuées dans l'onglet "Password Replication Policy" de l'objet ordinateur du RODC.
+> 
+> Si le mot de passe du compte n'est pas accessible par le RODC, la commande terminera avec l'erreur suivante : `WIN32 Error Code: 0x21ac. Error Message: The local account store does not contain secret material for the specified account`.
 
 ## Connexion avec le compte DSRM
 
