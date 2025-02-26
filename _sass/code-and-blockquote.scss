@@ -73,6 +73,10 @@ div.language-json::before {
     content: "JSON"
 }
 
+div.language-plaintext::before {
+    content: "Plain Text"
+}
+
 pre > code {
     white-space: pre;
 }
