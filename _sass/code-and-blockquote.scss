@@ -43,25 +43,26 @@ div.highlighter-rouge:hover button {
 div.highlighter-rouge button {
     position: absolute;
     opacity: 0;
-    top: 3px;
-    right: 3px;
+    top: 0;
+    right: 0;
+    margin: 5px;
     border: 0;
-    height: 26px;
-    width: 75px;
+    height: 24px;
+    width: 24px;
     background: transparent;
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 1.5em;
+    color: var(--mediumaccent);
+    aspect-ratio: 1;
 }
 
 div.highlighter-rouge button:hover {
-    background: var(--secondary);
+    color: var(--heavyaccent);
 }
 
 div.highlighter-rouge button:active,
 div.highlighter-rouge button:focus-within {
     opacity: 1;
-    background: green;
-    color: white;
+    color: var(--heavyaccent);
 }
 
 div.language-powershell::before {
