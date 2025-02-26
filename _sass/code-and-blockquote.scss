@@ -24,7 +24,7 @@ div.highlighter-rouge {
 }
 
 div.highlighter-rouge:before {
-    background: var(--mediumaccent);
+    border-bottom: 1px solid var(--mediumaccent);
     margin: -10px -10px 10px -10px;
     display: block;
     padding: 5px 10px;
