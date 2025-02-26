@@ -85,7 +85,8 @@ pre > code {
 p code,
 li code,
 table code {
-    background-color: initial;
+    background-color: var(--lightaccent);
     padding: 4px;
-    border-radius: 2px;
+    border-radius: 0.25em;
+    border: 1px solid var(--mediumaccent);
 }
