@@ -30,19 +30,34 @@ La clé peut prendre trois valeurs :
 Vous pouvez ajouter la clé de registre directement avec PowerShell :
 
 ```powershell
-New-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Lsa\' -Name 'DsrmAdminLogonBehavior' -PropertyType DWORD -Value 1
+$params = @{
+    Path = 'HKLM:\System\CurrentControlSet\Control\Lsa\'
+    Name = 'DsrmAdminLogonBehavior'
+    PropertyType = 'DWORD'
+    Value = 1
+}
+New-ItemProperty @params
 ```
 
 Ou la modifier avec la commande suivante :
 
 ```powershell
-Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Lsa\' -Name 'DsrmAdminLogonBehavior' -Value 1
+$params = @{
+    Path = 'HKLM:\System\CurrentControlSet\Control\Lsa\'
+    Name = 'DsrmAdminLogonBehavior'
+    Value = 1
+}
+Set-ItemProperty @params
 ```
 
 Ou la supprimer pour revenir au comportement par défaut :
 
 ```powershell
-Remove-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Lsa\' -Name 'DsrmAdminLogonBehavior'
+$params = @{
+    Path = 'HKLM:\System\CurrentControlSet\Control\Lsa\'
+    Name = 'DsrmAdminLogonBehavior'
+}
+Remove-ItemProperty @params
 ```
 
 > La clé de registre peut être modifiée en masse sur tous les contrôleurs de domaine via une stratégie de groupe par exemple.
