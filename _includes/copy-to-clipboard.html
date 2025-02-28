@@ -8,7 +8,7 @@
         button.className = 'copy';
         button.type = 'button';
         button.ariaLabel = 'Copy code to clipboard';
-        button.innerHTML = '<i class="fa-solid fa-copy"></i>';
+        button.innerHTML = '<i class="fa-regular fa-copy"></i>';
         button.addEventListener('click', function () {
           var code = pre.querySelector('code').innerText.trim();
           navigator.clipboard.writeText(code);
