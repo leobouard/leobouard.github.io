@@ -7,7 +7,8 @@
         var button = document.createElement('button');
         button.className = 'copy';
         button.type = 'button';
-        button.ariaLabel = 'Copy code to clipboard';
+        button.ariaLabel = 'Copier vers le presse-papier';
+        button.title = 'Copier vers le presse-papier';
         button.innerHTML = '<i class="fa-regular fa-copy"></i>';
         button.addEventListener('click', function () {
           var code = pre.querySelector('code').innerText.trim();
