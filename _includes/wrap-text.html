@@ -1,0 +1,23 @@
+<script>
+  window.addEventListener("load", function () {
+    document
+      .querySelector('.blog-post')
+      .querySelectorAll('div.highlighter-rouge')
+      .forEach(function (pre) {
+        var wrapButton = document.createElement('button');
+        wrapButton.className = 'wrap';
+        wrapButton.type = 'button';
+        wrapButton.innerHTML = 'Wrap Text';
+        wrapButton.addEventListener('click', function () {
+          if (pre.style.whiteSpace === 'pre-wrap') {
+            pre.style.whiteSpace = 'pre';
+            wrapButton.innerHTML = 'Wrap Text';
+          } else {
+            pre.style.whiteSpace = 'pre-wrap';
+            wrapButton.innerHTML = 'Unwrap Text';
+          }
+        });
+        pre.appendChild(wrapButton);
+      });
+  });
+</script>
