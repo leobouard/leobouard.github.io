@@ -10,7 +10,13 @@
         button.innerHTML = '<i class="fa-regular fa-copy"></i>';
         button.addEventListener('click', function () {
           var code = pre.querySelector('code').innerText.trim();
-          navigator.clipboard.writeText(code);
+          navigator.clipboard.writeText(code).then(function () {
+            var originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fa-solid fa-check"></i>';
+            setTimeout(function () {
+              button.innerHTML = originalHTML;
+            }, 3000);
+          });
         });
         pre.appendChild(button);
       });
