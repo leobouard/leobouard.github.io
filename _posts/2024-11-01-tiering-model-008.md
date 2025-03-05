@@ -13,7 +13,8 @@ Tout l'intérêt du tiering model est de ralentir voir empêcher la progression 
 
 ```powershell
 Import-Module DSInternals
-Get-ADReplAccount -All | Test-PasswordQuality
+$server = (Get-ADDomainController).HostName
+Get-ADReplAccount -All -Server $server | Test-PasswordQuality
 ```
 
 La commande vous donnera plusieurs informations sur les mots de passe de votre domaine, et notamment cette partie :
