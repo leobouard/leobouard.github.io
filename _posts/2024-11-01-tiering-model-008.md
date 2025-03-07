@@ -9,7 +9,7 @@ prevLink:
 
 ## Partage de mots de passe entre différents tiers
 
-Tout l'intérêt du tiering model est de ralentir voir empêcher la progression d'un attaquant vers un niveau critique comme le Tier 0. Si un administrateur partage le même mot de passe entre tous ses comptes (compte sans privilège et comptes administrateurs). Il est possible de vérifier rapidement l'utilisation d'un même mot de passe sur plusieurs comptes avec le module PowerShell `DSInternals` :
+Tout l'intérêt du tiering model est de ralentir voir empêcher la progression d'un attaquant vers un niveau critique comme le Tier 0. Si un administrateur partage le même mot de passe entre tous ses comptes (compte sans privilège et comptes administrateurs), cela rend inutile l'utilisation de plusieurs comptes. Il est possible de vérifier rapidement l'utilisation d'un même mot de passe sur plusieurs comptes avec le module PowerShell `DSInternals` :
 
 ```powershell
 Import-Module DSInternals
