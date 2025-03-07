@@ -47,17 +47,19 @@ Pour chaque GPO, se rendre au chemin suivant : **Configuration ordinateur > Stra
 
 Pour se rendre compte des impacts de chaque paramètre, vous pouvez consulter ce lien : [Informations de référence sur les outils d’administration et les types d’ouverture de session - Windows Server \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/identity/securing-privileged-access/reference-tools-logon-types).
 
-L'interdiction d'accès depuis le réseau ne doit pas être appliquée sur vos contrôleurs de domaine.
-
 Ces paramètres doivent ensuite être remplis avec tous les groupes d'utilisateurs autres que ceux du niveau en question. Exemple avec la GPO d'accès au TIER1 :
 
 Stratégie | Paramètres de stratégie
 --------- | -----------------------
-Réseau | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
 Session locale | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
 Session en tant que service | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
 Session en tant que tâche | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
 Session par les services Bureau à distance | CONTOSO\Utilisateurs du TIER0, CONTOSO\Utilisateurs du TIER2
+
+> #### Pourquoi ne pas interdire l'accès à partir du réseau ?
+>
+> L'accès à un ordinateur depuis le réseau est très utilisé dans un environnement Active Directory, pour l'administation distante via les consoles MMC, pour l'authentification vers les contrôleurs de domaine ou l'accès au partage de fichiers par exemple. Dans la plupart des cas, ce genre de connexion ne laisse pas d'empreinte utilisable par un attaquant sur la machine distante. Le seul contre-exemple est la connexion WinRM avec CredSSP.
+> Voici le document complet de l'ANSSI pour savoir quelle connexion laisse un secret réutilisable sur la machine distance : [anssi-guide-admin_securisee_si_ad_v1-0 (3).pdf](https://cyber.gouv.fr/sites/default/files/document/anssi-guide-admin_securisee_si_ad_v1-0%20%283%29.pdf)
 
 ### Application des GPO
 
