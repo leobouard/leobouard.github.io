@@ -19,6 +19,7 @@ div.cookie-overlay {
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
     display: none;
+    pointer-events: none;
 }
 
 div.cookies {
