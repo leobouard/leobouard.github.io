@@ -1,6 +1,19 @@
 ﻿<script>
   window.addEventListener("load", function () {
     document.querySelectorAll('th').forEach(headerCell => {
+      const sortIcon = document.createElement('i');
+      sortIcon.className = 'fa-solid fa-sort';
+      sortIcon.style.display = 'none';
+      headerCell.appendChild(sortIcon);
+
+      headerCell.addEventListener('mouseover', () => {
+        sortIcon.style.display = 'inline';
+      });
+
+      headerCell.addEventListener('mouseout', () => {
+        sortIcon.style.display = 'none';
+      });
+
       headerCell.addEventListener('click', () => {
         const tableElement = headerCell.parentElement.parentElement.parentElement;
         const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
