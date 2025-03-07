@@ -11,6 +11,14 @@ th {
 th {
     background-color: var(--lightaccent);
     text-align: left;
+    position: relative;
+}
+
+th i.fa-solid.fa-sort {
+    color: var(--mediumaccent);
+    position: absolute;
+    right: 0;
+    margin: 3px 10px;
 }
 
 table {
