@@ -1,3 +1,4 @@
+<div id="cookie-overlay" class="cookie-overlay"></div>
 <div id="cookie-notice" class="cookies-container">
   <div class="cookies">
     <span>🍪 Ce site utilise des cookies</span>
@@ -35,23 +36,29 @@
     location.reload();
   }
 
+  function hideCookieNotice() {
+    document.getElementById('cookie-notice').style.display = 'none';
+    document.getElementById('cookie-overlay').style.display = 'none';
+  }
+
   if (readCookie('cookie-notice-option') == 'true') {
     {% if jekyll.environment == "production" and site.google_analytics %}
     {% include ga.js %}
     {% endif %}
   } else if (readCookie('cookie-notice-option') != 'false') {
     document.getElementById('cookie-notice').style.display = 'flex';
+    document.getElementById('cookie-overlay').style.display = 'block';
   }
 
   document.getElementById('cookie-notice-accept').addEventListener("click", function () {
     createCookie('cookie-notice-option', 'true', 31);
-    document.getElementById('cookie-notice').style.display = 'none';
+    hideCookieNotice();
     location.reload();
   });
 
   document.getElementById('cookie-notice-deny').addEventListener("click", function () {
     createCookie('cookie-notice-option', 'false', 31);
-    document.getElementById('cookie-notice').style.display = 'none';
+    hideCookieNotice();
     location.reload();
   });
 </script>
