@@ -1,6 +1,6 @@
 ---
 title: "TIERING #1 - Définition et principe de base"
-description: ""
+description: "Comprendre le concept du tiering model et la protection qu'il offre"
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 2"

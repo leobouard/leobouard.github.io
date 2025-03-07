@@ -1,6 +1,6 @@
 ---
 title: "TIERING #3 - Zone d'atterissage"
-description: ""
+description: "Création des unités d'organisation dédiées au tiering model"
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 4"

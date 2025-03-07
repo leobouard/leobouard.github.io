@@ -1,6 +1,6 @@
 ---
 title: "TIERING #8 - Recertification"
-description: ""
+description: "S'assurer que le tiering model reste sécurisé"
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 prevLink:
   name: "Partie 7"

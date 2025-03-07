@@ -1,6 +1,6 @@
 ---
 title: "TIERING #2 - Remédiation"
-description: ""
+description: "Nettoyer l'environnement Active Directory avant la phase d'architecture"
 tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 3"
