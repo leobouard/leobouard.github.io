@@ -2,6 +2,7 @@
   function filterArticlesByTag(tag) {
     if (window.location.hash === `#${tag}`) {
       clearfilterArticlesByTag();
+      window.location.hash = '';
       return;
     }
     clearfilterArticlesByTag();
