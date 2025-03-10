@@ -9,15 +9,7 @@
     document.querySelectorAll('article').forEach(article => {
       const tags = article.querySelector('.article-tags');
       if (!tags || !tags.textContent.includes(tag)) {
-        article.classList.add('fade-out');
-        setTimeout(() => {
-          article.style.display = 'none';
-        }, 500); // Correspond à la durée de la transition CSS
-      } else {
-        article.classList.add('fade-in');
-        setTimeout(() => {
-          article.classList.add('visible');
-        }, 10); // Petit délai pour déclencher la transition
+        article.style.display = 'none';
       }
     });
     highlightLinkByTag(tag);
