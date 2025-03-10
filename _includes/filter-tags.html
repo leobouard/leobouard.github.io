@@ -1,0 +1,16 @@
+<script>
+  function filterArticlesByTag(tag) {
+    document.querySelectorAll('article').forEach(article => {
+      const tags = article.querySelector('.article-tags');
+      if (!tags || !tags.textContent.includes(tag)) {
+        article.style.display = 'none';
+      }
+    });
+  }
+
+  function clearfilterArticlesByTag(tag) {
+    document.querySelectorAll('article').forEach(article => {
+      article.style.display = '';
+    });
+  }
+</script>
