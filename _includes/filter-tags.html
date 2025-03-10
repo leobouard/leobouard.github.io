@@ -11,20 +11,12 @@
         article.style.display = 'none';
       }
     });
-
-    document.querySelectorAll(`a[href="${formattedTag}"]`).forEach(link => {
-      link.dataset.originalHref = link.href; // Sauvegarder l'URL originale
-      link.href = '#';
-    });
   }
 
   function clearfilterArticlesByTag() {
     document.querySelectorAll('article').forEach(article => {
       article.style.display = '';
     });
-    document.querySelectorAll('a[data-original-href]').forEach(link => {
-      link.href = link.dataset.originalHref;
-      delete link.dataset.originalHref;
-    });
+    history.replaceState(null, null, window.location.pathname + '#');
   }
 </script>
