@@ -12,8 +12,7 @@ div.all-tags a {
     font-size: smaller;
 }
 
-div.all-tags a:hover,
-div.all-tags a.selected {
+div.all-tags a:hover {
     background-color: var(--primary);
     text-decoration: underline;
 }
