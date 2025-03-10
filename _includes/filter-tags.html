@@ -4,7 +4,6 @@
       clearfilterArticlesByTag();
       return;
     }
-
     clearfilterArticlesByTag();
     document.querySelectorAll('article').forEach(article => {
       const tags = article.querySelector('.article-tags');
@@ -12,7 +11,6 @@
         article.style.display = 'none';
       }
     });
-    highlightLinkByTag(tag);
   }
 
   function clearfilterArticlesByTag() {
@@ -20,7 +18,5 @@
       article.classList.remove('fade-out', 'fade-in', 'visible');
       article.style.display = '';
     });
-
-    history.replaceState(null, null, window.location.pathname);
   }
 </script>
