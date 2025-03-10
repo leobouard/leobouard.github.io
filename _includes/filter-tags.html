@@ -1,8 +1,6 @@
 <script>
   function filterArticlesByTag(tag) {
-    const formattedTag = `#${tag}`;
-
-    if (window.location.hash === formattedTag) {
+    if (window.location.hash === `#${tag}`) {
       clearfilterArticlesByTag();
       return;
     }
@@ -30,5 +28,7 @@
       article.classList.remove('fade-out', 'fade-in', 'visible');
       article.style.display = '';
     });
+
+    history.replaceState(null, null, window.location.pathname);
   }
 </script>
