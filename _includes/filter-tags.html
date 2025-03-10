@@ -1,25 +1,33 @@
 <script>
   function filterArticlesByTag(tag) {
-    /* Clear the filter if the tag is already selected */
-    if (window.location.hash === `#${tag}`) {
-        clearfilterArticlesByTag();
-        return;
+    const formattedTag = `#${tag}`;
+
+    if (window.location.hash === formattedTag) {
+      clearfilterArticlesByTag();
+      return;
     }
 
-    /* Clear the filter if another tag is selected */
     clearfilterArticlesByTag();
-
-    /* Filter the articles by tag */
     document.querySelectorAll('article').forEach(article => {
       const tags = article.querySelector('.article-tags');
       if (!tags || !tags.textContent.includes(tag)) {
-        article.style.display = 'none';
+        article.classList.add('fade-out');
+        setTimeout(() => {
+          article.style.display = 'none';
+        }, 500); // Correspond à la durée de la transition CSS
+      } else {
+        article.classList.add('fade-in');
+        setTimeout(() => {
+          article.classList.add('visible');
+        }, 10); // Petit délai pour déclencher la transition
       }
     });
+    highlightLinkByTag(tag);
   }
 
   function clearfilterArticlesByTag() {
     document.querySelectorAll('article').forEach(article => {
+      article.classList.remove('fade-out', 'fade-in', 'visible');
       article.style.display = '';
     });
   }
