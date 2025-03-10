@@ -16,12 +16,3 @@ div.all-tags a:hover {
     background-color: var(--primary);
     text-decoration: underline;
 }
-
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-
-.visible {
-    opacity: 1;
-}
