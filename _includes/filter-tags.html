@@ -2,7 +2,6 @@
   function filterArticlesByTag(tag) {
     if (window.location.hash === `#${tag}`) {
       clearfilterArticlesByTag();
-      window.location.hash = '';
       return;
     }
     clearfilterArticlesByTag();
@@ -18,5 +17,6 @@
     document.querySelectorAll('article').forEach(article => {
       article.style.display = '';
     });
+    history.replaceState(null, null, window.location.pathname + '#');
   }
 </script>
