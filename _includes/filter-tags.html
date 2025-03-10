@@ -1,5 +1,6 @@
 <script>
   function filterArticlesByTag(tag) {
+    clearfilterArticlesByTag();
     document.querySelectorAll('article').forEach(article => {
       const tags = article.querySelector('.article-tags');
       if (!tags || !tags.textContent.includes(tag)) {
@@ -8,7 +9,7 @@
     });
   }
 
-  function clearfilterArticlesByTag(tag) {
+  function clearfilterArticlesByTag() {
     document.querySelectorAll('article').forEach(article => {
       article.style.display = '';
     });
