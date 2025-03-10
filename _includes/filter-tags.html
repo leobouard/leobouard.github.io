@@ -18,7 +18,7 @@
 
   function highlightLinkByTag(tag) {
     document.querySelectorAll('a').forEach(link => {
-      if (link.hash === '#${tag}') {
+      if (link.hash === `#${tag}`) {
         link.classList.add('selected');
       }
     });
