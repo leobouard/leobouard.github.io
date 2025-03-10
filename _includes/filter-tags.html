@@ -1,6 +1,15 @@
 <script>
   function filterArticlesByTag(tag) {
+    /* Clear the filter if the tag is already selected */
+    if (window.location.hash === `#${tag}`) {
+        clearfilterArticlesByTag();
+        return;
+    }
+
+    /* Clear the filter if another tag is selected */
     clearfilterArticlesByTag();
+
+    /* Filter the articles by tag */
     document.querySelectorAll('article').forEach(article => {
       const tags = article.querySelector('.article-tags');
       if (!tags || !tags.textContent.includes(tag)) {
