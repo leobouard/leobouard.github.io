@@ -7,11 +7,20 @@
         article.style.display = 'none';
       }
     });
+    highlightLinkByTag(tag);
   }
 
   function clearfilterArticlesByTag() {
     document.querySelectorAll('article').forEach(article => {
       article.style.display = '';
+    });
+  }
+
+  function highlightLinkByTag(tag) {
+    document.querySelectorAll('a').forEach(link => {
+      if (link.hash === '#${tag}') {
+        link.classList.add('selected');
+      }
     });
   }
 </script>
