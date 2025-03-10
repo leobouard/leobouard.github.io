@@ -1,0 +1,21 @@
+div.all-tags {
+    line-height: 2.5em;
+    margin-bottom: 1em;
+}
+
+div.all-tags a {
+    background-color: var(--lightaccent);
+    padding: 4px;
+    border-radius: 0.25em;
+    border: 1px solid var(--mediumaccent);
+    text-decoration: none;
+}
+
+div.all-tags a:hover {
+    background-color: var(--primary);
+    text-decoration: underline;
+}
+
+div.all-tags a.selected {
+    /* background-color: var(--primary); */
+}
