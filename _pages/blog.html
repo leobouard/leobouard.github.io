@@ -5,6 +5,14 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
 ---
 
 <h1>Articles</h1>
+<h2>Tags</h2>
+<div class="all-tags">
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+  <a href="#{{ tag[0] }}">{{ tag[0] }}</a>
+  {% endfor %}
+</div>
+<h2>Tous les articles</h2>
 <div class="all-posts">
   {% assign posts = site.posts | where: "listed", true %}
   {% for post in posts %}
