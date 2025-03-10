@@ -16,3 +16,9 @@ div.all-tags a:hover {
     background-color: var(--primary);
     text-decoration: underline;
 }
+
+div.all-tags a:focus,
+div.all-tags a:focus-visible,
+div.all-tags a:focus-within {
+    background-color: var(--primary);
+}
