@@ -171,7 +171,7 @@ Le code est légèrement plus complexe que la version hors-ligne, car il n'est p
 $server = (Get-ADDomainController).HostName
 $users = Get-ADReplAccount -All -Server $server
 $users | ForEach-Object {
-    $ntHash = $_.NTHash #($_.NTHash | ConvertTo-Hex -UpperCase) -join ''
+    $ntHash = ($_.NTHash | ConvertTo-Hex -UpperCase) -join ''
     $pwned = Get-PwnedNTHashList -Prefix ($ntHash.Substring(0,5)) | Where-Object {$_.NTHash -eq $nthash}
     if ($pwned) {
         [PSCustomObject]@{
