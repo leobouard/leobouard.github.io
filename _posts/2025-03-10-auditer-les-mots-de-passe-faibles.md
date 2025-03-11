@@ -40,6 +40,8 @@ Avec le chiffrement NTLM, la même chaine de caractère génèrera toujours le m
 
 En sachant cela, il suffit de confronter le hash des mots de passe présents dans le domaine Active Directory avec un référentiel de mots de passe compromis comme celui de [HaveIBeenPwned](https://haveibeenpwned.com/).
 
+> Pour faire l'ensemble des opérations qui suivent, il est nécessaire d'être administrateur du domaine.
+
 ### Module PowerShell DSInternals
 
 Qu'importe le type d'audit que vous allez choisir, l'élément central est le module PowerShell [DSInternals](https://github.com/MichaelGrafnetter/DSInternals), développé par Michael Grafnetter.
@@ -53,6 +55,8 @@ Install-Module DSInternals
 ```
 
 > Attention : l'utilisation de ce module est souvent identifié comme une tentative d'attaque par des outils d'EDR.
+
+Dans la suite de cet article, nous exploiterons les données de réplication avec la commande `Get-ADReplAccount`, mais il est également possible de faire ce genre d'audit en utilisant une base NTDS extraite et la commande `Get-ADDBAccount`.
 
 ### Est-ce qu'on peut auditer la longueur des mots de passe ?
 
