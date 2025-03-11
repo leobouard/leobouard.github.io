@@ -47,9 +47,11 @@ description: "Toutes mes expériences, mes formations et certifications"
       <p>{{ company.summary }}</p>
     </div>
     {% for position in company.positions %}
-    <div class="experience">
-      <h4>{{ position.title }}</h4>
-      <small>{{ position.startDate }} • {{ position.endDate }}</small>
+    <details class="experience" open>
+      <summary>
+        <h4>{{ position.title }}</h4>
+        <small>{{ position.startDate }} • {{ position.endDate }}</small>
+      </summary>
       <p>{{ position.summary }}
       <ul>
         {% for highlight in position.highlights %}
@@ -57,7 +59,7 @@ description: "Toutes mes expériences, mes formations et certifications"
         {% endfor %}
       </ul>
       </p>
-    </div>
+    </details>
     {% endfor %}
   </div>
   {% endfor %}
