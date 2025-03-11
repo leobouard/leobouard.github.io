@@ -1,5 +1,16 @@
 <script>
   function filterArticlesByTag(tag) {
+    let linkSelected = false;
+    document.querySelectorAll('a[onclick^="filterArticlesByTag"]').forEach(link => {
+      if (link.getAttribute('onclick').includes(`'${tag}'`)) {
+        if (link.classList.contains('selected')) {
+          link.classList.remove('selected');
+          clearfilterArticlesByTag();
+          return;
+        }
+      }
+    });
+
     clearfilterArticlesByTag();
     document.querySelectorAll('article').forEach(article => {
       const tags = article.querySelector('.article-tags');
