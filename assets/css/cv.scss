@@ -10,7 +10,7 @@
     margin-bottom: 15px;
 }
 
-.experience > h4 {
+.experience h4 {
     margin-bottom: 0px;
     margin-top: 30px;
 }
@@ -37,57 +37,12 @@
     max-width: fit-content;
 }
 
-.skills {
-    margin: 20px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.skill {
-    margin: 10px;
-    display: flex;
-    padding: 5px 0px;
-}
-
-.skill > span {
-    width: 130px;
-    height: 15px;
-    display: flex;
-    align-items: center;
-}
-
 /* NOUVEAU CSS */
 
 div.experiences h2,
 div.experiences h3,
 div.experiences h4 {
     margin: 0.25em 0;
-}
-
-div.experiences details {
-    border: 0;
-}
-
-summary.company {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-img.companyLogo {
-    display: inline-block;
-    max-height: 5em;
-    margin: 0;
-}
-
-details.jobTitle {
-    border-left: var(--border);
-    margin-left: 2em;
-}
-
-details.jobTitle summary {
-    background: none;
 }
 
 /* PERSONAL LINKS */
