@@ -47,30 +47,7 @@ main {
         height: 1px;
         margin: 50px 0px;
     }
-
-    details {
-        border: var(--border);
-        border-radius: var(--borderradius);
-        user-select: none;
-        overflow: hidden;
-    }
-
-    details > summary {
-        list-style: none;
-        padding: 10px;
-        background: var(--lightaccent);
-    }
-
-    details[open] > summary {
-        border-bottom: var(--border);
-    }
-
-    details > p {
-        margin: 15px;
-    }
 }
-
-
 
 @media screen and (max-width: 950px) {
 

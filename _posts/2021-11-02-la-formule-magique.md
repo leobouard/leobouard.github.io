@@ -20,10 +20,7 @@ Pour ce défi, vous allez devoir résoudre une petite énigme avant de passer à
 
 L'énigme n'est pas très complexe, donc pas besoin d'aller chercher bien loin. Si vous rencontrez des difficultés pour résoudre l'énigme, la solution est disponible ici :
 
-<details>
-  <summary>Voir la solution</summary>
-  <p>Il suffit d'additionner les chiffres qui composent le nombre entre eux. Pour reprendre le premier exemple : <b>2568 devient 21</b> parce que 2+5+6+8 = 21</p>
-</details>
+> Il suffit d'additionner les chiffres qui composent le nombre entre eux. Pour reprendre le premier exemple : 2568 devient 21 parce que 2+5+6+8 = 21.
 
 ## Consigne
 
