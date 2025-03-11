@@ -181,7 +181,7 @@ $users | ForEach-Object {
     $pwned = Get-PwnedNTHashList -Prefix ($ntHash.Substring(0,5)) | Where-Object {$_.NTHash -eq $nthash}
     if ($pwned) {
         [PSCustomObject]@{
-            Name = $_.Name
+            DisplayName = $_.DisplayName
             SamAccountName = $_.SamAccountName
             Pwned = $true
             Exposure = $pwned.Exposure
@@ -192,8 +192,8 @@ $users | ForEach-Object {
 
 Vous devriez obtenir un tableau similaire, avec tous les comptes utilisateurs ayant un mot de passe faible :
 
-Name | SamAccountName | Pwned | Exposure
----- | -------------- | ----- | --------
+DisplayName | SamAccountName | Pwned | Exposure
+----------- | -------------- | ----- | --------
 John Doe | jdoe | True | 14
 Jack Black | jblack | True | 256
 
