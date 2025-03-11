@@ -6,6 +6,12 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 <h1>Léo Bouard</h1>
 
+<div class="personalLinks">
+  {% for link in site.data.cv.links %}
+  <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
+  {% endfor %}
+</div>
+
 <h2>Résumé</h2>
 {{ site.data.cv.summary }}
 
@@ -73,12 +79,5 @@ description: "Toutes mes expériences, mes formations et certifications"
       <small>{{ school.startDate }} - {{ school.endDate }}</small>
     </div>
   </div>
-  {% endfor %}
-</div>
-
-<h2>Liens</h2>
-<div class="personalLinks">
-  {% for link in site.data.cv.links %}
-  <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
   {% endfor %}
 </div>
