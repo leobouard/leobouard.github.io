@@ -2,6 +2,36 @@
     "name":  "Léo Bouard",
     "title":  "Ingénieur systèmes",
     "summary":  "Ingénieur systèmes spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, d'outils collaboratifs et d'automatisation.",
+    "skills":  [
+        {
+            "name":  "PowerShell",
+            "level":  100
+        }
+        {
+            "name":  "Active Directory",
+            "level":  90
+        },
+        {
+            "name":  "Entra ID",
+            "level":  80
+        },
+        {
+            "name":  "Microsoft 365",
+            "level":  80
+        },
+        {
+            "name":  "Exchange",
+            "level":  60
+        },
+        {
+            "name":  "Gestion de projet",
+            "level":  40
+        },
+        {
+            "name":  "Poste de travail",
+            "level":  40
+        }
+    ],
     "links":  [
         {
             "name":  "LinkedIn",
