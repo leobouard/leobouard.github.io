@@ -136,3 +136,14 @@ div.personalInfo ul {
     padding: 0;
     list-style: none;
 }
+
+div.personalInfo ul i {
+    margin-right: 5px;
+    color: var(--heavyaccent);
+}
+
+// PERSONAL SUMMARY
+
+div.personalSummary h3 {
+    margin: 0;
+}
