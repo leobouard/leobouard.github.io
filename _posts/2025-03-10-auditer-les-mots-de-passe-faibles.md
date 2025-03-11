@@ -145,6 +145,8 @@ Passwords of these accounts have been found in the dictionary:
 
 Si vous préférez éviter de télécharger la base complète, vous pouvez utiliser [l'API gratuite de HaveIBeenPwned](https://haveibeenpwned.com/API/v3#PwnedPasswords) pour conduire votre audit.
 
+> Ce type d'audit convient plus à des petites infrastructures, car l'utilisation de l'API reste plus lente que l'utilisation d'un fichier offline.
+
 ### Questions relatives à la sécurité de l'utilisation de l'API
 
 L'API de HaveIBeenPwned a besoin de connaitre les cinq premiers caractères du hash pour vous répondre. Cela représente 15% de la longueur totale du hash.
@@ -176,7 +178,11 @@ Le code est légèrement plus complexe que la version hors-ligne, car il n'est p
 ```powershell
 $server = (Get-ADDomainController).HostName
 $users = Get-ADReplAccount -All -Server $server
-$users | ForEach-Object {
+$i = 0
+$total = ($users | Measure-Object).Count
+$report = $users | Where-Object {$_.NTHash} | ForEach-Object {
+    $i++
+    Write-Progress -Activity "Audit des mots de passe" -Status "$($_.SamAccountName)" -PercentComplete ($i/$total*100)
     $ntHash = ($_.NTHash | ConvertTo-Hex -UpperCase) -join ''
     $pwned = Get-PwnedNTHashList -Prefix ($ntHash.Substring(0,5)) | Where-Object {$_.NTHash -eq $nthash}
     if ($pwned) {
@@ -188,6 +194,7 @@ $users | ForEach-Object {
         }
     }
 }
+$report | Sort-Object Exposure -Descending | Format-Table -AutoSize
 ```
 
 Vous devriez obtenir un tableau similaire, avec tous les comptes utilisateurs ayant un mot de passe faible :
