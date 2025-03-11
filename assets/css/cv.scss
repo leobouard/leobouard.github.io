@@ -155,7 +155,7 @@ div.personalSummary h3 {
 
 .skills {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(10em, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(12em, 100%), 1fr));
     grid-gap: 1em;
     list-style: none;
     padding: 0;
@@ -180,7 +180,7 @@ div.personalSummary h3 {
     grid-gap: 1em;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 550px) {
     .cv-wrapper {
         flex-direction: column;
     }
