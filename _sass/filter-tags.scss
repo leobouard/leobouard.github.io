@@ -12,6 +12,9 @@ div.all-tags a {
 }
 
 div.all-tags a:hover {
-    background-color: var(--secondary);
     text-decoration: underline;
+}
+
+div.all-tags a.selected {
+    background-color: var(--secondary);
 }
