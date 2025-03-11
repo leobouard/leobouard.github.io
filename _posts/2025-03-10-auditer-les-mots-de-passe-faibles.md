@@ -101,7 +101,7 @@ Il est impossible d'interdire purement et simplement les mots de passe faible, m
 
 > La plupart de ces solutions se basent sur la DLL de filtre de mot de passe Active Directory. Plus d'informations ici : [Installing and Registering a Password Filter DLL - Win32 apps \| Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/secmgmt/installing-and-registering-a-password-filter-dll).
 >
-> Dans le cas de Entra ID Password Protection, il ne s'agit pas d'une interdiction mais plutôt d'une diminution de la valeur des mots *interdits*.
+> Dans le cas de Entra ID Password Protection, il ne s'agit pas d'une interdiction mais plutôt d'une diminution de la valeur des mots *"interdits"*.
 
 ## Audit hors-ligne
 
@@ -109,7 +109,7 @@ Si vous souhaitez réaliser l'audit entièrement hors-ligne, vous pouvez téléc
 
 ### Téléchargement de la base HaveIBeenPwned
 
-Installation de l'outil de téléchargement de la base HaveIBeenPwned :
+Pour utiliser l'outil de téléchargement, vous devez d'abord installer la dernière version LTS de [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). L'installation se fait ensuite directement en ligne de commande :
 
 ```powershell
 dotnet tool install --global haveibeenpwned-downloader
@@ -120,6 +120,8 @@ Téléchargement de la base de données des hashs NTLM vers le fichier "pwnedpas
 ```powershell
 haveibeenpwned-downloader.exe -p 64 -n C:\temp\pwnedpasswords_ntlm
 ```
+
+> En cas de problème à l'installation, vous pouvez vous référer à [HaveIBeenPwned/PwnedPasswordsDownloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
 
 ### Vérification des hashs
 
