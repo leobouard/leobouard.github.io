@@ -130,7 +130,7 @@ Une fois la base téléchargée, vous pouvez auditer les mots de passe faibles a
 ```powershell
 $server = (Get-ADDomainController).HostName
 $users = Get-ADReplAccount -All -Server $server
-$users | Test-PasswordQuality -WeakPasswordHashesSortedFilePath 'C:\temp\pwnedpasswords_ntlm.txt'
+$users | Test-PasswordQuality -WeakPasswordHashesSortedFile 'C:\temp\pwnedpasswords_ntlm.txt'
 ```
 
 La partie qui concerne les mots de passe faibles est disponible dans la section suivante :
