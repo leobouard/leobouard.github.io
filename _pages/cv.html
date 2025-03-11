@@ -66,16 +66,16 @@ description: "Toutes mes expériences, mes formations et certifications"
 <div style="display: block;">
   {% for school in site.data.cv.education %}
   <div class="enterprise">
+    <a href="{{ school.url }}" target="_blank" class="no-decoration"></a>
     <div>
       <img src="{{ school.logo }}" alt="school logo">
     </div>
     <div>
-      <a href="{{ school.url }}" target="_blank" class="no-decoration">
       <h3>{{ school.institution }}</h3>
       <span>{{ school.diploma }}</span><br>
       <small>{{ school.startDate }} - {{ school.endDate }}</small>
-      </a>
     </div>
+    </a>
   </div>
   {% endfor %}
 </div>

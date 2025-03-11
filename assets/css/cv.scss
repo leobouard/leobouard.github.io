@@ -15,7 +15,7 @@
     margin-top: 30px;
 }
 
-.enterprise {
+.enterprise a {
     display: flex;
     margin: 15px 0px;
     justify-content: left;
@@ -122,7 +122,7 @@ div.personalLinks > a > i {
 
 /* CERTIFICATIONS */
 
-div.certification {
+div.certification{
     height: 225px;
     width: 120px;
     border-radius: var(--borderradius);
