@@ -116,3 +116,19 @@ span.certifTitle {
     font-size: 14px;
     line-height: 150%;
 }
+
+// PERSONAL INFO
+
+div.personalInfo {
+    font-size: smaller;
+    min-width: 15em;
+}
+
+div.personalInfo img {
+    border: 1px solid var(--mediumaccent);
+}
+
+div.personalInfo ul {
+    padding: 0;
+    list-style: none;
+}
