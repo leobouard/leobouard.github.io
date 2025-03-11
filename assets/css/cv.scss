@@ -150,3 +150,14 @@ div.personalInfo ul i {
 div.personalSummary h3 {
     margin: 0;
 }
+
+// SKILLS
+.skills-background {
+    background: var(--mediumaccent);
+    height: 5px;
+}
+
+.skills-progress {
+    background: var(--accent);
+    height: 100%;
+}

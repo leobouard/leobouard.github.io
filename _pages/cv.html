@@ -26,11 +26,14 @@ description: "Toutes mes expériences, mes formations et certifications"
     <p>{{ site.data.cv.summary }}</p>
     <h3>Compétences</h3>
     <ul>
-      <li>Active Directory</li>
-      <li>Entra ID</li>
-      <li>PowerShell</li>
-      <li>Exchange</li>
-      <li>Gestion de projet</li>
+      {% for skill in site.data.cv.skills %}
+      <li>
+        <span>{{ skill.name }}</span>
+        <div class="skill-container">
+          <div class="skill-progress" style="width: {{ skill.value }}%;"></div>
+        </div>
+      </li>
+      {% endfor %}
     </ul>
   </div>
 </div>
