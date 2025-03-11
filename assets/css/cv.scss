@@ -1,23 +1,7 @@
 ---
 ---
 
-.experience {
-    display: block;
-    margin-left: 35px;
-    padding-left: 15px;
-    border-left: var(--border);
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.experience summary {
-    list-style: none;
-}
-
-.experience h4 {
-    margin-bottom: 0px;
-    margin-top: 30px;
-}
+// ENTERPRISES
 
 .enterprise {
     display: flex;
@@ -41,21 +25,40 @@
     max-width: fit-content;
 }
 
-/* NOUVEAU CSS */
+// EXPERIENCES
 
-div.experiences h2,
-div.experiences h3,
-div.experiences h4 {
+.experience {
+    display: block;
+    margin-left: 35px;
+    padding-left: 15px;
+    border-left: var(--border);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.experience summary {
+    list-style: none;
+}
+
+.experience h4 {
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+.experiences h2,
+.experiences h3,
+.experiences h4 {
     margin: 0.25em 0;
 }
 
-/* PERSONAL LINKS */
+// PERSONAL LINKS
 
 div.personalLinks {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     grid-gap: 5px;
+    margin: 1em 0;
 }
 
 div.personalLinks a {
@@ -79,7 +82,7 @@ div.personalLinks a i {
     font-size: 1.5em;
 }
 
-/* CERTIFICATIONS */
+// CERTIFICATIONS
 
 div.certification{
     height: 225px;
@@ -126,6 +129,7 @@ div.personalInfo {
 
 div.personalInfo img {
     border: 1px solid var(--mediumaccent);
+    max-width: 10em;
 }
 
 div.personalInfo ul {
