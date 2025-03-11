@@ -1,6 +1,6 @@
 ---
 title: "Auditer les mots de passe faibles"
-description: "Trouver tous les comptes utilisateurs qui utilise un mot de passe faible avec HaveIBeenPwned"
+description: "Trouver tous les comptes utilisent un mot de passe faible avec HaveIBeenPwned et DSInternals"
 tags: active-directory
 listed: true
 ---
