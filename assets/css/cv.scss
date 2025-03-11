@@ -172,3 +172,16 @@ div.personalSummary h3 {
     background: var(--accent);
     height: 100%;
 }
+
+// CV WRAPPER
+
+.cv-wrapper {
+    display: flex;
+    grid-gap: 1em;
+}
+
+@media screen and (max-width: 800px) {
+    .cv-wrapper {
+        flex-direction: column;
+    }
+}
