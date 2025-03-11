@@ -152,12 +152,13 @@ div.personalSummary h3 {
 }
 
 // SKILLS
-.skills-background {
+
+.skill-container {
     background: var(--mediumaccent);
     height: 5px;
 }
 
-.skills-progress {
+.skill-progress {
     background: var(--accent);
     height: 100%;
 }
