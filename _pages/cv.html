@@ -6,14 +6,33 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 <h1>Léo Bouard</h1>
 
-<div class="personalLinks">
-  {% for link in site.data.cv.links %}
-  <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
-  {% endfor %}
+<div>
+  <div>
+    <img src="{{ site.data.cv.photo }}" alt="Photo de profil">
+    <div class="personalLinks">
+      {% for link in site.data.cv.links %}
+      <a href="{{ link.url }}" target="_blank" title="{{ link.name }}"><i class="{{ link.icon }}"></i></a>
+      {% endfor %}
+    </div>
+    <ul>
+      <li><i class="fa-solid fa-location-dot"></i><span>Chantepie, Ille-et-Vilaine (35)</span></li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:+3369598XXXX">+33 6 95 98 XX XX</li>
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:leo.bouard@hotmail.com">leo.bouard@hotmail.com</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Résumé</h3>
+    <p>{{ site.data.cv.summary }}</p>
+    <h3>Compétences</h3>
+    <ul>
+      <li>Active Directory</li>
+      <li>Entra ID</li>
+      <li>PowerShell</li>
+      <li>Exchange</li>
+      <li>Gestion de projet</li>
+    </ul>
+  </div>
 </div>
-
-<h2>Résumé</h2>
-{{ site.data.cv.summary }}
 
 <h2>Examens et certifications</h2>
 <div style="display: flex; justify-content: center; flex-wrap: wrap; grid-gap: 5px;">
