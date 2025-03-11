@@ -6,19 +6,12 @@ div.all-tags {
 div.all-tags a {
     background-color: var(--lightaccent);
     padding: 4px;
-    border-radius: 0.25em;
     border: 1px solid var(--mediumaccent);
     text-decoration: none;
     font-size: smaller;
 }
 
 div.all-tags a:hover {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     text-decoration: underline;
-}
-
-div.all-tags a:focus,
-div.all-tags a:focus-visible,
-div.all-tags a:focus-within {
-    background-color: var(--primary);
 }
