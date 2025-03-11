@@ -177,10 +177,10 @@ Le code est légèrement plus complexe que la version hors-ligne, car il n'est p
 
 ```powershell
 $server = (Get-ADDomainController).HostName
-$users = Get-ADReplAccount -All -Server $server
+$users = Get-ADReplAccount -All -Server $server | Where-Object {$_.NTHash}
 $i = 0
 $total = ($users | Measure-Object).Count
-$report = $users | Where-Object {$_.NTHash} | ForEach-Object {
+$report = $users | ForEach-Object {
     $i++
     Write-Progress -Activity "Audit des mots de passe" -Status "$($_.SamAccountName)" -PercentComplete ($i/$total*100)
     $ntHash = ($_.NTHash | ConvertTo-Hex -UpperCase) -join ''
