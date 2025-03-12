@@ -129,6 +129,8 @@ div.personalInfo {
     min-width: 15em;
     background: var(--blockquote);
     padding: 2em;
+    max-width: fit-content;
+    margin: auto;
 }
 
 div.personalInfo img {
