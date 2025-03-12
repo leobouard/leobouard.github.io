@@ -40,20 +40,20 @@ description: "Toutes mes expériences, mes formations et certifications"
       </li>
       {% endfor %}
     </ul>
-  </div>
-  <h3>Certifications</h3>
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(17em, 100%), 1fr)); grid-gap: 1em;">
-    {% for certificate in site.data.cv.certificates %}
-    <div class="certification">
-      <a href="{{ certificate.url }}" target="_blank">
-        <img src="{{ certificate.image }}" alt="certification logo">
-        <div>
-          <h4>{{ certificate.name }}</h4>
-          <span>{{ certificate.date }}</span>
-        </div>
-      </a>
+    <h3>Certifications</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(17em, 100%), 1fr)); grid-gap: 1em;">
+      {% for certificate in site.data.cv.certificates %}
+      <div class="certification">
+        <a href="{{ certificate.url }}" target="_blank">
+          <img src="{{ certificate.image }}" alt="certification logo">
+          <div>
+            <h4>{{ certificate.name }}</h4>
+            <span>{{ certificate.date }}</span>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </div>
 
