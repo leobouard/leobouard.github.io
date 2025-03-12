@@ -5,11 +5,9 @@
 
 .enterprise {
     display: flex;
-    margin: 15px 0px;
-    justify-content: left;
-    padding: 5px;
+    padding: 0.5em;
     align-items: center;
-    border: var(--border);
+    border: 1px solid var(--mediumaccent);
 }
 
 .enterprise div {

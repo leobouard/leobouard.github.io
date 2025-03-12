@@ -90,7 +90,6 @@
         {
             "institution": "IUT de la Roche-sur-Yon",
             "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
-            "url":  "https://iutlaroche.univ-nantes.fr/formation/but-reseaux-et-telecommunications",
             "diploma": "Licence professionelle Administration et Sécurité des Systèmes et des Réseaux",
             "startDate": "2017",
             "endDate": "2018"
@@ -98,7 +97,6 @@
         {
             "institution": "IUT de la Roche-sur-Yon",
             "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
-            "url":  "https://iutlaroche.univ-nantes.fr/formation/but-reseaux-et-telecommunications",
             "diploma": "DUT Réseaux et Télécommunications",
             "startDate": "2015",
             "endDate": "2017"
@@ -108,7 +106,6 @@
         {
             "name":  "METSYS",
             "logo":  "/assets/images/metsys.jpg",
-            "url":  "https://www.metsys.fr/",
             "location":  "Rennes, Ille-et-Vilaine (35)",
             "summary":  "Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.",
             "positions":  [
@@ -151,7 +148,6 @@
         {
             "name":  "Groupe Roullier",
             "logo":  "/assets/images/groupe-roullier.jpg",
-            "url":  "https://www.roullier.com/",
             "location":  "Dinard, Ille-et-Vilaine (35)",
             "summary":  "Groupe international présent sur 50 pays à travers 80 entités. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.",
             "positions":  [
@@ -195,7 +191,6 @@
         {
             "name":  "GEVES",
             "logo":  "/assets/images/geves.jpg",
-            "url":  "https://www.geves.fr/",
             "location":  "Beaucouzé, Maine-et-Loire (49)",
             "summary":  "Laboratoire d'analyse végétale présent sur six sites en France. Environ 600 utilisateurs dans un environnement Active Directory et Office 365.",
             "positions":  [

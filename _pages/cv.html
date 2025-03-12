@@ -59,15 +59,11 @@ description: "Toutes mes expériences, mes formations et certifications"
 </div>
 
 <h2>Expériences professionnelles</h2>
-<div style="display: block;">
+<div style="display: flex; flex-direction: columns; grid-gap: 1em;">
   {% for company in site.data.cv.companies %}
-  <details style="margin-bottom: 35px;" open>
+  <details open>
     <summary class="enterprise">
-      <div>
-        <a href="{{ company.url }}" target="_blank" class="no-decoration">
-          <img src="{{ company.logo }}" alt="company logo">
-        </a>
-      </div>
+      <img src="{{ company.logo }}" alt="company logo">
       <div>
         <h3>{{ company.name }}</h3>
         <span>{{ company.location }}</span>
@@ -95,14 +91,10 @@ description: "Toutes mes expériences, mes formations et certifications"
   {% endfor %}
 </div>
 <h2>Formation</h2>
-<div style="display: block;">
+<div style="display: flex; flex-direction: columns; grid-gap: 1em;">
   {% for school in site.data.cv.education %}
   <div class="enterprise">
-    <div>
-      <a href="{{ school.url }}" target="_blank" class="no-decoration">
-        <img src="{{ school.logo }}" alt="school logo">
-      </a>
-    </div>
+    <img src="{{ school.logo }}" alt="school logo">
     <div>
       <h3>{{ school.institution }}</h3>
       <span>{{ school.diploma }}</span><br>
