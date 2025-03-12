@@ -86,40 +86,38 @@ div.personalLinks a i {
 
 // CERTIFICATIONS
 
-div.certification{
-    height: 225px;
-    width: 120px;
-    border-radius: var(--borderradius);
-    padding: 15px;
-    border: var(--border);
-    position: relative;
+.certification{
+    padding: 1em;
+    border: 1px solid var(--mediumaccent);
+    height: 5em;
 }
 
-div.certification a,
-div.certification a:hover {
+.certification a {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 1em;
+}
+
+.certification a,
+.certification a:hover {
     text-decoration: none;
     color: var(--text);
 }
 
-div.certification img {
-    height: 5em;
-}
-
-div.certification:hover {
+.certification a:hover {
     background: var(--lightaccent);
 }
 
-span.certifDate {
-    font-size: small;
-    margin-top: 15px;
-    display: block;
+.certification img {
+    height: 5em;
 }
 
-span.certifTitle {
-    font-weight: 600;
-    display: block;
-    font-size: 14px;
-    line-height: 150%;
+.certification span {
+    font-size: smaller;
+}
+
+.certification h4 {
+    margin: 0;
 }
 
 // PERSONAL INFO
