@@ -99,6 +99,7 @@ div.personalLinks a i {
     display: flex;
     flex-direction: row;
     grid-gap: 1em;
+    align-items: center;
 }
 
 .certification a,
@@ -109,6 +110,7 @@ div.personalLinks a i {
 
 .certification img {
     height: 5em;
+    margin: 0;
 }
 
 .certification span {
