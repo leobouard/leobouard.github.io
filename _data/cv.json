@@ -1,6 +1,11 @@
 {
     "name":  "Léo Bouard",
-    "title":  "Ingénieur systèmes",
+    "personalInfo":  {
+        "address":  "Rennes, Ille-et-Vilaine (35)",
+        "phone":  "+33 6 95 98 45 88",
+        "email":  "leo.bouard@hotmail.com",
+        "website":  "www.labouabouate.fr"
+    },
     "summary":  "Ingénieur systèmes spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis plus de cinq ans sur les questions de gestion d'identité, d'outils collaboratifs et d'automatisation.",
     "skills":  [
         {

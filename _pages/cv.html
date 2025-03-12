@@ -18,12 +18,12 @@ description: "Toutes mes expériences, mes formations et certifications"
       {% endfor %}
     </div>
     <ul>
-      <li><i class="fa-solid fa-location-dot"></i><span>Chantepie, Ille-et-Vilaine (35)</span></li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:+3369598XXXX" class="no-decoration">+33 6 95 98 XX XX</li>
-      <li><i class="fa-solid fa-envelope"></i><a href="mailto:leo.bouard@hotmail.com"
-          class="no-decoration">leo.bouard@hotmail.com</a></li>
-      <li><i class="fa-solid fa-link"></i><a href="https://www.labouabouate.fr" target="_blank"
-          class="no-decoration">www.labouabouate.fr</a></li>
+      <li><i class="fa-solid fa-location-dot"></i><span>{{ site.data.cv.personalInfo.address }}</span></li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{ site.data.cv.personalInfo.phone }}</li>
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:{{ site.data.cv.personalInfo.email }}"
+          class="no-decoration">{{ site.data.cv.personalInfo.email }}</a></li>
+      <li><i class="fa-solid fa-link"></i><a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank"
+          class="no-decoration">{{ site.data.cv.personalInfo.website }}</a></li>
     </ul>
   </div>
   <div class="personalSummary">
@@ -43,7 +43,7 @@ description: "Toutes mes expériences, mes formations et certifications"
   </div>
 </div>
 
-<h3>Examens et certifications</h3>
+<h2>Examens et certifications</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(20em, 25em), 1fr)); grid-gap: 1em;">
   {% for certificate in site.data.cv.certificates %}
   <div class="certification">
