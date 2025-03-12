@@ -10,10 +10,6 @@
     border: 1px solid var(--mediumaccent);
 }
 
-.enterprise div {
-    margin: 5px;
-}
-
 .enterprise summary {
     list-style: none;
 }
@@ -23,8 +19,8 @@
 }
 
 .enterprise img {
-    height: 3em;
-    max-width: fit-content;
+    height: 4em;
+    margin: 0.5em;
 }
 
 // EXPERIENCES
