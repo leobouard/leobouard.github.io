@@ -96,8 +96,10 @@ div.personalLinks a i {
 .certification a {
     display: flex;
     flex-direction: row;
-    grid-gap: 1em;
+    grid-gap: 0.5em;
     align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .certification a,
@@ -107,16 +109,18 @@ div.personalLinks a i {
 }
 
 .certification img {
-    height: 5em;
+    height: 3.5em;
     margin: 0;
 }
 
 .certification span {
-    font-size: smaller;
+    display: none;
+    // font-size: smaller;
 }
 
 .certification h4 {
     margin: 0;
+    font-size: 11px;
 }
 
 // PERSONAL INFO
