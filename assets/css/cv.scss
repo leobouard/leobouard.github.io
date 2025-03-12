@@ -91,6 +91,9 @@ div.personalLinks a i {
     border: 1px solid var(--mediumaccent);
     height: 5em;
 }
+.certification:hover {
+    background: var(--lightaccent);
+}
 
 .certification a {
     display: flex;
@@ -102,10 +105,6 @@ div.personalLinks a i {
 .certification a:hover {
     text-decoration: none;
     color: var(--text);
-}
-
-.certification a:hover {
-    background: var(--lightaccent);
 }
 
 .certification img {
