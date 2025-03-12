@@ -8,17 +8,22 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 <div class="cv-wrapper">
   <div class="personalInfo">
-    <img src="https://media.licdn.com/dms/image/v2/D4E03AQG-i6zPGPcvJg/profile-displayphoto-shrink_200_200/B4EZRHn8KLHsAY-/0/1736368440347?e=1747267200&v=beta&t=9th1lOKqGbmGpqyYLkEptwmMgrGOhsGGvtj55RxTePc" alt="Photo de profil générée par IA" class="hover-popout">
+    <img
+      src="https://media.licdn.com/dms/image/v2/D4E03AQG-i6zPGPcvJg/profile-displayphoto-shrink_200_200/B4EZRHn8KLHsAY-/0/1736368440347?e=1747267200&v=beta&t=9th1lOKqGbmGpqyYLkEptwmMgrGOhsGGvtj55RxTePc"
+      alt="Photo de profil générée par IA">
     <div class="personalLinks">
       {% for link in site.data.cv.links %}
-      <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i class="{{ link.icon }}"></i></a>
+      <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i
+          class="{{ link.icon }}"></i></a>
       {% endfor %}
     </div>
     <ul>
       <li><i class="fa-solid fa-location-dot"></i><span>Chantepie, Ille-et-Vilaine (35)</span></li>
       <li><i class="fa-solid fa-phone"></i><a href="tel:+3369598XXXX" class="no-decoration">+33 6 95 98 XX XX</li>
-      <li><i class="fa-solid fa-envelope"></i><a href="mailto:leo.bouard@hotmail.com" class="no-decoration">leo.bouard@hotmail.com</a></li>
-      <li><i class="fa-solid fa-link"></i><a href="https://www.labouabouate.fr" target="_blank" class="no-decoration">www.labouabouate.fr</a></li>
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:leo.bouard@hotmail.com"
+          class="no-decoration">leo.bouard@hotmail.com</a></li>
+      <li><i class="fa-solid fa-link"></i><a href="https://www.labouabouate.fr" target="_blank"
+          class="no-decoration">www.labouabouate.fr</a></li>
     </ul>
   </div>
   <div class="personalSummary">
