@@ -8,9 +8,7 @@ description: "Toutes mes expériences, mes formations et certifications"
 <h2>{{ site.data.cv.title }}</h2>
 <div class="cv-wrapper">
   <div class="personalInfo">
-    <img
-      src="{{ site.data.cv.picture }}"
-      alt="Photo de profil générée par IA">
+    <img src="{{ site.data.cv.picture }}" alt="Photo de profil générée par IA">
     <div class="personalLinks">
       {% for link in site.data.cv.links %}
       <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i
@@ -18,12 +16,14 @@ description: "Toutes mes expériences, mes formations et certifications"
       {% endfor %}
     </div>
     <ul>
-      <li><i class="fa-solid fa-location-dot"></i><span>{{ site.data.cv.personalInfo.address }}</span></li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{ site.data.cv.personalInfo.phone }}</li>
+      <li><i class="fa-solid fa-location-dot"></i>{{ site.data.cv.personalInfo.address }}</li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{
+          site.data.cv.personalInfo.phone }}</li>
       <li><i class="fa-solid fa-envelope"></i><a href="mailto:{{ site.data.cv.personalInfo.email }}"
           class="no-decoration">{{ site.data.cv.personalInfo.email }}</a></li>
       <li><i class="fa-solid fa-link"></i><a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank"
           class="no-decoration">{{ site.data.cv.personalInfo.website }}</a></li>
+      <li><i class="fa-solid fa-language"></i>Anglais niveau C1</li>
     </ul>
   </div>
   <div class="personalSummary">
