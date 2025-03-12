@@ -150,12 +150,6 @@ div.personalInfo ul i {
     width: 1.25em;
 }
 
-// PERSONAL SUMMARY
-
-div.personalSummary h3 {
-    margin: 0;
-}
-
 // SKILLS
 
 .skills {
@@ -182,7 +176,7 @@ div.personalSummary h3 {
 
 .cv-wrapper {
     display: flex;
-    grid-gap: 1em;
+    grid-gap: 2em;
 }
 
 @media screen and (max-width: 550px) {
