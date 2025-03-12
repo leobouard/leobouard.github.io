@@ -4,12 +4,12 @@ title: "Léo Bouard"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
 
-<h1>Léo Bouard</h1>
-
+<h1>{{ site.data.cv.name }}</h1>
+<h2>{{ site.data.cv.title }}</h2>
 <div class="cv-wrapper">
   <div class="personalInfo">
     <img
-      src="https://media.licdn.com/dms/image/v2/D4E03AQG-i6zPGPcvJg/profile-displayphoto-shrink_200_200/B4EZRHn8KLHsAY-/0/1736368440347?e=1747267200&v=beta&t=9th1lOKqGbmGpqyYLkEptwmMgrGOhsGGvtj55RxTePc"
+      src="{{ site.data.cv.picture }}"
       alt="Photo de profil générée par IA">
     <div class="personalLinks">
       {% for link in site.data.cv.links %}
