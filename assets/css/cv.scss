@@ -120,7 +120,7 @@ div.personalLinks a i {
 
 .certification h4 {
     margin: 0;
-    font-size: 11px;
+    font-size: smaller;
 }
 
 // PERSONAL INFO
@@ -163,8 +163,8 @@ div.personalInfo ul i {
 }
 
 .skill-container {
-    background: var(--mediumaccent);
-    height: 5px;
+    border: 1px solid var(--mediumaccent);
+    height: 0.5em;
 }
 
 .skill-progress {
