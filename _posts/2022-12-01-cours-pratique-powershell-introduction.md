@@ -2,7 +2,7 @@
 layout: post
 title: "Cours pratique PowerShell"
 description: "Création d'un jeu en PowerShell en utilisant un maximum de commandes et de techniques différentes"
-tags: powershell
+tags: ['cours','powershell']
 listed: true
 capsule: "⭐ Ma sélection"
 nextLink:

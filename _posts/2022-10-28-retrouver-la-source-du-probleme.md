@@ -58,6 +58,6 @@ $members.Name | ForEach-Object { $_ ; $null = Get-ADUser "compteB" -Properties $
 
 ## Résolution
 
-Maintenant que vous savez d'où vient le problème, il ne reste plus qu'à le résoudre. Dans mon cas, il s'agissait d'un compte Active Directory qui avait été activé alors qu'il n'avait pas de mot de passe défini (*je ne pensais pas que c'était possible*). Le problème venait donc de la valeur de l'attribut "PasswordLastSet" qui était vide, alors qu'il est censé contenir une date (celle de la dernière modification du mot de passe). 
+Maintenant que vous savez d'où vient le problème, il ne reste plus qu'à le résoudre. Dans mon cas, il s'agissait d'un compte Active Directory qui avait été activé alors qu'il n'avait pas de mot de passe défini (*je ne pensais pas que c'était possible*). Le problème venait donc de la valeur de l'attribut "PasswordLastSet" qui était vide, alors qu'il est censé contenir une date (celle de la dernière modification du mot de passe).
 
 La résolution : changer le mot de passe du compte. 🙂

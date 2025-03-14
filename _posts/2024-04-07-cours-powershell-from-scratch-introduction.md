@@ -2,7 +2,7 @@
 layout: post
 title: "Cours PowerShell 101"
 description: "Être opérationnel en PowerShell le plus rapidement possible"
-tags: powershell
+tags: ['cours','powershell']
 listed: true
 nextLink:
   name: "Partie 1"

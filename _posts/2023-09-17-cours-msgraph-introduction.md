@@ -2,7 +2,7 @@
 layout: post
 title: "Cours Microsoft Graph"
 description: "Bien commencer sur Microsoft Graph pour les administrateurs systèmes"
-tags: microsoft-graph
+tags: ['cours','microsoft-graph']
 thumbnail: "/assets/thumbnail/cours-msgraph.png"
 listed: true
 nextLink:
