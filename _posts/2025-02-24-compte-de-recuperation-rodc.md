@@ -176,10 +176,10 @@ Stop-Service ntds -Force
 
 L'arrêt du service NTDS sur le contrôleur de domaine va également arrêter les services suivants :
 
-- DFS Replication (`DFSR`)
-- DNS Server (`DNS`)
-- Intersite Messaging (`IsmServ`)
-- Kerberos Key Distribution Center (`Kdc`)
+- `DFSR` : DFS Replication
+- `DNS` : DNS Server
+- `IsmServ` : Intersite Messaging
+- `Kdc` : Kerberos Key Distribution Center
 
 Cette manipulation va vous permettre d'ouvrir un programme avec le compte DSRM (PowerShell par exemple) depuis une session déjà ouverte.
 
