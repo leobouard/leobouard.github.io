@@ -61,6 +61,8 @@ Session par les services Bureau à distance | CONTOSO\Utilisateurs du TIER0, CON
 > L'accès à un ordinateur depuis le réseau est très utilisé dans un environnement Active Directory, pour l'administation distante via les consoles MMC, pour l'authentification vers les contrôleurs de domaine ou l'accès au partage de fichiers par exemple. Dans la plupart des cas, ce genre de connexion ne laisse pas d'empreinte utilisable par un attaquant sur la machine distante. Le seul contre-exemple est la connexion WinRM avec CredSSP.
 >
 > Voici le document complet de l'ANSSI pour savoir quelle connexion laisse un secret réutilisable sur la machine distance : [anssi-guide-admin_securisee_si_ad_v1-0 (3).pdf](https://cyber.gouv.fr/sites/default/files/document/anssi-guide-admin_securisee_si_ad_v1-0%20%283%29.pdf) (page 84 et 85, partie "4.6 Risques de dissémination en fonction de la méthode de connexion").
+>
+> Pour désactiver l'utilisation de CredSSP avec WinRM, vous pouvez utiliser le paramètre GPO suivant : *Configuration ordinateur > Stratégies > Paramètres Windows > Modèles d'administration > Composants Windows > Gestion à distance de Windows (WinRM) > Service WinRM > Autoriser l'authentification CredSSP*.
 
 ### Application des GPO
 
