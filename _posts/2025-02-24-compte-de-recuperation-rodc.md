@@ -153,14 +153,14 @@ Si la valeur de la clé `DsrmAdminLogonBehavior = 2`, alors vous allez pouvoir v
 
 Si vous avez encore une session ouverte sur le contrôleur de domaine, vous pouvez utiliser la commande suivante qui permettra de redémarrer sur le safeboot :
 
-```cmd
+```powershell
 bcdedit.exe /set safeboot dsrepair
 shutdown.exe -t 0 -r
 ```
 
 N'oubliez pas qu'après avoir terminé les opérations nécessaires en mode DSRM, vous devrez réinitialiser la configuration de démarrage pour revenir à un démarrage normal. Vous pouvez le faire en utilisant la commande suivante :
 
-```cmd
+```powershell
 bcdedit.exe /deletevalue safeboot
 ```
 
