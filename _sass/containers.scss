@@ -48,7 +48,7 @@ section.recommandation {
     justify-content: flex-end;
 }
 
-section.recommandation span {
+span.recommandation {
     font-family: var(--titlefont);
     max-width: 310px;
     font-size: x-large;
@@ -57,7 +57,7 @@ section.recommandation span {
     margin: 20px;
 }
 
-section.recommandation span img {
+img.recommandation {
     rotate: 54deg;
     transform: scaleY(-1);
     width: 120px;
@@ -72,11 +72,11 @@ section.recommandation span img {
         justify-content: center;
     }
 
-    section.recommandation span {
+    span.recommandation span {
         text-align: center;
     }
 
-    section.recommandation span img {
+    img.recommandation {
         display: none;
     }
 }
