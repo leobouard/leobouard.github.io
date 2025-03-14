@@ -4,7 +4,10 @@ section.blog-post, section.blog-page, section.recommandation, .fill-available {
     width: fill-available;
 }
 
-section.blog-post, section.blog-page, section.recommandation {
+section.blog-post,
+section.blog-page,
+section.recommandation,
+section.giscus {
     padding: 2rem;
     max-width: 800px;
     overflow-x: auto;
@@ -19,7 +22,10 @@ section.recommandation {
 }
 
 @media screen and (max-width: 550px) {
-    section.blog-post, section.blog-page, section.recommandation {
+    section.blog-post,
+    section.blog-page,
+    section.recommandation,
+    section.giscus {
         padding: 1em;
     }
 }
