@@ -1,26 +1,26 @@
-/* Fonts */
+// FONTS
 :root {
     --textfont: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     --titlefont: Manrope;
     --codefont: 'Martian Mono', monospace;
 }
 
-/* Light theme */
-@media (prefers-color-scheme: light) {
-    html {
-        --text: #333333;
-        --background: #fff;
-        --primary: #71a29a;
-        --secondary: #aeb7ca;
-        --accent: #8688b0;
-        --lightaccent: #fafafa;
-        --mediumaccent: #c4c4c4;
-        --heavyaccent: #626262;
-        --blockquote: #71a29a45;
-    }
+// DEFAULT THEME
+html {
+    --text: #333333;
+    --background: #fff;
+    --primary: #71a29a;
+    --secondary: #aeb7ca;
+    --accent: #8688b0;
+    --lightaccent: #fafafa;
+    --mediumaccent: #c4c4c4;
+    --heavyaccent: #626262;
+    --blockquote: #71a29a45;
 }
 
-/* Dark theme */
+// @media (prefers-color-scheme: light) { }
+
+/* DARK THEME
 @media (prefers-color-scheme: dark) {
     html {
         --text: #ebe9fc;
@@ -34,8 +34,9 @@
         --blockquote: #090431;
     }
 }
+*/
 
-/* Fixed colors */
+// FIXED COLORS
 :root {
     --footerbackground: #050315;
     --footertext: #adacb2;
