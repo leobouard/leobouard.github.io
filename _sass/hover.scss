@@ -3,7 +3,7 @@
 }
 
 .hover-popout:hover {
-    box-shadow: 4px 4px 0px 0 var(--secondary);
+    box-shadow: 4px 4px 0 0 var(--secondary);
     transform: translate(-4px, -4px);
     transition: all ease-in-out 200ms;
 }
