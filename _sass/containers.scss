@@ -40,3 +40,43 @@ div.all-posts {
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
 }
+
+section.recommandation {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+section.recommandation span {
+    font-family: var(--titlefont);
+    max-width: 310px;
+    font-size: x-large;
+    text-align: right;
+    line-height: 140%;
+    margin: 20px;
+}
+
+section.recommandation span img {
+    rotate: 54deg;
+    transform: scaleY(-1);
+    width: 120px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    section.recommandation {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section.recommandation span {
+        text-align: center;
+    }
+
+    section.recommandation span img {
+        display: none;
+    }
+}

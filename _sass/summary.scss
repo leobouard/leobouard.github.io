@@ -1,0 +1,38 @@
+div.summary {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+div.summary a {
+    background: var(--background);
+    display: block;
+    padding: 10px;
+    border: var(--border);
+    border-radius: var(--borderradius);
+    text-decoration: none;
+}
+
+div.summary h3 {
+    font-size: 15px;
+    margin: 5px 0px;
+}
+
+div.summary span {
+    font-weight: 400;
+    color: var(--text);
+}
+
+div.summary a:hover {
+    text-decoration: none;
+    background: var(--lightaccent);
+}
+
+div.summary a:hover h3 {
+    text-decoration: underline;
+}
+
+div.summary a:hover span {
+    text-decoration: none;
+    color: var(--text);
+}

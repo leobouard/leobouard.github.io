@@ -1,0 +1,22 @@
+nav.breadcrumb {
+    width: 100%;
+    font-size: small;
+    color: var(--heavyaccent);
+    font-weight: 500;
+    padding: 1em 0;
+}
+
+nav.breadcrumb ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav.breadcrumb li {
+    list-style: none;
+    display: inline;
+}
+
+nav.breadcrumb li:not(:first-child)::before {
+    content: "⨠";
+    margin: 0 10px;
+}
