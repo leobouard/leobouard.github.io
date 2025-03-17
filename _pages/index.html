@@ -20,21 +20,11 @@ description: "Blog technique sur PowerShell et les technologies Microsoft pour l
     <div class="code-preview fill-available">
       <img src="https://icon.icepanel.io/Technology/png-shadow-512/Powershell.png" height="10em" />
       <div class="language-powershell highlighter-rouge">
+        ::before
         <div class="highlight">
           <pre class="highlight">
             <code>
-              <span class="nv">$longestName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="w">
-              </span><span class="nv">$maxLength</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
-              </span><span class="nv">$users</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Foreach-Object</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nv">$name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$_</span><span class="o">.</span><span class="nf">displayName</span><span class="w">
-              </span><span class="nv">$length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="bp">$_</span><span class="o">.</span><span class="nf">displayName</span><span class="p">)</span><span class="o">.</span><span class="nf">Length</span><span class="w">
-              </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$length</span><span class="w"> </span><span class="o">-ge</span><span class="w"> </span><span class="nv">$maxLength</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-              </span><span class="nv">$maxLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$length</span><span class="w">
-              </span><span class="nv">$longestName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$name</span><span class="w">
-              </span><span class="s2">"</span><span class="se">`'</span><span class="nv">$longestName</span><span class="se">`'</span><span class="s2"> est le nom le plus long (pour l'instant) avec </span><span class="nv">$maxLength</span><span class="s2"> caractères"</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-              </span>
+              <span class="nv">$longestName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="w"></span><span class="nv">$maxLength</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span><span class="nv">$users</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Foreach-Object</span><span class="w"> </span><span class="p">{</span><span class="w"></span><span class="nv">$name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$_</span><span class="o">.</span><span class="nf">displayName</span><span class="w"></span><span class="nv">$length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="bp">$_</span><span class="o">.</span><span class="nf">displayName</span><span class="p">)</span><span class="o">.</span><span class="nf">Length</span><span class="w"></span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$length</span><span class="w"> </span><span class="o">-ge</span><span class="w"> </span><span class="nv">$maxLength</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">$maxLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$length</span><span class="w"></span><span class="nv">$longestName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$name</span><span class="w"></span><span class="s2">"</span><span class="se">`'</span><span class="nv">$longestName</span><span class="se">`'</span><span class="s2"> est le nom le plus long (pour l'instant) avec </span><span class="nv">$maxLength</span><span class="s2"> caractères"</span><span class="w"></span><span class="p">}</span><span class="w"></span><span class="p">}</span><span class="w"></span>
             </code>
           </pre>
         </div>
