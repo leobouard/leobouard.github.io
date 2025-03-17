@@ -36,7 +36,7 @@ Résultat de la commande :
 
 Un domaine Active Directory repose sur un seul fichier : le fichier "NTDS.dit". C'est la base de données qui est partagée entre les contrôleurs de domaine et qui contient absolument toutes les informations du domaine, y compris les hashs de mot de passe (au format NTLM).
 
-Avec le chiffrement NTLM, la même chaine de caractère génèrera toujours le même hash. Par exemple, le hash NTLM de `p@ssw0rd` sera toujours `DE26CCE0356891A4A020E7C4957AFC72`.
+Avec le chiffrement NTLM, la même chaine de caractère générera toujours le même hash. Par exemple, le hash NTLM de `p@ssw0rd` sera toujours `DE26CCE0356891A4A020E7C4957AFC72`.
 
 En sachant cela, il suffit de confronter le hash des mots de passe présents dans le domaine Active Directory avec un référentiel de mots de passe compromis comme celui de [HaveIBeenPwned](https://haveibeenpwned.com/).
 
@@ -149,7 +149,7 @@ Si vous préférez éviter de télécharger la base complète, vous pouvez utili
 
 ### Questions relatives à la sécurité de l'utilisation de l'API
 
-L'API de HaveIBeenPwned a besoin de connaitre les cinq premiers caractères du hash pour vous répondre. Cela représente 15% de la longueur totale du hash.
+L'API de HaveIBeenPwned a besoin de connaître les cinq premiers caractères du hash pour vous répondre. Cela représente 15% de la longueur totale du hash.
 
 Par exemple, si vous voulez tester le hash `DE26CCE0356891A4A020E7C4957AFC72`, il faudra envoyer `DE26C` à l'API. Comme les 27 autres caractères du hash sont inconnus de l'API, cela laisse 16²⁷ possibilités restantes.
 
