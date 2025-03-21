@@ -16,14 +16,26 @@ description: "Toutes mes expériences, mes formations et certifications"
       {% endfor %}
     </div>
     <ul>
-      <li><i class="fa-solid fa-location-dot"></i>{{ site.data.cv.personalInfo.address }}</li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{
-          site.data.cv.personalInfo.phone }}</li>
-      <li><i class="fa-solid fa-envelope"></i><a href="mailto:{{ site.data.cv.personalInfo.email }}"
-          class="no-decoration">{{ site.data.cv.personalInfo.email }}</a></li>
-      <li><i class="fa-solid fa-link"></i><a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank"
-          class="no-decoration">{{ site.data.cv.personalInfo.website }}</a></li>
-      <li><i class="fa-solid fa-language"></i>Anglais niveau C1</li>
+      <li>
+        <i class="fa-solid fa-location-dot"></i>
+        {{ site.data.cv.personalInfo.address }}
+      </li>
+      <li>
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{ site.data.cv.personalInfo.phone }}</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:{{ site.data.cv.personalInfo.email }}" class="no-decoration">{{ site.data.cv.personalInfo.email }}</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-link"></i>
+        <a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank" class="no-decoration">{{ site.data.cv.personalInfo.website }}</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-language"></i>
+        Anglais niveau C1
+      </li>
     </ul>
   </div>
   <div class="personalSummary">
