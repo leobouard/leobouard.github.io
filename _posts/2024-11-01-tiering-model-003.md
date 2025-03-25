@@ -30,17 +30,17 @@ Voici un exemple simple de structure, à positionner directement à la racine du
 
 ```plaintext
 🌐 contoso.com
-  📁 TIER0
+  📁 Tier 0
     📁 Administrators
     📁 Groups
     📁 Servers
     📁 Service accounts
-  📁 TIER1
+  📁 Tier 1
     📁 Administrators
     📁 Groups
     📁 Servers
     📁 Service accounts
-  📁 TIER2
+  📁 Tier 2
     📁 Administrators
     📁 Groups
     📁 Servers
@@ -64,8 +64,8 @@ Vous ne devriez ne garder que des ressources du Tier 2 dans votre structure exis
 
 Pour l'instant, nous allons avoir besoin de créer "seulement" trois nouveaux groupes :
 
-- Utilisateurs du TIER0
-- Utilisateurs du TIER1
-- Utilisateurs du TIER2
+- Utilisateurs du Tier 0
+- Utilisateurs du Tier 1
+- Utilisateurs du Tier 2
 
 Ces groupes vont nous permettre d'identifier les utilisateurs d'un niveau pour faire de l'isolation et empêcher les utilisateurs du Tier 1 de se connecter sur une ressource du Tier 2 par exemple.

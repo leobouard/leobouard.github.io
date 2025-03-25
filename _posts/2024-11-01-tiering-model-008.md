@@ -46,8 +46,8 @@ Plus d'information sur la commande : [DSInternals/Documentation/PowerShell/Test-
 Déplacer un compte dans une unité d'organisation du Tier 0 ne suffit pas à le catégoriser dans le Tier 0 : celui-ci doit impérativement être membre du groupe d'appartenance. L'appartenance à un groupe étant assez peu visible dans Active Directory, le plus simple est de faire un script pour mettre en lumière ce genre d'écart :
 
 ```powershell
-$tier0Users = Get-ADUser -Filter * -SearchBase 'OU=TIER0,DC=contoso,DC=com'
-$tier0GroupMembers = Get-ADGroupMember 'Utilisateurs du TIER0' -Recursive
+$tier0Users = Get-ADUser -Filter * -SearchBase 'OU=Tier 0,DC=contoso,DC=com'
+$tier0GroupMembers = Get-ADGroupMember 'Utilisateurs du Tier 0' -Recursive
 $tier0Users | Where-Object {$_.SamAccountName -notin $tier0GroupMembers}
 ```
 
