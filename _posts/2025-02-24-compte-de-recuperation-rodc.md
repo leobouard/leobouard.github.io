@@ -122,9 +122,11 @@ ntdsutil.exe 'set dsrm password' 'sync from domain account dsrm-dc01'
 
 Cette commande va alors remplacer le mot de passe du compte local par la valeur du mot de passe du compte du domaine "dsrm-dc01".
 
-Ce compte du domaine doit impérativement être considéré comme du Tier 0 et n'être accessible que par les administrateurs du domaine.
+Ce compte du domaine doit impérativement être considéré comme du Tier 0 et n'être accessible que par les administrateurs du domaine. Rappel : La bonne pratique est de créer un compte du domaine pour chaque DC.
 
-> Rappel : La bonne pratique est de créer un compte du domaine pour chaque DC.
+> #### Mot de passe vide sur un compte DSRM
+>
+> Il est techniquement possible de définir un mot de passe vide pour votre compte DSRM lorsque la synchronisation avec un compte du domaine est utilisée. Plus d'information sur cet exploit ici : [GOING PASSWORDLESS WITH DSRM. Overview: \| by Narayanan subramanian \| Medium](https://medium.com/@nannnu/overview-72d7f737bdc6)
 
 #### Exemple
 
