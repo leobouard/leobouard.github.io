@@ -1,6 +1,6 @@
 ---
 title: "Automatiser le changement du mot de passe DSRM"
-description: "Cet objet s'auto-détruira dans 3, 2, 1..."
+description: "Revue des différentes méthodes pour la gestion des comptes DSRM"
 tags: active-directory
 listed: true
 ---
