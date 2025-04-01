@@ -9,7 +9,7 @@ listed: true
 
 ### Qu'est-ce que le compte DSRM ?
 
-Le compte DSRM est l'équivalent d'un compte administrateur local pour un contrôleur de domaine, à utiliser en cas de problème avec votre service Active Directory. Pour plus d'information, vous pouvez consulter cet article : [Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](/2025/02/24/compte-de-recuperation-rodc).
+Le compte DSRM est l'équivalent d'un compte administrateur local pour un contrôleur de domaine, à utiliser en cas de problème avec votre service Active Directory. Pour plus d'informations, vous pouvez consulter cet article : [Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](/2025/02/24/compte-de-recuperation-rodc).
 
 Celui-ci est important pour le PRA de votre Active Directory et doit impérativement être renouvelé périodiquement et être unique pour chaque contrôleur de domaine.
 
@@ -36,7 +36,7 @@ Voici quelques contraintes importantes pour les comptes DSRM :
 
 ### Réflexion supplémentaire sur les comptes DSRM
 
-Dans la plupart des cas, l'utilisation des comptes DSRM n'est pas réellement utile. Comme un contrôleur de domaine ne devrait pas servir à autre chose que d'être un contrôleur de domaine, vous devriez pouvoir supprimer un DC et en promouvoir un nouveau en peu temps.
+Dans la plupart des cas, l'utilisation des comptes DSRM n'est pas réellement utile. Si vous rencontrez un problème avec un contrôleur de domaine, après investigation le plus simple devrait être d'en monter un nouveau et de supprimer l'ancien.
 
 ## NTDSUTIL
 
@@ -68,21 +68,47 @@ Contrainte | État | Commentaire
 Mot de passe unique | ✅ | Un mot de passe par contrôleur de domaine
 Traçabilité du changement | ⚠️ | Date de changement sauvegardée uniquement au changement via le script
 Sauvegarde en dehors du domaine | ✅ | Le script fourni un rapport exportable en CSV
-Validité du mot de passe | ❌ | La vérification doit se faire manuellement
+Validité du mot de passe | ⚠️ | La vérification n'est faite qu'au changement du mot de passe
 
 ## Windows LAPS
 
-Pré-requis pour Windows LAPS et indication de l'article pour installation
+Windows LAPS est le nouveau mécanisme de gestion des mots de passe des comptes administrateurs locaux introduit par Microsoft en remplacement du "vieux" LAPS (*LAPS Microsoft* ou *Legacy LAPS*).
 
-GPO :
+En bref, c'est une solution qui permet de faire une rotation automatique du mot de passe des comptes administrateurs locaux, en inscrivant le mot de passe directement dans un attribut de l'objet ordinateur dans Active Directory.
 
-Computer configuration > Policies > Administrative Templates > System > LAPS > Enable password backup for DSRM accounts
+Contrairement à son prédécesseur, Windows LAPS peut prendre en charge les comptes DSRM des contrôleurs de domaine.
 
-Est-ce qu'on peut modifier le mot de passe en dehors de LAPS ? -via NTDSUTIL ?
+> **Spoiler alert :** Windows LAPS est de très loin la meilleure solution pour gérer la rotation des mots de passe DSRM. Si vous y avez accès, c'est le meilleur choix à faire.
+
+Si vous souhaitez en savoir plus ou déployer Windows LAPS dans votre environnement, je vous recommande la documentation officielle de Microsoft : [Windows LAPS overview \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/identity/laps/laps-overview)
+
+### Prérequis
+
+Windows LAPS est disponible nativement sur les versions suivantes (si celles-ci sont bien à jour) :
+
+- Windows Server 2019 et supérieur
+- Windows 11 à partir de la version 21H2
+- Windows 10 à partir de la version 20H2
+
+Note : Il n'est pas possible "d'installer" Windows LAPS sur une version non-compatible de Windows / Windows Server.
+
+### Paramétrage de la GPO
+
+Dans une nouvelle GPO dédiée à la configuration de LAPS, vous pouvez activer la gestion des comptes DSRM avec ce paramètre :
+
+*Computer configuration > Policies > Administrative Templates > System > LAPS > Enable password backup for DSRM accounts*
+
+Vous pouvez également en profiter pour configurer d'autres paramètres (longueur du mot de passe, fréquence de renouvellement, sauvegarde du mot de passe sur Microsoft Entra ID...).
+
+### Récupération du mot de passe DSRM
+
+On peut récupérer facilement le mot de passe du compte DSRM avec la commande PowerShell suivante :
 
 ```powershell
 Get-LapsADPassword DC01.contoso.com -AsPlainText
 ```
+
+Ce qui va donner ce résultat :
 
 ```plaintext
 ComputerName        : DC01
@@ -96,24 +122,32 @@ DecryptionStatus    : Success
 AuthorizedDecryptor : CONTOSO\Domain Admins
 ```
 
-> Cette solution n'est pas magique pour autant, puisque vous devez vous assurer d'avoir une copie offline des mots de passe DSRM de tous les contrôleurs de domaine. En effet, en cas d'incident majeur sur votre domaine, vous n'avez pas envie que les mots de passe DSRM soient inaccessibles.
+### Modification du mot de passe
+
+Une fois que le mot de passe DSRM est géré par Windows LAPS, **il n'est plus possible de le changer** avec l'utilitaire NTDSUTIL.
+
+Si vous essayez, vous obtiendrez l'erreur suivante : `WIN32 Error Code: 0x21ce. Error Message: The account is controlled by external policy and cannot be modified.`
+
+A la place, il faut exécuter cette ligne de commande sur le contrôleur de domaine :
+
+```powershell
+Reset-LapsPassword
+```
 
 Contrainte | État | Commentaire
 ---------- | ---- | -----------
 Mot de passe unique | ✅ | Un mot de passe par contrôleur de domaine
 Traçabilité du changement | ✅ | Date de changement indiquée dans l'attribut
-Sauvegarde en dehors du domaine | ⚠️ | La sauvegarde des mots de passe sur un autre support est à votre charge
-Validité du mot de passe | ✅ | Le mot de passe est mis à jour automatiquement par Windows LAPS
+Sauvegarde en dehors du domaine | ✅ | Possibilité de sauvegarde sur Microsoft Entra ID
+Validité du mot de passe | ✅ | Le mot de passe est mis à jour automatiquement par Windows LAPS et ne peux pas être modifié autrement
 
-## Tâche planifiée
+## Tâche planifiée (ancienne version)
 
-### Ancienne version
+En 2009, Microsoft a publié un guide pour s'occuper du changement de mot de passe des comptes DSRM en passant par une tâche planifiée poussée par GPO : [DS Restore Mode Password Maintenance \| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/askds/ds-restore-mode-password-maintenance/396102). Cette tâche planifiée s'exécute tous les jours pour synchroniser le mot de passe du compte DSRM avec celui d'un compte cible du domaine.
 
-En 2009, Microsoft a publié un guide pour s'occuper du changement de mot de passe des comptes DSRM en passant par une tâche planifiée poussée par GPO : [DS Restore Mode Password Maintenance \| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/askds/ds-restore-mode-password-maintenance/396102).
+Les captures d'écrans n'étant plus disponibles sur l'article original, vous pouvez consulter cet article pour avoir un aperçu de la méthode : [Gérer le mot de passe du compte DSRM \| METSYS Blog](https://blog.metsys.fr/gerer-le-mot-de-passe-du-compte-administrateur-de-restauration-des-services-active-directory-dsrm/)
 
-Les captures d'écrans n'étant plus disponible sur l'article original, vous pouvez consulter cet article pour avoir un aperçu de la méthode : [Gérer le mot de passe du compte DSRM \| METSYS Blog](https://blog.metsys.fr/gerer-le-mot-de-passe-du-compte-administrateur-de-restauration-des-services-active-directory-dsrm/)
-
-Cette méthode **n'est plus recommandée par Microsoft depuis 2018**, car elle poussait le même mot de passe sur tous les contrôleurs de domaine.
+Cette méthode **n'est plus recommandée par Microsoft depuis 2018**, car elle pousse le même mot de passe sur tous les contrôleurs de domaine.
 
 Contrainte | État | Commentaire
 ---------- | ---- | -----------
@@ -122,18 +156,11 @@ Traçabilité du changement | ⚠️ | On peut consulter l'âge du mot de passe 
 Sauvegarde en dehors du domaine | ⚠️ | La sauvegarde des mots de passe sur un autre support est à votre charge
 Validité du mot de passe | ⚠️ | A vous de surveiller le résultat des tâches planifiées sur chaque contrôleur de domaine
 
-### Nouvelle version
+## Tâche planifiée (nouvelle version)
 
-Cette proposition est un simple exercice technique pour moderniser la version proposée par Microsoft en 2009 et mettre en lumière les autres faiblesses de ce processus.
+Cette proposition est un simple exercice technique pour moderniser la version proposée par Microsoft en 2009. Je ne recommande pas cette méthode pour de la production.
 
-Contrainte | État | Commentaire
----------- | ---- | -----------
-Mot de passe unique | ✅ | Un mot de passe par contrôleur de domaine
-Traçabilité du changement | ⚠️ | On peut consulter l'âge du mot de passe du compte cible, mais cela ne garanti pas l'âge du mot de passe DSRM sur le DC
-Sauvegarde en dehors du domaine | ⚠️ | La sauvegarde des mots de passe sur un autre support est à votre charge
-Validité du mot de passe | ⚠️ | A vous de surveiller le résultat des tâches planifiées sur chaque contrôleur de domaine
-
-#### Création des comptes du domaine cibles
+### Création des comptes du domaine cibles
 
 Dans un premier temps, il va falloir créer un compte du domaine "cible" pour chaque contrôleur de domaine. C'est le mot de passe de ce compte qui sera utilisé pour définir celui du compte DSRM.
 
@@ -151,25 +178,60 @@ Get-ADDomainController -Filter * | ForEach-Object {
 }
 ```
 
-#### Création de la tâche planifiée
+Si vous avez deux contrôleurs de domaine DC01 et DC02, vous devriez avoir deux comptes créés : dsrm-DC01 et dsrm-DC02.
 
-#### Vérification 
+### Cas particulier des RODC
 
+Afin que votre RODC puisse récupérer le hash du mot de passe du compte cible, vous devez impérativement ajouter le compte dans la Password Replication Policy du RODC.
 
+Plus d'informations ici : [Synchronisation du compte DSRM depuis un RODC - Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](https://www.labouabouate.fr/2025/02/24/compte-de-recuperation-rodc#synchronisation-du-compte-dsrm-depuis-un-rodc)
+
+### Création de la tâche planifiée
+
+Comme l'ancienne méthode de Microsoft, on va pousser une tâche planifiée par GPO sur tous nos contrôleurs de domaine :
+
+*Computer configuration > Preferences > Control Panel Settings > Scheduled Tasks*
+
+![Configuration de la tâche planifiée par GPO](/assets/images/scheduled-task-dsrm.png)
+
+Voici les arguments utilisés pour NTDSUTIL (pour pouvoir copier-coller facilement) :
+
+```plaintext
+"set dsrm password" "sync from domain account dsrm-%COMPUTERNAME%" quit quit
+```
+
+> `%COMPUTERNAME%` sera automatiquement remplacé par le nom du contrôleur de domaine, ce qui nous permet d'avoir un mot de passe différent par serveur.
+
+### Rotation du mot de passe
+
+Pour la rotation des mots de passe DSRM, vous n'avez plus qu'à modifier les mots de passe des comptes cibles dans le domaine Active Directory. Le changement se propagera sous 24 heures sur les comptes DSRM des contrôleurs de domaine, avec la tâche planifiée.
+
+### Vérification
+
+A vous de vérifier la bonne exécution de la tâche planifiée, et la modification du mot de passe du compte DSRM.
+
+Plus d'informations ici : [Surveillance du compte DSRM - Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](https://www.labouabouate.fr/2025/02/24/compte-de-recuperation-rodc#surveillance-du-compte-dsrm)
+
+Contrainte | État | Commentaire
+---------- | ---- | -----------
+Mot de passe unique | ✅ | Un mot de passe par contrôleur de domaine
+Traçabilité du changement | ⚠️ | On peut consulter l'âge du mot de passe du compte cible, mais cela ne garanti pas l'âge du mot de passe DSRM sur le DC
+Sauvegarde en dehors du domaine | ⚠️ | La sauvegarde des mots de passe sur un autre support est à votre charge
+Validité du mot de passe | ⚠️ | A vous de surveiller le résultat des tâches planifiées sur chaque contrôleur de domaine
 
 ## Conclusion
 
-1. **Windows LAPS** si votre environnement est compatible, avec une simple routine à mettre en place pour sauvegarder les mots de passe hors du domaine.
-2. **NTDSUTIL** si votre environnement n'est pas compatible avec Windows LAPS ou que vous devez changer les mots de passe DSRM en urgence.
-3. **Tâche planifiée :** mauvaise idée au global, 
+Voici un classement personnel sur les différentes méthodes pour gérer la rotation de vos mots de passe DSRM :
+
+1. **Windows LAPS** si votre environnement est compatible, c'est de loin la meilleur solution disponible actuellement.
+2. **NTDSUTIL** si votre environnement n'est pas compatible avec Windows LAPS, c'est l'option la plus simple.
+3. **Tâche planifiée :** techniquement faisable, mais trop complexe à maintenir pour gérer un processus aussi sensible.
 
 ### Résumé des méthodes
 
 Contrainte | NTDSUTIL | Windows LAPS | Tâche planifiée
 ---------- | --------- | ------------ | --------------
-Mot de passe unique             | ✅ | ✅ | ❌
+Mot de passe unique             | ✅ | ✅ | ✅
 Traçabilité du changement       | ⚠️ | ✅ | ⚠️
-Sauvegarde en dehors du domaine | ✅ | ⚠️ | ✅
+Sauvegarde en dehors du domaine | ✅ | ✅ | ⚠️
 Validité du mot de passe        | ⚠️ | ✅ | ⚠️
-
-Aucune méthode n'est parfaite pour gérer la rotation des mots de passe DSRM.
