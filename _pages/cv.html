@@ -78,6 +78,7 @@ description: "Toutes mes expériences, mes formations et certifications"
       <div>
         <h3>{{ company.name }}</h3>
         <span>{{ company.location }}</span>
+        <small>de {{ company.startDate }} à {{ company.endDate }} • {{ company.duration }}</small>
       </div>
     </summary>
     <div>
@@ -87,7 +88,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <details class="experience" open>
       <summary>
         <h4>{{ position.title }}</h4>
-        <small>{{ position.startDate }} • {{ position.endDate }}</small>
+        <small>de {{ position.startDate }} à {{ position.endDate }}</small>
       </summary>
       <p>{{ position.summary }}
       <ul>
@@ -109,7 +110,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <div>
       <h3>{{ school.institution }}</h3>
       <span>{{ school.diploma }}</span><br>
-      <small>{{ school.startDate }} - {{ school.endDate }}</small>
+      <small>{{ school.startDate }} à {{ school.endDate }}</small>
     </div>
   </div>
   {% endfor %}
