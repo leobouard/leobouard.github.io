@@ -102,6 +102,7 @@ description: "Toutes mes expériences, mes formations et certifications"
   </details>
   {% endfor %}
 </div>
+
 <h2>Formation</h2>
 <div style="display: flex; flex-direction: column; grid-gap: 1em;">
   {% for school in site.data.cv.education %}
@@ -110,7 +111,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <div>
       <h3>{{ school.institution }}</h3>
       <span>{{ school.diploma }}</span><br>
-      <small>{{ school.startDate }} à {{ school.endDate }}</small>
+      <small>de {{ school.startDate }} à {{ school.endDate }}</small>
     </div>
   </div>
   {% endfor %}
