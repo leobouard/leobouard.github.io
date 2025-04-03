@@ -12,7 +12,7 @@ listed: true
 
 
 ```powershell
-function New-ADDynamicObject {
+function New-ADDynamicObject { 
     param(
         [string]$Name,
         [string]$Path = ((Get-ADDomain).DistinguishedName),
