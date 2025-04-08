@@ -12,10 +12,5 @@ input.searchbar {
 input.searchbar:focus {
     outline: none;
     border-color: var(--secondary);
-    box-shadow: 0 0 5px var(--secondary);
-}
-
-input.searchbar::placeholder {
-    color: var(--lightaccent);
-    opacity: 1;
+    box-shadow: inset 0px -2px 0px var(--primary);
 }
