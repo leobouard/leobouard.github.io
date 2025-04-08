@@ -1,0 +1,8 @@
+input.searchbar {
+    margin: 1em 0;
+    padding: 0.5em;
+    border: 1px solid var(--mediumaccent);
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+}

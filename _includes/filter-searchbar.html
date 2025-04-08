@@ -1,0 +1,15 @@
+<script>
+    function filterArticlesBySearch() {
+        const searchValue = document.getElementById('searchbar').value.toLowerCase();
+        const articles = document.querySelectorAll('.all-posts article');
+        articles.forEach(article => {
+            const title = article.querySelector('h2').textContent.toLowerCase();
+            const description = article.querySelector('p').textContent.toLowerCase();
+            if (title.includes(searchValue) || description.includes(searchValue)) {
+                article.style.display = '';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+    }
+</script>
