@@ -5,4 +5,17 @@ input.searchbar {
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
+    color: var(--heavyaccent);
+    font-size: 1.17em;
+}
+
+input.searchbar:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 5px var(--secondary);
+}
+
+input.searchbar::placeholder {
+    color: var(--lightaccent);
+    opacity: 1;
 }
