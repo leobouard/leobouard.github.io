@@ -1,11 +1,15 @@
 div.all-tags {
     line-height: 2em;
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: 0.5em;
 }
 
 div.all-tags a {
     background-color: var(--lightaccent);
-    padding: 0.5em;
+    padding: 0 0.5em;
     border: 1px solid var(--mediumaccent);
     text-decoration: none;
     font-size: smaller;
