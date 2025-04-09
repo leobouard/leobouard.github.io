@@ -1,9 +1,17 @@
+details.comments {
+    padding: 1em;
+    border: 2px solid var(--lightaccent);
+    border-radius: 0.25em;
+    overflow: hidden;
+}
+
 details.comments summary {
     list-style: none;
     text-align: center;
     font-family: var(--titlefont);
     padding: 1em;
     background: var(--lightaccent);
+    margin: -1em;
 }
 
 details.comments summary i {
