@@ -1,12 +1,14 @@
 input.searchbar {
     margin: 1em 0;
     padding: 0.5em;
-    border: 1px solid var(--mediumaccent);
+    border: 2px solid var(--lightaccent);
+    border-radius: 0.5em;
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
     color: var(--heavyaccent);
     font-size: 1.17em;
+    font-family: var(--titlefont);
 }
 
 input.searchbar:focus {
