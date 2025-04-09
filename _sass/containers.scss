@@ -53,7 +53,7 @@ span.recommandation {
     font-family: var(--titlefont);
     max-width: 310px;
     font-size: x-large;
-    text-align: right;
+    text-align: center;
     line-height: 140%;
     margin: 20px;
 }
@@ -71,10 +71,6 @@ img.recommandation {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    span.recommandation span {
-        text-align: center;
     }
 
     img.recommandation {
