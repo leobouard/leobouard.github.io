@@ -5,6 +5,14 @@ span.error-404 {
     display: block;
 }
 
+section.error-404 span, 
+section.error-404 a {
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+}
+
 @media screen and (max-width: 550px) {
     span.error-404 {
         rotate: -90deg;
