@@ -1,6 +1,6 @@
 span.error-404 {
     font-size: 50svw;
-    margin: 0 auto;
+    margin: auto 0;
     font-family: var(--titlefont);
     display: block;
 }
@@ -20,7 +20,6 @@ section.error-404 small {
 @media screen and (max-width: 550px) {
     span.error-404 {
         rotate: -90deg;
-        margin: auto 0;
-        font-size: 70svw;
+        font-size: 60svw;
     }
 }

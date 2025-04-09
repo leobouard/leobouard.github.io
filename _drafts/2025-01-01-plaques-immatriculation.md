@@ -26,26 +26,17 @@ $001 = $numbers | ForEach-Object {
     }
 }
 
-
-
-
-
-$total = 528*999*528
-
 # Façon brutale
-
-$i = 0
-$results = $AA | ForEach-Object {
+$results = $AA | ForEach-Object -Parallel {
     $1 = $_
-    $001 | ForEach-Object {
+    $using:001 | ForEach-Object {
         $2 = $_
-        $AA | ForEach-Object {
+        $using:AA | ForEach-Object {
             $3 = $_
             "$1-$2-$3"
-            Write-Progress -Activity "$1-$2-$3" -PercentComplete (($i/$total)*100)
-            $i++
         }
     }
 }
 
+# Temps de traitement théorique : ~60 min pour générer 280 millions de plaques
 ```
