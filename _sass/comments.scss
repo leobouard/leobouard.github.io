@@ -4,11 +4,14 @@ details.comments summary {
     font-family: var(--titlefont);
     padding: 1em;
     background: var(--lightaccent);
-    margin-bottom: 2em;
 }
 
 details.comments summary i {
     color: var(--primary);
     font-size: large;
     margin-right: 0.25em;
+}
+
+div.giscus {
+    margin-top: 1em;
 }
