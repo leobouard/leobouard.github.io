@@ -19,5 +19,6 @@ div.all-tags a:hover {
 }
 
 div.all-tags a.selected {
-    background-color: var(--secondary);
+    background-color: var(--accent);
+    color: var(--background);
 }
