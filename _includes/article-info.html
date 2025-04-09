@@ -1,0 +1,13 @@
+<div class="article-info">
+    <img src="https://media.licdn.com/dms/image/v2/D4E03AQG-i6zPGPcvJg/profile-displayphoto-shrink_200_200/B4EZRHn8KLHsAY-/0/1736368440347?e=1747267200&amp;v=beta&amp;t=9th1lOKqGbmGpqyYLkEptwmMgrGOhsGGvtj55RxTePc"/>
+    <div>
+      <span class="author">{{ site.author }}</span>
+      <span>
+        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+        {% include format-date.html date=include.date %}
+      </span>
+      <span>
+        <i class="fa-regular fa-clock" aria-hidden="true"></i>
+        {% include reading-time.html content=include.content %}
+      </span>
+  </div>
