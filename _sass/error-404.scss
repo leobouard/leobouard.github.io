@@ -9,12 +9,11 @@ section.error-404 small,
 section.error-404 a {
     display: block;
     text-align: center;
-    margin: auto;
+    margin: 1em auto;
     width: fit-content;
 }
 
 section.error-404 small {
-    margin: 1em 0;
     color: var(--heavyaccent);
 }
 
