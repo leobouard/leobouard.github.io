@@ -19,17 +19,11 @@ nav.breadcrumb a {
     text-decoration: none;
 }
 
-nav.breadcrumb a,
-nav.breadcrumb span {
-    padding: 0.5em 1em;
-}
-
 nav.breadcrumb a:hover {
     text-decoration: underline;
-    background: var(--lightaccent);
 }
 
 nav.breadcrumb li:not(:first-child)::before {
     content: ">";
-    margin: 0 0.15em;
+    margin: 0 0.5em;
 }
