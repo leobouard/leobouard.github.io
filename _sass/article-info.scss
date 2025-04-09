@@ -1,36 +1,13 @@
 div.article-info {
-    display: flex;
-    width: fit-content;
-    grid-gap: 1em;
-    background: var(--lightaccent);
-    padding: 1em 2em 1em 1em;
-    align-items: center;
-}
-
-div.article-info img {
-    border-radius: 100%;
-    height: 3em;
-    display: inline;
-    margin: auto 0;
-}
-
-div.article-info div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     font-size: smaller;
     color: var(--heavyaccent);
-    line-height: 1.5em;
+}
+
+div.article-info span {
+    display: block;
 }
 
 div.article-info i {
     color: var(--primary);
     min-width: 1.5em;
-}
-
-span.author {
-    font-family: var(--titlefont);
-    color: var(--text);
-    font-size: larger;
-    margin-bottom: 0.25em;
 }
