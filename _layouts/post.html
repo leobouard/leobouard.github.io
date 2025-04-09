@@ -26,14 +26,7 @@ layout: default
   {% endif %}
 
   <!-- Path from home to current page -->
-  <nav class="breadcrumb">
-    <ul>
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/blog">Articles</a></li>
-      {% if page.tableOfContent %}<li><a href="{{ page.tableOfContent }}">Sommaire</a></li>{% endif %}
-      <li><span>{{ page.title }}</span></li>
-    </ul>
-  </nav>
+  {% include breadcrumbs.html %}
 
   <!-- Main title and content -->
   <h1>{{ page.title }}</h1>
