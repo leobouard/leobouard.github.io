@@ -1,13 +1,9 @@
 section.blog-header {
-    max-width: 800px;
     background: var(--accent);
     color: var(--background);
-    padding: 2em;
     margin: 1em;
     box-shadow: 8px 8px 0 0 var(--secondary);
     border-radius: 0.25em;
-    position: relative;
-    overflow: hidden;
 }
 
 section.blog-header button {
