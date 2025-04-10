@@ -1,0 +1,23 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const blogHeader = document.getElementById('blog-header');
+    const hideButton = document.getElementById('hide-blog-header');
+
+    if (readCookie('cookie-hide-blog-header') == 'true') {
+      blogHeader.style.display = 'none';
+    }
+
+    hideButton.addEventListener('click', () => {
+      blogHeader.style.display = 'none';
+      createCookie('cookie-hide-blog-header', 'true', 31);
+    });
+  });
+</script>
+
+<section class="blog-header" id="blog-header">
+  <button id="hide-blog-header" class="hide-button">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <span>Bienvenue ! 👋</span>
+  <p>Retrouvez ici tous mes articles, cours et défis sur PowerShell et d'autres technologies Microsoft</p>
+</section>
