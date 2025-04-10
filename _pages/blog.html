@@ -1,22 +1,31 @@
 ---
-permalink: "/"
-title: "Articles"
+permalink: /
+layout: default
+title: Articles
 description: "Tous les articles, cours et défis sur PowerShell et d'autres technologies Microsoft"
 ---
 
-<h1 style="margin: 0;">Articles</h1>
-{% include filter-searchbar.html %}
-{% include filter-tags.html %}
-<input class="searchbar" type="text" id="searchbar" placeholder="Rechercher un article..." onkeyup="filterArticlesBySearch()" />
-<div class="all-tags">
-  {% assign tags = site.tags | sort %}
-  {% for tag in tags %}
-  <a href="#" onclick="filterArticlesByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
-  {% endfor %}
-</div>
-<div class="all-posts">
-  {% assign posts = site.posts | where: "listed", true %}
-  {% for post in posts %}
-  {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
-  {% endfor %}
-</div>
+<section class="blog-header">
+  <i class="fa-solid fa-xmark"></i>
+  <span>Bienvenue ! 👋</span>
+  <p>LaBouaBouate est un blog technique sur l'administration système et la sécurisation des environnements Microsoft. C'est à voir comme une documentation personnelle ouverte à tous.</p>
+</section>
+
+<section class="blog-post">
+  <h1 style="margin: 0;">Articles</h1>
+  {% include filter-searchbar.html %}
+  {% include filter-tags.html %}
+  <input class="searchbar" type="text" id="searchbar" placeholder="Rechercher un article..." onkeyup="filterArticlesBySearch()" />
+  <div class="all-tags">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+    <a href="#" onclick="filterArticlesByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+  <div class="all-posts">
+    {% assign posts = site.posts | where: "listed", true %}
+    {% for post in posts %}
+    {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
+    {% endfor %}
+  </div>
+</section>
