@@ -11,13 +11,13 @@ layout: default
   {% if page.prevLink or page.nextLink %}
   <div class="top-buttons">
     {% if page.prevLink %}
-    <a href="{{ page.prevLink.id }}" class="no-decoration button-primary hover-bottom small" style="left: 0;">
+    <a href="{{ page.prevLink.id }}" class="no-decoration button-primary hover-bottom" style="left: 0;">
       <i class="fa-solid fa-arrow-left"></i>
       <span>{{ page.prevLink.name }}</span>
     </a>
     {% endif %}
     {% if page.nextLink %}
-    <a href="{{ page.nextLink.id }}" class="no-decoration button-primary hover-bottom small" style="right: 0;">
+    <a href="{{ page.nextLink.id }}" class="no-decoration button-primary hover-bottom" style="right: 0;">
       <span>{{ page.nextLink.name }}</span>
       <i class="fa-solid fa-arrow-right"></i>
     </a>
@@ -26,35 +26,35 @@ layout: default
   {% endif %}
 
   <!-- Path from home to current page -->
-  <nav class="breadcrumb">
-    <ul>
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/blog">Articles</a></li>
-      {% if page.tableOfContent %}<li><a href="{{ page.tableOfContent }}">Sommaire</a></li>{% endif %}
-      <li><span>{{ page.title }}</span></li>
-    </ul>
-  </nav>
+  {% include breadcrumbs.html %}
 
   <!-- Main title and content -->
   <h1>{{ page.title }}</h1>
+
+  <!-- Article info with author, date and time to read -->
+  {% if page.prevLink == nil %}
+    {% include article-info.html date=page.date content=page.content %}
+  {% endif %}
+
+  <!-- Article content -->
   {{ content }}
 
   <!-- Previous & next link buttons -->
   {% if page.prevLink or page.nextLink %}
   <div class="bottom-buttons">
     {% if page.prevLink %}
-    <a href="{{ page.prevLink.id }}" class="no-decoration button-primary hover-bottom small" style="left: 0;">
+    <a href="{{ page.prevLink.id }}" class="no-decoration button-primary hover-bottom" style="left: 0;">
       <i class="fa-solid fa-arrow-left"></i>
       <span>{{ page.prevLink.name }}</span>
     </a>
     {% else %}
-    <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" class="no-decoration button-primary hover-bottom small" style="left: 0;">
+    <a href="javascript:document.getElementById('top').scrollIntoView({behavior: 'smooth'});" class="no-decoration button-primary hover-bottom" style="left: 0;">
       <i class="fa-solid fa-arrow-up"></i>
       <span>Haut de page</span>
     </a>
     {% endif %}
     {% if page.nextLink %}
-    <a href="{{ page.nextLink.id }}" class="no-decoration button-primary hover-bottom small" style="right: 0;">
+    <a href="{{ page.nextLink.id }}" class="no-decoration button-primary hover-bottom" style="right: 0;">
       <span>{{ page.nextLink.name }}</span>
       <i class="fa-solid fa-arrow-right"></i>
     </a>
@@ -66,11 +66,11 @@ layout: default
 {% if page.nextLink == nil %}
 <section class="recommandation">
   {% assign post = site.posts | where: "listed", true | sample %}
-  <span class="recommandation">Est-ce que cet article pourrait vous intéresser ?
+  <span class="recommandation">Cet article pourrait-il vous intéresser ?
     <img class="recommandation" src="https://www.labouabouate.fr/assets/doodles/Arrow%2011.svg" alt="sketch arrow" />
   </span>
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
 </section>
 {% endif %}
 
-{% include giscus.html %}
+{% include comments.html %}

@@ -143,9 +143,7 @@ Validité du mot de passe | ✅ | Le mot de passe est mis à jour automatiquemen
 
 ## Tâche planifiée (ancienne version)
 
-En 2009, Microsoft a publié un guide pour s'occuper du changement de mot de passe des comptes DSRM en passant par une tâche planifiée poussée par GPO : [DS Restore Mode Password Maintenance \| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/askds/ds-restore-mode-password-maintenance/396102). Cette tâche planifiée s'exécute tous les jours pour synchroniser le mot de passe du compte DSRM avec celui d'un compte cible du domaine.
-
-Les captures d'écrans n'étant plus disponibles sur l'article original, vous pouvez consulter cet article pour avoir un aperçu de la méthode : [Gérer le mot de passe du compte DSRM \| METSYS Blog](https://blog.metsys.fr/gerer-le-mot-de-passe-du-compte-administrateur-de-restauration-des-services-active-directory-dsrm/)
+En 2009, Microsoft a publié un guide pour s'occuper du changement de mot de passe des comptes DSRM en passant par une tâche planifiée poussée par GPO : [DS Restore Mode Password Maintenance \| Microsoft Learn](https://learn.microsoft.com/fr-fr/archive/blogs/askds/ds-restore-mode-password-maintenance). Cette tâche planifiée s'exécute tous les jours pour synchroniser le mot de passe du compte DSRM avec celui d'un compte cible du domaine.
 
 Cette méthode **n'est plus recommandée par Microsoft depuis 2018**, car elle pousse le même mot de passe sur tous les contrôleurs de domaine.
 
@@ -194,11 +192,30 @@ Comme l'ancienne méthode de Microsoft, on va pousser une tâche planifiée par 
 
 ![Configuration de la tâche planifiée par GPO](/assets/images/scheduled-task-dsrm.png)
 
-Voici les arguments utilisés pour NTDSUTIL (pour pouvoir copier-coller facilement) :
+**Task :**
 
-```plaintext
-"set dsrm password" "sync from domain account dsrm-%COMPUTERNAME%" quit quit
-```
+- Name: Sync DSRM password with domain account
+- Author: CONTOSO\Administrator
+- Description: Synchronize DSRM account password with a domain account using NTDSUTIL command
+- Run only when user is logged on: S4U
+- UserId: NT AUTHORITY\System
+- Run with highest privileges: HighestAvailable
+- Hidden: No
+- Configure for: 1.3
+- Enabled: Yes
+
+**Triggers :**
+
+- Activate: 01/04/2025 03:00:00
+- Synchronize across time zones: No
+- Enabled: Yes
+- Recur every 1 days
+
+**Actions :**
+
+- Start a program
+  - Program/script: `ntdsutil.exe`
+  - Arguments: `"set dsrm password" "sync from domain account dsrm-%COMPUTERNAME%" quit quit`
 
 > `%COMPUTERNAME%` sera automatiquement remplacé par le nom du contrôleur de domaine, ce qui nous permet d'avoir un mot de passe différent par serveur.
 

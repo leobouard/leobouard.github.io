@@ -1,0 +1,7 @@
+<nav class="breadcrumb">
+  <ul>
+    <li><a href="/">Articles</a></li>
+    {% if page.tableOfContent %}<li><a href="{{ page.tableOfContent }}">Sommaire</a></li>{% endif %}
+    <li><span>{{ page.title }}</span></li>
+  </ul>
+</nav>

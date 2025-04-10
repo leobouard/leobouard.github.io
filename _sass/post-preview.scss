@@ -4,7 +4,8 @@
     min-width: 15em;
     transition: transform ease-in-out 200ms;
     position: relative;
-    border: 1px solid var(--mediumaccent);
+    border-radius: 0.25em;
+    border: 2px solid transparent;
 }
 
 .post-preview a {

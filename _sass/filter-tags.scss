@@ -1,12 +1,16 @@
 div.all-tags {
     line-height: 2em;
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: 0.5em;
 }
 
 div.all-tags a {
     background-color: var(--lightaccent);
-    padding: 0.5em;
-    border: 1px solid var(--mediumaccent);
+    padding: 0 0.5em;
+    border-radius: 0.25em;
     text-decoration: none;
     font-size: smaller;
 }
@@ -16,5 +20,6 @@ div.all-tags a:hover {
 }
 
 div.all-tags a.selected {
-    background-color: var(--secondary);
+    background-color: var(--accent);
+    color: var(--background);
 }

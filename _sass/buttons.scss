@@ -3,11 +3,12 @@ a.no-decoration {
 }
 
 a.button-primary {
-    padding: 1em 2em;
+    padding: 0.75em 1.5em;
     border: 1px solid var(--primary);
     font-family: var(--titlefont);
     color: var(--primary);
     background: var(--background);
+    border-radius: 0.25em;
 }
 
 a.small {
@@ -27,7 +28,7 @@ a.button-primary:hover {
 .top-buttons,
 .bottom-buttons {
     position: relative;
-    height: 3em;
+    height: 5em;
 }
 
 .top-buttons a,

@@ -135,10 +135,32 @@ div.personalInfo {
     padding: 2em;
     max-width: fit-content;
     margin: 0 auto;
+    height: fit-content;
+    border-radius: 0.25em;
+    background: var(--lightaccent);
+    border: 2px solid var(--primary);
+    box-shadow: 0 2px 0 0 var(--primary);
 }
 
 div.personalInfo img {
-    border: 1px solid var(--mediumaccent);
+    border-radius: 100%;
+    margin-bottom: 3em;
+}
+
+div.personalInfo h1 {
+    font-size: 2.25em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+div.personalInfo span {
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    color: var(--heavyaccent);
+    margin-bottom: 2em;
+    letter-spacing: 0.1em;
 }
 
 div.personalInfo ul {
@@ -149,8 +171,8 @@ div.personalInfo ul {
 }
 
 div.personalInfo ul i {
-    color: var(--heavyaccent);
-    width: 2em;
+    color: var(--primary);
+    width: 1.5em;
 }
 
 // SKILLS
@@ -168,10 +190,12 @@ div.personalInfo ul i {
 .skill-container {
     border: 1px solid var(--mediumaccent);
     height: 0.5em;
+    border-radius: 0.25em;
+    overflow: hidden;
 }
 
 .skill-progress {
-    background: var(--accent);
+    background: var(--primary);
     height: 100%;
 }
 

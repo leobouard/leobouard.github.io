@@ -3,7 +3,7 @@ td,
 tr,
 th {
     border: var(--border);
-    padding: 7px;
+    padding: 0.75em;
     border-collapse: collapse;
     line-height: 125%;
 }
@@ -12,6 +12,7 @@ th {
     background-color: var(--lightaccent);
     text-align: left;
     position: relative;
+    font-family: var(--titlefont);
 }
 
 th i.fa-solid.fa-sort {

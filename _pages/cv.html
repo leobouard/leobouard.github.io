@@ -4,11 +4,12 @@ title: "Léo Bouard"
 description: "Toutes mes expériences, mes formations et certifications"
 ---
 
-<h1>{{ site.data.cv.name }}</h1>
-<h2>{{ site.data.cv.title }}</h2>
+<h2>Informations en bref</h2>
 <div class="cv-wrapper">
   <div class="personalInfo">
     <img src="{{ site.data.cv.picture }}" alt="Photo de profil générée par IA">
+    <h1>{{ site.data.cv.name }}</h1>
+    <span class="title">{{ site.data.cv.title }}</span>
     <div class="personalLinks">
       {% for link in site.data.cv.links %}
       <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i

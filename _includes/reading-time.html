@@ -1,0 +1,6 @@
+{% assign words = content | number_of_words %}
+{% if words < 360 %}
+  Moins d'une minute de lecture
+{% else %}
+  {{ words | divided_by:180 }} minutes de lecture
+{% endif %}

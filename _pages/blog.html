@@ -1,20 +1,30 @@
 ---
-permalink: /blog
+permalink: "/"
 title: "Articles"
+layout: "default"
 description: "Tous les articles, cours et défis sur PowerShell et d'autres technologies Microsoft"
 ---
 
-<h1>Articles</h1>
-{% include filter-tags.html %}
-<div class="all-tags">
-  {% assign tags = site.tags | sort %}
-  {% for tag in tags %}
-  <a href="#" onclick="filterArticlesByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
-  {% endfor %}
-</div>
-<div class="all-posts">
-  {% assign posts = site.posts | where: "listed", true %}
-  {% for post in posts %}
-  {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
-  {% endfor %}
-</div>
+{% include blog-header.html %}
+
+<section class="blog-page">
+  <button class="show-blog-header" id="show-blog-header" style="display: none;">
+    <i class="fa-solid fa-message" aria-hidden="true"></i>
+  </button>
+  <h1 style="margin: 0;">Articles</h1>
+  {% include filter-searchbar.html %}
+  {% include filter-tags.html %}
+  <input class="searchbar" type="text" id="searchbar" placeholder="Rechercher un article..." onkeyup="filterArticlesBySearch()" />
+  <div class="all-tags">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+    <a href="#" onclick="filterArticlesByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+  <div class="all-posts">
+    {% assign posts = site.posts | where: "listed", true %}
+    {% for post in posts %}
+    {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
+    {% endfor %}
+  </div>
+</section>

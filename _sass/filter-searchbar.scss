@@ -1,0 +1,18 @@
+input.searchbar {
+    margin: 1em 0;
+    padding: 0.5em;
+    border: 2px solid var(--lightaccent);
+    border-radius: 0.25em;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    color: var(--heavyaccent);
+    font-size: 1.17em;
+    font-family: var(--titlefont);
+}
+
+input.searchbar:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: inset 0px -2px 0px var(--primary);
+}

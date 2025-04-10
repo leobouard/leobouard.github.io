@@ -2,7 +2,6 @@ nav.breadcrumb {
     width: 100%;
     font-size: small;
     color: var(--heavyaccent);
-    font-weight: 500;
     padding: 1em 0;
 }
 
@@ -16,7 +15,15 @@ nav.breadcrumb li {
     display: inline;
 }
 
+nav.breadcrumb a {
+    text-decoration: none;
+}
+
+nav.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
 nav.breadcrumb li:not(:first-child)::before {
-    content: "⨠";
-    margin: 0 10px;
+    content: ">";
+    margin: 0 0.5em;
 }

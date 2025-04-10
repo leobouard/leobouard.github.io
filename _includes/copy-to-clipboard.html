@@ -7,6 +7,7 @@
         var button = document.createElement('button');
         button.className = 'copy';
         button.type = 'button';
+        button.setAttribute('aria-label', 'Copier le code');
         button.innerHTML = '<i class="fa-regular fa-copy"></i>';
         button.addEventListener('click', function () {
           var code = pre.querySelector('code').innerText.trim();

@@ -1,0 +1,25 @@
+span.error-404 {
+    font-size: 50svw;
+    margin: auto 0;
+    font-family: var(--titlefont);
+    display: block;
+}
+
+section.error-404 small, 
+section.error-404 a {
+    display: block;
+    text-align: center;
+    margin: 1em auto;
+    width: fit-content;
+}
+
+section.error-404 small {
+    color: var(--heavyaccent);
+}
+
+@media screen and (max-width: 550px) {
+    span.error-404 {
+        rotate: -90deg;
+        font-size: 60svw;
+    }
+}
