@@ -25,3 +25,15 @@ section.blog-header span {
     font-family: var(--titlefont);
     font-size: 2em;
 }
+
+button.show-blog-header {
+    color: var(--accent);
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1em;
+    transform: scalex(-1);
+    background-color: transparent;
+    border: 0;
+}

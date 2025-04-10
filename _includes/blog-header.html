@@ -2,14 +2,21 @@
   document.addEventListener('DOMContentLoaded', () => {
     const blogHeader = document.getElementById('blog-header');
     const hideButton = document.getElementById('hide-blog-header');
+    const showButton = document.getElementById('show-blog-header');
 
     if (readCookie('cookie-hide-blog-header') == 'true') {
       blogHeader.style.display = 'none';
+      showButton.style.display = 'block';
     }
 
     hideButton.addEventListener('click', () => {
       blogHeader.style.display = 'none';
       createCookie('cookie-hide-blog-header', 'true', 31);
+    });
+
+    showButton.addEventListener('click', () => {
+      showButton.style.display = 'none';
+      eraseCookie('cookie-hide-blog-header');
     });
   });
 </script>
