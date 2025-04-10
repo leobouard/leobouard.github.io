@@ -192,11 +192,30 @@ Comme l'ancienne méthode de Microsoft, on va pousser une tâche planifiée par 
 
 ![Configuration de la tâche planifiée par GPO](/assets/images/scheduled-task-dsrm.png)
 
-Voici les arguments utilisés pour NTDSUTIL (pour pouvoir copier-coller facilement) :
+**Task :**
 
-```plaintext
-"set dsrm password" "sync from domain account dsrm-%COMPUTERNAME%" quit quit
-```
+- Name: Sync DSRM password with domain account
+- Author: CONTOSO\Administrator
+- Description: Synchronize DSRM account password with a domain account using NTDSUTIL command
+- Run only when user is logged on: S4U
+- UserId: NT AUTHORITY\System
+- Run with highest privileges: HighestAvailable
+- Hidden: No
+- Configure for: 1.3
+- Enabled: Yes
+
+**Triggers :**
+
+- Activate: 01/04/2025 03:00:00
+- Synchronize across time zones: No
+- Enabled: Yes
+- Recur every 1 days
+
+**Actions :**
+
+- Start a program
+  - Program/script: `ntdsutil.exe`
+  - Arguments: `"set dsrm password" "sync from domain account dsrm-%COMPUTERNAME%" quit quit`
 
 > `%COMPUTERNAME%` sera automatiquement remplacé par le nom du contrôleur de domaine, ce qui nous permet d'avoir un mot de passe différent par serveur.
 
