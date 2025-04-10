@@ -143,9 +143,7 @@ Validité du mot de passe | ✅ | Le mot de passe est mis à jour automatiquemen
 
 ## Tâche planifiée (ancienne version)
 
-En 2009, Microsoft a publié un guide pour s'occuper du changement de mot de passe des comptes DSRM en passant par une tâche planifiée poussée par GPO : [DS Restore Mode Password Maintenance \| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/askds/ds-restore-mode-password-maintenance/396102). Cette tâche planifiée s'exécute tous les jours pour synchroniser le mot de passe du compte DSRM avec celui d'un compte cible du domaine.
-
-Les captures d'écrans n'étant plus disponibles sur l'article original, vous pouvez consulter cet article pour avoir un aperçu de la méthode : [Gérer le mot de passe du compte DSRM \| METSYS Blog](https://blog.metsys.fr/gerer-le-mot-de-passe-du-compte-administrateur-de-restauration-des-services-active-directory-dsrm/)
+En 2009, Microsoft a publié un guide pour s'occuper du changement de mot de passe des comptes DSRM en passant par une tâche planifiée poussée par GPO : [DS Restore Mode Password Maintenance \| Microsoft Learn](https://learn.microsoft.com/fr-fr/archive/blogs/askds/ds-restore-mode-password-maintenance). Cette tâche planifiée s'exécute tous les jours pour synchroniser le mot de passe du compte DSRM avec celui d'un compte cible du domaine.
 
 Cette méthode **n'est plus recommandée par Microsoft depuis 2018**, car elle pousse le même mot de passe sur tous les contrôleurs de domaine.
 
