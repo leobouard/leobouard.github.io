@@ -10,12 +10,15 @@ section.blog-header {
     overflow: hidden;
 }
 
-section.blog-header i {
+section.blog-header button {
     font-size: 1.5em;
     position: absolute;
     right: 0;
     top: 0;
     margin: 0.5em;
+    color: var(--background);
+    background: transparent;
+    border: 0;
 }
 
 section.blog-header span {
