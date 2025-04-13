@@ -14,7 +14,10 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
   <h1 style="margin: 0;">Articles</h1>
   {% include filter-searchbar.html %}
   {% include filter-tags.html %}
-  <input class="searchbar" type="text" id="searchbar" placeholder="Rechercher un article..." onkeyup="filterArticlesBySearch()" />
+  <div class="searchbar-container">
+    <input class="searchbar" type="text" id="searchbar" placeholder="Rechercher un article..." onkeyup="filterArticlesBySearch()" />
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
   <div class="all-tags">
     {% assign tags = site.tags | sort %}
     {% for tag in tags %}

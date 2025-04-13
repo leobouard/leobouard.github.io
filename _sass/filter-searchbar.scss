@@ -1,5 +1,9 @@
-input.searchbar {
+div.searchbar-container {
+    position: relative;
     margin: 1em 0;
+}
+
+input.searchbar {
     padding: 0.5em;
     border: 2px solid var(--lightaccent);
     border-radius: 0.25em;
@@ -15,4 +19,18 @@ input.searchbar:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: inset 0px -2px 0px var(--primary);
+
+    div.searchbar-container i {
+        color: var(--primary);
+    }
+}
+
+div.searchbar-container i {
+    position: absolute;
+    right: 0.5em;
+    font-size: large;
+    align-self: anchor-center;
+    color: var(--heavyaccent);
+    background: linear-gradient(280deg, var(--background), var(--background), transparent);
+    padding: 0.5em 0.5em 0.5em 2em;
 }
