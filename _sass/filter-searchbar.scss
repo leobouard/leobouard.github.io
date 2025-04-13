@@ -19,10 +19,6 @@ input.searchbar:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: inset 0px -2px 0px var(--primary);
-
-    div.searchbar-container i {
-        color: var(--primary);
-    }
 }
 
 div.searchbar-container i {
@@ -33,4 +29,8 @@ div.searchbar-container i {
     color: var(--heavyaccent);
     background: linear-gradient(280deg, var(--background), var(--background), transparent);
     padding: 0.5em 0.5em 0.5em 2em;
+}
+
+input.searchbar:focus div.searchbar-container i {
+    color: var(--primary);
 }
