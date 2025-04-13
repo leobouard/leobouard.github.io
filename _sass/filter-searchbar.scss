@@ -31,6 +31,6 @@ div.searchbar-container i {
     padding: 0.5em 0.5em 0.5em 2em;
 }
 
-input.searchbar:focus div.searchbar-container i {
+div.searchbar-container:focus-within i {
     color: var(--primary);
 }
