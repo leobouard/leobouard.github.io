@@ -3,16 +3,13 @@
 
 // ENTERPRISES
 
-.enterprise {
+div.enterprise,
+summary.enterprise {
     display: flex;
     padding: 0.5em;
     align-items: center;
     border: 1px solid var(--mediumaccent);
     position: relative;
-}
-
-.enterprise summary {
-    list-style: none;
 }
 
 i.open-indicator-enterprise,
@@ -25,10 +22,14 @@ i.open-indicator-experience {
 }
 
 i.open-indicator-enterprise {
-    transform: rotate(-90deg)
+    transform: rotate(-90deg);
 }
 
-details:open > summary.enterprise > i.open-indicator-enterprise {
+i.open-indicator-experience {
+    transform: rotate(0deg);
+}
+
+details.enterprise[open] i.open-indicator-enterprise {
     transform: rotate(0deg);
 }
 
@@ -61,8 +62,8 @@ summary.enterprise:hover {
     position: relative;
 }
 
-details.experience:open i.open-indicator-experience {
-    transform: rotate(-90deg);
+details.experience[open] i.open-indicator-experience {
+    transform: rotate(0deg);
 }
 
 .experience summary {
