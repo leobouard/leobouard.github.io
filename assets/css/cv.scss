@@ -15,11 +15,16 @@
     position: relative;
 }
 
-.enterprise i {
+i.open-indicator {
     color: var(--heavyaccent);
     position: absolute;
     margin: 1em;
     right: 0;
+    transition: all ease-in-out 200ms;
+}
+
+details.enterprise:open i.open-indicator {
+    transform: rotate(90deg);
 }
 
 summary.enterprise:hover {
