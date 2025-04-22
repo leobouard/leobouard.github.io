@@ -48,7 +48,7 @@ div.footer-links a {
     color: var(--footeraccent);
     padding: 10px;
     border: 1px solid;
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     height: 24px;
     width: 24px;
 }

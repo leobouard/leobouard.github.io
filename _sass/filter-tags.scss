@@ -10,7 +10,7 @@ div.all-tags {
 div.all-tags a {
     background-color: var(--lightaccent);
     padding: 0 0.5em;
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     text-decoration: none;
     font-size: smaller;
 }

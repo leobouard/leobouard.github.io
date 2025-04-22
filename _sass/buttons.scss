@@ -8,7 +8,7 @@ a.button-primary {
     font-family: var(--titlefont);
     color: var(--primary);
     background: var(--background);
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
 }
 
 a.small {

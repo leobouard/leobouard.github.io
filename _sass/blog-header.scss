@@ -3,7 +3,7 @@ section.blog-header {
     color: var(--background);
     margin: 1em;
     box-shadow: 8px 8px 0 0 var(--secondary);
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
 }
 
 section.blog-header button {

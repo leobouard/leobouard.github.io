@@ -9,7 +9,7 @@ summary.enterprise {
     padding: 0.5em;
     align-items: center;
     border: 1px solid var(--mediumaccent);
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     position: relative;
 }
 
@@ -92,7 +92,7 @@ div.personalLinks a {
     justify-content: center;
     padding: 0.5em;
     border: var(--border);
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     aspect-ratio: 1;
     height: 2em;
     text-decoration: none;
@@ -114,7 +114,7 @@ div.personalLinks a i {
 .certification {
     padding: 0.5em;
     border: 1px solid var(--mediumaccent);
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     height: 3em;
 }
 .certification:hover {
@@ -164,7 +164,7 @@ div.personalInfo {
     max-width: fit-content;
     margin: 0 auto;
     height: fit-content;
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     background: var(--lightaccent);
     border: 2px solid var(--primary);
     box-shadow: 0 2px 0 0 var(--primary);
@@ -218,7 +218,7 @@ div.personalInfo ul i {
 .skill-container {
     border: 1px solid var(--mediumaccent);
     height: 0.5em;
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     overflow: hidden;
 }
 

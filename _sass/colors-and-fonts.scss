@@ -36,10 +36,11 @@ html {
 }
 */
 
-// FIXED COLORS
+// FIXED SETTINGS
 :root {
-    --footerbackground: #050315;
-    --footertext: #adacb2;
-    --footeraccent: #f8f7ff;
+    --footerbackground: #000;
+    --footertext: #aaa;
+    --footeraccent: #fff;
     --border: 1px solid var(--mediumaccent);
+    --borderradius: 0.25em;
 }

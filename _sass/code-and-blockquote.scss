@@ -87,6 +87,6 @@ li code,
 table code {
     background-color: var(--lightaccent);
     padding: 4px;
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     border: 1px solid var(--mediumaccent);
 }

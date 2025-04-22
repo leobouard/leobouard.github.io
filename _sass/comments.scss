@@ -1,7 +1,7 @@
 details.comments {
     padding: 1em;
     border: 2px solid var(--lightaccent);
-    border-radius: 0.25em;
+    border-radius: var(--borderradius);
     overflow: hidden;
 }
 
