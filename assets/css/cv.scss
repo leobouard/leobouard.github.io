@@ -24,7 +24,7 @@ i.open-indicator {
     transform: rotate(-90deg)
 }
 
-details:open i.open-indicator {
+details:open > summary > i.open-indicator {
     transform: rotate(0deg);
 }
 
