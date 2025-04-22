@@ -53,9 +53,8 @@
     color: #8b0000;
 }
 
-/* Based on Visual Studio Dark theme in Visual Studio Code
-
-@media (prefers-color-scheme: dark) {
+// Based on Visual Studio Dark theme in Visual Studio Code
+html.dark {
 
     // $null and $_
     .highlight .bp {
@@ -110,4 +109,3 @@
         color: #ce9178;
     }
 }
-*/

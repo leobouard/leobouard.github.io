@@ -5,9 +5,18 @@
     --codefont: 'Martian Mono', monospace;
 }
 
-// DEFAULT THEME
+// FIXED SETTINGS
+:root {
+    --footerbackground: #000;
+    --footertext: #aaa;
+    --footeraccent: #eee;
+    --border: 1px solid var(--mediumaccent);
+    --borderradius: 0.25em;
+}
+
+// LIGHT THEME (default)
 html {
-    --text: #333333;
+    --text: #333;
     --background: #fff;
     --primary: #71a29a;
     --secondary: #aeb7ca;
@@ -18,29 +27,16 @@ html {
     --blockquote: #71a29a45;
 }
 
-// @media (prefers-color-scheme: light) { }
-
-/* DARK THEME
-@media (prefers-color-scheme: dark) {
-    html {
-        --text: #ebe9fc;
-        --background: #010104;
-        --primary: #3a31d8;
-        --secondary: green;
-        --accent: red;
-        --lightaccent: #2b2a2a;
-        --mediumaccent: #767697;
-        --heavyaccent: #a3a3f3;
-        --blockquote: #090431;
-    }
+// DARK THEME
+html {
+    --text: #eee;
+    --background: #111;
+    --primary: #3a31d8;
+    --secondary: green;
+    --accent: red;
+    --lightaccent: #333;
+    --mediumaccent: #888;
+    --heavyaccent: #aaa;
+    --blockquote: #090431;
 }
-*/
 
-// FIXED SETTINGS
-:root {
-    --footerbackground: #000;
-    --footertext: #aaa;
-    --footeraccent: #fff;
-    --border: 1px solid var(--mediumaccent);
-    --borderradius: 0.25em;
-}

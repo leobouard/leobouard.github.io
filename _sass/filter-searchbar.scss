@@ -13,6 +13,7 @@ input.searchbar {
     color: var(--heavyaccent);
     font-size: 1.17em;
     font-family: var(--titlefont);
+    background: var(--background);
 }
 
 input.searchbar:focus {
