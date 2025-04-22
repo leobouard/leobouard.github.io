@@ -14,19 +14,12 @@ summary.enterprise {
 
 i.open-indicator-enterprise,
 i.open-indicator-experience {
-    color: var(--heavyaccent);
+    color: var(--mediumaccent);
     position: absolute;
     margin: 1em;
     right: 0;
     transition: all ease-in-out 200ms;
-}
-
-i.open-indicator-enterprise {
     transform: rotate(-90deg);
-}
-
-i.open-indicator-experience {
-    transform: rotate(0deg);
 }
 
 details.enterprise[open] i.open-indicator-enterprise {
