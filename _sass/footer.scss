@@ -4,6 +4,7 @@ footer {
     background-color: var(--footerbackground);
     color: var(--footertext);
     margin-top: 2em;
+    text-underline-offset: 4px;
 }
 
 div.footer-grid {
@@ -47,6 +48,7 @@ div.footer-links a {
     color: var(--footeraccent);
     padding: 10px;
     border: 1px solid;
+    border-radius: 0.25em;
     height: 24px;
     width: 24px;
 }
