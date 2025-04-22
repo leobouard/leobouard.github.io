@@ -8,11 +8,11 @@
     padding: 0.5em;
     align-items: center;
     border: 1px solid var(--mediumaccent);
+    position: relative;
 }
 
 .enterprise summary {
     list-style: none;
-    position: relative;
 }
 
 i.open-indicator {
@@ -23,7 +23,7 @@ i.open-indicator {
     transition: all ease-in-out 200ms;
 }
 
-details.enterprise:open i.open-indicator {
+details:open i.open-indicator {
     transform: rotate(90deg);
 }
 
@@ -53,6 +53,7 @@ summary.enterprise:hover {
     border-left: var(--border);
     margin-top: 15px;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .experience summary {
