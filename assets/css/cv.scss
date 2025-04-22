@@ -76,6 +76,11 @@ details.experience[open] i.open-indicator-experience {
     margin-top: 1em;
 }
 
+.experience ul {
+    list-style: circle;
+    padding-inline-start: 2em;
+}
+
 // PERSONAL LINKS
 
 div.personalLinks {
