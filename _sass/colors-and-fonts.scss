@@ -28,15 +28,15 @@ html {
 }
 
 // DARK THEME
-html {
+html.dark {
     --text: #eee;
     --background: #111;
-    --primary: #3a31d8;
-    --secondary: green;
-    --accent: red;
+    --primary: #71a29a;
+    --secondary: #aeb7ca;
+    --accent: #8688b0;
     --lightaccent: #333;
     --mediumaccent: #888;
     --heavyaccent: #aaa;
-    --blockquote: #090431;
+    --blockquote: #71a29a45;
 }
 
