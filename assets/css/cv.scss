@@ -21,10 +21,11 @@ i.open-indicator {
     margin: 1em;
     right: 0;
     transition: all ease-in-out 200ms;
+    transform: rotate(-90deg)
 }
 
 details:open i.open-indicator {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
 }
 
 summary.enterprise:hover {
