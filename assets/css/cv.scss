@@ -9,6 +9,7 @@ summary.enterprise {
     padding: 0.5em;
     align-items: center;
     border: 1px solid var(--mediumaccent);
+    border-radius: 0.25em;
     position: relative;
 }
 
@@ -91,6 +92,7 @@ div.personalLinks a {
     justify-content: center;
     padding: 0.5em;
     border: var(--border);
+    border-radius: 0.25em;
     aspect-ratio: 1;
     height: 2em;
     text-decoration: none;
@@ -112,6 +114,7 @@ div.personalLinks a i {
 .certification {
     padding: 0.5em;
     border: 1px solid var(--mediumaccent);
+    border-radius: 0.25em;
     height: 3em;
 }
 .certification:hover {
