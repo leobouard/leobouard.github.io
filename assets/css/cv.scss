@@ -14,11 +14,13 @@
     list-style: none;
 }
 
-.enterprise summary:hover {
+summary.enterprise:hover,
+div.enterprise:hover {
     background: var(--lightaccent);
 }
 
-.enterprise summary:hover h3 {
+summary.enterprise:hover h3,
+div.enterprise:hover h3 {
     text-decoration: underline;
 }
 
