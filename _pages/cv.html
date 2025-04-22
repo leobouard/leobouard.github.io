@@ -93,13 +93,14 @@ description: "Toutes mes expériences, mes formations et certifications"
         <h4>{{ position.title }}</h4>
         <small>de {{ position.startDate }} à {{ position.endDate }}</small>
       </summary>
-      <p>{{ position.summary }}
-      <ul>
-        {% for highlight in position.highlights %}
-        <li>{{ highlight }}</li>
-        {% endfor %}
-      </ul>
-      </p>
+      <div>
+        <p>{{ position.summary }}</p>
+        <ul>
+          {% for highlight in position.highlights %}
+          <li>{{ highlight }}</li>
+          {% endfor %}
+        </ul>
+      </div>
     </details>
     {% endfor %}
   </details>

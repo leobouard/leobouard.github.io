@@ -23,6 +23,10 @@ i.open-indicator-experience {
     transform: rotate(-90deg);
 }
 
+i.open-indicator-experience {
+    font-size: small;
+}
+
 details.enterprise[open] i.open-indicator-enterprise {
     transform: rotate(0deg);
 }
@@ -42,17 +46,14 @@ summary.enterprise:hover {
 
 .enterprise small {
     display: block;
+    color: var(--heavyaccent);
 }
 
 // EXPERIENCES
 
 .experience {
     display: block;
-    margin-left: 35px;
-    padding-left: 15px;
-    border-left: var(--border);
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-left: 2em;
     position: relative;
 }
 
@@ -62,6 +63,11 @@ details.experience[open] i.open-indicator-experience {
 
 .experience summary {
     list-style: none;
+}
+
+.experience div {
+    border-left: var(--border);
+    padding-left: 1em;
 }
 
 .experience h4 {
