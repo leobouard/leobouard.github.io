@@ -12,16 +12,18 @@
 
 .enterprise summary {
     list-style: none;
+    position: relative;
 }
 
-summary.enterprise:hover,
-div.enterprise:hover {
+.enterprise i {
+    color: var(--heavyaccent);
+    position: absolute;
+    margin: 1em;
+    right: 0;
+}
+
+summary.enterprise:hover {
     background: var(--lightaccent);
-}
-
-summary.enterprise:hover h3,
-div.enterprise:hover h3 {
-    text-decoration: underline;
 }
 
 .enterprise h3 {
