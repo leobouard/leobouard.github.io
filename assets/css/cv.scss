@@ -15,7 +15,8 @@
     list-style: none;
 }
 
-i.open-indicator {
+i.open-indicator-enterprise,
+i.open-indicator-experience {
     color: var(--heavyaccent);
     position: absolute;
     margin: 1em;
@@ -24,7 +25,7 @@ i.open-indicator {
     transform: rotate(-90deg)
 }
 
-details:open > summary > i.open-indicator {
+details:open i.open-indicator-enterprise {
     transform: rotate(0deg);
 }
 
@@ -55,6 +56,10 @@ summary.enterprise:hover {
     margin-top: 15px;
     margin-bottom: 15px;
     position: relative;
+}
+
+details.experience:open i.open-indicator-experience {
+    transform: rotate(0deg);
 }
 
 .experience summary {

@@ -75,7 +75,7 @@ description: "Toutes mes expériences, mes formations et certifications"
   {% for company in site.data.cv.companies %}
   <details open>
     <summary class="enterprise">
-      <i class="fa-solid fa-chevron-down open-indicator"></i>
+      <i class="fa-solid fa-chevron-down open-indicator-enterprise"></i>
       <img src="{{ company.logo }}" alt="company logo">
       <div>
         <h3>{{ company.name }}</h3>
@@ -89,7 +89,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     {% for position in company.positions %}
     <details class="experience" open>
       <summary>
-        <i class="fa-solid fa-chevron-down open-indicator"></i>
+        <i class="fa-solid fa-chevron-down open-indicator-experience"></i>
         <h4>{{ position.title }}</h4>
         <small>de {{ position.startDate }} à {{ position.endDate }}</small>
       </summary>
