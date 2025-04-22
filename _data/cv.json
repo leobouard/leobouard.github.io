@@ -146,12 +146,14 @@
                 {
                     "title":  "Ingénieur systèmes",
                     "startDate":  "octobre 2021",
-                    "endDate":  "mars 2024"
+                    "endDate":  "mars 2024",
+                    "summary":  "Mission longue chez un client final (Groupe Roullier)."
                 },
                 {
                     "title":  "Administrateur systèmes",
                     "startDate":  "septembre 2018",
-                    "endDate":  "septembre 2021"
+                    "endDate":  "septembre 2021",
+                    "summary":  "Consultant junior au sein de la business unit Infrastructure & Services"
                 }
             ]
         },
