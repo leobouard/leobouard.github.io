@@ -17,3 +17,11 @@ header a:hover {
     color: var(--primary);
     box-shadow: inset 0 -2px 0 0 var(--primary);
 }
+
+button.switch-theme {
+    position: absolute;
+    right: 0;
+    margin: 1em;
+    background-color: transparent;
+    border: 0;
+}
