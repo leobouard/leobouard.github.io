@@ -23,6 +23,10 @@ i.open-indicator-experience {
     transform: rotate(-90deg);
 }
 
+i.open-indicator-experience {
+    font-size: small;
+}
+
 details.enterprise[open] i.open-indicator-enterprise {
     transform: rotate(0deg);
 }
@@ -32,7 +36,7 @@ summary.enterprise:hover {
 }
 
 .enterprise h3 {
-    margin: 0.25em 0;
+    margin: 0;
 }
 
 .enterprise img {
@@ -42,17 +46,14 @@ summary.enterprise:hover {
 
 .enterprise small {
     display: block;
+    color: var(--heavyaccent);
 }
 
 // EXPERIENCES
 
 .experience {
     display: block;
-    margin-left: 35px;
-    padding-left: 15px;
-    border-left: var(--border);
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-left: 2em;
     position: relative;
 }
 
@@ -64,15 +65,20 @@ details.experience[open] i.open-indicator-experience {
     list-style: none;
 }
 
-.experience h4 {
-    margin-bottom: 0;
-    margin-top: 30px;
+.experience div {
+    border-left: var(--border);
+    padding-left: 1em;
+    font-size: small;
 }
 
-.experiences h2,
-.experiences h3,
-.experiences h4 {
-    margin: 0.25em 0;
+.experience h4 {
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+.experience ul {
+    list-style: circle;
+    padding-inline-start: 2em;
 }
 
 // PERSONAL LINKS
@@ -176,7 +182,7 @@ div.personalInfo img {
 }
 
 div.personalInfo h1 {
-    font-size: 2.25em;
+    font-size: 2.5em;
     margin-bottom: 0.5em;
     text-align: center;
 }
