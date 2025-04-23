@@ -3,7 +3,7 @@
     "name":  "Léo Bouard",
     "title":  "Ingénieur systèmes",
     "personalInfo":  {
-        "address":  "Rennes, Ille-et-Vilaine (35)",
+        "address":  "Rennes, Bretagne",
         "phone":  "+33 6 95 98...",
         "email":  "leo.bouard@hotmail.com",
         "website":  "www.labouabouate.fr"
@@ -113,7 +113,7 @@
         {
             "name":  "METSYS",
             "logo":  "/assets/images/metsys.jpg",
-            "location":  "Rennes, Ille-et-Vilaine (35)",
+            "location":  "Rennes, Bretagne",
             "startDate":  "2018",
             "endDate":  "aujourd'hui",
             "duration":  "Plus de 6 ans",
@@ -153,14 +153,14 @@
                     "title":  "Administrateur systèmes",
                     "startDate":  "septembre 2018",
                     "endDate":  "septembre 2021",
-                    "summary":  "Consultant junior au sein de la business unit Infrastructure & Services"
+                    "summary":  "Consultant junior au sein de la business unit Infrastructure & Services."
                 }
             ]
         },
         {
             "name":  "Groupe Roullier",
             "logo":  "/assets/images/groupe-roullier.jpg",
-            "location":  "Dinard, Ille-et-Vilaine (35)",
+            "location":  "Saint-Malo, Bretagne",
             "startDate":  "2019",
             "endDate":  "2024",
             "duration":  "5 ans et 3 mois",
@@ -206,7 +206,7 @@
         {
             "name":  "GEVES",
             "logo":  "/assets/images/geves.jpg",
-            "location":  "Beaucouzé, Maine-et-Loire (49)",
+            "location":  "Angers, Pays de la Loire",
             "startDate":  "2017",
             "endDate":  "2018",
             "duration":  "1 an et 5 mois",
