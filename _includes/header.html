@@ -9,7 +9,8 @@
 
     switchtheme.addEventListener('click', () => {
       if (html.className == 'dark') {
-        html.className = null;
+        html.className = 'none';
+        eraseCookie('cookie-theme-dark');
       }
       else {
         html.className = 'dark';
