@@ -1,6 +1,27 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const html = document.getElementById('html');
+    const switchtheme = document.getElementById('switch-theme');
+
+    if (readCookie('cookie-theme-dark') == 'true') {
+      html.className = 'dark';
+    }
+
+    switchtheme.addEventListener('click', () => {
+      if (html.className == 'dark') {
+        html.className = null;
+      }
+      else {
+        html.className = 'dark';
+      }
+      createCookie('cookie-theme-dark', 'true', 31);
+    });
+  });
+</script>
+
 <header id="top">
-    <a class="home" href="{{ "/" | absolute_url }}">LaBouaBouate</a>
-    <button class="switch-theme" id="switch-theme" style="display: block;">
-        <i class="fa-solid fa-circle-half-stroke"></i>
-      </button>
+  <a class="home" href="{{ " /" | absolute_url }}">LaBouaBouate</a>
+  <button class="switch-theme" id="switch-theme" style="display: block;">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+  </button>
 </header>
