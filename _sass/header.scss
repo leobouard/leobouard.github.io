@@ -27,4 +27,10 @@ button.switch-theme {
     padding: 1em;
     font-size: large;
     margin: 0.1em;
+    color: var(--text);
+    transition: all 0.2s ease-in-out;
+}
+
+html.dark button.switch-theme {
+    transform: scaleX(-1);
 }
