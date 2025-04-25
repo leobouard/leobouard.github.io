@@ -7,35 +7,40 @@
                 "title": "Migration Quest MPAD",
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
-                "description": "Migration Active Directory avec Quest Migrator Pro"
+                "description": "Migration Active Directory avec Quest Migrator Pro",
+                "tags": ["activedirectory", "quest", "mpad"]
             },
             {
                 "customer": "Agroalimentaire, Rennes", 
                 "title": "Expertise Active Directory",
                 "period": "avril 2025",
                 "duration": "1 jour",
-                "description": "Identification et résolution d'un problème d'authentification entre deux forêts"
+                "description": "Identification et résolution d'un problème d'authentification entre deux forêts",
+                "tags": ["activedirectory"]
             },
             {
                 "customer": "Banque et assurance, Brest", 
                 "title": "Intégration GPOADmin",
                 "period": "mars 2025",
                 "duration": "2 jours",
-                "description": "Installation et configuration de Quest GPOADmin et production de la documentation d'exploitation"
+                "description": "Installation et configuration de Quest GPOADmin et production de la documentation d'exploitation",
+                "tags": ["activedirectory", "quest", "gpoadmin"]
             },
             {
                 "customer": "Services à la personne, Laval", 
                 "title": "Peuplement Entra ID",
                 "period": "février 2025",
                 "duration": "4 jours",
-                "description": "Peuplement et nettoyage de Entra ID à partir de plusieurs sources externes"
+                "description": "Peuplement et nettoyage de Entra ID à partir de plusieurs sources externes",
+                "tags": ["powershell", "microsoft365"]
             },
             {
                 "customer": "Coopérative agricole, Saint-Brieuc", 
                 "title": "Expertise PowerShell",
                 "period": "de janvier 2025 à mars 2025",
                 "duration": "5 jours",
-                "description": "Conception de scripts PowerShell a destination de la supervision PRTG et pour le PRA"
+                "description": "Conception de scripts PowerShell a destination de la supervision PRTG et pour le PRA",
+                "tags": ["powershell", "prtg"]
             }
         ]
     },
@@ -47,35 +52,40 @@
                 "title": "Sécurisation Active Directory",
                 "period": "de octobre 2024 à janvier 2025",
                 "duration": "10 jours",
-                "description": "Sécurisation de Active Directory et automatisation de processus en PowerShell"
+                "description": "Sécurisation de Active Directory et automatisation de processus en PowerShell",
+                "tags": ["activedirectory", "powershell"]
             },
             {
                 "customer": "Coopérative agricole, Brest",
                 "title": "Intégration tiering-model",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "au forfait",
-                "description": "Sécurisation de Active Directory et mise en place du tiering-model"
+                "description": "Sécurisation de Active Directory et mise en place du tiering-model",
+                "tags": ["activedirectory", "powershell"]
             },
             {
                 "customer": "Industriel, Saint-Malo",
                 "title": "Architecte Active Directory",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "5 jours par mois",
-                "description": "Référent technique sur les projets Active Directory"
+                "description": "Référent technique sur les projets Active Directory",
+                "tags": ["activedirectory", "powershell"]
             },
             {
                 "customer": "Industriel, Saint-Malo",
                 "title": "Consultant AD et M365",
                 "period": "de avril 2024 à mai 2025",
                 "duration": "40 jours",
-                "description": "Audit et sécurisation de Active Directory et optimisation du tenant Microsoft 365"
+                "description": "Audit et sécurisation de Active Directory et optimisation du tenant Microsoft 365",
+                "tags": ["activedirectory", "microsoft365", "powershell"]
             },
             {
                 "customer": "Conseil et informatique, Paris",
                 "title": "Formation PowerShell",
                 "period": "avril 2024",
                 "duration": "4 jours",
-                "description": "Formation sur les bases de PowerShell à destination d'étudiants en alternance"
+                "description": "Formation sur les bases de PowerShell à destination d'étudiants en alternance",
+                "tags": ["powershell", "formation"]
             }
         ]
     },
@@ -87,7 +97,8 @@
                 "title": "Licensing Microsoft 365",
                 "period": "novembre 2023",
                 "duration": "3 jours",
-                "description": "Modernisation de l'attribution de licences Microsoft 365"
+                "description": "Modernisation de l'attribution de licences Microsoft 365",
+                "tags": ["microsoft365", "powershell"]
             }
         ]
     },
@@ -99,14 +110,16 @@
                 "title": "Intégration KACE SMA",
                 "period": "décembre 2018",
                 "duration": "5 jours",
-                "description": "Installation et configuration de KACE SMA avec formation des équipes"
+                "description": "Installation et configuration de KACE SMA avec formation des équipes",
+                "tags": ["quest", "kace"]
             },
             {
                 "customer": "Industriel, Saint-Malo",
                 "title": "Masterisation PDT",
                 "period": "septembre 2018",
                 "duration": "3 semaines",
-                "description": "Masterisation de postes de travail avec MDT et support N2"
+                "description": "Masterisation de postes de travail avec MDT et support N2",
+                "tags": ["windows", "mdt"]
             }
         ]
     }
