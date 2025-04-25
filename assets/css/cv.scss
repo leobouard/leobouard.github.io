@@ -296,6 +296,13 @@ div.project p {
     font-size: small;
 }
 
+div.project code {
+    background-color: var(--lightaccent);
+    padding: 4px;
+    border-radius: var(--borderradius);
+    border: var(--border);
+}
+
 // CV WRAPPER
 
 .cv-wrapper {
