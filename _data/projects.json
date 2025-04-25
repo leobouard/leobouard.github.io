@@ -3,30 +3,35 @@
         "year": 2025,
         "projects":  [
             {
+                "customer": "Imprimerie, Rennes", 
                 "title": "Migration Quest MPAD",
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
                 "description": "Migration Active Directory avec Quest Migrator Pro"
             },
             {
+                "customer": "Agroalimentaire, Rennes", 
                 "title": "Expertise Active Directory",
                 "period": "avril 2025",
                 "duration": "1 jour",
                 "description": "Identification et résolution d'un problème d'authentification entre deux forêts"
             },
             {
+                "customer": "Banque et assurance, Brest", 
                 "title": "Intégration GPOADmin",
                 "period": "mars 2025",
                 "duration": "2 jours",
                 "description": "Installation et configuration de Quest GPOADmin et production de la documentation d'exploitation"
             },
             {
+                "customer": "Services à la personne, Laval", 
                 "title": "Peuplement Entra ID",
                 "period": "février 2025",
                 "duration": "4 jours",
                 "description": "Peuplement et nettoyage de Entra ID à partir de plusieurs sources externes"
             },
             {
+                "customer": "Coopérative agricole, Saint-Brieuc", 
                 "title": "Expertise PowerShell",
                 "period": "de janvier 2025 à mars 2025",
                 "duration": "5 jours",
@@ -38,24 +43,35 @@
         "year": 2024,
         "projects": [
             {
+                "customer": "Hôtellerie, Brest",
                 "title": "Sécurisation Active Directory",
                 "period": "de octobre 2024 à janvier 2025",
                 "duration": "10 jours",
                 "description": "Sécurisation de Active Directory et automatisation de processus en PowerShell"
             },
             {
+                "customer": "Coopérative agricole, Brest",
                 "title": "Intégration tiering-model",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "au forfait",
                 "description": "Sécurisation de Active Directory et mise en place du tiering-model"
             },
             {
+                "customer": "Industriel, Saint-Malo",
+                "title": "Architecte Active Directory",
+                "period": "de avril 2024 à juillet 2025",
+                "duration": "5 jours par mois",
+                "description": "Référent technique sur les projets Active Directory"
+            },
+            {
+                "customer": "Industriel, Saint-Malo",
                 "title": "Consultant AD et M365",
                 "period": "de avril 2024 à mai 2025",
                 "duration": "40 jours",
                 "description": "Audit et sécurisation de Active Directory et optimisation du tenant Microsoft 365"
             },
             {
+                "customer": "Conseil et informatique, Paris",
                 "title": "Formation PowerShell",
                 "period": "avril 2024",
                 "duration": "4 jours",
@@ -67,6 +83,7 @@
         "year": 2023,
         "projects": [
             {
+                "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Licensing Microsoft 365",
                 "period": "novembre 2023",
                 "duration": "3 jours",
@@ -78,12 +95,14 @@
         "year": 2018,
         "projects": [
             {
+                "customer": "Laboratoire, Saint-Brieuc",
                 "title": "Intégration KACE SMA",
                 "period": "décembre 2018",
                 "duration": "5 jours",
                 "description": "Installation et configuration de KACE SMA avec formation des équipes"
             },
             {
+                "customer": "Industriel, Saint-Malo",
                 "title": "Masterisation PDT",
                 "period": "septembre 2018",
                 "duration": "3 semaines",

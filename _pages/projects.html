@@ -13,6 +13,7 @@ description: "Liste des projets sur lesquels j'ai travaillé"
   <div class="project-per-year">
     {% for project in year.projects %}
       <div class="project">
+        <span>{{ project.customer }}</span>
         <h4>{{ project.title }}</h4>
         <small>{{ project.period }} • {{ project.duration }}</small>
         <p>{{ project.description }}</p>

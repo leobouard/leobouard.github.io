@@ -277,6 +277,12 @@ div.project-per-year {
     grid-gap: 0.5em;
 }
 
+div.project span {
+    color: var(--primary);
+    font-size: small;
+    font-weight: 500;
+}
+
 div.project h4 {
     margin: 0;
 }
