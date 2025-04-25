@@ -17,7 +17,7 @@ description: "Liste des projets sur lesquels j'ai travaillé"
         <h4>{{ project.title }}</h4>
         <small>{{ project.period }} • {{ project.duration }}</small>
         <p>{{ project.description }}</p>
-        {% for tag in project.tags %}<code>#{{ tag }}</span>" "{% endfor %}
+        {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}
       </div>
     {% endfor %}
   </div>
