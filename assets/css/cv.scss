@@ -257,10 +257,24 @@ div.call-to-website {
 }
 
 // PROJECTS
-div.project {
-    border: var(--border);
-    border-radius: var(--borderradius);
-    padding: 1em;
+
+div.project-container {
+    display: flex;
+    margin: 1em 0;
+}
+
+div.project-container h3 {
+    margin: 0;
+    margin-right: 1em;
+    width: 3em;
+}
+
+div.project-per-year {
+    border-left: 1px solid var(--mediumaccent);
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.5em;
 }
 
 div.project h4 {

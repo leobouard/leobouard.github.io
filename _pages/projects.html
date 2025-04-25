@@ -8,9 +8,9 @@ description: "Liste des projets sur lesquels j'ai travaillé"
 <h2>Projets en clientèle</h2>
 
 {% for year in site.data.projects %}
-<div style="display: flex; margin: 1em 0;">
-  <h3 style="margin: 0; margin-right: 1em; width: 3em;">{{ year.year }}</h3>
-  <div style="border-left: 1px solid var(--mediumaccent); padding-left: 1em; display: flex; flex-direction: column; grid-gap: 0.5em;">
+<div class="project-container" style="">
+  <h3>{{ year.year }}</h3>
+  <div class="project-per-year">
     {% for project in year.projects %}
       <div class="project">
         <h4>{{ project.title }}</h4>
