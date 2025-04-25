@@ -1,0 +1,18 @@
+---
+permalink: /projects
+title: "Projets"
+description: "Liste des projets sur lesquels j'ai travaillé"
+---
+
+<h1>Projets</h1>
+<h2>Projets en clientèle</h2>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(18em, 100%), 1fr)); grid-gap: 0.5em;">
+  {% for project in site.data.projects %}
+    <div class="project">
+      <h4>{{ project.title }}</h4>
+      <small>{{ project.period }} • {{ project.duration }}</small>
+      <p>{{ project.description }}</p>
+    </div>
+  {% endfor %}
+</div>

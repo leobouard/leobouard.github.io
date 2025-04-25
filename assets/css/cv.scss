@@ -256,6 +256,26 @@ div.call-to-website {
     }
 }
 
+// PROJECTS
+div.project {
+    border: var(--border);
+    border-radius: var(--borderradius);
+    padding: 1em;
+}
+
+div.project h4 {
+    margin: 0;
+}
+
+div.project small {
+    color: var(--heavyaccent);
+}
+
+div.project p {
+    margin: 0;
+    font-size: small;
+}
+
 // CV WRAPPER
 
 .cv-wrapper {
