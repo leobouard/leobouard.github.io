@@ -27,6 +27,10 @@ i.open-indicator-experience {
     font-size: small;
 }
 
+details.enterprise {
+    break-inside: avoid;
+}
+
 details.enterprise[open] i.open-indicator-enterprise {
     transform: rotate(0deg);
 }
