@@ -4,10 +4,10 @@
         "projects":  [
             {
                 "customer": "Imprimerie, Rennes", 
-                "title": "Migration Quest MPAD",
+                "title": "Migration Active Directory",
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
-                "description": "Migration Active Directory avec Quest Migrator Pro",
+                "description": "Migration Active Directory avec Quest Migrator Pro (MPAD)",
                 "tags": ["activedirectory", "quest", "mpad"]
             },
             {
@@ -49,7 +49,7 @@
         "projects": [
             {
                 "customer": "Hôtellerie, Brest",
-                "title": "Sécurisation Active Directory",
+                "title": "Architecte Active Directory",
                 "period": "de octobre 2024 à janvier 2025",
                 "duration": "10 jours",
                 "description": "Sécurisation de Active Directory et automatisation de processus en PowerShell",
@@ -57,7 +57,7 @@
             },
             {
                 "customer": "Coopérative agricole, Brest",
-                "title": "Intégration tiering-model",
+                "title": "Architecte Active Directory",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "au forfait",
                 "description": "Sécurisation de Active Directory et mise en place du tiering-model",
@@ -73,7 +73,7 @@
             },
             {
                 "customer": "Industriel, Saint-Malo",
-                "title": "Consultant AD et M365",
+                "title": "Consultant Active Directory et Microsoft 365",
                 "period": "de avril 2024 à mai 2025",
                 "duration": "40 jours",
                 "description": "Audit et sécurisation de Active Directory et optimisation du tenant Microsoft 365",
@@ -81,7 +81,7 @@
             },
             {
                 "customer": "Conseil et informatique, Paris",
-                "title": "Formation PowerShell",
+                "title": "Formateur PowerShell",
                 "period": "avril 2024",
                 "duration": "4 jours",
                 "description": "Formation sur les bases de PowerShell à destination d'étudiants en alternance",
@@ -94,7 +94,7 @@
         "projects": [
             {
                 "customer": "Coopérative agricole, Saint-Brieuc",
-                "title": "Licensing Microsoft 365",
+                "title": "Consultant Microsoft 365",
                 "period": "novembre 2023",
                 "duration": "3 jours",
                 "description": "Modernisation de l'attribution de licences Microsoft 365",
@@ -112,14 +112,6 @@
                 "duration": "5 jours",
                 "description": "Installation et configuration de KACE SMA avec formation des équipes",
                 "tags": ["quest", "kace"]
-            },
-            {
-                "customer": "Industriel, Saint-Malo",
-                "title": "Masterisation PDT",
-                "period": "septembre 2018",
-                "duration": "3 semaines",
-                "description": "Masterisation de postes de travail avec MDT et support N2",
-                "tags": ["windows", "mdt"]
             }
         ]
     }
