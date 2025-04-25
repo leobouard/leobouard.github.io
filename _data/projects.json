@@ -7,7 +7,7 @@
                 "title": "Migration Active Directory",
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
-                "description": "Migration Active Directory avec Quest Migrator Pro (MPAD)",
+                "description": "Migration d'utilisateurs et de groupes Active Directory entre deux forêts avec Quest Migrator Pro (MPAD)",
                 "tags": ["activedirectory", "quest", "mpad"]
             },
             {
@@ -15,7 +15,7 @@
                 "title": "Consultant Active Directory",
                 "period": "avril 2025",
                 "duration": "1 jour",
-                "description": "Identification et résolution d'un problème d'authentification entre deux forêts",
+                "description": "Identification et résolution d'un problème d'authentification sélective entre deux forêts",
                 "tags": ["activedirectory"]
             },
             {
@@ -39,7 +39,7 @@
                 "title": "Consultant PowerShell",
                 "period": "de janvier 2025 à mars 2025",
                 "duration": "5 jours",
-                "description": "Conception de scripts PowerShell a destination de la supervision PRTG et pour le PRA",
+                "description": "Conception de scripts PowerShell a destination de la supervision PRTG",
                 "tags": ["powershell", "prtg"]
             }
         ]
@@ -52,7 +52,7 @@
                 "title": "Architecte Active Directory",
                 "period": "de octobre 2024 à janvier 2025",
                 "duration": "10 jours",
-                "description": "Sécurisation de Active Directory et automatisation de processus en PowerShell",
+                "description": "Sécurisation et application des bonnes pratiques sur Active Directory et automatisation de processus en PowerShell",
                 "tags": ["activedirectory", "powershell"]
             },
             {
@@ -60,7 +60,7 @@
                 "title": "Architecte Active Directory",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "au forfait",
-                "description": "Sécurisation de Active Directory et mise en place du tiering-model",
+                "description": "Projet de sécurisation du domaine Active Directory et mise en place du tiering-model",
                 "tags": ["activedirectory", "powershell"]
             },
             {
@@ -68,7 +68,7 @@
                 "title": "Architecte Active Directory",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "5 jours par mois",
-                "description": "Référent technique sur les projets Active Directory",
+                "description": "Référent technique sur les projets Active Directory et l'automatisation avec PowerShell",
                 "tags": ["activedirectory", "powershell"]
             },
             {
@@ -97,7 +97,7 @@
                 "title": "Consultant Microsoft 365",
                 "period": "novembre 2023",
                 "duration": "3 jours",
-                "description": "Modernisation de l'attribution de licences Microsoft 365",
+                "description": "Migration de l'attribution de licences Microsoft 365 et adaptation des scripts PowerShell vers Microsoft Graph",
                 "tags": ["microsoft365", "powershell"]
             }
         ]
