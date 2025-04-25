@@ -12,7 +12,7 @@
             },
             {
                 "customer": "Agroalimentaire, Rennes", 
-                "title": "Expertise Active Directory",
+                "title": "Consultant Active Directory",
                 "period": "avril 2025",
                 "duration": "1 jour",
                 "description": "Identification et résolution d'un problème d'authentification entre deux forêts",
@@ -28,7 +28,7 @@
             },
             {
                 "customer": "Services à la personne, Laval", 
-                "title": "Peuplement Entra ID",
+                "title": "Consultant Microsoft Entra ID",
                 "period": "février 2025",
                 "duration": "4 jours",
                 "description": "Peuplement et nettoyage de Entra ID à partir de plusieurs sources externes",
@@ -36,7 +36,7 @@
             },
             {
                 "customer": "Coopérative agricole, Saint-Brieuc", 
-                "title": "Expertise PowerShell",
+                "title": "Consultant PowerShell",
                 "period": "de janvier 2025 à mars 2025",
                 "duration": "5 jours",
                 "description": "Conception de scripts PowerShell a destination de la supervision PRTG et pour le PRA",
