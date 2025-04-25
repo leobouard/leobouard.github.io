@@ -237,6 +237,23 @@ div.personalInfo ul i {
     height: 100%;
 }
 
+// CALL TO WEBSITE
+
+div.call-to-website {
+    display: none;
+    background: var(--accent);
+    color: var(--background);
+    font-family: var(--titlefont);
+    text-align: center;
+    margin: auto;
+}
+
+@media print {
+    div.call-to-website {
+        display: block;
+    }
+}
+
 // CV WRAPPER
 
 .cv-wrapper {
