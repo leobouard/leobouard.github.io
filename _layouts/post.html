@@ -67,7 +67,7 @@ layout: default
 <section class="recommandation">
   {% assign post = site.posts | where: "listed", true | sample %}
   <span class="recommandation">Cet article pourrait-il vous intéresser ?
-    {{ include doodle-arrow.html }}
+    {% include doodle-arrow.html %}
   </span>
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
 </section>
