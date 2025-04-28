@@ -51,13 +51,14 @@ section.recommandation {
     justify-content: flex-end;
 }
 
-span.recommandation {
+section.recommandation span {
     font-family: var(--titlefont);
     max-width: 310px;
     font-size: x-large;
     text-align: center;
     line-height: 140%;
     margin: 20px;
+    display: block;
 }
 
 section.recommandation svg {

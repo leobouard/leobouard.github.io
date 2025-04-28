@@ -66,9 +66,10 @@ layout: default
 {% if page.nextLink == nil %}
 <section class="recommandation">
   {% assign post = site.posts | where: "listed", true | sample %}
-  <span class="recommandation">Cet article pourrait-il vous intéresser ?
+  <div>
+    <span class="recommandation">Cet article pourrait-il vous intéresser ?</span>
     {% include doodle-arrow.html %}
-  </span>
+  </div>
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
 </section>
 {% endif %}
