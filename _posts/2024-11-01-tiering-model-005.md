@@ -95,7 +95,7 @@ Depuis le niveau fonctionnel de domaine Active Directory Windows Server 2012 R2,
 
 Dans ce guide/retour d'expérience, je ne parle pas cette technologie pour une simple et bonne raison : je ne suis actuellement pas à l'aise avec l'utilisation de cette technologie sur un environnement de production, surtout dans des entreprises qui n'ont pas d'équipe dédiée à Active Directory.
 
-L'avantage principal de cette technologie est qu'elle bloque l'authentification avant le résultat du challenge des identifiants, contrairement aux GPOs qui effectue le blocage après la réussite du challenge.
+L'avantage principal de cette technologie est qu'elle bloque l'authentification avant le résultat du challenge des identifiants, contrairement aux GPOs qui effectuent le blocage après la réussite du challenge.
 
 ### Contraintes
 
