@@ -11,6 +11,7 @@ section.blog-header {
     position: relative;
     padding: 2rem;
     max-width: 800px;
+    border-radius: var(--borderradius);
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -49,10 +50,12 @@ section.recommandation {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    box-shadow: 4px 4px 0 0 var(--secondary);
 }
 
 span.recommandation {
     font-family: var(--titlefont);
+    color: var(--background);
     max-width: 310px;
     font-size: x-large;
     text-align: center;
@@ -64,8 +67,8 @@ span.recommandation {
 section.recommandation svg {
     rotate: 54deg;
     transform: scaleY(-1);
-    width: 120px;
-    margin-right: 10px;
+    margin: -1em 5em;
+    height: 7em;
 }
 
 @media screen and (max-width: 700px) {
@@ -76,7 +79,7 @@ section.recommandation svg {
         justify-content: center;
     }
 
-    img.recommandation {
+    section.recommandation svg {
         display: none;
     }
 }
