@@ -2,8 +2,9 @@ section.blog-header {
     background: var(--accent);
     color: var(--background);
     margin: 1em;
-    box-shadow: 8px 8px 0 0 var(--secondary);
+    box-shadow: 4px 4px 0 0 var(--secondary);
     border-radius: var(--borderradius);
+    font-family: var(--titlefont);
 }
 
 section.blog-header button {
@@ -18,7 +19,6 @@ section.blog-header button {
 }
 
 section.blog-header span {
-    font-family: var(--titlefont);
     font-size: 2em;
 }
 
