@@ -9,7 +9,10 @@ a.button-primary {
     color: var(--primary);
     background: var(--background);
     border-radius: var(--borderradius);
-    font-weight: bold;
+}
+
+a.button-primary:hover {
+    background: var(--lightaccent)
 }
 
 a.small {
