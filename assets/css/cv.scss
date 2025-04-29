@@ -256,7 +256,7 @@ div.call-to-website {
     }
 
     .hide-on-print {
-        display: none;
+        display: none !important;
     }
 }
 
