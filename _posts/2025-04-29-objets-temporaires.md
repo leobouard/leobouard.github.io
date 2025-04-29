@@ -20,7 +20,7 @@ Les objets dynamiques :
 - peuvent prendre la forme de n'importe quelle classe d'objet dans Active Directory
 - sont créés avec une durée de vie qui est comprise entre 15 min et 1 an
 - ont leur durée de vie restante indiquée en secondes dans l'attribut `entryTTL`
-- ont leur date de suppression visible dans l'attribut `msDS-Entry-Time-To-Die` (au format UTC)
+- ont leur date de suppression visible dans l'attribut `msDS-Entry-Time-To-Die`
 - disparaissent sans laisser de trace (ne passent pas par la case corbeille Active Directory)
 - ne peuvent pas être créés dans la partition "Configuration" ou "Schéma" de Active Directory
 
