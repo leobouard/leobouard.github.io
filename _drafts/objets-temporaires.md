@@ -30,9 +30,9 @@ Pour le dernier point : il s'agit d'une mesure de sécurité pour éviter de dé
 
 Dans un commentaire sur l'article de Narayanan Subramanian, [Joe Richards](https://joeware.net/) annonce cependant qu'il y aurait plusieurs manière de créer un objet dynamique dans l'une de ces deux partitions, laissant ainsi une bombe à retardement dans le domaine.
 
-Commentaire original :
+**Commentaire original :**
 
-> [...] we had a sit down with [Microsoft] about how to blow up an entire AD forest in seconds, or worse, leave a time bomb.
+> [...] We had a sit down with [Microsoft] about how to blow up an entire AD forest in seconds, or worse, leave a time bomb.
 >
 > I still remember a few guys from the [Product Group] sitting in a room in Redmond and Dean said this is what is possible and they said no it isn't and then boom he showed a whole schema disappear on a test forest right in front of them. [...]
 >
@@ -42,7 +42,9 @@ Commentaire original :
 
 ### Contrôle de la configuration par défaut
 
-Il existe deux paramètres sur les objets dynamiques dans la configuration du domaine Active Directory : `DynamicObjectMinTTL` et `DynamicObjectDefaultTTL`. Les deux valeurs se trouvent dans l'attribut `msDS-Other-Settings` présent sur l'objet `contoso.com/Configuration/Services/Windows NT/Directory Service`.
+Il existe deux paramètres sur les objets dynamiques dans la configuration du domaine Active Directory : `DynamicObjectMinTTL` et `DynamicObjectDefaultTTL`.
+
+Les deux valeurs se trouvent dans l'attribut `msDS-Other-Settings` présent sur l'objet *contoso.com/Configuration/Services/Windows NT/Directory Service*.
 
 Paramètre | Valeur par défaut | Description
 --------- | ----------------- | -----------
@@ -74,7 +76,7 @@ Ou plus simplement avec une fonction personnalisée : [New-ADDynamicObject](http
 New-ADDynamicObject -Name 'dynamicUser' -Path 'OU=Users,DC=contoso,DC=com' -TimeToLive 900 -ObjectType user
 ```
 
-Ces commandes vont créer un objet dynamique de type utilisateur nommé "dynamicUser" sous `contoso.com/Users` avec une durée de vie de 900 secondes (15 minutes).
+Ces commandes vont créer un objet dynamique de type utilisateur nommé "dynamicUser" sous *contoso.com/Users* avec une durée de vie de 900 secondes (15 minutes).
 
 ### Modifier la durée de vie d'un objet dynamique
 
@@ -96,21 +98,61 @@ A la place, on peut utiliser `msDS-Entry-Time-To-Die` qui contient la date progr
 Get-ADObject -LDAPFilter '(msDS-Entry-Time-To-Die=*)' -Properties entryTTL, msDS-Entry-Time-To-Die
 ```
 
-## Comportement d'un objet dynamique
+Résultat :
 
-### Création d'un objet statique dans un objet dynamique
+```plaintext
+DistinguishedName      : CN=dynamicUser,CN=Users,DC=contoso,DC=com
+entryTTL               : 682
+msDS-Entry-Time-To-Die : 29/04/2025 15:40:07
+Name                   : dynamicUser
+ObjectClass            : user
+ObjectGUID             : 3cc5722f-c427-4918-a787-0bec0b3adf58
 
-Lorsque vous 
-
-Aucun problème en revanche pour créer un objet dynamique dans un autre objet dynamique
-
-"Windows cannot create the object testGroup because: The server is unwilling to process the request"
-
-## Détection de la création d'objet dynamique
-
-```powershell
-$filterXPath = "Event[System[EventID=5136]] and *[EventData[Data[@Name='AttributeValue']='1.3.6.1.4.1.1466.101.119.2']]"
-Get-WinEvent -ProviderName Microsoft-Windows-Security-Auditing -FilterXPath $filterXPath
+DistinguishedName      : OU=dynamicOU,DC=contoso,DC=com
+entryTTL               : 817
+msDS-Entry-Time-To-Die : 29/04/2025 15:42:22
+Name                   : dynamicOU
+ObjectClass            : organizationalUnit
+ObjectGUID             : f5c7be5f-b006-4b94-b937-3c079a9cdf25
 ```
 
-[AD Object Detection: Detecting the undetectable (dynamicObject) \| Microsoft Learn](https://learn.microsoft.com/en-us/archive/blogs/pfesweplat/ad-object-detection-detecting-the-undetectable-dynamicobject)
+### Imbrication entre objets statiques et dynamiques
+
+A la création, il est impossible d'ajouter un objet statique "staticUser" au sein d'un objet dynamique "dynamicOU".
+
+Si vous essayer de faire cela, vous obtiendrez le message d'erreur générique suivant : *"Windows cannot create the object staticUser because: The server is unwilling to process the request"*.
+
+```powershell
+New-ADUser staticUser -Path 'OU=dynamicOU,DC=contoso,DC=com'
+```
+
+Cependant, ce mécanisme de protection ne fonctionne qu'à la création de l'objet enfant. Vous pouvez donc créer votre utilisateur "staticUser" ailleurs dans le domaine pour le déplacer ensuite vers l'objet parent "dynamicOU" :
+
+```powershell
+New-ADUser staticUser -Path 'CN=Users,DC=contoso,DC=com'
+Move-ADObject (Get-ADUser staticUser) -TargetPath 'OU=dynamicOU,DC=contoso,DC=com'
+```
+
+Dans le cas où un objet dynamique serait le parent d'au moins un objet statique, l'objet dynamique **ne sera pas supprimé** automatiquement (même lorsque `entryTTL` tombe à zéro) :
+
+```plaintext
+DistinguishedName      : OU=dynamicOU,DC=contoso,DC=com
+entryTTL               : 0
+msDS-Entry-Time-To-Die : 29/04/2025 15:42:22
+Name                   : dynamicOU
+ObjectClass            : organizationalUnit
+ObjectGUID             : f5c7be5f-b006-4b94-b937-3c079a9cdf25
+```
+
+Si il n'y a plus aucun objet statique enfant d'un objet dynamique avec un `entryTTL = 0`, alors l'objet dynamique sera automatiquement supprimé.
+
+### Fin de vie d'un objet dynamique
+
+Lorsque la valeur de l'attribut `entryTTL` arrive à zéro, l'objet disparaît du domaine Active Directory sans laisser de trace (ne tombe pas dans la corbeille).
+
+```powershell
+Get-ADObject -Filter {SamAccountName -eq 'dynamicUser'} -IncludeDeletedObjects
+```
+
+> En pratique, la suppression de l'objet ne se fait pas immédiatement après que l'attribut `entryTTL` ai atteint 0.\
+> Il faut parfois attendre quelques minutes ou forcer une réplication pour que l'objet disparaisse.
