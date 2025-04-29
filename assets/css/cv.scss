@@ -254,6 +254,10 @@ div.call-to-website {
     div.call-to-website {
         display: block;
     }
+
+    .hide-on-print {
+        display: none;
+    }
 }
 
 // PROJECTS

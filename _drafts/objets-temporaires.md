@@ -15,25 +15,28 @@ Cet article est inspiré du post de Narayanan Subramanian sur Medium : [fun with
 
 ### Fonctionnement
 
-Les objets dynamiques : 
+Les objets dynamiques :
 
-- Peuvent prendre la forme de n'importe quelle classe d'objet dans Active Directory
-- Sont créés avec une durée de vie limitée qui est comprise entre 15 min minimum et 1 an maximum
-- Leur durée de vie est indiquée en secondes dans l'attribut `entryTTL`
-- L
+- peuvent prendre la forme de n'importe quelle classe d'objet dans Active Directory
+- sont créés avec une durée de vie qui est comprise entre 15 min et 1 an
+- ont leur durée de vie restante indiquée en secondes dans l'attribut `entryTTL`
+- ont leur date de suppression visible dans l'attribut `msDS-Entry-Time-To-Die` (au format UTC)
+- disparaissent sans laisser de trace (ne passent pas par la case corbeille Active Directory)
+- ne peuvent pas être créés dans la partition "Configuration" ou "Schéma" de Active Directory
 
 ### Création dans le schéma ou la partition
 
-Les objets dynamiques en bref :
+Pour le dernier point : il s'agit d'une mesure de sécurité pour éviter de détruire le domaine. En effet : il n'est pas possible de supprimer un objet qui a été ajouté dans le schéma. Ajouter un objet dynamique qui finira par disparaître dans le schéma ou la configuration va donc mener à une corruption pure et simple de votre Active Directory.
 
-- Ils sont avec une durée de vie en seconde, lorsque la durée de vie atteint 0, le compte disparaît du domaine sans passer par la corbeille Active Directory
-- Peuvent être des comptes utilisateurs, des groupes, des ordinateurs, des unités d'organisation...
-- Ne peuvent pas être créés dans la partition "Configuration" ou "Schéma" de Active Directory
+Dans un commentaire sur l'article de Narayanan Subramanian, [Joe Richards](https://joeware.net/) annonce cependant qu'il y aurait plusieurs manière de créer un objet dynamique dans l'une de ces deux partitions, laissant ainsi une bombe à retardement dans le domaine.
 
+Commentaire original :
 
-- Disparait sans laisser de trace, introuvable dans la corbeille Active Directory
-- Une OU "dynamique" ne peut pas contenir d'objet statique
-- La date de suppression est visible dans l'attribut `msDS-Entry-Time-To-Die` au format UTC
+> [...] we had a sit down with [Microsoft] about how to blow up an entire AD forest in seconds, or worse, leave a time bomb.
+>
+> I still remember a few guys from the [Product Group] sitting in a room in Redmond and Dean said this is what is possible and they said no it isn't and then boom he showed a whole schema disappear on a test forest right in front of them. [...]
+>
+> Then we pointed out multiple different ways it could be done via different angles with the dynamic object functionality [...]
 
 ## Création d'un objet dynamique
 
@@ -75,7 +78,7 @@ Ces commandes vont créer un objet dynamique de type utilisateur nommé "dynamic
 
 ### Modifier la durée de vie d'un objet dynamique
 
-Avec la commande suivante, on va aller modifier directement la valeur de l'attribut `entryTTL` qui contient la durée de vie restante pour l'objet. Cette action permet donc de prolonger la durée de vie d'un objet si besoin.
+Avec la commande suivante, on va aller modifier directement la valeur de l'attribut `entryTTL` qui contient la durée de vie restante pour l'objet. Cette action permet donc de prolonger (ou réduire) la durée de vie d'un objet.
 
 ```powershell
 Get-ADObject -Filter {SamAccountName -eq 'dynamicUser'} | Set-ADObject -Replace @{entryTTL = 900}
@@ -85,7 +88,7 @@ Get-ADObject -Filter {SamAccountName -eq 'dynamicUser'} | Set-ADObject -Replace 
 
 ### Lister tous les objets dynamiques du domaine
 
-Pour lister les objets dynamique, il n'est pas possible d'utiliser l'attribut `entryTTL`. La valeur de celui-ci n'étant pas fixe (elle est calculée en temps réel), il est impossible de l'utiliser comme filtre. Vous tomberez sur l'erreur suivante : *Get-ADObject : A Filter was passed that uses constructed attributes*.
+Pour lister les objets dynamiques, il n'est pas possible d'utiliser l'attribut `entryTTL`. La valeur de celui-ci n'étant pas fixe (elle est calculée en temps réel), il est impossible de l'utiliser comme filtre. Vous tomberez sur l'erreur suivante : *Get-ADObject : A Filter was passed that uses constructed attributes*.
 
 A la place, on peut utiliser `msDS-Entry-Time-To-Die` qui contient la date programmée de fin de vie de l'objet (valeur fixe) :
 
