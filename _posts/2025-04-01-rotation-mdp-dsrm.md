@@ -11,7 +11,7 @@ listed: true
 
 Le compte DSRM est l'équivalent d'un compte administrateur local pour un contrôleur de domaine, à utiliser en cas de problème avec votre service Active Directory. Pour plus d'informations, vous pouvez consulter cet article : [Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](/2025/02/24/compte-de-recuperation-rodc).
 
-Celui-ci est important pour le PRA de votre Active Directory et doit impérativement être renouvelé périodiquement et être unique pour chaque contrôleur de domaine.
+Celui-ci est important pour le PRA de votre Active Directory. Il doit impérativement être renouvelé périodiquement et être unique pour chaque contrôleur de domaine.
 
 ### Pourquoi changer régulièrement le mot de passe DSRM ?
 
@@ -21,9 +21,9 @@ Pour la fréquence de renouvellement, il est conseillé de changer les mots de p
 
 ### Pourquoi ne pas partager le même mot de passe sur tous les contrôleurs de domaine ?
 
-Même si il s'agit d'une règle d'hygiène simple en sécurité informatique, il est bon de rappeler les bases. L'intérêt d'utiliser un mot de passe différent est d'éviter le déplacement d'un attaquant vers d'autres ressources, qui n'ont pas toujours le même niveau de criticité.
+Même s'il s'agit d'une règle d'hygiène simple en sécurité informatique, il est bon de rappeler les bases. L'intérêt d'utiliser un mot de passe différent est d'éviter le déplacement d'un attaquant vers d'autres ressources, qui n'ont pas toujours le même niveau de criticité.
 
-Ainsi si le mot de passe est identique entre des RODCs et les contrôleurs de domaines en lecture/écriture, un attaquant peut entrer sur un RODC (qui contient un nombre limité de hash) et se déplacer sur un DC qui contiendrait tous les hashs du domaine.
+Ainsi, si le mot de passe est identique entre des RODC et les RWDC, un attaquant peut entrer sur un RODC (qui contient un nombre limité de hash) et se déplacer sur un DC qui contiendrait tous les hashs du domaine.
 
 ### Contraintes liées au compte DSRM
 
@@ -67,7 +67,7 @@ Contrainte | État | Commentaire
 ---------- | ---- | -----------
 Mot de passe unique | ✅ | Un mot de passe par contrôleur de domaine
 Traçabilité du changement | ⚠️ | Date de changement sauvegardée uniquement au changement via le script
-Sauvegarde en dehors du domaine | ✅ | Le script fourni un rapport exportable en CSV
+Sauvegarde en dehors du domaine | ✅ | Le script fournit un rapport exportable en CSV
 Validité du mot de passe | ⚠️ | La vérification n'est faite qu'au changement du mot de passe
 
 ## Windows LAPS
@@ -90,7 +90,7 @@ Windows LAPS est disponible nativement sur les versions suivantes (si celles-ci 
 - Windows 11 à partir de la version 21H2
 - Windows 10 à partir de la version 20H2
 
-Note : Il n'est pas possible "d'installer" Windows LAPS sur une version non-compatible de Windows / Windows Server.
+Note : Il n'est pas possible d'installer Windows LAPS sur une version non-compatible de Windows / Windows Server.
 
 ### Paramétrage de la GPO
 
@@ -108,7 +108,7 @@ On peut récupérer facilement le mot de passe du compte DSRM avec la commande P
 Get-LapsADPassword DC01.contoso.com -AsPlainText
 ```
 
-Ce qui va donner ce résultat :
+Ce qui donnera ce résultat :
 
 ```plaintext
 ComputerName        : DC01
@@ -128,7 +128,7 @@ Une fois que le mot de passe DSRM est géré par Windows LAPS, **il n'est plus p
 
 Si vous essayez, vous obtiendrez l'erreur suivante : `WIN32 Error Code: 0x21ce. Error Message: The account is controlled by external policy and cannot be modified.`
 
-A la place, il faut exécuter cette ligne de commande sur le contrôleur de domaine :
+À la place, il faut exécuter cette ligne de commande sur le contrôleur de domaine :
 
 ```powershell
 Reset-LapsPassword
@@ -150,9 +150,9 @@ Cette méthode **n'est plus recommandée par Microsoft depuis 2018**, car elle p
 Contrainte | État | Commentaire
 ---------- | ---- | -----------
 Mot de passe unique | ❌ | Le mot de passe est identique entre tous les contrôleurs de domaine
-Traçabilité du changement | ⚠️ | On peut consulter l'âge du mot de passe du compte cible, mais cela ne garanti pas l'âge du mot de passe DSRM sur le DC
+Traçabilité du changement | ⚠️ | On peut consulter l'âge du mot de passe du compte cible, mais c'est à vous de surveiller l'âge du mot de passe DSRM sur le DC
 Sauvegarde en dehors du domaine | ⚠️ | La sauvegarde des mots de passe sur un autre support est à votre charge
-Validité du mot de passe | ⚠️ | A vous de surveiller le résultat des tâches planifiées sur chaque contrôleur de domaine
+Validité du mot de passe | ⚠️ | À vous de surveiller le résultat des tâches planifiées sur chaque contrôleur de domaine
 
 ## Tâche planifiée (nouvelle version)
 
@@ -182,7 +182,7 @@ Si vous avez deux contrôleurs de domaine DC01 et DC02, vous devriez avoir deux 
 
 Afin que votre RODC puisse récupérer le hash du mot de passe du compte cible, vous devez impérativement ajouter le compte dans la Password Replication Policy du RODC.
 
-Plus d'informations ici : [Synchronisation du compte DSRM depuis un RODC - Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](https://www.labouabouate.fr/2025/02/24/compte-de-recuperation-rodc#synchronisation-du-compte-dsrm-depuis-un-rodc)
+Pour plus d'informations, vous pouvez consulter : [Synchronisation du compte DSRM depuis un RODC - Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](https://www.labouabouate.fr/2025/02/24/compte-de-recuperation-rodc#synchronisation-du-compte-dsrm-depuis-un-rodc)
 
 ### Création de la tâche planifiée
 
@@ -225,7 +225,7 @@ Pour la rotation des mots de passe DSRM, vous n'avez plus qu'à modifier les mot
 
 ### Vérification
 
-A vous de vérifier la bonne exécution de la tâche planifiée, et la modification du mot de passe du compte DSRM.
+À vous de vérifier la bonne exécution de la tâche planifiée, et la modification du mot de passe du compte DSRM.
 
 Plus d'informations ici : [Surveillance du compte DSRM - Le compte DSRM sur un contrôleur de domaine \| LaBouaBouate](https://www.labouabouate.fr/2025/02/24/compte-de-recuperation-rodc#surveillance-du-compte-dsrm)
 
@@ -234,13 +234,13 @@ Contrainte | État | Commentaire
 Mot de passe unique | ✅ | Un mot de passe par contrôleur de domaine
 Traçabilité du changement | ⚠️ | On peut consulter l'âge du mot de passe du compte cible, mais cela ne garanti pas l'âge du mot de passe DSRM sur le DC
 Sauvegarde en dehors du domaine | ⚠️ | La sauvegarde des mots de passe sur un autre support est à votre charge
-Validité du mot de passe | ⚠️ | A vous de surveiller le résultat des tâches planifiées sur chaque contrôleur de domaine
+Validité du mot de passe | ⚠️ | À vous de surveiller le résultat des tâches planifiées sur chaque contrôleur de domaine
 
 ## Conclusion
 
 Voici un classement personnel sur les différentes méthodes pour gérer la rotation de vos mots de passe DSRM :
 
-1. **Windows LAPS** si votre environnement est compatible, c'est de loin la meilleur solution disponible actuellement.
+1. **Windows LAPS** si votre environnement est compatible, c'est de loin la meilleure solution disponible actuellement.
 2. **NTDSUTIL** si votre environnement n'est pas compatible avec Windows LAPS, c'est l'option la plus simple.
 3. **Tâche planifiée :** techniquement faisable, mais trop complexe à maintenir pour gérer un processus aussi sensible.
 
