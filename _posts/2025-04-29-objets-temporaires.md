@@ -73,7 +73,7 @@ Get-ADObject $path -Properties 'msDS-Other-Settings'
 Il n'existe pas de commande PowerShell issue du module Active Directory pour créer un objet dynamique, l'utilisation de .NET est obligatoire. Voici un exemple de code pour créer un objet dynamique de type "utilisateur" :
 
 ```powershell
-$dynamicObject = ([ADSI]("LDAP://OU=Users,DC=contoso,DC=com")).Create('user', 'CN=dynamicUser,OU=Users,DC=contoso,DC=com')
+$dynamicObject = ([ADSI]("LDAP://OU=Users,DC=contoso,DC=com")).Create('user', 'CN=dynamicUser,CN=Users,DC=contoso,DC=com')
 $dynamicObject.PutEx(2, 'objectClass', @('dynamicObject', 'user'))
 $dynamicObject.Put('entryTTL', 900)
 $dynamicObject.SetInfo()
@@ -82,7 +82,7 @@ $dynamicObject.SetInfo()
 Ou plus simplement avec une fonction personnalisée : [New-ADDynamicObject](https://gist.github.com/leobouard/16f90612a5461d2a9cec49cad6056929)
 
 ```powershell
-New-ADDynamicObject -Name 'dynamicUser' -Path 'OU=Users,DC=contoso,DC=com' -TimeToLive 900 -ObjectType user
+New-ADDynamicObject -Name 'dynamicUser' -ObjectType user
 ```
 
 Ces commandes vont créer un objet dynamique de type utilisateur nommé "dynamicUser" sous *contoso.com/Users* avec une durée de vie de 900 secondes (15 minutes).
@@ -138,7 +138,7 @@ New-ADUser staticUser -Path 'OU=dynamicOU,DC=contoso,DC=com'
 Cependant, ce mécanisme de protection ne fonctionne qu'à la création de l'objet enfant. Vous pouvez donc créer votre utilisateur "staticUser" ailleurs dans le domaine pour le déplacer ensuite vers l'objet parent "dynamicOU" :
 
 ```powershell
-New-ADUser staticUser -Path 'CN=Users,DC=contoso,DC=com'
+New-ADUser staticUser
 Move-ADObject (Get-ADUser staticUser) -TargetPath 'OU=dynamicOU,DC=contoso,DC=com'
 ```
 
