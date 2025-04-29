@@ -21,17 +21,17 @@ Les PAW fournissent un environnement sécurisé pour les administrateurs, proté
 Il existe principalement deux modèles pour les PAW :
 
 - avec un PC physique dédié
-- par un serveur de rebond sur lequel on se connecte avec un bastion
+- par un serveur de rebond sur lequel on se connecte via un bastion
 
 ### PC physique dédié
 
-C'est le modèle le plus simple et le plus sécurisé puisque l'on sépare physiquement les usages. Un ordinateur sert à la navigation web, les tâches bureautiques, l'envoi d'emails, la documentation et les réunions (par exemple). L'autre ordinateur sert uniquement aux tâches d'administration du système d'information.
+C'est le modèle le plus simple et le plus sécurisé, puisqu'il sépare physiquement les usages. Un ordinateur sert à la navigation web, aux tâches bureautiques, à l'envoi d'emails, à la documentation et aux réunions (par exemple). L'autre ordinateur sert uniquement aux tâches d'administration du système d'information.
 
 Le PC dédié à l'administration est alors renforcé au maximum, avec tous les moyens utiles :
 
 - durcissement de l'OS
 - interdiction de déplacement avec cet ordinateur
-- restrictions réseaux et d'accès à Internet
+- restrictions réseau et d'accès à Internet
 - filtre de confidentialité obligatoire
 
 Si le niveau de sécurité de ce modèle est prouvé, la facilité d'usage au quotidien pour les administrateurs est lourdement impactée.
@@ -42,7 +42,7 @@ Un bastion sert de point d'accès sécurisé pour les administrateurs sur des re
 
 Dans ce scénario, on autorise l'accès à un serveur de rebond depuis le PC "bureautique" uniquement à travers ce bastion.
 
-Cette solution est de loin la plus facile à utiliser au quotidien (un seul ordinateur, la possibilité de faire du copier-coller rapidement, des captures d'écrans...), mais elle vient au prix d'une sécurité moindre, car un keylogger ou une faille dans le bastion pourrait mener à une escalade d'un attaquant vers des ressources critiques de votre Active Directory.
+Cette solution est de loin la plus facile à utiliser au quotidien (un seul ordinateur, la possibilité de faire du copier-coller rapidement, des captures d'écran...), mais elle vient au prix d'une sécurité moindre, car un keylogger ou une faille dans le bastion pourrait mener à une escalade d'un attaquant vers des ressources critiques de votre Active Directory.
 
 ## Renforcement de l'OS
 
