@@ -1,6 +1,6 @@
 ---
-title: "Object dynamiques dans Active Directory"
-description: "Cet objet s'auto-détruira dans 3, 2, 1..."
+title: "Les object dynamiques dans Active Directory"
+description: "Ce compte utilisateur s'auto-détruira dans trois, deux, un..."
 tags: active-directory
 listed: true
 ---
@@ -23,6 +23,15 @@ Les objets dynamiques :
 - ont leur date de suppression visible dans l'attribut `msDS-Entry-Time-To-Die` (au format UTC)
 - disparaissent sans laisser de trace (ne passent pas par la case corbeille Active Directory)
 - ne peuvent pas être créés dans la partition "Configuration" ou "Schéma" de Active Directory
+
+### Usage
+
+Je n'ai personnellement jamais vu des objets dynamiques utilisés en environnement de production. Probablement par méconnaissance puisque cette technologie est assez peu connue, mais surtout par manque d'intérêt selon moi :
+
+- l'utilisation d'une date d'expiration convient parfaitement pour suspendre un compte utilisateur après une certaine date
+- l'utilisation d'un rappel dans un calendrier souvent utilisé pour le reste des classes d'objets (groupe, ordinateur...)
+
+L'absence de commande PowerShell native et/ou d'option dans l'interface graphique rend également cette technologie inaccessible pour beaucoup d'administrateurs.
 
 ### Création dans le schéma ou la partition
 
