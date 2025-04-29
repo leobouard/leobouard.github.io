@@ -1,5 +1,5 @@
 ---
-title: "Les object dynamiques dans Active Directory"
+title: "Les objets dynamiques dans Active Directory"
 description: "Ce compte utilisateur s'auto-détruira dans trois, deux, un..."
 tags: active-directory
 listed: true
@@ -7,9 +7,9 @@ listed: true
 
 ## En bref
 
-Windows Server 2003 a introduit de nombreuses fonctionnalités dans Active Directory, dont la plupart sont encore utilisées aujourd'hui. Cependant, au moins une nouveauté de Windows Server 2003 est tombé aux oubliettes : **les objets dynamiques**.
+Windows Server 2003 a introduit de nombreuses fonctionnalités dans Active Directory, dont la plupart sont encore utilisées aujourd'hui. Cependant, au moins une nouveauté de Windows Server 2003 est tombée aux oubliettes : **les objets dynamiques**.
 
-Les objets dynamiques désignent une classe d'objet qui ont une durée de vie limitée et qui seront supprimés automatiquement par Active Directory. Ceux-ci peuvent prendre la forme de n'importe quelle autre classe d'objet : utilisateur, groupe, unité d'organisation...
+Les objets dynamiques désignent une classe d'objet qui a une durée de vie limitée et qui seront supprimés automatiquement par Active Directory. Ceux-ci peuvent prendre la forme de n'importe quelle autre classe d'objet : utilisateur, groupe, unité d'organisation...
 
 Cet article est inspiré du post de Narayanan Subramanian sur Medium : [fun with dynamic Objects in AD: Part 1](https://medium.com/@nannnu/fun-with-dynamic-objects-in-ad-part-1-743c21dd934f), à la différence que je n'utilise pas les outils `admod` et `adfind` mais plutôt les bonnes vieilles commandes PowerShell Active Directory.
 
@@ -26,7 +26,7 @@ Les objets dynamiques :
 
 ### Création dans le schéma ou la partition
 
-Pour le dernier point : il s'agit d'une mesure de sécurité pour éviter de détruire le domaine. En effet : il n'est pas possible de supprimer un objet qui a été ajouté dans le schéma. Ajouter un objet dynamique qui finira par disparaître dans le schéma ou la configuration va donc mener à une corruption pure et simple de votre Active Directory.
+Pour le dernier point : il s'agit d'une mesure de sécurité visant à éviter de détruire le domaine. En effet : il n'est pas possible de supprimer un objet qui a été ajouté dans le schéma. Ajouter un objet dynamique qui finira par disparaître dans le schéma ou la configuration mènera donc à une corruption pure et simple de votre Active Directory.
 
 Dans un commentaire sur l'article de Narayanan Subramanian, [Joe Richards](https://joeware.net/) annonce cependant qu'il y aurait plusieurs manière de créer un objet dynamique dans l'une de ces deux partitions, laissant ainsi une bombe à retardement dans le domaine.
 
@@ -42,8 +42,8 @@ Dans un commentaire sur l'article de Narayanan Subramanian, [Joe Richards](https
 
 Je n'ai personnellement jamais vu des objets dynamiques utilisés en environnement de production. Probablement par méconnaissance puisque cette technologie est assez peu connue, mais surtout par manque d'intérêt selon moi :
 
-- l'utilisation d'une date d'expiration convient parfaitement pour suspendre un compte utilisateur après une certaine date
-- l'utilisation d'un rappel dans un calendrier souvent utilisé pour le reste des classes d'objets (groupe, ordinateur...)
+- l'utilisation d'une date d'expiration convient parfaitement pour rendre inutilisable un compte après une certaine date
+- l'utilisation d'un rappel dans un calendrier souvent utilisée pour les autres classes d'objets (groupe, ordinateur...)
 
 L'absence de commande PowerShell native et/ou d'option dans l'interface graphique rend également cette technologie inaccessible pour beaucoup d'administrateurs.
 
@@ -53,7 +53,7 @@ L'absence de commande PowerShell native et/ou d'option dans l'interface graphiqu
 
 Il existe deux paramètres sur les objets dynamiques dans la configuration du domaine Active Directory : `DynamicObjectMinTTL` et `DynamicObjectDefaultTTL`.
 
-Les deux valeurs se trouvent dans l'attribut `msDS-Other-Settings` présent sur l'objet *contoso.com/Configuration/Services/Windows NT/Directory Service*.
+Les deux valeurs se trouvent dans l'attribut `msDS-Other-Settings`, présent sur l'objet *contoso.com/Configuration/Services/Windows NT/Directory Service*.
 
 Paramètre | Valeur par défaut | Description
 --------- | ----------------- | -----------
@@ -89,7 +89,7 @@ Ces commandes vont créer un objet dynamique de type utilisateur nommé "dynamic
 
 ### Modifier la durée de vie d'un objet dynamique
 
-Avec la commande suivante, on va aller modifier directement la valeur de l'attribut `entryTTL` qui contient la durée de vie restante pour l'objet. Cette action permet donc de prolonger (ou réduire) la durée de vie d'un objet.
+Avec la commande suivante, nous allons modifier directement la valeur de l'attribut `entryTTL` qui contient la durée de vie restante pour l'objet. Cette action permet donc de prolonger (ou réduire) la durée de vie d'un objet.
 
 ```powershell
 Get-ADObject -Filter {SamAccountName -eq 'dynamicUser'} | Set-ADObject -Replace @{entryTTL = 900}
@@ -129,7 +129,7 @@ ObjectGUID             : f5c7be5f-b006-4b94-b937-3c079a9cdf25
 
 A la création, il est impossible d'ajouter un objet statique "staticUser" au sein d'un objet dynamique "dynamicOU".
 
-Si vous essayer de faire cela, vous obtiendrez le message d'erreur générique suivant : *"Windows cannot create the object staticUser because: The server is unwilling to process the request"*.
+Si vous essayez de faire cela, vous obtiendrez le message d'erreur générique suivant : *"Windows cannot create the object staticUser because: The server is unwilling to process the request"*.
 
 ```powershell
 New-ADUser staticUser -Path 'OU=dynamicOU,DC=contoso,DC=com'
@@ -153,15 +153,15 @@ ObjectClass            : organizationalUnit
 ObjectGUID             : f5c7be5f-b006-4b94-b937-3c079a9cdf25
 ```
 
-Si il n'y a plus aucun objet statique enfant d'un objet dynamique avec un `entryTTL = 0`, alors l'objet dynamique sera automatiquement supprimé.
+S'il n'y a plus aucun objet statique enfant d'un objet dynamique avec un `entryTTL = 0`, alors l'objet dynamique sera automatiquement supprimé.
 
 ### Fin de vie d'un objet dynamique
 
-Lorsque la valeur de l'attribut `entryTTL` arrive à zéro, l'objet disparaît du domaine Active Directory sans laisser de trace (ne tombe pas dans la corbeille).
+Lorsque la valeur de l'attribut `entryTTL` arrive à zéro, l'objet disparaît du domaine sans laisser de trace (ne tombe pas dans la corbeille Active Directory).
 
 ```powershell
 Get-ADObject -Filter {SamAccountName -eq 'dynamicUser'} -IncludeDeletedObjects
 ```
 
-> En pratique, la suppression de l'objet ne se fait pas immédiatement après que l'attribut `entryTTL` ai atteint 0.\
+> En pratique, la suppression de l'objet ne se fait pas immédiatement après que l'attribut `entryTTL` a atteint 0.\
 > Il faut parfois attendre quelques minutes ou forcer une réplication pour que l'objet disparaisse.
