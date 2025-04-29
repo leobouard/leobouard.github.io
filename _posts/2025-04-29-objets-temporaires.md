@@ -57,8 +57,8 @@ Les deux valeurs se trouvent dans l'attribut `msDS-Other-Settings` présent sur 
 
 Paramètre | Valeur par défaut | Description
 --------- | ----------------- | -----------
-DynamicObjectMinTTL | 900 (15 minutes) | Si un objet dynamique est créé avec une durée de vie inférieure à celle indiquée dans ce paramètre, la durée de vie sera automatiquement ajustée à cette valeur
-DynamicObjectDefaultTTL | 86400 (24 heures) | Si aucun TTL n'est spécifié pour un objet dynamique, c'est cette valeur qui sera utilisée par défaut
+DynamicObjectMinTTL | 900<br>(15 minutes) | Si un objet dynamique est créé avec une durée de vie inférieure à celle indiquée dans ce paramètre, la durée de vie sera automatiquement ajustée à cette valeur
+DynamicObjectDefaultTTL | 86400<br>(24 heures) | Si aucun TTL n'est spécifié pour un objet dynamique, c'est cette valeur qui sera utilisée par défaut
 
 Pour consulter la configuration de votre domaine en PowerShell :
 
