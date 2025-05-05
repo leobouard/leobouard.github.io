@@ -56,6 +56,7 @@ $dynamicObject.Put('attributeId', (New-Oid))
 $dynamicObject.Put('oMSyntax', 1)
 $dynamicObject.Put('attributeSyntax', '2.5.5.8')
 $dynamicObject.Put('searchflags', 0)
+$dynamicObject.Put('systemFlags', 536870912)
 $dynamicObject.SetInfo()
 ```
 
