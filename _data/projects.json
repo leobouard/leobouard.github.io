@@ -3,6 +3,22 @@
         "year": 2025,
         "projects":  [
             {
+                "customer": "Immobilier, Angers",
+                "title": "Migration LDAPS",
+                "period": "juin 2025",
+                "duration": "3 jours",
+                "description": "Migration de l'authentification LDAP vers LDAP over SSL avec un certificat auto-signé",
+                "tags": ["activedirectory", "linux"]
+            },
+            {
+                "customer": "Coopérative agricole, Saint-Brieuc",
+                "title": "Migation ADFS",
+                "period": "mai 2025",
+                "duration": "3 jours",
+                "description": "Migration d'une dizaine d'applications de ADFS vers Microsoft Entra ID",
+                "tags": ["adfs", "entraid"]
+            },
+            {
                 "customer": "Imprimerie, Rennes", 
                 "title": "Migration Active Directory",
                 "period": "de avril 2025 à mai 2025",
@@ -32,7 +48,7 @@
                 "period": "février 2025",
                 "duration": "4 jours",
                 "description": "Peuplement et nettoyage de Entra ID à partir de plusieurs sources externes",
-                "tags": ["powershell", "microsoft365"]
+                "tags": ["powershell", "entraid", "microsoft365"]
             },
             {
                 "customer": "Coopérative agricole, Saint-Brieuc", 
