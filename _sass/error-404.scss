@@ -20,3 +20,9 @@ a.error-404  {
 small.error-404  {
     color: var(--heavyaccent);
 }
+
+@media screen and (max-width: 550px) {
+    span.error-404 {
+        font-size: 5em;
+    }
+}
