@@ -1,7 +1,7 @@
 ---
 title: "Comment détruire votre Active Directory"
 description: "Votre forêt s'auto-détruira dans 3, 2, 1..."
-tags: active-directory
+tags: activedirectory
 listed: true
 ---
 

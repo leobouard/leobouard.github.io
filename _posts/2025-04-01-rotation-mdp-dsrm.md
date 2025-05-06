@@ -1,7 +1,7 @@
 ---
 title: "Automatiser le changement du mot de passe DSRM"
 description: "Revue des différentes méthodes pour la gestion des comptes DSRM"
-tags: active-directory
+tags: activedirectory
 listed: true
 ---
 

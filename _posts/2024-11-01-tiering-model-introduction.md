@@ -1,7 +1,7 @@
 ---
 title: "REX - Tiering Model"
 description: "Comment déployer le tiering model pour sécuriser votre Active Directory"
-tags: active-directory
+tags: activedirectory
 listed: true
 nextLink:
   name: "Partie 1"

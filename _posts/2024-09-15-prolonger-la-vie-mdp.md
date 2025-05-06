@@ -1,7 +1,7 @@
 ---
 title: "Contourner l'expiration de mot de passe"
 description: "Comment prolonger la vie d'un mot de passe Active Directory et (surtout) trouver les tricheurs ?"
-tags: active-directory
+tags: activedirectory
 listed: true
 ---
 

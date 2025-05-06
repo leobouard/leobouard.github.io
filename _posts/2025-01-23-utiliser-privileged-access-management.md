@@ -1,7 +1,7 @@
 ---
 title: "Utiliser Privileged Access Management"
 description: "Comment bien maitriser l'ajout temporaire dans un groupe Active Directory ?"
-tags: active-directory
+tags: activedirectory
 listed: true
 ---
 

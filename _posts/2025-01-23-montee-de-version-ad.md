@@ -1,7 +1,7 @@
 ---
 title: "Montée de version du domaine et de la forêt"
 description: "Mettre à jour le niveau fonctionnel de votre domaine et votre fôret"
-tags: active-directory
+tags: activedirectory
 listed: true
 ---
 

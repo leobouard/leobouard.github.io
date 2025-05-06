@@ -1,7 +1,7 @@
 ---
 title: "Mettre à niveau les politiques de mots de passe"
 description: "Comment mettre à jour vos politiques de mots de passe Active Directory (en évitant de tout casser) ?"
-tags: active-directory
+tags: activedirectory
 listed: true
 ---
 
