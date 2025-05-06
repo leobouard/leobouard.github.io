@@ -2,7 +2,7 @@
 
 title: "Cours Microsoft Graph"
 description: "Bien commencer sur Microsoft Graph pour les administrateurs systèmes"
-tags: ['cours','microsoft-graph']
+tags: ['cours','msgraph']
 thumbnail: "/assets/thumbnail/cours-msgraph.png"
 listed: true
 nextLink:
