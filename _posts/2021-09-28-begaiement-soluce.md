@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "Bégaiement"
+title: "SOLUCE #2 - Bégaiement"
 prevLink:
   name: "Retour au défi"
   id: "/2021/09/28/begaiement"

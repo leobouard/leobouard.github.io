@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Cours PowerShell #7 - Highscores"
 description: "Le résultat de chaque victoire est maintenant conservé dans un fichier externe pour stocker toutes les victoires du joueur"
 tableOfContent: "/2022/12/01/cours-pratique-powershell-introduction#table-des-matières"

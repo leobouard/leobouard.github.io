@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "Secret santa"
+title: "DÉFI #4 - Secret santa"
 description: "Créer un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
 tags: ['challenge','powershell']
 listed: true

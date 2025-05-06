@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Performance en PowerShell"
 description: "Tout savoir sur l'optimisation des performances sur vos scripts PowerShell"
 tags: powershell

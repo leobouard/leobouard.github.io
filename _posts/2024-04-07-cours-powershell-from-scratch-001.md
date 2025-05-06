@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "PS101 #1 - Introduction"
 description: "Revoir la base du fonctionnement de PowerShell"
 tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"

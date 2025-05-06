@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Le versioning sur SharePoint"
 description: "Comment récupérer facilement de l'espace de stockage sur SharePoint"
 tags: sharepoint

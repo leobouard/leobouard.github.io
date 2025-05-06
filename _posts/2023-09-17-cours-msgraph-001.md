@@ -1,5 +1,5 @@
 ﻿---
-layout: post
+
 title: "MSGRAPH #1 - Les bases d'une API web"
 description: "Concepts et principes de base pour l'utilisation d'une API RESTful"
 tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"

@@ -1,5 +1,5 @@
 ﻿---
-layout: post
+
 title: "MSGRAPH #4 - Les modules PowerShell"
 description: "Travailler avec Microsoft Graph en PowerShell via les modules dédiés"
 tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"

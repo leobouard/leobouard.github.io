@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "La formule magique"
+title: "DÉFI #3 - La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
 tags: ['challenge','powershell']
 listed: true

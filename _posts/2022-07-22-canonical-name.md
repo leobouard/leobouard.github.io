@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "CanonicalName & DistinguishedName"
 description: "Et si on prennait la racine du domaine en point de départ pour une fois ?"
 tags: active-directory

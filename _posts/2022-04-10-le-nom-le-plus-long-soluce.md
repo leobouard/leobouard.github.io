@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "Le nom le plus long"
+title: "SOLUCE #5 - Le nom le plus long"
 prevLink:
   name: "Retour au défi"
   id: "/2022/04/10/le-nom-le-plus-long"

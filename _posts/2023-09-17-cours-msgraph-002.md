@@ -1,5 +1,5 @@
 ﻿---
-layout: post
+
 title: "MSGRAPH #2 - Les spécificités de Microsoft Graph"
 description: "Comprendre les éléments clés de l'API de Microsoft"
 tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"

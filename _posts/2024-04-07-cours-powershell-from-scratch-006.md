@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "PS101 #6 - Les conditions en bref"
 description: "Troisième élément essentiel du scripting"
 tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"

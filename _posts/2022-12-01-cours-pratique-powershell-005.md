@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Cours PowerShell #5 - Top chrono !"
 description: "On ajoute un chronomètre qui va mesurer le temps de résolution total ainsi que le temps moyen par tentative"
 tableOfContent: "/2022/12/01/cours-pratique-powershell-introduction#table-des-matières"

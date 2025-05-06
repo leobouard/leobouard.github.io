@@ -1,5 +1,4 @@
 ﻿---
-layout: post
 title: "Authentication Policies & Silos"
 description: "Est-ce que sa complexité vaut vraiment le coup ?"
 tags: active-directory

@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "La formule magique"
+title: "SOLUCE #3 - La formule magique"
 prevLink:
   name: "Retour au défi"
   id: "/2021/11/02/la-formule-magique"

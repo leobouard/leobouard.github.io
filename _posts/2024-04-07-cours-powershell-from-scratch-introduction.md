@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Cours PowerShell 101"
 description: "Être opérationnel en PowerShell le plus rapidement possible"
 tags: ['cours','powershell']

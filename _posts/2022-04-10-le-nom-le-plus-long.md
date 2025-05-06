@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "Le nom le plus long"
+title: "DÉFI #5 - Le nom le plus long"
 description: "Saurez-vous retrouver la personne avec le nom le plus long de votre annuaire ?"
 tags: ['challenge','powershell']
 listed: true
