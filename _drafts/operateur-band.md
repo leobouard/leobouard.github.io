@@ -5,13 +5,19 @@ Les bit fields (ou champs de bits en français) sont des attributs qui stockent 
 
 Chaque bit (ou combinaison de bits) représente une option ou une propriété différente. Le nombre entier final correspond à l'addition de toutes les options entre-elles.
 
-On parle aussi parfois d’attributs à indicateurs ou d’attributs à valeurs de drapeaux.
+> On parle aussi parfois d’attributs à indicateurs ou d’attributs à valeurs de drapeaux.
+
+### Attributs bit fields dans Active Directory
 
 On en retrouve quelques exemples dans Active Directory :
 
-- `searchFlags`
-- `userAccountControl`
-- `systemFlags`
+- **userAccountControl** : Contrôle les options et états du compte utilisateur (désactivé, mot de passe expiré, etc.).
+- **searchFlags** : Définit les options de recherche et d’indexation pour un attribut du schéma.
+- **systemFlags** : Indique des propriétés système sur les objets du schéma (protégé, répliqué, etc.).
+- **groupType** : Définit le type et la portée d’un groupe (global, universel, distribution, sécurité…).
+- **msDS-Behavior-Version** : Utilisé pour stocker les niveaux fonctionnels, certains bits peuvent être utilisés pour des options.
+- **trustAttributes** : Définit des options sur les relations d’approbation (trusts) entre domaines.
+- **instanceType** : Définit le type d’objet et son comportement en réplication.
 
 ### Cas pratique
 
