@@ -21,37 +21,20 @@ On en retrouve quelques exemples dans Active Directory :
 
 ### Cas pratique
 
-Voici un exemple de tableau de valeurs pour un attribut fictif :
+Voici un exemple de tableau de valeurs pour l'attribut `msDS-Supported-Encryption-Type` :
 
-| Name | Value |
-| --- | ---
-| SCRIPT | 1 |
-| ACCOUNTDISABLE | 2 |
-| HOMEDIR\_REQUIRED | 8 |
-| LOCKOUT | 16 |
-| PASSWD\_NOTREQD | 32 |
-| PASSWD\_CANT\_CHANGE | 64 |
-| ENCRYPTED\_TEXT\_PWD\_ALLOWED | 128 |
-| TEMP\_DUPLICATE\_ACCOUNT | 256 |
-| NORMAL\_ACCOUNT | 512 |
-| INTERDOMAIN\_TRUST\_ACCOUNT | 2048 |
-| WORKSTATION\_TRUST\_ACCOUNT | 4096 |
-| SERVER\_TRUST\_ACCOUNT | 8192 |
-| DONT\_EXPIRE\_PASSWORD | 65536 |
-| MNS\_LOGON\_ACCOUNT | 131072 |
-| SMARTCARD\_REQUIRED | 262144 |
-| TRUSTED\_FOR\_DELEGATION | 524288 |
-| NOT\_DELEGATED | 1048576 |
-| USE\_DES\_KEY\_ONLY | 2097152 |
-| DONT\_REQ\_PREAUTH | 4194304 |
-| PASSWORD\_EXPIRED | 8388608 |
-| TRUSTED\_TO\_AUTH\_FOR\_DELEGATION | 16777216 |
-| PARTIAL\_SECRETS\_ACCOUNT | 67108864 |
+Valeur décimale | Valeur hexadécimale | Supported Encryption Types
+--- | --- | ---
+1 | 0x1 | DES_CBC_CRC
+2 | 0x2 | DES_CBC_MD5
+4 | 0x4 | RC4
+8 | 0x8 | AES 128
+16 | 0x10 | AES 256
 
 Comme les valeurs vont par puissance de deux, il est impossible que plusieurs combinaisons d'options donnent le même résultat :
 
-- `1 + 2 = 3` donc pas de collision avec l'option #C
-- `1 + 2 + 4 = 7` donc pas de collision avec l'option #D
+- DES_CBC_CRC (1) et DES_CBC_MD5 (2) donne 3 comme résultat, donc pas de conflit avec RC4 (4)
+- DES_CBC_CRC (1), DES_CBC_MD5 (2) et RC4 (4) donne 7 comme résultat, donc pas de conflit avec AES 128 (8)
 
 On peut donc stocker 
 
