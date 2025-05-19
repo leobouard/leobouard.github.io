@@ -18,7 +18,7 @@ Très élevé | plus de 15
 
 ### Tableau
 
-<table style="border-collapse: collapse; text-align: center; font-family: sans-serif;">
+<table style="border-collapse: collapse; width: 100%;">
   <caption style="font-weight: bold; font-size: 1.3em; margin-bottom: 0.5em;">
     Exemple de matrice des risques 5x5
   </caption>
@@ -44,7 +44,7 @@ Très élevé | plus de 15
   <tbody>
     <tr>
       <td rowspan="5">
-        <div style="writing-mode: vertical-rl; transform: rotate(180deg); text-align: center;">
+        <div style="writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; margin: auto;">
           <span style="font-weight: bold;">Probabilité</span><br>
           <small>Quelle est la probabilité que le risque se produise ?</small>
         </div>
