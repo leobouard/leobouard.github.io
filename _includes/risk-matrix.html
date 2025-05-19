@@ -1,0 +1,54 @@
+{% assign impact = include.impact | plus: 0 %}
+{% assign probability = include.probability | plus: 0 %}
+{% assign comment = include.comment | default: "" %}}
+
+{% assign risk = impact | times: probability %}
+
+{% assign impact_labels = "Insignifiante|Mineure|Significative|Majeure|Sévère" | split: "|" %}
+{% assign probability_labels = "Rare|Improbable|Modéré|Probable|Presque certain" | split: "|" %}
+
+{% assign impact_text = impact_labels[impact | minus: 1] %}
+{% assign probability_text = probability_labels[probability | minus: 1] %}
+
+{% if risk <= 2 %}
+  {% assign risk_text = "Très faible" %}
+  {% assign risk_color = "#4caf50" %}
+{% elsif risk <= 4 %}
+  {% assign risk_text = "Faible" %}
+  {% assign risk_color = "#8bc34a" %}
+{% elsif risk <= 6 %}
+  {% assign risk_text = "Moyen" %}
+  {% assign risk_color = "#ffeb3b" %}
+{% elsif risk <= 10 %}
+  {% assign risk_text = "Élevé" %}
+  {% assign risk_color = "#ff9800" %}
+{% else %}
+  {% assign risk_text = "Très élevé" %}
+  {% assign risk_color = "#f44336" %}
+{% endif %}
+
+<div style="
+    background: var(--lightaccent);
+    padding: 2em;
+    font-size: small;
+    margin: auto;
+    border-radius: 0.25em;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
+">
+  <div>
+    <h3>Risque</h3>
+    <span style="aspect-ratio: 2/1; background: {{ risk_color }}; color: black; font-size: medium;">{{ risk_text }}</span>
+  </div>
+  <div>
+    <h4>Probabilité</h4>
+    <span>{{ probability_text }}</span>
+    <h4>Impact</h4>
+    <span>{{ impact_text }}</span>
+  </div>
+  <div style="grid-column: span 3;">
+    <h3>Commentaire</h3>
+    <p>{{ comment }}</p>
+  </div>
+</div>

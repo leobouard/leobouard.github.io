@@ -107,6 +107,8 @@ $upnSuffixes | Sort-Object -Descending | ForEach-Object {
 }
 ```
 
-
-
 ![alt text](image-4.png)
+
+## Matrice de risque
+
+{% include risk-matrix.html impact=4 probability=1 comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?" %}
