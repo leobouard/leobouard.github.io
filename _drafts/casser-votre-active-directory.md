@@ -5,50 +5,25 @@ tags: activedirectory
 listed: true
 ---
 
-Création d'un objet temporaire dans le schéma Active Directory
+## Un objet dynamique dans le schéma
 
-[PowerShell Gallery \| scripts/New-ADSchemaTestOID.ps1 0.0.3](https://www.powershellgallery.com/packages/ADSchema/0.0.3/Content/scripts%5CNew-ADSchemaTestOID.ps1)
+### En quoi est-ce dangereux ?
 
-[PowerShell Gallery \| scripts/New-ADSchemaAttribute.ps1 0.0.1](https://www.powershellgallery.com/packages/ADSchema/0.0.1/Content/scripts%5CNew-ADSchemaAttribute.ps1)
+Le schéma Active Directory défini la structure des classes (les types d'objets) et leurs attributs (name, surname, streetAddress...). Il ne peut être qu'étendu et chaque objet ajouté ne pourra plus jamais être supprimé.
 
-## Comportement d'un objet dynamique
+Ajouter un objet dynamique (qui se supprimera automatiquement) dans le schéma Active Directory (où rien ne peut être supprimé) donne donc la recette parfaite pour corrompre un domaine.
 
-### Création d'un objet statique dans un objet dynamique
+Mieux encore : un objet dynamique dans le schéma est une véritable bombe à retardement qui peut exploser jusqu'à un an après avoir été amorcée. Et une fois la bombe posée, si vous n'avez pas de sauvegarde, il sera impossible de s'en débarasser.
 
-Lorsque vous 
+### Création de l'objet
 
-Aucun problème en revanche pour créer un objet dynamique dans un autre objet dynamique
-
-"Windows cannot create the object testGroup because: The server is unwilling to process the request"
-
-## Détruire votre domaine Active Directory
-
-### Création d'un objet temporaire dans le schéma
-
-Basé sur l'article : [Create and manage custom AD attributes with PowerShell – 4sysops](https://4sysops.com/archives/create-and-manage-custom-ad-attributes-with-powershell/#rtoc-4)
-
-#### Génération d'un OID
-
-```powershell
-function New-Oid {
-    param([string]$Prefix = '1.2.840.113556.1.8000.2554')
-
-    $guid = [string]([System.Guid]::NewGuid())
-    $oid = 0, 4, 9, 14, 19, 24, 30 | ForEach-Object {
-        if ($_ -ge 24) { $l = 6 } else { $l = 4 }
-        [UInt64]::Parse($guid.SubString($_, $l), 'AllowHexSpecifier')
-    }
-    $prefix + ($oid -join '.')
-}
-```
-
-#### Ajout d'un nouvel attribut
+Toute la sécurité liée aux objets dynamique est faite à la création de l'objet. Si vous essayez de le créer directement dans le schéma, vous allez obtenir l'erreur suivante : *"The server is unwilling to process the request"*
 
 ```powershell
 # Création de l'attribut en dehors de la partition Schéma
-$dynamicObject = ([ADSI]("LDAP://CN=Users,DC=contoso,DC=com")).Create('attributeSchema', 'CN=timebomb')
+$dynamicObject = ([ADSI]("LDAP://CN=Schema,DC=Configuration,DC=contoso,DC=com")).Create('attributeSchema', 'CN=timebomb')
 $dynamicObject.PutEx(2, 'objectClass', @('dynamicObject', 'attributeSchema'))
-$dynamicObject.Put('entryTTL', 900)
+# $dynamicObject.Put('entryTTL', 900)
 $dynamicObject.Put('lDAPDisplayName', 'timebomb')
 $dynamicObject.Put('adminDescription', 'This attribute will blow up the entire Active Directory forest in 15 minutes')
 $dynamicObject.Put('attributeId', (New-Oid))
@@ -59,10 +34,10 @@ $dynamicObject.Put('systemFlags', 536870912)
 $dynamicObject.SetInfo()
 ```
 
-```powershell
-# Déplacement de l'objet dans la partition schéma
-Move-ADObject -Identity 'CN=timebomb,CN=Users,DC=contoso,DC=com' -TargetPath (Get-ADRootDSE).schemaNamingContext
-```
+Et si on essaye de créer un attribut ou une classe en dehors de la partition dédiée, on tombe sur une autre erreur : *"There is a naming violation"*
+
+Pas moyen de filouter en créant la bombe ailleurs dans le domaine pour la déplacer ensuite dans le schéma.
+
 
 ## Détection de la création d'objet dynamique
 
