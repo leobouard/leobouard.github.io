@@ -88,8 +88,7 @@ $upnSuffixes | ForEach-Object {
 
 Bonne nouvelle : aucune perte d'information n'est à déclarer sur les profils utilisateurs. Aucun `UserPrincipalName` n'a été modifié et les authentifications au domaine se déroulent sans problème.
 
-Pour les nouveaux utilisateurs et les comptes avec le suffixe par défaut liste déroulante de la console est maintenant vide (seul le domaine par défaut est disponible). 
-
+Pour les nouveaux utilisateurs et les comptes avec le suffixe par défaut liste déroulante de la console est maintenant vide (seul le domaine par défaut est disponible).
 
 ![alt text](image-2.png)
 
@@ -111,4 +110,8 @@ $upnSuffixes | Sort-Object -Descending | ForEach-Object {
 
 ## Matrice de risque
 
-{% include risk-matrix.html impact=4 probability=1 comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?" %}
+{% include risk-matrix.html
+    impact=4
+    probability=1
+    comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
+%}

@@ -1,14 +1,7 @@
 {% assign impact = include.impact | plus: 0 %}
 {% assign probability = include.probability | plus: 0 %}
 {% assign comment = include.comment | default: "" %}
-
 {% assign risk = impact | times: probability %}
-
-{% assign impact_labels = "Insignifiante|Mineure|Significative|Majeure|Sévère" | split: "|" %}
-{% assign probability_labels = "Rare|Improbable|Modéré|Probable|Presque certain" | split: "|" %}
-
-{% assign impact_text = impact_labels[impact | minus: 1] %}
-{% assign probability_text = probability_labels[probability | minus: 1] %}
 
 {% if risk <= 2 %}
   {% assign risk_text = "Très faible" %}
