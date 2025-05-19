@@ -12,7 +12,7 @@ description: "Page de test"
     risk-matrix.html
     impact=1
     probability=1
-    comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
+    comment="Lorem ipsum dolor sit amet. **Ab ipsum quam** eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
 %}
 
 ### Risque faible
