@@ -108,7 +108,7 @@ Et cela permet d'obtenir une belle liste déroulante, triée dans l'ordre alphab
 
 ## Matrice de risque
 
-{% include risk-score.html
+{% include risk-matrix.html
     impact=4
     probability=1
     comment="Pour un changement aussi futile que celui-ci, le rapport risque / bénéfice n'est clairement pas bon. Sur ma maquette je n'ai rien cassé (à ma connaissance), mais cela ne vous protège de rien sur votre environnement de production. Pour les plus joueurs d'entre-vous ça peut se faire, sinon passer votre chemin."
