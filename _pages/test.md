@@ -49,6 +49,6 @@ description: "Page de test"
 ## Disclaimer
 
 {% include disclaimer.html
-    content="KCLAD (*à lire "Casser l'AD"*) est une série d'articles techniques sur des trucs idiots à faire dans un domaine Active Directory. L'idée est de torturer un peu une maquette et essayer de mieux comprendre comment fonctionne Active Directory.<br>
+    content="KCLAD (<i>à lire Casser l'AD</i>) est une série d'articles techniques sur des trucs idiots à faire dans un domaine Active Directory. L'idée est de torturer un peu une maquette et essayer de mieux comprendre comment fonctionne Active Directory.<br>
     <b>A ne pas reproduire sur la production, évidemment !</b>"
 %}
