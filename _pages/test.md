@@ -34,10 +34,10 @@ Très élevé | plus de 15
     </tr>
     <tr style="text-align: center;">
       <td colspan="2"></td>
-      <th>Insignifiante<br>1</th>
-      <th>Mineure<br>2</th>
-      <th>Significative<br>3</th>
-      <th>Majeure<br>4</th>
+      <th>Insignifiant<br>1</th>
+      <th>Mineur<br>2</th>
+      <th>Significatif<br>3</th>
+      <th>Majeur<br>4</th>
       <th>Sévère<br>5</th>
     </tr>
   </thead>
@@ -73,7 +73,7 @@ Très élevé | plus de 15
       <td style="background: #f24d3e;">Très élevé<br>15</td>
     </tr>
     <tr>
-      <th style="font-weight: bold;">Improbable<br>2</th>
+      <th style="font-weight: bold;">Rare<br>2</th>
       <td style="background: #49ae58;">Très faible<br>2</td>
       <td style="background: #88c357;">Faible<br>4</td>
       <td style="background: #fced57;">Moyen<br>6</td>
@@ -81,7 +81,7 @@ Très élevé | plus de 15
       <td style="background: #fc9c2e;">Élevé<br>10</td>
     </tr>
     <tr>
-      <th style="font-weight: bold;">Rare<br>1</th>
+      <th style="font-weight: bold;">Improbable<br>1</th>
       <td style="background: #49ae58;">Très faible<br>1</td>
       <td style="background: #49ae58;">Très faible<br>2</td>
       <td style="background: #88c357;">Faible<br>3</td>
