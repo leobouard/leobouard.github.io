@@ -28,12 +28,12 @@ Très élevé | plus de 15
       <td colspan="5">
         <div style="text-align: center;">
           <span style="font-weight: bold;">Impact</span><br>
-          <small">Quelle serait la gravité des conséquences si le risque se produisait ?</small>
+          <small>Quelle serait la gravité des conséquences si le risque se produisait ?</small>
         </div>
       </td>
     </tr>
     <tr style="text-align: center;">
-      <th colspan="2"></th>
+      <td colspan="2"></td>
       <th>Insignifiante<br>1</th>
       <th>Mineure<br>2</th>
       <th>Significative<br>3</th>
@@ -46,47 +46,47 @@ Très élevé | plus de 15
       <td rowspan="5">
         <div style="writing-mode: vertical-rl; transform: rotate(180deg); text-align: center;">
           <span style="font-weight: bold;">Probabilité</span><br>
-          <small">Quelle est la probabilité que le risque se produise ?</small>
+          <small>Quelle est la probabilité que le risque se produise ?</small>
         </div>
       </td>
-      <th style="font-weight: bold;">5<br>Presque certain</th>
-      <td style="background: #ffeb3b;">Moyen<br>5</td>
-      <td style="background: #ff9800;">Élevé 10</td>
-      <td style="background: #f44336;">Très élevé 15</td>
-      <td style="background: #d32f2f;">Extrême 20</td>
-      <td style="background: #d32f2f;">Extrême 25</td>
+      <th style="font-weight: bold;">Presque certain<br>5</th>
+      <td style="background: #fced57;">Moyen<br>5</td>
+      <td style="background: #fc9c2e;">Élevé<br>10</td>
+      <td style="background: #f24d3e;">Très élevé<br>15</td>
+      <td style="background: #f24d3e;">Très élevé<br>20</td>
+      <td style="background: #f24d3e;">Très élevé<br>25</td>
     </tr>
     <tr>
-      <th style="font-weight: bold;">4<br>Probable</th>
-      <td style="background: #ffeb3b;">Moyen 4</td>
-      <td style="background: #ffeb3b;">Moyen 8</td>
-      <td style="background: #ff9800;">Élevé 12</td>
-      <td style="background: #f44336;">Très élevé 16</td>
-      <td style="background: #d32f2f;">Extrême 20</td>
+      <th style="font-weight: bold;">Probable<br>4</th>
+      <td style="background: #88c357;">Faible<br>4</td>
+      <td style="background: #fced57;">Moyen<br>8</td>
+      <td style="background: #fc9c2e;">Élevé<br>12</td>
+      <td style="background: #f24d3e;">Très élevé<br>16</td>
+      <td style="background: #f24d3e;">Très élevé<br>20</td>
     </tr>
     <tr>
-      <th style="font-weight: bold;">3<br>Modéré</th>
-      <td style="background: #8bc34a;">Faible 3</td>
-      <td style="background: #ffeb3b;">Moyen 6</td>
-      <td style="background: #ffeb3b;">Moyen 9</td>
-      <td style="background: #ff9800;">Élevé 12</td>
-      <td style="background: #f44336;">Très élevé 15</td>
+      <th style="font-weight: bold;">Modéré<br>3</th>
+      <td style="background: #88c357;">Faible<br>3</td>
+      <td style="background: #fced57;">Moyen<br>6</td>
+      <td style="background: #fced57;">Moyen<br>9</td>
+      <td style="background: #fc9c2e;">Élevé<br>12</td>
+      <td style="background: #f24d3e;">Très élevé<br>15</td>
     </tr>
     <tr>
-      <th style="font-weight: bold;">2<br>Improbable</th>
-      <td style="background: #4caf50; color: #fff;">Très faible 2</td>
-      <td style="background: #8bc34a;">Faible 4</td>
-      <td style="background: #ffeb3b;">Moyen 6</td>
-      <td style="background: #ffeb3b;">Moyen 8</td>
-      <td style="background: #ff9800;">Élevé 10</td>
+      <th style="font-weight: bold;">Improbable<br>2</th>
+      <td style="background: #49ae58;">Très faible<br>2</td>
+      <td style="background: #88c357;">Faible<br>4</td>
+      <td style="background: #fced57;">Moyen<br>6</td>
+      <td style="background: #fced57;">Moyen<br>8</td>
+      <td style="background: #fc9c2e;">Élevé<br>10</td>
     </tr>
     <tr>
-      <th style="font-weight: bold;">1<br>Rare</th>
-      <td style="background: #4caf50;">Très faible 1</td>
-      <td style="background: #4caf50;">Très faible 2</td>
-      <td style="background: #8bc34a;">Faible 3</td>
-      <td style="background: #ffeb3b;">Moyen 4</td>
-      <td style="background: #ffeb3b;">Moyen 5</td>
+      <th style="font-weight: bold;">Rare<br>1</th>
+      <td style="background: #49ae58;">Très faible<br>1</td>
+      <td style="background: #49ae58;">Très faible<br>2</td>
+      <td style="background: #88c357;">Faible<br>3</td>
+      <td style="background: #88c357;">Faible<br>4</td>
+      <td style="background: #fced57;">Moyen<br>5</td>
     </tr>
   </tbody>
 </table>
