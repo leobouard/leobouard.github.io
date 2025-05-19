@@ -37,7 +37,7 @@ description: "Page de test"
 
 {% include
     risk-matrix.html
-    impact=4
+    impact=3
     probability=3
     comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
 %}
