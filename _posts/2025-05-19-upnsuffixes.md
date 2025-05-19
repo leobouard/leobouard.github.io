@@ -5,17 +5,13 @@ tags: ["activedirectory", "powershell"]
 listed: true
 ---
 
-<div class="blog-header">
-  <p>KCLAD (*à lire "Casser l'AD"*) est une série d'articles techniques sur des trucs idiots à faire dans un domaine Active Directory. L'idée est de torturer un peu une maquette et essayer de mieux comprendre comment fonctionne Active Directory. <b>A ne pas reproduire sur la production, évidemment !</b></p>
-</div>
-
 ## La partie sans danger
 
 ### Contexte
 
 Dans une forêt Active Directory, les UPNSuffixes représentent la liste des domaines disponibles pour l'attribut UserPrincipalName. On retrouve cette liste dans la console `dsa` "Active Directory Users and Computers" :
 
-![alt text](image.png)
+![alt text](/assets/images/upnsuffixes-01.png)
 
 Cette liste permet de sélectionner simplement le domaine qui vous intéresse lors de la création ou la modification d'un utilisateur.
 
@@ -88,13 +84,13 @@ $upnSuffixes | ForEach-Object {
 
 Bonne nouvelle : aucune perte d'information n'est à déclarer sur les profils utilisateurs. Aucun `UserPrincipalName` n'a été modifié et les authentifications au domaine se déroulent sans problème.
 
-Pour les nouveaux utilisateurs et les comptes avec le suffixe par défaut liste déroulante de la console est maintenant vide (seul le domaine par défaut est disponible).
+Pour les nouveaux utilisateurs et les comptes avec le suffixe par défaut, la liste déroulante de la console est maintenant vide (seul le domaine par défaut est disponible) :
 
-![alt text](image-2.png)
+![alt text](/assets/images/upnsuffixes-02.png)
 
-![alt text](image-3.png)
+Pour les autres, il n'y a plus que deux options dans la liste : le suffixe utilisé actuellement et le suffixe par défaut :
 
-> Seul l'UPN par défaut du domaine est disponible pour les nouveaux utilisateurs. Les utilisateurs ayant un UPNSuffix différent n'ont que deux options : celui par défaut et le suffixe actuel.
+![alt text](/assets/images/upnsuffixes-03.png)
 
 ### Réintégration des suffixes UPN
 
@@ -106,12 +102,14 @@ $upnSuffixes | Sort-Object -Descending | ForEach-Object {
 }
 ```
 
-![alt text](image-4.png)
+Et cela permet d'obtenir une belle liste déroulante, triée dans l'ordre alphabétique (jusqu'à ce que vous ayez à intégrer un nouveau suffixe dans votre domaine).
+
+![alt text](/assets/images/upnsuffixes-04.png)
 
 ## Matrice de risque
 
-{% include risk-matrix.html
+{% include risk-score.html
     impact=4
     probability=1
-    comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
+    comment="Pour un changement aussi futile que celui-ci, le rapport risque / bénéfice n'est clairement pas bon. Sur ma maquette je n'ai rien cassé (à ma connaissance), mais cela ne vous protège de rien sur votre environnement de production. Pour les plus joueurs d'entre-vous ça peut se faire, sinon passer votre chemin."
 %}

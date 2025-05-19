@@ -93,7 +93,7 @@ Très élevé | plus de 15
 
 ### Risque très faible
 
-{% include risk-matrix.html
+{% include risk-score.html
     impact=1
     probability=1
     comment="Lorem ipsum dolor sit amet.<br>Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit <b>praesentium consequatur</b> eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
@@ -101,7 +101,7 @@ Très élevé | plus de 15
 
 ### Risque faible
 
-{% include risk-matrix.html
+{% include risk-score.html
     impact=3
     probability=1
     comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
@@ -109,7 +109,7 @@ Très élevé | plus de 15
 
 ### Risque moyen
 
-{% include risk-matrix.html
+{% include risk-score.html
     impact=5
     probability=1
     comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
@@ -117,7 +117,7 @@ Très élevé | plus de 15
 
 ### Risque élevé
 
-{% include risk-matrix.html
+{% include risk-score.html
     impact=5
     probability=2
     comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
@@ -125,7 +125,7 @@ Très élevé | plus de 15
 
 ### Risque très élevé
 
-{% include risk-matrix.html
+{% include risk-score.html
     impact=5
     probability=3
     comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
