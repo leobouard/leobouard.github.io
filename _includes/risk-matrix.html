@@ -33,22 +33,27 @@
     font-size: small;
     margin: auto;
     border-radius: 0.25em;
-    display: grid;
+    display: flex;
     grid-gap: 2em;
-    grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
 ">
   <div>
-    <h3>Risque</h3>
-    <span style="aspect-ratio: 2/1; background: {{ risk_color }}; color: black; font-size: medium;">{{ risk_text }}</span>
+    <h3 style="margin: 1em 0;">Risque</h3>
+    <span style="aspect-ratio: 3/1; background: {{ risk_color }};color: black; display: flex; align-items: center; justify-content: center; border-radius: 0.25em;">{{ risk_text }}</span>
+    <table style="border: none; width: 100%;">
+      <tbody>
+        <tr>
+          <td>Probabilité</td>
+          <td>{{ probability }}/5</td>
+      </tr>
+      <tr>
+          <td>Impact</td>
+          <td>{{ impact }}/5</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
   <div>
-    <h4>Probabilité</h4>
-    <span>{{ probability_text }}</span>
-    <h4>Impact</h4>
-    <span>{{ impact_text }}</span>
-  </div>
-  <div style="grid-column: span 3;">
-    <h3>Commentaire</h3>
+    <h3 style="margin: 1em 0;">Commentaire</h3>
     <p>{{ comment }}</p>
   </div>
 </div>
