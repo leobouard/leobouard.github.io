@@ -1,6 +1,6 @@
 {% assign impact = include.impact | plus: 0 %}
 {% assign probability = include.probability | plus: 0 %}
-{% assign comment = include.comment | default: "" %}}
+{% assign comment = include.comment | default: "" %}
 
 {% assign risk = impact | times: probability %}
 
