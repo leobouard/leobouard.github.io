@@ -130,10 +130,3 @@ Très élevé | plus de 15
     probability=3
     comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
 %}
-
-## Disclaimer
-
-{% include disclaimer.html
-    content="KCLAD (<i>à lire Casser l'AD</i>) est une série d'articles techniques sur des trucs idiots à faire dans un domaine Active Directory. L'idée est de torturer un peu une maquette et essayer de mieux comprendre comment fonctionne Active Directory.<br>
-    <b>A ne pas reproduire sur la production, évidemment !</b>"
-%}
