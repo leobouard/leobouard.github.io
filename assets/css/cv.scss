@@ -284,7 +284,6 @@ div.project-per-year {
 
 div.project span {
     color: var(--primary);
-    font-size: small;
     font-weight: 500;
 }
 
@@ -303,11 +302,12 @@ div.project p {
 
 div.project code {
     background-color: var(--lightaccent);
-    padding: 4px;
+    padding: 0 0.5em;
     border-radius: var(--borderradius);
-    border: var(--border);
-    font-size: x-small;
-    letter-spacing: -0.25px;
+    text-decoration: none;
+    font-size: smaller;
+    font-family: var(--textfont);
+    display: inline-block;
 }
 
 // CV WRAPPER

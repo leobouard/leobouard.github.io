@@ -3,14 +3,6 @@
         "year": 2025,
         "projects":  [
             {
-                "customer": "Immobilier, Angers",
-                "title": "Migration LDAPS",
-                "period": "juin 2025",
-                "duration": "3 jours",
-                "description": "Migration de l'authentification LDAP vers LDAP over SSL avec un certificat auto-signé",
-                "tags": ["activedirectory", "linux"]
-            },
-            {
                 "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Migation ADFS",
                 "period": "mai 2025",
