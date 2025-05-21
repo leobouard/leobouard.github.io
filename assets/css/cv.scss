@@ -269,9 +269,11 @@ div.project-container {
 }
 
 div.project-container h3 {
-    margin: 0;
-    margin-right: 1em;
-    min-width: 3em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: right;
 }
 
 div.project-per-year {
