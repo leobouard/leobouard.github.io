@@ -13,14 +13,14 @@ Le schéma Active Directory défini la structure des classes (les types d'objets
 
 Ajouter un objet dynamique (qui se supprimera automatiquement) dans le schéma Active Directory (où rien ne peut être supprimé) donne donc la recette parfaite pour corrompre un domaine.
 
-Mieux encore : un objet dynamique dans le schéma est une véritable bombe à retardement qui peut exploser jusqu'à un an après avoir été amorcée. Et une fois la bombe posée, si vous n'avez pas de sauvegarde, il sera impossible de s'en débarasser.
+Mieux encore : un objet dynamique dans le schéma est une véritable bombe à retardement qui peut exploser jusqu'à un an après avoir été amorcée. Et une fois la bombe posée, si vous n'avez pas de sauvegarde antérieure à la création de la bombe, il sera impossible de s'en débarasser.
 
 ### Création de l'objet
 
 Toute la sécurité liée aux objets dynamique est faite à la création de l'objet. Si vous essayez de le créer directement dans le schéma, vous allez obtenir l'erreur suivante : *"The server is unwilling to process the request"*
 
 ```powershell
-# Création de l'attribut en dehors de la partition Schéma
+# Création de l'attribut "timebomb" dans la partition Schéma
 $dynamicObject = ([ADSI]("LDAP://CN=Schema,DC=Configuration,DC=contoso,DC=com")).Create('attributeSchema', 'CN=timebomb')
 $dynamicObject.PutEx(2, 'objectClass', @('dynamicObject', 'attributeSchema'))
 # $dynamicObject.Put('entryTTL', 900)
@@ -35,9 +35,6 @@ $dynamicObject.SetInfo()
 ```
 
 Et si on essaye de créer un attribut ou une classe en dehors de la partition dédiée, on tombe sur une autre erreur : *"There is a naming violation"*
-
-Pas moyen de filouter en créant la bombe ailleurs dans le domaine pour la déplacer ensuite dans le schéma.
-
 
 ## Détection de la création d'objet dynamique
 
