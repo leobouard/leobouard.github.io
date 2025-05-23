@@ -5,7 +5,7 @@ tags: ["activedirectory", "powershell"]
 listed: true
 ---
 
-> #### Disclaimer
+> **Disclaimer**
 >
 > KCLAD (*à lire "Casser l'AD"*) est une série d'articles techniques sur des trucs idiots à faire dans un domaine Active Directory. L'idée est de torturer un peu une maquette et essayer de mieux comprendre comment fonctionne Active Directory.
 > Ces articles sont en deux parties : la partie "safe" et la partie "dangereuse". La partie dangereuse **n'est pas à reproduire sur la production, évidemment !**
