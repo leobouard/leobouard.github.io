@@ -17,20 +17,23 @@ C'est sur ce troisième point que nous allons nous concentrer, puisqu'il permet 
 
 La documentation officielle de Microsoft est disponible ici : [Combiner plusieurs requêtes HTTP à l’aide du traitement par lot JSON - Microsoft Graph \| Microsoft Learn](https://learn.microsoft.com/fr-fr/graph/json-batching?tabs=http), mais elle n'inclut pas d'exemple d'utilisation avec PowerShell..
 
-### Appel API parent
+### Appel API
 
-L'appel API pour faire du batching se fait sur l'URL <https://graph.microsoft.com/beta/$batch> avec la méthode POST :
+L'idée est simple : vous allez effectuer une requête "parente" qui va contenir les 20 requêtes "enfants" à exécuter. Au lieu de faire 20 appels, vous n'en faite donc plus qu'un seul. Les requêtes enfants sont stockées dans le corps (*body*) de la requête parente
+
+> Le batching est disponible sur la v1.0 et la version beta de Microsoft Graph. La version que vous choisissez ici sera utilisée pour toutes les requêtes "enfants".
+
+Voici l'exemple PowerShell :
 
 ```powershell
+$body = '{...}'
 $uri = 'https://graph.microsoft.com/beta/$batch'
 Invoke-MgGraphRequest -Method POST -Uri $uri -Body $body
 ```
 
-> Le batching est disponible sur la v1.0 et la version beta de Microsoft Graph. La version que vous choisissez ici sera utilisée pour toutes les requêtes "enfants".
-
 ### Corps de la requête
 
-Le corps de la requête (body) va contenir nos 20 requêtes à exécuter, au format JSON. Toutes les requêtes sont contenues dans une propriété racine "requests" qui contient un tableau regroupant tous les appels que vous souhaitez effectuer.
+Le corps de la requête (*body*) va contenir nos 20 requêtes à exécuter, au format JSON. Toutes les requêtes sont contenues dans une propriété racine "requests" qui contient un tableau regroupant tous les appels que vous souhaitez effectuer.
 
 Chaque appel est indiqué avec les propriétés suivantes :
 
@@ -51,7 +54,7 @@ Voici à quoi devrait ressembler notre corps de requête (body) :
             "id": "1",
             "method": "POST",
             "url": "/users/...",
-            "body": "..."
+            "body": "{...}"
         },
         {
             "id": "2",
@@ -100,7 +103,7 @@ Traitement de 81 à 100
 
 ### Création du body JSON
 
-Le coeur du batching repose sur le `body` de votre requête. Voici donc un morceau de code qui permet de générer un corps de requête JSON au format attendu par Microsoft Graph :
+Le coeur du batching repose sur le *body* de votre requête. Voici donc un morceau de code qui permet de générer un corps de requête JSON au format attendu par Microsoft Graph :
 
 ```powershell
 $array = 1,2 | ForEach-Object {
