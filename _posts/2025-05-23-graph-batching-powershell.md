@@ -23,7 +23,7 @@ L'idée est simple : vous allez effectuer une requête "parente" qui va contenir
 
 > Le batching est disponible sur la v1.0 et la version beta de Microsoft Graph. La version que vous choisissez ici sera utilisée pour toutes les requêtes "enfants".
 
-Voici l'exemple PowerShell :
+Voici un exemple avec PowerShell :
 
 ```powershell
 $body = '{...}'
