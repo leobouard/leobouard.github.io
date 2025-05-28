@@ -27,6 +27,8 @@
         link.classList.add('selected');
       }
     });
+
+    hideEmtpyYear();
   }
 
   function clearfilterByTag() {
@@ -35,6 +37,26 @@
     });
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       link.classList.remove('selected');
+    });
+  }
+
+  function hideEmtpyYear() {
+    document.querySelectorAll(".project-container").forEach(container => {
+      let projects = container.querySelectorAll(".project");
+      let allHidden = true;
+
+      projects.forEach(project => {
+        if (window.getComputedStyle(project).display !== "none") {
+          allHidden = false;
+        }
+      });
+
+      if (allHidden) {
+        container.style.display = "none";
+      }
+      else {
+        container.style.display = "flex";
+      }
     });
   }
 </script>
