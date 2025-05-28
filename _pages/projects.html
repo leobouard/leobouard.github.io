@@ -37,9 +37,9 @@ description: "Liste des projets sur lesquels j'ai travaillé"
   <div class="project-per-year fill-available">
     {% for project in year.projects %}
     <div class="project" id="tag-container" style="">
-      <span>{{ project.customer }}</span>
+      <span><i class="fa-solid fa-location-dot"></i>{{ project.customer }}</span>
       <h4>{{ project.title }}</h4>
-      <small>{{ project.period }} • {{ project.duration }}</small>
+      <small><i class="fa-solid fa-calendar-days"></i>{{ project.period }} • <i class="fa-solid fa-hourglass"></i>{{ project.duration }}</small>
       <p>{{ project.description }}</p>
       <div id="tags">
         {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}

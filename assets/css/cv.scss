@@ -292,6 +292,10 @@ div.project {
     background: var(--lightaccent);
 }
 
+div.project i {
+    margin-right: 0.5em;
+}
+
 div.project span {
     color: var(--primary);
     font-weight: 500;
