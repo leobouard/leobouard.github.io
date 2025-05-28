@@ -1,6 +1,3 @@
-github_users:
-  - leobouard
-
 github_repos:
   - leobouard/PasswordReset
   - leobouard/PasswordReminderByEmail
