@@ -4,7 +4,7 @@
         "projects":  [
             {
                 "customer": "Coopérative agricole, Saint-Brieuc",
-                "title": "Migation ADFS",
+                "title": "Migration ADFS",
                 "period": "mai 2025",
                 "duration": "2 jours",
                 "description": "Migration d'une dizaine d'applications de ADFS vers Microsoft Entra ID, avec SAML et OpenID Connect",
