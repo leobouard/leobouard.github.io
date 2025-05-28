@@ -32,7 +32,7 @@
                 "period": "mars 2025",
                 "duration": "2 jours",
                 "description": "Installation et configuration de Quest GPOADmin et production de la documentation d'exploitation",
-                "tags": ["activedirectory", "quest", "gpoadmin"]
+                "tags": ["activedirectory", "quest"]
             },
             {
                 "customer": "Services à la personne, Laval", 
