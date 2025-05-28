@@ -25,7 +25,7 @@ description: "Liste des projets sur lesquels j'ai travaillé"
   {% endfor %}
   {% assign tags = all_tags | sort %}
   {% for tag in tags %}
-  <a href="#" onclick="filterProjectByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
+  <a href="#" onclick="filterByTag('{{ tag }}');">#{{ tag }}</a>
   {% endfor %}
 </div>
 
