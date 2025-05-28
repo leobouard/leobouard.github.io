@@ -32,9 +32,9 @@ description: "Liste des projets sur lesquels j'ai travaillé"
 </div>
 
 {% for year in site.data.projects %}
-<div class="project-container fill-available" style="">
+<div class="project-container" style="">
   <h3>{{ year.year }}</h3>
-  <div class="project-per-year">
+  <div class="project-per-year fill-available">
     {% for project in year.projects %}
     <div class="project" id="tag-container" style="">
       <span>{{ project.customer }}</span>
