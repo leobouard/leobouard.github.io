@@ -271,8 +271,7 @@ div.project-container {
 div.project-container h3 {
     margin-right: 0.5em;
     margin-top: 0.5em;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg) translateX(1%);
+    writing-mode: sideways-lr;
     text-align: right;
     position: sticky;
     top: 1em;
