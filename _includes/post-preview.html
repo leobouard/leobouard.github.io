@@ -3,7 +3,7 @@
     <span><i class="fa-solid fa-calendar-days"></i>Publié le {% include format-date.html date=include.date %}</span>
     <h3>{{ include.title }}</h3>
     <p>{{ include.description }}</p>
-    <div class="article-tags">
+    <div class="article-tags" id="tags">
       {% for tag in include.tags %}
       <span>#{{ tag }}</span>
       {% endfor %}

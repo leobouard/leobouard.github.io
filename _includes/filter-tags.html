@@ -17,7 +17,7 @@
 
     clearfilterByTag();
     document.querySelectorAll('#tag-container').forEach(container => {
-      const tags = container.querySelector('.article-tags');
+      const tags = container.querySelector('#tags');
       if (!tags || !tags.textContent.includes(tag)) {
         container.style.display = 'none';
       }
