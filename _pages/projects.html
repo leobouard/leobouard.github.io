@@ -12,6 +12,7 @@ description: "Liste des projets sur lesquels j'ai travaillé"
 <h1>Projets</h1>
 <h2>Projets en clientèle</h2>
 
+{% include filter-tags.html %}
 <div class="all-tags">
   {% assign all_tags = "" | split: "" %}
   {% for year in site.data.projects %}
