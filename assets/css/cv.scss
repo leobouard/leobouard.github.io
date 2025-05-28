@@ -274,6 +274,9 @@ div.project-container h3 {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     text-align: right;
+    position: sticky;
+    top: 1em;
+    align-self: flex-start;
 }
 
 div.project-per-year {
