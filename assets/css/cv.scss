@@ -272,7 +272,6 @@ div.project-container h3 {
     margin-right: 0.5em;
     margin-top: 0.5em;
     writing-mode: sideways-lr;
-    text-align: right;
     position: sticky;
     top: 1em;
     align-self: flex-start;
@@ -303,6 +302,7 @@ div.project span {
 
 div.project h4 {
     margin: 0;
+    font-size: larger;
 }
 
 div.project small {
