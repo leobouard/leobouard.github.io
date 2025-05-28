@@ -1,3 +1,3 @@
 # leobouard.github.io
 
-Aka <https://www.labouabouate.fr>
+aka <https://www.labouabouate.fr>
