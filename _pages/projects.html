@@ -12,18 +12,25 @@ description: "Liste des projets sur lesquels j'ai travaillé"
 <h1>Projets</h1>
 <h2>Projets en clientèle</h2>
 
+<div class="all-tags">
+  {% assign tags = site.data.projects.tags | sort %}
+  {% for tag in tags %}
+  <a href="#" onclick="filterProjectByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
+  {% endfor %}
+</div>
+
 {% for year in site.data.projects %}
 <div class="project-container" style="">
   <h3>{{ year.year }}</h3>
   <div class="project-per-year">
     {% for project in year.projects %}
-      <div class="project">
-        <span>{{ project.customer }}</span>
-        <h4>{{ project.title }}</h4>
-        <small>{{ project.period }} • {{ project.duration }}</small>
-        <p>{{ project.description }}</p>
-        {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}
-      </div>
+    <div class="project">
+      <span>{{ project.customer }}</span>
+      <h4>{{ project.title }}</h4>
+      <small>{{ project.period }} • {{ project.duration }}</small>
+      <p>{{ project.description }}</p>
+      {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}
+    </div>
     {% endfor %}
   </div>
 </div>

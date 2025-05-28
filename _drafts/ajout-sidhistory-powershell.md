@@ -2,15 +2,60 @@ Source : [Update the sIDHistory attribute for existing accounts with Powershell 
 
 ## Préparation des deux domaines
 
-### Relation d'approbation
+### Relations d'approbations
 
-Commandes netdom
+Commandes `netdom`
+
+SOURCE & DESTINATION
+
+Sur le domaine SOURCE :
+
+```powershell
+NETDOM TRUST source.local /Domain:destination.local /Quarantine:Yes
+NETDOM TRUST source.local /Domain:destination.local /EnableSIDHistory:Yes
+```
+
+Sur le domaine DESTINATION :
+
+```powershell
+NETDOM TRUST destination.local /Domain:source.local /Quarantine:Yes
+NETDOM TRUST destination.local /Domain:source.local /EnableSIDHistory:Yes
+```
 
 ### Groupes SIDHistory
 
+Création d'un groupe par domaine pour activer l'audit du SIDHistory
+
 SOURCE$$$ et DESTINATION$$$
 
+```powershell
+$name = (Get-ADDomain).NetBIOSName + '$$$'
+New-ADGroup -Name $name -GroupCategory Security -GroupScope DomainLocal
+```
+
 ### Activation de l'audit
+ 
+#### Account management
+
+Policy | Audit
+------ | -----
+Audit Application Group Management | Success and Failure
+Audit Computer Account Management | Success and Failure
+Audit Distribution Group Management | Success and Failure
+Audit Other Account Management Events | Success and Failure
+Audit Security Group Management | Success and Failure
+Audit User Account Management | Success and Failure
+
+#### DS Access
+
+Policy | Audit
+------ | -----
+Audit Detailed Directory Service Replication | Success and Failure
+**Audit Directory Service Access** | Success and Failure
+Audit Directory Service Changes | Success and Failure
+Audit Directory Service Replication | Success and Failure
+
+Source: [Configuring the Source and Target Domains for SID History Migration \| Microsoft Learn](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc974410%28v=ws.10%29?redirectedfrom=MSDN#to-enable-auditing-in-windowsserver2008-and-later-domains)
 
 > Note sur la priorité des paramètres
 
@@ -32,7 +77,7 @@ C'est la seconde méthode qui nous intéresse dans ce cas.
 
 #### Chargement de la DLL
 
-Sur un contrôleur de domaine, 
+Sur un contrôleur de domaine :
 
 ```powershell
 regsvr32.exe clonepr.dll
@@ -48,5 +93,25 @@ $clonePr.AddSidHistory($sourceUserName, $targetUserName, 0)
 
 ### Ajout d'un SIDHistory avec DSInternals
 
+```powershell
+# Find the account SID you want to inject
+Get-ADUser -Identity $InterestingUser
+
+# Stop the NTDS service
+Stop-service NTDS -force
+
+# Inject the SID into the SID History attribute
+Add-ADDBSidHistory -samaccountname AttackerUser -sidhistory $SIDOfInterestingUser -DBPath C:\Windows\ntds\ntds.dit
+
+# Start the NTDS service
+Start-service NTDS
+```
+
 ### Suppression d'un SIDHistory
+
+Supprimer 
+
+```powershell
+Get-ADUser john.doe -Properties SIDHistory | Set-ADUser -Remove @{ SIDHistory = $_.SIDHistory.Value }}
+```
 

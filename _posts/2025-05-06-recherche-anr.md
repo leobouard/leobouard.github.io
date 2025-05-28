@@ -22,19 +22,17 @@ Pour la partie "recherche du compte utilisateur", l'utilitaire propose une barre
 ```powershell
 Get-ADUser -Filter {
     (Name -like 'Léo*') -or
-    (DisplayName -like 'Léo*' -or
+    (DisplayName -like 'Léo*') -or
     (GivenName -like 'Léo*') -or
     (Surname -like 'Léo*') -or
     (SamAccountName -like 'leo*')
 }
 ```
 
-Ou utiliser la recherche ANR qui indexe plusieurs attributs à la fois, pour obtenir un filtre très simple et performant :
+Ou utiliser la recherche ANR qui indexe plusieurs attributs à la fois, pour obtenir un filtre très simple et performant.
 
 ```powershell
 Get-ADUser -Filter {ANR -eq 'Léo'}
-# ou via le filtre LDAP
-Get-ADUser -LDAPFilter "(ANR=Léo)"
 ```
 
 Les deux commandes ci-dessus donneront **un résultat identique**, pour une syntaxe beaucoup plus légère et de meilleures performances en utilisant la recherche ANR.
