@@ -13,7 +13,17 @@ description: "Liste des projets sur lesquels j'ai travaillé"
 <h2>Projets en clientèle</h2>
 
 <div class="all-tags">
-  {% assign tags = site.data.projects.projects.tags | sort %}
+  {% assign all_tags = "" | split: "" %}
+  {% for year in site.data.projects %}
+    {% for project in year.projects %}
+      {% for tag in project.tags %}
+        {% unless all_tags contains tag %}
+          {% assign all_tags = all_tags | push: tag %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+  {% assign tags = all_tags | sort %}
   {% for tag in tags %}
   <a href="#" onclick="filterProjectByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
   {% endfor %}
