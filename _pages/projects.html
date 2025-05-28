@@ -15,13 +15,13 @@ description: "Liste des projets sur lesquels j'ai travaillé"
 <div class="all-tags">
   {% assign all_tags = "" | split: "" %}
   {% for year in site.data.projects %}
-    {% for project in year.projects %}
-      {% for tag in project.tags %}
-        {% unless all_tags contains tag %}
-          {% assign all_tags = all_tags | push: tag %}
-        {% endunless %}
-      {% endfor %}
-    {% endfor %}
+  {% for project in year.projects %}
+  {% for tag in project.tags %}
+  {% unless all_tags contains tag %}
+  {% assign all_tags = all_tags | push: tag %}
+  {% endunless %}
+  {% endfor %}
+  {% endfor %}
   {% endfor %}
   {% assign tags = all_tags | sort %}
   {% for tag in tags %}
@@ -34,12 +34,14 @@ description: "Liste des projets sur lesquels j'ai travaillé"
   <h3>{{ year.year }}</h3>
   <div class="project-per-year">
     {% for project in year.projects %}
-    <div class="project">
+    <div class="project" id="tag-container" style="">
       <span>{{ project.customer }}</span>
       <h4>{{ project.title }}</h4>
       <small>{{ project.period }} • {{ project.duration }}</small>
       <p>{{ project.description }}</p>
-      {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}
+      <div id="tags">
+        {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}
+      </div>
     </div>
     {% endfor %}
   </div>
