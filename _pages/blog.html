@@ -21,7 +21,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
   <div class="all-tags">
     {% assign tags = site.tags | sort %}
     {% for tag in tags %}
-    <a href="#" onclick="filterArticlesByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
+    <a href="#" onclick="filterByTag('{{ tag[0] }}');">#{{ tag[0] }}</a>
     {% endfor %}
   </div>
   <div class="all-posts">

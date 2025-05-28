@@ -1,11 +1,11 @@
 <script>
-  function filterArticlesByTag(tag) {
+  function filterByTag(tag) {
     let linkSelected = false;
-    document.querySelectorAll('a[onclick^="filterArticlesByTag"]').forEach(link => {
+    document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       if (link.getAttribute('onclick').includes(`'${tag}'`)) {
         if (link.classList.contains('selected')) {
           link.classList.remove('selected');
-          clearfilterArticlesByTag();
+          clearfiltersByTag();
           linkSelected = true;
         }
       }
@@ -15,25 +15,25 @@
       return;
     }
 
-    clearfilterArticlesByTag();
+    clearfilterByTag();
     document.querySelectorAll('article').forEach(article => {
       const tags = article.querySelector('.article-tags');
       if (!tags || !tags.textContent.includes(tag)) {
         article.style.display = 'none';
       }
     });
-    document.querySelectorAll('a[onclick^="filterArticlesByTag"]').forEach(link => {
+    document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       if (link.getAttribute('onclick').includes(`'${tag}'`)) {
         link.classList.add('selected');
       }
     });
   }
 
-  function clearfilterArticlesByTag() {
+  function clearfilterByTag() {
     document.querySelectorAll('article').forEach(article => {
       article.style.display = '';
     });
-    document.querySelectorAll('a[onclick^="filterArticlesByTag"]').forEach(link => {
+    document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       link.classList.remove('selected');
     });
   }
