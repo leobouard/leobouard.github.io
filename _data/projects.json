@@ -48,7 +48,7 @@
                 "period": "de janvier 2025 à mars 2025",
                 "duration": "5 jours",
                 "description": "Conception de scripts PowerShell a destination de la supervision PRTG",
-                "tags": ["powershell", "prtg"]
+                "tags": ["powershell"]
             }
         ]
     },
