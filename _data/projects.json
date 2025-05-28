@@ -16,7 +16,7 @@
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
                 "description": "Migration d'utilisateurs et de groupes Active Directory entre deux forêts avec Quest Migrator Pro (MPAD)",
-                "tags": ["activedirectory", "quest", "mpad"]
+                "tags": ["activedirectory", "quest"]
             },
             {
                 "customer": "Agroalimentaire, Rennes", 
@@ -119,7 +119,7 @@
                 "period": "décembre 2018",
                 "duration": "5 jours",
                 "description": "Installation et configuration de KACE SMA avec formation des équipes",
-                "tags": ["quest", "kace", "formation"]
+                "tags": ["quest", "formation"]
             }
         ]
     }
