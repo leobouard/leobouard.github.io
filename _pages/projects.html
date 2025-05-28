@@ -41,7 +41,7 @@ description: "Liste des projets sur lesquels j'ai travaillé"
       <h4>{{ project.title }}</h4>
       <small><i class="fa-solid fa-calendar-days"></i>{{ project.period }} • <i class="fa-solid fa-hourglass-half"></i>{{ project.duration }}</small>
       <p>{{ project.description }}</p>
-      <div id="tags">
+      <div style="display: flex; flex-wrap: wrap; grid-gap: 0.5em" id="tags">
         {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}
       </div>
     </div>

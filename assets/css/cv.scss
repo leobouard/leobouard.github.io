@@ -317,12 +317,10 @@ div.project p {
 div.project code {
     background-color: var(--lightaccent);
     padding: 0.1em 0.5em;
-    margin-right: 0.5em;
     border-radius: var(--borderradius);
     text-decoration: none;
     font-size: smaller;
     font-family: var(--textfont);
-    display: inline-block;
 }
 
 div.github-repositories {
