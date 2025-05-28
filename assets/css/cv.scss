@@ -265,7 +265,7 @@ div.call-to-website {
 
 div.project-container {
     display: flex;
-    margin: 2em 0;
+    margin: 1.5em 0;
 }
 
 div.project-container h3 {
@@ -282,6 +282,12 @@ div.project-per-year {
     display: flex;
     flex-direction: column;
     grid-gap: 1em;
+}
+
+div.project {
+    padding: 0.25em 1em;
+    border-radius: var(--borderradius);
+    background: var(--lightaccent);
 }
 
 div.project span {
