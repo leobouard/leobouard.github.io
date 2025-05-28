@@ -6,6 +6,7 @@
         if (link.classList.contains('selected')) {
           link.classList.remove('selected');
           clearfilterByTag();
+          showAllYears();
           linkSelected = true;
         }
       }
@@ -16,6 +17,7 @@
     }
 
     clearfilterByTag();
+    showAllYears();
     document.querySelectorAll('#tag-container').forEach(container => {
       const tags = container.querySelector('#tags');
       if (!tags || !tags.textContent.includes(tag)) {
@@ -27,7 +29,6 @@
         link.classList.add('selected');
       }
     });
-
     hideEmtpyYear();
   }
 
@@ -57,6 +58,12 @@
       else {
         container.style.display = "flex";
       }
+    });
+  }
+
+  function showAllYears() {
+    document.querySelectorAll(".project-container").forEach(container => {
+      container.style.display = "flex";
     });
   }
 </script>
