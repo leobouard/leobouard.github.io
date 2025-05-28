@@ -49,3 +49,11 @@ description: "Liste des projets sur lesquels j'ai travaillé"
   </div>
 </div>
 {% endfor %}
+
+<h2>Projets open-source</h2>
+<!-- based on https://github.com/ambroiseodt/ambroiseodt.github.io -->
+{% if site.data.repositories.github_repos %}
+  {% for repo in site.data.repositories.github_repos %}
+    {% include github-repository.html repository=repo %}
+  {% endfor %}
+{% endif %}
