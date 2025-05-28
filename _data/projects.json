@@ -6,8 +6,8 @@
                 "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Migation ADFS",
                 "period": "mai 2025",
-                "duration": "3 jours",
-                "description": "Migration d'une dizaine d'applications de ADFS vers Microsoft Entra ID",
+                "duration": "2 jours",
+                "description": "Migration d'une dizaine d'applications de ADFS vers Microsoft Entra ID, avec SAML et OpenID Connect",
                 "tags": ["adfs", "entraid"]
             },
             {
@@ -15,7 +15,7 @@
                 "title": "Migration Active Directory",
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
-                "description": "Migration d'utilisateurs et de groupes Active Directory entre deux forêts avec Quest Migrator Pro (MPAD)",
+                "description": "Migration d'utilisateurs et de groupes Active Directory entre deux forêts avec Quest Migrator Pro for Active Directory (MPAD)",
                 "tags": ["activedirectory", "quest"]
             },
             {
