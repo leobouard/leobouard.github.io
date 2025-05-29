@@ -27,6 +27,15 @@ html {
     --blockquote: #71a29a45;
 }
 
+html .image-dark {
+    display: none;
+}
+
+html .image-light {
+    display: block;
+}
+
+
 // DARK THEME
 html.dark {
     --text: #eee;
@@ -38,4 +47,12 @@ html.dark {
     --mediumaccent: #555;
     --heavyaccent: #aaa;
     --blockquote: #90b7b145;
+}
+
+html.dark .image-dark {
+    display: block !important;
+}
+
+html.dark .image-light {
+    display: none !important;
 }
