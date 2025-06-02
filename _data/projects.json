@@ -7,7 +7,7 @@
                 "title": "Architecte Active Directory",
                 "period": "depuis juin 2025",
                 "duration": "5 jours par mois",
-                "description": "Sécurisation des différents domaines Active Directory",
+                "description": "Sécurisation des différents domaines Active Directory pour atteindre le niveau de maturité 3 et pouvoir le maintenir facilement",
                 "tags": ["activedirectory", "powershell"]
             },
             {
