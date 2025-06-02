@@ -1,5 +1,18 @@
 [
     {
+        "year": "En cours",
+        "projects": [
+            {
+                "customer": "Industriel, Saint-Malo",
+                "title": "Architecte Active Directory",
+                "period": "depuis avril 2024",
+                "duration": "5 jours par mois",
+                "description": "Référent technique sur les projets Active Directory et l'automatisation avec PowerShell",
+                "tags": ["activedirectory", "powershell"]
+            }
+        ]
+    }
+    {
         "year": 2025,
         "projects":  [
             {
@@ -69,14 +82,6 @@
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "au forfait",
                 "description": "Projet de sécurisation du domaine Active Directory et mise en place du tiering-model",
-                "tags": ["activedirectory", "powershell"]
-            },
-            {
-                "customer": "Industriel, Saint-Malo",
-                "title": "Architecte Active Directory",
-                "period": "de avril 2024 à juillet 2025",
-                "duration": "5 jours par mois",
-                "description": "Référent technique sur les projets Active Directory et l'automatisation avec PowerShell",
                 "tags": ["activedirectory", "powershell"]
             },
             {
