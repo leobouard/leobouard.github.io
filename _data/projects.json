@@ -3,6 +3,14 @@
         "year": "En cours",
         "projects": [
             {
+                "customer": "Banque et assurance, Niort",
+                "title": "Architecte Active Directory",
+                "period": "depuis juin 2025",
+                "duration": "5 jours par mois",
+                "description": "Sécurisation des différents domaines Active Directory",
+                "tags": ["activedirectory", "powershell"]
+            },
+            {
                 "customer": "Industriel, Saint-Malo",
                 "title": "Architecte Active Directory",
                 "period": "depuis avril 2024",
