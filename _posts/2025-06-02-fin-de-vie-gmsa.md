@@ -51,7 +51,7 @@ Test-ADServiceAccount gmsa
 
 Si le résultat de la commande donne "False" : le compte de service n'est pas utilisable sur le serveur.
 
-> Si le résultat de la commande `Test-ADServiceAccount` est positif, cela va générer une activité sur le compte de service (mise à jour des attributs `LastLogonDate` et `PasswordLastSet`).
+> Si le résultat de la commande `Test-ADServiceAccount` est positif, cela peut générer une activité sur le compte de service (mise à jour de l'attribut `PasswordLastSet`).
 
 #### Vérification des tâches planifiées
 
