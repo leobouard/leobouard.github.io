@@ -58,7 +58,10 @@ Si le résultat de la commande donne "False" : le compte de service n'est pas ut
 Avec cette commande, on va lister tous les comptes utilisés pour lancer une tâche planifiée sur le serveur :
 
 ```powershell
-Get-ScheduledTask | Select-Object TaskName, State, @{N='Account';E={$_.Principal.UserID}} | Group-Object Account | Sort-Object Count -Descending
+Get-ScheduledTask |
+    Select-Object TaskName, State, @{N='Account';E={$_.Principal.UserID}} |
+    Group-Object Account |
+    Sort-Object Count -Descending
 ```
 
 #### Vérification des services
@@ -66,7 +69,10 @@ Get-ScheduledTask | Select-Object TaskName, State, @{N='Account';E={$_.Principal
 Avec cette commande, on va lister tous les comptes utilisés pour lancer un service Windows sur le serveur :
 
 ```powershell
-Get-WMIObject Win32_Service | Select-Object Name, StartName | Group-Object StartName | Sort-Object Count -Descending
+Get-WMIObject Win32_Service |
+    Select-Object Name, StartName |
+    Group-Object StartName |
+    Sort-Object Count -Descending
 ```
 
 ## Décommissionnement d'un gMSA
