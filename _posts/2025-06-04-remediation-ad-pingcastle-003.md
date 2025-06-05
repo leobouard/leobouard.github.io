@@ -4,8 +4,8 @@ description: "Administrateurs de Active Directory"
 tableOfContent: "/2025/06/05/remediation-ad-pingcastle-introduction#table-des-matières"
 nextLink:
   name: "Anomalies"
-  id: "2025/06/05/remediation-ad-pingcastle-anomalies"
+  id: "remediation-ad-pingcastle-004"
 prevLink:
   name: "Trusts"
-  id: "2025/06/05/remediation-ad-pingcastle-trusts"
+  id: "remediation-ad-pingcastle-002"
 ---

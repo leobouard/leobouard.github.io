@@ -4,8 +4,8 @@ description: "Dette technique liées aux comptes ordinateurs"
 tableOfContent: "/2025/06/05/remediation-ad-pingcastle-introduction#table-des-matières"
 nextLink:
   name: "Trusts"
-  id: "2025/06/05/remediation-ad-pingcastle-trusts"
+  id: "remediation-ad-pingcastle-002"
 prevLink:
   name: "Introduction"
-  id: "/2025/06/05/remediation-ad-pingcastle-introduction"
+  id: "remediation-ad-pingcastle-introduction"
 ---

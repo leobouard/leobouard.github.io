@@ -4,8 +4,8 @@ description: "Relations d'approbations et connexions entre différents domaines 
 tableOfContent: "/2025/06/05/remediation-ad-pingcastle-introduction#table-des-matières"
 nextLink:
   name: "Privileged Accounts"
-  id: "2025/06/05/remediation-ad-pingcastle-privileged-accounts"
+  id: "remediation-ad-pingcastle-003"
 prevLink:
   name: "Stale Object"
-  id: "2025/06/05/remediation-ad-pingcastle-stale-object"
+  id: "remediation-ad-pingcastle-001"
 ---
