@@ -5,12 +5,18 @@ tags: activedirectory
 listed: true
 nextLink:
   name: "Stale Object"
-  id: "/2025/06/05/remediation-ad-pingcastle-stale-object"
+  id: "remediation-ad-pingcastle-001"
 ---
 
 ## Introduction
 
 Mes notes sur les résolutions et les points de vérification pour chaque vulnérabilité trouvée par Ping Castle dans votre domaine Active Directory.
+
+### Conseils
+
+Si vous avez la possibilité de vous procurer une licence auditeur, je vous la recommande vivement ! Même si celle-ci n'est pas indispensable, elle reste très utile pour identifier les tâches prioritaires (criticité 1 & 2) et avoir accès à plus d'informations.
+
+Pensez également à garder scrupuleusement vos fichiers XML générés par Ping Castle, et pas uniquement les fichiers HTML. Ceux-ci vous seront utiles pour vous rendre compte de l'avancée de votre remédiation.
 
 ### Outils utiles
 
