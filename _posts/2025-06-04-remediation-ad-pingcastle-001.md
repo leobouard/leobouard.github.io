@@ -32,7 +32,9 @@ S-OS-XP | Windows XP | [Windows XP - Microsoft Lifecycle](https://learn.microsof
 Voici une commande PowerShell pour faire l'inventaire par OS des comptes ordinateurs actifs :
 
 ```powershell
-Get-ADComputer -Filter {Enabled -eq $true} -Properties OperatingSystem | Group-Object OperatingSystem | Sort-Object Count -Descending
+Get-ADComputer -Filter {Enabled -eq $true} -Properties OperatingSystem |
+    Group-Object OperatingSystem |
+    Sort-Object Count -Descending
 ```
 
 Pour la résolution, pas de miracles : il faut remplacer ou mettre à jour les ordinateurs concernés. Il s'agit souvent de payer une dette technique qui s'est accumulée sur plusieurs années et qui impacte lourdement l'organisation.
