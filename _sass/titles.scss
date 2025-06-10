@@ -32,6 +32,8 @@ h5 i {
     font-size: smaller;
     position: absolute;
     top: 0.4em;
+    left: -2em;
+    transition: opacity 0.2s ease-in-out;
 }
 
 h2:hover i,
