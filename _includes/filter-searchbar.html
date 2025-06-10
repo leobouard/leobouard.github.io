@@ -1,6 +1,6 @@
 <script>
   function filterArticlesBySearch() {
-    clearfilterArticlesByTag();
+    clearfilterByTag();
     const searchValue = document.getElementById('searchbar').value.toLowerCase();
     const articles = document.querySelectorAll('.all-posts article');
     articles.forEach(article => {
