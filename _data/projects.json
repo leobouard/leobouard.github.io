@@ -24,6 +24,14 @@
         "year": 2025,
         "projects":  [
             {
+                "customer": "Agroalimentaire, Rennes", 
+                "title": "Administrateur Active Directory et Entra ID",
+                "period": "juin 2025",
+                "duration": "7 jours",
+                "description": "Assurer la continuité de service et la gestion des incidents sur Active Directory et Microsoft Entra ID en l'absence de l'équipe interne",
+                "tags": ["activedirectory", "entraid", "powershell"]
+            },
+            {
                 "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Migration ADFS",
                 "period": "mai 2025",
