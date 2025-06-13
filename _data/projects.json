@@ -4,8 +4,6 @@
         "projects": [
             {
                 "company": "Groupe IMA",
-                "logo": "/assets/images/groupe-ima.jpg",
-                "customer": "Banque et assurance, Niort",
                 "title": "Architecte Active Directory",
                 "period": "depuis juin 2025",
                 "duration": "5 jours par mois",
@@ -14,8 +12,6 @@
             },
             {
                 "company": "Groupe Roullier",
-                "logo": "/assets/images/groupe-roullier.jpg",
-                "customer": "Industriel, Saint-Malo",
                 "title": "Architecte Active Directory",
                 "period": "depuis avril 2024",
                 "duration": "5 jours par mois",
@@ -29,8 +25,6 @@
         "projects":  [
             {
                 "company": "Avril",
-                "logo": "/assets/images/avril.jpg",
-                "customer": "Agroalimentaire, Rennes", 
                 "title": "Administrateur Active Directory et Entra ID",
                 "period": "juin 2025",
                 "duration": "7 jours",
@@ -39,8 +33,6 @@
             },
             {
                 "company": "Le Gouessant",
-                "logo": "/assets/images/le-gouessant.jpg",
-                "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Migration ADFS",
                 "period": "mai 2025",
                 "duration": "2 jours",
@@ -49,8 +41,6 @@
             },
             {
                 "company": "Oberthur Fiduciaire",
-                "logo": "/assets/images/oberthur-fiduciaire.jpg",
-                "customer": "Imprimerie, Rennes", 
                 "title": "Migration Active Directory",
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
@@ -59,8 +49,6 @@
             },
             {
                 "company": "Groupe Le Duff",
-                "logo": "/assets/images/groupe-le-duff.jpg",
-                "customer": "Agroalimentaire, Rennes", 
                 "title": "Consultant Active Directory",
                 "period": "avril 2025",
                 "duration": "1 jour",
@@ -69,8 +57,6 @@
             },
             {
                 "company": "Crédit Mutuel Arkéa",
-                "logo": "/assets/images/credit-mutuel-arkea.jpg",
-                "customer": "Banque et assurance, Brest", 
                 "title": "Intégration GPOADmin",
                 "period": "mars 2025",
                 "duration": "2 jours",
@@ -79,8 +65,6 @@
             },
             {
                 "company": "Réseau Aprolliance",
-                "logo": "/assets/images/reseau-aprolliance.jpg",
-                "customer": "Services à la personne, Laval", 
                 "title": "Consultant Microsoft Entra ID",
                 "period": "février 2025",
                 "duration": "4 jours",
@@ -89,8 +73,6 @@
             },
             {
                 "company": "Le Gouessant",
-                "logo": "/assets/images/le-gouessant.jpg",
-                "customer": "Coopérative agricole, Saint-Brieuc", 
                 "title": "Consultant PowerShell",
                 "period": "de janvier 2025 à mars 2025",
                 "duration": "5 jours",
@@ -104,8 +86,6 @@
         "projects": [
             {
                 "company": "B&B Hotels France",
-                "logo": "/assets/images/hotels-bb.jpg",
-                "customer": "Hôtellerie, Brest",
                 "title": "Architecte Active Directory",
                 "period": "de octobre 2024 à janvier 2025",
                 "duration": "10 jours",
@@ -114,8 +94,6 @@
             },
             {
                 "company": "Groupe Even",
-                "logo": "/assets/images/groupe-even.jpg",
-                "customer": "Coopérative agricole, Brest",
                 "title": "Architecte Active Directory",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "au forfait",
@@ -124,8 +102,6 @@
             },
             {
                 "company": "Groupe Beaumanoir",
-                "logo": "/assets/images/groupe-beaumanoir.jpg",
-                "customer": "Industriel, Saint-Malo",
                 "title": "Consultant Active Directory et Microsoft 365",
                 "period": "de avril 2024 à mai 2025",
                 "duration": "40 jours",
@@ -134,8 +110,6 @@
             },
             {
                 "company": "METSYS",
-                "logo": "/assets/images/metsys.jpg",
-                "customer": "Conseil et informatique, Paris",
                 "title": "Formateur PowerShell",
                 "period": "avril 2024",
                 "duration": "4 jours",
@@ -149,8 +123,6 @@
         "projects": [
             {
                 "company": "Le Gouessant",
-                "logo": "/assets/images/le-gouessant.jpg",
-                "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Consultant Microsoft 365",
                 "period": "novembre 2023",
                 "duration": "3 jours",
@@ -164,8 +136,6 @@
         "projects": [
             {
                 "company": "Labocéa",
-                "logo": "/assets/images/labocea.jpg",
-                "customer": "Laboratoire, Saint-Brieuc",
                 "title": "Intégration KACE SMA",
                 "period": "décembre 2018",
                 "duration": "5 jours",

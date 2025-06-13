@@ -37,8 +37,11 @@ description: "Liste des projets sur lesquels j'ai travaillé"
   <div class="project-per-year fill-available">
     {% for project in year.projects %}
     <div class="project" id="tag-container" style="">
-      <img src="{{ project.logo }}" alt="{{ project.company }}" title="{{ project.company }}">
-      <span><i class="fa-solid fa-location-dot"></i>{{ project.customer }}</span>
+      {% assign customer = site.data.customers | where: "company", project.company | first %}
+      {% if customer %}
+        <img src="{{ customer.logo }}" alt="{{ project.company }}" title="{{ project.company }}">
+        <span><i class="fa-solid fa-location-dot"></i>{{ customer.description }}</span>
+      {% endif %}
       <h4>{{ project.title }}</h4>
       <small><i class="fa-solid fa-calendar-days"></i>{{ project.period }} • <i class="fa-solid fa-hourglass-half"></i>{{ project.duration }}</small>
       <p>{{ project.description }}</p>

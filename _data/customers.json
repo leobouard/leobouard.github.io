@@ -1,0 +1,67 @@
+[
+  {
+    "company": "Groupe IMA",
+    "logo": "/assets/images/groupe-ima.jpg",
+    "description": "Banque et assurance, Niort"
+  },
+  {
+    "company": "Groupe Roullier",
+    "logo": "/assets/images/groupe-roullier.jpg",
+    "description": "Industriel, Saint-Malo"
+  },
+  {
+    "company": "Avril",
+    "logo": "/assets/images/avril.jpg",
+    "description": "Agroalimentaire, Rennes"
+  },
+  {
+    "company": "Le Gouessant",
+    "logo": "/assets/images/le-gouessant.jpg",
+    "description": "Coopérative agricole, Saint-Brieuc"
+  },
+  {
+    "company": "Oberthur Fiduciaire",
+    "logo": "/assets/images/oberthur-fiduciaire.jpg",
+    "description": "Imprimerie, Rennes"
+  },
+  {
+    "company": "Groupe Le Duff",
+    "logo": "/assets/images/groupe-le-duff.jpg",
+    "description": "Agroalimentaire, Rennes"
+  },
+  {
+    "company": "Crédit Mutuel Arkéa",
+    "logo": "/assets/images/credit-mutuel-arkea.jpg",
+    "description": "Banque et assurance, Brest"
+  },
+  {
+    "company": "Réseau Aprolliance",
+    "logo": "/assets/images/reseau-aprolliance.jpg",
+    "description": "Services à la personne, Laval"
+  },
+  {
+    "company": "B&B Hotels France",
+    "logo": "/assets/images/hotels-bb.jpg",
+    "description": "Hôtellerie, Brest"
+  },
+  {
+    "company": "Groupe Even",
+    "logo": "/assets/images/groupe-even.jpg",
+    "description": "Coopérative agricole, Brest"
+  },
+  {
+    "company": "Groupe Beaumanoir",
+    "logo": "/assets/images/groupe-beaumanoir.jpg",
+    "description": "Industriel, Saint-Malo"
+  },
+  {
+    "company": "METSYS",
+    "logo": "/assets/images/metsys.jpg",
+    "description": "Services numérique, Rennes"
+  },
+  {
+    "company": "Labocéa",
+    "logo": "/assets/images/labocea.jpg",
+    "description": "Laboratoire, Saint-Brieuc"
+  }
+]
