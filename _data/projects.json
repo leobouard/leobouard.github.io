@@ -30,7 +30,7 @@
             {
                 "company": "Avril",
                 "logo": "/assets/images/avril.jpg",
-                "customer": "Agroalimentaire, Bruz", 
+                "customer": "Agroalimentaire, Rennes", 
                 "title": "Administrateur Active Directory et Entra ID",
                 "period": "juin 2025",
                 "duration": "7 jours",
@@ -40,7 +40,7 @@
             {
                 "company": "Le Gouessant",
                 "logo": "/assets/images/le-gouessant.jpg",
-                "customer": "Coopérative agricole, Lamballe-Armor",
+                "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Migration ADFS",
                 "period": "mai 2025",
                 "duration": "2 jours",
@@ -50,7 +50,7 @@
             {
                 "company": "Oberthur Fiduciaire",
                 "logo": "/assets/images/oberthur-fiduciaire.jpg",
-                "customer": "Imprimerie, Chantepie", 
+                "customer": "Imprimerie, Rennes", 
                 "title": "Migration Active Directory",
                 "period": "de avril 2025 à mai 2025",
                 "duration": "10 jours",
@@ -80,7 +80,7 @@
             {
                 "company": "Réseau Aprolliance",
                 "logo": "/assets/images/reseau-aprolliance.jpg",
-                "customer": "Services à la personne, Changé", 
+                "customer": "Services à la personne, Laval", 
                 "title": "Consultant Microsoft Entra ID",
                 "period": "février 2025",
                 "duration": "4 jours",
@@ -90,7 +90,7 @@
             {
                 "company": "Le Gouessant",
                 "logo": "/assets/images/le-gouessant.jpg",
-                "customer": "Coopérative agricole, Lamballe-Armor", 
+                "customer": "Coopérative agricole, Saint-Brieuc", 
                 "title": "Consultant PowerShell",
                 "period": "de janvier 2025 à mars 2025",
                 "duration": "5 jours",
@@ -115,7 +115,7 @@
             {
                 "company": "Groupe Even",
                 "logo": "/assets/images/groupe-even.jpg",
-                "customer": "Coopérative agricole, Ploudaniel",
+                "customer": "Coopérative agricole, Brest",
                 "title": "Architecte Active Directory",
                 "period": "de avril 2024 à juillet 2025",
                 "duration": "au forfait",
@@ -135,7 +135,7 @@
             {
                 "company": "METSYS",
                 "logo": "/assets/images/metsys.jpg",
-                "customer": "Conseil et informatique, Boulogne-Billancourt",
+                "customer": "Conseil et informatique, Paris",
                 "title": "Formateur PowerShell",
                 "period": "avril 2024",
                 "duration": "4 jours",
@@ -150,7 +150,7 @@
             {
                 "company": "Le Gouessant",
                 "logo": "/assets/images/le-gouessant.jpg",
-                "customer": "Coopérative agricole, Lamballe-Armor",
+                "customer": "Coopérative agricole, Saint-Brieuc",
                 "title": "Consultant Microsoft 365",
                 "period": "novembre 2023",
                 "duration": "3 jours",
@@ -165,7 +165,7 @@
             {
                 "company": "Labocéa",
                 "logo": "/assets/images/labocea.jpg",
-                "customer": "Laboratoire, Ploufragan",
+                "customer": "Laboratoire, Saint-Brieuc",
                 "title": "Intégration KACE SMA",
                 "period": "décembre 2018",
                 "duration": "5 jours",
