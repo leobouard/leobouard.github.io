@@ -289,6 +289,16 @@ div.project {
     padding: 0.5em 1em;
     border-radius: var(--borderradius);
     border: 1px solid var(--mediumaccent);
+    position: relative;
+}
+
+div.project img {
+    width: 4em;
+    position: absolute;
+    top: -0.5em;
+    right: -1em;
+    border: var(--border);
+    border-radius: 100%;
 }
 
 div.project i {
@@ -298,6 +308,7 @@ div.project i {
 div.project span {
     color: var(--primary);
     font-weight: 500;
+    margin-right: 4em;
 }
 
 div.project h4 {
