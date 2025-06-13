@@ -290,6 +290,7 @@ div.project {
     border-radius: var(--borderradius);
     border: 1px solid var(--mediumaccent);
     position: relative;
+    margin-right: 1em;
 }
 
 div.project img {
@@ -314,6 +315,7 @@ div.project span {
 div.project h4 {
     margin: 0.5em 0;
     font-size: 1.1em;
+    margin-right: 2em;
 }
 
 div.project small {
