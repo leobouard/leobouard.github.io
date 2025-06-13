@@ -63,5 +63,10 @@
     "company": "Labocéa",
     "logo": "/assets/images/labocea.jpg",
     "description": "Laboratoire, Saint-Brieuc"
+  },
+  {
+    "company": "GEVES",
+    "logo": "/assets/images/geves.jpg",
+    "description": "Recherche agronomique, Angers"
   }
 ]
