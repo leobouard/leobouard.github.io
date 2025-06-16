@@ -1,5 +1,10 @@
 [
   {
+    "company": "SDIS 29",
+    "logo": "/assets/images/sdis29.png",
+    "description": "Etablissement public, Quimper"
+  },
+  {
     "company": "Groupe IMA",
     "logo": "/assets/images/groupe-ima.jpg",
     "description": "Banque et assurance, Niort"

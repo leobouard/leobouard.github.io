@@ -3,6 +3,14 @@
         "year": "En cours",
         "projects": [
             {
+                "company": "SDIS 29",
+                "title": "Architecte Active Directory",
+                "period": "juin 2025",
+                "duration": "5 jours",
+                "description": "Finalisation d'un projet de sécurisation du domaine Active Directory",
+                "tags": ["activedirectory"]
+            },
+            {
                 "company": "Groupe IMA",
                 "title": "Architecte Active Directory",
                 "period": "depuis juin 2025",
