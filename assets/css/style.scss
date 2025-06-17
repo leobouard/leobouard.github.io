@@ -44,10 +44,8 @@ main {
     }
 
     hr {
-        border: 0;
-        border-top: 1px solid var(--lightaccent);
-        height: 1px;
-        margin: 50px 0;
+        border-top: 1px solid var(--accent);
+        margin: 5em 2.5em;
     }
 }
 
