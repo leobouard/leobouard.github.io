@@ -41,7 +41,7 @@ Dans ce cas, la première chose est de vérifier que les serveurs/services indiq
 
 ### P-AdminPwdTooOld
 
-
+Au moins un compte à privilège possède un mot de passe vieux de trois ans ou plus. Voici un script pour les identifier rapidement :
 
 ```powershell
 Get-ADUser -Filter {(Enabled -eq $true) -and (adminCount -eq 1)} -Properties PasswordLastSet |
@@ -53,11 +53,21 @@ Ici, au moins deux méthodes pour tricher :
 - [Abuser de la réinitialisation du mot de passe par un administrateur](https://www.labouabouate.fr/2024/09/15/prolonger-la-vie-mdp#m%C3%A9thode-2--abus-du-passwordreset)
 - [Mettre à jour la date de changement de mot de passe](https://www.labouabouate.fr/2024/09/15/prolonger-la-vie-mdp#m%C3%A9thode-3--abus-du-pwdlastset)
 
-> Tricher sur cette métrique fera plaisir à la fois à Ping Castle et à l'attaquant qui utilisera ce compte pour plomber votre domaine.
+> Tricher sur cette métrique fera plaisir à la fois à Ping Castle et à l'attaquant qui utilisera ce compte pour faire tomber votre domaine.
+
+La méthode propre est évidemment de changer le mot de passe et/ou diminuer les permissions des comptes concernés.
 
 ### P-ProtectedUsers
 
 ### P-LogonDenied
+
+C'est la première pierre du tiering model Active Directory. Sur cette métrique, c'est le groupe "Domain Admins" qui est ciblé et qui devrait être interdit de connexion sur toutes les ressources du Tier 2.
+
+A voir si vous préférez faire une exception sur votre compte brise-glace pour qu'il puisse se connecter n'importe où.
+
+Plus d'informations ici : [Limiter les connexions à des ressources par GPO](https://www.labouabouate.fr/2024/11/01/tiering-model-005#d%C3%A9finition-des-param%C3%A8tres)
+
+> Comme toutes les vérifications GPO de Ping Castle, à partir du moment où la GPO existe dans le domaine : le risque est considéré comme résolu. En réel, le périmètre d'application de la GPO a évidemment une importance majeure et celle-ci devrait être appliquer à toutes les ressources du Tier 2.
 
 ### P-DisplaySpecifier
 
