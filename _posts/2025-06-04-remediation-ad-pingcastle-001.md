@@ -87,13 +87,13 @@ $users |
 
 Voici un exemple de résultat du script :
 
-Name | UserPrincipalName | PasswordLastSet | PasswordAge
----- | ----------------- | --------------- | -----------
-Isatech | isatech@contoso.com | 18/12/2007 14:18:11 | 6391
-svc_tech_srt | svc_tech_srt@contoso.com | 29/01/2013 15:20:52 | 4522
-AAD_548e59c43da0 | | 09/10/2018 14:59:15 | 2443
-POSGRE Micheline | treposmi@contoso.com| 13/03/2019 22:15:06 | 2288
-Surveillance GIR | surveillanceGir@contoso.com | 08/08/2019 12:23:47 | 2140
+Name| PasswordLastSet | PasswordAge
+---- | --------------- | -----------
+Isatech | 18/12/2007 14:18:11 | 6391
+svc_tech_srt | 29/01/2013 15:20:52 | 4522
+AAD_548e59c43da0 | 09/10/2018 14:59:15 | 2443
+POSGRE Micheline | 13/03/2019 22:15:06 | 2288
+Surveillance GIR | 08/08/2019 12:23:47 | 2140
 
 > Il est tout à fait possible de "mettre la poussière sous le tapis" en basculant les comptes utilisateurs vers une PSO qui n'impose pas d'expiration de mot de passe. De cette manière, vous pourrez décocher la case sans avoir aucun impact à prévoir. En revanche, la sécurité du domaine **ne sera pas améliorée**.
 
