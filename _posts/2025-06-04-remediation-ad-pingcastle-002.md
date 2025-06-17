@@ -9,3 +9,51 @@ prevLink:
   name: "Stale Object"
   id: "remediation-ad-pingcastle-001"
 ---
+
+## Anciens protocoles
+
+### T-Downlevel
+
+### T-AlgsAES
+
+---
+
+## Filtrage des SID
+
+### T-SIDFiltering
+
+---
+
+## SIDHistory
+
+### T-SIDHistorySameDomain
+
+### S-Domain$$$
+
+### T-SIDHistoryDangerous
+
+### T-SIDHistoryUnknownDomain
+
+---
+
+## Imperméabilité des relations d'approbation
+
+### T-FileDeployedOutOfDomain
+
+### T-TGTDelegation
+
+### T-ScriptOutOfDomain
+
+---
+
+## Relations d'approbation inactives
+
+### T-Inactive
+
+---
+
+## Relation d'approbation avec Azure
+
+### T-AzureADSSO
+
+J'ai déjà écrit un article technique sur le sujet disponible ici : [Rotation du mot de passe de AZUREADSSOACC](https://www.labouabouate.fr/2024/07/04/azureadssoacc)

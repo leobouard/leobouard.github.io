@@ -21,6 +21,7 @@ Pensez également à garder scrupuleusement vos fichiers XML générés par Ping
 ### Outils utiles
 
 - [Download - PingCastle](https://www.pingcastle.com/download/)
+- [PingCastle Health Check rules](https://pingcastle.com/PingCastleFiles/ad_hc_rules_list.html)
 - [leobouard/PingCastleDashboard: Consolidate and review your XML PingCastle files into a simple dashboard](https://github.com/leobouard/PingCastleDashboard)
 
 ## Table des matières

@@ -10,43 +10,130 @@ prevLink:
   id: "remediation-ad-pingcastle-introduction"
 ---
 
-## OS obsolètes
+## Utilisateurs ou ordinateurs inactifs
 
-### S-OS-...
+### S-PwdLastSet-Cluster
 
-Ce point est similaire à tous les OS obsolètes, il regroupe donc les vulnérabilités suivantes :
+### S-PwdLastSet-45
 
-Vulnérabilité | Système d'exploitation | Documentation
-------------- | ---------------------- | ------------
-S-OS-W10 | Windows 10 et Windows 11 | [Windows 10 Famille et Pro - Microsoft Lifecycle ](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-10-home-and-pro)<br>[Windows 11 Famille et Professionnel - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-11-home-and-pro)
-S-OS-2000 | Windows 2000 |
-S-OS-Win7 | Windows 7 | [Windows 7 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-7)
-S-OS-Win8 | Windows 8 | [Windows 8 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-8)
-S-OS-NT | Windows NT |
-S-OS-2003 | Windows Server 2003 | [Windows Server 2003 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-server-2003-)
-S-OS-2008 | Windows Server 2008 | [Windows Server 2008 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-server-2008)
-S-OS-2012 | Windows Server 2012 | [Windows Server 2012 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-server-2012)
-S-OS-Vista | Windows Vista | [Windows Vista - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-vista)
-S-OS-XP | Windows XP | [Windows XP - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-xp)
+### S-PwdLastSet-90
 
-Voici une commande PowerShell pour faire l'inventaire par OS des comptes ordinateurs actifs :
+### S-DC-Inactive
+
+### S-PwdLastSet-DC
+
+### S-Inactive
+
+### S-C-Inactive
+
+---
+
+## Topographie du réseau
+
+### S-DC-SubnetMissing
+
+### S-FirewallScript
+
+---
+
+## Configuration des objets
+
+### S-C-PrimaryGroup
+
+### S-PrimaryGroup
+
+### S-Reversible
+
+### S-C-Reversible
+
+### S-NoPreAuth
+
+### S-NoPreAuthAdmin
+
+### S-DefaultOUChanged
+
+### S-PwdNotRequired
+
+### S-PwdNeverExpires
+
+Selon Ping Castle, il ne devrait avoir qu'un seul compte par domaine avec la case "Password never expires" cochée : le compte Administrateur par défaut (SID 500).
+
+Pour résoudre cette vulnérabilité, il faut :
+
+1. retravailler sa stratégie de mot de passe par défaut
+2. déployer de nouvelles [stratégies de mot de passe à grain fin](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/get-started/adac/fine-grained-password-policies?tabs=adac) si besoin
+3. identifier tous les comptes avec un mot de passe qui n'expire jamais
+4. assigner les comptes à une politique de mot de passe (par défaut ou ciblée)
+5. définir des lots d'activation de l'expiration de mot de passe
+6. communiquer aux utilisateurs et aux gestionnaires des comptes de services / comptes génériques sur :
+   - les bonnes pratiques de sécurité
+   - la procédure de changement de mot de passe
+   - la nouvelle stratégie de sécurité
+7. préparer la première vague de renouvellement de mot de passe avec le support informatique
+
+Il est recommandé de lisser la charge au mieux (pas plus de 100 utilisateurs par semaine par exemple) pour éviter les pics d'appels au support informatique.
+
+> Rappel : dans ses [recommandations relatives à l'authentification multifacteur et aux mots de passe](https://cyber.gouv.fr/publications/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe), l'ANSSI ne recommande plus d'expiration régulière des mots de passe pour les comptes non sensibles (partie 4.4).
+
+Voici un script pour lister l'intégralité des comptes avec un mot de passe qui n'expire jamais, en ajoutant une colonne "PasswordAge" qui affiche l'âge du mot de passe en jours :
 
 ```powershell
-Get-ADComputer -Filter {Enabled -eq $true} -Properties OperatingSystem |
-    Group-Object OperatingSystem |
-    Sort-Object Count -Descending
+$users = Get-ADUser -Filter {(PasswordNeverExpires -eq $true) -and (Enabled -eq $true)} -Properties PasswordLastSet, PasswordNeverExpires
+$users |
+    Select-Object Name, UserPrincipalName, PasswordLastSet,
+        @{N='PasswordAge';E={[int](New-Timespan $_.PasswordLastSet).TotalDays}} |
+    Sort-Object PasswordAge -Descending
 ```
 
-Pour la résolution, pas de miracles : il faut remplacer ou mettre à jour les ordinateurs concernés. Il s'agit souvent de payer une dette technique qui s'est accumulée sur plusieurs années et qui impacte lourdement l'organisation.
+Voici un exemple de résultat du script :
 
-Le remplacement de ces OS est à initier dès le début du projet de remédiation, car il invoque souvent plusieurs contacts techniques différents et a des implications dans certains applicatifs sensibles.
+Name | UserPrincipalName | PasswordLastSet | PasswordAge
+---- | ----------------- | --------------- | -----------
+Isatech | isatech@contoso.com | 18/12/2007 14:18:11 | 6391
+svc_tech_srt | svc_tech_srt@contoso.com | 29/01/2013 15:20:52 | 4522
+AAD_548e59c43da0 | | 09/10/2018 14:59:15 | 2443
+POSGRE Micheline | treposmi@contoso.com| 13/03/2019 22:15:06 | 2288
+Surveillance GIR | surveillanceGir@contoso.com | 08/08/2019 12:23:47 | 2140
 
-Pour la priorisation des tâches, il a deux choix possibles :
+> Il est tout à fait possible de "mettre la poussière sous le tapis" en basculant les comptes utilisateurs vers une PSO qui n'impose pas d'expiration de mot de passe. De cette manière, vous pourrez décocher la case sans avoir aucun impact à prévoir. En revanche, la sécurité du domaine **ne sera pas améliorée**.
 
-- soit procéder par ordre chronologique (2003 puis 2008 puis 2012 par exemple) pour réduire le score Ping Castle rapidement
-- soit procéder par ordre de grandeur (commencer par les OS obsolètes les plus rares et finir par les plus communs) pour obtenir des victoires rapides
 
-### S-DC-...
+### S-KerberosArmoring
+
+### S-KerberosArmoringDC
+
+### S-JavaSchema
+
+### S-SIDHistory
+
+### S-TerminalServicesGPO
+
+### S-DefenderASR
+
+### S-FolderOptions
+
+---
+
+## OS obsolètes
+
+### S-FunctionalLevel1 / S-FunctionalLevel3 / S-FunctionalLevel4
+
+Ce point est similaire à toutes les DFL & FFL obsolètes, il regroupe donc les vulnérabilités suivantes :
+
+Vulnérabilité | Système d'exploitation
+------------- | ----------------------
+S-FunctionalLevel1 | Windows 2000
+S-FunctionalLevel3 | Windows Server 2008
+S-FunctionalLevel4 | Windows Server 2008R2
+
+Pour ça pas de miracles, il faut :
+
+1. Monter de nouveaux contrôleurs de domaine
+2. Basculer les rôles FSMO
+3. Décommissionner les anciens contrôleurs de domaine
+4. Faire la [montée de version du domaine et de la forêt](https://www.labouabouate.fr/2025/01/23/montee-de-version-ad)
+
+### S-DC-2000 / S-DC-2003 / S-DC-2008 / S-DC-2012
 
 Ce point est similaire à tous les contrôleurs de domaine avec un OS obsolète, il regroupe donc les vulnérabilités suivantes :
 
@@ -73,7 +160,59 @@ Liens utiles :
 - [Transfer or seize Operation Master roles - Windows Server \| Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/transfer-or-seize-operation-master-roles-in-ad-ds)
 - [Comment rétrograder des contrôleurs de domaine et des domaines à l'aide de Server Manager ou de PowerShell \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/deploy/demoting-domain-controllers-and-domains--level-200-)
 
+### S-OS-W10 / S-OS-2000 / S-OS-Win7 / S-OS-Win8 / S-OS-NT / S-OS-2003 / S-OS-2008 / S-OS-2012 / S-OS-Vista / S-OS-XP
+
+Ce point est similaire à tous les OS obsolètes, il regroupe donc les vulnérabilités suivantes :
+
+Vulnérabilité | Système d'exploitation | Documentation
+------------- | ---------------------- | ------------
+S-OS-W10 | Windows 10 et Windows 11 | [Windows 10 Famille et Pro - Microsoft Lifecycle ](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-10-home-and-pro)<br>[Windows 11 Famille et Professionnel - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-11-home-and-pro)
+S-OS-2000 | Windows 2000 |
+S-OS-Win7 | Windows 7 | [Windows 7 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-7)
+S-OS-Win8 | Windows 8 | [Windows 8 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-8)
+S-OS-NT | Windows NT |
+S-OS-2003 | Windows Server 2003 | [Windows Server 2003 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-server-2003-)
+S-OS-2008 | Windows Server 2008 | [Windows Server 2008 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-server-2008)
+S-OS-2012 | Windows Server 2012 | [Windows Server 2012 - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-server-2012)
+S-OS-Vista | Windows Vista | [Windows Vista - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-vista)
+S-OS-XP | Windows XP | [Windows XP - Microsoft Lifecycle](https://learn.microsoft.com/fr-fr/lifecycle/products/windows-xp)
+
+Voici une commande PowerShell pour faire l'inventaire par OS des comptes ordinateurs actifs :
+
+```powershell
+Get-ADComputer -Filter {Enabled -eq $true} -Properties OperatingSystem |
+    Group-Object OperatingSystem |
+    Sort-Object Count -Descending
+```
+
+Pour la résolution, pas de miracles : il faut remplacer ou mettre à jour les ordinateurs concernés. Il s'agit souvent de payer une dette technique qui s'est accumulée sur plusieurs années et qui impacte lourdement l'organisation.
+
+Le remplacement de ces OS est à initier dès le début du projet de remédiation, car il invoque plusieurs contacts techniques différents et a des implications dans certains applicatifs sensibles.
+
+Pour la priorisation des tâches, il a deux choix possibles :
+
+- soit procéder par ordre chronologique (2003 puis 2008 puis 2012 par exemple) pour réduire le score Ping Castle rapidement
+- soit procéder par ordre de grandeur (commencer par les OS obsolètes les plus rares et finir par les plus communs) pour obtenir des victoires rapides
+
+Voici un exemple de script pour lister l'ensemble des OS obsolètes. Le script est à adapter suivant votre contexte client :
+
+```powershell
+Get-ADComputer -Filter {Enabled -eq $true} -Properties OperatingSystem, OperatingSystemVersion, LastLogonDate |
+    Where-Object {
+        $_.OperatingSystem -like 'Windows Server 2012*' -or
+        $_.OperatingSystem -like 'Windows Server 2008*' -or
+        $_.OperatingSystem -like 'Windows 7*' -or 
+        $_.OperatingSystemVersion -in ('10.0 (17134)', '10.0 (18362)', '10.0 (18363)', '10.0 (19041)', '10.0 (19042)', '10.0 (19044)')} |
+    Select-Object Name, Enabled, LastLogonDate, OperatingSystem, OperatingSystemVersion |
+    Sort-Object OperatingSystem |
+    Format-Table -AutoSize
+```
+
+---
+
 ## Anciens protocoles d'authentification
+
+### S-AesNotEnabled
 
 ### S-DesEnabled
 
@@ -103,29 +242,40 @@ Get-ADObject -Filter {UserAccountControl -band 0x200000} | ForEach-Object {
 
 Voici la documentation de Microsoft sur le sujet : [Supprimer le chiffrement DES très peu sécurisé des comptes d’utilisateur \| Microsoft Learn](https://learn.microsoft.com/fr-fr/services-hub/unified/health/remediation-steps-ad/remove-the-highly-insecure-des-encryption-from-user-accounts)
 
+### S-SMB-v1
+
 ### S-OldNtlm
 
 Le meilleur article sur le sujet du NTLM (v1 et v2) est disponible ici : [NTLM authentication: What it is and why it’s risky](https://blog.quest.com/ntlm-authentication-what-it-is-and-why-you-should-avoid-using-it/)
 
-## Configuration de l’objet
+---
 
-### S-PwdNeverExpires
+## Provisionnement
 
-Selon Ping Castle, il ne devrait avoir qu'un seul compte par domaine avec la case "Password never expires" cochée : le compte Administrateur par défaut (SID 500).
+### S-DCRegistration
 
-Pour résoudre cette vulnérabilité, il faut :
+### S-ADRegistration
 
-1. retravailler sa stratégie de mot de passe par défaut
-2. déployer de nouvelles [stratégies de mot de passe à grain fin](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/get-started/adac/fine-grained-password-policies?tabs=adac) si besoin
-3. identifier tous les comptes avec un mot de passe qui n'expire jamais
-4. assigner les comptes à une politique de mot de passe (par défaut ou ciblée)
-5. définir des lots d'activation de l'expiration de mot de passe
-6. communiquer aux utilisateurs et aux gestionnaires des comptes de services / comptes génériques sur :
-   - les bonnes pratiques de sécurité
-   - la procédure de changement de mot de passe
-   - la nouvelle stratégie de sécurité
-7. préparer la première vague de renouvellement de mot de passe avec le support informatique
+### S-ADRegistrationSchema
 
-Il est recommandé de lisser la charge au mieux (pas plus de 100 utilisateurs par semaine par exemple) pour éviter les pics d'appels au support informatique.
+---
 
-> Rappel : dans ses [recommandations relatives à l'authentification multifacteur et aux mots de passe](https://cyber.gouv.fr/publications/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe), l'ANSSI ne recommande plus d'expiration régulière des mots de passe pour les comptes non sensibles (partie 4.4).
+## Replication
+
+### S-Duplicate
+
+---
+
+## Gestion de vulnérabilité
+
+### S-Vuln-MS14-068
+
+### S-Vuln-MS17_010
+
+### S-DC-NotUpdated
+
+### S-WSUS-UserProxy
+
+### S-WSUS-HTTP
+
+### S-WSUS-NoPinning
