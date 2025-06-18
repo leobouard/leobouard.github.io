@@ -1,22 +1,10 @@
 ---
-permalink: /test
-title: "Test"
-description: "Page de test"
+permalink: /riskmatrix
+title: "Matrice de risque"
+description: "Correspondance entre l'impact et la probabilité pour établir un score de risque"
 ---
 
-## Matrice de risque
-
-### Gradation
-
-Risque | Range
------- | -----
-Très faible | de 0 à 2
-Faible | de 3 à 4
-Moyen | de 5 à 9
-Élevé | de 10 à 14
-Très élevé | plus de 15
-
-### Tableau
+## Tableau
 
 <table style="border-collapse: collapse; width: 100%;">
   <caption style="font-weight: bold; font-size: 1.3em; margin-bottom: 0.5em;">
@@ -90,6 +78,18 @@ Très élevé | plus de 15
     </tr>
   </tbody>
 </table>
+
+### Gradation
+
+Risque | Range
+------ | -----
+Très faible | de 0 à 2
+Faible | de 3 à 4
+Moyen | de 5 à 9
+Élevé | de 10 à 14
+Très élevé | plus de 15
+
+## Exemples
 
 ### Risque très faible
 
