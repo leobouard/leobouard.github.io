@@ -50,43 +50,43 @@ Très élevé | plus de 15
         </div>
       </td>
       <th style="font-weight: bold;">Presque certain<br>5</th>
-      <td style="background: #fced57;">Moyen<br>5</td>
-      <td style="background: #fc9c2e;">Élevé<br>10</td>
-      <td style="background: #f24d3e;">Très élevé<br>15</td>
-      <td style="background: #f24d3e;">Très élevé<br>20</td>
-      <td style="background: #f24d3e;">Très élevé<br>25</td>
+      <td style="background: #ffeb3b; color: black;">Moyen<br>5</td>
+      <td style="background: #ff9800; color: black;">Élevé<br>10</td>
+      <td style="background: #f44336; color: black;">Très élevé<br>15</td>
+      <td style="background: #f44336; color: black;">Très élevé<br>20</td>
+      <td style="background: #f44336; color: black;">Très élevé<br>25</td>
     </tr>
     <tr>
       <th style="font-weight: bold;">Probable<br>4</th>
-      <td style="background: #88c357;">Faible<br>4</td>
-      <td style="background: #fced57;">Moyen<br>8</td>
-      <td style="background: #fc9c2e;">Élevé<br>12</td>
-      <td style="background: #f24d3e;">Très élevé<br>16</td>
-      <td style="background: #f24d3e;">Très élevé<br>20</td>
+      <td style="background: #8bc34a; color: black;">Faible<br>4</td>
+      <td style="background: #ffeb3b; color: black;">Moyen<br>8</td>
+      <td style="background: #ff9800; color: black;">Élevé<br>12</td>
+      <td style="background: #f44336; color: black;">Très élevé<br>16</td>
+      <td style="background: #f44336; color: black;">Très élevé<br>20</td>
     </tr>
     <tr>
       <th style="font-weight: bold;">Modéré<br>3</th>
-      <td style="background: #88c357;">Faible<br>3</td>
-      <td style="background: #fced57;">Moyen<br>6</td>
-      <td style="background: #fced57;">Moyen<br>9</td>
-      <td style="background: #fc9c2e;">Élevé<br>12</td>
-      <td style="background: #f24d3e;">Très élevé<br>15</td>
+      <td style="background: #8bc34a; color: black;">Faible<br>3</td>
+      <td style="background: #ffeb3b; color: black;">Moyen<br>6</td>
+      <td style="background: #ffeb3b; color: black;">Moyen<br>9</td>
+      <td style="background: #ff9800; color: black;">Élevé<br>12</td>
+      <td style="background: #f44336; color: black;">Très élevé<br>15</td>
     </tr>
     <tr>
       <th style="font-weight: bold;">Rare<br>2</th>
-      <td style="background: #49ae58;">Très faible<br>2</td>
-      <td style="background: #88c357;">Faible<br>4</td>
-      <td style="background: #fced57;">Moyen<br>6</td>
-      <td style="background: #fced57;">Moyen<br>8</td>
-      <td style="background: #fc9c2e;">Élevé<br>10</td>
+      <td style="background: #4caf50; color: black;">Très faible<br>2</td>
+      <td style="background: #8bc34a; color: black;">Faible<br>4</td>
+      <td style="background: #ffeb3b; color: black;">Moyen<br>6</td>
+      <td style="background: #ffeb3b; color: black;">Moyen<br>8</td>
+      <td style="background: #ff9800; color: black;">Élevé<br>10</td>
     </tr>
     <tr>
       <th style="font-weight: bold;">Improbable<br>1</th>
-      <td style="background: #49ae58;">Très faible<br>1</td>
-      <td style="background: #49ae58;">Très faible<br>2</td>
-      <td style="background: #88c357;">Faible<br>3</td>
-      <td style="background: #88c357;">Faible<br>4</td>
-      <td style="background: #fced57;">Moyen<br>5</td>
+      <td style="background: #4caf50; color: black;">Très faible<br>1</td>
+      <td style="background: #4caf50; color: black;">Très faible<br>2</td>
+      <td style="background: #8bc34a; color: black;">Faible<br>3</td>
+      <td style="background: #8bc34a; color: black;">Faible<br>4</td>
+      <td style="background: #ffeb3b; color: black;">Moyen<br>5</td>
     </tr>
   </tbody>
 </table>
