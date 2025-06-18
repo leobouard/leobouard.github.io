@@ -97,7 +97,7 @@ Surveillance GIR | 08/08/2019 12:23:47 | 2140
 
 > Il est tout à fait possible de "mettre la poussière sous le tapis" en basculant les comptes utilisateurs vers une PSO qui n'impose pas d'expiration de mot de passe. De cette manière, vous pourrez décocher la case sans avoir aucun impact à prévoir. En revanche, la sécurité du domaine **ne sera pas améliorée**.
 
-{% include risk-score.html impact=3 probability=2 comment="L'impact varie selon les comptes qui seront concernés par le changement, et la probabilité d'un effet de bord non-anticipé et faible, puisque l'on peut avoir une très bonne vision des choses avec les informations Active Directory." %}
+{% include risk-score.html impact=3 probability=2 comment="L'impact varie selon les comptes qui seront concernés par le changement et la probabilité d'un effet de bord non-anticipé est faible, puisque l'on peut avoir une très bonne vision des choses avec les informations Active Directory." %}
 
 ### S-KerberosArmoring
 
@@ -134,7 +134,7 @@ Pour ça pas de miracles, il faut :
 3. Décommissionner les anciens contrôleurs de domaine
 4. Faire la [montée de version du domaine et de la forêt](https://www.labouabouate.fr/2025/01/23/montee-de-version-ad)
 
-{% include risk-score.html impact=4 probability=3 comment="Les montées de version ne posent en général pas de problèmes, c'est plutôt le changement de contrôleur de domaine qui peut causer des soucis surtout si vous avez des applications qui utilise un contrôleur de domaine en spécifique." %}
+{% include risk-score.html impact=4 probability=3 comment="Les montées de version ne posent en général pas de problèmes, c'est plutôt le changement de contrôleur de domaine qui peut causer des soucis surtout si vous avez des applications qui utilisent un contrôleur de domaine spécifique." %}
 
 ### S-DC-2000 / S-DC-2003 / S-DC-2008 / S-DC-2012
 
