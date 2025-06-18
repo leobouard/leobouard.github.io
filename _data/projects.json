@@ -112,7 +112,7 @@
                 "company": "Groupe Beaumanoir",
                 "title": "Consultant Active Directory et Microsoft 365",
                 "period": "de avril 2024 à mai 2025",
-                "duration": "40 jours",
+                "duration": "60 jours",
                 "description": "Audit et sécurisation de Active Directory et optimisation du tenant Microsoft 365",
                 "tags": ["activedirectory", "microsoft365", "powershell"]
             },
