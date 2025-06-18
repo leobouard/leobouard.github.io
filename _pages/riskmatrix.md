@@ -7,7 +7,6 @@ description: "Correspondance entre l'impact et la probabilité pour établir un 
 ## Tableau
 
 <table style="border-collapse: collapse; width: 100%;">
-  <caption style="font-weight: bold; font-size: 1.3em; margin-bottom: 0.5em;">
     Exemple de matrice des risques 5x5
   </caption>
   <thead>
@@ -88,45 +87,3 @@ Faible | de 3 à 4
 Moyen | de 5 à 9
 Élevé | de 10 à 14
 Très élevé | plus de 15
-
-## Exemples
-
-### Risque très faible
-
-{% include risk-score.html
-    impact=1
-    probability=1
-    comment="Lorem ipsum dolor sit amet.<br>Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit <b>praesentium consequatur</b> eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
-%}
-
-### Risque faible
-
-{% include risk-score.html
-    impact=3
-    probability=1
-    comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
-%}
-
-### Risque moyen
-
-{% include risk-score.html
-    impact=5
-    probability=1
-    comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
-%}
-
-### Risque élevé
-
-{% include risk-score.html
-    impact=5
-    probability=2
-    comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
-%}
-
-### Risque très élevé
-
-{% include risk-score.html
-    impact=5
-    probability=3
-    comment="Lorem ipsum dolor sit amet. Ab ipsum quam eum dicta atque in aspernatur voluptate. A ipsa magnam sit praesentium consequatur eos quam consequuntur qui repellat veniam qui repellat autem et minima iste?"
-%}
