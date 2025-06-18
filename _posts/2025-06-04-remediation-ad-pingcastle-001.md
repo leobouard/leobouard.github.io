@@ -97,6 +97,7 @@ Surveillance GIR | 08/08/2019 12:23:47 | 2140
 
 > Il est tout à fait possible de "mettre la poussière sous le tapis" en basculant les comptes utilisateurs vers une PSO qui n'impose pas d'expiration de mot de passe. De cette manière, vous pourrez décocher la case sans avoir aucun impact à prévoir. En revanche, la sécurité du domaine **ne sera pas améliorée**.
 
+{% include risk-score.html impact=3 probability=2 comment="L'impact varie selon les comptes qui seront concernés par le changement, et la probabilité d'un effet de bord non-anticipé et faible, puisque l'on peut avoir une très bonne vision des choses avec les informations Active Directory." %}
 
 ### S-KerberosArmoring
 
@@ -133,6 +134,8 @@ Pour ça pas de miracles, il faut :
 3. Décommissionner les anciens contrôleurs de domaine
 4. Faire la [montée de version du domaine et de la forêt](https://www.labouabouate.fr/2025/01/23/montee-de-version-ad)
 
+{% include risk-score.html impact=4 probability=3 comment="Les montées de version ne posent en général pas de problèmes, c'est plutôt le changement de contrôleur de domaine qui peut causer des soucis surtout si vous avez des applications qui utilise un contrôleur de domaine en spécifique." %}
+
 ### S-DC-2000 / S-DC-2003 / S-DC-2008 / S-DC-2012
 
 Ce point est similaire à tous les contrôleurs de domaine avec un OS obsolète, il regroupe donc les vulnérabilités suivantes :
@@ -152,13 +155,15 @@ Get-ADDomainController -Filter * |
   Format-Table Name, OperatingSystem
 ```
 
-Ce point peut être facilement adressé : il suffit de déployer de nouveaux contrôleurs de domaine avec des OS plus récent et de décommissionner les anciens.
+Ce point est souvent lié aux vulnérabilités S-FunctionalLevel1 / S-FunctionalLevel3 / S-FunctionalLevel4.
 
 Liens utiles :
 
 - [dcpromo dans Windows Server \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/dcpromo)
 - [Transfer or seize Operation Master roles - Windows Server \| Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/transfer-or-seize-operation-master-roles-in-ad-ds)
 - [Comment rétrograder des contrôleurs de domaine et des domaines à l'aide de Server Manager ou de PowerShell \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/deploy/demoting-domain-controllers-and-domains--level-200-)
+
+{% include risk-score.html impact=4 probability=3 comment="Les "inplace upgrades" fonctionnent bien mais ne sont pas recommandés et le remplacement des contrôleurs de domaine peut poser problème, comme vu précédemment sur S-FunctionalLevel." %}
 
 ### S-OS-W10 / S-OS-2000 / S-OS-Win7 / S-OS-Win8 / S-OS-NT / S-OS-2003 / S-OS-2008 / S-OS-2012 / S-OS-Vista / S-OS-XP
 
@@ -208,6 +213,8 @@ Get-ADComputer -Filter {Enabled -eq $true} -Properties OperatingSystem, Operatin
     Format-Table -AutoSize
 ```
 
+{% include risk-score.html impact=3 probability=3 comment="L'impact et la probabilité dépendent évidemment du serveur / poste de travail qui doit être mis à jour." %}
+
 ---
 
 ## Anciens protocoles d'authentification
@@ -242,11 +249,15 @@ Get-ADObject -Filter {UserAccountControl -band 0x200000} | ForEach-Object {
 
 Voici la documentation de Microsoft sur le sujet : [Supprimer le chiffrement DES très peu sécurisé des comptes d’utilisateur \| Microsoft Learn](https://learn.microsoft.com/fr-fr/services-hub/unified/health/remediation-steps-ad/remove-the-highly-insecure-des-encryption-from-user-accounts)
 
+{% include risk-score.html impact=1 probability=4 comment="A moins d'interdire le DES au niveau du domaine, faire l'action progressivement et en communiquant au préalable avec les équipes concernées permet de faire baisser drastiquement la probabilité du risque." %}
+
 ### S-SMB-v1
 
 ### S-OldNtlm
 
 Le meilleur article sur le sujet du NTLM (v1 et v2) est disponible ici : [NTLM authentication: What it is and why it’s risky](https://blog.quest.com/ntlm-authentication-what-it-is-and-why-you-should-avoid-using-it/)
+
+{% include risk-score.html impact=3 probability=4 comment="Sans mener d'audit sur les ressources qui utilisent encore NTLM v1, vous êtes quasiment sûr de casser au moins une authentification dans votre domaine. Plus votre parc informatique est récent, plus la probabilité que le risque se produise diminue." %}
 
 ---
 
