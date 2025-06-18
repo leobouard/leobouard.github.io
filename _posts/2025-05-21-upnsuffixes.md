@@ -111,7 +111,7 @@ Et cela permet d'obtenir une belle liste déroulante, triée dans l'ordre alphab
 
 ![alt text](/assets/images/upnsuffixes-04.png)
 
-## Matrice de risque
+## Score de risque
 
 {% include risk-score.html
     impact=4
