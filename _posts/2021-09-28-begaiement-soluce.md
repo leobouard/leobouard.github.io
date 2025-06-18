@@ -77,8 +77,6 @@ Le traitement est le suivant : `"$($_.Substring(0,2))…"*2 + $_` qui est compos
 
 Ce qui nous permet de convertir le mot "bonjour" en "bo…bo…bonjour".
 
----
-
 ## Version complexe
 
 Place à la version plus "aboutie" qui va essayer (j'insiste sur le fait d'essayer uniquement) de délimiter les syllabes du mot.
