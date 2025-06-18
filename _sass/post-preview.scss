@@ -1,4 +1,5 @@
 .post-preview {
+    background: var(--background);
     text-decoration: none;
     min-width: 15em;
     transition: transform ease-in-out 200ms;
@@ -13,11 +14,9 @@
     display: block;
 }
 
-.post-preview span {
-    background: var(--lightaccent);
-    padding: 0.1em 0.5em;
-    border-radius: var(--borderradius);
-    font-size: smaller;
+span.date {
+    color: var(--heavyaccent);
+    font-size: small;
 }
 
 .post-preview i {
@@ -45,4 +44,11 @@
     display: flex;
     flex-wrap: wrap;
     grid-gap: 0.5em;
+}
+
+.article-tags span {
+     background: var(--lightaccent);
+    padding: 0.1em 0.5em;
+    border-radius: var(--borderradius);
+    font-size: smaller;
 }
