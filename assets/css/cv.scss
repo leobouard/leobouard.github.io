@@ -290,16 +290,13 @@ div.project {
     border-radius: var(--borderradius);
     border: 1px solid var(--mediumaccent);
     position: relative;
-    margin-right: 1em;
 }
 
 div.project img {
-    width: 3.5em;
+    width: 3em;
     position: absolute;
-    top: -0.5em;
-    right: -1em;
-    border: var(--border);
-    border-radius: 100%;
+    top: 1em;
+    right: 1em;
 }
 
 div.project i {
@@ -310,10 +307,11 @@ div.project span {
     color: var(--primary);
     font-weight: 500;
     margin-right: 4em;
+    display: block;
 }
 
 div.project h4 {
-    margin: 0.5em 0;
+    margin: 0.5em 4em 0.5em 0;
     font-size: 1.1em;
     margin-right: 2em;
 }
