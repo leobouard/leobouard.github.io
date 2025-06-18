@@ -5,7 +5,7 @@
     transition: transform ease-in-out 200ms;
     position: relative;
     border-radius: var(--borderradius);
-    border: 2px solid transparent;
+    border: 1px solid var(--mediumaccent);
 }
 
 .post-preview a {
@@ -15,8 +15,10 @@
 }
 
 .post-preview span {
-    color: var(--heavyaccent);
-    font-size: small;
+    background: var(--lightaccent);
+    padding: 0.1em 0.5em;
+    border-radius: var(--borderradius);
+    font-size: smaller;
 }
 
 .post-preview i {
@@ -41,4 +43,7 @@
 .article-tags {
     position: absolute;
     bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 0.5em;
 }
