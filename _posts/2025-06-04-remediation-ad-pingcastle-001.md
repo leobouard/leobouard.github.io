@@ -163,7 +163,7 @@ Liens utiles :
 - [Transfer or seize Operation Master roles - Windows Server \| Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/transfer-or-seize-operation-master-roles-in-ad-ds)
 - [Comment rétrograder des contrôleurs de domaine et des domaines à l'aide de Server Manager ou de PowerShell \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/deploy/demoting-domain-controllers-and-domains--level-200-)
 
-{% include risk-score.html impact=4 probability=3 comment="Les "inplace upgrades" fonctionnent bien mais ne sont pas recommandés et le remplacement des contrôleurs de domaine peut poser problème, comme vu précédemment sur S-FunctionalLevel." %}
+{% include risk-score.html impact=4 probability=3 comment="Les <i>inplace upgrades</i> fonctionnent bien mais ne sont pas recommandés et le remplacement des contrôleurs de domaine peut poser problème, comme vu précédemment sur S-FunctionalLevel." %}
 
 ### S-OS-W10 / S-OS-2000 / S-OS-Win7 / S-OS-Win8 / S-OS-NT / S-OS-2003 / S-OS-2008 / S-OS-2012 / S-OS-Vista / S-OS-XP
 
