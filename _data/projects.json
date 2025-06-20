@@ -3,6 +3,14 @@
         "year": "En cours",
         "projects": [
             {
+                "company": "Delta Dore Group",
+                "title": "Consultant PowerShell",
+                "period": "de juin à juillet 2025",
+                "duration": "5 jours",
+                "description": "Finalisation d'une migration Active Directory et Microsoft 365",
+                "tags": ["powershell", "activedirectory", "microsoft365"]
+            },
+            {
                 "company": "SDIS 29",
                 "title": "Architecte Active Directory",
                 "period": "juin 2025",
@@ -50,7 +58,7 @@
             {
                 "company": "Oberthur Fiduciaire",
                 "title": "Migration Active Directory",
-                "period": "de avril 2025 à mai 2025",
+                "period": "de avril à mai 2025",
                 "duration": "10 jours",
                 "description": "Migration d'utilisateurs et de groupes Active Directory entre deux forêts avec Quest Migrator Pro for Active Directory (MPAD)",
                 "tags": ["activedirectory", "quest"]
@@ -82,7 +90,7 @@
             {
                 "company": "Le Gouessant",
                 "title": "Consultant PowerShell",
-                "period": "de janvier 2025 à mars 2025",
+                "period": "de janvier à mars 2025",
                 "duration": "5 jours",
                 "description": "Conception de scripts PowerShell a destination de la supervision PRTG",
                 "tags": ["powershell"]

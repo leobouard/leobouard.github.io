@@ -1,5 +1,10 @@
 [
   {
+    "company": "Delta Dore Group",
+    "logo": "/assets/images/delta-dore-group.jpg",
+    "description": "Domotique et électronique, Tinténiac"
+  },
+  {
     "company": "SDIS 29",
     "logo": "/assets/images/sdis29.png",
     "description": "Établissement public, Quimper"
