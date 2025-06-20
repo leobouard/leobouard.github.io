@@ -7,8 +7,6 @@ description: "Correspondance entre l'impact et la probabilité pour établir un 
 ## Tableau
 
 <table style="border-collapse: collapse; width: 100%;">
-    Exemple de matrice des risques 5x5
-  </caption>
   <thead>
     <tr>
       <td colspan="2"></td>
