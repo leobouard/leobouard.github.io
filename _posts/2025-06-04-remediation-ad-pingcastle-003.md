@@ -39,6 +39,8 @@ Dans ce cas, la première chose est de vérifier que les serveurs/services indiq
 1. Migrer tous les services associés au(x) compte(s) vers un autre compte de service avec moins de privilèges
 2. Diminuer les privilèges du compte existant
 
+{% include risk-score.html impact=1 probability=3 comment="L'impact et la probabilité dépendent évidemment du serveur / poste de travail qui doit être mis à jour." %}
+
 ### P-AdminPwdTooOld
 
 Au moins un compte à privilège possède un mot de passe vieux de trois ans ou plus. Voici un script pour les identifier rapidement :
@@ -57,6 +59,9 @@ Ici, au moins deux méthodes pour tricher :
 
 La méthode propre est évidemment de changer le mot de passe et/ou diminuer les permissions des comptes concernés.
 
+
+
+
 ### P-ProtectedUsers
 
 ### P-LogonDenied
@@ -68,6 +73,8 @@ A voir si vous préférez faire une exception sur votre compte brise-glace pour 
 Plus d'informations ici : [Limiter les connexions à des ressources par GPO](https://www.labouabouate.fr/2024/11/01/tiering-model-005#d%C3%A9finition-des-param%C3%A8tres)
 
 > Comme toutes les vérifications GPO de Ping Castle, à partir du moment où la GPO existe dans le domaine : le risque est considéré comme résolu. En réel, le périmètre d'application de la GPO a évidemment une importance majeure et celle-ci devrait être appliquer à toutes les ressources du Tier 2.
+
+
 
 ### P-DisplaySpecifier
 
@@ -110,6 +117,16 @@ Plus d'informations ici : [Limiter les connexions à des ressources par GPO](htt
 ### P-Inactive
 
 ### P-AdminLogin
+
+Cette vulnérabilité indique que le compte Administrateur par défaut (SID-500) a été utilisé récemment. Pour rappel : le compte Administrateur par défaut ne doit être utilisé qu'en cas de dernier recours, et vous devez utiliser des comptes nominatifs pour les actions quotidiennes sur le Tier 0. 
+
+Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
+
+- trouver la source de l'utilisation du compte avec l'évenement `4624`
+- arrêter l'utilisation de ce compte en fournissant une alternative (en suivant le principe du moindre privilège)
+- réinitialiser le mot de passe du compte Administrateur
+
+
 
 ### P-AdminNum
 
