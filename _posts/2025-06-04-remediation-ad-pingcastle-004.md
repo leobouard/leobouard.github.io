@@ -67,6 +67,23 @@ Plus d'information sur le hash LM ici : [LM, NTLM, Net-NTLMv2, oh my!. A Pentest
 
 ### A-HardenedPaths
 
+Suite à une CVE de 2015, il est nécessaire de renforcer les partages SYSVOL & NETLOGON d'attaques par spoofing (usurpation). Une GPO est attendue par Ping Castle pour résoudre la vulnérabilité.
+
+La meilleure pratique est de créer une nouvelle GPO nommée "Chemins d'accès UNC renforcés" (par exemple), appliquée sur les contrôleurs de domaine avec la configuration suivante : *Configuration ordinateur > Stratégies > Modèle d'administration > Réseau > Fournisseur réseau*.
+
+Vous pouvez activer le paramètre **Chemin d'accès UNC renforcés** et définir les valeurs suivantes :
+
+Nom de la valeur | Valeur
+---------------- | ------
+\\*\NETLOGON | RequireMutualAuthentication=1, RequireIntegrity=1
+\\*\SYSVOL | RequireMutualAuthentication=1, RequireIntegrity=1
+
+> Il existe du troisième paramètre `RequirePrivacy=1` qui impose l'utilisation du chiffrement SMB, disponible seulement à partir de Windows 8 & Windows Server 2012. Si votre parc contient des OS plus anciens, n'ajoutez pas l'option.
+
+Pour plus d'informations : [Active Directory - Découverte des chemins UNC durcis](https://www.it-connect.fr/active-directory-securite-du-partage-sysvol-avec-les-chemins-unc-durcis/)
+
+{% include risk-score.html impact=1 probability=1 comment="Je n'ai jamais eu d'impact sur le déploiement de ce paramètre, même avec la présence d'OS très vieux comme des Windows XP ou Windows Server 2003." %}
+
 ---
 
 ## Pass-the-credential
