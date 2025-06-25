@@ -11,6 +11,15 @@ prevLink:
 
 ### A-AuditPowershell
 
+Création d'une nouvelle GPO ordinateurs "Audit PowerShell" à la racine du domaine avec la configuration suivante : *Configuration ordinateur > Stratégies > Modèles d'administration > Composants Windows > Windows PowerShell*
+
+- Activer l'enregistrement des modules : Activé
+  - Noms des modules : `*`
+- Activer la journalisation de bloc de scripts PowerShell : Activé
+  - Consigner les événements de début/de fin des appels de blocs de script : Activé
+
+{% include risk-score.html impact=2 probability=1 comment="L'activation de ce paramètre va générer plus de données dans les journaux d'événements des ordinateurs du domaine." %}
+
 ### A-AuditDC
 
 ---
