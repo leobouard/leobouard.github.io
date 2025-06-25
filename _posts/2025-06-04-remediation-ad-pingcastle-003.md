@@ -16,7 +16,7 @@ prevLink:
 
 ### P-Kerberoasting
 
-Au moins un compte à privilège porte des valeurs dans l'attribut `servicePrincipalName`. Cette configuration peut alors être utilisée par un attaquant pour usurper l'identité du compte avec l'attaque [Kerberoasting](https://beta.hackndo.com/kerberoasting/).
+Au moins un compte à privilège porte des valeurs dans l'attribut `servicePrincipalName`. Cette configuration peut alors être utilisée par un attaquant pour usurper l'identité du compte avec l'attaque Kerberoasting.
 
 Vous pouvez utiliser le script suivant pour trouver tous les comptes à haut privilèges avec un SPN :
 
@@ -39,7 +39,7 @@ Dans ce cas, la première chose est de vérifier que les serveurs/services indiq
 1. Migrer tous les services associés au(x) compte(s) vers un autre compte de service avec moins de privilèges
 2. Diminuer les privilèges du compte existant
 
-{% include risk-score.html impact=1 probability=3 comment="L'impact et la probabilité dépendent évidemment du serveur / poste de travail qui doit être mis à jour." %}
+{% include risk-score.html impact=3 probability=3 comment="Les SPN peuvent rester une épine dans le pied de la sécurité de votre domaine pendant longtemps. La réduction des privilèges du compte est souvent la meilleure méthode pour diminuer les risques." %}
 
 ### P-AdminPwdTooOld
 
