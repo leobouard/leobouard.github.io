@@ -126,7 +126,7 @@ Session par les services Bureau à distance | CONTOSO\Admins du domaine
 
 ### P-AdminLogin
 
-Cette vulnérabilité indique que le compte Administrateur par défaut (SID-500) a été utilisé récemment. Pour rappel : le compte Administrateur par défaut ne doit être utilisé qu'en cas de dernier recours, et vous devez utiliser des comptes nominatifs pour les actions quotidiennes sur le Tier 0. 
+Cette vulnérabilité indique que le compte Administrateur par défaut (SID-500) a été utilisé récemment. Pour rappel : le compte Administrateur par défaut ne doit être utilisé qu'en cas de dernier recours, et vous devez utiliser des comptes nominatifs pour les actions quotidiennes sur le Tier 0.
 
 Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 
@@ -134,7 +134,7 @@ Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 - arrêter l'utilisation de ce compte en fournissant une alternative (en suivant le principe du moindre privilège)
 - réinitialiser le mot de passe du compte Administrateur
 
-
+{% include risk-score.html impact=2 probability=2 comment="Le risque dépend fortement de quelle est l'utilisation qui a été faite du compte Administrateur." %}
 
 ### P-AdminNum
 
