@@ -8,7 +8,6 @@ listed: true
 
 ## Contexte
 
-
 Microsoft Entra Seamless SSO (ou anciennement Azure AD Seamless SSO) est une fonctionnalité qui permet aux utilisateurs de se connecter automatiquement lorsqu’ils utilisent leur ordinateur d’entreprise connecté à votre réseau d’entreprise. Cela signifie que lorsque cette fonctionnalité est activée, les utilisateurs n’ont pas besoin de taper leur mot de passe ou même leur nom d’utilisateur pour se connecter aux services cloud de Microsoft (Entra ID ou Microsoft 365) sur leur navigateur web.
 
 > L'utilisation de cette technologie **n'est plus recommandée** par de nombreux experts. Plus d'information ici : [Why you should disable Seamless SSO in Microsoft Entra Connect](https://ourcloudnetwork.com/why-you-should-disable-seamless-sso-in-microsoft-entra-connect/).
