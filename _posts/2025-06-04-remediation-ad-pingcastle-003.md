@@ -59,22 +59,30 @@ Ici, au moins deux méthodes pour tricher :
 
 La méthode propre est évidemment de changer le mot de passe et/ou diminuer les permissions des comptes concernés.
 
-
-
+{% include risk-score.html impact=3 probability=3 comment="Faire un premier changement de mot de passe sur un compte de service après plusieurs années implique de très bien connaitre son environnement sous peine de casser quelque chose." %}
 
 ### P-ProtectedUsers
 
 ### P-LogonDenied
 
-C'est la première pierre du tiering model Active Directory. Sur cette métrique, c'est le groupe "Domain Admins" qui est ciblé et qui devrait être interdit de connexion sur toutes les ressources du Tier 2.
+C'est la première pierre du tiering model Active Directory. Sur cette métrique, c'est le groupe "Admins du domaine" qui est ciblé et qui devrait être interdit de connexion sur toutes les ressources du Tier 2 (ordinateurs personnels principalement).
 
-A voir si vous préférez faire une exception sur votre compte brise-glace pour qu'il puisse se connecter n'importe où.
+Pour résoudre ce point, vous devez d'abord créer de nouveaux comptes à privilège qui ne sont pas administrateurs du domaine pour accéder aux ordinateurs personnels en tant qu'administrateur local.
 
-Plus d'informations ici : [Limiter les connexions à des ressources par GPO](https://www.labouabouate.fr/2024/11/01/tiering-model-005#d%C3%A9finition-des-param%C3%A8tres)
+Ensuite, vous pouvez créer une nouvelle GPO qui s'appliquera au moins sur les ordinateurs personnels de votre domaine, avec la configuration suivante : *Configuration ordinateur > Stratégies > Paramètres Windows > Paramètres de sécurité > Stratégies locales > Attribution des droits utilisateurs*
 
-> Comme toutes les vérifications GPO de Ping Castle, à partir du moment où la GPO existe dans le domaine : le risque est considéré comme résolu. En réel, le périmètre d'application de la GPO a évidemment une importance majeure et celle-ci devrait être appliquer à toutes les ressources du Tier 2.
+Stratégie	| Paramètres de stratégie
+--------- | -----------------------
+Session locale | CONTOSO\Admins du domaine
+Session en tant que service | CONTOSO\Admins du domaine
+Session en tant que tâche | CONTOSO\Admins du domaine
+Session par les services Bureau à distance | CONTOSO\Admins du domaine
 
+À voir si vous préférez faire une exception sur votre compte brise-glace pour qu'il puisse se connecter n'importe où.
 
+> Comme toutes les vérifications GPO de Ping Castle, à partir du moment où la GPO existe dans le domaine : le risque est considéré comme résolu. En réel, le périmètre d'application de la GPO a évidemment une importance majeure et celle-ci devrait être appliquée à toutes les ressources du Tier 2.
+
+{% include risk-score.html impact=1 probability=3 comment="Le changement de compte administrateur est la partie la plus impactante car cela implique une modification des habitudes d'administration et des processus." %}
 
 ### P-DisplaySpecifier
 
