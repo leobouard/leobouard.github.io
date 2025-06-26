@@ -5,7 +5,7 @@ div.searchbar-container {
 
 input.searchbar {
     padding: 0.5em;
-    border: 2px solid var(--lightaccent);
+    border: 2px solid var(--mediumaccent);
     border-radius: var(--borderradius);
     width: -moz-available;
     width: -webkit-fill-available;
@@ -13,7 +13,7 @@ input.searchbar {
     color: var(--heavyaccent);
     font-size: 1.17em;
     font-family: var(--titlefont);
-    background: var(--background);
+    background: var(--lightaccent);
 }
 
 input.searchbar:focus {
