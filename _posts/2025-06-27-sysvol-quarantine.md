@@ -17,7 +17,7 @@ Ce mécanisme va s'occuper de renommer les fichiers .EXE pour modifier l'extensi
 
 Voici les informations sur la clé de registre à ajouter sur le serveur ADFR :
 
-- Chemin : `HKLM\SOFTWARE\Semperis\Multiforest\<FORESTGUID>\Semperis\ADFR\Server
+- Chemin : `HKLM\SOFTWARE\Semperis\Multiforest\<FORESTGUID>\Semperis\ADFR\Server`
 - Nom : AdfrQuarantineExecutablesInSysVol
 - Type : REG_DWORD
 
@@ -29,7 +29,9 @@ Valeur | Description
 1 | Mettre en quarantaine (renommer) les fichiers exécutables lors de la restauration du contenu SYSVOL
 
 <!--
+
 Quelle extension est ajoutée sur les fichiers .EXE ?
 Est-ce qu'il s'occupe de tous les répertoires SYSVOL du domaine ?
 Comment récupérer le GUID de la forêt concernée ?
->
+
+-->
