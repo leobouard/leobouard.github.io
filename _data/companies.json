@@ -1,5 +1,11 @@
 [
   {
+    "company": "Groupe Legendre",
+    "logo": "/assets/images/groupe-legendre.jpg",
+    "description": "Construction et immobilier, Rennes",
+    "url": "https://www.groupe-legendre.com//"
+  },
+  {
     "company": "Delta Dore Group",
     "logo": "/assets/images/delta-dore-group.jpg",
     "description": "Domotique et électronique, Tinténiac",

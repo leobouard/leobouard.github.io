@@ -3,6 +3,14 @@
         "year": "En cours",
         "projects": [
             {
+                "company": "Groupe Legendre",
+                "title": "Ingénieur systèmes",
+                "period": "juillet 2025",
+                "duration": "2 jours",
+                "description": "Remplacement de contrôleurs de domaine et mise à niveau du domaine et de la forêt",
+                "tags": ["activedirectory"]
+            },
+            {
                 "company": "Delta Dore Group",
                 "title": "Ingénieur systèmes",
                 "period": "de juin à juillet 2025",
