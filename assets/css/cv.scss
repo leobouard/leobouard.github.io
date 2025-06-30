@@ -46,6 +46,7 @@ summary.enterprise:hover {
 .enterprise img {
     height: 3em;
     margin: 0 1em 0 0.5em;
+    border-radius: var(--borderradius);
 }
 
 .enterprise small {
