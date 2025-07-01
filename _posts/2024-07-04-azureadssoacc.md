@@ -28,6 +28,16 @@ En bref, Microsoft recommande les choses suivantes :
 
 Si vous voulez un exemple d’attaque qui utilise ce compte AZUREADSSOACC, vous pouvez consulter : [Impersonating Office 365 Users With Mimikatz \| DSInternals](https://www.dsinternals.com/en/impersonating-office-365-users-mimikatz/)
 
+### Chiffrement Kerberos
+
+Si vous souhaitez n'autorisez que le chiffrement AES 256 pour les demandes de tickets Kerberos sur le compte AZUREADSSOACC, vous devez passer la valeur de l'attribut `msDS-SupportedEncryptionTypes` à 16.
+
+```powershell
+Set-ADComputer AZUREADSSOACC -Replace @{'msDS-SupportedEncryptionTypes' = 16}
+```
+
+Plus d'informations sur la signification de cette valeur ici : [Decrypting the Selection of Supported Kerberos Encryption Types\| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/decrypting-the-selection-of-supported-kerberos-encryption-types/1628797)
+
 ### Automatisation de la rotation
 
 A première lecture, si Microsoft recommande de faire un changement de mot de passe sur ce compte au moins tous les 30 jours on pourrait penser à faire une tâche planifiée pour ça. Pourtant, cela me parait difficilement conçevable au vu des prérequis demandés pour faire cette rotation.
