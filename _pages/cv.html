@@ -21,12 +21,12 @@ description: "Toutes mes expériences, mes formations et certifications"
           <h1>{{ site.data.cv.name }}</h1>
           <span class="title">{{ site.data.cv.title }}</span>
         </div>
-        <div class="personalLinks">
-          {% for link in site.data.cv.links %}
-          <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i
-              class="{{ link.icon }}"></i></a>
-          {% endfor %}
-        </div>
+      </div>
+      <div class="personalLinks">
+        {% for link in site.data.cv.links %}
+        <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i
+            class="{{ link.icon }}"></i></a>
+        {% endfor %}
       </div>
     </div>
     <ul>
