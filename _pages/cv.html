@@ -7,21 +7,27 @@ description: "Toutes mes expériences, mes formations et certifications"
 <div class="call-to-website"">
   <span>Consulter la version complète sur
     <br>
-    <a href="https://www.labouabouate.fr/cv">www.labouabouate.fr/cv</a>
+    <a href=" https://www.labouabouate.fr/cv">www.labouabouate.fr/cv</a>
   </span>
 </div>
 
 <h2>Informations en bref</h2>
 <div class="cv-wrapper">
   <div class="personalInfo">
-    <img src="{{ site.data.cv.picture }}" alt="Photo de profil générée par IA">
-    <h1>{{ site.data.cv.name }}</h1>
-    <span class="title">{{ site.data.cv.title }}</span>
-    <div class="personalLinks">
-      {% for link in site.data.cv.links %}
-      <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i
-          class="{{ link.icon }}"></i></a>
-      {% endfor %}
+    <div>
+      <div>
+        <img src="{{ site.data.cv.picture }}" alt="Photo de profil générée par IA">
+        <div>
+          <h1>{{ site.data.cv.name }}</h1>
+          <span class="title">{{ site.data.cv.title }}</span>
+        </div>
+        <div class="personalLinks">
+          {% for link in site.data.cv.links %}
+          <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i
+              class="{{ link.icon }}"></i></a>
+          {% endfor %}
+        </div>
+      </div>
     </div>
     <ul>
       <li>
@@ -30,15 +36,18 @@ description: "Toutes mes expériences, mes formations et certifications"
       </li>
       <li>
         <i class="fa-solid fa-phone"></i>
-        <a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{ site.data.cv.personalInfo.phone }}</a>
+        <a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{ site.data.cv.personalInfo.phone
+          }}</a>
       </li>
       <li>
         <i class="fa-solid fa-envelope"></i>
-        <a href="mailto:{{ site.data.cv.personalInfo.email }}" class="no-decoration">{{ site.data.cv.personalInfo.email }}</a>
+        <a href="mailto:{{ site.data.cv.personalInfo.email }}" class="no-decoration">{{ site.data.cv.personalInfo.email
+          }}</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
-        <a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank" class="no-decoration">{{ site.data.cv.personalInfo.website }}</a>
+        <a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank" class="no-decoration">{{
+          site.data.cv.personalInfo.website }}</a>
       </li>
       <li>
         <i class="fa-solid fa-language"></i>
@@ -61,7 +70,8 @@ description: "Toutes mes expériences, mes formations et certifications"
       {% endfor %}
     </ul>
     <h3>Certifications</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
       {% for certificate in site.data.cv.certificates %}
       <div class="certification">
         <a href="{{ certificate.url }}" target="_blank">
@@ -112,7 +122,8 @@ description: "Toutes mes expériences, mes formations et certifications"
     {% endfor %}
   </details>
   {% endfor %}
-  <a href="/projects" class="hide-on-print no-decoration button-primary hover-bottom" style="display: inline-block; margin: auto;">Voir les projets</a>
+  <a href="/projects" class="hide-on-print no-decoration button-primary hover-bottom"
+    style="display: inline-block; margin: auto;">Voir les projets</a>
 </div>
 
 <h2>Formation</h2>
