@@ -12,13 +12,13 @@ h3,
 h4,
 h5 {
   font-family: "Be Vietnam Pro", sans-serif;
+  color: black;
 }
 
 h1 {
-  text-align: center;
-  font-size: 3em;
-  padding: 1em;
+  font-size: 2em;
   color: var(--primary);
+  border: 0;
 }
 
 h2 {
@@ -31,4 +31,16 @@ h3 {
 
 h4 {
   font-size: 1em;
+}
+
+body {
+  border-bottom: 0.5em solid var(--primary);
+  color: #3d3834;
+  background-image: url('https://www.metsys.fr/wp-content/themes/metsys/images/svg/metsys-logo.svg');
+  background-repeat: no-repeat;
+  background-position: top 1em right 1em;
+  background-size: 6em auto;
+  font-family: Arial !important;
+  max-width: 800px;
+  margin: auto;
 }
