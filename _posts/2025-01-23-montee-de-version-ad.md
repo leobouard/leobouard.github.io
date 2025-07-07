@@ -1,5 +1,5 @@
 ---
-title: "Montée de version du domaine et de la forêt"
+title: "Montée de version du domaine et de la forêt vers Windows2016"
 description: "Mettre à jour le niveau fonctionnel de votre domaine et votre fôret"
 tags: activedirectory
 listed: true
@@ -7,14 +7,14 @@ listed: true
 
 ## Contexte
 
-Actuellement, le domaine et la forêt galaxie.bb sont en version Windows2012R2. L'objectif est d'augmenter le DFL (*Domain Functionnal Level*) et FFL (*Forest Functionnal Level*) vers la dernière version stable disponible : Windows2016.
+Voici comment obtenir le niveau fonctionnel du domaine et de la forêt :
 
 ```powershell
 (Get-ADDomain).DomainMode
 (Get-ADForest).ForestMode
 ```
 
-La DFL & FFL permettent d'obtenir les dernières fonctionnalités disponible pour Active Directory. La plus marquante pour la version Windows2016 est l'apparition de l'appartenance temporaire à un groupe.
+La DFL & FFL permettent d'obtenir les dernières fonctionnalités disponibles pour Active Directory. L'ajout marquant de la version Windows2016Domain est l'appartenance temporaire à un groupe via "PAM" (Priviledged Access Management).
 
 Toutes les nouveautés sont disponibles ici : [Niveaux fonctionnels des services de domaine Active Directory \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/active-directory-functional-levels#windows-server-2016-forest-and-domain-functional-level-features).
 
@@ -43,7 +43,7 @@ DC006 | Windows Server 2022 Standard
 
 ### FFL
 
-Pour effectuer une montée de version de la forêt, il faut que tous les domaines enfants soit au niveau fonctionnel Windows2016. Dans les architectures Active Directory mono-domaine, mono-forêt, la FFL sera une formalité.
+Pour effectuer une montée de version de la forêt, il faut que tous les domaines enfants soient au niveau fonctionnel cible. Dans les architectures Active Directory mono-domaine, mono-forêt, la FFL sera une formalité.
 
 ```powershell
 (Get-ADForest).Domains | ForEach-Object { Get-ADDomain $_ | Format-Table DNSRoot, DomainMode }
@@ -61,7 +61,7 @@ repadmin /showrepl * /csv | ConvertFrom-Csv | Out-GridView
 
 ## Mise à niveau du domaine
 
-Une fois tous les prérequis remplis, avec un utilisateur ayant le rôle "Admins du domaine", exécuter la ligne de commande suivante pour passer le domaine en version 2016 :
+Une fois tous les prérequis remplis, avec un utilisateur ayant le rôle "Admins du domaine", exécuter la ligne de commande suivante pour passer le domaine en version 2016 ou 2025 :
 
 ```powershell
 $PDC = Get-ADDomainController -Discover -Service PrimaryDC
@@ -70,7 +70,7 @@ Set-ADDomainMode -Identity $PDC.Domain -Server $PDC.HostName[0] -DomainMode Wind
 
 ## Mise à niveau de la forêt
 
-Une fois tous les domaines en version 2016, nous pouvons passer à la mise à niveau de la forêt. Avant de faire l'action, il faut ajouter son compte dans le groupe "Administrateurs de l'entreprise" pour pouvoir effectuer l'opération :
+Une fois tous les domaines mis à niveau, nous pouvons passer à la mise à niveau de la forêt. Avant de faire l'action, il faut ajouter son compte dans le groupe "Administrateurs de l'entreprise" pour pouvoir effectuer l'opération :
 
 ```powershell
 Add-ADGroupMember "Administrateurs de l'entreprise" -Members 't0_jdoe'
