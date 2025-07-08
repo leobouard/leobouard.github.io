@@ -1,0 +1,98 @@
+---
+permalink: /cv-metsys
+title: "LBD"
+---
+
+<h1>{{ site.data.cv.name }}</h1>
+<span class="title">{{ site.data.cv.title }}</span>
+<ul>
+  <li>
+    <i class="fa-solid fa-location-dot"></i>
+    {{ site.data.cv.personalInfo.address }}
+  </li>
+  <li>
+    <i class="fa-solid fa-language"></i>
+    Anglais niveau C1
+  </li>
+</ul>
+<p>{{ site.data.cv.summary }}</p>
+
+<h2>Domaines de compétences</h2>
+<ul class="skills">
+  {% for skill in site.data.cv.skills %}
+  <li>
+    <span>{{ skill.name }}</span>
+    <div class="skill-container">
+      <div class="skill-progress" style="width: {{ skill.value }}%;"></div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Synthèse d'expérience</h2>
+
+<h3>Expertise technologique</h3>
+<ul>
+  <li><b>ANNUAIRE :</b> Active Directory & Microsoft Entra ID</li>
+  <li><b>CLOUD :</b> Microsoft Azure, Microsoft Graph API</li>
+  <li><b>SECURITE :</b> MFA et Microsoft Defender</li>
+  <li><b>MESSAGERIE :</b> Microsoft Exchange</li>
+  <li><b>COMMUNICATIONS UNIFIÉES :</b> Microsoft Teams & Skype for Business PSTN Calling</li>
+  <li><b>POSTE DE TRAVAIL :</b> Configuration Manager & Intune</li>
+  <li><b>COLLABORATIF :</b> Microsoft 365</li>
+  <li><b>SCRIPTING :</b> PowerShell</li>
+  <li><b>DEVELOPPEMENT :</b> Liquid, Markdown, HTML & CSS</li>
+</ul>
+
+<h3>Certifications</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
+  {% for certificate in site.data.cv.certificates %}
+  <div class="certification">
+    <a href="{{ certificate.url }}" target="_blank">
+      <img src="{{ certificate.image }}" alt="certification logo">
+      <div>
+        <h4>{{ certificate.name }}</h4>
+        <span>{{ certificate.date }}</span>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Expériences professionnelles</h2>
+{% for year in site.data.projects %}
+<div class="project-container" style="">
+  <h3>{{ year.year }}</h3>
+  <div class="project-per-year fill-available">
+    {% for project in year.projects %}
+    <div class="project" id="tag-container" style="">
+      {% assign company = site.data.companies | where: "company", project.company | first %}
+      {% if company %}
+      <span>{{ company.name }}</span>
+      <span><i class="fa-solid fa-location-dot"></i>{{ company.description }}</span>
+      {% endif %}
+      <h4>{{ project.title }}</h4>
+      <small><i class="fa-solid fa-calendar-days"></i>{{ project.period }} • <i class="fa-solid fa-hourglass-half"></i>{{ project.duration }}</small>
+      <p>{{ project.description }}</p>
+      <div style="display: flex; flex-wrap: wrap; grid-gap: 0.5em" id="tags">
+        {% for tag in project.tags %}<code>#{{ tag }}</code> {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+
+<h2>Formation</h2>
+<div style="display: flex; flex-direction: column; grid-gap: 1em;">
+  {% for school in site.data.cv.education %}
+  <div class="enterprise">
+    <img src="{{ school.logo }}" alt="school logo">
+    <div>
+      <h3>{{ school.institution }}</h3>
+      <span>{{ school.diploma }}</span><br>
+      <small>de {{ school.startDate }} à {{ school.endDate }}</small>
+    </div>
+  </div>
+  {% endfor %}
+</div>
