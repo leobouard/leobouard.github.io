@@ -3,20 +3,12 @@
         "year": "En cours",
         "projects": [
             {
-                "company": "Groupe Legendre",
-                "title": "Ingénieur systèmes",
-                "period": "juillet 2025",
-                "duration": "2 jours",
-                "description": "Remplacement de contrôleurs de domaine et mise à niveau du domaine et de la forêt",
-                "tags": ["activedirectory"]
-            },
-            {
                 "company": "Delta Dore Group",
-                "title": "Ingénieur systèmes",
+                "title": "Migration Active Directory",
                 "period": "de juin à juillet 2025",
                 "duration": "5 jours",
-                "description": "Finalisation d'une migration Active Directory et Microsoft 365",
-                "tags": ["powershell", "activedirectory", "microsoft365"]
+                "description": "Finalisation d'une migration Active Directory avec Quest On Demand Migration (ODM)",
+                "tags": ["powershell", "activedirectory", "quest"]
             },
             {
                 "company": "Avril",
@@ -47,6 +39,14 @@
     {
         "year": 2025,
         "projects":  [
+            {
+                "company": "Groupe Legendre",
+                "title": "Consultant Active Directory",
+                "period": "juillet 2025",
+                "duration": "1 jour",
+                "description": "Montée de version du domaine et de la forêt et conseil sur la sécurisation de Active Directory",
+                "tags": ["activedirectory"]
+            },
             {
                 "company": "SDIS 29",
                 "title": "Architecte Active Directory",
