@@ -291,6 +291,7 @@ div.project {
     border-radius: var(--borderradius);
     border: 1px solid var(--mediumaccent);
     position: relative;
+    break-inside: avoid;
 }
 
 div.project img {
