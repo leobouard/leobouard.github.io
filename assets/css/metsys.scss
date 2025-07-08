@@ -20,6 +20,7 @@ html {
 html {
     color: var(--text);
     font-family: var(--textfont);
+    -webkit-print-color-adjust: exact;
 }
 
 body {
