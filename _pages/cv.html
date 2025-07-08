@@ -139,3 +139,14 @@ description: "Toutes mes expériences, mes formations et certifications"
   </div>
   {% endfor %}
 </div>
+
+<h2>Projets open-source</h2>
+<!-- based on https://github.com/ambroiseodt/ambroiseodt.github.io -->
+<p>Voici quelques projets open-source sur lesquels j'ai travaillé. Vous pouvez retrouver l'ensemble de mes contributions sur <a href="https://github.com/leobouard" target="_blank">mon profil GitHub</a>.</p>
+<div class="github-repositories">
+  {% if site.data.repositories.github_repos %}
+    {% for repo in site.data.repositories.github_repos %}
+      {% include github-repository.html repository=repo %}
+    {% endfor %}
+  {% endif %}
+</div>
