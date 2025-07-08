@@ -26,11 +26,16 @@ body {
     margin: 0;
 }
 
+main {
+    background: var(--lightaccent);
+}
+
 section {
     max-width: 800px;
     margin: auto;
     padding: 2em;
     position: relative;
+    background: var(--background);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,7 +60,7 @@ h2 {
 }
 
 .skills span {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     display: block;
 }
 
