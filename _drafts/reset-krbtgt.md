@@ -85,6 +85,9 @@ $dcs | Where-Object {
     ($_.LdapConnectivity -eq $false -or $_.SslConnectivity -eq $false)
 }
 
+# 3. Réinitialisation
+# -------------------
+
 # Réinitialisation du mot de passe des comptes KRBTGT
 $krbtgtToReset | ForEach-Object {
     $dn = $_.DistinguishedName

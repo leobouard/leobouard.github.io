@@ -3,6 +3,99 @@ title: "Formats externes de fichiers pour PowerShell"
 description: "Résumé de toutes les choses à savoir sur l'utilisation du format CSV pour extraire ou importer des données avec PowerShell"
 ---
 
+# CSV (Comma-separated values)
+
+Le CSV est le format externe le plus utilisé avec PowerShell et pour cause :
+
+## Commandes compatibles
+
+- `Import-Csv` : pour importer un fichier CSV vers PowerShell
+- `Export-Csv` : pour exporter des données PowerShell en fichier CSV
+- `ConvertFrom-Csv` : pour convertir du texte CSV en données PowerShell
+- `ConvertTo-Csv` : pour convertir des données PowerShell en texte CSV
+
+## Avantages et limites
+
+### Avantages
+
+- modifiable directement dans Notepad
+- modifiable facilement dans Excel
+- format de fichier très répandu
+
+### Limites
+
+- ne fonctionne bien qu'avec les données "plates"
+- pas de typage sur les données : toutes les valeurs contenues dans un tableau sont considérés comme du texte
+
+## Exemples d'utilisation
+
+---
+
+# JSON (💖)
+
+## Commandes compatibles
+
+- `ConvertFrom-Json`
+- `ConvertTo-Json`
+
+## Avantages et limites
+
+### Avantages
+
+- peut stocker des données structurées complexes
+- typage des données (texte, nombre, booléen, objets et multi-valeur)
+- format de fichier répandu (notamment pour les API)
+- s'apprend relativement rapidement
+- suit la même logique que les données PowerShell
+
+### Limites
+
+- exigeant au niveau de la syntaxe
+- n'est pas modifiable par une personne non technique
+- gestion de la profondeur à faire
+- performances catastrophiques sur la conversion
+
+---
+
+# XML (satan)
+
+- `ConvertFrom-CliXml`
+- `ConvertTo-CliXml`
+- `ConvertTo-Xml`
+- `[xml]()`
+
+### Avantages
+
+- peut stocker des données structurées complexes
+- typage très précis des données
+- gestion automatique de la profondeur
+- beaucoup d'options
+
+### Limites
+
+- incompréhensible pour le commun des mortels
+- nécessite un réel apprentissage
+- ne suit pas la même logique que les données PowerShell
+- performances moyennes sur la conversion
+
+---
+
+# Les autres
+
+## Markdown (💖)
+
+- `ConvertFrom-Markdown`
+  
+## HTML
+
+- `ConvertTo-Html`
+
+## YAML
+
+Pas de commande pour YAML :-(
+
+---
+
 ## C'est quoi le CSV
 
 > Comma-separated values, connu sous le sigle CSV, est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées par des virgules.
