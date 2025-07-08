@@ -3,17 +3,14 @@ layout: metsys
 permalink: /cv-metsys
 ---
 
-<h1>{{ site.data.cv.name }}</h1>
-<span class="title">{{ site.data.cv.title }}</span>
+<h1>Dossier de compétence</h1>
+<h2>Informations générales</h2>
+
 <ul>
-  <li>
-    <i class="fa-solid fa-location-dot"></i>
-    {{ site.data.cv.personalInfo.address }}
-  </li>
-  <li>
-    <i class="fa-solid fa-language"></i>
-    Anglais niveau C1
-  </li>
+  <li>LBD</li>
+  <li>{{ site.data.cv.title }}</li>
+  <li>{{ site.data.cv.personalInfo.address }}</li>
+  <li>Anglais niveau C1</li>
 </ul>
 <p>{{ site.data.cv.summary }}</p>
 
@@ -67,10 +64,7 @@ permalink: /cv-metsys
     {% for project in year.projects %}
     <div class="project" id="tag-container" style="">
       {% assign company = site.data.companies | where: "company", project.company | first %}
-      {% if company %}
-      <span>{{ company.name }}</span>
-      <span><i class="fa-solid fa-location-dot"></i>{{ company.description }}</span>
-      {% endif %}
+      {% if company %}<span style="text-transform: uppercase;">{{ company.company }}</span>{% endif %}
       <h4>{{ project.title }}</h4>
       <small><i class="fa-solid fa-calendar-days"></i>{{ project.period }} • <i class="fa-solid fa-hourglass-half"></i>{{ project.duration }}</small>
       <p>{{ project.description }}</p>

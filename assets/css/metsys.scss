@@ -22,6 +22,16 @@ html {
     font-family: var(--textfont);
 }
 
+body {
+    margin: 0;
+}
+
+section {
+    max-width: 800px;
+    margin: auto;
+    padding: 2em;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--titlefont);
     font-weight: 600;
@@ -34,4 +44,15 @@ h1 {
 h2 {
     background: var(--mediumaccent);
     padding: 0.5em;
+}
+
+.skills {
+    grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)) !important;
+    font-size: medium !important;
+}
+
+.fill-available {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
 }
