@@ -49,6 +49,12 @@ h2 {
 .skills {
     grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)) !important;
     font-size: medium !important;
+    font-weight: 600 !important;
+}
+
+.skills span {
+    margin-bottom: 1em;
+    display: block;
 }
 
 .fill-available {
