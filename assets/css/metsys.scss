@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chela+One&display=swap');
+
+:root {
+    --textfont: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    --titlefont: "Be Vietnam Pro";
+    --codefont: 'Martian Mono', monospace;
+}
+
+html {
+    --text: #3d3834;
+    --background: #fff;
+    --primary: #783cbd;
+    --secondary: #c1a011;
+    --lightaccent: #f1f1f1;
+    --mediumaccent: #c9d1d1;
+    --heavyaccent: #373434;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--titlefont);
+    font-weight: 600;
+}
+
+h1 {
+    color: var(--primary);
+}
+
+h2 {
+    background: var(--mediumaccent);
+    padding: 0.5em;
+}
