@@ -68,6 +68,8 @@ $PDC = Get-ADDomainController -Discover -Service PrimaryDC
 Set-ADDomainMode -Identity $PDC.Domain -Server $PDC.HostName[0] -DomainMode Windows2016Domain
 ```
 
+> Si vous passez d'une version 2008R2 vers 2016, vous pouvez le faire en une seule fois. Aucun palier n'est nécessaire sur les montées de versions de domaine ou de forêt.
+
 ## Mise à niveau de la forêt
 
 Une fois tous les domaines mis à niveau, nous pouvons passer à la mise à niveau de la forêt. Avant de faire l'action, il faut ajouter son compte dans le groupe "Administrateurs de l'entreprise" pour pouvoir effectuer l'opération :
