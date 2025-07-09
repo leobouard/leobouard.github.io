@@ -8,9 +8,9 @@ listed: true
 
 Après un audit Ping Castle, vous êtes peut-être tombé sur la vulnérabilité "P-Kerberoasting" dans votre domaine (attaque Kerberoasting). Cette faille de sécurité est classée au niveau 1 de criticité (le plus élevé) par l'ANSSI et représente un **gros risque** pour votre Active Directory.
 
-La source de cette vulnérabilité est simple : un compte avec un haut niveau de privilège dans votre annuaire (*Admin du domaine* par exemple) possède une valeur inscrite dans son attribut `servicePrincipalName` (SPN). Cette valeur n'a pas besoin d'être valide ou de pointer vers un vrai serveur/service : sa simple présence suffit pour pouvoir demander un ticket Kerberos.
+La source de cette vulnérabilité est simple : un compte avec un haut niveau de privilèges dans votre annuaire (*Admin du domaine* par exemple) possède une valeur inscrite dans son attribut `servicePrincipalName` (SPN). Cette valeur n'a pas besoin d'être valide ou de pointer vers un vrai serveur/service : sa simple présence suffit pour pouvoir demander un ticket Kerberos.
 
-L'attaque Kerberoasting est la contraction de "Kerberos" (le protocole d'authentification qui fourni le TGS) et de "roast(ing)" qui fait référence au fait de faire chauffer (ou rôtir plus exactement) avec du brute-force le ticket que l'on a réussi à obtenir.
+L'attaque Kerberoasting est la contraction de "Kerberos" (le protocole d'authentification qui fournit le TGS) et de "roast(ing)", qui fait référence au fait de faire chauffer (ou rôtir plus exactement) avec du brute-force le ticket que l'on a réussi à obtenir.
 
 ### Fonctionnement du ServicePrincipalName
 
@@ -21,11 +21,11 @@ L'attribut `servicePrincipalName` permet plusieurs choses dans Active Directory 
 
 ### Déroulement d'une attaque
 
-Le principal problème réside dans le fait que **n'importe quel utilisateur du domaine** peut demander un ticket d'accès pour le compte qui porte le SPN (aucun privilège n'est nécessaire). Si on arrive à récupérer au moins un ticket TGS, alors on peut essayer de le *"brute-forcer"* hors-ligne pour obtenir le mot de passe du compte cible.
+Le principal problème réside dans le fait que **n'importe quel utilisateur du domaine** peut demander un ticket d'accès pour le compte qui porte le SPN (aucun privilège n'est nécessaire). Si l'on arrive à récupérer au moins un ticket TGS, alors on peut essayer de le *"brute-forcer"* hors-ligne pour obtenir le mot de passe du compte cible.
 
-Puisque le ticket est chiffré de manière irréversible avec le mot de passe, il n'est pas possible de le déchiffrer directement. L'attaquant va plutôt essayer de recréer le même hash de ticket à partir d'un mot de passe qu'il connait (soit en utilisant un dictionnaire, soit en générant aléatoirement un mot de passe). Si le ticket généré par l'attaquant est identique à celui qui a été capturé : le mot de passe a été trouvé.
+Puisque le ticket est chiffré de manière irréversible avec le mot de passe, il n'est pas possible de le déchiffrer directement. L'attaquant va plutôt essayer de recréer le même hash de ticket à partir d'un mot de passe qu'il connaît (soit en utilisant un dictionnaire, soit en générant aléatoirement un mot de passe). Si le ticket généré par l'attaquant est identique à celui qui a été capturé, le mot de passe a été trouvé.
 
-L'avantage de cette technique est qu'elle est relativement discrète (à moins que vous ailliez des solutions de surveillance comme [Semperis Directory Services Protector](https://www.semperis.com/fr/active-directory-security/) par exemple) et qu'elle permet une escalade directe du Tier 2 vers le Tier 0 (si le mot de passe parvient à être cassé).
+L'avantage de cette technique est qu'elle est relativement discrète (à moins que vous ayez des solutions de surveillance comme [Semperis Directory Services Protector](https://www.semperis.com/fr/active-directory-security/) par exemple) et qu'elle permet une escalade directe du Tier 2 vers le Tier 0 (si le mot de passe parvient à être cassé).
 
 ### Comment résoudre cette vulnérabilité ?
 
@@ -33,18 +33,18 @@ La seule méthode pour résoudre complètement cette vulnérabilité est de supp
 
 Bien évidemment, il n'est pas toujours possible de pouvoir faire ce genre d'action. Dans ce cas, voici les actions que vous pouvez mener (sans avoir à supprimer les SPN) :
 
-1. Réduire au maximum les permissions du compte qui porte le SPN pour éviter que sa compromission ne soit un danger immédiat pour votre Active Directory
-2. Utiliser des mots de passe très long (plus de 25 caractères) et complexes pour allonger le temps nécessaire pour pouvoir le brute-forcer
-3. N'autoriser que le chiffrement AES 256 pour les tickets Kerberos du compte, toujours pour ralentir l'attaque brute-force (attribut `msDS-SupportedEncryptionTypes`)
-4. Renouveler le mot de passe régulièrement pour rendre caduque un ticket TGS qui aurait été volé
+1. Réduire au maximum les permissions du compte qui porte le SPN pour éviter que sa compromission ne soit un danger immédiat pour votre Active Directory.
+2. Utiliser des mots de passe très longs (plus de 25 caractères) et complexes pour allonger le temps nécessaire pour pouvoir le brute-forcer.
+3. N'autoriser que le chiffrement AES 256 pour les tickets Kerberos du compte, toujours pour ralentir l'attaque brute-force (attribut `msDS-SupportedEncryptionTypes`).
+4. Renouveler le mot de passe régulièrement pour rendre caduque un ticket TGS qui aurait été volé.
 
 ## Exemple d'attaque
 
-Dans la suite de cet article nous utiliserons des commandes PowerShell du module Active Directory et le logiciel [hashcat](https://hashcat.net/hashcat/). Les deux sont facilement disponibles sous Windows. L'idée de cet article n'est pas de donner un guide détaillé sur cette attaque en environnement réel, mais plutôt de pouvoir la reproduire dans un lab pour démontrer son fonctionnement.
+Dans la suite de cet article, nous utiliserons des commandes PowerShell du module Active Directory et le logiciel [hashcat](https://hashcat.net/hashcat/). Les deux sont facilement disponibles sous Windows. L'idée de cet article n'est pas de donner un guide détaillé sur cette attaque en environnement réel, mais plutôt de pouvoir la reproduire dans un lab pour démontrer son fonctionnement.
 
 ### Création du compte
 
-La première étape est de créer le compte Active Directory avec un SPN est un mot de passe suffisamment faible pour pouvoir être cassé avec une attaque par dictionnaire. Ici nous allons créer le compte de John Smith, avec le mot de passe `ZombieKiller2008` qui devrait satisfaire la politique de mot de passe par défaut (16 caractères de long et de la complexité).
+La première étape est de créer le compte Active Directory avec un SPN et un mot de passe suffisamment faible pour pouvoir être cassé avec une attaque par dictionnaire. Ici, nous allons créer le compte de John Smith, avec le mot de passe `ZombieKiller2008` qui devrait satisfaire la politique de mot de passe par défaut (16 caractères de long et de la complexité).
 
 ```powershell
 $splat = @{
@@ -87,7 +87,7 @@ $ticket = [System.IdentityModel.Tokens.KerberosRequestorSecurityToken]::New($spn
 
 ### Récupération et traitement du hash
 
-On va maintenant tenter d'extraire la partie chiffré du ticket. Pour cela, je me suis servi dans le code disponible sur [Invoke-Kerberoast.ps1 · EmpireProject/Empire · GitHub](https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1#L660).
+On va maintenant tenter d'extraire la partie chiffrée du ticket. Pour cela, je me suis servi du code disponible sur [Invoke-Kerberoast.ps1 · EmpireProject/Empire · GitHub](https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1#L660).
 
 ```powershell
 $ticketByteStream = $ticket.GetRequest()
