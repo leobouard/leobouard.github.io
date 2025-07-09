@@ -140,6 +140,15 @@ description: "Toutes mes expériences, mes formations et certifications"
   {% endfor %}
 </div>
 
+<h2>Dernières publications</h2>
+<p>Voici les derniers articles publiés sur mon blog <a href="https://www.labouabouate.fr/">www.labouabouate.fr</a> :</p>
+<div class="all-posts">
+  {% assign posts = site.posts | where: "listed", true | slice: 0, 3 %}
+  {% for post in posts %}
+  {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
+  {% endfor %}
+</div>
+
 <h2>Projets open-source</h2>
 <!-- based on https://github.com/ambroiseodt/ambroiseodt.github.io -->
 <p>Voici quelques projets open-source sur lesquels j'ai travaillé. Vous pouvez retrouver l'ensemble de mes contributions sur <a href="https://github.com/leobouard" target="_blank">mon profil GitHub</a>.</p>
