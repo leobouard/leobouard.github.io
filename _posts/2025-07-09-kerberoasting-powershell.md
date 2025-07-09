@@ -128,7 +128,7 @@ Information | Explication
 
 On peut maintenant essayer de casser le hash avec [hashcat](https://hashcat.net/hashcat/).
 
-Pour plus d'accessibilité, on va mener une attaque par dictionnaire (qui est beaucoup moins coûteuse en ressources qu'une attaque par force brute). Le dictionnaire que j'utilise est [edermi Kerberoast PW list (XZ format) · GitHub](https://gist.github.com/The-Viper-One/a1ee60d8b3607807cc387d794e809f0b).
+Pour plus d'accessibilité, on va mener une attaque par dictionnaire (qui est beaucoup moins coûteuse en ressources qu'une attaque par force brute). Le dictionnaire que j'utilise est [edermi Kerberoast PW list (XZ format) · GitHub](https://gist.github.com/The-Viper-One/a1ee60d8b3607807cc387d794e809f0b) qui contient environ 35 millions de mots de passe.
 
 ```plaintext
 .\hashcat.exe -a 0 .\hash.txt .\kerberoast_pws.txt
