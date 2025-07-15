@@ -57,10 +57,10 @@
             },
             {
                 "company": "Le Gouessant",
-                "title": "Consultant Microsoft Entra ID",
+                "title": "Consultant Entra ID",
                 "period": "mai 2025",
                 "duration": "2 jours",
-                "description": "Migration du SSO d'une dizaine d'applications vers Microsoft Entra ID, avec SAML et OpenID Connect",
+                "description": "Migration du SSO d'une dizaine d'applications vers Entra ID, avec SAML et OpenID Connect",
                 "tags": ["entraid"]
             },
             {
@@ -89,7 +89,7 @@
             },
             {
                 "company": "Réseau Aprolliance",
-                "title": "Consultant Microsoft Entra ID",
+                "title": "Consultant Entra ID",
                 "period": "février 2025",
                 "duration": "4 jours",
                 "description": "Peuplement et nettoyage de Entra ID à partir de plusieurs sources externes",
