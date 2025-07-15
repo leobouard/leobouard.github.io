@@ -57,11 +57,11 @@
             },
             {
                 "company": "Le Gouessant",
-                "title": "Migration ADFS",
+                "title": "Consultant Microsoft Entra ID",
                 "period": "mai 2025",
                 "duration": "2 jours",
-                "description": "Migration d'une dizaine d'applications de ADFS vers Microsoft Entra ID, avec SAML et OpenID Connect",
-                "tags": ["adfs", "entraid"]
+                "description": "Migration du SSO d'une dizaine d'applications vers Microsoft Entra ID, avec SAML et OpenID Connect",
+                "tags": ["entraid"]
             },
             {
                 "company": "Oberthur Fiduciaire",
