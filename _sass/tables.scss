@@ -15,6 +15,9 @@ th {
     font-family: var(--titlefont);
 }
 
+th, td {
+    overflow-wrap: anywhere;
+
 th i.fa-solid.fa-sort {
     color: var(--mediumaccent);
     position: absolute;
