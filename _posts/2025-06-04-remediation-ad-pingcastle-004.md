@@ -84,8 +84,8 @@ Vous pouvez activer le paramètre **Chemin d'accès UNC renforcés** et définir
 
 Nom de la valeur | Valeur
 ---------------- | ------
-\\*\NETLOGON | RequireMutualAuthentication=1, RequireIntegrity=1
-\\*\SYSVOL | RequireMutualAuthentication=1, RequireIntegrity=1
+\\\*\NETLOGON | RequireMutualAuthentication=1, RequireIntegrity=1
+\\\*\SYSVOL | RequireMutualAuthentication=1, RequireIntegrity=1
 
 > Il existe un troisième paramètre `RequirePrivacy=1` qui impose l'utilisation du chiffrement SMB, disponible seulement à partir de Windows 8 & Windows Server 2012. Si votre parc contient des OS plus anciens, n'ajoutez pas l'option.
 
