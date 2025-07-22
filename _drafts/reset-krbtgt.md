@@ -1,4 +1,3 @@
-```powershell
 # Rewrite from https://github.com/zjorz/Public-AD-Scripts/blob/master/Reset-KrbTgt-Password-For-RWDCs-And-RODCs.ps1 because +8000 lines is just too much
 
 # Requires -Version 5.1
@@ -25,12 +24,14 @@ if ([int]$domain.DomainMode -lt 3) {
     PDCEmulator = $domain.PDCEmulator
 } | Format-List
 
-<#
 # Affichage et récupération des informations sur la durée de vie des tickets Kerberos
 $null = Get-GPResultantSetOfPolicy -ReportType Xml -Path "C:\temp\gprsop.xml"
 $rsopXml = [xml](Get-Content -Path "C:\temp\gprsop.xml" -Raw)
-$rsopXml.rsop.ComputerResults.ExtensionData.Extension.Account | Where-Object {$_.Type -eq 'Kerberos'}
-#>
+$kerberosSettings = $rsopXml.rsop.ComputerResults.ExtensionData.Extension.Account | Where-Object { $_.Type -eq 'Kerberos' }
+if ($kerberosSettings) {
+    $maxTicketAge = ($kerberosSettings | Where-Object { $_.Name -eq 'MaxTicketAge' }).SettingNumber
+    Write-Host "Kerberos ticket maximum age: $maxTicketAge hour(s)"
+}
 
 # Récupération des contrôleurs de domaine et des comptes KRBTGT associés
 $dcs = Get-ADDomainController -Filter *
@@ -44,7 +45,7 @@ $dcs | Where-Object { $_.IsReadOnly -eq $true } | ForEach-Object {
 
 # Pour les RWDC
 $krbtgtSID = $domain.DomainSID.Value + '-502'
-$krbtgt = Get-ADUser $krbtgtSID -Properties passwordLastSet
+$krbtgt = Get-ADUser $krbtgtSID -Properties passwordLastSet, 'msDS-KeyVersionNumber'
 $dcs | Where-Object { $_.IsReadOnly -eq $false } | ForEach-Object {
     $_.krbtgtAccount = $krbtgt
 }
@@ -52,8 +53,9 @@ $dcs | Where-Object { $_.IsReadOnly -eq $false } | ForEach-Object {
 # Affichage des résultats
 $dcs | Select-Object Name, Site, IsReadOnly, isGlobalCatalog, 
 @{N = 'Account'; E = { $_.krbtgtAccount.SamAccountName } },
-@{N = 'PasswordLastSet'; E = { $_.krbtgtAccount.passwordLastSet } },
-@{N = 'PasswordAgeDays'; E = { [int](New-TimeSpan -Start $_.krbtgtAccount.passwordLastSet).TotalDays } } |
+@{N = 'PwdLastSet'; E = { $_.krbtgtAccount.passwordLastSet } },
+@{N = 'PwdAgeDays'; E = { [int](New-TimeSpan -Start $_.krbtgtAccount.passwordLastSet).TotalDays } },
+@{N = 'PwdResetCount'; E = { $_.krbtgtAccount.'msDS-KeyVersionNumber' - 2 } } |
 Sort-Object PasswordLastSet -Descending |
 Format-Table
 
@@ -64,8 +66,8 @@ Format-Table
 $dcs | Add-Member -MemberType NoteProperty -Name 'LdapConnectivity' -Value $null -Force
 $dcs | Add-Member -MemberType NoteProperty -Name 'SslConnectivity' -Value $null -Force
 $dcs | ForEach-Object {
-    $_.LdapConnectivity = Test-Connection -ComputerName $_.Name -Count 1 -TcpPort $_.LdapPort
-    $_.SslConnectivity = Test-Connection -ComputerName $_.Name -Count 1 -TcpPort $_.SslPort
+    $_.LdapConnectivity = (Test-NetConnection -ComputerName $_.Name -Port $_.LdapPort).TcpTestSucceeded
+    $_.SslConnectivity = (Test-NetConnection -ComputerName $_.Name -Port $_.SslPort).TcpTestSucceeded
 }
 
 # Affichage des résultats
@@ -102,5 +104,3 @@ $krbtgtToReset | ForEach-Object {
         Sync-ADObject -Identity $dn -Source $domain.PDCEmulator -Destination $_.HostName
     }   
 }
-
-```
