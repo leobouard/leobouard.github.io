@@ -46,14 +46,14 @@ Traduction des SID et affichage des résultats :
 Write-Host "Log on as a batch job" -ForegroundColor Yellow
 $batchLogon = $batchLogon.Replace('*', '').Trim()
 $batchLogon -split ',' | ForEach-Object {
-	$SID = [System.Security.Principal.SecurityIdentifier]::New($_)
-	($SID.Translate([System.Security.Principal.NTAccount])).Value
+    $SID = [System.Security.Principal.SecurityIdentifier]::New($_)
+    ($SID.Translate([System.Security.Principal.NTAccount])).Value
 }
 
 Write-Host "Log on as a service" -ForegroundColor Yellow
 $serviceLogon = $serviceLogon.Replace('*', '').Trim()
 $serviceLogon -split ',' | ForEach-Object {
-	$SID = [System.Security.Principal.SecurityIdentifier]::New($_)
-	($SID.Translate([System.Security.Principal.NTAccount])).Value
+    $SID = [System.Security.Principal.SecurityIdentifier]::New($_)
+    ($SID.Translate([System.Security.Principal.NTAccount])).Value
 }
 ```
