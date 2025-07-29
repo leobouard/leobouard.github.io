@@ -12,7 +12,8 @@ section.blog-header {
     padding: 2rem;
     max-width: 800px;
     border-radius: var(--borderradius);
-    overflow-x: scroll;
+    overflow-x: auto;
+    scrollbar-width: none;
     // overflow-y: hidden;
 }
 
