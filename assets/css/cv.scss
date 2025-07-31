@@ -92,9 +92,8 @@ div.personalLinks {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    grid-gap: 5px;
+    grid-gap: 1em;
     margin: 2em 0;
-    justify-content: space-between;
 }
 
 div.personalLinks a {
@@ -171,14 +170,14 @@ div.personalLinks a i {
 div.personalInfo {
     font-size: smaller;
     min-width: 15em;
-    padding: 2em;
+    padding: 3em 4em;
     max-width: fit-content;
     margin: 0 auto;
     height: fit-content;
     border-radius: var(--borderradius);
     background: var(--lightaccent);
-    border: 2px solid var(--primary);
-    box-shadow: 0 2px 0 0 var(--primary);
+    //border: 2px solid var(--primary);
+    //box-shadow: 0 2px 0 0 var(--primary);
 }
 
 div.personalInfo img {
