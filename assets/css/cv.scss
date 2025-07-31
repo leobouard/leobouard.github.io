@@ -335,9 +335,15 @@ div.project code {
 }
 
 div.github-repositories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+    display: flex;
     grid-gap: 1em;
+    padding-bottom: 1em;
+    scrollbar-width: thin;
+    overflow: auto;
+}
+
+div.github-repositories img {
+    max-width: unset;   
 }
 
 // CV WRAPPER
