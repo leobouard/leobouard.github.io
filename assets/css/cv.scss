@@ -342,6 +342,10 @@ div.github-repositories {
     overflow: auto;
 }
 
+div.github-repositories a {
+    max-width: 80%;   
+}
+
 div.github-repositories img {
     max-width: unset;   
 }
