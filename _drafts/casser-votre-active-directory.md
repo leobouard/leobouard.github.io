@@ -17,7 +17,7 @@ Mieux encore : un objet dynamique dans le schéma est une véritable bombe à re
 
 ## Pistes de recherches
 
-Avant toute chose : il faut évidemment s'ajouter dans le groupe "Schema Admins".
+Avant toute chose, puisque l'on va faire beaucoup de modification du schéma, il va falloir s'ajouter dans le groupe "Schema Admins".
 
 ```powershell
 Add-ADGroupMember 'Schema Admins' -Members 'Administrator'
@@ -40,7 +40,7 @@ function New-Oid {
 }
 ```
 
-En essayant directement de créer un objet dynamique de type "attribut" dans le schéma, on tombe directement sur l'erreur suivante : *"The server is unwilling to process the request"*.
+En essayant directement de créer un objet dynamique de type "attribut" dans le schéma, on tombe directement sur l'erreur suivante : **"The server is unwilling to process the request"**.
 
 ```powershell
 # Création de l'attribut "timebomb" dans la partition Schéma
@@ -57,9 +57,9 @@ $dynamicObject.Put('systemFlags', 536870912)
 $dynamicObject.SetInfo()
 ```
 
-Et si on essaye de créer un attribut ou une classe en dehors de la partition dédiée, on tombe sur une autre erreur : *"There is a naming violation"*.
+Et si on essaye de créer un attribut ou une classe en dehors de la partition dédiée, on tombe sur une autre erreur : **"There is a naming violation"**.
 
-C'est lié au fait que la classe "attributeSchema" que l'on essaye de créer n'a comme parent possible (*possible superior*) que la classe "dMD" qui correspond au schéma Active Directory. Si l'on essaye de modifier ça dans la console "Active Directory Schema", on obtient l'erreur suivante : *The change was rejected by the schema master server*.
+C'est lié au fait que la classe "attributeSchema" que l'on essaye de créer n'a comme parent possible (*possible superior*) que la classe "dMD" qui correspond au schéma Active Directory. Si l'on essaye de modifier ça dans la console "Active Directory Schema", on obtient l'erreur suivante : **The change was rejected by the schema master server**.
 
 ### Création puis déplacement dans le schéma
 
@@ -78,13 +78,42 @@ $dn = (Get-ADUser timebomb).DistinguishedName
 Move-ADObject $dn -TargetPath 'CN=Schema,CN=Configuration,DC=contoso,DC=com'
 ```
 
-On tombe alors sur l'erreur suivante : *Illegal modify operation. Some aspect of the modification is not permitted*.
+On tombe alors sur l'erreur suivante : **Illegal modify operation. Some aspect of the modification is not permitted**.
 
-> À noter : sans la modification de la classe `user` dans le schéma, nous aurions obtenu l'erreur *The object cannot be added because the parent is not on the list of possible superiors*.
+> À noter : sans la modification de la classe `user` dans le schéma, nous aurions obtenu l'erreur **The object cannot be added because the parent is not on the list of possible superiors**.
 
 ### Création d'une classe personnalisée
 
+Notre dernier espoir : créer une nouvelle classe personnalisée qui peut se trouver à la fois dans le schéma et dans la partition par défaut.
 
+Pour cela, j'ai utilisé la commande suivante : [New-ADSchemaClass.ps1 · SchneiderAndy-zz/ADSchema · GitHub](https://github.com/SchneiderAndy-zz/ADSchema/blob/master/scripts/New-ADSchemaClass.ps1)
+
+```powershell
+# Création de la classe "timebomb"
+$name = 'timebomb'
+$splat = @{
+    Name = $name
+    Type = 'classSchema'
+    Path = 'CN=Schema,CN=Configuration,DC=contoso,DC=com'
+    OtherAttributes = @{
+        governsId           = (New-Oid)
+        ldapDisplayName     = $name
+        adminDisplayName    = $name
+        objectClassCategory = 1
+        systemOnly          =  $false
+        subclassOf          = '2.5.6.0'
+        rdnAttId            = '2.5.4.3'
+    }
+}
+New-ADObject @splat
+```
+
+On vient modifier ensuite la classe pour qu'elle avoir en parent possible les classes suivantes : container, dMD et organizationalUnit. Mais malgré le stratagème, on retombe sur les deux erreurs précédentes :
+
+- Si création directe dans le schéma : **The server is unwilling to process the request**.
+- Si création puis déplacement dans le schéma : **Illegal modify operation. Some aspect of the modification is not permitted**.
+
+---
 
 ## Détection de la création d'objet dynamique
 
