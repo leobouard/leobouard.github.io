@@ -175,8 +175,7 @@ div.personalInfo {
     height: fit-content;
     border-radius: var(--borderradius);
     background: var(--lightaccent);
-    //border: 2px solid var(--primary);
-    //box-shadow: 0 2px 0 0 var(--primary);
+    border: 1px solid var(--mediumaccent);
 }
 
 div.personalInfo img {
