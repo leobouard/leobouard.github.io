@@ -60,15 +60,15 @@ On voit ici la dernière valeur ajoutée dans l'attribut et la date de modificat
 
 > **À noter :** Dans cet exemple, la date de réplication des attributs `adminCount` et `nTSecurityDescriptor` diffère de celle d'autres attributs définis à la création de l'objet (environ 15 minutes de décalage). Il s'agit d'une trace visible du passage du processus [SDProp](https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory#sdprop) sur l'objet.
 
-## Utilisation pour les membres d'un groupe
+## Date d'ajout dans le groupe
 
 ### LinkedValues
 
 Dans Active Directory, certains attributs sont des références vers d'autres objets. C'est le cas de l'attribut "Manager" sur les utilisateurs ou "Members" sur les groupes. Si par défaut on ne peut voir que la dernière métadonnée de réplication, il est possible d'afficher l'intégralité des modifications de cet attributs avec le paramètre `-ShowAllLinkedValues`.
 
-### Script complet
+### Requête PowerShell
 
-Voici un exemple de script pour voir les dates d'ajout de chaque membre sur groupe "Domain Admins" :
+Voici un exemple de script pour voir les dates d'ajout de chaque membre sur groupe "Domain Admins" :
 
 ```powershell
 Get-ADGroup 'Domain Admins' |
@@ -84,3 +84,72 @@ AttributeName | AttributeValue | FirstOriginatingCreateTime
 ------------- | -------------- | --------------------------
 member | CN=Administrator,CN=Users,DC=contoso,DC=com | 13/07/2025 13:29:47
 member | CN=T0 - Léo BOUARD,OU=Administrators,OU=TIER 0,DC=contoso,DC=com | 15/07/2025 15:52:11
+member | CN=T0 - John Smith\0ADEL:4a6e9378-63f3-4138-adbb-3e7ed9b53044,CN=Deleted Objects,DC=contoso,DC=com | 14/07/2025 08:54:15
+member | CN=gmsa_adconnect,CN=Managed Service Accounts,DC=contoso,DC=com | 13/07/2025 10:14:07
+
+Les données de réplications nous indiquent alors l'intégralité des comptes qui ont été ajoutés dans le groupe, y compris :
+
+- les comptes supprimés de Active Directory (comme "T0 - John Smith")
+- les comptes qui ne sont plus membres du groupe (comme "gmsa_adconnect")
+
+### Exclure les comptes qui ne sont plus membres du groupe
+
+Cette partie a été ajoutée grâce au commentaire de [DTT59](https://github.com/DTT59). Merci à lui !
+
+Pour exclure les comptes qui ne sont plus membres du groupe (qu'ils aient été supprimés de Active Directory ou juste supprimés des membres du groupe), on pourrait simplement faire une comparaison avec le résultat de la commande `Get-ADGroupMember`. Cependant, nous avons déjà toutes les informations nécessaires dans les données de réplication pour faire une discrimination sur ces comptes :
+
+- `FirstOriginatingCreateTime` qui indique la date de création du changement (donc la date d'ajout du membre dans le groupe)
+- `LastOriginatingChangeTime` qui indique la date du dernier changement (donc la date d'ajout ou suppression du membre dans le groupe)
+- `LastOriginatingDeleteTime` qui indique la date de suppression du changement (donc la date de suppression du membre dans le groupe)
+
+Type de membre | First Originating Create Time | Last Originating Change Time | Last Originating Delete Time
+-------------- | ----------------------------- | ---------------------------- | ----------------------------
+Membre actuel | **13/07/2025 13:29:47** | **13/07/2025 13:29:47** | 01/01/1601 01:00:00
+Membre supprimé | 14/07/2025 08:54:15 | **17/07/2025 17:04:30** | **17/07/2025 17:04:30**
+Ancien membre | 13/07/2025 10:14:07 | **15/07/2025 15:54:30** | **15/07/2025 15:54:30**
+
+On repère alors le schéma suivant :
+
+- Si l'utilisateur est toujours membre du groupe, alors la date indiquée dans `FirstOriginatingCreateTime` sera identique à celle indiquée dans `LastOriginatingChangeTime` et la valeur de `LastOriginatingDeleteTime` sera "01/01/1601 01:00:00"
+- Si l'utilisateur n'est plus membre du groupe, alors la date indiquée dans `LastOriginatingDeleteTime` sera identique à celle indiquée dans `LastOriginatingChangeTime`
+
+La date du "01/01/1601 01:00:00" n'est pas aléatoire, il s'agit de la première date du format FileTime (valeur 0) sur mon fuseau horaire (celui de Paris en l’occurrence) :
+
+```powershell
+[DateTime]::FromFileTime(0)
+```
+
+On peut alors adapter le script pour exclure facilement toutes les personnes qui ne sont plus membre du groupe :
+
+```powershell
+Get-ADGroup 'Domain Admins' |
+    Get-ADReplicationAttributeMetadata -Server (Get-ADDomain).PDCEmulator -ShowAllLinkedValues |
+    Where-Object {
+        $_.AttributeName -eq 'member' -and
+        $_.LastOriginatingDeleteTime -ne $_.LastOriginatingChangeTime
+    } |
+    Sort-Object FirstOriginatingCreateTime |
+    Format-Table AttributeName, AttributeValue, FirstOriginatingCreateTime -GroupBy Object
+```
+
+## Date de suppression d'un membre
+
+En me basant sur le précédent script, il est possible d'obtenir la date de suppression des membres du groupe "Domain Admins" :
+
+```powershell
+Get-ADGroup 'Domain Admins' |
+    Get-ADReplicationAttributeMetadata -Server (Get-ADDomain).PDCEmulator -ShowAllLinkedValues |
+    Where-Object {
+        $_.AttributeName -eq 'member' -and
+        $_.LastOriginatingDeleteTime -eq $_.LastOriginatingChangeTime
+    } |
+    Sort-Object LastOriginatingDeleteTime |
+    Format-Table AttributeName, AttributeValue, LastOriginatingDeleteTime -GroupBy Object
+```
+
+Et voici le résultat obtenu :
+
+AttributeName | AttributeValue | LastOriginatingDeleteTime
+------------- | -------------- | --------------------------
+member | CN=T0 - John Smith\0ADEL:4a6e9378-63f3-4138-adbb-3e7ed9b53044,CN=Deleted Objects,DC=contoso,DC=com | 17/07/2025 17:04:30
+member | CN=gmsa_adconnect,CN=Managed Service Accounts,DC=contoso,DC=com | 15/07/2025 15:54:30

@@ -19,7 +19,7 @@ Voici donc ma version de la documentation sur les formats pris en charge par `Ge
 
 ## Formats standards
 
-Les formats standards permettent d'obtenir rapidement un formatage en utilisant une seule lettre, au lieu d'avoir à utiliser une chaine de caractère complète.
+Les formats standards permettent d'obtenir rapidement un formatage en utilisant une seule lettre, au lieu d'avoir à utiliser une chaîne de caractère complète.
 
 Documentation officielle : [Chaînes de format de date et d’heure standard - .NET \| Microsoft Learn](https://learn.microsoft.com/fr-fr/dotnet/standard/base-types/standard-date-and-time-format-strings)
 
@@ -48,10 +48,14 @@ Lettre(s) | Résultat | Description
 `u` | 2023-09-27 15:30:00Z | Modèle de date/heure universel pouvant être trié
 `U` | mercredi 27 septembre 2023 13:30:00 | Modèle de date/heure complète universelle
 `y`, `Y` | septembre 2023 | Modèle d’année/mois
+`FileDate` | 20230927 | Modèle de date courte pouvant être trié
+`FileDateUniversal` | 20230926Z | Modèle de date courte pouvant être trié (format UTC)
+`FileDateTime` | 20230927T1530000000 | Modèle de date/heure pouvant être trié
+`FileDateTimeUniversal` | 20230927T1330000000Z | Modèle de date/heure pouvant être trié (format UTC)
 
 ## Formats personnalisés
 
-Le format personnalisé permet de créer un formatage de date en indiquant précisément nos besoin dans une chaine de caractère.
+Le format personnalisé permet de créer un formatage de date en indiquant précisément nos besoin dans une chaîne de caractère.
 
 Documentation officielle : [Chaînes de format de date et d’heure personnalisées - .NET \| Microsoft Learn](https://learn.microsoft.com/fr-fr/dotnet/standard/base-types/custom-date-and-time-format-strings)
 
@@ -65,7 +69,7 @@ Get-Date -Format 'ddd dd MMM'
 
 Il ne s'agit pas d'un tableau complet, mais uniquement des caractères utiles en France.
 
-Chaine | Résultat | Description
+Chaîne | Résultat | Description
 ------ | -------- | -----------
 `dd` | 27 | Jour du mois sur deux caractères
 `ddd` | mer. | Nom abrégé du jour de la semaine
@@ -91,3 +95,41 @@ Il est possible de "traduire" une date d'une langue vers une autre avec la comma
 Le `'D'` indique le format standard ou personnalisé à utiliser.
 
 Le `'fr'` indique la culture de destination. Vous pouvez obtenir la liste des cultures disponibles avec la commande `Get-Culture -ListAvailable` disponible à partir de PowerShell 7.
+
+## Format FileTime
+
+Le format FileTime représente le nombre de "ticks" écoulés entre le lundi 1 janvier 1601 00:00:00 (UTC) et une autre date. Un horodatage au format FileTime ressemble donc à ça : "134005871809753633". En PowerShell, on retrouve ce format sur certaines propriétés Active Directory (lastLogon, pwdLastSet, accountExpires) et plus rarement sur les fichiers NTFS.
+
+Comme un "tick" correspond à 100 nanosecondes et que chaque seconde correspond à un milliard de nanosecondes, dix millions en FileTime (10 000 000) correspondent à une seconde.
+
+FileTime | Durée | Date
+-------- | ----- | ----
+0 | 0 tick | lundi 1 janvier 1601 00:00:01
+10 000 000 | 1 seconde | lundi 1 janvier 1601 00:00:01
+600 000 000 | 1 minute | lundi 1 janvier 1601 00:01:00
+36 000 000 000 | 1 heure | lundi 1 janvier 1601 01:00:00
+864 000 000 000 | 1 journée | mardi 2 janvier 1601 00:00:00
+
+### Conversion de FileTime vers DateTime
+
+Il est possible de convertir facilement une date en FileTime avec les méthodes `FromFileTime()` et `FromFileTimeUtc()` :
+
+```powershell
+[DateTime]::FromFileTime(133402950000000000)
+[DateTime]::FromFileTimeUtc(0)
+```
+
+Il est également possible d'utiliser la commande `New-TimeSpan` pour calculer "manuellement" l'écart de temps en ticks entre deux dates :
+
+```powershell
+(New-TimeSpan -Start '1601-01-01 00:00' -End '2023-09-27 15:30').Ticks
+```
+
+### Conversion du DateTime vers FileTime
+
+Il est possible de convertir facilement un FileTime en date avec les méthodes `ToFileTime()` et `ToFileTimeUtc()` :
+
+```powershell
+(Get-Date '2023-09-27 15:30').ToFileTime()
+(Get-Date).ToFileTimeUtc()
+```
