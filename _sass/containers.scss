@@ -7,7 +7,8 @@ section.blog-post, section.blog-page, section.recommandation, .fill-available {
 section.blog-post,
 section.blog-page,
 section.recommandation,
-section.blog-header {
+section.blog-header,
+section.comments {
     position: relative;
     padding: 2rem;
     max-width: 800px;
@@ -63,6 +64,10 @@ section.recommandation svg {
     transform: scaleY(-1);
     margin: -1em 5em;
     height: 7em;
+}
+
+section.comments {
+    background: var(--secondary);
 }
 
 @media screen and (max-width: 700px) {
