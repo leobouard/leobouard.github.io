@@ -1,4 +1,8 @@
-section.blog-post, section.blog-page, section.recommandation, .fill-available {
+section.blog-post,
+section.blog-page,
+section.recommandation,
+section.comments,
+.fill-available {
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
@@ -20,7 +24,8 @@ section.comments {
 @media screen and (max-width: 550px) {
     section.blog-post,
     section.blog-page,
-    section.recommandation {
+    section.recommandation,
+    section.comments {
         padding: 1em;
     }
 }
