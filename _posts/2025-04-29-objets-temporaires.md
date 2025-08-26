@@ -24,7 +24,7 @@ Les objets dynamiques :
 - disparaissent sans laisser de trace (ne passent pas par la case corbeille Active Directory)
 - ne peuvent pas être créés dans la partition "Configuration" ou "Schéma" de Active Directory
 
-### Création dans le schéma ou la partition
+### Création dans le schéma ou la partition de configuration
 
 Pour le dernier point : il s'agit d'une mesure de sécurité visant à éviter de détruire le domaine. En effet : il n'est pas possible de supprimer un objet qui a été ajouté dans le schéma. Ajouter un objet dynamique qui finira par disparaître dans le schéma ou la configuration mènera donc à une corruption pure et simple de votre Active Directory.
 
