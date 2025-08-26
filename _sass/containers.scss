@@ -75,6 +75,7 @@ section.comments {
     background: var(--secondary);
     margin: 1em;
     margin-top: 3em;
+    box-shadow: 4px 4px 0 0 var(--mediumaccent);
 }
 
 @media screen and (max-width: 700px) {
