@@ -16,7 +16,7 @@
         html.className = 'dark';
         createCookie('cookie-theme-dark', 'true', 31);
       }
-      
+      if (typeof changeGiscusTheme === 'function') changeGiscusTheme();
     });
   });
 </script>
