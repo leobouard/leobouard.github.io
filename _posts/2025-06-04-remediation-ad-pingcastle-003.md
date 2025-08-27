@@ -158,6 +158,29 @@ Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 
 ### P-UnkownDelegation
 
+Des permissions dans Active Directory ne peuvent pas être résolues (SID orphelins), ce qui peut être expliqué par une délégation accordée à un objet d'un autre domaine Active Directory et/ou que le principal qui portait la permission à été supprimé.
+
+Vous pouvez vérifier que la provenance des SID inconnus en les comparant aux DomainSID connus : 
+
+```powershell
+$domains = @()
+$domains += (Get-ADDomain).DNSRoot
+$domains += (Get-ADTrust -Filter *).Name
+$domains | ForEach-Object {
+    Get-ADDomain $_ | Select-Object DNSRoot, DomainSID
+}
+```
+
+Et pour rechercher un SID dans la corbeille Active Directory, vous pouvez utiliser la commande suivante :
+
+```powershell
+Get-ADObject -Filter {ObjectSID -eq 'S-1-5-21-1519513455-2607746426-4144247390-102133'} -IncludeDeletedObjects -Properties Modified
+```
+
+> Pensez également à vérifier dans les SIDHistory lors votre recherche des SID orphelins.
+
+{% include risk-score.html impact=1 probability=2 comment="Il peut y avoir des cas où cela cause un impact, mais si votre audit des permissions orphelines est bien fait il ne devrait pas y avoir de soucis." %}
+
 ### P-DelegationDCt2a4d
 
 ### P-DelegationDCa2d2
@@ -173,6 +196,16 @@ Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 ### P-SchemaAdmin
 
 ### P-UnprotectedOU
+
+Certaines unités d'organisation ne sont pas protégées contre la suppression accidentelle. Vous pouvez résoudre facilement ce point avec le script suivant :
+
+```powershell
+Get-ADOrganizationalUnit -Filter * -Properties ProtectedFromAccidentalDeletion |
+    Where-Object {$_.ProtectedFromAccidentalDeletion -eq $false} |
+    Set-ADOrganizationalUnit -ProtectedFromAccidentalDeletion:$true -Verbose
+```
+
+{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir." %}
 
 ### P-RecycleBin
 
