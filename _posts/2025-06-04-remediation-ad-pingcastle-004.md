@@ -227,6 +227,8 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 
 ### A-AdminSDHolder
 
+
+
 ---
 
 ## Mots de passe faibles
@@ -249,6 +251,28 @@ $dn = "CN=Password Settings Container,CN=System,$((Get-ADDomain).DistinguishedNa
     Format-Table -AutoSize
 ```
 
-Et si vous n'avez pas de PSO pour les comptes de service
+Et si vous n'avez pas de PSO pour les comptes de service, vous pouvez en créer une facilement avec la commande suivante :
 
-{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir sur la création d'une PSO, mais attention sur le paramètre "MaxPasswordAge" si vous comptez l'appliquer à des comptes : vous pourriez risquer de faire expirer le mot de passe immédiatement. %}
+```powershell
+$splat = @{
+    # General settings
+    Name = 'PSO - Service accounts'
+    Description = 'Very strong passwords with longer lifetime'
+    Precedence = 100
+    ProtectedFromAccidentalDeletion = $true 
+    # Password settings
+    MaxPasswordAge = (New-TimeSpan -Days 370)
+    MinPasswordAge = (New-TimeSpan -Days 1)
+    MinPasswordLength = 20
+    ComplexityEnabled = $true
+    PasswordHistoryCount = 24
+    ReversibleEncryptionEnabled = $false
+    # Lockout settings
+    LockoutDuration = (New-TimeSpan -Days 1)
+    LockoutObservationWindow = (New-TimeSpan -Days 1)
+    LockoutThreshold = 10
+}
+New-ADFineGrainedPasswordPolicy @splat
+```
+
+{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir sur la création d'une PSO, mais attention sur le paramètre 'MaxPasswordAge' si vous comptez l'appliquer à des comptes : vous pourriez risquer de faire expirer le mot de passe immédiatement. %}
