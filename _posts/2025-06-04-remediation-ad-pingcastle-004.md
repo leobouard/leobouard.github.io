@@ -56,6 +56,60 @@ Plus d'information sur le hash LM ici : [LM, NTLM, Net-NTLMv2, oh my!. A Pentest
 
 ### A-DnsZoneAUCreateChild
 
+Par défaut, le fait de créer un enregistrement DNS est autorisé pour tous les utilisateurs et ordinateurs du domaine (*Authenticated Users*). Une façon rapide de réduire le risque lié à cette vulnérabilité est de remplacer cette permission accordée à *Authenticated Users* par une permission ciblée sur *Domain Computers*. Pour certaines zones DNS, on peut même envisager de supprimer cette permission (à voir au cas par cas).
+
+Le code proposé remplace les permissions données à *Authenticated Users* pour *Domain Computers* sur toutes les zones DNS. Il est inspiré ce celui de [WS IT-Solutions](https://www.ws-its.de/gegenmassnahme-zum-angriff-dns-wildcard/) (article en allemand).
+
+```powershell
+# Get 'Domain Computers' group
+$domainSID = (Get-ADDomain).DomainSID.Value
+$domainComputers = [System.Security.Principal.NTAccount]::New((Get-ADGroup "$domainSID-515").SamAccountName)
+
+# Get all dnsZones
+$domainDn = (Get-ADDomain).DistinguishedName
+$dnsZones = "CN=MicrosoftDNS,DC=DomainDnsZones,$DomainDn", "CN=MicrosoftDNS,DC=ForestDnsZones,$DomainDn" | ForEach-Object {
+    Get-ADObject -Filter { objectClass -eq 'dnsZone' } -SearchBase $_ -Properties NTSecurityDescriptor
+}
+
+# Variables for permissions
+$createChild = [System.DirectoryServices.ActiveDirectoryRights]::CreateChild
+$allow = [System.Security.AccessControl.AccessControlType]::Allow
+
+# Replace permissions for 'Authenticated Users' by 'Domain Computers'
+$dnsZones | ForEach-Object {
+    Write-Host $_.Name -ForegroundColor Yellow
+    $acl = $_.NTSecurityDescriptor
+
+    $acl.Access | Where-Object {
+        $_.IdentityReference -eq 'NT AUTHORITY\Authenticated Users' -and
+        $_.IsInherited -eq $false -and
+        $_.ActiveDirectoryRights -eq $createChild -and
+        $_.AccessControlType -eq $allow
+    } | ForEach-Object {
+
+        # Remove permission for 'Authenticated Users'
+        $acl.RemoveAccessRuleSpecific($_)
+
+        # Create and add permission for 'Domain Computers'
+        $acl.AddAccessRule([System.DirectoryServices.ActiveDirectoryAccessRule]::New($domainComputers, $createChild, $allow))
+
+        $updateAcl = $true
+    }
+
+    # Apply new ACL
+    if ($updateAcl) {
+        Write-Host "Modification have been made to the dnsZone!"
+        Set-Acl -Path "AD:\$($_.DistinguishedName)" -AclObject $acl -Confirm:$false
+    }
+
+    $updateAcl = $false
+}
+```
+
+Si vous créez fréquemment des zones DNS, vous pouvez modifier les paramètres de sécurité par défaut de la classe `dnsZone` dans le schéma pour éviter de faire la remédiation trop fréquemment.
+
+{% include risk-score.html impact=2 probability=2 comment="Je n'ai jamais eu de soucis en faisant cette manipulation, mais il se peut qu'un processus puisse être impacté. Le retour arrière est très simple et vous pouvez avancer zone par zone pour réduire l'impact." %}
+
 ### A-DnsZoneUpdate2
 
 ### A-DnsZoneUpdate1
@@ -98,6 +152,20 @@ Pour plus d'informations : [Active Directory - Découverte des chemins UNC durci
 ## Pass-the-credential
 
 ### A-SmartCardPwdRotation
+
+Vous pouvez lister l'intégralité des objets qui requièrent l'utilisation d'une smart card avec la commande suivante :
+
+```powershell
+Get-ADObject -Filter {UserAccountControl -band 262144}
+```
+
+En fonction des résultats obtenus, vous pouvez activer la fonctionnalité de rotation du hash de mot de passe automatique pour les comptes avec smart card sur votre domaine :
+
+```powershell
+Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAccounts' = $true }
+```
+
+{% include risk-score.html impact=2 probability=3 comment="L'impact et la probabilité dépendent fortement du nombre d'objets concernés et de leur criticité." %}
 
 ### A-SmartCardRequired
 
@@ -170,3 +238,17 @@ Pour plus d'informations : [Active Directory - Découverte des chemins UNC durci
 ### A-Guest
 
 ### A-NoServicePolicy
+
+Aucune politique de mot de passe imposant une longueur minimum de 20 caractères n'a été trouvé (idéal pour les comptes de service). Si vous n'exécutez pas Ping Castle avec des privilèges d'administrateur du domaine, il est possible qu'il s'agissent d'un faux positif (la PSO existe mais vous ne la voyez pas). Vous pouvez lister les objets autorisés à lire les PSO avec la ligne de commande suivante :
+
+```powershell
+$dn = "CN=Password Settings Container,CN=System,$((Get-ADDomain).DistinguishedName)"
+(Get-ADObject $dn -Properties NTSecurityDescriptor).NTSecurityDescriptor.Access |
+    Where-Object {$_.ActiveDirectoryRights -match 'ListChildren|GenericRead'} |
+    Group-Object IdentityReference -NoElement |
+    Format-Table -AutoSize
+```
+
+Et si vous n'avez pas de PSO pour les comptes de service
+
+{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir sur la création d'une PSO, mais attention sur le paramètre "MaxPasswordAge" si vous comptez l'appliquer à des comptes : vous pourriez risquer de faire expirer le mot de passe immédiatement. %}
