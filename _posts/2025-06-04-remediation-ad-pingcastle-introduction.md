@@ -38,12 +38,12 @@ Pensez également à garder scrupuleusement vos fichiers XML générés par Ping
   {% endfor %}
 </div>
 
+<!--
 {% assign posts = site.posts | sort: 'id' %}
-<div class="summary">
-  {% for post in posts %}
-    {% if post.title contains 'PING CASTLE -' %}
-      <hr>
-      {{ post.content }}
-    {% endif %}
-  {% endfor %}
-</div>
+{% for post in posts %}
+  {% if post.title contains 'PING CASTLE -' %}
+    <hr>
+    {{ post.content }}
+  {% endif %}
+{% endfor %}
+-->
