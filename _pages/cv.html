@@ -72,13 +72,12 @@ description: "Toutes mes expériences, mes formations et certifications"
     <h3>Certifications</h3>
     <div
       style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
-      {% for certificate in site.data.cv.certificates %}
+      {% for certificate in site.data.certificates %}
       <div class="certification">
         <a href="{{ certificate.url }}" target="_blank">
           <img src="{{ certificate.image }}" alt="certification logo">
           <div>
             <h4>{{ certificate.name }}</h4>
-            <span>{{ certificate.date }}</span>
           </div>
         </a>
       </div>

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Identity Manager Technical Specialist",
+        "organization": "One Identity",
+        "date": "octobre 2024",
+        "image": "/assets/images/one-identity-technical-specialist.png",
+        "url": "https://www.credly.com/badges/c5f8ba7a-be2e-4448-bb9f-0fef97e7c1ac/public_url"
+    },
+    {
+        "name": "Microsoft 365 Administrator Expert",
+        "organization": "Microsoft",
+        "date": "juin 2023",
+        "image": "/assets/images/microsoft-certified-expert-badge.svg",
+        "url": "https://www.credly.com/badges/63035cbc-cc93-4793-8ab0-fed5f27747b9/public_url"
+    },
+    {
+        "name": "Identity and Access Administrator Associate",
+        "organization": "Microsoft",
+        "date": "avril 2023",
+        "image": "/assets/images/microsoft-certified-associate-badge.svg",
+        "url": "https://www.credly.com/badges/c998c8ba-e2b7-4be7-9e26-edd234035424/public_url"
+    },
+    {
+        "name": "Microsoft 365 Fundamentals",
+        "organization": "Microsoft",
+        "date": "août 2022",
+        "image": "/assets/images/microsoft-certified-fundamentals-badge.svg",
+        "url": "https://www.credly.com/badges/22bfd960-1234-4c59-b7a6-5d49af61873c/public_url"
+    },
+    {
+        "name": "Azure Fundamentals",
+        "organization": "Microsoft",
+        "date": "juin 2021",
+        "image": "/assets/images/microsoft-certified-fundamentals-badge.svg",
+        "url": "https://www.credly.com/badges/dff26485-c776-4b8c-91ff-103dd158f1db/public_url"
+    }
+]
