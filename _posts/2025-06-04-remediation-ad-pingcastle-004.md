@@ -275,4 +275,4 @@ $splat = @{
 New-ADFineGrainedPasswordPolicy @splat
 ```
 
-{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir sur la création d'une PSO, mais attention sur le paramètre 'MaxPasswordAge' si vous comptez l'appliquer à des comptes : vous pourriez risquer de faire expirer le mot de passe immédiatement. %}
+{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir sur la création d'une PSO, mais attention sur le paramètre 'MaxPasswordAge' si vous comptez l'appliquer à des comptes : vous pourriez risquer de faire expirer le mot de passe immédiatement." %}
