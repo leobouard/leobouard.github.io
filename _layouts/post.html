@@ -63,6 +63,8 @@ layout: default
   {% endif %}
 </section>
 
+{% include author-info.html %}
+
 {% if page.nextLink == nil %}
 <section class="recommandation">
   {% assign post = site.posts | where: "listed", true | sample %}
