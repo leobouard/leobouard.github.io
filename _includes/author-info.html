@@ -1,13 +1,7 @@
-<section class="recommandation" style="
-    background: var(--lightaccent);
-    box-shadow: 4px 4px var(--secondary);
-    color: var(--heavyaccent);
-    grid-gap: 2em;
-    font-size: small;
-">
-    <img src="{{ site.data.cv.picture }}" style="max-width: 5em; border-radius: 100%;">
-    <div>
-      <span style="font-family: var(--titlefont);">Article écrit par <a href="/cv">{{ site.data.cv.name }}</a></span>
-      <p style="margin-bottom: 0;">{{ site.data.cv.summary }}</p>
-    </div>
+<section class="author-info">
+  <img src="{{ site.data.cv.picture }}" alt="Photo de profil">
+  <div>
+    <span>Article écrit par <a href="/cv">{{ site.data.cv.name }}</a></span>
+    <p>{{ site.data.cv.summary }}</p>
+  </div>
 </section>

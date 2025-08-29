@@ -1,7 +1,8 @@
 section.blog-post,
 section.blog-page,
 section.recommandation,
-section.comments, 
+section.comments,
+section.author-info,
 .fill-available {
     width: -moz-available;
     width: -webkit-fill-available;
@@ -12,7 +13,8 @@ section.blog-post,
 section.blog-page,
 section.recommandation,
 section.blog-header,
-section.comments {
+section.comments,
+section.author-info {
     position: relative;
     padding: 2rem;
     max-width: 800px;
@@ -25,7 +27,8 @@ section.comments {
     section.blog-post,
     section.blog-page,
     section.recommandation,
-    section.comments {
+    section.comments,
+    section.author-info {
         padding: 1em;
     }
 }
@@ -75,6 +78,29 @@ section.comments {
     background: var(--secondary);
     margin: 1em;
     box-shadow: 4px 4px 0 0 var(--mediumaccent);
+}
+
+section.author-info {
+    background: var(--lightaccent);
+    box-shadow: 4px 4px var(--secondary);
+    color: var(--heavyaccent);
+    grid-gap: 2em;
+    font-size: small;
+    display: flex;
+    border-radius: var(--borderradius);
+}
+
+section author-info img {
+    max-width: 5em;
+    border-radius: 100%;
+}
+
+section.author-info span {
+    font-family: var(--titlefont);
+}
+
+section.author-info p {
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 700px) {
