@@ -31,6 +31,13 @@ layout: default
   <!-- Main title and content -->
   <h1>{{ page.title }}</h1>
 
+  <!-- Article tags -->
+  <div class="article-tags" id="tags" style="margin: 1em 0; position: initial;">
+    {% for tag in page.tags %}
+    <span>#{{ tag }}</span>
+    {% endfor %}
+  </div>
+
   <!-- Article info with author, date and time to read -->
   {% if page.prevLink == nil %}
     {% include article-info.html date=page.date content=page.content %}
