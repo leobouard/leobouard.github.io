@@ -54,6 +54,15 @@ prevLink:
 
 ### S-PwdNotRequired
 
+Des comptes utilisateurs n'ont pas besoin de mot de passe pour s'authentifier. Ce n'est pas grave pour les comptes désactivés, mais la configuration est anormale pour des comptes utilisateurs actifs. Pour chaque compte concerné, vous pouvez 
+
+```powershell
+Get-ADUser -Filter {(Enabled -eq $true) -and (UserAccountControl -band 32)} -Properties PasswordLastSet, LastLogonDate |
+    Select-Object Name, SamAccountName, LastLogonDate, PasswordLastSet
+```
+
+{% include risk-score.html impact=1 probability=1 comment="" %}
+
 ### S-PwdNeverExpires
 
 Selon Ping Castle, il ne devrait avoir qu'un seul compte par domaine avec la case "Password never expires" cochée : le compte Administrateur par défaut (SID 500).
