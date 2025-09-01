@@ -98,7 +98,7 @@ Le `'fr'` indique la culture de destination. Vous pouvez obtenir la liste des cu
 
 ## Format FileTime
 
-Le format FileTime représente le nombre de "ticks" écoulés entre le lundi 1 janvier 1601 00:00:00 (UTC) et une autre date. Un horodatage au format FileTime ressemble donc à ça : "134005871809753633". En PowerShell, on retrouve ce format sur certaines propriétés Active Directory (lastLogon, pwdLastSet, accountExpires) et plus rarement sur les fichiers NTFS.
+Le format FileTime représente le nombre de "ticks" écoulés entre le lundi 1 janvier 1601 00:00:00 (UTC) et une autre date. Un horodatage au format FileTime ressemble donc à ça : `134005871809753633`. En PowerShell, on retrouve ce format sur certaines propriétés Active Directory (lastLogon, pwdLastSet, accountExpires) et plus rarement sur les fichiers NTFS.
 
 Comme un "tick" correspond à 100 nanosecondes et que chaque seconde correspond à un milliard de nanosecondes, dix millions en FileTime (10 000 000) correspondent à une seconde.
 
@@ -112,7 +112,7 @@ FileTime | Durée | Date
 
 ### Conversion de FileTime vers DateTime
 
-Il est possible de convertir facilement une date en FileTime avec les méthodes `FromFileTime()` et `FromFileTimeUtc()` :
+Il est possible de convertir facilement un FileTime en date avec les méthodes `FromFileTime()` et `FromFileTimeUtc()` :
 
 ```powershell
 [DateTime]::FromFileTime(133402950000000000)
@@ -127,7 +127,7 @@ Il est également possible d'utiliser la commande `New-TimeSpan` pour calculer "
 
 ### Conversion du DateTime vers FileTime
 
-Il est possible de convertir facilement un FileTime en date avec les méthodes `ToFileTime()` et `ToFileTimeUtc()` :
+Il est possible de convertir facilement une date au format FileTime avec les méthodes `ToFileTime()` et `ToFileTimeUtc()` :
 
 ```powershell
 (Get-Date '2023-09-27 15:30').ToFileTime()
