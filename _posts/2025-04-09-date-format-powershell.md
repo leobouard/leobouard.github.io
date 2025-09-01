@@ -125,7 +125,7 @@ Il est également possible d'utiliser la commande `New-TimeSpan` pour calculer "
 (New-TimeSpan -Start '1601-01-01 00:00' -End '2023-09-27 15:30').Ticks
 ```
 
-### Conversion du DateTime vers FileTime
+### Conversion de DateTime vers FileTime
 
 Il est possible de convertir facilement une date au format FileTime avec les méthodes `ToFileTime()` et `ToFileTimeUtc()` :
 
