@@ -227,7 +227,19 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 
 ### A-AdminSDHolder
 
+Un ou plusieurs comptes n'ayant plus de privilèges ont encore la valeur 1 définie dans l'attribut `adminCount`. Cette valeur indique qu'un compte a fait partie d'un groupe à haut privilège (comme *Domain Admins* par exemple). Rien de grave a cela, il s'agit juste de vérifier que les comptes indiqués ont bien reçu leurs privilèges passés de manière légitime.
 
+Voici une commande PowerShell pour nettoyer l'attribut sur les comptes illégitimes :
+
+```powershell
+Get-ADUser -Filter {adminCount -eq 1} -Properties adminCount, NTSecurityDescriptor |
+    Where-Object {$_.NTSecurityDescriptor.Access.IsInherited -eq $true} |
+    Set-ADUser -Clear adminCount -Verbose
+```
+
+Et j'ai fait un article pour obtenir la date d'ajout/suppression d'un membre dans un groupe, ce qui peut être utile sur cette vulnérabilité : [Trouver la date d’ajout d’un membre dans un groupe \| LaBouaBouate](https://www.labouabouate.fr/2025/07/16/date-ajout-membre-groupe).
+
+{% include risk-score.html impact=1 probability=1 comment="La manipulation est sans risque." %}
 
 ---
 
@@ -237,7 +249,35 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 
 ### A-MinPwdLen
 
+Une stratégie de mot de passe imposant moins de 8 caractères de long est présente dans le domaine. Le standard actuel dans les organisations est plutôt aux alentours de 12 caractères de long, et 8 caractères est considéré comme la limite basse. Pour résoudre cette vulnérabilité, vous n'avez qu'à augmenter le nombre de caractères minimum requis sur votre politique de mot de passe 
+(*Default Domain Password Policy* ou *Fine-grained Password Policy*).
+
+Modifier ce paramètre n'impacte pas les mots de passe qui ont déjà été définis, mais impactera tous les changements de mots de passe après modification de la politique. Il y a donc beaucoup de communication à faire en amont de ce changement pour éviter les impacts.
+
+Pour modifier la *Default Domain Password Policy* à 12 caractères minimum :
+
+```powershell
+Set-ADDefaultDomainPasswordPolicy -MinPasswordLength 12
+```
+
+Pour modifier la *Fine-grained Password Policy* nommée "Employees" à 12 caractères minimum :
+
+```powershell
+Set-ADDefaultDomainPasswordPolicy -Identity 'Employees' -MinPasswordLength 12
+```
+
+{% include risk-score.html impact=4 probability=3 comment="Sans communication préalable auprès du support et des utilisateurs, c'est le désastre assuré lors du prochain changement de mot de passe pour 90% des utilisateurs du domaine. Ce point n'est pas technique mais purement organisationnel." %}
+
 ### A-Guest
+
+Le compte "Invité" (Guest en anglais) est activé, ce qui permet à n'importe qui de se connecter à Active Directory. A moins d'une configuration spécifique, vous devez désactiver le compte au plus vite :
+
+```powershell
+$domainSID = (Get-ADDomain).DomainSID
+Set-ADUser -Identity "$domainSID-501" -Enabled:$false
+```
+
+{% include risk-score.html impact=3 probability=3 comment="L'impact varie en fonction de l'utilisation qui est faite du compte "Invité". Je n'ai jamais été confronté au problème donc je n'ai pas plus d'information à partager sur le sujet." %}
 
 ### A-NoServicePolicy
 

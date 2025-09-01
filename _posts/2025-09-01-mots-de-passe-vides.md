@@ -11,7 +11,7 @@ Ce post est inspiré d'un article de Narayanan Subramanian : [GOING PASSWORDLESS
 
 ### Création de l'utilisateur
 
-La solution la plus simple pour avoir un utilisateur sans mot de passe est d'en créer un nouveau. En invoquant une sélection de paramètres, il est possible d'obtenir un utilisateur *passwordLess* prêt à l'emploi et sans mot de passe:
+La solution la plus simple pour avoir un utilisateur sans mot de passe est d'en créer un nouveau. En invoquant une sélection de paramètres, il est possible d'obtenir un utilisateur *passwordLess* prêt à l'emploi et sans mot de passe :
 
 - Le paramètre `-Enabled` permet d'activer le compte
 - Le paramètre `-PasswordNotRequired` désactive l'obligation d'avoir un mot de passe (via l'attribut `UserAccountControl`)
@@ -36,7 +36,7 @@ Avec le module [DSInternals](https://github.com/MichaelGrafnetter/DSInternals), 
 Get-ADReplAccount -SamAccountName passwordLess -Server (Get-ADDomainController).HostName
 ```
 
-Voici le résultat de la commande sur le compte fraîchement créé, où on voit que la propriété "NTHash" est vide (puisqu'aucun mot de passe n'a été défini) :
+Voici le résultat de la commande sur le compte fraîchement créé. On voit que la propriété "NTHash" est vide (puisqu'aucun mot de passe n'a été défini) :
 
 ```plaintext
 DistinguishedName: CN=passwordLess,CN=Users,DC=contoso,DC=com
@@ -57,19 +57,20 @@ Secrets
 Pour utiliser le compte `passwordLess`, vous n'avez plus qu'à indiquer l'identifiant et laisser le mot de passe vide. Voici un exemple de ligne de commande pour tester les identifiants :
 
 ```powershell
-Get-ADDomain -Credential (Get-Credential)
+$cred = Get-Credential
+Get-ADDomain -Credential $cred
 ```
 
 La connexion en bureau à distance ou l'ouverture d'une nouvelle session Windows fonctionnera également sans mot de passe.
 
 ## Pour un compte existant
 
-Pour un compte existant, le processus est légèrement différent d'un nouveau compte puisque l'on doit composer avec un mot de passe défini précédemment. On va donc changer la logique :
+Pour un compte existant, le processus est légèrement différent puisque l'on doit composer avec un mot de passe défini précédemment. On va donc changer la logique :
 au lieu de ne pas avoir de mot de passe, on va devoir ajouter un mot de passe vide.
 
-### Créer une chaîne de caractères sécurisé vide
+### Créer une chaîne sécurisée vide
 
-La première étape va être de créer une chaîne de caractère sécurisé (*SecureString*) vide. En essayant avec la commande `ConvertTo-SecureString`, on tombe sur les erreurs **Cannot bind argument to parameter 'String' because it is an empty string/it is null**. 
+La première étape va être de créer une chaîne sécurisée (*SecureString*) vide. En essayant avec la commande `ConvertTo-SecureString`, on tombe sur les erreurs **Cannot bind argument to parameter 'String' because it is an empty string/it is null**. 
 
 ```powershell
 '' | ConvertTo-SecureString -AsPlainText -Force
@@ -107,7 +108,7 @@ Set-ADUser emptyPassword -PasswordNotRequired:$true
 ```powershell
 $user = Get-ADUser emptyPassword -Properties userAccountControl
 if (($user.userAccountControl -band 32) -eq 0) {
-    $uac = $uac + 32
+    $uac = $user.userAccountControl + 32
     Set-ADUser emptyPassword -Replace @{userAccountControl = $uac}
 }
 ```
