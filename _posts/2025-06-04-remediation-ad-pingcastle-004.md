@@ -277,7 +277,7 @@ $domainSID = (Get-ADDomain).DomainSID
 Set-ADUser -Identity "$domainSID-501" -Enabled:$false
 ```
 
-{% include risk-score.html impact=3 probability=3 comment="L'impact varie en fonction de l'utilisation qui est faite du compte "Invité". Je n'ai jamais été confronté au problème donc je n'ai pas plus d'information à partager sur le sujet." %}
+{% include risk-score.html impact=3 probability=3 comment="L'impact varie en fonction de l'utilisation qui est faite du compte 'Invité'. Je n'ai jamais été confronté au problème donc je n'ai pas plus d'information à partager sur le sujet." %}
 
 ### A-NoServicePolicy
 
