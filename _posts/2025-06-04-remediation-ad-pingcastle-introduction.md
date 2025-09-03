@@ -44,7 +44,6 @@ Pensez également à garder scrupuleusement vos fichiers XML générés par Ping
 {% assign posts = site.posts | sort: 'id' %}
 {% for post in posts %}
   {% if post.title contains 'PING CASTLE -' %}
-    <hr>
     {{ post.content }}
   {% endif %}
 {% endfor %}
