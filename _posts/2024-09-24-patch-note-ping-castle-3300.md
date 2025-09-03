@@ -1,13 +1,13 @@
 ---
 title: "Patch note Ping Castle 3.3.0.0"
 description: "Quoi de neuf dans la dernière version de Ping Castle ?"
-tags: activedirectory
+tags: ["activedirectory", "pingcastle"]
 listed: true
 ---
 
 ## Patch notes officielle
 
-Comme d'habitude, Ping Castle donne un petit fichier TXT pour donner la liste des changements. Celui-ci reste très court mais permet de constater les améliorations dans la détection de certaines vulnérabilité ou quelques nouveaux indicateurs. Voici le contenu pour cette nouvelle version :
+Comme d'habitude, Ping Castle donne un petit fichier TXT pour donner la liste des changements. Celui-ci reste très court mais permet de constater les améliorations dans la détection de certaines vulnérabilités ou quelques nouveaux indicateurs. Voici le contenu pour cette nouvelle version :
 
 ```plaintext
 3.3.0.0
@@ -19,7 +19,7 @@ Comme d'habitude, Ping Castle donne un petit fichier TXT pour donner la liste de
 * added the rule S-TerminalServicesGPO which recommends session timeout for RDP (suggestion of Steen Poulsen)
 ```
 
-L'intégralité des règles (à jour) sont également disponible ici : [PingCastle Health Check rules - 2024-09-13](https://pingcastle.com/PingCastleFiles/ad_hc_rules_list.html)
+L'intégralité des règles (à jour) sont également disponibles ici : [PingCastle Health Check rules - 2024-09-13](https://pingcastle.com/PingCastleFiles/ad_hc_rules_list.html)
 
 ## Décryptage
 
@@ -27,7 +27,7 @@ L'intégralité des règles (à jour) sont également disponible ici : [PingCast
 
 Il y a eu deux changements de niveau de criticité dans la version 3.3.0.0 :
 
-- **A-AdminSDHolder** : la criticité à été relevée de 3 à 2
+- **A-AdminSDHolder** : la criticité a été relevée de 3 à 2
   - Relève les comptes avec un adminCount à 1 alors qu'ils ne sont pas membres du groupe "Administrateurs"
 - **S-ADRegistration** : la criticité a été abaissée de 3 à 4
   - S'assure que les utilisateurs sans privilèges ne peuvent pas joindre d'ordinateur au domaine avec l'attribut `ms-DS-MachineAccountQuota`
@@ -44,4 +44,4 @@ A-SmartCardPwdRotation | 4         | 0 point (règle informative) | Rotation des
 A-RootDseAnonBinding   | 5         | 0 point (règle informative) | Désactivation de Anonymous Binding sur rootDSE
 S-DefenderASR          | 5         | 0 point (règle informative) | Présence de règles ASR pour Microsoft Defender
 S-FirewallScript       | 5         | 0 point (règle informative) | Restriction de l'accès à Internet pour les scripts
-S-FolderOptions        | 5         | 0 point (règle informative) | Forcer l'ouverture de certains type de fichiers avec notepad.exe par défaut
+S-FolderOptions        | 5         | 0 point (règle informative) | Forcer l'ouverture de certains types de fichiers avec notepad.exe par défaut
