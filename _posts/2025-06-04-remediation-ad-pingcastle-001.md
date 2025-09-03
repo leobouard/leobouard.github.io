@@ -26,15 +26,11 @@ prevLink:
 
 ### S-C-Inactive
 
----
-
 ## Topographie du réseau
 
 ### S-DC-SubnetMissing
 
 ### S-FirewallScript
-
----
 
 ## Configuration des objets
 
@@ -121,8 +117,6 @@ Surveillance GIR | 08/08/2019 12:23:47 | 2140
 ### S-DefenderASR
 
 ### S-FolderOptions
-
----
 
 ## OS obsolètes
 
@@ -224,8 +218,6 @@ Get-ADComputer -Filter {Enabled -eq $true} -Properties OperatingSystem, Operatin
 
 {% include risk-score.html impact=3 probability=3 comment="L'impact et la probabilité dépendent évidemment du serveur / poste de travail qui doit être mis à jour." %}
 
----
-
 ## Anciens protocoles d'authentification
 
 ### S-AesNotEnabled
@@ -268,8 +260,6 @@ Le meilleur article sur le sujet du NTLM (v1 et v2) est disponible ici : [NTLM a
 
 {% include risk-score.html impact=3 probability=4 comment="Sans mener d'audit sur les ressources qui utilisent encore NTLM v1, vous êtes quasiment sûr de casser au moins une authentification dans votre domaine. Plus votre parc informatique est récent, plus la probabilité que le risque se produise diminue." %}
 
----
-
 ## Provisionnement
 
 ### S-DCRegistration
@@ -278,13 +268,9 @@ Le meilleur article sur le sujet du NTLM (v1 et v2) est disponible ici : [NTLM a
 
 ### S-ADRegistrationSchema
 
----
-
 ## Replication
 
 ### S-Duplicate
-
----
 
 ## Gestion de vulnérabilité
 

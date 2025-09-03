@@ -16,13 +16,9 @@ prevLink:
 
 ### T-AlgsAES
 
----
-
 ## Filtrage des SID
 
 ### T-SIDFiltering
-
----
 
 ## SIDHistory
 
@@ -34,8 +30,6 @@ prevLink:
 
 ### T-SIDHistoryUnknownDomain
 
----
-
 ## Imperméabilité des relations d'approbation
 
 ### T-FileDeployedOutOfDomain
@@ -44,13 +38,9 @@ prevLink:
 
 ### T-ScriptOutOfDomain
 
----
-
 ## Relations d'approbation inactives
 
 ### T-Inactive
-
----
 
 ## Relation d'approbation avec Azure
 

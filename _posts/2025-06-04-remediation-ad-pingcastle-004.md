@@ -22,27 +22,19 @@ Création d'une nouvelle GPO ordinateurs "Audit PowerShell" à la racine du doma
 
 ### A-AuditDC
 
----
-
 ## Sauvegarde
 
 ### A-BackupMetadata
 
 ### A-NotEnoughDC
 
----
-
 ## Golden Ticket
 
 ### A-Krbtgt
 
----
-
 ## Vulnérabilités liées aux groupes restreints
 
 ### A-MembershipEveryone
-
----
 
 ## Reniflage du réseau
 
@@ -147,8 +139,6 @@ Pour plus d'informations : [Active Directory - Découverte des chemins UNC durci
 
 {% include risk-score.html impact=1 probability=1 comment="Je n'ai jamais eu d'impact sur le déploiement de ce paramètre, même avec la présence d'OS très vieux comme des Windows XP ou Windows Server 2003." %}
 
----
-
 ## Pass-the-credential
 
 ### A-SmartCardPwdRotation
@@ -183,8 +173,6 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 
 ### A-DC-Coerce
 
----
-
 ## Récupération de mot de passe
 
 ### A-ReversiblePwd
@@ -192,8 +180,6 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 ### A-UnixPwd
 
 ### A-PwdGPO
-
----
 
 ## Reconnaissance
 
@@ -221,8 +207,6 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 
 ### A-NullSession
 
----
-
 ## Administrateurs temporaires
 
 ### A-AdminSDHolder
@@ -240,8 +224,6 @@ Get-ADUser -Filter {adminCount -eq 1} -Properties adminCount, NTSecurityDescript
 Et j'ai fait un article pour obtenir la date d'ajout/suppression d'un membre dans un groupe, ce qui peut être utile sur cette vulnérabilité : [Trouver la date d’ajout d’un membre dans un groupe \| LaBouaBouate](https://www.labouabouate.fr/2025/07/16/date-ajout-membre-groupe).
 
 {% include risk-score.html impact=1 probability=1 comment="La manipulation est sans risque." %}
-
----
 
 ## Mots de passe faibles
 
