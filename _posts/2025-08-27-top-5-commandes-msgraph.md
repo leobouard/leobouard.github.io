@@ -1,5 +1,5 @@
 ---
-title: "Top 5 des commandes PowerShell pour MSGRAPH"
+title: "Top 5 des commandes PowerShell pour Microsoft Graph"
 description: "Les seules commandes indispensables dans les modules Microsoft Graph"
 tags: ["msgraph", "powershell"]
 listed: true
