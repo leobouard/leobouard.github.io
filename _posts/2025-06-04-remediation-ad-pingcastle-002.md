@@ -57,3 +57,5 @@ prevLink:
 ### T-AzureADSSO
 
 J'ai déjà écrit un article technique sur le sujet disponible ici : [Rotation du mot de passe de AZUREADSSOACC](https://www.labouabouate.fr/2024/07/04/azureadssoacc)
+
+{% include risk-score.html impact=1 probability=2 comment="Manipulation avec assez peu de risque au vu du faible impact que cela peut avoir en cas de problème." %}

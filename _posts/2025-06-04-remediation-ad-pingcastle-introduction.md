@@ -38,7 +38,9 @@ Pensez également à garder scrupuleusement vos fichiers XML générés par Ping
   {% endfor %}
 </div>
 
-<!--
+## Toutes les vulnérabiliés
+
+<div class="ping-castle-vuln">
 {% assign posts = site.posts | sort: 'id' %}
 {% for post in posts %}
   {% if post.title contains 'PING CASTLE -' %}
@@ -46,4 +48,4 @@ Pensez également à garder scrupuleusement vos fichiers XML générés par Ping
     {{ post.content }}
   {% endif %}
 {% endfor %}
--->
+</div>
