@@ -94,6 +94,7 @@ section.author-info {
 section.author-info img {
     max-width: 5em;
     border-radius: 100%;
+    filter: saturate(0);
 }
 
 section.author-info span {
