@@ -11,7 +11,7 @@ Chaque bit (ou combinaison de bits) représente une option ou une propriété di
 
 On en retrouve quelques exemples dans Active Directory :
 
-- **userAccountControl** : Contrôle les options et états du compte utilisateur (désactivé, mot de passe expiré, etc.).
+- **userAccountControl** : Le plus connu, i contrôle les options et états du compte utilisateur (désactivé, mot de passe expiré, etc.).
 - **searchFlags** : Définit les options de recherche et d’indexation pour un attribut du schéma.
 - **systemFlags** : Indique des propriétés système sur les objets du schéma (protégé, répliqué, etc.).
 - **groupType** : Définit le type et la portée d’un groupe (global, universel, distribution, sécurité…).
@@ -28,15 +28,92 @@ Valeur décimale | Valeur hexadécimale | Supported Encryption Types
 1 | 0x1 | DES_CBC_CRC
 2 | 0x2 | DES_CBC_MD5
 4 | 0x4 | RC4
-8 | 0x8 | AES 128
-16 | 0x10 | AES 256
+8 | 0x8 | AES_128
+16 | 0x10 | AES_256
 
-Comme les valeurs vont par puissance de deux, il est impossible que plusieurs combinaisons d'options donnent le même résultat :
+Ce tableau va nous permettre de comprendre la signification de n'importe quel nombre entier dans la plage de valeur valide (de 0 à 31). 
 
-- DES_CBC_CRC (1) et DES_CBC_MD5 (2) donne 3 comme résultat, donc pas de conflit avec RC4 (4)
-- DES_CBC_CRC (1), DES_CBC_MD5 (2) et RC4 (4) donne 7 comme résultat, donc pas de conflit avec AES 128 (8)
+Si l'on raisonne en binaire plutôt qu'en valeur décimale ou hexadécimale, on comprend le côté cumulatif des valeurs :
 
-On peut donc stocker 
+- 1 devient 00001
+- 2 devient 00010
+- 4 devient 00100
+- 8 devient 01000
+- 16 devient 10000
+
+Et si on transpose notre valeur binaire dans un tableau, on retrouve 
+
+
+AES_256 (16) | AES_128 (8) | RC4 (4) | DES_CBC_MD5 (2) | DES_CBC_CRC (1)
+------------ | ----------- | ------- | --------------- | -------------
+
+## Lire un bit field
+
+### Classe ENUM
+
+Source : <https://learn-powershell.net/2016/03/07/building-a-enum-that-supports-bit-fields-in-powershell/>
+
+```powershell
+Add-Type -TypeDefinition @'
+[System.Flags]
+public enum supportedEncryptionType {
+    DES_CBC_CRC = 1,
+    DES_CBC_MD5 = 2,
+    RC4 = 4,
+    AES_128 = 8,
+    AES_256 = 16
+}
+'@
+```
+
+```powershell
+1..31 | ForEach-Object {
+    $int = $_
+    $bits = 0..4 | ForEach-Object {
+        $val = [math]::Pow(2, $_)
+        if ($int -band $val) { $val }
+    }
+    [PSCustomObject]@{
+        Int = $int
+        Calc = $bits -join '+'
+        Meaning = [supportedEncryptionType]$int
+    }
+}
+```
+
+Int | Calcul     | Signification
+--- | ------     | -------------
+  1 | 1          | **DES_CBC_CRC**
+  2 | 2          | **DES_CBC_MD5**
+  3 | 1+2        | DES_CBC_CRC, DES_CBC_MD5
+  4 | 4          | **RC4**
+  5 | 1+4        | DES_CBC_CRC, RC4
+  6 | 2+4        | DES_CBC_MD5, RC4
+  7 | 1+2+4      | DES_CBC_CRC, DES_CBC_MD5, RC4
+  8 | 8          | **AES_128**
+  9 | 1+8        | DES_CBC_CRC, AES_128
+ 10 | 2+8        | DES_CBC_MD5, AES_128
+ 11 | 1+2+8      | DES_CBC_CRC, DES_CBC_MD5, AES_128
+ 12 | 4+8        | RC4, AES_128
+ 13 | 1+4+8      | DES_CBC_CRC, RC4, AES_128
+ 14 | 2+4+8      | DES_CBC_MD5, RC4, AES_128
+ 15 | 1+2+4+8    | DES_CBC_CRC, DES_CBC_MD5, RC4, AES_128
+ 16 | 16         | **AES_256**
+ 17 | 1+16       | DES_CBC_CRC, AES_256
+ 18 | 2+16       | DES_CBC_MD5, AES_256
+ 19 | 1+2+16     | DES_CBC_CRC, DES_CBC_MD5, AES_256
+ 20 | 4+16       | RC4, AES_256
+ 21 | 1+4+16     | DES_CBC_CRC, RC4, AES_256
+ 22 | 2+4+16     | DES_CBC_MD5, RC4, AES_256
+ 23 | 1+2+4+16   | DES_CBC_CRC, DES_CBC_MD5, RC4, AES_256
+ 24 | 8+16       | AES_128, AES_256
+ 25 | 1+8+16     | DES_CBC_CRC, AES_128, AES_256
+ 26 | 2+8+16     | DES_CBC_MD5, AES_128, AES_256
+ 27 | 1+2+8+16   | DES_CBC_CRC, DES_CBC_MD5, AES_128, AES_256
+ 28 | 4+8+16     | RC4, AES_128, AES_256
+ 29 | 1+4+8+16   | DES_CBC_CRC, RC4, AES_128, AES_256
+ 30 | 2+4+8+16   | DES_CBC_MD5, RC4, AES_128, AES_256
+ 31 | 1+2+4+8+16 | DES_CBC_CRC, DES_CBC_MD5, RC4, AES_128, AES_256
 
 ### Utilisation de l'opérateur -band
 
@@ -45,55 +122,38 @@ On peut donc stocker
 ### Sans utiliser l'opérateur -band
 
 ```powershell
-$number = 21 # 16+4+1
+# Préparation de la table de correspondance
 $table = @'
 Name,Value
-SCRIPT,1
-ACCOUNTDISABLE,2
-HOMEDIR_REQUIRED,8
-LOCKOUT,16
-PASSWD_NOTREQD,32
-PASSWD_CANT_CHANGE,64
-ENCRYPTED_TEXT_PWD_ALLOWED,128
-TEMP_DUPLICATE_ACCOUNT,256
-NORMAL_ACCOUNT,512
-INTERDOMAIN_TRUST_ACCOUNT,2048
-WORKSTATION_TRUST_ACCOUNT,4096
-SERVER_TRUST_ACCOUNT,8192
-DONT_EXPIRE_PASSWORD,65536
-MNS_LOGON_ACCOUNT,131072
-SMARTCARD_REQUIRED,262144
-TRUSTED_FOR_DELEGATION,524288
-NOT_DELEGATED,1048576
-USE_DES_KEY_ONLY,2097152
-DONT_REQ_PREAUTH,4194304
-PASSWORD_EXPIRED,8388608
-TRUSTED_TO_AUTH_FOR_DELEGATION,16777216
-PARTIAL_SECRETS_ACCOUNT,67108864
+DES_CBC_CRC,1
+DES_CBC_MD5,2
+RC4,4
+AES_128,8
+AES_256,16
 '@ | ConvertFrom-Csv
-
 $table | ForEach-Object { $_.value = [int]$_.value }
 
-$number = 1114624
+###
+$number = 21
 $table | Sort-Object Value -Descending | ForEach-Object {
     $value = $_.Value
-    "Testing $($_.Name) with value $value"   
+    Write-Host "Testing $($_.Name) with value $value" -ForegroundColor Yellow
     if ($number -ge $value) {
-        Write-Host "  ⌊_ $number is larger or equal to $value : CHECK"
+        Write-Host "  $number is larger or equal to $value"
         $sub = $number - $value
-        Write-Host "  ⌊_ Number has been updated to $sub"
+        Write-Host "  Number has been updated to $sub"
         if ($number -ne $sub) {
             $number = $sub
-            Write-Host "    ⌊_ Option '$($_.Name)' is enabled!" -ForegroundColor Green
+            Write-Host "    Option '$($_.Name)' is enabled!" -ForegroundColor Green
         } 
     }
     else {
-        Write-Host "  ⌊_ $number is lower than $value : IGNORED" -ForegroundColor DarkGray
+        Write-Host "  Ignored: $number is lower than $value" -ForegroundColor DarkGray
     }
 }
 ```
 
 ### Différence avec DSHeuristics
 
-Le champ DSHeuristics, même si il contient un nombre entier qui en apparence ne veut pas dire grand-chose, n'est pas un bitfield ! Ici ce n'est pas la 
+Le champ DSHeuristics, même si il contient un nombre entier qui en apparence ne veut pas dire grand-chose, n'est pas un bit field ! Ici ce n'est pas la 
 
