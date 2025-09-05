@@ -86,8 +86,6 @@ Session par les services Bureau à distance | CONTOSO\Admins du domaine
 
 ### P-DisplaySpecifier
 
----
-
 ## Vérification des ACL
 
 ### P-DCOwner
@@ -118,8 +116,6 @@ Session par les services Bureau à distance | CONTOSO\Admins du domaine
 
 ### P-RecoveryModeUnprotected
 
----
-
 ## Contrôle des comptes administrateurs
 
 ### P-Inactive
@@ -140,8 +136,6 @@ Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 
 ### P-OperatorsEmpty
 
----
-
 ## Chemins de contrôle
 
 ### P-AdminEmailOn
@@ -149,8 +143,6 @@ Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 ### P-ControlPathIndirectEveryone
 
 ### P-ControlPathIndirectMany
-
----
 
 ## Vérification des délégations
 
@@ -189,8 +181,6 @@ Get-ADObject -Filter {ObjectSID -eq 'S-1-5-21-1519513455-2607746426-4144247390-1
 
 ### P-UnconstrainedDelegation
 
----
-
 ## Changement irréversible
 
 ### P-SchemaAdmin
@@ -209,8 +199,6 @@ Get-ADOrganizationalUnit -Filter * -Properties ProtectedFromAccidentalDeletion |
 
 ### P-RecycleBin
 
----
-
 ## Contrôle des privilèges
 
 ### P-ServiceDomainAdmin
@@ -218,8 +206,6 @@ Get-ADOrganizationalUnit -Filter * -Properties ProtectedFromAccidentalDeletion |
 ### P-TrustedCredManAccessPrivilege
 
 ### P-PrivilegeEveryone
-
----
 
 ## Contrôleurs de domaine en lecture seule (RODC)
 

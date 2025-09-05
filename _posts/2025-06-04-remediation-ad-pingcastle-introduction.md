@@ -1,7 +1,7 @@
 ---
-title: "Remédiation AD avec Ping Castle"
-description: "Toutes mes notes sur les remédiations à faire pour chaque Rule ID"
-tags: activedirectory
+title: "Remédiation Active Directory avec Ping Castle"
+description: "Toutes mes notes sur les remédiations à faire pour chaque vulnérabilité trouvée par Ping Castle"
+tags: ["activedirectory", "pingcastle"]
 listed: true
 nextLink:
   name: "Stale Object"
@@ -38,12 +38,13 @@ Pensez également à garder scrupuleusement vos fichiers XML générés par Ping
   {% endfor %}
 </div>
 
-<!--
+## Toutes les vulnérabiliés
+
+<div class="ping-castle-vuln">
 {% assign posts = site.posts | sort: 'id' %}
 {% for post in posts %}
   {% if post.title contains 'PING CASTLE -' %}
-    <hr>
     {{ post.content }}
   {% endif %}
 {% endfor %}
--->
+</div>
