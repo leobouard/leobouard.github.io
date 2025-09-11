@@ -1,6 +1,6 @@
 ---
 title: "Les bit fields avec PowerShell"
-description: "Tout savoir sur les champs de bits et le band (pas de blagues promis)"
+description: "Tout savoir sur les champs de bits et l'opérateur -band (pas de blagues promis)"
 tags: powershell
 listed: true
 ---
