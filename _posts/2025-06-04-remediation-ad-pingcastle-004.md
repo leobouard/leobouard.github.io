@@ -98,8 +98,6 @@ $dnsZones | ForEach-Object {
 }
 ```
 
-Si vous créez fréquemment des zones DNS, vous pouvez modifier les paramètres de sécurité par défaut de la classe `dnsZone` dans le schéma pour éviter de faire la remédiation trop fréquemment.
-
 {% include risk-score.html impact=2 probability=2 comment="Je n'ai jamais eu de soucis en faisant cette manipulation, mais il se peut qu'un processus puisse être impacté. Le retour arrière est très simple et vous pouvez avancer zone par zone pour réduire l'impact." %}
 
 ### A-DnsZoneUpdate2
