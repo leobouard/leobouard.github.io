@@ -72,6 +72,14 @@ Le TTL indiqué dans les membres est exprimé en secondes. Pour obtenir la date 
 (Get-Date).AddSeconds(1429489)
 ```
 
+### Rechercher tous les groupes avec des membres temporaires
+
+Voici une commande PowerShell pour trouver tous les groupes qui ont au moins un membre temporaire :
+
+```powershell
+Get-ADGroup -Filter * -Properties Members -ShowMemberTimeToLive | ? {$_.Members -match "<TTL=(\d+)>"}
+```
+
 ### Fonction personnalisée
 
 ```powershell
