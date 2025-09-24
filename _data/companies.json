@@ -1,9 +1,21 @@
 [
   {
+    "company": "STG",
+    "logo": "/assets/images/stg.jpg",
+    "description": "Transport et logistique, Rennes",
+    "url": "https://www.stg-logistique.fr/"
+  },
+  {
+    "company": "Groupe Savencia",
+    "logo": "/assets/images/savencia.jpg",
+    "description": "Agroalimentaire, Versailles",
+    "url": "https://www.savencia-.com/"
+  },
+  {
     "company": "Groupe Legendre",
     "logo": "/assets/images/groupe-legendre.jpg",
     "description": "Construction et immobilier, Rennes",
-    "url": "https://www.groupe-legendre.com//"
+    "url": "https://www.groupe-legendre.com/"
   },
   {
     "company": "Delta Dore Group",
@@ -18,10 +30,10 @@
     "url": "http://www.sdis29.fr/"
   },
   {
-    "company": "Groupe IMA",
-    "logo": "/assets/images/groupe-ima.jpg",
-    "description": "Banque et assurance, Niort",
-    "url": "https://www.ima.eu/"
+    "company": "IMATECH",
+    "logo": "/assets/images/imatech.jpg",
+    "description": "Service d'information, Nantes",
+    "url": "https://www.imatechnologies.fr/"
   },
   {
     "company": "Groupe Roullier",
@@ -55,7 +67,7 @@
   },
   {
     "company": "Crédit Mutuel Arkéa",
-    "logo": "/assets/images/credit-mutuel-arkea.png",
+    "logo": "/assets/images/credit-mutuel-arkea.jpg",
     "description": "Banque et assurance, Brest",
     "url": "https://www.cm-arkea.com/"
   },

@@ -3,27 +3,35 @@
         "year": "En cours",
         "projects": [
             {
-                "company": "Delta Dore Group",
-                "title": "Migration Active Directory",
-                "period": "de juin à juillet 2025",
-                "duration": "5 jours",
-                "description": "Finalisation d'une migration Active Directory avec Quest On Demand Migration (ODM)",
-                "tags": ["powershell", "activedirectory", "quest"]
+                "company": "Groupe Savencia",
+                "title": "Scripting PowerShell sur SharePoint",
+                "period": "de septembre à novembre 2025",
+                "duration": "12 jours",
+                "description": "Evolution et maintenance de scripts PowerShell pour la gestion des sites SharePoint",
+                "tags": ["sharepoint", "powershell"]
             },
             {
-                "company": "Avril",
-                "title": "Administrateur Active Directory et Entra ID",
-                "period": "de juin à septembre 2025",
-                "duration": "22 jours",
-                "description": "Assurer la continuité de service et la gestion des incidents sur Active Directory et Microsoft Entra ID en l'absence de l'équipe interne",
-                "tags": ["activedirectory", "entraid", "powershell"]
+                "company": "Crédit Mutuel Arkéa",
+                "title": "Consultant Active Directory",
+                "period": "de septembre à novembre 2025",
+                "duration": "au forfait",
+                "description": "Animation d'ateliers pour participer à la définition de la future architecture Active Directory",
+                "tags": ["activedirectory", "formation"]
             },
             {
-                "company": "Groupe IMA",
+                "company": "STG",
+                "title": "Architecte Active Directory",
+                "period": "de septembre à octobre 2025",
+                "duration": "2 jours",
+                "description": "Mise en place express d'un tiering-model sur Active Directory",
+                "tags": ["activedirectory", "powershell"]
+            },
+            {
+                "company": "IMATECH",
                 "title": "Architecte Active Directory",
                 "period": "depuis juin 2025",
                 "duration": "5 jours par mois",
-                "description": "Sécurisation des différents domaines Active Directory pour atteindre le niveau de maturité 3 et pouvoir le maintenir facilement",
+                "description": "Sécurisation Active Directory et mise en place du tiering-model",
                 "tags": ["activedirectory", "powershell"]
             },
             {
@@ -39,6 +47,22 @@
     {
         "year": 2025,
         "projects":  [
+            {
+                "company": "Avril",
+                "title": "Administrateur Active Directory et Entra ID",
+                "period": "de juin à septembre 2025",
+                "duration": "25 jours",
+                "description": "Assurer la continuité de service et la gestion des incidents sur Active Directory et Microsoft Entra ID en l'absence de l'équipe interne",
+                "tags": ["activedirectory", "entraid", "powershell"]
+            },
+            {
+                "company": "Delta Dore Group",
+                "title": "Migration Active Directory",
+                "period": "de juin à juillet 2025",
+                "duration": "5 jours",
+                "description": "Finalisation d'une migration Active Directory avec Quest On Demand Migration (ODM)",
+                "tags": ["powershell", "activedirectory", "quest"]
+            },
             {
                 "company": "Groupe Legendre",
                 "title": "Consultant Active Directory",
@@ -130,7 +154,7 @@
                 "period": "de avril 2024 à mai 2025",
                 "duration": "60 jours",
                 "description": "Audit et sécurisation de Active Directory et optimisation du tenant Microsoft 365",
-                "tags": ["activedirectory", "microsoft365", "powershell"]
+                "tags": ["activedirectory", "microsoft365", "powershell", "sharepoint"]
             },
             {
                 "company": "METSYS",
