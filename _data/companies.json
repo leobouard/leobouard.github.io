@@ -1,5 +1,11 @@
 [
   {
+    "company": "Centravet",
+    "logo": "/assets/images/centravet.jpg",
+    "description": "Services vétérinaires, Dinan",
+    "url": "https://www.centravet.fr/"
+  },
+  {
     "company": "STG",
     "logo": "/assets/images/stg.jpg",
     "description": "Transport et logistique, Rennes",
