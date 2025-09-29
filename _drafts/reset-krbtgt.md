@@ -55,7 +55,7 @@ $dcs | Select-Object Name, Site, IsReadOnly, isGlobalCatalog,
 @{N = 'Account'; E = { $_.krbtgtAccount.SamAccountName } },
 @{N = 'PwdLastSet'; E = { $_.krbtgtAccount.passwordLastSet } },
 @{N = 'PwdAgeDays'; E = { [int](New-TimeSpan -Start $_.krbtgtAccount.passwordLastSet).TotalDays } },
-@{N = 'PwdResetCount'; E = { $_.krbtgtAccount.'msDS-KeyVersionNumber' - 2 } } |
+@{N = 'PwdResetCount'; E = { if ($_.krbtgtAccount.SamAccountName -eq 'krbtgt') { $_.krbtgtAccount.'msDS-KeyVersionNumber' - 2 } else { [int]($_.krbtgtAccount.'msDS-KeyVersionNumber') } } } |
 Sort-Object PasswordLastSet -Descending |
 Format-Table
 
