@@ -201,6 +201,16 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 
 ### A-PreWin2000Other
 
+Ce point évalue la présence de membres autres que "Authenticated Users" dans le groupe "Pre-Windows 2000 Compatible Access". La plupart du temps, dans les configurations par défaut on retrouve les serveurs liés à l'authorité de certification (PKI) dans ce groupe.
+
+La présence du ou des serveurs PKI dans ce groupe est liée à l'option "Restrict certificate managers". Si celle-ci n'est pas activée, vous pouvez supprimer les serveurs PKI du groupe "Pre-Windows 2000 Compatible Access".
+
+> Le groupe "Pre-Windows 2000 Compatible Access" est souvent utilisé pour autoriser ses membres à lire toutes les propriétés des utilisateurs et des groupes du domaine (dont la propriété MemberOf).
+
+La source plus complète : [Why Active Directory integrated certificate authorities are members of the "Pre-Windows 2000 Compatible Access" security group - Uwe Gradenegger](https://www.gradenegger.eu/en/why-active-directory-integrated-certification-authorities-are-members-of-pre-windows-2000-compatible-access/)
+
+{% include risk-score.html impact=3 probability=3 comment="Si il s'agit de serveurs PKI, les impacts sont connus. Sinon, vous pouvez vous réferrez au point A-PreWin2000AuthenticatedUsers." %}
+
 ### A-RootDseAnonBinding
 
 ### A-NullSession
