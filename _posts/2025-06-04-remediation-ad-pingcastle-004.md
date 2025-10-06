@@ -22,15 +22,19 @@ Création d'une nouvelle GPO ordinateurs "Audit PowerShell" à la racine du doma
 
 ### A-AuditDC
 
-Modification de la GPO *Default Domain Controller Policy* pour générer les évenements recommandés. La liste des event est disponible ici (sur le paramètre le plus fort) : [System Audit Policy recommendations \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations?tabs=winclient)
+Modification de la GPO *Default Domain Controller Policy* pour générer les événements recommandés. La liste des événements requis est disponible ici (sur le paramètre le plus fort) : [System Audit Policy recommendations \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations?tabs=winclient)
 
-{% include risk-score.html impact=1 probability=1 comment="L’activation d’audit augmente le volume de logs mais n’introduit pas de vrai risque pour votre domaine." %}
+{% include risk-score.html impact=1 probability=1 comment="L'activation d’audit augmente le volume de logs mais n’introduit pas de vrai risque pour votre domaine." %}
 
 ## Sauvegarde
 
 ### A-BackupMetadata
 
 ### A-NotEnoughDC
+
+Votre domaine ne tient que sur "une patte". Vous devez monter un nouveau contrôleur de domaine au plus vite pour suivre les bonnes pratiques. Et malheureusement cette vulnérabilité n'est pas réservée qu'aux labs.
+
+{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir sur le fait d'ajouter un contrôleur de domaine, si ce n'est une licence Windows Server et un peu de ressources sur votre hyperviseur." %}
 
 ## Golden Ticket
 
@@ -109,6 +113,12 @@ $dnsZones | ForEach-Object {
 ### A-DnsZoneUpdate1
 
 ### A-NoGPOLLMNR
+
+Ajout du paramètre suivant par GPO : *Configuration ordinateur > Modèles d'administration > Réseau > Client DNS* et activer le paramètre suivant **Désactiver la résolution de noms multidiffusion**.
+
+Plus d'informations sur le LLMNR ici : [Comment et pourquoi désactiver LLMNR et NetBIOS ? - IT-Connect](https://www.it-connect.fr/active-directory-comment-et-pourquoi-desactiver-les-llmnr-et-netbios/)
+
+{% include risk-score.html impact=1 probability=1 comment="Je n'ai jamais eu de soucis en faisant cette manipulation. Vous pouvez déployer la GPO de manière progressive en passant par un groupe de ciblage ou en liant la GPO au fur et à mesure si vous voulez être très prudent." %}
 
 ### A-NTFRSOnSysvol
 
@@ -223,7 +233,7 @@ La source plus complète : [Why Active Directory integrated certificate authorit
 
 ### A-AdminSDHolder
 
-Un ou plusieurs comptes n'ayant plus de privilèges ont encore la valeur 1 définie dans l'attribut `adminCount`. Cette valeur indique qu'un compte a fait partie d'un groupe à haut privilège (comme *Domain Admins* par exemple). Rien de grave a cela, il s'agit juste de vérifier que les comptes indiqués ont bien reçu leurs privilèges passés de manière légitime.
+Un ou plusieurs comptes n'ayant plus de privilèges ont encore la valeur 1 définie dans l'attribut `adminCount`. Cette valeur indique qu'un compte a fait partie d'un groupe à haut privilège (comme *Domain Admins* par exemple). Rien de grave à cela, il s'agit juste de vérifier que les comptes indiqués ont bien reçu leurs privilèges passés de manière légitime.
 
 Voici une commande PowerShell pour nettoyer l'attribut sur les comptes illégitimes :
 
