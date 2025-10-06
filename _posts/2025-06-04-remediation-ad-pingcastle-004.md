@@ -22,6 +22,10 @@ Création d'une nouvelle GPO ordinateurs "Audit PowerShell" à la racine du doma
 
 ### A-AuditDC
 
+Modification de la GPO *Default Domain Controller Policy* pour générer les évenements recommandés. La liste des event est disponible ici (sur le paramètre le plus fort) : [System Audit Policy recommendations \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations?tabs=winclient)
+
+{% include risk-score.html impact=1 probability=1 comment="L’activation d’audit augmente le volume de logs mais n’introduit pas de vrai risque pour votre domaine." %}
+
 ## Sauvegarde
 
 ### A-BackupMetadata
