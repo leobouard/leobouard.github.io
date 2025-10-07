@@ -40,9 +40,23 @@ Votre domaine ne tient que sur "une patte". Vous devez monter un nouveau contrô
 
 ### A-Krbtgt
 
+Le mot de passe du compte krbtgt utilisé par les contrôleurs de domaine n'a pas été changé depuis plus d'un an. Pour faire plaisir à Ping Castle, vous n'avez qu'à le changer une seule fois, mais la bonne pratique est de le faire deux fois, avec 10 heures d'écart entre les deux changements. Ce délai correspond à la durée de vie maximum des tickets Kerberos dans votre domaine.
+
+> Attention : 10 heures c'est la configuration par défaut, mais celle de votre domaine est peut-être différente. Vous pouvez vérifier votre configuration dans la Default Domain Policy.
+
+Le script référence pour faire ça est celui de Jorge de Almeida Pinto disponible ici : [Public-AD-Scripts/Reset-KrbTgt-Password-For-RWDCs-And-RODCs.ps1 at master · zjorz/Public-AD-Scripts · GitHub](https://github.com/zjorz/Public-AD-Scripts/blob/master/Reset-KrbTgt-Password-For-RWDCs-And-RODCs.ps1)
+
+{% include risk-score.html impact=5 probability=2 comment="Un mauvais changement de mot de passe krbtgt peut bloquer les authentifications sur votre domaine, donc veillez à ne pas avoir de problèmes de réplication avant de jouer avec ça." %}
+
 ## Vulnérabilités liées aux groupes restreints
 
 ### A-MembershipEveryone
+
+Un groupe comme "Authenticated Users", "Domain Users" ou "Everyone" est ajouté dans un groupe restreint par GPO (du type "Utilisateurs du bureau à distance" ou "Administrateurs"). Pour suivre le principe du privilège le moins élevé, vous devez réduire l'étendue de ces groupes au minimum requis.
+
+Par exemple : remplacer "Domain Users" par "Employés de CONTOSO" qui ne contiendrait que les utilisateurs ayant besoin d'être membre du groupe "Utilisateurs du bureau à distance" de certains serveurs.
+
+{% include risk-score.html impact=2 probability=3 comment="Ce changement concerne tous les comptes du domaine, donc une mauvaise configuration peut bloquer l'accès à une ressource de manière temporaire." %}
 
 ## Reniflage du réseau
 
@@ -173,7 +187,34 @@ Set-ADObject (Get-ADDomain) -Replace @{ 'msDS-ExpirePasswordsOnSmartCardOnlyAcco
 
 ### A-ProtectedUsers
 
+Vérifie la présence du groupe "Protected Users", qui est créé automatiquement lorsque le rôle FSMO "PDC" est transféré vers un Windows Server 2012 ou ultérieur. Le groupe "Protected Users" possède le RID "-525".
+
+Recherche du groupe dans le domaine :
+
+```powershell
+$domainSid = (Get-ADDomain).DomainSID
+Get-ADGroup "$domainSid-525"
+```
+
+{% include risk-score.html impact=1 probability=1 comment="Ce point n'est pas risqué, c'est le transfert du rôle PDC qui constitue le risque." %}
+
 ### A-LAPS-Joined-Computers
+
+Certains ordinateurs ont comme propriétaire le compte utilisateur qui les a joint au domaine. Le propriétaire de l'objet ordinateur peut alors lire l'attribut `ms-mcs-AdmPwd` qui contient le mot de passe du compte administrateur local géré par LAPS Legacy. Vous pouvez lister les propriétaires des ordinateurs avec la ligne de commande suivante :
+
+```powershell
+Get-ADComputer -Filter * -Properties NTSecurityDescriptor |
+    Select-Object *, @{N='Owner' ; E={$_.NTSecurityDescriptor.Owner}} |
+    Group-Object Owner -NoElement |
+    Sort-Object Count -Descending |
+    Format-Table -AutoSize
+```
+
+La résolution consiste simplement à remettre le propriétaire par défaut (*Domain Admins* la plupart du temps) et réinitialiser les ACLs de l'objet. Vous pouvez faire cette opération en PowerShell avec la commande suivante : [Reset Active Directory permission to default on a object, with the option to modify the owner to "Domain Admins" group](https://gist.github.com/leobouard/e610f4d49dd58c66c3ed023256b33384)
+
+> Il est impossible de nettoyer l'attribut `ms-ds-CreatorSid` car celui-ci est géré par le système.
+
+{% include risk-score.html impact=2 probability=2 comment="Je n'ai jamais eu de soucis sur la réinitialisation des permissions et du propriétaire des objets ordinateurs." %}
 
 ### A-LAPS-Not-Installed
 
