@@ -19,14 +19,6 @@
                 "tags": ["activedirectory", "formation"]
             },
             {
-                "company": "STG",
-                "title": "Architecte Active Directory",
-                "period": "de septembre à octobre 2025",
-                "duration": "2 jours",
-                "description": "Mise en place express d'un tiering-model sur Active Directory",
-                "tags": ["activedirectory", "powershell"]
-            },
-            {
                 "company": "IMATECH",
                 "title": "Architecte Active Directory",
                 "period": "depuis juin 2025",
@@ -47,6 +39,14 @@
     {
         "year": 2025,
         "projects":  [
+            {
+                "company": "STG",
+                "title": "Architecte Active Directory",
+                "period": "de septembre à octobre 2025",
+                "duration": "2 jours",
+                "description": "Mise en place express d'un tiering-model sur Active Directory",
+                "tags": ["activedirectory", "powershell"]
+            },
             {
                 "company": "Avril",
                 "title": "Administrateur Active Directory et Entra ID",
