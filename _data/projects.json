@@ -3,6 +3,14 @@
         "year": "En cours",
         "projects": [
             {
+                "company": "Oberthur Fiduciaire",
+                "title": "Consultant Active Directory",
+                "period": "de septembre à décembre 2025",
+                "duration": "10 jours",
+                "description": "Accompagnement des équipes internes pour la sécurisation de l'infrastructure Active Directory",
+                "tags": ["activedirectory"]
+            },
+            {
                 "company": "Groupe Savencia",
                 "title": "Scripting PowerShell sur SharePoint",
                 "period": "de septembre à novembre 2025",
