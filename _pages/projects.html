@@ -43,7 +43,7 @@ description: "Liste des projets sur lesquels j'ai travaillé"
         {% assign company = site.data.companies | where: "company", project.company | first %}
         {% if company %}
         <a href="{{ company.url }}" target="_blank">
-          <img src="{{ company.logo }}" alt="{{ project.company }}" title="{{ project.company }}">
+          <img src="{{ company.logo }}" alt="{{ project.company }} logo" title="{{ project.company }}">
         </a>
         <span><i class="fa-solid fa-location-dot"></i>{{ company.description }}</span>
         {% endif %}
