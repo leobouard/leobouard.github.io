@@ -51,6 +51,32 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
 
 Certains RID sont connus et réservés : [Active Directory Security Groups \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups)
 
+Name | ObjectClass | RID
+---- | ----------- | ---
+Enterprise Read-only Domain Controllers | group | 498
+Administrator | user | 500
+Guest | user | 501
+krbtgt | user | 502
+Domain Admins | group | 512
+Domain Users | group | 513
+Domain Guests | group | 514
+Domain Computers | group | 515
+Domain Controllers | group | 516
+Cert Publishers | group | 517
+Schema Admins | group | 518
+Enterprise Admins | group | 519
+Group Policy Creator Owners | group | 520
+Read-only Domain Controllers | group | 521
+Cloneable Domain Controllers | group | 522
+Protected Users | group | 525
+Key Admins | group | 526
+Enterprise Key Admins | group | 527
+Forest Trust Accounts | group | 528
+External Trust Accounts | group | 529
+RAS and IAS Servers | group | 553
+Allowed RODC Password Replication Group | group | 571
+Denied RODC Password Replication Group  | group | 572
+
 #### Attributs liés aux RID
 
 - `rid` : toujours vide
@@ -104,8 +130,18 @@ function Get-ADDomainRIDUsage {
         TotalSID = $totalSIDs
         RIDIssued = $currentPool
         RemainingRID = $remaining
-        Usage = "$([math]::Round($currentPool/$totalSIDs*100,2))%"
+        Usage = "$([math]::Round($currentPool/$totalSIDs*100,4))%"
     }
+}
+```
+
+Récupération du prochain RID :
+
+```powershell
+function Get-ADNextRID {
+
+    $ridMaster = Get-ADDomainController -Filter * | Where-Object {$_.OperationMasterRoles -contains 'RIDMaster'}
+    (Get-ADObject $ridMaster.ComputerObjectDN -Property ridNextRid).ridNextRid
 }
 ```
 
@@ -141,6 +177,17 @@ Get-ADObject -Filter {objectClass -eq 'rIDSet'} -Properties *, msds-ParentDistNa
 }
 ```
 
+Étude des attributions de SID :
+
+```powershell
+$objects = Get-ADObject -Filter {ObjectClass -ne 'domainDNS'} -Properties ObjectSid -IncludeDeletedObjects |
+    Where-Object { $_.ObjectSID -like 'S-1-5-21-*' }
+$objects | Select-Object Name, ObjectClass, 
+    @{ N='RID' ; E={[int64]($_.ObjectSID.Value -split '-' | Select-Object -Last 1)} } |
+    Sort-Object RID
+```
+
+
 ### Distribution du SID
 
 Définir le rôle FSMO du RID Master et parler des pools de RID distribués à chaque contrôleur
@@ -152,3 +199,100 @@ Définir le rôle FSMO du RID Master et parler des pools de RID distribués à c
 on peut invalider un pool rid qui a été distribué
 
 est-ce que
+
+### Epuisement du pool de RID
+
+En auditant les pools de RID disponibles sur le DC02, on obtient les informations suivantes :
+
+- Server : CN=DC02,OU=Domain Controllers,DC=contoso,DC=com
+- RIDUsedPool : 0
+- RIDPoolMin : 2100
+- RIDPoolMax : 2599
+- RIDPoolCount : 500
+
+Depuis le DC02, je vais créer un nouvel objet qui devrait donc avoir le RID "2101" (le premier RID de la pool) :
+
+```powershell
+New-ADUser rid-2101 -Server DC02
+```
+
+Vérification avec la commande `Get-ADUser` :
+
+```plaintext
+DistinguishedName : CN=RID-2101,CN=Users,DC=contoso,DC=com
+Enabled           : False
+GivenName         :
+Name              : RID-2101
+ObjectClass       : user
+ObjectGUID        : 75cfb8ce-035f-46ef-96b5-c8b74fc71c59
+SamAccountName    : RID-2101
+SID               : S-1-5-21-2608890186-2335135319-240251004-2101
+Surname           :
+UserPrincipalName :
+```
+
+Pour épuiser le pool de RID, j'ai simplement à éteindre le contrôleur de domaine qui porte le rôle RIDMaster et créer 499 comptes :
+
+```powershell
+2102..2600 | ForEach-Object { New-ADUser "rid-$_" }
+```
+
+Tous les comptes de `rid-2102` à `rid-2599` ont pu être créés sans problème, mais pour la création du compte `rid-2600` on tombe alors sur l'erreur suivante : **New-ADUser : The directory service has exhausted the pool of relative identifiers**.
+
+Il faut alors redémarrer le RIDMaster pour obtenir un nouveau pool de 500 RID. L'attribution d'un nouveau pool est visible dans l'observateur d'évenements avec la commande suivante :
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='System'; Id=16648} | Format-List
+```
+
+Résultat :
+
+```plaintext
+TimeCreated  : 22/10/2025 10:22:00
+ProviderName : Microsoft-Windows-Directory-Services-SAM
+Message      : The request for a new account-identifier pool has completed successfully
+```
+
+### Invalider un pool de RID
+
+Lors d'une procédure de restauration de forêt Active Directory, il est nécessaire de'invalider un pool de RID : [AD Forest Recovery - Invalidating the RID Pool \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-invaildate-rid-pool)
+
+```powershell
+$Domain = New-Object System.DirectoryServices.DirectoryEntry
+$DomainSid = $Domain.objectSid
+$RootDSE = New-Object System.DirectoryServices.DirectoryEntry("LDAP://RootDSE")
+$RootDSE.UsePropertyCache = $false
+$RootDSE.Put("invalidateRidPool", $DomainSid.Value)
+$RootDSE.SetInfo()
+```
+
+On peut voir le résultat de la commande dans l'observateur d'évenement :
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='System'; Id=16654} | Format-List
+```
+
+Résultat :
+
+```plaintext
+TimeCreated  : 22/10/2025 10:19:20
+ProviderName : Microsoft-Windows-Directory-Services-SAM
+Id           : 16654
+Message      : A pool of account-identifiers (RIDs) has been invalidated. This may occur in the following expected
+               cases:
+               1. A domain controller is restored from backup.
+               2. A domain controller running on a virtual machine is restored from snapshot.
+               3. An administrator has manually invalidated the pool.
+               See http://go.microsoft.com/fwlink/?LinkId=226247 for more information.
+```
+
+En auditant le pool de RID disponibles sur le RIDMaster, on voit que celui-ci a été modifié :
+
+- Server : CN=DC01,OU=Domain Controllers,DC=contoso,DC=com
+- RIDUsedPool : 0
+- RIDPoolMin : 3100
+- RIDPoolMax : 3599
+- RIDPoolCount : 500
+
+## Augmenter la taille du RIDPool
+
