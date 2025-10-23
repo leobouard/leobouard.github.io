@@ -82,7 +82,7 @@ Plus d'informations sur le sujet : [Active Directory Security Groups \| Microsof
 
 ### Nombre de RID restants
 
-Pour consulter le nombre de RID restants, vous pouvez utiliser cette commande sur le contrôleur de domaine qui porte le rôle RIDMaster :
+Le nombre de RID étant limité sur un domaine, vous pouvez consulter le nombre de RID restants avec cette commande (à éxécuter sur le contrôleur de domaine qui porte le rôle RIDMaster) :
 
 ```powershell
 Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
@@ -243,8 +243,8 @@ RIDPoolCount : 1000
 Et maintenant c'est parti pour faire des conneries ! On a vu ensemble précédemment comment :
 
 1. Augmenter la taille des pools RID jusqu'à 15000
-2. Révoquer un pool RID complet
-3. Forcer à récupérer un nouveau pool RID
+2. Révoquer un pool RID
+3. Récupérer un nouveau pool RID
 
 Il ne nous reste plus qu'à consommer les plus d'un milliard de RID disponibles par défaut dans le domaine ! À raison de 15 000 RID épuisés par boucle, il ne faudra *que* 70 000 boucles pour en arriver à bout !
 
