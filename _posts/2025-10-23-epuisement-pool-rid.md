@@ -90,7 +90,7 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
 
 Mais je préfère l'utilisation d'une fonction PowerShell (issue du code original de Philippe Barth) qui a comme avantage de pouvoir être lancée depuis n'importe quel serveur avec le module PowerShell Active Directory installé :
 
-[![Get-ADDomainRidUsage](https://github-readme-stats.vercel.app/api/gist?id=f15154cd996679e283fe3578045d0ec4)](https://gist.github.com/leobouard/f15154cd996679e283fe3578045d0ec4)
+{% include github-gist.html name="Get-ADDomainRidUsage" id="f15154cd996679e283fe3578045d0ec4" %}
 
 En général, même sur des environnements Active Directory très larges et/ou très anciens, on dépasse rarement le 1% d'utilisation des RID.
 
@@ -173,7 +173,7 @@ Le changement sera effectif après le redémarrage du RIDMaster et à l'épuisem
 
 Lors d'une procédure de restauration de forêt Active Directory, il est nécessaire d'invalider un pool RID : [AD Forest Recovery - Invalidating the RID Pool \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-invaildate-rid-pool). Pour faire cela, j'ai créé la fonction `Invoke-ADInvalidateRidPool` qui se base sur le code fourni par Microsoft :
 
-[![Invoke-ADInvalidateRidPool](https://github-readme-stats.vercel.app/api/gist?id=b51500dc9cbddaf7f0ea6d8d5482d5fb)](https://gist.github.com/leobouard/b51500dc9cbddaf7f0ea6d8d5482d5fb)
+{% include github-gist.html name="Invoke-ADInvalidateRidPool" id="b51500dc9cbddaf7f0ea6d8d5482d5fb" %}
 
 On peut voir le résultat de la commande dans l'observateur d'événements :
 
