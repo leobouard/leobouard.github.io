@@ -106,7 +106,7 @@ L'idée d'un pool RID est de permettre à n'importe quel contrôleur de domaine 
 
 On peut visualiser les pools RID attribués aux contrôleurs de domaine avec la fonction suivante :
 
-[![Get-ADDomainControllerRidPool](https://github-readme-stats.vercel.app/api/gist?id=0f2ffc0d8d840ee3c6a67d6cc914cfc2)](https://gist.github.com/leobouard/0f2ffc0d8d840ee3c6a67d6cc914cfc2)
+{% include github-gist.html name="Get-ADDomainControllerRidPool" id="0f2ffc0d8d840ee3c6a67d6cc914cfc2" %}
 
 ### Épuisement d'un pool RID
 
