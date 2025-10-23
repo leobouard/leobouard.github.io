@@ -236,7 +236,7 @@ RIDPoolCount : 1000
 
 > **Que ce passe-t-il maintenant si l'on révoque plusieurs fois d'affilée un pool RID ?**
 >
-> J'ai testé et il n'y a qu'une seule pool RID qui est révoquée à la fois, même si la commande a été faite plusieurs fois. Le seul moyen d'invalider plusieurs pools RID est d'alterner entre l'invalidation du pool RID et la création d'un objet Active Directory (pour débloquer la nouvelle pool RID).
+> J'ai testé et il n'y a qu'un seul pool RID qui est révoquée à la fois, même si la commande a été faite plusieurs fois. Le seul moyen d'invalider plusieurs pools RID est d'alterner entre l'invalidation du pool RID et la création d'un objet Active Directory (pour débloquer le nouveau pool RID).
 
 ## La partie dangereuse
 
