@@ -42,7 +42,9 @@ Dans la plupart des cas, l'utilisation des comptes DSRM n'est pas réellement ut
 
 La première méthode est la plus simple : passer sur chaque contrôleur de domaine pour définir le mot de passe DSRM avec la commande NTDSUTIL. L'opération se fait de manière semi-automatique, puisqu'à ma connaissance il n'est pas possible de renseigner le mot de passe du compte sans saisie manuelle.
 
-> **Attention :** le code suivant utilise une fonction personnalisée disponible ici : [New-Password](https://gist.github.com/leobouard/11f2b10e6f1fad14e0b150956f1f8eb6).
+**Attention :** le code suivant utilise une fonction personnalisée disponible ici :
+
+{% include github-gist.html name="New-Password" id="11f2b10e6f1fad14e0b150956f1f8eb6" %}
 
 Depuis un contrôleur de domaine :
 
@@ -162,7 +164,9 @@ Cette proposition est un simple exercice technique pour moderniser la version pr
 
 Dans un premier temps, il va falloir créer un compte du domaine "cible" pour chaque contrôleur de domaine. C'est le mot de passe de ce compte qui sera utilisé pour définir celui du compte DSRM.
 
-> **Attention :** le code suivant utilise une fonction personnalisée disponible ici : [New-Password](https://gist.github.com/leobouard/11f2b10e6f1fad14e0b150956f1f8eb6).
+**Attention :** le code suivant utilise une fonction personnalisée disponible ici :
+
+{% include github-gist.html name="New-Password" id="11f2b10e6f1fad14e0b150956f1f8eb6" %}
 
 ```powershell
 Get-ADDomainController -Filter * | ForEach-Object {

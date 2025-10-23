@@ -81,7 +81,7 @@ $dynamicObject.SetInfo()
 
 Ou plus simplement avec une fonction personnalisée :
 
-[![New-ADDynamicObject](https://github-readme-stats.vercel.app/api/gist?id=16f90612a5461d2a9cec49cad6056929)](https://gist.github.com/leobouard/16f90612a5461d2a9cec49cad6056929)
+{% include github-gist.html name="New-ADDynamicObject" id="16f90612a5461d2a9cec49cad6056929" %}
 
 ```powershell
 New-ADDynamicObject -Name 'dynamicUser' -ObjectType user

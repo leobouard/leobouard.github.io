@@ -210,7 +210,9 @@ Get-ADComputer -Filter * -Properties NTSecurityDescriptor |
     Format-Table -AutoSize
 ```
 
-La résolution consiste simplement à remettre le propriétaire par défaut (*Domain Admins* la plupart du temps) et réinitialiser les ACLs de l'objet. Vous pouvez faire cette opération en PowerShell avec la commande suivante : [Reset Active Directory permission to default on a object, with the option to modify the owner to "Domain Admins" group](https://gist.github.com/leobouard/e610f4d49dd58c66c3ed023256b33384)
+La résolution consiste simplement à remettre le propriétaire par défaut (*Domain Admins* la plupart du temps) et réinitialiser les ACLs de l'objet. Vous pouvez faire cette opération en PowerShell avec la commande suivante :
+
+{% include github-gist.html name="Reset-ADPermission" id="e610f4d49dd58c66c3ed023256b33384" %}
 
 > Il est impossible de nettoyer l'attribut `ms-ds-CreatorSid` car celui-ci est géré par le système.
 

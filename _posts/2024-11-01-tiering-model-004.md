@@ -103,7 +103,9 @@ Plus d'informations sur cette méthode ici : [La délégation de contrôle Activ
 
 #### En ligne de commande
 
-Pour créer des délégations en ligne de commande, vous pouvez utiliser l'utilitaire [dsacls](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771151%28v=ws.11%29), mais je préviens : c'est une vraie plaie à utiliser. Pour contourner le problème, j'ai créé une fonction PowerShell qui "wrap" cet utilitaire dans une commande simple à utiliser : [PowerShell wrapper of the dsacls utility for easy delegation of Active Directory permissions](https://gist.github.com/leobouard/027bbcc9941d80c8175cb337147fc0e4).
+Pour créer des délégations en ligne de commande, vous pouvez utiliser l'utilitaire [dsacls](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771151%28v=ws.11%29), mais je préviens : c'est une vraie plaie à utiliser. Pour contourner le problème, j'ai créé une fonction PowerShell qui "wrap" cet utilitaire dans une commande simple à utiliser :
+
+{% include github-gist.html name="Grant-ADDelegation" id="027bbcc9941d80c8175cb337147fc0e4" %}
 
 ### Délégation des droits d'administration local
 

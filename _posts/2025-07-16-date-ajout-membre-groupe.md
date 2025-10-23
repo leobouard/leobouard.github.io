@@ -22,7 +22,9 @@ En tant qu'administrateur, les métadonnées de réplication permettent de savoi
 - `unicodePwd` qui contient le mot de passe
 - `pwdLastSet` qui contient la date de définition du mot de passe
 
-Voici une fonction pour détecter cela : [Find users who are extending the password lifetime of their Active Directory account · GitHub](https://gist.github.com/leobouard/f6066b14db8199a864ff00620c08909d)
+Voici une fonction pour détecter cela :
+
+{% include github-gist.html name="Get-ADAbnormalPasswordRefresh" id="f6066b14db8199a864ff00620c08909d" %}
 
 Un autre usage (et c'est celui qui nous intéresse aujourd'hui) est de connaître la **date d'ajout d'un membre dans un groupe**.
 
