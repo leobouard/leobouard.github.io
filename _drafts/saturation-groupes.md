@@ -19,7 +19,6 @@ Résumé :
 - Environ 1 015 groupes maximum par utilisateur avant d’avoir des problèmes de connexion liés à la taille du token Kerberos.
 - Cette limite peut varier selon la configuration de la taille du token sur les DC et les clients.
 
-
 La limite concerne tous les groupes dont l’utilisateur est membre, y compris :
 
 Les groupes où il est membre direct et
@@ -27,7 +26,7 @@ Les groupes où il est membre de façon indirecte (par récursivité)
 Autrement dit, tous les groupes imbriqués sont pris en compte dans le calcul de la taille du token Kerberos.
 C’est la somme totale des appartenances, directes et indirectes, qui compte.
 
-## Calcul du nombre 
+## Calcul du nombre
 
 1200 + (40 x appartenance à des groupes d'autres domaines + SIDHistory) + (8 x appartenance à un groupe du domaine)
 
@@ -35,7 +34,7 @@ C’est la somme totale des appartenances, directes et indirectes, qui compte.
 
 ## Méthode pour tout casser
 
-Créer X groupes locaux, ajouter ces groupes en tant que membre de Authenticated Users
+Créer X groupes locaux, ajouter ces groupes en tant que membre de Domain Users
 
 ## Méthode de contournement
 
