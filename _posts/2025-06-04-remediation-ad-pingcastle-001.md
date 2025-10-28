@@ -30,6 +30,10 @@ prevLink:
 
 ### S-DC-SubnetMissing
 
+La déclaration du sous-réseau utilisé par un contrôleur de domaine n'a pas été faite. Vous pouvez corriger ça dans la console "Active Directory Sites and Services" ou avec la commande `New-ADReplicationSubnet`.
+
+{% include risk-score.html impact=1 probability=1 comment="Aucun impact à prévoir" %}
+
 ### S-FirewallScript
 
 ## Configuration des objets
@@ -50,18 +54,20 @@ prevLink:
 
 ### S-PwdNotRequired
 
-Des comptes utilisateurs n'ont pas besoin de mot de passe pour s'authentifier. Ce n'est pas grave pour les comptes désactivés, mais la configuration est anormale pour des comptes utilisateurs actifs. Pour chaque compte concerné, vous pouvez 
+Des comptes utilisateurs n'ont pas besoin de mot de passe pour s'authentifier. Ce n'est pas grave pour les comptes désactivés, mais la configuration est anormale pour des comptes utilisateurs actifs.
+
+A vous de creuser sur la raison de cette configuration et si celle-ci peut être modifiée. Voici un script pour identifier tous les comptes concernés :
 
 ```powershell
 Get-ADUser -Filter {(Enabled -eq $true) -and (UserAccountControl -band 32)} -Properties PasswordLastSet, LastLogonDate |
     Select-Object Name, SamAccountName, LastLogonDate, PasswordLastSet
 ```
 
-{% include risk-score.html impact=1 probability=1 comment="" %}
+{% include risk-score.html impact=2 probability=2 comment="Le risque dépend grandement des comptes concernés et de leur usage." %}
 
 ### S-PwdNeverExpires
 
-Selon Ping Castle, il ne devrait avoir qu'un seul compte par domaine avec la case "Password never expires" cochée : le compte Administrateur par défaut (SID 500).
+Selon Ping Castle, il ne devrait avoir aucun compte dans le domaine avec la case "Password never expires" cochée.
 
 Pour résoudre cette vulnérabilité, il faut :
 
@@ -265,6 +271,18 @@ Le meilleur article sur le sujet du NTLM (v1 et v2) est disponible ici : [NTLM a
 ### S-DCRegistration
 
 ### S-ADRegistration
+
+Par défaut, n'importe quel utilisateur du domaine peut joindre jusqu'à 10 ordinateurs dans le domaine. Ce n'est pas une bonne pratique et vous devriez laisser ce genre de privilège uniquement à une sélection de compte.
+
+Vous pouvez déléguer l'ajout d'un ordinateur dans le domaine d'un simple clic-droit sur la racine du domaine.
+
+Pour réduire le quota à zéro :
+
+```powershell
+Set-ADObject (Get-ADDomain).DistinguishedName -Replace @{ 'ms-DS-MachineAccountQuota' = 0 }
+```
+
+{% include risk-score.html impact=2 probability=3 comment="Si vous avez bien identifié les comptes qui joignent des ordinateurs dans le domaine et que vous leur avez donné une délégation équivalente, pas de soucis à se faire normalement." %}
 
 ### S-ADRegistrationSchema
 
