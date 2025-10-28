@@ -7,7 +7,9 @@ listed: true
 
 ## HardeningKitty
 
-Renforcer un OS serveur en se basant sur les recommandations de Microsoft peut être long et fastidieux. Pour remédier au problème, la communauté a créé [HardeningKitty - GitHub](https://github.com/0x6d69636b/windows_hardening/tree/master) afin de déployer rapidement plus de 300 règles de sécurité sur un OS. La documentation GitHub de HardeningKitty est déjà très complète, facile à suivre et est mise à jour régulièrement. Cependant voici un guide rapide de sécurisation *made in LaBouaBouate*.
+Renforcer un OS serveur en se basant sur les recommandations de Microsoft peut être long et fastidieux. Pour remédier au problème, la communauté a créé **HardeningKitty** afin de déployer rapidement plus de 300 règles de sécurité sur un OS. La documentation GitHub de HardeningKitty est déjà très complète, facile à suivre et est mise à jour régulièrement. Cependant voici un guide rapide de sécurisation *made in LaBouaBouate*.
+
+{% include github-repository.html repository="0x6d69636b/windows_hardening" %}
 
 ### Référentiels
 

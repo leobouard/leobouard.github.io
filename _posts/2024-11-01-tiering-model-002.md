@@ -42,9 +42,9 @@ Ping Castle est un outil d'audit référence sur la partie configuration de l'Ac
 
 Le score va de 0 (le meilleur) à la limite de 100 (le pire). Le score "global" permet de se faire rapidement une idée du niveau d'exposition, mais n'est pas un bon moyen de suivre la progression de votre remédiation. Pour suivre l'évolution du score, il faut surtout regarder le score cumulé des quatre catégories (non limité à 100).
 
-A titre personnel, c'est mon outil de travail principal lorsqu'il s'agit de faire une remédiation de Active Directory.
+À titre personnel, c'est mon outil de travail principal lorsqu'il s'agit de faire une remédiation d'Active Directory.
 
-Source : <https://www.pingcastle.com/download/>
+{% include github-repository.html repository="netwrix/PingCastle" %}
 
 ### Purple Knight by SEMPERIS
 
@@ -62,28 +62,28 @@ Source : <https://www.semperis.com/fr/forest-druid/>
 
 Permet d'auditer et de visualiser les permissions dans Active Directory. Alternative à Forest Druid ou BloodHound.
 
-Source : <https://github.com/lkarlslund/Adalanche>
+{% include github-repository.html repository="lkarlslund/Adalanche" %}
 
 ### BloodHound
 
 La référence pour auditer les chemins d'attaque vers des ressources critiques. Alternative à Adalanche et Forest Druid
 
-Source : <https://github.com/SpecterOps/BloodHound>
+{% include github-repository.html repository="SpecterOps/BloodHound" %}
 
 ### PowerHuntShares
 
 Permet de découvrir tous les partages de fichiers disponibles dans votre domaine.
 
-Source : <https://github.com/NetSPI/PowerHuntShares>
+{% include github-repository.html repository="NetSPI/PowerHuntShares" %}
 
 ### GPOZaurr
 
 Outil d'audit de GPO, le plus complet disponible actuellement et très lisible. Ne fait pas directement de la sécurité mais permet de faire du ménage facilement.
 
-Source : <https://github.com/EvotecIT/GPOZaurr>
+{% include github-repository.html repository="EvotecIT/GPOZaurr" %}
 
 ### Harden AD
 
 Harden AD n'est pas un outil d'audit mais plutôt un framework pour déployer rapidement un environnement Active Directory renforcé, avec tout un ensemble de règles, de GPO et de délégations.
 
-Source : <https://hardenad.net/>
+{% include github-repository.html repository="LoicVeirman/HardenAD" %}

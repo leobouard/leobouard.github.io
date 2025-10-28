@@ -127,7 +127,9 @@ DistinguishedName : CN=Christie Cline,OU=Users,OU=CONTOSO,DC=contoso,DC=com
 >
 > Attention cependant, retrouver plusieurs fois le même hash à la suite dans l'historique n'indique pas forcément une action malicieuse. Il est possible que le mot de passe ai été réinitalisé coup-sur-coup durant la même journée (et donc sans vouloir prolonger la vie du mot de passe).
 
-Vous pouvez faire ce genre d'audit avec le module PowerShell [DSInternals](https://github.com/MichaelGrafnetter/DSInternals) de Michael Grafnetter par exemple.
+Vous pouvez faire ce genre d'audit avec le module PowerShell de Michael Grafnetter par exemple.
+
+{% include github-repository.html repository="MichaelGrafnetter/DSInternals" %}
 
 ## Méthode 3 : Abus du PwdLastSet
 

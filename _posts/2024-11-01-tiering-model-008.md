@@ -64,13 +64,3 @@ Il peut arriver qu'un serveur ou un compte de service doivent changer de niveau 
 ## Outils d'audits
 
 Tous les outils que vous avez pu utiliser dans la phase de remédiation ([TIERING #2 - Remédiation](/2024/11/01/tiering-model-002#outils-daudit)) peuvent/doivent être réutilisés plusieurs fois par an, afin de s'assurer que votre environnement avance bien dans la bonne direction.
-
-Voici un résumé des outils proposés :
-
-Produit | Description
-------- | -----------
-[Ping Castle by NETWRIX](https://www.pingcastle.com/download/) | Audit de la configuration Active Directory
-[Purple Knight by SEMPERIS](https://www.semperis.com/fr/purple-knight/) | Audit de la configuration Active Directory
-[Forest Druid by SEMPERIS](https://www.semperis.com/fr/forest-druid/) | Chemins d'attaque vers les ressources critiques
-[Adalanche](https://github.com/lkarlslund/Adalanche) | Chemins d'attaque vers les ressources critiques
-[Bloodhound](https://github.com/SpecterOps/BloodHound) | Chemins d'attaque vers les ressources critiques

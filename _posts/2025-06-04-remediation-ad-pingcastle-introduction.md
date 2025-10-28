@@ -18,11 +18,7 @@ Si vous avez la possibilité de vous procurer une licence auditeur, je vous la r
 
 Pensez également à garder scrupuleusement vos fichiers XML générés par Ping Castle, et pas uniquement les fichiers HTML. Ceux-ci vous seront utiles pour rendre compte de l'avancée de votre remédiation.
 
-### Outils utiles
-
-- [Download - PingCastle](https://www.pingcastle.com/download/)
-- [PingCastle Health Check rules](https://pingcastle.com/PingCastleFiles/ad_hc_rules_list.html)
-- [leobouard/PingCastleDashboard: Consolidate and review your XML PingCastle files into a simple dashboard](https://github.com/leobouard/PingCastleDashboard)
+{% include github-repository.html repository="leobouard/PingCastleDashboard" %}
 
 ## Table des matières
 

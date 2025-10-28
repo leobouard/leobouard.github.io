@@ -44,7 +44,9 @@ En sachant cela, il suffit de confronter le hash des mots de passe présents dan
 
 ### Module PowerShell DSInternals
 
-Qu'importe le type d'audit que vous allez choisir, l'élément central est le module PowerShell [DSInternals](https://github.com/MichaelGrafnetter/DSInternals), développé par Michael Grafnetter.
+Qu'importe le type d'audit que vous allez choisir, l'élément central est le module PowerShell DSInternals, développé par Michael Grafnetter.
+
+{% include github-repository.html repository="MichaelGrafnetter/DSInternals" %}
 
 Celui-ci permet de manipuler facilement une base NTDS ayant été extraite, ou utiliser les données de réplication entre contrôleur de domaine pour récupérer les hashs de mot de passe.
 

@@ -15,7 +15,9 @@ Voici la documentation officielle de Microsoft sur le sujet : [\[MS-ADTS\]: Ambi
 
 ### Utilisation de la recherche ANR
 
-J'ai publié un outil pour réinitialiser facilement des mots de passe utilisateur : [leobouard/PasswordReset: A simple WPF interface for Active Directory user password reset](https://github.com/leobouard/PasswordReset). Le principe est simple : rechercher un compte Active Directory pour consulter toutes les informations relatives à son mot de passe et le modifier avec un mot de passe auto-généré ou une saisie manuelle.
+J'ai publié un outil pour réinitialiser facilement des mots de passe utilisateur. Le principe est simple : rechercher un compte Active Directory pour consulter toutes les informations relatives à son mot de passe et le modifier avec un mot de passe auto-généré ou une saisie manuelle.
+
+{% include github-repository.html repository="leobouard/PasswordReset" %}
 
 Pour la partie "recherche du compte utilisateur", l'utilitaire propose une barre de recherche générique, où le texte en entrée peut être le nom, le prénom, le SamAccountName... Pour explorer toutes ces options à la fois, on peut construire un filtre complexe (et gourmand en ressources), comme celui-ci :
 
