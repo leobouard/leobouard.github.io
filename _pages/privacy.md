@@ -40,7 +40,9 @@ Aucune donnée n'est vendue ou partagée à un tiers.
 
 ## Hébergement du site web
 
-Le site est hébergé gratuitement sur [GitHub Pages](https://pages.github.com/).
+Le site est hébergé gratuitement sur [GitHub Pages](https://pages.github.com/). L'intégralité du code de ce site web est disponible en open-source ici :
+
+{% include github-repository.html repository="https://github.com/leobouard/leobouard.github.io" %}
 
 ## Autres services
 
