@@ -2,10 +2,10 @@
 
 title: "PS101 #1 - Introduction"
 description: "Revoir la base du fonctionnement de PowerShell"
-tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"
+tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 2"
-  id: "/2024/04/07/cours-powershell-from-scratch-002"
+  id: "cours-powershell-from-scratch-002"
 ---
 
 ## La base de la base

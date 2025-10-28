@@ -6,7 +6,7 @@ tags: ['cours','powershell']
 listed: true
 nextLink:
   name: "Partie 1"
-  id: "/2024/04/07/cours-powershell-from-scratch-001"
+  id: "cours-powershell-from-scratch-001"
 ---
 
 ## Table des matières

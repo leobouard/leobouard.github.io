@@ -2,13 +2,13 @@
 
 title: "Cours PowerShell #4 - Mais on est où là ?"
 description: "Ajout de bornes inférieure et supérieure pour aider le joueur à deviner le nombre aléatoire"
-tableOfContent: "/2022/12/01/cours-pratique-powershell-introduction#table-des-matières"
+tableOfContent: "cours-pratique-powershell-introduction#table-des-matières"
 nextLink:
   name: "Partie 5"
-  id: "/2022/12/01/cours-pratique-powershell-005"
+  id: "cours-pratique-powershell-005"
 prevLink:
   name: "Partie 3"
-  id: "/2022/12/01/cours-pratique-powershell-003"
+  id: "cours-pratique-powershell-003"
 ---
 
 ## Consigne

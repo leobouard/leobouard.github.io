@@ -1,13 +1,13 @@
 ---
 title: "TIERING #5 - Limiter les connexions"
 description: "Empêcher les connexions d'un compte vers un serveur d'un autre niveau"
-tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
+tableOfContent: "tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"
-  id: "/2024/11/01/tiering-model-006"
+  id: "tiering-model-006"
 prevLink:
   name: "Partie 4"
-  id: "/2024/11/01/tiering-model-004"
+  id: "tiering-model-004"
 ---
 
 ## Blocage via GPO

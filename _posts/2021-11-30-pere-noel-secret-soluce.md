@@ -2,7 +2,7 @@
 title: "SOLUCE #4 - Secret santa"
 prevLink:
   name: "Retour au défi"
-  id: "/2021/11/30/pere-noel-secret"
+  id: "pere-noel-secret"
 ---
 
 Voici la fonction `Get-SecretSanta` pour obtenir notre tirage au sort :

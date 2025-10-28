@@ -5,7 +5,7 @@ tags: ['challenge','powershell']
 listed: true
 nextLink:
   name: "Voir la solution"
-  id: "/2021/07/23/jour-de-paie-soluce"
+  id: "jour-de-paie-soluce"
 ---
 
 Admettons la situation suivante : votre salaire vous est versé sur votre compte en banque  **au plus tard** le 25 du mois. En sachant que vous ne pouvez pas recevoir votre virement un samedi ou un dimanche, vous devez donc déterminer le jour exact où l'argent arrivera sur votre compte en banque.

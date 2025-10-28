@@ -2,7 +2,7 @@
 title: "SOLUCE #1 - Le jour de paie"
 prevLink:
   name: "Retour au défi"
-  id: "/2021/07/23/jour-de-paie"
+  id: "jour-de-paie"
 ---
 
 ## Différentes boucles

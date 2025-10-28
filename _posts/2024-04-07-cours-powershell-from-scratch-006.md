@@ -2,13 +2,13 @@
 
 title: "PS101 #6 - Les conditions en bref"
 description: "Troisième élément essentiel du scripting"
-tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"
+tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 7"
-  id: "/2024/04/07/cours-powershell-from-scratch-007"
+  id: "cours-powershell-from-scratch-007"
 prevLink:
   name: "Partie 5"
-  id: "/2024/04/07/cours-powershell-from-scratch-005"
+  id: "cours-powershell-from-scratch-005"
 ---
 
 ## Conditions

@@ -2,13 +2,13 @@
 
 title: "PS101 #3 - Assembler les commandes entre-elles"
 description: "Comprendre comment fonctionnent les commandes"
-tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"
+tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 4"
-  id: "/2024/04/07/cours-powershell-from-scratch-004"
+  id: "cours-powershell-from-scratch-004"
 prevLink:
   name: "Partie 2"
-  id: "/2024/04/07/cours-powershell-from-scratch-002"
+  id: "cours-powershell-from-scratch-002"
 ---
 
 ## Pipeline

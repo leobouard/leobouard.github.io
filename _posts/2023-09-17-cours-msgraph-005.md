@@ -2,13 +2,13 @@
 
 title: "MSGRAPH #5 - Applications Azure"
 description: "Découvrir le rôle et le fonctionnement d'une application Azure pour utiliser Microsoft Graph"
-tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
+tableOfContent: "cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"
-  id: "/2023/09/17/cours-msgraph-006"
+  id: "cours-msgraph-006"
 prevLink:
   name: "Partie 4"
-  id: "/2023/09/17/cours-msgraph-004"
+  id: "cours-msgraph-004"
 ---
 
 ## Les applications Azure

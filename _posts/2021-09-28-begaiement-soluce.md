@@ -2,7 +2,7 @@
 title: "SOLUCE #2 - Bégaiement"
 prevLink:
   name: "Retour au défi"
-  id: "/2021/09/28/begaiement"
+  id: "begaiement"
 ---
 
 ## Version simple

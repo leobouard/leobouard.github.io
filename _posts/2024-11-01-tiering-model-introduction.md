@@ -5,7 +5,7 @@ tags: activedirectory
 listed: true
 nextLink:
   name: "Partie 1"
-  id: "/2024/11/01/tiering-model-001"
+  id: "tiering-model-001"
 ---
 
 ## Introduction

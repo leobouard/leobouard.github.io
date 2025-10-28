@@ -2,10 +2,10 @@
 
 title: "MSGRAPH #6 - Exercices pratiques"
 description: "Travaux pratiques qui mobilisent l'ensemble des connaissances acquises"
-tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
+tableOfContent: "cours-msgraph-introduction#table-des-matières"
 prevLink:
   name: "Partie 5"
-  id: "/2023/09/17/cours-msgraph-005"
+  id: "cours-msgraph-005"
 ---
 
 ## Exercice pratique n°1

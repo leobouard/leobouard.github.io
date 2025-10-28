@@ -2,13 +2,13 @@
 
 title: "PS101 #2 - Commandes et paramètres"
 description: "Comprendre comment fonctionnent les commandes"
-tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"
+tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 3"
-  id: "/2024/04/07/cours-powershell-from-scratch-003"
+  id: "cours-powershell-from-scratch-003"
 prevLink:
   name: "Partie 1"
-  id: "/2024/04/07/cours-powershell-from-scratch-001"
+  id: "cours-powershell-from-scratch-001"
 ---
 
 ## Syntaxe des commandes

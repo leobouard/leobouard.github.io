@@ -1,10 +1,10 @@
 ---
 title: "TIERING #8 - Recertification"
 description: "S'assurer que le tiering model reste sécurisé"
-tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
+tableOfContent: "tiering-model-introduction#table-des-matières"
 prevLink:
   name: "Partie 7"
-  id: "/2024/11/01/tiering-model-007"
+  id: "tiering-model-007"
 ---
 
 ## Exploitation Active Directory

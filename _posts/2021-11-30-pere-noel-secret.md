@@ -5,7 +5,7 @@ tags: ['challenge','powershell']
 listed: true
 nextLink:
   name: "Voir la solution"
-  id: "/2021/11/30/pere-noel-secret-soluce"
+  id: "pere-noel-secret-soluce"
 ---
 
 Ce défi peut paraitre facile au premier abord, mais attention : il y a assez peu de chances que vous l'ayez résolu en moins de cinq minutes. Le but du jeu est simple, vous avez une liste de partipants qui doivent s'offrir des cadeaux mutuellement et vous êtes chargés de dire qui offre à qui.

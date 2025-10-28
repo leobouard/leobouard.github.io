@@ -1,13 +1,13 @@
 ---
 title: "TIERING #4 - Délégations et administrateurs"
 description: "Mise en place de délégations pour les administrateurs du Tier 1 & 2"
-tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
+tableOfContent: "tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 5"
-  id: "/2024/11/01/tiering-model-005"
+  id: "tiering-model-005"
 prevLink:
   name: "Partie 3"
-  id: "/2024/11/01/tiering-model-003"
+  id: "tiering-model-003"
 ---
 
 ## Utilité des délégations

@@ -2,7 +2,7 @@
 title: "SOLUCE #5 - Le nom le plus long"
 prevLink:
   name: "Retour au défi"
-  id: "/2022/04/10/le-nom-le-plus-long"
+  id: "le-nom-le-plus-long"
 ---
 
 Dans les solutions ennoncées, je me base sur mon fichier CSV qui est récupérable avec ce bout de code :

@@ -2,7 +2,7 @@
 title: "SOLUCE #3 - La formule magique"
 prevLink:
   name: "Retour au défi"
-  id: "/2021/11/02/la-formule-magique"
+  id: "la-formule-magique"
 ---
 
 ## Ma solution

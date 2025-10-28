@@ -4,7 +4,7 @@ title: "Conclusion"
 description: "Conclusion sur l'ensemble du cours pratique PowerShell, et les choses que vous pouvez faire pour aller plus loin."
 prevLink:
   name: "Partie 10"
-  id: "/2022/12/01/cours-pratique-powershell-010"
+  id: "cours-pratique-powershell-010"
 ---
 
 Si vous avez pris le temps de faire ce cours pratique jusqu'au bout : bravo à vous !

@@ -2,13 +2,13 @@
 
 title: "PS101 #5 - Les opérateurs en bref"
 description: "Second élément essentiel du scripting"
-tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"
+tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"
-  id: "/2024/04/07/cours-powershell-from-scratch-006"
+  id: "cours-powershell-from-scratch-006"
 prevLink:
   name: "Partie 4"
-  id: "/2024/04/07/cours-powershell-from-scratch-004"
+  id: "cours-powershell-from-scratch-004"
 ---
 
 ## Opérateurs de comparaison

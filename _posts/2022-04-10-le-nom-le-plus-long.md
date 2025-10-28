@@ -5,7 +5,7 @@ tags: ['challenge','powershell']
 listed: true
 nextLink:
   name: "Voir la solution"
-  id: "/2022/04/10/le-nom-le-plus-long-soluce"
+  id: "le-nom-le-plus-long-soluce"
 ---
 
 PowerShell est un outil fantastique pour faire du reporting dans Active Directory : il permet de fournir des statistiques, épingler les comptes inactifs ou répondre à des questions que personne ne se pose !

@@ -2,13 +2,13 @@
 
 title: "Cours PowerShell #10 - Finalisation"
 description: "Implémentation des dernières fonctionnalités au script PowerShell, avec notamment un mode triche et une amélioration globale de l'utilisation de l'interface graphique."
-tableOfContent: "/2022/12/01/cours-pratique-powershell-introduction#table-des-matières"
+tableOfContent: "cours-pratique-powershell-introduction#table-des-matières"
 nextLink:
   name: "Conclusion"
-  id: "/2022/12/01/cours-pratique-powershell-conclusion"
+  id: "cours-pratique-powershell-conclusion"
 prevLink:
   name: "Partie 9"
-  id: "/2022/12/01/cours-pratique-powershell-009"
+  id: "cours-pratique-powershell-009"
 ---
 
 ## Consigne

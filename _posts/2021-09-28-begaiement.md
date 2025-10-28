@@ -5,7 +5,7 @@ tags: ['challenge','powershell']
 listed: true
 nextLink:
   name: "Voir la solution"
-  id: "/2021/09/28/begaiement-soluce"
+  id: "begaiement-soluce"
 ---
 
 Un classique des exercices de programmation : **faire bégayer un texte**, c'est-à-dire répéter deux à trois fois les premières lettres d'un mot. On doit alors fournir les informations à notre code pour qu'il puisse fonctionner : le texte à traiter et la probabilité du bégaiement (car on veut éviter que le bégaiement soit systématique). Un autre élément à prendre en compte est la longueur des mots minimum pour être "éligible" au bégaiement : pour être crédible, il faudra éviter de faire bégayer des mots trop courts en moins de cinq lettres par exemple.

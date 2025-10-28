@@ -1,13 +1,13 @@
 ---
 title: "TIERING #2 - Remédiation"
 description: "Nettoyer l'environnement Active Directory avant la phase d'architecture"
-tableOfContent: "/2024/11/01/tiering-model-introduction#table-des-matières"
+tableOfContent: "tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 3"
-  id: "/2024/11/01/tiering-model-003"
+  id: "tiering-model-003"
 prevLink:
   name: "Partie 1"
-  id: "/2024/11/01/tiering-model-001"
+  id: "tiering-model-001"
 ---
 
 Avant d'attaquer le déploiement du tiering model, il convient de faire le ménage votre domaine Active Directory. L'idée est de repartir sur des bases saines avant d'attaquer de plus grands travaux.

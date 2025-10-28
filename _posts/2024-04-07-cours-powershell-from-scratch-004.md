@@ -2,13 +2,13 @@
 
 title: "PS101 #4 - Les variables en bref"
 description: "Premier élément essentiel du scripting"
-tableOfContent: "/2024/04/07/cours-powershell-from-scratch-introduction#table-des-matières"
+tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 5"
-  id: "/2024/04/07/cours-powershell-from-scratch-005"
+  id: "cours-powershell-from-scratch-005"
 prevLink:
   name: "Partie 3"
-  id: "/2024/04/07/cours-powershell-from-scratch-003"
+  id: "cours-powershell-from-scratch-003"
 ---
 
 ## Variables

@@ -4,10 +4,9 @@ title: "Cours pratique PowerShell"
 description: "Création d'un jeu en PowerShell en utilisant un maximum de commandes et de techniques différentes"
 tags: ['cours','powershell']
 listed: true
-capsule: "⭐ Ma sélection"
 nextLink:
   name: "Partie 1"
-  id: "/2022/12/01/cours-pratique-powershell-001"
+  id: "cours-pratique-powershell-001"
 ---
 
 ## Introduction

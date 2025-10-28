@@ -3,10 +3,9 @@ title: "DÉFI #3 - La formule magique"
 description: "Une petite énigme a résoudre avant d'essayer de faire le script le plus court possible pour la résoudre"
 tags: ['challenge','powershell']
 listed: true
-capsule: "👍 Le plus facile"
 nextLink:
   name: "Voir la solution"
-  id: "/2021/11/02/la-formule-magique-soluce"
+  id: "la-formule-magique-soluce"
 ---
 
 Pour ce défi, vous allez devoir résoudre une petite énigme avant de passer à la partie PowerShell. Je vous donne quelques exemples pour que vous puissiez essayer de deviner la fameuse formule magique :

@@ -2,13 +2,13 @@
 
 title: "MSGRAPH #3 - Microsoft Graph Explorer"
 description: "Prendre en main efficacement l'outil web de requête d'API"
-tableOfContent: "/2023/09/17/cours-msgraph-introduction#table-des-matières"
+tableOfContent: "cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 4"
-  id: "/2023/09/17/cours-msgraph-004"
+  id: "cours-msgraph-004"
 prevLink:
   name: "Partie 2"
-  id: "/2023/09/17/cours-msgraph-002"
+  id: "cours-msgraph-002"
 ---
 
 ## Microsoft Graph Explorer
