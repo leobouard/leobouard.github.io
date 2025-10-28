@@ -286,5 +286,5 @@ Ce genre de manipulation n'étant pas prévue, on tombe sur des erreurs à l'inv
 {% include risk-score.html
     impact=5
     probability=5
-    comment="La on est juste dans la volonté de nuire. Avec un peu de patience et quelques articles techniques, on peut très vite mettre conjuguer un domaine Active Directory au passé. A ne pas reproduire sur la production, évidemment !"
+    comment="Ici on est juste dans la volonté de nuire. Avec un peu de patience et quelques articles techniques, on peut très vite mettre conjuguer un domaine Active Directory au passé. A ne pas reproduire sur la production, évidemment !"
 %}
