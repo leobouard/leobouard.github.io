@@ -197,6 +197,13 @@
                 "duration": "5 jours",
                 "description": "Installation et configuration de KACE SMA avec formation des équipes",
                 "tags": ["quest", "formation"]
+            },
+            {
+                "company": "Groupe Roullier",
+                "title": "Support N2",
+                "period": "octobre 2018",
+                "duration": "3 semaines",
+                "description": "Préparation de poste sur MDT, copie de disques avec Clonezilla et support utilisateur"
             }
         ]
     }
