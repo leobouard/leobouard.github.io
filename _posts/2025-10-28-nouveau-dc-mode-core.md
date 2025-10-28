@@ -1,6 +1,6 @@
 ---
 title: "Configuration d'un contrôleur de domaine en mode Core"
-description: "Y'a deux types d'unités d'organisations : celles qui sont utiles et les autres"
+description: "Suivre les bonnes pratiques de l'ANSSI pour le déploiement de vos contrôleurs de domaine"
 tags: ["activedirectory", "powershell"]
 listed: true
 ---
