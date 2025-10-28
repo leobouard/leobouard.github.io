@@ -160,6 +160,8 @@ bcdedit.exe /set safeboot dsrepair
 shutdown.exe -t 0 -r
 ```
 
+> On peut également spammer la touche F8 au démarrage de Windows et sélectionner "Directory Services Restore Mode".
+
 N'oubliez pas qu'après avoir terminé les opérations nécessaires en mode DSRM, vous devrez réinitialiser la configuration de démarrage pour revenir à un démarrage normal. Vous pouvez le faire en utilisant la commande suivante :
 
 ```powershell
