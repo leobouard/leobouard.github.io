@@ -52,6 +52,12 @@ La déclaration du sous-réseau utilisé par un contrôleur de domaine n'a pas �
 
 ### S-DefaultOUChanged
 
+L'emplacement par défaut pour les nouveaux comptes ordinateurs et/ou utilisateurs ont été modifiées avec les utilitaires `redircmp` et `redirusr`.
+
+Rien de grave à cela en soi, mais la bonne pratique est plutôt de laisser tomber les nouveaux objets dans les containeurs par défaut qui sont assimilés au Tier 0.
+
+{% include risk-score.html impact=1 probability=1 comment="Le risque dépend de votre Active Directory, mais je vois mal ce qui peut se passer de grave." %}
+
 ### S-PwdNotRequired
 
 Des comptes utilisateurs n'ont pas besoin de mot de passe pour s'authentifier. Ce n'est pas grave pour les comptes désactivés, mais la configuration est anormale pour des comptes utilisateurs actifs.
