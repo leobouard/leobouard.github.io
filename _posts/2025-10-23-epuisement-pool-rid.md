@@ -260,7 +260,7 @@ Set-ItemProperty @splat
 Restart-Computer -Force
 ```
 
-On peut désormais passer aux choses sérieuses ! Dans mon cas je vais m'arrêter à 10 000 boucles pour éviter de flinguer mon lab, mais la boucle est très simple :
+On peut désormais passer aux choses sérieuses ! Dans mon cas, je vais m'arrêter à 10 000 boucles pour éviter de flinguer mon lab, mais la boucle est très simple :
 
 1. On invalide le pool RID du contrôleur de domaine
 2. On tente de créer un nouvel objet pour forcer la récupération d'un nouveau pool RID
@@ -273,7 +273,7 @@ $max = 10000
 1..$max | ForEach-Object {
     Invoke-ADInvalidateRidPool
     try { New-ADUser "error-$_" } catch { $null }
-    Write-Progress -Activity "Consuming all RID as fast as I can!" -PercentComplete ($_ / $max * 100)
+    Write-Progress -Activity "Consuming RID as fast as I can!" -PercentComplete ($_ / $max * 100)
 }
 ```
 
