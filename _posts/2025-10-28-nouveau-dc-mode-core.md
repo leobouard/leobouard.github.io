@@ -28,7 +28,7 @@ Dans les faits, si on prend quelques CVE critiques des cinq dernières années, 
 5. [CVE-2024-49113 (LDAP Nightmare)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-49113) : a impacté les serveurs Core & Desktop Experience
 6. [CVE-2024-38124](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38124) : a impacté les serveurs Core & Desktop Experience
 
-L'argument de la réduction de la surface d'attaque reste donc théorique selon moi.
+L'argument de la réduction de la surface d'attaque reste donc théorique à mon humble avis.
 
 ### Les vrais bénéfices du mode Core
 
