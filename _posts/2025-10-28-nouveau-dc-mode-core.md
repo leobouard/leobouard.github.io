@@ -34,10 +34,10 @@ L'argument de la réduction de la surface d'attaque reste donc théorique à mon
 
 Selon moi, le mode Core a surtout l'énorme avantage d'être un OS plus léger que le Desktop Experience. Cela implique donc :
 
-- une consommation de ressources plus réduite (notamment sur la RAM), donc idéal pour des home-labs
-- un temps de redémarrage plus rapide
+- une consommation de ressources réduite (notamment sur la RAM)
+- un temps d'installation et de redémarrage plus court
 
-L'absence d'interface graphique implique également qu'on a moins tendance à prendre la main directement sur le serveur et/ou à installer des rôles supplémentaires ou des logiciels tiers, ce qui est pour le coup un vrai gain de sécurité.
+L'absence d'interface graphique implique également qu'on a moins tendance à prendre la main directement sur le serveur et/ou à installer des rôles supplémentaires ou des logiciels tiers, ce qui est pour le coup un gain réel en sécurité.
 
 L'utilisation exclusive de PowerShell implique aussi l'automatisation et l'industrialisation du déploiement d'un nouveau contrôleur de domaine, ce qui permet de les remplacer plus rapidement pour mettre à jour le niveau fonctionnel de la forêt et du domaine par exemple.
 
@@ -55,17 +55,17 @@ Définition de la configuration IP :
 
 ```powershell
 # Récupération des informations de la carte réseau
-$adapter = Get-NetAdapter -Name "Ethernet"
+$adapter = Get-NetAdapter -Name 'Ethernet'
 $adapter | Remove-NetIPAddress -Confirm:$false
 $adapter | Remove-NetRoute -Confirm:$false
 
 # Définition de l'adresse IP
 $params = @{
     IfIndex        = $adapter.ifIndex
-    IPAddress      = "10.0.0.1"
-    AddressFamily  = "IPv4"
+    IPAddress      = '10.0.0.1'
+    AddressFamily  = 'IPv4'
     PrefixLength   = 16
-    DefaultGateway = "10.0.0.2"
+    DefaultGateway = '10.0.0.2'
 }
 New-NetIPAddress @params
 ```
@@ -73,7 +73,11 @@ New-NetIPAddress @params
 Définition des serveurs DNS :
 
 ```powershell
-Set-DnsClientServerAddress -InterfaceIndex $adapter.ifIndex -ServerAddresses ("10.0.0.2","10.0.0.1")
+$params = @{
+    InterfaceIndex  = $adapter.ifIndex
+    ServerAddresses = '10.0.0.2', '10.0.0.1'
+}
+Set-DnsClientServerAddress @params
 ```
 
 > Note : on évite d'utiliser l'adresse de loopback 127.0.0.1 pour le serveur DNS d'un contrôleur de domaine. Plus d'informations ici : [Recommendations for Domain Name System (DNS) client settings - Windows Server \| Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/best-practices-for-dns-client-settings#domain-controller-with-dns-installed)
@@ -117,7 +121,8 @@ New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
 Formater la partition :
 
 ```powershell
-Get-Partition -DriveLetter 'E' | Format-Volume -FileSystem NTFS -NewFileSystemLabel 'NTDS'
+Get-Partition -DriveLetter 'E' |
+    Format-Volume -FileSystem NTFS -NewFileSystemLabel 'NTDS'
 ```
 
 On peut vérifier la présence du nouveau disque avec la commande suivante :
@@ -139,7 +144,7 @@ Import-Module ADDSDeployment
 $params = @{
     DomainName                    = 'corp.contoso.com'
     DomainNetbiosName             = 'CONTOSO'
-    SafeModeAdministratorPassword = (Read-Host -Prompt "Enter the DSRM password" -AsSecureString)
+    SafeModeAdministratorPassword = (Read-Host -Prompt "DSRM password" -AsSecureString)
     LogPath                       = 'E:\NTDS'
     DatabasePath                  = 'E:\NTDS'
     SysvolPath                    = 'E:\SYSVOL'
@@ -167,7 +172,7 @@ Une fois que le rôle ADDS est installé et que le serveur a redémarré, vous p
 ```powershell
 $splat = @{
     DomainName   = 'corp.contoso.com'
-    Credential   = (Get-Credential -Message 'Enter domain admin credential')
+    Credential   = (Get-Credential -Message 'Domain admin credential')
     LogPath      = 'E:\NTDS'
     DatabasePath = 'E:\NTDS'
     SysvolPath   = 'E:\SYSVOL'
