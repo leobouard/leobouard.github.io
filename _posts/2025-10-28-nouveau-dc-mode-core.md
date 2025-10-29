@@ -23,7 +23,7 @@ Dans les faits, si on prend quelques CVE critiques des cinq dernières années, 
 
 1. [CVE-2020-1472 (Zerologon)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-1472) : a impacté les serveurs Core & Desktop Experience
 2. [CVE-2021-34527 (PrintNightmare)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34527) : a impacté les serveurs Core & Desktop Experience
-3. [CVE-2021-1675 (Print Spooler)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-1675) : : a impacté les serveurs Core & Desktop Experience
+3. [CVE-2021-1675 (Print Spooler)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-1675) : a impacté les serveurs Core & Desktop Experience
 4. [CVE-2022-26809 (vulnérabilité RPC)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26809) : a impacté les serveurs Core & Desktop Experience
 5. [CVE-2024-49113 (LDAP Nightmare)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-49113) : a impacté les serveurs Core & Desktop Experience
 6. [CVE-2024-38124](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38124) : a impacté les serveurs Core & Desktop Experience
