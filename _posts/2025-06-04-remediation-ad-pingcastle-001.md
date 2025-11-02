@@ -134,7 +134,7 @@ Chemin du paramètre GPO : **Computer Configuration > Policies > Administrative 
 
 > Attention quand-même : si vous poussez le paramètre sur *Fail unarmored authentication requests*, vous avez de bonnes chances (comme moi) **de bloquer purement et simplement votre domaine**. Plus d'information ici : [TrustedSec \| I Wanna Go Fast, Really Fast, like (Kerberos) FAST](https://trustedsec.com/blog/i-wanna-go-fast-really-fast-like-kerberos-fast)
 
-{% include risk-score.html impact=1 probability=1 comment="Si vous vous tenez au paramètre *Supported*, tout devrait bien se passer." %}
+{% include risk-score.html impact=1 probability=1 comment="Si vous vous tenez au paramètre Supported, tout devrait bien se passer." %}
 
 ### S-JavaSchema
 
