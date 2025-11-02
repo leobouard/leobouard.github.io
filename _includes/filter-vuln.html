@@ -1,0 +1,30 @@
+<script>
+/* Fonction appelée par onkeyup de l'input #searchbar */
+function filterVulnBySearch() {
+  const q = (document.getElementById('searchbar')?.value || '').trim().toLowerCase();
+  const container = document.querySelector('.ping-castle-vuln');
+  if (!container) return;
+  const items = Array.from(container.children);
+
+  if (!q) {
+    items.forEach(i => i.style.display = '');
+    return;
+  }
+
+  let shown = 0;
+  items.forEach(item => {
+    // Recherche prioritairement dans les titres, puis dans tout le contenu si nécessaire
+    const title = Array.from(item.querySelectorAll('h2,h3,h4,h5,h6')).map(h => h.textContent || '').join(' ').toLowerCase();
+    const text = (item.textContent || '').toLowerCase();
+    const match = title.includes(q) || text.includes(q);
+    item.style.display = match ? '' : 'none';
+    if (match) shown++;
+  });
+
+  // Scroll vers le premier résultat si présent
+  if (shown) {
+    const first = items.find(i => i.style.display !== 'none');
+    first?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>

@@ -34,7 +34,13 @@ Pensez également à garder scrupuleusement vos fichiers XML générés par Ping
   {% endfor %}
 </div>
 
-## Toutes les vulnérabiliés
+## Toutes les vulnérabilités
+
+{% include filter-vuln.html %}
+<div class="searchbar-container">
+  <input class="searchbar" type="text" id="searchbar" placeholder="Rechercher une vulnérabilité..." onkeyup="filterVulnBySearch()" />
+  <i class="fa-solid fa-magnifying-glass"></i>
+</div>
 
 <div class="ping-castle-vuln">
 {% assign posts = site.posts | sort: 'id' %}
