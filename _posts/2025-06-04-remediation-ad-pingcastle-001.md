@@ -118,7 +118,23 @@ Surveillance GIR | 08/08/2019 12:23:47 | 2140
 
 ### S-KerberosArmoring
 
+Aucune GPO activant le support pour les *claims*, l'authentification composée et le renforcement Kerberos (*Kerberos armoring*) n'a été trouvée pour les clients Kerberos.
+
+Chemin du paramètre GPO : **Computer Configuration > Policies > Administrative Templates > System > Kerberos**. Le paramètre a activer est : "*Kerberos client support for claims, compound authentication and Kerberos Armoring*". Celui-ci est nécessaire pour l'utilisation des *Authentication Policies & Authentication Policies Silos*.
+
+Comme toujours avec Ping Castle, assurez-vous que cette GPO est appliquée correctement sur tous les objets ordinateurs du domaine (autre que les contrôleurs de domaine).
+
+{% include risk-score.html impact=1 probability=1 comment="Pas d'impact à prévoir pour les systèmes d'exploitation qui ne sont pas compatibles avec le Kerberos armoring." %}
+
 ### S-KerberosArmoringDC
+
+Aucune GPO ajoutant le support pour les *claims*, l'authentification composée et le renforcement Kerberos (*Kerberos armoring*) n'a été trouvée pour le KDC (les contrôleurs de domaine).
+
+Chemin du paramètre GPO : **Computer Configuration > Policies > Administrative Templates > System > KDC**. Le paramètre a activer est : "*KDC support for claims, compound authentication and Kerberos armoring*". Celui-ci est nécessaire pour l'utilisation des *Authentication Policies & Authentication Policies Silos*.
+
+> Attention quand-même : si vous poussez le paramètre sur *Fail unarmored authentication requests*, vous avez de bonnes chances (comme moi) **de bloquer purement et simplement votre domaine**. Plus d'information ici : [TrustedSec \| I Wanna Go Fast, Really Fast, like (Kerberos) FAST](https://trustedsec.com/blog/i-wanna-go-fast-really-fast-like-kerberos-fast)
+
+{% include risk-score.html impact=1 probability=1 comment="Si vous vous tenez au paramètre *Supported*, tout devrait bien se passer." %}
 
 ### S-JavaSchema
 
