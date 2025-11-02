@@ -1,30 +1,68 @@
 <script>
-/* Fonction appelée par onkeyup de l'input #searchbar */
-function filterVulnBySearch() {
-  const q = (document.getElementById('searchbar')?.value || '').trim().toLowerCase();
-  const container = document.querySelector('.ping-castle-vuln');
-  if (!container) return;
-  const items = Array.from(container.children);
+/* Regroupe le contenu de .ping-castle-vuln en "sections" basées sur chaque H3,
+   puis filtre ces sections en ne recherchant QUE dans le texte du H3. */
+(function () {
+  function wrapSections(container) {
+    if (!container || container.dataset.sectionsWrapped) return;
+    const nodes = Array.from(container.childNodes);
+    const sections = [];
+    let current = null;
 
-  if (!q) {
-    items.forEach(i => i.style.display = '');
-    return;
+    nodes.forEach(node => {
+      // Détecte un H3 -> nouvelle section
+      if (node.nodeType === Node.ELEMENT_NODE && node.matches('h3')) {
+        current = document.createElement('div');
+        current.className = 'vuln-section';
+        sections.push(current);
+        current.appendChild(node.cloneNode(true));
+      } else {
+        // Si pas encore de section (contenu avant le premier H3), créer une section "pré-H3"
+        if (!current) {
+          current = document.createElement('div');
+          current.className = 'vuln-section';
+          sections.push(current);
+        }
+        current.appendChild(node.cloneNode(true));
+      }
+    });
+
+    // Remplace le contenu original par les sections créées
+    container.innerHTML = '';
+    sections.forEach(s => container.appendChild(s));
+    container.dataset.sectionsWrapped = '1';
   }
 
-  let shown = 0;
-  items.forEach(item => {
-    // Recherche prioritairement dans les titres, puis dans tout le contenu si nécessaire
-    const title = Array.from(item.querySelectorAll('h2,h3,h4,h5,h6')).map(h => h.textContent || '').join(' ').toLowerCase();
-    const text = (item.textContent || '').toLowerCase();
-    const match = title.includes(q) || text.includes(q);
-    item.style.display = match ? '' : 'none';
-    if (match) shown++;
-  });
+  // Fonction utilisée par l'input onkeyup
+  window.filterVulnBySearch = function () {
+    const q = (document.getElementById('searchbar')?.value || '').trim().toLowerCase();
+    const container = document.querySelector('.ping-castle-vuln');
+    if (!container) return;
 
-  // Scroll vers le premier résultat si présent
-  if (shown) {
-    const first = items.find(i => i.style.display !== 'none');
-    first?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Assurer le découpage en sections (idempotent)
+    wrapSections(container);
+
+    const sections = Array.from(container.querySelectorAll('.vuln-section'));
+    if (!q) {
+      sections.forEach(s => s.style.display = '');
+      return;
+    }
+
+    sections.forEach(s => {
+      const h3 = s.querySelector('h3');
+      const h3Text = (h3?.textContent || '').toLowerCase();
+      s.style.display = h3Text.includes(q) ? '' : 'none';
+    });
+  };
+
+  // wrap dès que possible pour que l'HTML soit structuré si nécessaire
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.ping-castle-vuln');
+      wrapSections(container);
+    });
+  } else {
+    const container = document.querySelector('.ping-castle-vuln');
+    wrapSections(container);
   }
-}
+})();
 </script>
