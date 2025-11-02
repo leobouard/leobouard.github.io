@@ -334,11 +334,10 @@ div.project code {
 }
 
 div.github-repositories {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
     grid-gap: 1em;
     padding-bottom: 1em;
-    scrollbar-width: thin;
-    overflow: auto;
 }
 
 div.github-repositories a {
