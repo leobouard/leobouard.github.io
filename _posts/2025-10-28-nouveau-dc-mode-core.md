@@ -45,6 +45,8 @@ L'utilisation exclusive de PowerShell implique aussi l'automatisation et l'indus
 
 ### Configuration du serveur
 
+> A des fins d'automatisation, je réalise l'ensemble de la configuration basique du serveur en PowerShell (changement du nom, définition de l'adresse IP et des serveurs DNS...) mais ces opérations se sont très facilement sans connaissance de PowerShell avec l'utilitaire **sconfig**.
+
 Renommer l'ordinateur :
 
 ```powershell
@@ -87,6 +89,8 @@ Vérification de la configuration réseau :
 ```powershell
 Get-NetIPConfiguration -InterfaceIndex $adapter.ifIndex
 ```
+
+### Installation du rôle ADDS
 
 Installation du rôle Active Directory Domain Services (ADDS) et redémarrage du serveur :
 
