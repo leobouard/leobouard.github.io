@@ -220,9 +220,22 @@ La résolution consiste simplement à remettre le propriétaire par défaut (*Do
 
 ### A-LAPS-Not-Installed
 
+Ping Castle va regarder si le schéma Active Directory a été étendu pour Microsoft LAPS (l'ancien) et/ou Windows LAPS (le nouveau). Pour des environnements sans OS obsolètes (et donc compatible avec Windows LAPS), ne vous embêtez pas à mettre en place Microsoft LAPS.
+
+- Pour Microsoft LAPS : [Qu'est ce que Microsoft LAPS et comment le mettre en place ?](https://help.stoik.io/quest-ce-que-microsoft-laps-et-comment-le-mettre-en-place)
+- Pour Windows LAPS : [Bien démarrer avec Windows LAPS et Windows Server Active Directory \| Microsoft Learn](https://learn.microsoft.com/fr-fr/windows-server/identity/laps/laps-scenarios-windows-server-active-directory)
+
+{% include risk-score.html impact=1 probability=1 comment="La modification du schéma peut faire peur, mais pas de soucis à se faire si votre environement Active Directory est sain." %}
+
 ### A-DCRefuseComputerPwdChange
 
 ### A-DC-Spooler
+
+Le service d'impression (*print spooler*) d'au moins un contrôleur de domaine est actif. Celui-ci ouvre beaucoup de failles sur un serveur qui n'a aucun intérêt à avoir ce service d'impression actif (du moins normalement).
+
+Le plus efficace est de désactiver le service par GPO avec la documentation suivante : [Permanently disable print spooler service on domain controller - Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/2190588/permanently-disable-print-spooler-service-on-domai)
+
+{% include risk-score.html impact=1 probability=2 comment="Si un contrôleur de domaine utilise réellement le service d'impression, revoyez les bonnes pratiques de base." %}
 
 ### A-DC-WebClient
 
@@ -266,7 +279,7 @@ La présence du ou des serveurs PKI dans ce groupe est liée à l'option "Restri
 
 La source plus complète : [Why Active Directory integrated certificate authorities are members of the "Pre-Windows 2000 Compatible Access" security group - Uwe Gradenegger](https://www.gradenegger.eu/en/why-active-directory-integrated-certification-authorities-are-members-of-pre-windows-2000-compatible-access/)
 
-{% include risk-score.html impact=3 probability=3 comment="S'il s'agit de serveurs PKI, les impacts sont connus. Sinon, vous pouvez vous réferez au point A-PreWin2000AuthenticatedUsers." %}
+{% include risk-score.html impact=3 probability=3 comment="S'il s'agit de serveurs PKI, les impacts sont connus. Sinon, vous pouvez vous référez au point A-PreWin2000AuthenticatedUsers." %}
 
 ### A-RootDseAnonBinding
 

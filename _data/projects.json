@@ -41,6 +41,14 @@
                 "duration": "5 jours par mois",
                 "description": "Référent technique sur les projets Active Directory et l'automatisation avec PowerShell",
                 "tags": ["activedirectory", "powershell"]
+            },
+            {
+                "company": "METSYS",
+                "title": "Administrateur Moodle",
+                "period": "depuis juin 2025",
+                "duration": "selon le besoin",
+                "description": "Gestion technique de la plateforme de formation interne à METSYS",
+                "tags": ["formation"]
             }
         ]
     },
