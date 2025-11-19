@@ -120,6 +120,14 @@ Session par les services Bureau à distance | CONTOSO\Admins du domaine
 
 ### P-Inactive
 
+C'est le genre de vulnérabilité qu'on aime bien. Il s'agit de comptes avec le plus haut niveau de privilèges (*Domain Admins* en général) qui ne se sont pas connectés depuis plus de six mois.
+
+Dans ce cas la meilleure chose à faire est (au minimum) de désactiver les comptes inutiles et de supprimer les attributions de droits. En cas de problèmes, vous n'avez qu'à réactiver le compte et remettre les droits.
+
+Pour le plus long terme, essayez d'implémenter [Privileged Access Management](/2025/01/23/utiliser-privileged-access-management), et une revue périodique des utilisateurs à privilèges tous les mois dans l'idéal.
+
+{% include risk-score.html impact=2 probability=2 comment="Si un compte ne se connecte pas depuis plus de 6 mois, on peut le désactiver sans trop de problèmes (suivant l'utilité du compte)." %}
+
 ### P-AdminLogin
 
 Cette vulnérabilité indique que le compte Administrateur par défaut (SID-500) a été utilisé récemment. Pour rappel : le compte Administrateur par défaut ne doit être utilisé qu'en cas de dernier recours, et vous devez utiliser des comptes nominatifs pour les actions quotidiennes sur le Tier 0.
@@ -140,6 +148,12 @@ Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 
 ### P-AdminEmailOn
 
+Ici c'est plus une préférence de Ping Castle qu'un vrai risque. Un compte administrateur n'a pas d'utilité à avoir une adresse email, donc autant couper tout risque de phishing et supprimer la boite aux lettre.
+
+> Note : Ping Castle ne regarde que le champ "EmailAddress" et pas les attributs Exchange. Vous n'avez qu'à supprimer la valeur du champ pour résoudre la vulnérabilité.
+
+{% include risk-score.html impact=1 probability=1 comment="En général, pas de risque à supprimer une adresse email sur un compte administrateur (lorsque celui-ci est bien séparé du compte standard)." %}
+
 ### P-ControlPathIndirectEveryone
 
 ### P-ControlPathIndirectMany
@@ -152,7 +166,7 @@ Si l'usage de ce compte sort de ce contexte d'urgence absolue, vous devez :
 
 Des permissions dans Active Directory ne peuvent pas être résolues (SID orphelins), ce qui peut être expliqué par une délégation accordée à un objet d'un autre domaine Active Directory et/ou que le principal qui portait la permission à été supprimé.
 
-Vous pouvez vérifier que la provenance des SID inconnus en les comparant aux DomainSID connus : 
+Vous pouvez vérifier que la provenance des SID inconnus en les comparant aux DomainSID connus :
 
 ```powershell
 $domains = @()
