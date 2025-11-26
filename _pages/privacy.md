@@ -52,3 +52,4 @@ Ce site web utilise les ressources suivantes :
 - [Google Fonts](https://fonts.google.com/) pour certaines polices d'écriture
 - [giscus](https://giscus.app/fr) pour les commentaires
 - [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) pour mettre en évidence les liens GitHub & GitHub Gist
+- [vercel.com](https://vercel.com/leobouards-projects/github-readme-stats) pour l'hébergement de mon instance de github-readme-stats
