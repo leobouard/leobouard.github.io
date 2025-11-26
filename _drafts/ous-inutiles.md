@@ -1,65 +1,92 @@
 ---
-title: "La plupart de vos OU ne servent à rien"
+title: "La plupart de vos unités d'organisation ne servent à rien"
 description: "Y'a deux types d'unités d'organisations : celles qui sont utiles et les autres"
 tags: activedirectory
 listed: true
 ---
 
-## Utilité d'une unité d'organisation
+Une unité d'organisation dans Active Directory ne sert techniquement qu'à deux choses :
 
-Les unités d'organisation (OU) dans Active Directory (AD) servent à structurer et à gérer les objets (utilisateurs, groupes, ordinateurs, etc.) de manière logique et hiérarchique. Voici leurs principaux rôles :
+- Appliquer des délégations
+- Appliquer les liens de stratégie de groupe
 
-- Structuration logique de l'annuaire
-- Délégation de l'administration
-- Application de stratégie de groupe (GPO)
-- Séparation des rôles et des responsabilités
 
-### Structuration logique de l'annuaire
+## 
 
-### Délégation de l'administration
+Il s'agit en général de l'une des premières choses que je fais chez mes clients :
 
-### Application de stratégie de groupe (GPO)
+{% include github-gist.html name="Show-ADOrganizationalUnitPurpose" id="23b52987223a05194207ea5c61b7b010" %}
 
-### Séparation des rôles et des responsabilités
+Le point d'entrée est l'utilisation de ma commande `Show-ADOrganizationalUnitPurpose` avec un compte administrateur du domaine. À partir de là, on va pouvoir faire plusieurs requêtes pour souligner les informations importantes.
 
-🎯 Objectifs des unités d'organisation
+La première étape :
 
-Structuration logique de l’annuaire
-
-Permet de refléter l’organisation réelle de l’entreprise (par département, site géographique, fonction, etc.).
-Facilite la navigation et la recherche dans l’annuaire.
-
-Délégation de l’administration
-
-On peut attribuer des droits d’administration spécifiques à une OU sans donner un accès global à tout l’AD.
-Exemple : un responsable IT local peut gérer les comptes utilisateurs de son site sans toucher aux autres.
-
-Application de stratégies de groupe (GPO)
-
-Les GPO peuvent être appliquées à des OU spécifiques pour contrôler les paramètres des utilisateurs et des ordinateurs.
-Cela permet une gestion fine des politiques de sécurité, des configurations système, etc.
-
-Séparation des rôles et des responsabilités
-
-Utile pour les grandes entreprises avec plusieurs équipes IT ou des environnements multi-tenant.
-
-📌 Exemple concret
-Imaginons une entreprise avec deux sites : Rennes et Nantes. On pourrait avoir :
-
-- Entreprise
-   ├── Rennes
-   │    ├── Utilisateurs
-   │    └── Ordinateurs
-   └── Nantes
-        ├── Utilisateurs
-        └── Ordinateurs
-
-Chaque site peut avoir ses propres GPO et ses propres administrateurs locaux.
-
-###
-
+```powershell
+$report = Show-ADOrganizationalUnitPurpose
 ```
-🌐 contoso.com
-  📁 CONTOSO
-    📁 
+
+### OU vides
+
+De la même manière qu'un dossier vide ne sert à rien, une unité d'organisation qui ne contient aucun objet n'a aucune utilité dans votre Active Directory et peut être supprimée :
+
+```powershell
+$report | Where-Object { $_.membersCount -eq 0 } | Format-Table CanonicalName, MembersCount, LinkedGPOCount
+```
+
+### OU sans délégation ou lien GPO
+
+Voici une vision de toutes les OU réellement utiles à votre domaine :
+
+```powershell
+$report | Where-Object { $_.DelegatedTo -or $_.LinkedGPOName } | Format-Table TreeView
+```
+
+Et voici maintenant les OU superflues :
+
+```powershell
+$report | Where-Object { !$_.DelegatedTo -and !$_.LinkedGPOName } | Format-Table CanonicalName, MembersCount
+```
+
+On peut même calculer le pourcentage d'OU superflues :
+
+```powershell
+$uselessOU = ($report | Where-Object { !$_.DelegatedTo -and !$_.LinkedGPOName } | Measure-Object).Count
+$allOU = ($report | Measure-Object).Count
+$ratio = [math]::Round(($uselessOU / $allOU * 100), 2)
+Write-Host "$ratio% of your organizational unit are useless"
+```
+
+### Visibilité des délégations
+
+Voici tous les objets qui possèdent au moins une délégation sur vos unités d'organisation :
+
+```powershell
+$report.DelegatedTo | Sort-Object -Unique
+```
+
+### OUs sur lesquelles un objet à une permission
+
+Filtre inverse maintenant, on affiche toutes les OUs sur lesquelles le compte `CONTOSO\john.doe` a des permissions :
+
+```powershell
+$report | Where-Object {$_.delegatedTo -contains 'CONTOSO\john.doe'} | Format-Table CanonicalName, DelegatedTo
+```
+
+### Affichage des types d'objets par OU
+
+Pour chaque OU, afficher la répartition de chaque type d'objets :
+
+```powershell
+$report | ForEach-Object {
+    Write-Host $_.CanonicalName -ForegroundColor "Yellow"
+    $_.MembersRepartition | Format-Table -AutoSize -RepeatHeader
+}
+```
+
+### Afficher toutes les OUs qui contiennent un certain type d'objet
+
+Toutes les OU qui contiennent au moins un objet ordinateur :
+
+```powershell
+$report | Where-Object { $_.MembersRepartition.Name -contains 'computer' } | Format-Table CanonicalName, MembersCount
 ```

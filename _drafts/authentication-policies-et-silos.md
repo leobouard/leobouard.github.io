@@ -13,12 +13,20 @@ Déjà le terme de Authentication Policy et Authentication Policy Silos est un p
 
 Si vous êtes familier du concept de tiering-model, vous comprendrez qu'on a simplement à ajouter nos utilisateurs du T0 dans la policy et nos serveurs T0 dans le silo pour empêcher n'importe quel compte en dehors du T0 de s'y connecter.
 
-L'avantage par rapport au tiering par GPO :
+### Avantages
+
+Les avantages par rapport au tiering par GPO :
 
 - **Le fonctionnement en positif** : contrairement aux GPO qui fonctionnent en négatif (interdiction de l'accès aux utilisateurs des autres tiers), le pare-feu d'authentification autorise explicitement une sélection d'utilisateurs tout en refusant tous les autres, ce qui empêche les comptes non catégorisés dans un tier de pouvoir se connecter aux ressources
 - **Le découpage à l'intérieur d'un tier** : avec les silos, on peut faire des "bulles applicatives" isolées au sein d'un même tier
 - **Plus de contrôle sur l'authentification** : vous pouvez contrôler la durée de vie du ticket Kerberos, l'usage du NTLM au sein d'un silo
-- **L'application d'un tier est quasi instantanée** : pas besoin d'attendre que la GPO s'applique, le blocage est effectif dès que le contrôleur de domaine connait la plus
+- **L'application d'un tier est quasi instantanée** : pas besoin d'attendre que la GPO s'applique, le blocage est effectif dès que le contrôleur de domaine a répliqué le changement sur les AuthNPolicy & AuthNPolicySilo
+
+### Inconvénients
+
+Les inconvénients par rapport au tiering par GPO :
+
+
 
 ## Procédure
 
@@ -39,7 +47,7 @@ Activation par GPO :
 - Pour les clients : Kerberos client support for claims, compound authentication and kerberos armoring
 - Pour les contrôleurs de domaine : KDC Support for claims, compound authentication and kerberos armoring
 
-### Création des groupes de ciblage
+### Création du groupe de ciblage
 
 Création d'un groupe "Allowed to authenticate to T1" pour regrouper tous les comptes qui auront l'autorisation de se connecter sur des serveurs du T1.
 
@@ -54,7 +62,13 @@ $splat = @{
 New-ADGroup @splat
 ```
 
-### Création des règles du pare-feu d'authentification pour le T1
+Ajout de mon compte administrateur T1 dans le nouveau groupe :
+
+```powershell
+Add-ADGroupMember 'Allowed to authenticate to T1' -Members 't1_lbouard'
+```
+
+### Création des règles du pare-feu d'authentification
 
 Création des règles du pare-feu avec le moins de paramètres possibles :
 
@@ -76,9 +90,11 @@ Les paramètres invoqués ont la fonction suivante :
 - `-Enforce` pour indiquer que celle-ci doit être activée
 - `-ComputerAllowedToAuthenticateTo` pour indiquer que seuls les membres du groupe *Allowed to authenticate to T1* sont autorisés à se connecter (via le SDDL)
 
+Le SDDL peut être créé à partir de la commande `Show-ADAuthenticationPolicyExpression`. Plus d'informations sur la commande ici : [Show-ADAuthenticationPolicyExpression (ActiveDirectory) \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/activedirectory/show-adauthenticationpolicyexpression?view=windowsserver2025-ps)
+
 ### Création du silo
 
-Création du silo qui va être soumis au pare-feu d'authentification que l'on a créé précédemment.
+Création du silo qui va être soumis au pare-feu d'authentification que l'on a créé précédemment :
 
 ```powershell
 $authNpolicy = Get-ADAuthenticationPolicy 'T1 Authentication Policy'
