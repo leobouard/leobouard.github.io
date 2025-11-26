@@ -11,9 +11,7 @@ Le code PowerShell et sa documentation associée est disponible sur GitHub Gist 
 
 {% include github-gist.html name="Find-SutomWord" id="ba40d91bff7105b99a8219114ad2fd15" %}
 
-### Explications
-
-#### Récupération du dictionnaire
+### Récupération du dictionnaire
 
 La première étape est de récupérer le dictionnaire utilisé par l'application. Comme celle-ci est en open-source, on peut le récupérer facilement sur son dépôt via un `Invoke-RestMethod` ou `Invoke-WebRequest` :
 
@@ -34,7 +32,7 @@ $wordList = $raw.split()
 
 Une fois la chaine de caractère séparée, on obtient 451 278 mots dans notre variable `$wordList`. Pour améliorer les performances de recherche, on va donc réduire ce nombre au maximum.
 
-#### Réduction du nombre de résultats
+### Réduction du nombre de résultats
 
 Parmi les 500 000 mots, tous ne nous seront pas utiles. On va donc essayer de réduire ce chiffre pour n'avoir que des résultats pertinents. À partir des informations que l'on a déjà, on va pouvoir exclure les mots qui :
 
@@ -49,7 +47,7 @@ $wordList = $wordList | Where-Object { $_ -like 'H*' -and $_.Length -eq 8 }
 
 Ce premier filtre nous permet de descendre de ~500 000 mots à moins de 1000 mots, ce qui va grandement améliorer les performances de nos filtres futurs (car il y aura moins d'objets à parcourir).
 
-#### Création d'une base de donnée temporaire
+### Création d'une base de donnée temporaire
 
 Une fois le nombre de résultats réduit au minimum, on va créer une base de données pour stocker plus d'information que simplement le mot. J'ai choisi de créer un objet pour chaque mot, qui contiendrait les propriétés suivantes :
 
@@ -83,7 +81,7 @@ HABILETÉ | abehilt  |  0,88
 HABILITA | abhilt   |  0,75
 HABILITE | abehilt  |  0,88
 
-#### Utilité des nouvelles propriétés
+### Utilité des nouvelles propriétés
 
 Deux propriétés ont donc été ajoutées à notre dictionnaire réduit : `Letters` et `Score`.
 
@@ -99,7 +97,7 @@ Word     | Letters  | Score
 HOLDINGS | dghilnos |  1,00
 HAÏSSAIS | ahis     |  0,50
 
-#### Utilisation de filtres supplémentaires
+### Utilisation de filtres supplémentaires
 
 Pour le moment, notre code est utile, mais uniquement pour le premier tour, quand on a encore très peu d'informations. L'idée est donc d'ajouter des filtres supplémentaires pour permettre d'affiner encore plus les résultats :
 
@@ -133,7 +131,7 @@ $ExcludedLetters | ForEach-Object {
 > Dans mon code initial, ma propriété `Letters` était une liste et non une chaine de caractères, pour que je puisse utiliser l'opérateur de comparaison `-contains` plutôt que `-like` (que je pensais plus performant).
 > D'après mes tests, c'est au final l'utilisation d'une chaine de caractères et de `-like` qui est l'option la plus rapide.
 
-#### Affichage des résultats
+### Affichage des résultats
 
 Après le passage des filtres ci-dessus, la liste s'est réduite de 880 mots potentiels à seulement 10 mots. Il ne nous reste plus qu'à les afficher, en les triant par ordre décroissant de score :
 
