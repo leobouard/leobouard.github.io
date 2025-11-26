@@ -34,9 +34,9 @@ Une fois la chaine de caractère séparée, on obtient 451 278 mots dans notre v
 
 ### Réduction du nombre de résultats
 
-Parmi les 500 000 mots, tous ne nous seront pas utiles. On va donc essayer de réduire ce chiffre pour n'avoir que des résultats pertinents. À partir des informations que l'on a déjà, on va pouvoir exclure les mots qui :
+Parmi les 500 000 mots, tous ne nous seront pas utiles. On va donc essayer de réduire ce nombre pour n'avoir que des résultats pertinents. À partir des informations que l'on a déjà, on va pouvoir exclure les mots qui :
 
-- Ne commencent pas par la lettre que le mot recherché
+- Ne commencent pas par la même lettre que le mot recherché
 - N'ont pas le même nombre de caractères que le mot recherché
 
 On peut réaliser ce filtre en PowerShell avec la commande suivante (pour un mot qui commence par "H" et qui contient 8 caractères) :
@@ -49,7 +49,7 @@ Ce premier filtre nous permet de descendre de ~500 000 mots à moins de 1000 mot
 
 ### Création d'une base de donnée temporaire
 
-Une fois le nombre de résultats réduit au minimum, on va créer une base de données pour stocker plus d'information que simplement le mot. J'ai choisi de créer un objet pour chaque mot, qui contiendrait les propriétés suivantes :
+Une fois le nombre de résultats réduit au minimum, on va créer une base de données pour stocker plus d'informations que simplement le mot. J'ai choisi de créer un objet pour chaque mot, qui contiendrait les propriétés suivantes :
 
 - `Word` qui contiendrait le mot en majuscule
 - `Letters` qui contiendrait une liste dédupliquée de toutes les lettres du mot, sans accent (sous forme d'une chaine de caractère unique)
@@ -69,7 +69,7 @@ $db = $wordList | ForEach-Object {
 }
 ```
 
-> La réduction du nombre de mots nous permet de créer nos objets PowerShell beaucoup plus rapidement que si l'on avait gardé le dictionnaire au complet.
+> La réduction du nombre de mots nous permet de créer nos objets PowerShell beaucoup plus rapidement que si l'on avait gardé le dictionnaire complet.
 
 On obtient alors le résultat suivant :
 
@@ -128,12 +128,12 @@ $ExcludedLetters | ForEach-Object {
 }
 ```
 
-> Dans mon code initial, ma propriété `Letters` était une liste et non une chaine de caractères, pour que je puisse utiliser l'opérateur de comparaison `-contains` plutôt que `-like` (que je pensais plus performant).
+> Dans mon code initial, ma propriété "Letters" était une liste et non une chaine de caractères, pour que je puisse utiliser l'opérateur de comparaison `-contains`, que je pensais plus rapide que le `-like`.
 > D'après mes tests, c'est au final l'utilisation d'une chaine de caractères et de `-like` qui est l'option la plus rapide.
 
 ### Affichage des résultats
 
-Après le passage des filtres ci-dessus, la liste s'est réduite de 880 mots potentiels à seulement 10 mots. Il ne nous reste plus qu'à les afficher, en les triant par ordre décroissant de score :
+Après le passage des filtres ci-dessus, la liste a été réduite de 880 mots potentiels à seulement 10 mots. Il ne nous reste plus qu'à les afficher, en les triant par ordre décroissant de score :
 
 ```powershell
 $db | Sort-Object Score -D | Select-Object -First 20
