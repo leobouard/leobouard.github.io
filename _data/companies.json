@@ -1,5 +1,17 @@
 [
   {
+    "company": "Groupe IMA",
+    "logo": "/assets/images/groupe-ima.jpg",
+    "description": "Services à la personne, Niort",
+    "url": "https://ima.eu/"
+  },
+  {
+    "company": "CHU de Rennes",
+    "logo": "/assets/images/chu-rennes.png",
+    "description": "Hôpitaux et services de santé, Rennes",
+    "url": "https://www.chu-rennes.fr/"
+  },
+  {
     "company": "Centravet",
     "logo": "/assets/images/centravet.jpg",
     "description": "Services vétérinaires, Dinan",

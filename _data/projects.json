@@ -3,6 +3,22 @@
         "year": "En cours",
         "projects": [
             {
+                "company": "CHU de Rennes",
+                "title": "Audit Active Directory",
+                "period": "décembre 2025",
+                "duration": "5 jours",
+                "description": "Analyse et recommandations pour l'amélioration de la sécurité et de la gestion du domaine Active Directory",
+                "tags": ["activedirectory"]
+            },
+            {
+                "company": "Groupe IMA",
+                "title": "Architecte Active Directory",
+                "period": "depuis novembre 2025",
+                "duration": "2 jours par semaine",
+                "description": "Remédiation et architecture des différents environnements Active Directory",
+                "tags": ["activedirectory"]
+            },
+            {
                 "company": "Oberthur Fiduciaire",
                 "title": "Consultant Active Directory",
                 "period": "de septembre à décembre 2025",
@@ -30,7 +46,7 @@
                 "company": "IMATECH",
                 "title": "Architecte Active Directory",
                 "period": "depuis juin 2025",
-                "duration": "5 jours par mois",
+                "duration": "20 jours",
                 "description": "Sécurisation Active Directory et mise en place du tiering-model",
                 "tags": ["activedirectory", "powershell"]
             },
