@@ -1,133 +1,133 @@
 [
   {
     "company": "Groupe IMA",
-    "logo": "/assets/images/groupe-ima.jpg",
+    "logo": "/assets/cv/companies/groupe-ima.jpg",
     "description": "Services à la personne, Niort",
     "url": "https://ima.eu/"
   },
   {
     "company": "CHU de Rennes",
-    "logo": "/assets/images/chu-rennes.png",
+    "logo": "/assets/cv/companies/chu-rennes.png",
     "description": "Hôpitaux et services de santé, Rennes",
     "url": "https://www.chu-rennes.fr/"
   },
   {
     "company": "Centravet",
-    "logo": "/assets/images/centravet.jpg",
+    "logo": "/assets/cv/companies/centravet.jpg",
     "description": "Services vétérinaires, Dinan",
     "url": "https://www.centravet.fr/"
   },
   {
     "company": "STG",
-    "logo": "/assets/images/stg.jpg",
+    "logo": "/assets/cv/companies/stg.jpg",
     "description": "Transport et logistique, Rennes",
     "url": "https://www.stg-logistique.fr/"
   },
   {
     "company": "Groupe Savencia",
-    "logo": "/assets/images/savencia.jpg",
+    "logo": "/assets/cv/companies/savencia.jpg",
     "description": "Agroalimentaire, Versailles",
-    "url": "https://www.savencia-.com/"
+    "url": "https://www.savencia.com/"
   },
   {
     "company": "Groupe Legendre",
-    "logo": "/assets/images/groupe-legendre.jpg",
+    "logo": "/assets/cv/companies/groupe-legendre.jpg",
     "description": "Construction et immobilier, Rennes",
     "url": "https://www.groupe-legendre.com/"
   },
   {
     "company": "Delta Dore Group",
-    "logo": "/assets/images/delta-dore-group.jpg",
+    "logo": "/assets/cv/companies/delta-dore-group.jpg",
     "description": "Domotique et électronique, Tinténiac",
     "url": "https://www.deltadore.fr/"
   },
   {
     "company": "SDIS 29",
-    "logo": "/assets/images/sdis29.png",
+    "logo": "/assets/cv/companies/sdis29.png",
     "description": "Établissement public, Quimper",
     "url": "http://www.sdis29.fr/"
   },
   {
     "company": "IMATECH",
-    "logo": "/assets/images/imatech.jpg",
+    "logo": "/assets/cv/companies/imatech.jpg",
     "description": "Service d'information, Nantes",
     "url": "https://www.imatechnologies.fr/"
   },
   {
     "company": "Groupe Roullier",
-    "logo": "/assets/images/groupe-roullier.jpg",
+    "logo": "/assets/cv/companies/groupe-roullier.jpg",
     "description": "Industriel, Saint-Malo",
     "url": "https://www.roullier.com/"
   },
   {
     "company": "Avril",
-    "logo": "/assets/images/avril.jpg",
+    "logo": "/assets/cv/companies/avril.jpg",
     "description": "Agroalimentaire, Rennes",
     "url": "https://www.avril.com/"
   },
   {
     "company": "Le Gouessant",
-    "logo": "/assets/images/le-gouessant.jpg",
+    "logo": "/assets/cv/companies/le-gouessant.jpg",
     "description": "Coopérative agricole, Saint-Brieuc",
     "url": "https://www.legouessant.com/"
   },
   {
     "company": "Oberthur Fiduciaire",
-    "logo": "/assets/images/oberthur-fiduciaire.jpg",
+    "logo": "/assets/cv/companies/oberthur-fiduciaire.jpg",
     "description": "Imprimerie, Rennes",
     "url": "https://www.oberthur-fiduciaire.com/"
   },
   {
     "company": "Groupe Le Duff",
-    "logo": "/assets/images/groupe-le-duff.jpg",
+    "logo": "/assets/cv/companies/groupe-le-duff.jpg",
     "description": "Agroalimentaire, Rennes",
     "url": "https://www.groupeleduff.com/"
   },
   {
     "company": "Crédit Mutuel Arkéa",
-    "logo": "/assets/images/credit-mutuel-arkea.jpg",
+    "logo": "/assets/cv/companies/credit-mutuel-arkea.jpg",
     "description": "Banque et assurance, Brest",
     "url": "https://www.cm-arkea.com/"
   },
   {
     "company": "Réseau Aprolliance",
-    "logo": "/assets/images/reseau-aprolliance.jpg",
+    "logo": "/assets/cv/companies/reseau-aprolliance.jpg",
     "description": "Services à la personne, Laval",
     "url": "https://www.aprolliance.fr/"
   },
   {
     "company": "B&B Hotels France",
-    "logo": "/assets/images/hotels-bb.jpg",
+    "logo": "/assets/cv/companies/hotels-bb.jpg",
     "description": "Hôtellerie, Brest",
     "url": "https://bbhotels-group.com/"
   },
   {
     "company": "Groupe Even",
-    "logo": "/assets/images/groupe-even.jpg",
+    "logo": "/assets/cv/companies/groupe-even.jpg",
     "description": "Coopérative agricole, Brest",
     "url": "https://even.fr/"
   },
   {
     "company": "Groupe Beaumanoir",
-    "logo": "/assets/images/groupe-beaumanoir.jpg",
+    "logo": "/assets/cv/companies/groupe-beaumanoir.jpg",
     "description": "Industriel, Saint-Malo",
     "url": "https://www.groupe-beaumanoir.com/"
   },
   {
     "company": "METSYS",
-    "logo": "/assets/images/metsys.jpg",
+    "logo": "/assets/cv/companies/metsys.jpg",
     "description": "Services numérique, Rennes",
     "url": "https://www.metsys.fr/"
   },
   {
     "company": "Labocéa",
-    "logo": "/assets/images/labocea.jpg",
+    "logo": "/assets/cv/companies/labocea.jpg",
     "description": "Laboratoire, Saint-Brieuc",
     "url": "https://www.labocea.fr/"
   },
   {
     "company": "GEVES",
-    "logo": "/assets/images/geves.jpg",
+    "logo": "/assets/cv/companies/geves.jpg",
     "description": "Recherche agronomique, Angers",
     "url": "https://www.geves.fr/"
   }

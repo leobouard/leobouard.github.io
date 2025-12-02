@@ -1,5 +1,5 @@
 {
-    "picture":  "/assets/images/profile-picture.jpg",
+    "picture":  "/assets/cv/companies/profile-picture.jpg",
     "name":  "Léo Bouard",
     "title":  "Ingénieur systèmes",
     "personalInfo":  {
@@ -64,14 +64,14 @@
     "education":  [
         {
             "institution": "IUT de la Roche-sur-Yon",
-            "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
+            "logo":  "/assets/cv/companies/iut-la-roche-sur-yon.jpg",
             "diploma": "Licence professionelle Administration et Sécurité des Systèmes et des Réseaux",
             "startDate": "2017",
             "endDate": "2018"
         },
         {
             "institution": "IUT de la Roche-sur-Yon",
-            "logo":  "/assets/images/iut-la-roche-sur-yon.jpg",
+            "logo":  "/assets/cv/companies/iut-la-roche-sur-yon.jpg",
             "diploma": "DUT Réseaux et Télécommunications",
             "startDate": "2015",
             "endDate": "2017"
@@ -80,7 +80,7 @@
     "companies":  [
         {
             "name":  "METSYS",
-            "logo":  "/assets/images/metsys.jpg",
+            "logo":  "/assets/cv/companies/metsys.jpg",
             "location":  "Rennes, Bretagne",
             "startDate":  "2018",
             "endDate":  "aujourd'hui",
@@ -127,7 +127,7 @@
         },
         {
             "name":  "Groupe Roullier",
-            "logo":  "/assets/images/groupe-roullier.jpg",
+            "logo":  "/assets/cv/companies/groupe-roullier.jpg",
             "location":  "Saint-Malo, Bretagne",
             "startDate":  "2019",
             "endDate":  "2024",
@@ -173,7 +173,7 @@
         },
         {
             "name":  "GEVES",
-            "logo":  "/assets/images/geves.jpg",
+            "logo":  "/assets/cv/companies/geves.jpg",
             "location":  "Angers, Pays de la Loire",
             "startDate":  "2017",
             "endDate":  "2018",
