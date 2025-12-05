@@ -3,14 +3,6 @@
         "year": "En cours",
         "projects": [
             {
-                "company": "CHU de Rennes",
-                "title": "Audit Active Directory",
-                "period": "décembre 2025",
-                "duration": "5 jours",
-                "description": "Analyse et recommandations pour l'amélioration de la sécurité et de la gestion du domaine Active Directory",
-                "tags": ["activedirectory"]
-            },
-            {
                 "company": "Groupe IMA",
                 "title": "Architecte Active Directory",
                 "period": "depuis novembre 2025",
@@ -71,6 +63,14 @@
     {
         "year": 2025,
         "projects":  [
+            {
+                "company": "CHU de Rennes",
+                "title": "Audit Active Directory",
+                "period": "décembre 2025",
+                "duration": "5 jours",
+                "description": "Analyse et recommandations pour l'amélioration de la sécurité et de la gestion du domaine Active Directory",
+                "tags": ["activedirectory"]
+            },
             {
                 "company": "STG",
                 "title": "Architecte Active Directory",
