@@ -1,0 +1,29 @@
+---
+permalink: /certificates
+layout: default
+title: "Certifications"
+description: "Liste des certifications que j'ai obtenues"
+---
+
+<section class="blog-page">
+  <a href="/cv" class="no-decoration button-primary hover-bottom" style="display: inline-block; margin-bottom: 2em;">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    <span>Retour au CV</span>
+  </a>
+
+  <h1>Certifications</h1>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
+    {% for certificate in site.data.certificates %}
+    <div class="certification">
+      <a href="{{ certificate.url }}" target="_blank">
+        <img src="{{ certificate.image }}" alt="certification logo">
+        <h4>{{ certificate.name }}</h4>
+        <span>{{ certificate.organization }}</span>
+        <small>Obtenu en {{ certificate.date }}</small>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+</section>

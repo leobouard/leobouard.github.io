@@ -72,7 +72,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <h3>Certifications</h3>
     <div
       style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
-      {% for certificate in site.data.certificates %}
+      {% for certificate in site.data.certificates | slice: 0, 5 %}
       <div class="certification">
         <a href="{{ certificate.url }}" target="_blank">
           <img src="{{ certificate.image }}" alt="certification logo">
@@ -82,6 +82,7 @@ description: "Toutes mes expériences, mes formations et certifications"
         </a>
       </div>
       {% endfor %}
+      <a href="/certificates" style="text-align: center; margin: auto;">Voir toutes les certifications</a>
     </div>
   </div>
 </div>
@@ -149,7 +150,6 @@ description: "Toutes mes expériences, mes formations et certifications"
 </div>
 
 <h2>Projets open-source</h2>
-<!-- based on https://github.com/ambroiseodt/ambroiseodt.github.io -->
 <p>Voici quelques projets open-source sur lesquels j'ai travaillé. Vous pouvez retrouver l'ensemble de mes contributions sur <a href="https://github.com/leobouard" target="_blank">mon profil GitHub</a>.</p>
 <div class="github-repositories">
   {% if site.data.repositories.github_repos %}
