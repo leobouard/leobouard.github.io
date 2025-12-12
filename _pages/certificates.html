@@ -13,7 +13,7 @@ description: "Liste des certifications que j'ai obtenues"
 
   <h1>Certifications</h1>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(12em, 15em), 1fr)); grid-gap: 0.5em;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(12em, 15em), 1fr)); grid-gap: 1em;">
     {% for certificate in site.data.certificates %}
     <div style="padding: 1em; border: var(--border); border-radius: var(--borderradius); height: 17em;">
       <a href="{{ certificate.url }}" target="_blank" style="text-decoration: none; color: var(--text);">
