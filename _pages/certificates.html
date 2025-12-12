@@ -13,14 +13,14 @@ description: "Liste des certifications que j'ai obtenues"
 
   <h1>Certifications</h1>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(12em, 15em), 1fr)); grid-gap: 0.5em;">
     {% for certificate in site.data.certificates %}
-    <div class="certification">
-      <a href="{{ certificate.url }}" target="_blank">
-        <img src="{{ certificate.image }}" alt="certification logo">
-        <h4>{{ certificate.name }}</h4>
-        <span>Délivré par {{ certificate.organization }}</span>
-        <small>Obtenu en {{ certificate.date }}</small>
+    <div style="padding: 1em; border: 1px solid var(--color-border); border-radius: var(--borderradius); height: 17em;">
+      <a href="{{ certificate.url }}" target="_blank" style="text-decoration: none; color: var(--text);">
+        <img src="{{ certificate.image }}" alt="certification logo" style="height: 7em; margin: 1em auto;">
+        <span style="display: block; font-weight: bold; font-size: small; color: var(--primary);">{{ certificate.organization }}</span>
+        <h4 style="margin: 0;">{{ certificate.name }}</h4>
+        <small style="color: var(--heavyaccent);">Obtenu en {{ certificate.date }}</small>
       </a>
     </div>
     {% endfor %}
