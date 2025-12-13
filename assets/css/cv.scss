@@ -124,11 +124,13 @@ div.personalLinks a i {
     border-radius: var(--borderradius);
     height: 3em;
 }
-.certification:hover {
+.certification:hover,
+.certification-full:hover {
     background: var(--lightaccent);
 }
 
-.certification:hover h4 {
+.certification:hover h4,
+.certification-full:hover h4 {
     text-decoration: underline;
 }
 
@@ -142,7 +144,9 @@ div.personalLinks a i {
 }
 
 .certification a,
-.certification a:hover {
+.certification a:hover,
+.certification-full a,
+.certification-full a:hover {
     text-decoration: none;
     color: var(--text);
 }
@@ -161,6 +165,36 @@ div.personalLinks a i {
     margin: 0;
     font-size: smaller;
 }
+
+// CERTIFICATION FULL CARD
+
+div.certification-full {
+    padding: 1em;
+    border: var(--border);
+    border-radius: var(--borderradius);
+    height: 17em;
+}
+
+div.certification-full img {
+    height: 7em;
+    margin: 1em auto;
+}
+
+div.certification-full span {
+    display: block;
+    font-size: small;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+div.certification-full h4 {
+    margin: 0.5em 0;
+}
+
+div.certification-full small {
+    color: var(--heavyaccent);
+}
+
 
 // PERSONAL INFO
 
