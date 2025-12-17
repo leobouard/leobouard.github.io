@@ -22,7 +22,7 @@ En dehors de ces deux (ou trois) usages, on peut considérer qu'une unité d'org
 
 ## Questions fréquentes
 
-### Est-ce que c'est si grave d'avoir des OU inutiles ?
+### Est-ce que c'est grave d'avoir des OU inutiles ?
 
 En soi, avoir beaucoup d'unités d'organisation et/ou des OU inutiles n'est pas un risque de sécurité ou un danger pour la stabilité de votre Active Directory, cependant cela induit souvent de mauvaises pratiques.
 
