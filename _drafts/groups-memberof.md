@@ -60,7 +60,9 @@ Get-ADPrincipalGroupMembership -Identity jsmith
 
 ### Utilitaire WHOAMI
 
-L'utilitaire WHOAMI avec le paramètre /GROUPS permet de lire le contenu de l'Access Token LSA qui contient toutes les appartenances directes et indirectes de l'utilisateur actuellement connecté à des groupes. Ce n'est donc pas une requête sur Active Directory, mais simplement une lecture des informations de la session locale :
+L'utilitaire WHOAMI avec le paramètre /GROUPS permet de lire le contenu de l'Access Token LSA qui contient toutes les appartenances directes et indirectes de l'utilisateur actuellement connecté à des groupes. Ce n'est donc pas une requête sur Active Directory, mais simplement une lecture des informations de la session locale.
+
+> Je n'ai pas trouvé de source qui explique clairement que WHOAMI exploite l'Access Token LSA, c'est une supposition de ma part.
 
 ```powershell
 $whoami = WHOAMI /GROUPS /FO CSV |
