@@ -107,7 +107,9 @@ $report = Show-ADOrganizationalUnitPurpose
 De la même manière qu'un dossier vide ne sert à rien, une unité d'organisation qui ne contient aucun objet n'a aucune utilité dans votre Active Directory et peut être supprimée :
 
 ```powershell
-$report | Where-Object { $_.membersCount -eq 0 } | Format-Table CanonicalName, MembersCount, LinkedGPOCount
+$report |
+    Where-Object { $_.membersCount -eq 0 } |
+    Format-Table CanonicalName, MembersCount, LinkedGPOCount
 ```
 
 ### OUs sans délégation ou lien GPO
@@ -115,19 +117,26 @@ $report | Where-Object { $_.membersCount -eq 0 } | Format-Table CanonicalName, M
 Voici une vision de toutes les OUs réellement utiles à votre domaine :
 
 ```powershell
-$report | Where-Object { $_.DelegatedTo -or $_.LinkedGPOName } | Format-Table TreeView
+$report |
+    Where-Object { $_.DelegatedTo -or $_.LinkedGPOName } |
+    Format-Table TreeView
 ```
 
 Et voici maintenant les OUs superflues :
 
 ```powershell
-$report | Where-Object { !$_.DelegatedTo -and !$_.LinkedGPOName } | Format-Table CanonicalName, MembersCount, DelegationsCount, LinkedGPOCount
+$report |
+    Where-Object { !$_.DelegatedTo -and !$_.LinkedGPOName } |
+    Format-Table CanonicalName, MembersCount, DelegationsCount, LinkedGPOCount
 ```
 
 On peut même calculer le pourcentage d'OUs superflues :
 
 ```powershell
-$uselessOU = ($report | Where-Object { !$_.DelegatedTo -and !$_.LinkedGPOName } | Measure-Object).Count
+$uselessOU = ($report | Where-Object {
+    !$_.DelegatedTo -and
+    !$_.LinkedGPOName
+} | Measure-Object).Count
 $allOU = ($report | Measure-Object).Count
 $ratio = [math]::Round(($uselessOU / $allOU * 100), 2)
 Write-Host "$ratio% of your organizational unit are useless"
@@ -146,7 +155,9 @@ $report.DelegatedTo | Sort-Object -Unique
 Filtre inverse maintenant, on affiche toutes les OUs sur lesquelles le compte `CONTOSO\john.doe` a des permissions :
 
 ```powershell
-$report | Where-Object {$_.delegatedTo -contains 'CONTOSO\john.doe'} | Format-Table CanonicalName, DelegatedTo
+$report |
+    Where-Object {$_.delegatedTo -contains 'CONTOSO\john.doe'} |
+    Format-Table CanonicalName, DelegatedTo
 ```
 
 ### OUs avec une délégation orpheline
@@ -154,7 +165,9 @@ $report | Where-Object {$_.delegatedTo -contains 'CONTOSO\john.doe'} | Format-Ta
 Pour dresser la liste de toutes les unités d'organisation avec une délégation qui pointent vers un SID orphelin :
 
 ```powershell
-$report | Where-Object { $_.delegatedTo -like '*S-1-5-21-*' } | Format-Table CanonicalName, DelegatedTo
+$report |
+    Where-Object { $_.delegatedTo -like '*S-1-5-21-*' } |
+    Format-Table CanonicalName, DelegatedTo
 ```
 
 ### Affichage des types d'objets par OUs
@@ -173,5 +186,7 @@ $report | ForEach-Object {
 Toutes les OU qui contiennent au moins un objet ordinateur :
 
 ```powershell
-$report | Where-Object { $_.MembersRepartition.Name -contains 'computer' } | Format-Table CanonicalName, MembersCount
+$report |
+    Where-Object { $_.MembersRepartition.Name -contains 'computer' } |
+    Format-Table CanonicalName, MembersCount
 ```
