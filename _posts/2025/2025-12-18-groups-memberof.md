@@ -1,7 +1,7 @@
 ---
 title: "Récupérer tous les appartenances de groupe d'un objet"
 description: "Comment lister tous les groupes auquels appartient un utilisateur ?"
-tags: ["powershell", "windows"]
+tags: ["activedirectory", "powershell", "windows"]
 listed: true
 ---
 
@@ -100,5 +100,5 @@ Méthode | Compatibilité | Groupes directs | Groupes indirects | Groupe primair
 ------- | ------------- | --------------- | ----------------- | ---------------
 Attribut MemberOf | Utilisateurs, groupes et ordinateurs | ✅ Oui | ❌ Non | ❌ Non
 Commande Get-ADPrincipalGroupMembership | Utilisateurs, groupes et ordinateurs | ✅ Oui | ❌ Non | ✅ Oui
-Utilitaire WHOAMI | Utilisateur connecté uniquement | ✅ Oui | ✅ Oui | ❌ Non 
+Utilitaire WHOAMI | Utilisateur connecté uniquement | ✅ Oui | ✅ Oui | ❌ Non
 Attribut TokenGroups | Utilisateurs, groupes et ordinateurs | ✅ Oui | ✅ Oui | ✅ Oui
