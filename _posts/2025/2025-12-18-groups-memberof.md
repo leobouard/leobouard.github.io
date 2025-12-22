@@ -1,7 +1,7 @@
 ---
 title: "Récupérer toutes les appartenances de groupe d'un objet"
 description: "Comment lister tous les groupes auquels appartient un utilisateur ?"
-tags: ["activedirectory", "powershell", "windows"]
+tags: ["activedirectory", "powershell"]
 listed: true
 ---
 
