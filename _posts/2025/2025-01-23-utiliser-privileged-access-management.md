@@ -96,27 +96,6 @@ Get-ADGroup -Filter * -Properties Members -ShowMemberTimeToLive |
 
 ### Fonction personnalisée
 
-```powershell
-function Get-ADGroupMemberWithTTL {
-    param([string]$Identity)
+Pour visualiser simplement la durée de vie des membres d'un groupe, vous pouvez utiliser cette fonction personnalisé :
 
-    (Get-ADGroup -Identity $Identity -Properties Members -ShowMemberTimeToLive).Members | ForEach-Object {
-        if ($_ -match "<TTL=(\d+)>") { 
-            $sec  = $matches[1]
-            $ttl  = New-TimeSpan -Seconds $sec
-            $date = (Get-Date).AddSeconds($sec)
-            $dn   = ($_ -split ',' | Select-Object -Skip 1) -join ','
-        }
-        else {
-            $ttl  = $null
-            $date = $null
-            $dn   = $_
-        }
-
-        $object = Get-ADObject -Identity $dn
-        $object | Add-Member -MemberType NoteProperty -Name 'TimeToLive' -Value $ttl -Force
-        $object | Add-Member -MemberType NoteProperty -Name 'RemoveDate' -Value $date -Force
-        $object
-    }
-}
-```
+{% include github-gist.html name="Get-ADGroupMemberWithTTL" id="d0c9c07fe6fc2e46669580ac67aa1641" %}
