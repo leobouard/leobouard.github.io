@@ -11,7 +11,9 @@ PAM (Privileged Access Management) est une fonctionnalité apportée avec Active
 
 La durée de vie d'un membre dans un groupe est appelée "TTL" pour Time To Live.
 
-Il n'y a actuellement pas de méthode pour définir un membre temporaire dans un groupe avec l'interface graphique, il faut obligatoirement utiliser PowerShell.
+Il n'y a actuellement pas de méthode pour définir un membre temporaire dans un groupe avec l'interface graphique, il faut obligatoirement utiliser PowerShell ou des scripts personnalisés comme celui-ci :
+
+{% include github-repository.html repository="leobouard/TemporaryGroupMembership" %}
 
 ## Activation de la nouvelle fonctionnalité
 
@@ -96,6 +98,6 @@ Get-ADGroup -Filter * -Properties Members -ShowMemberTimeToLive |
 
 ### Fonction personnalisée
 
-Pour visualiser simplement la durée de vie des membres d'un groupe, vous pouvez utiliser cette fonction personnalisé :
+Pour visualiser simplement la durée de vie des membres d'un groupe, vous pouvez utiliser cette fonction personnalisée :
 
 {% include github-gist.html name="Get-ADGroupMemberWithTTL" id="d0c9c07fe6fc2e46669580ac67aa1641" %}
