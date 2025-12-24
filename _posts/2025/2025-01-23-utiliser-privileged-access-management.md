@@ -13,6 +13,19 @@ La durée de vie d'un membre dans un groupe est appelée "TTL" pour Time To Live
 
 Il n'y a actuellement pas de méthode pour définir un membre temporaire dans un groupe avec l'interface graphique, il faut obligatoirement utiliser PowerShell.
 
+## Activation de la nouvelle fonctionnalité
+
+Pour activer la fonctionnalité de l'ajout temporaire d'un membre dans un groupe sur votre forêt (si celle-ci est au moins au niveau fonctionnel Windows Server 2016) :
+
+```powershell
+$splat = @{
+    Identity = 'Privileged Access Management Feature'
+    Scope = 'ForestOrConfigurationSet'
+    Target = (Get-ADDomain).DnsRoot
+}
+Enable-ADOptionalFeature @splat
+```
+
 ## Utilisation de PowerShell
 
 Pour pouvoir utiliser le nouveau paramètre `-MemberTimeToLive` de la commande `Add-ADGroupMember`, il faut impérativement avoir un Windows Server 2016 au minimum (module Active Directory en version 1.0.1.0).
