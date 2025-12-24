@@ -4,6 +4,18 @@ Sources :
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/kerberos-authentication-problems-if-user-belongs-to-groups
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/logging-on-user-account-fails
 
+
+## Notes pour rédaction
+
+- Concept du Kerberos Ticket Bloat
+- Différents seuils (LSA, taille par défaut, taille maximum du ticket)
+- Mesure du nombre de groupe
+- Visualisation de la taille du ticket avec https://gist.github.com/jaredcatkinson/c95fd1e4e76a4b9b966861f64782f5a9
+- Blocage via LSA et méthode de contournement
+- Blocage via taille par défaut et méthode de contournement
+- Blocage via taille maximum et contournement
+
+
 ## Principe
 
 ### Contenu d'un ticket Kerberos
@@ -25,7 +37,7 @@ Tout cela à un poids (en octet), plus ou moins important en fonction du nombre 
 1200 + 40d + 8s
 ```
 
-- **1200** : correspond à l'entête imcompressible du ticket, ce nombre peut varier
+- **1200** : correspond à l'entête incompressible du ticket, ce nombre peut varier en fonction du nom DNS de votre domaine par exemple
 - **d** : la somme des SIDHistory de l'utilisateur et l'appartenance à des groupes d'un autre domaine
 - **s** : la somme des appartenances à des groupes du domaine
 
@@ -46,7 +58,7 @@ Pour la variable **s** en revanche, le compte est membre des groupes suivants :
 - Users (via imbrication)
 - Administrators (via imbrication)
 
-On obtient alors 8 groupes du domaine. On trouve alors la taille théorique du ticket : 1 264 octets.
+On obtient alors 8 groupes du domaine. On trouve alors la taille théorique du ticket : 1 264 octets, bien loin des 48 000 octets
 
 ```powershell
 $d = 0
@@ -64,7 +76,7 @@ $s = 8
 
 > 1200 + (40 x appartenance à des groupes d'autres domaines + SIDHistory) + (8 x appartenance à un groupe du domaine)
 
-L'idée du **Kerberos Token Bloat**, c'est d'alourdir le ticket Kerberos en ajoutant un maximum de groupes un ou plusieurs utilisateurs pour que le poids du ticket dépasse la limite maximum autorisé par Windows.
+L'idée du **Kerberos Ticket Bloat**, c'est d'alourdir le ticket Kerberos en ajoutant un maximum de groupes un ou plusieurs utilisateurs pour que le poids du ticket dépasse la limite maximum autorisé par Windows.
 
 
 
@@ -104,7 +116,7 @@ C’est la somme totale des appartenances, directes et indirectes, qui compte.
 
 ## Méthode pour tout casser
 
-L'objectif est très simple : on va créer au moins 1010 groupes dédiés 
+L'objectif est très simple : on va créer au moins 1010 groupes dédiés
 
 Créer 1010 groupes locaux, ajouter ces groupes en tant que membre de Domain Users :
 
@@ -120,17 +132,21 @@ Créer 1010 groupes locaux, ajouter ces groupes en tant que membre de Domain Use
     }
     $desc = 'Kerberos Denial of Service'
     New-ADGroup -GroupCategory Security -GroupScope DomainLocal -Name $name -Description $desc
-    Add-ADGroupMember $name -Members 'Domain Users'
+    Add-ADGroupMember $name -Members 'KCLAD_Kerberos-ticket-bloat'
 }
 ```
 
 On vérifie le nombre de groupes auquel appartient 'Domain Users' avec la commande suivante :
 
 ```powershell
-(Get-ADGroup 'Domain Users' -Properties MemberOf).MemberOf | Measure-Object
+(Get-ADGroup 'KCLAD_Kerberos-ticket-bloat' -Properties MemberOf).MemberOf | Measure-Object
 ```
 
 ## Méthodes de contournement
+
+
+
+
 
 ### Augmentation du MaxTokenSize
 
@@ -162,4 +178,5 @@ New-ItemProperty @splat
 ```
 
 > **Attention :** Même en augmentant cette valeur, il existe toujours une limite physique (taille du ticket, MTU réseau, etc.). Il est préférable de revoir la gestion des groupes si vous approchez cette limite, plutôt que de l’augmenter indéfiniment.
+
 
