@@ -13,26 +13,10 @@
             {
                 "company": "Oberthur Fiduciaire",
                 "title": "Consultant Active Directory",
-                "period": "de septembre à décembre 2025",
+                "period": "depuis septembre 2025",
                 "duration": "10 jours",
                 "description": "Accompagnement des équipes internes pour la sécurisation de l'infrastructure Active Directory",
                 "tags": ["activedirectory"]
-            },
-            {
-                "company": "Groupe Savencia",
-                "title": "Scripting PowerShell sur SharePoint",
-                "period": "de septembre à novembre 2025",
-                "duration": "12 jours",
-                "description": "Evolution et maintenance de scripts PowerShell pour la gestion des sites SharePoint",
-                "tags": ["sharepoint", "powershell"]
-            },
-            {
-                "company": "Crédit Mutuel Arkéa",
-                "title": "Consultant Active Directory",
-                "period": "de septembre à novembre 2025",
-                "duration": "au forfait",
-                "description": "Animation d'ateliers pour participer à la définition de la future architecture Active Directory",
-                "tags": ["activedirectory", "formation"]
             },
             {
                 "company": "IMATECH",
@@ -49,14 +33,6 @@
                 "duration": "5 jours par mois",
                 "description": "Référent technique sur les projets Active Directory et l'automatisation avec PowerShell",
                 "tags": ["activedirectory", "powershell"]
-            },
-            {
-                "company": "METSYS",
-                "title": "Administrateur Moodle",
-                "period": "depuis juin 2025",
-                "duration": "selon le besoin",
-                "description": "Gestion technique de la plateforme de formation interne à METSYS",
-                "tags": ["formation"]
             }
         ]
     },
@@ -70,6 +46,22 @@
                 "duration": "5 jours",
                 "description": "Analyse et recommandations pour l'amélioration de la sécurité et de la gestion du domaine Active Directory",
                 "tags": ["activedirectory"]
+            },
+            {
+                "company": "Crédit Mutuel Arkéa",
+                "title": "Consultant Active Directory",
+                "period": "de septembre 2025 à janvier 2026",
+                "duration": "au forfait",
+                "description": "Animation d'ateliers pour participer à la définition de la future architecture Active Directory",
+                "tags": ["activedirectory", "formation"]
+            },
+            {
+                "company": "Groupe Savencia",
+                "title": "Scripting PowerShell sur SharePoint",
+                "period": "de septembre à décembre 2025",
+                "duration": "12 jours",
+                "description": "Evolution et maintenance de scripts PowerShell pour la gestion des sites SharePoint",
+                "tags": ["sharepoint", "powershell"]
             },
             {
                 "company": "STG",
