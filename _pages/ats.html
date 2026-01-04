@@ -1,0 +1,70 @@
+---
+permalink: /ats
+title: "Léo Bouard - ATS CV"
+---
+
+<h1>{{ site.data.cv.name }}</h1>
+
+<h2>Informations générales</h2>
+
+<h3>Résumé</h3>
+
+<p>{{ site.data.cv.summary }}</p>
+
+<h3>Coordonnées</h3>
+
+<div>
+    <span>Lieu : {{ site.data.cv.personalInfo.address }}</span>
+    <span>Téléphone : {{ site.data.cv.personalInfo.phone }}</span>
+    <span>Adresse email : {{ site.data.cv.personalInfo.email }}</span>
+    <span>Site web : {{ site.data.cv.personalInfo.website }}</span>
+    <span>Langues : Français et anglais</span>
+</div>
+
+<h4>Liens</h4>
+
+<div>
+    {% for link in site.data.cv.links %}
+    <a href="{{ link.url }}" target="_blank">{{ link.url }}</a>
+    {% endfor %}
+</div>
+
+<h3>Compétences techniques</h3>
+
+<div>
+    {% for skill in site.data.cv.skills %}
+    <span>{{ skill.name }}</span>
+    {% endfor %}
+</div>
+
+<h3>Certifications</h3>
+
+<div>
+    {% for certificate in site.data.certificates %}
+    <span>{{ certificate.name }}, délivrée par {{ certificate.organization }}</span>
+    {% endfor %}
+</div>
+
+<h2>Expériences professionnelles</h2>
+
+<div>
+    
+</div>
+
+<h2>Projets</h2>
+
+<div>
+
+</div>
+
+<h2>Formation</h2>
+
+<div>
+
+</div>
+
+<h2>Publications</h2>
+
+<div>
+
+</div>
