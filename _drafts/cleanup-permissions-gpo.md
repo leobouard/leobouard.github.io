@@ -79,9 +79,12 @@ $files | ForEach-Object {
 # Show report
 $files | Where-Object {$_.Access} |
     Select-Object Name, CreationTime, LastWriteTime,
+        @{Name = 'GPOName' ; Expression = { (Get-GPO -Id $_.Name).DisplayName } },
         @{Name = 'IdentityReference' ; Expression = { $_.Access.IdentityReference } },
-        @{Name = 'FileSystemRights' ; Expression = { $_.Access.FileSystemRights }},
+        @{Name = 'FileSystemRights' ; Expression = { $_.Access.FileSystemRights } },
         FullName
+
+
 ```
 
 Analyse des GPC sur les permissions :
