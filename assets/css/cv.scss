@@ -330,7 +330,8 @@ div.project img {
     top: 1em;
     right: 1em;
     border-radius: var(--borderradius);
-    display: none;
+    border: 1px solid var(--mediumaccent);
+    box-shadow: 4px 4px var(--mediumaccent);
 }
 
 div.project i {
