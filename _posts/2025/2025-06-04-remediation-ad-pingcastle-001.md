@@ -284,7 +284,7 @@ Voici la documentation de Microsoft sur le sujet : [Supprimer le chiffrement DES
 
 ### S-OldNtlm
 
-Le meilleur article sur le sujet du NTLM (v1 et v2) est disponible ici : [NTLM authentication: What it is and why it’s risky](https://blog.quest.com/ntlm-authentication-what-it-is-and-why-you-should-avoid-using-it/)
+Microsoft a récemment publié un article sur le sujet : [Active Directory Hardening Series - Part 8 – Disabling NTLM \| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/CoreInfrastructureandSecurityBlog/active-directory-hardening-series---part-8-%E2%80%93-disabling-ntlm/4485782)
 
 {% include risk-score.html impact=3 probability=4 comment="Sans mener d'audit sur les ressources qui utilisent encore NTLM v1, vous êtes quasiment sûr de casser au moins une authentification dans votre domaine. Plus votre parc informatique est récent, plus la probabilité que le risque se produise diminue." %}
 
