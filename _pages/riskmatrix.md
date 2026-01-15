@@ -85,12 +85,3 @@ Faible | de 3 à 4
 Moyen | de 5 à 9
 Élevé | de 10 à 14
 Très élevé | plus de 15
-
-## Test de checkbox
-
-Voici une question très générique :
-
-- [ ] Une première réponse
-- [ ] Une deuxième réponse
-- [x] La bonne réponse
-- [ ] La réponse D
