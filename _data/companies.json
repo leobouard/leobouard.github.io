@@ -1,5 +1,11 @@
 [
   {
+    "company": "Vivalto Santé",
+    "logo": "/assets/cv/companies/vivalto-sante.jpg",
+    "description": "Hôpitaux et services de santé, Rennes",
+    "url": "https://www.vivalto-sante.com/"
+  },
+  {
     "company": "Groupe IMA",
     "logo": "/assets/cv/companies/groupe-ima.jpg",
     "description": "Services à la personne, Niort",
