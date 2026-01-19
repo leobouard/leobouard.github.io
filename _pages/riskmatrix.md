@@ -94,8 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const checkbox = item.querySelector('input[type="checkbox"]');
       if (checkbox.checked) {
         item.classList.add("good-answer");
+        item.innerHTML += '<i class="fa-solid fa-circle-check"></i>';
       } else {
         item.classList.add("bad-answer");
+        item.innerHTLM += '<i class="fa-solid fa-circle-xmark"></i>';
       }
     });
   });

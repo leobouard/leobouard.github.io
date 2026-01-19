@@ -8,10 +8,16 @@ li.task-list-item {
     border: 1px solid var(--mediumaccent);
     margin: 0.5em 0;
     border-radius: var(--borderradius);
+    position: relative;
 }
 
 li.task-list-item:hover {
     background: var(--lightaccent);
+}
+
+li.task-list-item i {
+    position: absolute;
+    right: 1em;
 }
 
 input.task-list-item-checkbox {
@@ -23,7 +29,15 @@ li.good-answer {
     background: #00ff0010;
 }
 
+li.good-answer i {
+    color: green;
+}
+
 li.bad-answer {
     border-color: darkred;
     background: #ff000010;
+}
+
+li.bad-answer i {
+    color: red;
 }
