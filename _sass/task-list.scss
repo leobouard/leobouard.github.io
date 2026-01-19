@@ -32,6 +32,10 @@ li.good-answer {
     background: #00ff0010;
 }
 
+li.good-answer:hover {
+    background: #00ff0020;
+}
+
 li.good-answer i {
     color: green;
 }
@@ -39,6 +43,10 @@ li.good-answer i {
 li.bad-answer {
     border-color: darkred;
     background: #ff000010;
+}
+
+li.bad-answer:hover {
+    background: #ff000020;
 }
 
 li.bad-answer i {
