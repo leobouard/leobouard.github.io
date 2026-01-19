@@ -10,6 +10,10 @@ li.task-list-item {
     border-radius: var(--borderradius);
 }
 
+li.task-list-item:hover {
+    background: var(--lightaccent);
+}
+
 input.task-list-item-checkbox {
     display: none;
 }
