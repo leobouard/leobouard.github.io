@@ -85,3 +85,12 @@ Faible | de 3 à 4
 Moyen | de 5 à 9
 Élevé | de 10 à 14
 Très élevé | plus de 15
+
+### Test de question
+
+Question n°1
+
+- [ ] Réponse A
+- [ ] Réponse B
+- [x] La bonne réponse
+- [ ] Réponse D
