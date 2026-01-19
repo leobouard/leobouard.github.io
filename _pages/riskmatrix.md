@@ -85,30 +85,3 @@ Faible | de 3 à 4
 Moyen | de 5 à 9
 Élevé | de 10 à 14
 Très élevé | plus de 15
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll("li.task-list-item");
-  items.forEach(item => {
-    item.addEventListener("click", () => {
-      const checkbox = item.querySelector('input[type="checkbox"]');
-      if (checkbox.checked) {
-        item.classList.add("good-answer");
-        item.innerHTML += '<i class="fa-solid fa-circle-check"></i>';
-      } else {
-        item.classList.add("bad-answer");
-        item.innerHTML += '<i class="fa-solid fa-circle-xmark"></i>';
-      }
-    });
-  });
-});
-</script>
-
-### Test de question
-
-Question n°1
-
-- [ ] Réponse A
-- [ ] Réponse B
-- [x] La bonne réponse
-- [ ] Réponse D
