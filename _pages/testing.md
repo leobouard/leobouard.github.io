@@ -40,6 +40,12 @@ Exemple de question en utilisant l'include "quick-test.html" :
 
 - [ ] Réponse A
 - [ ] Réponse B
-- [ ] La bonne réponse
+- [x] La bonne réponse
 - [ ] Réponse D
 
+Plusieurs bonnes réponses maintenant :
+
+- [x] Première bonne réponse
+- [ ] Réponse B
+- [x] L'autre bonne réponse
+- [ ] Réponse D
