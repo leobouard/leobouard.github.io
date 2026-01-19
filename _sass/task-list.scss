@@ -17,3 +17,13 @@ li.task-list-item:hover {
 input.task-list-item-checkbox {
     display: none;
 }
+
+li.good-answer {
+    border-color: darkgreen;
+    background: #00ff0010;
+}
+
+li.bad-answer {
+    border-color: darkred;
+    background: #ff000010;
+}
