@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.innerHTML += '<i class="fa-solid fa-circle-check"></i>';
       } else {
         item.classList.add("bad-answer");
-        item.innerHTLM += '<i class="fa-solid fa-circle-xmark"></i>';
+        item.innerHTML += '<i class="fa-solid fa-circle-xmark"></i>';
       }
     });
   });

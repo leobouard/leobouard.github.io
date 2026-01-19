@@ -18,6 +18,9 @@ li.task-list-item:hover {
 li.task-list-item i {
     position: absolute;
     right: 1em;
+    font-size: large;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 input.task-list-item-checkbox {
