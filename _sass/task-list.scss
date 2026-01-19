@@ -1,0 +1,15 @@
+ul.task-list {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+li.task-list-item {
+    padding: 0.5em 1em;
+    border: 1px solid var(--mediumaccent);
+    margin: 0.5em 0;
+    border-radius: var(--borderradius);
+}
+
+input.task-list-item-checkbox {
+    display: none;
+}
