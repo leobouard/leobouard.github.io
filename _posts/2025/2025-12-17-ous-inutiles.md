@@ -84,7 +84,7 @@ On gagne alors en flexibilité et on évite de déplacer un objet, créer une un
 
 ### Je vais perdre de l'information en supprimant mes OUs
 
-Normalement aucune information n'est perdue : elle sera simplement déplacée dans des attributs au niveau de l'objet. Dans ce cas, du service peut être peuplé dans l'attribut "department" des comptes utilisateurs.
+Normalement aucune information n'est perdue : elle sera simplement déplacée dans des attributs au niveau de l'objet. Dans le cas du service, l'information peut être ajoutée dans l'attribut "department" des comptes utilisateurs.
 
 Si jamais aucun attribut ne correspond à l'usage de vos anciennes OU, la description est souvent le champ idéal. Comme elle est affichée par défaut dans la console, un tri par ordre alphabétique permet de regrouper les objets avec une même description.
 
