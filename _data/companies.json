@@ -1,5 +1,11 @@
 [
   {
+    "company": "Département des Landes",
+    "logo": "/assets/cv/companies/cd40.jpg",
+    "description": "Administration publique, Mont-de-Marsan",
+    "url": "https://www.landes.fr/"
+  },
+  {
     "company": "Vivalto Santé",
     "logo": "/assets/cv/companies/vivalto-sante.jpg",
     "description": "Hôpitaux et services de santé, Rennes",

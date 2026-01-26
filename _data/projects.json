@@ -40,11 +40,19 @@
         "year": 2026,
         "projects": [
             {
+                "company": "Département des Landes",
+                "title": "Consultant Active Directory",
+                "period": "janvier 2026",
+                "duration": "1 jour",
+                "description": "Analyse et diagnostic des problèmes de réplications inter et intra-sites sur le domaine Active Directory",
+                "tags": ["activedirectory"]
+            },
+            {
                 "company": "Vivalto Santé",
-                "title": "Audit Microsoft 365",
+                "title": "Analyse HDS Microsoft 365",
                 "period": "janvier 2026",
                 "duration": "au forfait",
-                "description": "Audit de la configuration Microsoft 365 et Microsoft Entra ID pour satisfaire au mieux les exigences liées au secteur de la santé (norme HDS)",
+                "description": "Analyse de la configuration Microsoft 365 et Microsoft Entra ID pour satisfaire au mieux les exigences liées au secteur de la santé (norme HDS)",
                 "tags": ["microsoft365", "entraid"]
             }
         ]
