@@ -36,7 +36,7 @@ Contrairement aux objets cités plus haut, il y a quelques spécificités pour l
 
 ### Audit des propriétaires
 
-La première étape, c'est d'afficher rapidement les différents propriétaires d'objets et le nombre de comptes concernés :
+La première étape, c'est d'afficher les différents propriétaires d'objets et le nombre de comptes concernés :
 
 ```powershell
 $computers = Get-ADComputer -Filter * -Properties NTSecurityDescriptor, CanonicalName, Created
