@@ -19,22 +19,17 @@ Comme on va vouloir contrôler les hashs de mot de passe enregistrés dans la ba
 
 ### Utilité de LM Hash
 
-Le LM Hash dans Active Directory est présent pour des raisons de compatibilités avec les versions de Windows antérieures à Windows 2000. 
+Le LM Hash dans Active Directory est présent pour des raisons de compatibilités avec les versions de Windows antérieures à Windows 2000. C'est une méthode de chiffrement de mot de passe complètement dépassée, autorisée sur les vieux environnements Active Directory pour permettre la cohabitation avec les systèmes obsolètes à l'époque de Windows XP. Le LM Hash comporte plusieurs gros défauts, lié à son âge puisqu'il a été développé dans les années 1980 :
 
-### Théorique
+- Il ne gère pas la casse, donc le mot de passe "bonjour" et "BONJOUR" donneront le même LM Hash
+- On peut deviner la longueur d'un mot de passe en regardant simplement le hash (impossible en NTLM)
+- Il ne permet pas de chiffrer des mots de passe de plus de 14 caractères de long
 
-Voici ce que nous dit [Wikipédia](https://fr.wikipedia.org/wiki/LM_hash) au sujet du fonctionnement de LM Hash :
-
-- Le mot de passe est séparé en deux éléments de 7 caractères
-- Si le mot de passe a une longueur inférieure à 14 caractères, il est complété par des caractères nuls
-- Le hash de chaque morceau est calculé séparément
-- Les deux hashs concaténés forment le LM Hash
-
-Par ailleurs, le format LM ne gère pas la casse.
+Dans la grande majorité des environnements Active Directory, l'utilisation de LM Hash n'est très probablement plus utile depuis longtemps.
 
 ### En pratique
 
-On peut facilement convertir une chaine de caractère en LM Hash avec la commande `ConvertTo-LMHash` du module DSInternals. On peut créer un LM Hash de la manière suivante :
+On peut facilement convertir une chaîne de caractère en LM Hash avec la commande `ConvertTo-LMHash` du module DSInternals. On peut créer un LM Hash de la manière suivante :
 
 ```powershell
 'bonjour' | ConvertTo-SecureString -AsPlainText | ConvertTo-LMHash
@@ -42,7 +37,7 @@ On peut facilement convertir une chaine de caractère en LM Hash avec la command
 
 #### Sensibilité à la casse
 
-En testant un peu, on peut vérifier que celui-ci n'est en effet pas sensible à la casse. Toutes les verionss avec ou sans majuscule d'une même chaine de caractère donneront toujours le même hash :
+En testant un peu, on peut vérifier que celui-ci n'est en effet pas sensible à la casse. Toutes les versions avec ou sans majuscule d'une même chaîne de caractère donneront toujours le même hash :
 
 Mot de passe | LM Hash
 ------------ | -------
@@ -60,7 +55,7 @@ bonjour | 43d119e8b3d8710b**aad3b435b51404ee**
 testing | 2d5545077d7b7d2**aaad3b435b51404ee**
 sept | c06bd14e029e9e47**aad3b435b51404ee**
 
-Si on essaye de convertir une chaine de plus de 14 caractères, on tombe sur l'erreur **The password must be 0-14 characters long.**
+Si on essaye de convertir une chaîne de plus de 14 caractères, on tombe sur l'erreur **The password must be 0-14 characters long.**
 
 #### Caractères interdits
 
@@ -97,7 +92,7 @@ Get-ADReplAccount -SamAccountName lmhash -Server (Get-ADDomainController)
 
 ### Après changement de mot de passe
 
-Comme on le sait, le LM Hash ne permet pas de chiffrer des chaines de plus de 14 caractères. Donc si on change le mot de passe de notre compte de test pour `Password123456!` (15 caractères), le LM Hash disaparait du résultat de la commande `Get-ADReplAccount` :
+Comme on le sait, le LM Hash ne permet pas de chiffrer des chaines de plus de 14 caractères. Donc si on change le mot de passe de notre compte de test pour `Password123456!` (15 caractères), le LM Hash disparaît du résultat de la commande `Get-ADReplAccount` :
 
 ```plaintext
 Secrets
@@ -105,12 +100,21 @@ Secrets
   LMHash:
 ```
 
-### Conflit avec une DDPP
+### Default Domain Password policy incompatible avec LM Hash
 
-Depuis Windows Server 2022, nous avons une option pour augmenter la longueur minimum des mots de passe à plus de 14 caractères sur la Default Domain Password Policy. Comme LM Hash ne gère pas ce genre de mot de passe, quel est le comportement du contrôleur de domaine ?
+Depuis Windows Server 2022, il y a une option pour augmenter la longueur minimum des mots de passe à plus de 14 caractères sur la Default Domain Password Policy. Comme LM Hash ne gère pas ce genre de mot de passe, quel est le comportement du contrôleur de domaine ?
 
-- Vérification de la clé de registre NoLMHash
-- Vérification avec une PSO qui permet d'avoir un mot de passe de moins de 14 caractères
+Pour répondre à la question que personne ne se pose, j'ai monté un lab spécialement pour cela ! Voici les différentes étapes :
+
+1. Augmentation du nombre de caractères minimum à 15 caractères sur la Default Domain Password Policy
+2. Activation du support de LM Hash
+3. Redémarrage du contrôleur de domaine
+4. Création d'un Password Settings Object pour permettre l'utilisation de mots de passe à moins de 14 caractères, ciblé sur le compte "lmhash"
+5. Définition du mot de passe "password" sur le compte "lmhash"
+
+Tout ça pour au final constater que oui, le LM Hash reste présent avec cette configuration.
+
+Plus d'informations sur l'augmentation de la longueur minimum de la Default Domain Password Policy : [Audit et application de la longueur minimale du mot de passe sur certaines versions de Windows - Support Microsoft](https://support.microsoft.com/fr-fr/topic/audit-et-application-de-la-longueur-minimale-du-mot-de-passe-sur-certaines-versions-de-windows-5ef7fecf-3325-f56b-cc10-4fd565aacc59)
 
 ### Cohabitation avec un Windows Server 2025
 
