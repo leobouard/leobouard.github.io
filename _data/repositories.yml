@@ -1,7 +1,7 @@
 github_repos:
   - leobouard/PasswordReset
-  - leobouard/PasswordReminderByEmail
-  - leobouard/TemporaryGroupMembership
   - leobouard/PingCastleDashboard
+  - leobouard/TemporaryGroupMembership
+  - leobouard/PasswordReminderByEmail
   - leobouard/PowerShellToolbox
   - leobouard/leobouard.github.io
