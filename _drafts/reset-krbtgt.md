@@ -1,3 +1,9 @@
+
+
+
+[🔐 Changer le mot de passe du compte KRBTGT](https://unmotdepassepourri.substack.com/p/changer-le-mot-de-passe-du-compte)
+
+```powershell
 # Rewrite from https://github.com/zjorz/Public-AD-Scripts/blob/master/Reset-KrbTgt-Password-For-RWDCs-And-RODCs.ps1 because +8000 lines is just too much
 
 # Requires -Version 5.1
@@ -104,3 +110,4 @@ $krbtgtToReset | ForEach-Object {
         Sync-ADObject -Identity $dn -Source $domain.PDCEmulator -Destination $_.HostName
     }   
 }
+```
