@@ -72,7 +72,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <h3>Certifications</h3>
     <div
       style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr)); grid-gap: 0.5em;">
-      {% assign certificates = site.data.certificates | where: "priority" | sort: "priority" %}
+      {% assign certificates = site.data.certificates | where_exp: "item", "item.priority" | sort: "priority" %}
       {% for certificate in certificates %}
       <div class="certification">
         <a href="{{ certificate.url }}" target="_blank">
