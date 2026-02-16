@@ -27,6 +27,7 @@ Il y a plusieurs manières d'être membre d'un groupe Active Directory :
 2. Commande Get-ADPrincipalGroupMembership
 3. Utilitaire WHOAMI
 4. Attribut TokenGroups
+5. Attribut msDS-MemberOfTransitive
 
 Toutes ne fournissent pas la même information et ne peuvent pas être utilisées dans les mêmes conditions / sur tous les types d'objets.
 
@@ -94,6 +95,20 @@ $dn = (Get-ADUser -Identity jsmith).DistinguishedName
 - Groupes indirects : oui
 - Groupe primaire : oui
 
+### Attribut msDS-MemberOfTransitive
+
+L'attribut [msDS-MemberOfTransitive](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/c5c7d019-8d88-4bfa-b84d-4413bbf189b5) ressemble à TokenGroups, à la différence qu'il permet d'obtenir directement le DistinguishedName (au lieu du SID) des groupes auquel appartient un objet de manière directe et indirecte. Cet attribut, comme TokenGroups, est calculé par le contrôleur de domaine.
+
+```powershell
+$dn = (Get-ADUser -Identity jsmith).DistinguishedName
+(Get-ADUser $dn -Properties 'msDS-MemberOfTransitive').'msDS-MemberOfTransitive' | Get-ADGroup
+```
+
+- Compatibilité : utilisateurs, groupes et ordinateurs
+- Groupes directs : oui
+- Groupes indirects : oui
+- Groupe primaire : non
+
 ### Comparatif des méthodes
 
 Méthode | Compatibilité | Groupes directs | Groupes indirects | Groupe primaire
@@ -102,3 +117,4 @@ Attribut MemberOf | Utilisateurs, groupes et ordinateurs | ✅ Oui | ❌ Non | �
 Commande Get-ADPrincipalGroupMembership | Utilisateurs, groupes et ordinateurs | ✅ Oui | ❌ Non | ✅ Oui
 Utilitaire WHOAMI | Utilisateur connecté uniquement | ✅ Oui | ✅ Oui | ❌ Non
 Attribut TokenGroups | Utilisateurs, groupes et ordinateurs | ✅ Oui | ✅ Oui | ✅ Oui
+Attribut msDS-MemberOfTransitive | Utilisateurs, groupes et ordinateurs | ✅ Oui | ✅ Oui | ❌ Non
