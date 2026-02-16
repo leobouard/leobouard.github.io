@@ -104,6 +104,8 @@ $dn = (Get-ADUser -Identity jsmith).DistinguishedName
 (Get-ADUser $dn -Properties 'msDS-MemberOfTransitive').'msDS-MemberOfTransitive' | Get-ADGroup
 ```
 
+> Attention pour les plus gros environnements, l'attribut msDS-MemberOfTransitive ne donne que les 4500 premiers résultats. Plus d'information ici : [PowerShelling Active Directory - far and wide - Evgenij Smirnov - PSConfEU 2025](https://youtu.be/w8iJL9f2gxM?t=2127)
+
 - Compatibilité : utilisateurs, groupes et ordinateurs
 - Groupes directs : oui
 - Groupes indirects : oui
