@@ -1,17 +1,19 @@
 ﻿---
 title: "Authentication Policies & Silos"
-description: "Est-ce que sa complexité vaut vraiment le coup ?"
+description: "Le tutoriel le plus simple pour mettre en place cette m****"
 tags: activedirectory
 listed: true
 ---
 
 ## Concept
 
-Après de nombreuses tentatives échouées de prendre le sujet en main et de monter un lab, j'ai enfin trouvé une source simple et consise : [How to implement Auth Policy and Silos : r/activedirectory](https://www.reddit.com/r/activedirectory/comments/12h3fua/how_to_implement_auth_policy_and_silos/)
+Après de nombreuses tentatives échouées de prendre le sujet en main et de monter un lab, j'ai enfin trouvé une source simple et concise : [How to implement Auth Policy and Silos : r/activedirectory](https://www.reddit.com/r/activedirectory/comments/12h3fua/how_to_implement_auth_policy_and_silos/)
 
-Déjà le terme de Authentication Policy et Authentication Policy Silos est un peu abstrait. En réel, il s'agit d'un pare-feu d'authentification (la partie *policy*) qui s'applique à un regroupement de machine (la partie *silo*). On défini donc des règles dans le pare-feu (qui peut se connecter, quelle est la durée de vie maximum d'un ticket Kerberos, est-ce que l'usage du NTLM est autorisé) que l'on appliquera ensuite à un ensemble d'ordinateurs.
+Déjà le terme de Authentication Policy et Authentication Policy Silos est un peu abstrait. En réalité, il s'agit d'un pare-feu d'authentification (la partie *policy*) qui s'applique à un regroupement de machine (la partie *silo*). On défini donc des règles dans le pare-feu (qui peut se connecter, quelle est la durée de vie maximum d'un ticket Kerberos, est-ce que l'usage du NTLM est autorisé) que l'on appliquera ensuite à un ensemble d'ordinateurs.
 
-Si vous êtes familier du concept de tiering-model, vous comprendrez qu'on a simplement à ajouter nos utilisateurs du T0 dans la policy et nos serveurs T0 dans le silo pour empêcher n'importe quel compte en dehors du T0 de s'y connecter.
+> Note : le silo est optionnel, et il est tout à faire possible de faire sans. Comme cet article vise à faire un tutoriel au plus simple, on va ignorer cette configuration.
+
+Si vous êtes familier du concept de tiering-model, vous comprendrez qu'on a simplement à ajouter nos utilisateurs du TIER 0 dans la *policy* et nos serveurs TIER 0 dans le *silo* pour empêcher n'importe quel compte en dehors du TIER 0 de s'y connecter.
 
 ### Avantages
 
@@ -26,7 +28,10 @@ Les avantages par rapport au tiering par GPO :
 
 Les inconvénients par rapport au tiering par GPO :
 
-
+- **Incompatibilité avec NTLM** : malgré une option pour autoriser le l'authentification en NTLM, il semblerait que seul le Kerberos fonctionne réellement pour s'authentifier
+- **Incompatibilité avec certaines versions de Windows** : les AuthNPolicy reposent sur Kerberos FAST, qui n'est disponible qu'à partir de Windows 8 & Windows Server 2012
+- **Risque accru de blocage** : un problème de configuration d'une AuthNPolicy peut mener à bloquer intégralement son compte ou l'accès à certains serveurs
+- **Ne s'applique pas aux contrôleurs de domaine** : appliquer une AuthNPolicy sur les contrôleurs de domaine pourrait bloquer les authentifications de la plupart des utilisateurs du domaine
 
 ## Procédure
 
