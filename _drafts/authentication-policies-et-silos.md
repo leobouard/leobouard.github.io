@@ -9,7 +9,7 @@ listed: true
 
 Après de nombreuses tentatives échouées de prendre le sujet en main et de monter un lab, j'ai enfin trouvé une source simple et concise : [How to implement Auth Policy and Silos : r/activedirectory](https://www.reddit.com/r/activedirectory/comments/12h3fua/how_to_implement_auth_policy_and_silos/)
 
-Déjà le terme de Authentication Policy et Authentication Policy Silos est un peu abstrait. En réalité, il s'agit d'un pare-feu d'authentification (la partie *policy*) qui s'applique à un regroupement de machine (la partie *silo*). On défini donc des règles dans le pare-feu (qui peut se connecter, quelle est la durée de vie maximum d'un ticket Kerberos, est-ce que l'usage du NTLM est autorisé) que l'on appliquera ensuite à un ensemble d'ordinateurs.
+Déjà le terme de Authentication Policy et Authentication Policy Silos est un peu abstrait. On pourrait parler d'un **pare-feu d'authentification** (la partie *policy*) qui s'applique à un **regroupement de machine** (la partie *silo*). On défini donc des règles dans le pare-feu (qui peut se connecter, quelle est la durée de vie maximum d'un ticket Kerberos, est-ce que l'usage du NTLM est autorisé) que l'on appliquera ensuite à un ensemble d'ordinateurs.
 
 > Note : le silo est optionnel, et il est tout à faire possible de faire sans. Comme cet article vise à faire un tutoriel au plus simple, on va ignorer cette configuration.
 
@@ -21,7 +21,7 @@ Les avantages par rapport au tiering par GPO :
 
 - **Le fonctionnement en positif** : contrairement aux GPO qui fonctionnent en négatif (interdiction de l'accès aux utilisateurs des autres tiers), le pare-feu d'authentification autorise explicitement une sélection d'utilisateurs tout en refusant tous les autres, ce qui empêche les comptes non catégorisés dans un tier de pouvoir se connecter aux ressources
 - **Le découpage à l'intérieur d'un tier** : avec les silos, on peut faire des "bulles applicatives" isolées au sein d'un même tier
-- **Plus de contrôle sur l'authentification** : vous pouvez contrôler la durée de vie du ticket Kerberos, l'usage du NTLM au sein d'un silo
+- **Plus de contrôle sur l'authentification** : vous pouvez contrôler la durée de vie du ticket Kerberos, l'usage du NTLM au sein d'un silo sans avoir a ajouter tous les utilisateurs dans le groupe *Protected Users*.
 - **L'application d'un tier est quasi instantanée** : pas besoin d'attendre que la GPO s'applique, le blocage est effectif dès que le contrôleur de domaine a répliqué le changement sur les AuthNPolicy & AuthNPolicySilo
 
 ### Inconvénients
@@ -30,7 +30,7 @@ Les inconvénients par rapport au tiering par GPO :
 
 - **Incompatibilité avec NTLM** : malgré une option pour autoriser le l'authentification en NTLM, il semblerait que seul le Kerberos fonctionne réellement pour s'authentifier
 - **Incompatibilité avec certaines versions de Windows** : les AuthNPolicy reposent sur Kerberos FAST, qui n'est disponible qu'à partir de Windows 8 & Windows Server 2012
-- **Risque accru de blocage** : un problème de configuration d'une AuthNPolicy peut mener à bloquer intégralement son compte ou l'accès à certains serveurs
+- **Risque accru de blocage** : un problème de configuration d'une AuthNPolicy peut mener à bloquer intégralement l'accès à certains serveurs
 - **Ne s'applique pas aux contrôleurs de domaine** : appliquer une AuthNPolicy sur les contrôleurs de domaine pourrait bloquer les authentifications de la plupart des utilisateurs du domaine
 
 ## Procédure
@@ -39,11 +39,11 @@ Les inconvénients par rapport au tiering par GPO :
 
 On va essayer de répliquer une configuration de tiering en utilisant exclusivement les AuthNPolicy & AuthNPolicySilo. Présentation des personnages principaux :
 
-1. Le groupe *Allowed to authenticate to T1* qui va autoriser ses membres à se connecter aux serveurs du T1
-2. L'utilisateur *t1_lbouard* qui représente un administrateur T1
-3. Le serveur *SRV01* qui représente un serveur du T1
+1. Le groupe *Allowed to authenticate to T1* qui va autoriser ses membres à se connecter aux serveurs du TIER 1
+2. L'utilisateur *t1_lbouard* qui représente un administrateur TIER 1
+3. Le serveur *SRV01* qui représente un serveur du TIER 1
 
-L'objectif va donc être de restreindre l'accès au serveur SRV01 uniquement aux utilisateurs du T1. Si un compte T0 (membre du groupe Domain Admins) tente de s'y connecter, la connexion sera refusée même si le compte T0 a les droits nécessaires.
+L'objectif va donc être de restreindre l'accès au serveur SRV01 uniquement aux utilisateurs du TIER 1. Si un compte TIER 0 (membre du groupe Domain Admins) tente de s'y connecter, la connexion sera refusée même si le compte TIER 0 a les droits nécessaires.
 
 ### Ajout du support pour le Kerberos Armoring
 
@@ -145,4 +145,14 @@ Ne plus exposer le serveur SRV01 du pare-feu d'authentification :
 
 ```powershell
 Set-ADComputer SRV01 -Clear 'msDS-AssignedAuthNPolicySilo'
+```
+
+## Automatisation de l'ajout dans le silo
+
+```powershell
+$sb = 'OU=TIER 1,DC=corp,DC=contoso,DC=com'
+$computers = Get-ADComputer -Filter * -SearchBase $sb -Properties 'msDS-AssignedAuthNPolicySilo'
+
+$silosMembers = Get-ADAuthenticationPolicySilo 'T1 Silo' -Properties 'msDS-AuthNPolicySiloMembers'
+
 ```
