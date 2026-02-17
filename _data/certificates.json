@@ -5,7 +5,7 @@
         "date": "février 2026",
         "image": "/assets/cv/certifications/silverfort-technical-expert.png",
         "url": "https://academy.silverfort.com/share/v1/gamification/assigned_badge/65ff3c2a-c290-47e4-8591-c4d9f72b785d/shared?lang=en&t=1770975015047",
-        "priority": 3
+        "priority": 5
     },
     {
         "name": "Silverfort Unified Professional Certification",
@@ -27,7 +27,7 @@
         "date": "décembre 2025",
         "image": "/assets/cv/certifications/semperis-dsp.png",
         "url": "/assets/cv/certifications/dsp-partner-foundation.png",
-        "priority": 5
+        "priority": 3
     },
     {
         "name": "Semperis ADFR Partner Foundation",
