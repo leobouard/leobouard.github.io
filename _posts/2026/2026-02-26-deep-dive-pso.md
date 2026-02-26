@@ -176,7 +176,7 @@ Ordre | Name | ObjectGuid
 
 Mais en creusant un peu plus, je me suis rendu compte qu'il existait plusieurs façons de représenter un GUID. Il y a plusieurs formats possibles, comme indiqué ici : [Guid.ToString Method (System) \| Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/api/system.guid.tostring?view=net-10.0&amp;redirectedfrom=MSDN#System_Guid_ToString_System_String_).
 
-Tous ces formats sont globalement similaires, mais ils m'ont donné une idée supplémentaire : le binaire. Et là, tout s'explique : l'ordre d'application des PSO en cas d'égalité est tranché avec le premier (et éventuellement le second) octet du Guid. La valeur la plus faible devient prioritaire par rapport aux autres :
+Tous ces formats sont globalement similaires, mais ils m'ont donné une idée supplémentaire : le binaire. Et là, tout s'explique : l'ordre d'application des PSO en cas d'égalité est tranché avec le premier (et éventuellement le second) octet du GUID. La valeur la plus faible devient prioritaire par rapport aux autres :
 
 Ordre | Name | ObjectGuid | ObjectGuidBinary
 ----- | ---- | ---------- | ----------------
