@@ -48,7 +48,7 @@ Get-ADUser john.smith | Get-ADUserResultantPasswordPolicy
 
 ### Lister le nombre de comptes par PSO
 
-Pour plusieurs utilisateurs, la meilleure méthode est de requêter l'attribut calculé `msDS-ResultantPSO` qui va donner le DistinguishedName de la PSO qui est appliquée sur le compte utilisateur.
+Pour plusieurs utilisateurs, la meilleure méthode est de requêter l'attribut calculé `msDS-ResultantPSO`. Celui-ci donne le DistinguishedName de la PSO appliquée sur le compte utilisateur.
 
 Ce bout de code permet de montrer la répartition des différentes PSO sur les utilisateurs de votre domaine :
 
