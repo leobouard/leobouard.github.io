@@ -15,17 +15,26 @@ Cet article approfondit le fonctionnement des PSO, en particulier les mécanisme
 
 ### Obtenir la date d'expiration prévue d'un mot de passe
 
-La propriété `msDS-UserPasswordExpiryTimeComputed` contient la date d'expiration du mot de passe au format FileTime. On peut en extraire des informations pertinentes :
+La propriété `msDS-UserPasswordExpiryTimeComputed` contient la date d'expiration prévue du mot de passe, selon la PSO appliquée, au format FileTime. On peut en extraire des informations pertinentes :
 
 ```powershell
 $users = Get-ADUser john.smith -Properties 'msDS-UserPasswordExpiryTimeComputed'
-$users | Select-Object *, @{
+$users | Select-Object Name, DistinguishedName, 'msDS-UserPasswordExpiryTimeComputed', @{
     N = 'PasswordExpirationTime'
     E = { [datetime]::FromFileTime($_.'msDS-UserPasswordExpiryTimeComputed') }
 }
 ```
 
 > Pour les mots de passe qui n'expirent jamais, la propriété `msDS-UserPasswordExpiryTimeComputed` sera vide.
+
+Résultat :
+
+```plaintext
+Name                                : john.smith
+DistinguishedName                   : CN=john.smith,CN=Users,DC=corp,DC=contoso,DC=com
+msDS-UserPasswordExpiryTimeComputed : 134253798109491502
+PasswordExpirationTime              : 08/06/2026 10:10:10
+```
 
 ### Obtenir la PSO prioritaire sur un utilisateur
 
@@ -35,7 +44,7 @@ Pour un utilisateur seul, la façon la plus simple et qui donne le résultat le 
 Get-ADUser john.smith | Get-ADUserResultantPasswordPolicy
 ```
 
-Si la réponse est vide : l'utilisateur est soumis à la *Default Domain Password Policy*.
+> Si la réponse est vide : l'utilisateur est soumis à la *Default Domain Password Policy*.
 
 ### Lister le nombre de comptes par PSO
 
