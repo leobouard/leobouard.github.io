@@ -1,21 +1,21 @@
 ---
-title: "Deep dive - Password Settings Object"
-description: "Quel est le comportement "
+title: "Deep Dive - Password Settings Object"
+description: "On creuse en profondeur sur le fonctionnement des stratégies de mot de passe à fin grain sur Active Directory"
 tags: ["activedirectory", "powershell"]
 listed: true
 ---
 
-- [x] Attributs utiles
-- [x] Répartition des utilisateurs par PSO
-- [x] Comportement de tie-breaker
-- [ ] Bonnes pratiques sur la priorité
-- [ ] Fonctionnement sur un groupe de DL
+## Introduction
+
+Les *Password Settings Objects* (PSO) permettent de définir des stratégies de mots de passe granulaires en Active Directory. Contrairement à la *Default Domain Password Policy* qui s'applique globalement, les PSO offrent une flexibilité pour adapter les exigences de complexité, de longueur et de durée de vie des mots de passe à différentes catégories d'utilisateurs ou de comptes de service.
+
+Cet article approfondit le fonctionnement des PSO, en particulier les mécanismes de priorité et le comportement "tie-breaker" qui intervient quand plusieurs PSO sont appliquées avec la même priorité. Vous découvrirez également comment auditer et visualiser la configuration des PSO dans votre domaine, ainsi que les bonnes pratiques pour les organiser correctement.
 
 ## Attributs liés aux PSO
 
 ### Obtenir la date d'expiration prévue d'un mot de passe
 
-La propriété `msDS-UserPasswordExpiryTimeComputed` contient la date d'expiration du mot de passe au format FileTime. On peut à partir de cette information extraire des informations pertinentes pour nous :
+La propriété `msDS-UserPasswordExpiryTimeComputed` contient la date d'expiration du mot de passe au format FileTime. On peut en extraire des informations pertinentes :
 
 ```powershell
 $users = Get-ADUser john.smith -Properties 'msDS-UserPasswordExpiryTimeComputed'
@@ -35,7 +35,7 @@ Pour un utilisateur seul, la façon la plus simple et qui donne le résultat le 
 Get-ADUser john.smith | Get-ADUserResultantPasswordPolicy
 ```
 
-Si la réponse est vide : l'utilisateur est soumis à la Default Domain Password Policy.
+Si la réponse est vide : l'utilisateur est soumis à la *Default Domain Password Policy*.
 
 ### Lister le nombre de comptes par PSO
 
@@ -59,13 +59,13 @@ Count | Name
 354 | CN=Administrators,CN=Password Settings Container,CN=System…
 157 | CN=Technical,CN=Password Settings Container,CN=System…
 
-> Encore une fois, si la valeur est vide (comme c'est le cas pour 5415 utilisateurs dans mon exemple) c'est que le compte est soumis à la *Default Domain Password Policy*. Également, n'oubliez-pas que les PSO peuvent s'appliquer aux gMSA, donc le résultat donné n'est que partiel.
+> Encore une fois, si la valeur est vide (comme c'est le cas pour 5415 utilisateurs dans mon exemple) c'est que le compte est soumis à la *Default Domain Password Policy*. Également, n'oubliez pas que les PSO peuvent s'appliquer aux gMSA, donc le résultat donné n'est que partiel.
 
 ### Visualiser les utilisateurs soumis à plusieurs PSO
 
-Si les priorités de vos PSO sont bien gérées, le fait qu'un utilisateur soit soumis à plusieurs PSO en même temps n'a rien de grave. Cependant, si vous avez plusieurs PSO appliquées avec la même priorité, vous laissez Active Directory choisir à votre place ce qui va peut-être réduire votre niveau de sécurité sur certains comptes.
+Si les priorités de vos PSO sont bien gérées, le fait qu'un utilisateur soit soumis à plusieurs PSO en même temps n'a rien de grave. Cependant, si vous avez plusieurs PSO appliquées avec la même priorité, vous laissez Active Directory choisir à votre place ce qui va peut-être réduire le niveau de sécurité sur certains comptes.
 
-En commençant, je ne m'attendais pas à faire un script aussi imposant pour faire ça, mais voilà la bête :
+Au départ, je ne m'attendais pas à faire un script aussi imposant pour faire ça, mais voilà la bête :
 
 ```powershell
 # Get all fine-grained password policies
@@ -98,7 +98,7 @@ $users | Where-Object { ($_.'msDS-ExposedPSO' | Measure-Object).Count -gt 1 } |
 
 ## Tie-breaker en cas de priorité égale
 
-Oui je sais, on est pas censé avoir plusieurs PSO avec la même priorité mais le fait est que je vois ce problème de configuration chez beaucoup de mes clients. 
+Oui, je sais, on n'est pas censé avoir plusieurs PSO avec la même priorité, mais il est vrai que je vois ce problème de configuration chez beaucoup de mes clients. 
 
 ### Création de plusieurs PSO
 
@@ -115,7 +115,7 @@ $pso | ForEach-Object {
 
 ### Application de toutes les PSO sur un utilisateur
 
-On commence par créé un compte de test :
+On commence par créer un compte de test :
 
 ```powershell
 New-ADUser john.smith
@@ -177,7 +177,7 @@ Ordre | Name | ObjectGuid | ObjectGuidBinary
 4 | Technical | `db383b8d-dc91-4a97-8cd9-db6d5115be00` | 141
 5 | Employees | `137a3298-b43d-4e29-8526-904a73c23e15` | 152
 
-Voici le script PowerShell qui permet de visualiser le premier octet des GUID de toutes les PSO : 
+Voici le script PowerShell qui permet de visualiser le premier octet des GUID de toutes les PSO :
 
 ```powershell
 $pso = Get-ADFineGrainedPasswordPolicy -Filter *
@@ -189,13 +189,49 @@ $pso | Select-Object Name, ObjectGuid, @{
 
 ### Bonnes pratiques sur les priorités
 
-## Fonctionnement d'une PSO avec un groupe de ciblage incompatible
+Si je vois aussi souvent des PSO avec des priorités égales, c'est que la décision de hiérarchisation est compliquée. Avant tout, il est bon de rappeler les règles du jeu lorsqu'il s'agit des priorités :
 
-Les PSO ne peuvent être appliquées que sur des groupes globaux car leur étendue est parfaite pour une PSO. Un groupe global ne peut contenir que des objets du domaine, de la même manière qu'une PSO ne peut s'appliquer que sur les utilisateur d'un domaine
+- C'est la priorité la plus faible qui prime
+- Les valeurs de priorité doivent être comprises entre 1 et 1024
+- Toutes les PSO devraient avoir des priorités différentes pour éviter d'avoir un comportement d'application aléatoire
 
-Mais que se passe-t'il si on applique une PSO à un groupe de domaine local ou un groupe universel ?
+Maintenant pour la partie bonne pratique, je recommanderai de **définir les priorités en fonction de la longueur minimum du mot de passe**. En effet, c'est le seul paramètre qui n'est pas actif immédiatement après le changement d'exposition à une PSO :
 
-Impossible de faire ça directement depuis la console `dsac`
+Catégorie | Changement effectif | Auditable
+--------- | ------------------- | ---------
+Longueur et complexité | Au prochain changement du mot de passe | Non
+Durée de vie | Immédiatement | Oui
+Stratégie de blocage | Immédiatement | Oui
 
-- test de modification avec PowerShell
-- conversion d'un groupe existant en DL ou U
+On peut également rappeler que une fois défini, il devient très compliqué d'auditer la longueur et la complexité d'un mot de passe, contrairement à l'âge d'un mot de passe (attribut `passwordLastSet`) ou sa stratégie de blocage (commande `Get-ADUserResultantPasswordPolicy`).
+
+En bref : vous pouvez prioriser vos PSO en fonction du nombre de caractères minimum et/ou de la complexité du mot de passe. Dans mon exemple, on pourrait organiser nos PSO de la manière suivante :
+
+Priorité | PSO | Longueur minimum
+-------- | --- | ----------------
+1 | ServiceAccounts | 25 caractères
+10 | Administrators | 16 caractères
+20 | Technical | 14 caractères
+30 | Externals | 12 caractères
+40 | Employees | 12 caractères
+
+## Comportement des groupes de ciblage
+
+### Étendue des groupes
+
+Les PSO sont habituellement ciblées sur des groupes. Ces groupes doivent impérativement être des groupes de sécurité globaux, car leur étendue correspond parfaitement au champ d'application d'une PSO : uniquement les utilisateurs du domaine. Cela permet donc de ne pas impacter des utilisateurs issus d'un autre domaine ou d'une autre forêt Active Directory.
+
+Depuis la console `dsac`, il est impossible d'ajouter un groupe de domaine local ou un groupe universel en cible d'une PSO mais vous pouvez contourner avec PowerShell (qui ne fait pas de vérification) ou en transformant un groupe de ciblage en groupe universel après-coup.
+
+Pour ajouter un groupe de ciblage sur une PSO en PowerShell :
+
+```powershell
+$groupDn = (Get-ADGroup 'PSO_Administrators').DistinguishedName
+Get-ADFineGrainedPasswordPolicy 'Administrators' | Set-ADObject -Add @{ 'msDS-PSOAppliesTo' = $groupDn }
+```
+
+À partir du moment ou le ciblage de la PSO passe par un groupe qui n'est pas un groupe global de sécurité : **la PSO ne s'appliquera pas**.
+
+### Groupe de ciblage en doublon
+
+Il est possible de mettre le même groupe de ciblage sur deux PSO différentes. Dans ce cas, c'est simplement la PSO avec la priorité la plus faible qui s'appliquera à l'utilisateur.
