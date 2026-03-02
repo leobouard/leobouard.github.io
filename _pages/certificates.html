@@ -27,18 +27,21 @@ description: "Liste des certifications que j'ai obtenues"
   </div>
 
   <h2>Compétences appliquées Microsoft</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(12em, 15em), 1fr)); grid-gap: 1em;">
+  <div style="display: grid; grid-gap: 1em;">
     {% for skill in site.data.applied-skills %}
-    <div class="certification-full">
+    <div class="applied-skill">
       <a href="{{ skill.url }}" target="_blank">
         <img src="/assets/cv/certifications/applied-skill.svg" alt="Logo compétence appliquée">
-        <h4>{{ skill.name }}</h4>
-        <small>Obtenu en {{ skill.date }}</small>
-        <div style="display: flex; flex-wrap: wrap; grid-gap: 0.5em" id="tags">
-          {% for tag in skill.tags %}<code>{{ tag }}</code> {% endfor %}
+        <div>
+          <h4>{{ skill.name }}</h4>
+          <p>Obtenu en {{ skill.date }}</p>
+          <div style="display: flex; flex-wrap: wrap; grid-gap: 0.5em" id="tags">
+            {% for tag in skill.tags %}<span>{{ tag }}</span> {% endfor %}
+          </div>
         </div>
       </a>
     </div>
     {% endfor %}
+  </div>
 
 </section>

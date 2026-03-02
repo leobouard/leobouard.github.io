@@ -195,7 +195,6 @@ div.certification-full small {
     color: var(--heavyaccent);
 }
 
-
 // PERSONAL INFO
 
 div.personalInfo {
@@ -381,6 +380,48 @@ div.github-repositories a {
 
 div.github-repositories img {
     max-width: unset;
+}
+
+// APPLIED SKILLS
+
+div.applied-skill a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 1em;
+    border: var(--border);
+    border-radius: var(--borderradius);
+    padding: 1em;
+}
+
+div.applied-skill a:hover {
+    background: var(--lightaccent);
+}
+
+div.applied-skill a:hover h4 {
+    text-decoration: underline;
+}
+
+div.applied-skill img {
+    margin: auto 0;
+    height: 4em;
+    width: 4em;
+}
+
+div.applied-skill h4 {
+    margin: 0;
+}
+
+div.applied-skill p {
+    margin: 0.5em 0;
+}
+
+div.applied-skill span {
+    background-color: var(--lightaccent);
+    padding: 0 0.5em;
+    border-radius: var(--borderradius);
+    text-decoration: none;
+    font-size: smaller;
 }
 
 // CV WRAPPER
