@@ -412,8 +412,10 @@ div.applied-skill h4 {
     margin: 0;
 }
 
-div.applied-skill p {
+div.applied-skill small {
     margin: 0.5em 0;
+    display: block;
+    color: var(--heavyaccent);
 }
 
 div.applied-skill span {
