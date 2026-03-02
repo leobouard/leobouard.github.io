@@ -26,4 +26,19 @@ description: "Liste des certifications que j'ai obtenues"
     {% endfor %}
   </div>
 
+  <h2>Compétences appliquées Microsoft</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(12em, 15em), 1fr)); grid-gap: 1em;">
+    {% for skill in site.data.applied-skills %}
+    <div class="certification-full">
+      <a href="{{ skill.url }}" target="_blank">
+        <img src="/assets/cv/certifications/applied-skill.svg" alt="Logo compétence appliquée">
+        <h4>{{ skill.name }}</h4>
+        <small>Obtenu en {{ skill.date }}</small>
+        <div style="display: flex; flex-wrap: wrap; grid-gap: 0.5em" id="tags">
+          {% for tag in skill.tags %}<code>{{ tag }}</code> {% endfor %}
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
 </section>
