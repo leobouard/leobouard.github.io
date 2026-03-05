@@ -17,6 +17,7 @@ description: "Liste des certifications que j'ai obtenues"
     {% for certificate in site.data.certificates %}
     <div class="certification-full hover-bottom">
       <a href="{{ certificate.url }}" target="_blank">
+        <div class="glow"></div>
         <img src="{{ certificate.image }}" alt="certification logo">
         <span>{{ certificate.organization }}</span>
         <h4>{{ certificate.name }}</h4>

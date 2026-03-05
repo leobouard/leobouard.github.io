@@ -176,11 +176,33 @@ div.certification-full {
     border: var(--border);
     border-radius: var(--borderradius);
     height: 17em;
+    position: relative;
+}
+
+div.certification-full div.glow {
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(20px);
+    background: var(--primary);
+    opacity: 0;
+    transition: opacity ease-in-out 200ms;
+    pointer-events: none;
+}
+
+div.certification-full:hover div.glow {
+    opacity: 0.3;
 }
 
 div.certification-full img {
     height: 7em;
     margin: 1em auto;
+    position: relative;
+    z-index: 1;
 }
 
 div.certification-full span {
