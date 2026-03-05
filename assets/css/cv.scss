@@ -124,14 +124,17 @@ div.personalLinks a i {
     border-radius: var(--borderradius);
     height: 3em;
 }
-.certification:hover,
-.certification-full:hover {
+.certification:hover {
     background: var(--lightaccent);
 }
 
 .certification:hover h4,
 .certification-full:hover h4 {
     text-decoration: underline;
+}
+
+.certification-full:hover h4 {
+    color: var(--primary);
 }
 
 .certification a {
@@ -183,8 +186,10 @@ div.certification-full img {
 div.certification-full span {
     display: block;
     font-size: small;
-    font-weight: bold;
-    color: var(--primary);
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 div.certification-full h4 {
@@ -394,16 +399,9 @@ div.applied-skill a {
     padding: 1em;
 }
 
-div.applied-skill a:hover {
-    background: var(--lightaccent);
-}
-
 div.applied-skill a:hover h4 {
     text-decoration: underline;
-}
-
-div.applied-skill a:hover span {
-    border-color: var(--mediumaccent);
+    color: var(--primary);
 }
 
 div.applied-skill img {
@@ -428,7 +426,6 @@ div.applied-skill span {
     border-radius: var(--borderradius);
     text-decoration: none;
     font-size: smaller;
-    border: 1px solid transparent;
 }
 
 // CV WRAPPER

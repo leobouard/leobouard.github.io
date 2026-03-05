@@ -15,7 +15,7 @@ description: "Liste des certifications que j'ai obtenues"
   <h2>Certifications éditeurs</h2>
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(12em, 15em), 1fr)); grid-gap: 1em;">
     {% for certificate in site.data.certificates %}
-    <div class="certification-full">
+    <div class="certification-full hover-bottom">
       <a href="{{ certificate.url }}" target="_blank">
         <img src="{{ certificate.image }}" alt="certification logo">
         <span>{{ certificate.organization }}</span>
@@ -29,7 +29,7 @@ description: "Liste des certifications que j'ai obtenues"
   <h2>Compétences appliquées Microsoft</h2>
   <div style="display: grid; grid-gap: 1em;">
     {% for skill in site.data.applied-skills %}
-    <div class="applied-skill">
+    <div class="applied-skill hover-bottom">
       <a href="{{ skill.url }}" target="_blank">
         <img src="/assets/cv/certifications/applied-skill.svg" alt="Logo compétence appliquée">
         <div>
