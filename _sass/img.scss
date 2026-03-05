@@ -1,0 +1,10 @@
+img.github-repository {
+    max-width: unset;
+}
+
+img.github-gist,
+img.github-repository {
+    border: 1px solid var(--mediumaccent);
+    border-radius: var(--borderradius);
+    padding-bottom: 2px;
+}
