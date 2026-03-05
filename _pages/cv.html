@@ -24,8 +24,9 @@ description: "Toutes mes expériences, mes formations et certifications"
       </div>
       <div class="personalLinks">
         {% for link in site.data.cv.links %}
-        <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout"><i
-            class="{{ link.icon }}"></i></a>
+        <a href="{{ link.url }}" target="_blank" title="{{ link.name }}" class="hover-popout">
+          <i class="{{ link.icon }}"></i>
+        </a>
         {% endfor %}
       </div>
     </div>
@@ -36,18 +37,15 @@ description: "Toutes mes expériences, mes formations et certifications"
       </li>
       <li>
         <i class="fa-solid fa-phone"></i>
-        <a href="tel:{{ site.data.cv.personalInfo.phone }}" class="no-decoration">{{ site.data.cv.personalInfo.phone
-          }}</a>
+        {{ site.data.cv.personalInfo.phone }}
       </li>
       <li>
         <i class="fa-solid fa-envelope"></i>
-        <a href="mailto:{{ site.data.cv.personalInfo.email }}" class="no-decoration">{{ site.data.cv.personalInfo.email
-          }}</a>
+        <a href="mailto:{{ site.data.cv.personalInfo.email }}" class="no-decoration">{{ site.data.cv.personalInfo.email }}</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
-        <a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank" class="no-decoration">{{
-          site.data.cv.personalInfo.website }}</a>
+        <a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank" class="no-decoration">{{ site.data.cv.personalInfo.website }}</a>
       </li>
       <li>
         <i class="fa-solid fa-language"></i>
