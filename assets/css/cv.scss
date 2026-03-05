@@ -389,13 +389,16 @@ div.github-repositories img {
 
 // APPLIED SKILLS
 
+div.applied-skill {
+    border: var(--border);
+    border-radius: var(--borderradius);
+}
+
 div.applied-skill a {
     text-decoration: none;
     display: flex;
     flex-direction: row;
     grid-gap: 1em;
-    border: var(--border);
-    border-radius: var(--borderradius);
     padding: 1em;
 }
 
