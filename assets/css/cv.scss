@@ -179,6 +179,10 @@ div.certification-full {
     position: relative;
 }
 
+div.certification-full:hover {
+    background: linear-gradient(-45deg, var(--absolute), transparent, transparent);
+}
+
 div.certification-full div.glow {
     position: absolute;
     width: 7em;
@@ -213,6 +217,7 @@ div.certification-full span.code {
     border-radius: var(--borderradius);
     padding: 0 0.5em;
     background: var(--lightaccent);
+    z-index: 2;
 }
 
 div.certification-full span.organization {
