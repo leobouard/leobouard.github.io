@@ -9,6 +9,10 @@
     break-inside: avoid;
 }
 
+.post-preview:hover {
+    background: linear-gradient(-45deg, var(--absolute), transparent, transparent);
+}
+
 .post-preview a {
     text-decoration: inherit;
     padding: 1em;
