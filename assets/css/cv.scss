@@ -205,7 +205,17 @@ div.certification-full img {
     z-index: 1;
 }
 
-div.certification-full span {
+div.certification-full span.code {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-size: smaller;
+    border-radius: var(--borderradius);
+    padding: 0 0.5em;
+    background: var(--lightaccent);
+}
+
+div.certification-full span.organization {
     display: block;
     font-size: small;
     font-weight: 600;

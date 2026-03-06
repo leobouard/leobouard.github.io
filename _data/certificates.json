@@ -46,6 +46,7 @@
     },
     {
         "name": "Microsoft 365 Administrator Expert",
+        "code": "MS-102",
         "organization": "Microsoft",
         "date": "juin 2023",
         "image": "/assets/cv/certifications/microsoft-certified-expert-badge.svg",
@@ -54,6 +55,7 @@
     },
     {
         "name": "Identity and Access Administrator Associate",
+        "code": "SC-300",
         "organization": "Microsoft",
         "date": "avril 2023",
         "image": "/assets/cv/certifications/microsoft-certified-associate-badge.svg",
@@ -62,6 +64,7 @@
     },
     {
         "name": "Microsoft 365 Fundamentals",
+        "code": "MS-900",
         "organization": "Microsoft",
         "date": "août 2022",
         "image": "/assets/cv/certifications/microsoft-certified-fundamentals-badge.svg",
@@ -69,6 +72,7 @@
     },
     {
         "name": "Azure Fundamentals",
+        "code": "AZ-900",
         "organization": "Microsoft",
         "date": "juin 2021",
         "image": "/assets/cv/certifications/microsoft-certified-fundamentals-badge.svg",
