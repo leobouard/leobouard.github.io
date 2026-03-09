@@ -10,34 +10,13 @@
     },
     "summary":  "Ingénieur systèmes spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis 2017 sur les questions de gestion d'identité, d'outils collaboratifs et d'automatisation.",
     "skills":  [
-        {
-            "name":  "PowerShell",
-            "value":  90
-        },
-        {
-            "name":  "Active Directory",
-            "value":  90
-        },
-        {
-            "name":  "Entra ID",
-            "value":  80
-        },
-        {
-            "name":  "Microsoft 365",
-            "value":  80
-        },
-        {
-            "name":  "Exchange",
-            "value":  60
-        },
-        {
-            "name":  "Gestion de projet",
-            "value":  40
-        },
-        {
-            "name":  "Poste de travail",
-            "value":  40
-        }
+            "PowerShell",
+            "Active Directory",
+            "Entra ID",
+            "Microsoft 365",
+            "Microsoft Exchange",
+            "Gestion de projet",
+            "Configuration Manager"
     ],
     "links":  [
         {

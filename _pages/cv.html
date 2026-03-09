@@ -59,12 +59,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <h3>Compétences</h3>
     <ul class="skills">
       {% for skill in site.data.cv.skills %}
-      <li>
-        <span>{{ skill.name }}</span>
-        <div class="skill-container">
-          <div class="skill-progress" style="width: {{ skill.value }}%;"></div>
-        </div>
-      </li>
+        <li>{{ skill.name }}</li>
       {% endfor %}
     </ul>
     <h3>Certifications</h3>
