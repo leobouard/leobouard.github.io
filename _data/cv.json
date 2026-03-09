@@ -12,11 +12,14 @@
     "skills":  [
             "PowerShell",
             "Active Directory",
-            "Entra ID",
+            "Microsoft Entra ID",
             "Microsoft 365",
+            "SharePoint Online",
             "Microsoft Exchange",
-            "Gestion de projet",
-            "Configuration Manager"
+            "Windows Server",
+            "Formation et accompagnement",
+            "Management d'équipe",
+            "Gestion de projet"
     ],
     "links":  [
         {
@@ -76,6 +79,18 @@
                         "expertise PowerShell",
                         "architecture et optimisation de tenant Microsoft 365",
                         "conseils sur les solutions d'IAM"
+                    ]
+                },
+                {
+                    "title":  "Administrateur Moodle",
+                    "startDate":  "juin 2025",
+                    "endDate":  "aujourd'hui",
+                    "summary":  "Administrateur de la plateforme de formation en ligne de METSYS",
+                    "highlights":  [
+                        "mise à jour et maintenance de la plateforme",
+                        "définition du modèle cible de cours a utiliser",
+                        "gamification de l'expérience de formation",
+                        "migration de la plateforme vers un nouveau serveur et une nouvelle base de données"
                     ]
                 },
                 {
