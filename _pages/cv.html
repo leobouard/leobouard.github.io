@@ -11,6 +11,8 @@ description: "Toutes mes expériences, mes formations et certifications"
   </span>
 </div>
 
+{% include base64-decoder.html %}
+
 <h2>Informations en bref</h2>
 <div class="cv-wrapper">
   <div class="personalInfo">
@@ -37,7 +39,7 @@ description: "Toutes mes expériences, mes formations et certifications"
       </li>
       <li>
         <i class="fa-solid fa-phone"></i>
-        {{ site.data.cv.personalInfo.phone }}
+        <span id="base64-string">{{ site.data.cv.personalInfo.phone }}</span>
       </li>
       <li>
         <i class="fa-solid fa-envelope"></i>
