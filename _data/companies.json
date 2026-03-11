@@ -1,5 +1,11 @@
 [
   {
+    "company": "Archipel Habitat",
+    "logo": "/assets/cv/companies/archipel-habitat.jpg",
+    "description": "Bailleur social, Rennes",
+    "url": "https://www.archipel-habitat.fr/"
+  },
+  {
     "company": "Département des Landes",
     "logo": "/assets/cv/companies/cd40.jpg",
     "description": "Administration publique, Mont-de-Marsan",

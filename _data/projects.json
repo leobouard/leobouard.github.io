@@ -40,6 +40,14 @@
         "year": 2026,
         "projects": [
             {
+                "company": "Archipel Habitat",
+                "title": "Intégration Microsoft 365 Copilot",
+                "period": "mars 2026",
+                "duration": "1 jour",
+                "description": "Intégration de Microsoft 365 Copilot sur le tenant, configuration de connecteurs et application des bonnes pratiques de SharePoint Advanced Management",
+                "tags": ["microsoft365", "sharepoint"]
+            },
+            {
                 "company": "Département des Landes",
                 "title": "Consultant Active Directory",
                 "period": "janvier 2026",
