@@ -11,12 +11,14 @@ description: "Toutes mes expériences, mes formations et certifications"
   </span>
 </div>
 
+{% include base64-decoder.html %}
+
 <h2>Informations en bref</h2>
 <div class="cv-wrapper">
   <div class="personalInfo">
     <div>
       <div>
-        <img src="{{ site.data.cv.picture }}" alt="Photo de profil">
+        <img class="profile-picture" src="{{ site.data.cv.picture }}" alt="Photo de profil">
         <div>
           <h1>{{ site.data.cv.name }}</h1>
           <span class="title">{{ site.data.cv.title }}</span>
@@ -37,7 +39,7 @@ description: "Toutes mes expériences, mes formations et certifications"
       </li>
       <li>
         <i class="fa-solid fa-phone"></i>
-        {{ site.data.cv.personalInfo.phone }}
+        <span id="base64-string">{{ site.data.cv.personalInfo.phone }}</span>
       </li>
       <li>
         <i class="fa-solid fa-envelope"></i>
@@ -59,12 +61,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <h3>Compétences</h3>
     <ul class="skills">
       {% for skill in site.data.cv.skills %}
-      <li>
-        <span>{{ skill.name }}</span>
-        <div class="skill-container">
-          <div class="skill-progress" style="width: {{ skill.value }}%;"></div>
-        </div>
-      </li>
+        <li>{{ skill }}</li>
       {% endfor %}
     </ul>
     <h3>Certifications</h3>

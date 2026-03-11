@@ -250,7 +250,7 @@ div.personalInfo {
     border: 1px solid var(--mediumaccent);
 }
 
-div.personalInfo img {
+img.profile-picture {
     border-radius: 100%;
     margin-bottom: 3em;
     max-width: 15em;
@@ -263,7 +263,7 @@ div.personalInfo h1 {
     text-align: center;
 }
 
-div.personalInfo span {
+span.title {
     text-transform: uppercase;
     text-align: center;
     display: block;
@@ -288,25 +288,21 @@ div.personalInfo ul i {
 // SKILLS
 
 .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(12em, 100%), 1fr));
-    grid-gap: 1em;
     list-style: none;
     padding: 0;
-    font-size: smaller;
-    font-family: var(--titlefont);
+    line-height: 2em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 0.5em;
 }
 
-.skill-container {
-    border: 1px solid var(--mediumaccent);
-    height: 0.5em;
+.skills li {
+    background-color: var(--lightaccent);
+    padding: 0 0.5em;
     border-radius: var(--borderradius);
-    overflow: hidden;
-}
-
-.skill-progress {
-    background: var(--primary);
-    height: 100%;
+    text-decoration: none;
+    font-size: smaller;
 }
 
 // CALL TO WEBSITE

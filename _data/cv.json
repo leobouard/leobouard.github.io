@@ -4,40 +4,22 @@
     "title":  "Ingénieur systèmes",
     "personalInfo":  {
         "address":  "Rennes, Bretagne",
-        "phone":  "+33 6 95 98...",
+        "phone":  "KzMzNjk1OTg0NTg4",
         "email":  "leo.bouard@hotmail.com",
         "website":  "www.labouabouate.fr"
     },
     "summary":  "Ingénieur systèmes spécialisé dans les infrastructures, les technologies et l'écosystème Microsoft. Je travaille depuis 2017 sur les questions de gestion d'identité, d'outils collaboratifs et d'automatisation.",
     "skills":  [
-        {
-            "name":  "PowerShell",
-            "value":  90
-        },
-        {
-            "name":  "Active Directory",
-            "value":  90
-        },
-        {
-            "name":  "Entra ID",
-            "value":  80
-        },
-        {
-            "name":  "Microsoft 365",
-            "value":  80
-        },
-        {
-            "name":  "Exchange",
-            "value":  60
-        },
-        {
-            "name":  "Gestion de projet",
-            "value":  40
-        },
-        {
-            "name":  "Poste de travail",
-            "value":  40
-        }
+            "PowerShell",
+            "Active Directory",
+            "Microsoft Entra ID",
+            "Microsoft 365",
+            "SharePoint Online",
+            "Microsoft Exchange",
+            "Windows Server",
+            "Formation et accompagnement",
+            "Management d'équipe",
+            "Gestion de projet"
     ],
     "links":  [
         {
@@ -91,12 +73,24 @@
                     "title":  "Ingénieur systèmes (mode projet)",
                     "startDate":  "avril 2024",
                     "endDate":  "aujourd'hui",
-                    "summary":  "Mode projet et multi-clients sur les sujets d'identité, d'automatisation et d'outils collaboratifs",
+                    "summary":  "Mode projet et multi-clients sur les sujets d'identité, d'automatisation et d'outils collaboratifs.",
                     "highlights":  [
                         "sécurisation de plusieurs forêts Active Directory",
                         "expertise PowerShell",
                         "architecture et optimisation de tenant Microsoft 365",
                         "conseils sur les solutions d'IAM"
+                    ]
+                },
+                {
+                    "title":  "Administrateur Moodle",
+                    "startDate":  "juin 2025",
+                    "endDate":  "aujourd'hui",
+                    "summary":  "Administrateur de la plateforme de formation en ligne de METSYS.",
+                    "highlights":  [
+                        "mise à jour et maintenance de la plateforme",
+                        "définition du modèle cible de cours a utiliser",
+                        "gamification de l'expérience de formation",
+                        "migration de la plateforme vers un nouveau serveur et une nouvelle base de données"
                     ]
                 },
                 {

@@ -1,6 +1,6 @@
 [
     {
-        "name": "Prise en main des identités et de l’accès à l’aide de Microsoft Entra",
+        "name": "Prise en main des identités et de l'accès à l'aide de Microsoft Entra",
         "tags": ["Microsoft Entra", "Administrateurs", "Débutant"],
         "date": "mars 2026",
         "url": "https://learn.microsoft.com/fr-fr/credentials/applied-skills/get-started-with-identities-and-access-using-microsoft-entra/?wt.mc_id=appliedskills_poster_content_wwl"
@@ -12,7 +12,7 @@
         "url": "https://learn.microsoft.com/api/credentials/share/fr-fr/leo-bouard/10C07C04C2641AF2?sharingId=F97A0011A58C57B8"
     },
     {
-        "name": "Administrer Active Directory Domain Services",
+        "name": "Administrer les services de domaine Active Directory",
         "tags": ["Windows", "Administrateurs", "Intermédiaire"],
         "date": "juillet 2024",
         "url": "https://learn.microsoft.com/api/credentials/share/fr-fr/leo-bouard/7CD0A493E49DD194?sharingId=F97A0011A58C57B8"
