@@ -1,5 +1,3 @@
----
----
 
 ```powershell
 function ConvertTo-MD5Hash {
