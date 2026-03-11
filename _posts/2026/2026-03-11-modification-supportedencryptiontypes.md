@@ -59,7 +59,7 @@ Sur les OS en Windows Server 2008R2+ ou Windows 7, vous pouvez configurer le sup
 - Chemin : Computer configuration > Policies > Windows Settings > Local Policies > Security Options
 - Paramètre : **Network security: Configure encryption types allowed for Kerberos.**
 
-Celui permet donc d'agir directement sur la configuration des ordinateurs pour interdire ou non le chiffrement DES et empêcher la réécriture de l'attribut `msDS-SupportedEncryptionTypes`.
+Ce paramètre permet d'agir directement sur la configuration des ordinateurs pour interdire ou non le chiffrement DES et empêcher la réécriture de l'attribut `msDS-SupportedEncryptionTypes`.
 
 > Par défaut, le chiffrement DES pour Kerberos a été désactivé à partir de Windows 7 / Windows Server 2008 R2.
 
@@ -67,7 +67,7 @@ Si vous n'avez pas envie de déployer ce genre de GPO sur tout le domaine pour r
 
 ### La clé de registre SkipSupportedEncryptionTypesUpdate
 
-Dans mes recherches pour empêcher ce comportement, ChatGPT m'a sorti du chapeau une clé de registre inconnue au bataillon : **SkipSupportedEncryptionTypesUpdate**. Selon ses dires, la clé de registre évite que le Windows Server 2008 remette le support de DES dans son objet Active Directory.
+Dans mes recherches pour empêcher ce comportement de réécriture de l'attribut, ChatGPT m'a sorti du chapeau une clé de registre inconnue au bataillon : **SkipSupportedEncryptionTypesUpdate**. Selon ses dires, la clé de registre évite que le Windows Server 2008 remette le support de DES dans son objet Active Directory.
 
 La clé de registre en question :
 
@@ -90,15 +90,10 @@ J'ai quand-même tenté le coup pour la science et le résultat est sans-appel :
 
 ### Interdiction d'écriture de l'attribut
 
-Pour les serveurs avant Windows Server 2008 R2, la seule solution que j'ai trouvé est d'interdire l'écriture de l'attribut `msDS-SupportedEncryptionTypes` par l'ordinateur lui-même.
-
-On peut faire cette ACL avec la commande suivante :
+Pour les serveurs avant Windows Server 2008 R2, la seule solution que j'ai trouvé est d'interdire l'écriture de l'attribut `msDS-SupportedEncryptionTypes` par l'ordinateur lui-même. On peut appliquer l'interdiction avec la commande suivante :
 
 ```powershell
 dsacls 'CN=server001,OU=Servers,DC=contoso,DC=com' /D 'SELF:WP;msDS-SupportedEncryptionTypes'
 ```
 
 > **Attention :** ça reste une configuration assez "ghetto" que je ne peux pas recommander. Cependant, c'est la seule solution qui a fonctionné pour empêcher l'ordinateur de venir inscrire la valeur 31 dans l'attribut Active Directory `msDS-SupportedEncryptionTypes`.
-
-Une solution alternative que j'ai trouvé durant mes recherches était de modifier/ajouter la clé de registre `SupportedEncryptionTypes` avec une valeur décimale à 24 (pour AES128 & AES256) au chemin `HKLM\System\CurrentControlSet\Control\Lsa\Kerberos` sur l'ordinateur en question, mais d'après mes tests sur des Windows Server 2008, cela ne fonctionne pas.
-
