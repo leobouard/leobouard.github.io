@@ -1,7 +1,7 @@
 ---
 title: "Comment empêcher l'attribut msDS-SupportedEncryptionTypes d'être modifié ?"
 description: "Chassez le DES, il revient au galop"
-tags: ["activedirectory", "powershell"]
+tags: ["activedirectory"]
 listed: true
 ---
 
@@ -95,5 +95,7 @@ Pour les serveurs avant Windows Server 2008 R2, la seule solution que j'ai trouv
 ```powershell
 dsacls 'CN=server001,OU=Servers,DC=contoso,DC=com' /D 'SELF:WP;msDS-SupportedEncryptionTypes'
 ```
+
+Une fois l'interdiction appliquée, vous pouvez remettre une valeur comme 24 dans l'attribut Active Directory `msDS-SupportedEncryptionTypes`.
 
 > **Attention :** ça reste une configuration assez "ghetto" que je ne peux pas recommander. Cependant, c'est la seule solution qui a fonctionné pour empêcher l'ordinateur de venir inscrire la valeur 31 dans l'attribut Active Directory `msDS-SupportedEncryptionTypes`.
