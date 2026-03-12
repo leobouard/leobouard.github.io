@@ -100,6 +100,12 @@ description: "Toutes mes expériences, mes formations et certifications"
       </div>
     </summary>
     <div>
+      <div class="company-quick-info">
+          <div>
+            <i class="fa-solid fa-globe"></i>
+            <a href="https://{{ company.url }}/" target="_blank">{{ company.url }}</a>
+          </div>
+        </div>
       <p>{{ company.summary }}</p>
     </div>
     {% for position in company.positions %}
@@ -110,12 +116,6 @@ description: "Toutes mes expériences, mes formations et certifications"
         <small>de {{ position.startDate }} à {{ position.endDate }}</small>
       </summary>
       <div>
-        <div class="company-quick-info">
-          <div>
-            <i class="fa-solid fa-globe"></i>
-            <a href="https://{{ company.url }}/" target="_blank">{{ company.url }}</a>
-          </div>
-        </div>
         <p>{{ position.summary }}</p>
         <ul>
           {% for highlight in position.highlights %}
