@@ -68,13 +68,13 @@
   {
     "company": "IMATECH",
     "logo": "/assets/cv/companies/imatech.jpg",
-    "description": "Service d'information, Nantes",
+    "description": "Services d'information, Nantes",
     "url": "https://www.imatechnologies.fr/"
   },
   {
     "company": "Groupe Roullier",
     "logo": "/assets/cv/companies/groupe-roullier.jpg",
-    "description": "Industriel, Saint-Malo",
+    "description": "Agrofourniture et agrochimie, Saint-Malo",
     "url": "https://www.roullier.com/"
   },
   {
@@ -134,7 +134,7 @@
   {
     "company": "METSYS",
     "logo": "/assets/cv/companies/metsys.jpg",
-    "description": "Services numérique, Rennes",
+    "description": "Services numériques, Rennes",
     "url": "https://www.metsys.fr/"
   },
   {
