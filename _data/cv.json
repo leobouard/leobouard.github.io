@@ -68,6 +68,7 @@
             "endDate":  "aujourd'hui",
             "duration":  "Plus de 7 ans",
             "url":  "www.metsys.fr",
+            "activity": "Services numériques",
             "summary":  "Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.",
             "positions":  [
                 {
@@ -110,6 +111,7 @@
             "endDate":  "2024",
             "duration":  "5 ans et 3 mois",
             "url":  "www.roullier.com",
+            "activity": "Agrofourniture et agrochimie",
             "summary":  "Groupe international présent sur 50 pays à travers 80 entités. 10 000 utilisateurs dans un environnement Active Directory et Microsoft 365.",
             "positions":  [
                 {
@@ -157,6 +159,7 @@
             "endDate":  "2018",
             "duration":  "1 an et 5 mois",
             "url":  "www.geves.fr",
+            "activity": "Recherche agronomique",
             "summary":  "Laboratoire d'analyse végétale présent sur six sites en France. Environ 600 utilisateurs dans un environnement Active Directory et Office 365.",
             "positions":  [
                 {
