@@ -106,6 +106,12 @@ description: "Toutes mes expériences, mes formations et certifications"
         <h4>{{ position.title }}</h4>
         <small>de {{ position.startDate }} à {{ position.endDate }}</small>
       </summary>
+      <div class="company-quick-info">
+        <div>
+          <i class="fa-solid fa-globe"></i>
+          <a href="https://{{ company.url }}/" target="_blank">{{ company.url }}</a>
+        </div>
+      </div>
       <div>
         <p>{{ position.summary }}</p>
         <ul>
