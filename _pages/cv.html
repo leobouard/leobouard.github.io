@@ -101,15 +101,15 @@ description: "Toutes mes expériences, mes formations et certifications"
     </summary>
     <div>
       <div class="company-quick-info">
-          <div>
-            <i class="fa-solid fa-globe"></i>
-            <a href="https://{{ company.url }}/" target="_blank">{{ company.url }}</a>
-          </div>
-          <div>
-            <i class="fa-solid fa-briefcase"></i>
-            <span>{{ company.activity }}</span>
-          </div>
+        <div>
+          <i class="fa-solid fa-briefcase"></i>
+          <span>{{ company.activity }}</span>
         </div>
+        <div>
+          <i class="fa-solid fa-globe"></i>
+          <a href="https://{{ company.url }}/" target="_blank" class="no-decoration">{{ company.url }}</a>
+        </div>
+      </div>
       <p>{{ company.summary }}</p>
     </div>
     {% for position in company.positions %}
