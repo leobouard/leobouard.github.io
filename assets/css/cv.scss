@@ -64,6 +64,23 @@ details.experience[open] i.open-indicator-experience {
     transform: rotate(0deg);
 }
 
+details.experience[open] summary {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+div.company-quick-info {
+    display: flex;
+    grid-gap: 1em;
+    font-size: small;
+    color: var(--heavyaccent);
+    background: var(--lightaccent);
+    padding: 0.5em;
+    border-radius: 0 0 var(--borderradius) var(--borderradius);
+    border: 1px solid var(--mediumaccent);
+    border-top: none;
+}
+
 .experience summary {
     list-style: none;
 }
