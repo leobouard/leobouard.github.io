@@ -43,11 +43,13 @@ description: "Toutes mes expériences, mes formations et certifications"
       </li>
       <li>
         <i class="fa-solid fa-envelope"></i>
-        <a href="mailto:{{ site.data.cv.personalInfo.email }}" class="no-decoration">{{ site.data.cv.personalInfo.email }}</a>
+        <a href="mailto:{{ site.data.cv.personalInfo.email }}" class="no-decoration">{{ site.data.cv.personalInfo.email
+          }}</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
-        <a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank" class="no-decoration">{{ site.data.cv.personalInfo.website }}</a>
+        <a href="https://{{ site.data.cv.personalInfo.website }}" target="_blank" class="no-decoration">{{
+          site.data.cv.personalInfo.website }}</a>
       </li>
       <li>
         <i class="fa-solid fa-language"></i>
@@ -61,7 +63,7 @@ description: "Toutes mes expériences, mes formations et certifications"
     <h3>Compétences</h3>
     <ul class="skills">
       {% for skill in site.data.cv.skills %}
-        <li>{{ skill }}</li>
+      <li>{{ skill }}</li>
       {% endfor %}
     </ul>
     <h3>Certifications</h3>
@@ -78,7 +80,8 @@ description: "Toutes mes expériences, mes formations et certifications"
         </a>
       </div>
       {% endfor %}
-      <a href="/certificates" class="hide-on-print no-decoration button-primary hover-bottom" style="margin: auto; font-size: small; margin-top: 0.75em;">Voir les certifications</a>
+      <a href="/certificates" class="hide-on-print no-decoration button-primary hover-bottom"
+        style="margin: auto; font-size: small; margin-top: 0.75em;">Voir les certifications</a>
     </div>
   </div>
 </div>
@@ -106,13 +109,13 @@ description: "Toutes mes expériences, mes formations et certifications"
         <h4>{{ position.title }}</h4>
         <small>de {{ position.startDate }} à {{ position.endDate }}</small>
       </summary>
-      <div class="company-quick-info">
-        <div>
-          <i class="fa-solid fa-globe"></i>
-          <a href="https://{{ company.url }}/" target="_blank">{{ company.url }}</a>
-        </div>
-      </div>
       <div>
+        <div class="company-quick-info">
+          <div>
+            <i class="fa-solid fa-globe"></i>
+            <a href="https://{{ company.url }}/" target="_blank">{{ company.url }}</a>
+          </div>
+        </div>
         <p>{{ position.summary }}</p>
         <ul>
           {% for highlight in position.highlights %}
@@ -147,16 +150,17 @@ description: "Toutes mes expériences, mes formations et certifications"
 <div class="all-posts">
   {% assign posts = site.posts | where: "listed", true | slice: 0, 3 %}
   {% for post in posts %}
-  {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
+  {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags %}
   {% endfor %}
 </div>
 
 <h2>Projets open-source</h2>
-<p>Voici quelques projets open-source sur lesquels j'ai travaillé. Vous pouvez retrouver l'ensemble de mes contributions sur <a href="https://github.com/leobouard" target="_blank">mon profil GitHub</a>.</p>
+<p>Voici quelques projets open-source sur lesquels j'ai travaillé. Vous pouvez retrouver l'ensemble de mes contributions
+  sur <a href="https://github.com/leobouard" target="_blank">mon profil GitHub</a>.</p>
 <div class="github-repositories">
   {% if site.data.repositories.github_repos %}
-    {% for repo in site.data.repositories.github_repos %}
-      {% include github-repository.html repository=repo %}
-    {% endfor %}
+  {% for repo in site.data.repositories.github_repos %}
+  {% include github-repository.html repository=repo %}
+  {% endfor %}
   {% endif %}
 </div>
