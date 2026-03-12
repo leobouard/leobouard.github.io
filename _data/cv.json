@@ -70,10 +70,10 @@
             "summary":  "Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.",
             "positions":  [
                 {
-                    "title":  "Ingénieur systèmes (mode projet)",
-                    "startDate":  "avril 2024",
+                    "title":  "Ingénieur systèmes",
+                    "startDate":  "octobre 2021",
                     "endDate":  "aujourd'hui",
-                    "summary":  "Mode projet et multi-clients sur les sujets d'identité, d'automatisation et d'outils collaboratifs.",
+                    "summary":  "Mode projet et multi-clients depuis avril 2024 sur les sujets d'identité, d'automatisation et d'outils collaboratifs.",
                     "highlights":  [
                         "sécurisation de plusieurs forêts Active Directory",
                         "expertise PowerShell",
@@ -92,12 +92,6 @@
                         "la qualification technique des candidats",
                         "l'organisation des afterworks d'équipe"
                     ]
-                },
-                {
-                    "title":  "Ingénieur systèmes",
-                    "startDate":  "octobre 2021",
-                    "endDate":  "mars 2024",
-                    "summary":  "Mission longue chez un client final (Groupe Roullier)."
                 },
                 {
                     "title":  "Administrateur systèmes",
