@@ -4,6 +4,10 @@
     Publié le {% include format-date.html date=include.date %}
   </span>
   <span>
+    <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+    Modifié le {% include format-date.html date=include.last_modified_at %}
+  </span>
+  <span>
     <i class="fa-regular fa-clock" aria-hidden="true"></i>
     {% include reading-time.html content=include.content %}
   </span>
