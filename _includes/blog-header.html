@@ -1,31 +1,43 @@
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const blogHeader = document.getElementById('blog-header');
-    const hideButton = document.getElementById('hide-blog-header');
-    const showButton = document.getElementById('show-blog-header');
+<section style="
+    width: 100%;
+    height: 40em;
+    background-image: linear-gradient(90deg, var(--accent) 1px,#0000 1px),linear-gradient(var(--accent) 1px,#0000 1px);
+    background-repeat: repeat;
+    background-size: 4em 4em;
+    mask-image: linear-gradient(180deg, var(--background) 70%, transparent);
+    margin-bottom: -7em;
+    display: flex;
+    transform: skew(4deg, -3deg);
+    z-index: -1;
+    margin-top: -5em;
+">
+  <div style="
+    max-width: 800px;
+    padding: 2em;
+    margin: auto;
+    position: relative;
+">
+    <div style="
+        position: absolute;
+    aspect-ratio: 2/1;
+    background: var(--mediumaccent);
+    width: 12em;
+    filter: blur(5em);
+"></div>
+    <span style="
+    font-family: var(--titlefont);
+    font-size: 3.5em;
+    line-height: 110%;
+    background: linear-gradient(-2deg, black, var(--accent));
+    background-clip: text;
+    color: transparent;
+    user-select: none;
+">Une phrase<br>vraiment très<br>impactante.</span>
+    <p style="
+    margin-top: 2em;
+">Blog technique principalement sur PowerShell et Active Directory. Il s'agit plus d'une documentation personnelle
+      ouverte à tous qu'un vrai site web.</p>
+  </div>
 
-    if (readCookie('cookie-hide-blog-header') == 'true') {
-      blogHeader.style.display = 'none';
-      showButton.style.display = 'block';
-    }
 
-    hideButton.addEventListener('click', () => {
-      blogHeader.style.display = 'none';
-      showButton.style.display = 'block';
-      createCookie('cookie-hide-blog-header', 'true', 31);
-    });
-
-    showButton.addEventListener('click', () => {
-      showButton.style.display = 'none';
-      eraseCookie('cookie-hide-blog-header');
-    });
-  });
-</script>
-
-<section class="blog-header" id="blog-header">
-  <button id="hide-blog-header" class="hide-button" title="Masquer la bannière d'accueil">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-  <span>Bienvenue ! 👋</span>
-  <p>Blog technique principalement sur PowerShell et Active Directory. Il s'agit plus d'une documentation personnelle ouverte à tous qu'un vrai site web.</p>
 </section>

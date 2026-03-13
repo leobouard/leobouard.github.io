@@ -31,7 +31,7 @@ Le problème principal de M365DSC est que même si le projet était mené par Mi
 
 2024 : début du projet UTCM côté Microsoft, avec un support officiel pour sauvegarder, recréer, monitorer les écarts de configuration et faire du rollback si besoin. Offrir du support client. Pour réduire la complexité : utilisation de Microsoft Graph via des API ouvertes et utilisable par tous (que se soit en PowerShell, en .NET ou en Python).
 
-### Fonctionnalités 
+### Fonctionnalités
 
 M365DSC pouvait gérer la configuration de nombreux produits comme Microsoft 365. Pour UTCM, dans la public preview sortie en janvier 2026, n'est supporté pour le moment uniquement :
 
@@ -50,8 +50,7 @@ Choses que UTCM ne fait pas : la sauvegarde de la partie "Données". UTCM ne se 
 
 ### Différence
 
-M365DSC stocke sa configuration au format propriétaire DSC, et le processing se fait par PowerShell sur la machine cliente.
-UTCM stocke sa configuration en JSON et tout le processing se passe du côté de Microsoft.
+M365DSC stocke sa configuration au format propriétaire DSC, et le processing se fait par PowerShell sur la machine cliente. UTCM stocke sa configuration en JSON et tout le processing se passe du côté de Microsoft.
 
 ### Fonctionnement
 
