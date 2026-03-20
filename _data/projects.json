@@ -48,6 +48,14 @@
         "year": 2026,
         "projects": [
             {
+                "company": "Groupe Even",
+                "title": "Scripting PowerShell",
+                "period": "mars 2026",
+                "duration": "au forfait",
+                "description": "Création d'un tableau de bord de suivi de la conformité interne avec PowerShell (module PSWriteHTML)",
+                "tags": ["powershell"]
+            },
+            {
                 "company": "Archipel Habitat",
                 "title": "Intégration Microsoft 365 Copilot",
                 "period": "mars 2026",
