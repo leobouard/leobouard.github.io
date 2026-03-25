@@ -33,7 +33,7 @@ Vous pouvez obtenir l'information des objets autorisés à obtenir le mot de pas
 Get-ADServiceAccount gmsa -Properties PrincipalsAllowedToRetrieveManagedPassword
 ```
 
-Une fois la liste des serveurs obtenues, il ne reste plus qu'à controller l'utilisation du gMSA sur chaque serveur, avec les étapes suivantes :
+Une fois la liste des serveurs obtenue, il ne reste plus qu'à contrôller l'utilisation du gMSA sur chaque serveur, avec les étapes suivantes :
 
 - État d'installation du gMSA
 - Utilisation dans les tâches planifiées
