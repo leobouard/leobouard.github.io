@@ -23,15 +23,31 @@
 
 ## Histoire de Microsoft UTCM
 
-Créé par Nik Charlebois, un employé de Microsoft et MVP qui a travaillé en tant que PFE SharePoint, sur le développement de Microsoft Graph et M365DSC (2018).
+### Les prémices : Microsoft 365 DSC
 
-D'abord créé comme un outil de troubleshooting de fermes SharPoint onprem pour répliquer une configuration client, le produit a évalué vers un outil communautaire plus étendu. Le projet a pris en traction et a évolué vers un système qui gère plus de choses : Entra ID, Exchange, Intune, SharePoint & OneDrive, Purview, quelques briques de Microsoft Defender, Teams, PowerPlatform,  Azure Sentinel et Azure DevOps. Groso modo, tout ce qui dispose d'une API sur les consoles d'administration classiques.
+[Microsoft365DSC](https://github.com/microsoft/microsoft365DSC) est un module PowerShell communautaire qui permet d'automatiser le déploiement et la configuration de nombreux éléments d'un tenant Microsoft 365, en utilisant la technologie PowerShell DSC (Desired State Configuration).
 
-Le problème principal de M365DSC est que même si le projet était mené par Microsoft et supporté par la communauté en open-source, ce support était en "best-effort" et n'arrivait pas toujours à suivre les évolutions de la plateforme Microsoft 365. Autre problème : la courbe d'apprentissage pour pouvoir participer au projet est abrupte. Le projet M365DSC est écrit en PowerShell mais les contributeurs doivent avoir une expérience et une comprehension de DSC (*Desired State Configuration*) et de Microsoft 365, ce qui réduit drastiquement le nombre de personnes qualifiées pour pouvoir participer au projet.
+Il a été créé en 2018 par Nik Charlebois, un employé de Microsoft et MVP qui a travaillé en tant que PFE (Premier Field Engineer) SharePoint et sur le développement de l'API Microsoft Graph.
 
-2024 : début du projet UTCM côté Microsoft, avec un support officiel pour sauvegarder, recréer, monitorer les écarts de configuration et faire du rollback si besoin. Offrir du support client. Pour réduire la complexité : utilisation de Microsoft Graph via des API ouvertes et utilisable par tous (que se soit en PowerShell, en .NET ou en Python).
+M365DSC a d'abord été conçu comme un outil de troubleshooting de fermes SharPoint OnPrem, utilisé pour répliquer une configuration client à distance. Le produit a ensuite été mis en open-source pour bénéficier d'un support de la communauté.
 
-### Fonctionnalités
+Le projet a pris en traction et a évolué vers un système qui gère plus de choses : Entra ID, Exchange, Intune, SharePoint & OneDrive, Purview, quelques briques de Microsoft Defender, Teams, PowerPlatform, Azure Sentinel et Azure DevOps. Groso modo, tout ce qui dispose d'une API sur les consoles d'administration classiques.
+
+### Les limites de M365DSC
+
+Le problème principal de M365DSC est que même si le projet était mené par Microsoft et supporté par la communauté en open-source, ce support était en "best-effort" et n'arrivait pas toujours à suivre les évolutions de la plateforme Microsoft 365 : les APIs changent rapidement, se multiplient et le projet a toujours un train de retard.
+
+Autre problème : la courbe d'apprentissage pour pouvoir participer au projet est abrupte. Le projet M365DSC est écrit en PowerShell mais les contributeurs doivent avoir une expérience et une comprehension de DSC (*Desired State Configuration*) et de Microsoft 365, ce qui réduit drastiquement le nombre de personnes qualifiées pour pouvoir participer au projet.
+
+### Début du projet UTCM
+
+2024 : début du projet UTCM côté Microsoft, avec un support officiel pour sauvegarder, recréer, monitorer les écarts de configuration et faire du rollback si besoin. L'idée est d'offrir un vrai support client et suivre plus facilement les évolutions de la plateforme.
+
+Pour réduire la complexité du projet, il est également décidé d'intégrer ce nouvel outil directement dans l'API Microsoft Graph. Cette nouvelle architecture permet donc d'intéragir avec le language que l'on veut (PowerShell, Python, Javascript, .NET) et depuis n'importe où (plus besoin d'installer un module ou de laisser tourner le script pendant des heures).
+
+## Fonctionnement
+
+### Fonctionnalités prises en charge
 
 M365DSC pouvait gérer la configuration de nombreux produits comme Microsoft 365. Pour UTCM, dans la public preview sortie en janvier 2026, n'est supporté pour le moment uniquement :
 
@@ -46,23 +62,36 @@ M365DSC pouvait gérer la configuration de nombreux produits comme Microsoft 365
 >
 > Les deux produits, même si ils répondent aux mêmes besoins sont radicalement différents. UTCM n'est pas une intégration de M365DSC dans la Graph API. Par ailleurs, M365DSC continuera de vivre comme un projet communautaire.
 
-Choses que UTCM ne fait pas : la sauvegarde de la partie "Données". UTCM ne se concentre que sur la partie **configuration** (comme son nom l'indique). Vous ne pourrez donc pas restaurer des groupes, des utilisateurs ou des fichiers SharePoint avec UTCM. CEPENDANT, certains groupes ou utilisateurs sont des éléments essentiels de la configuration, notamment ceux utilisés dans vos accès conditionnels. Ceux-ci sont alors sauvegardés pour pouvoir répliquer la configuration à 100%.
+Choses que UTCM ne fait pas : la sauvegarde de la partie "Données". UTCM ne se concentre que sur la partie **configuration** (comme son nom l'indique). Vous ne pourrez donc pas restaurer des groupes, des utilisateurs ou des fichiers SharePoint avec UTCM.
+
+![CEPENDANT](https://media.tenor.com/MzGDd5iBrPkAAAAe/cependant-seb-du-grenier.png)
+
+Certains groupes ou utilisateurs sont des éléments essentiels de la configuration, notamment ceux utilisés dans vos accès conditionnels. Ceux-ci sont alors sauvegardés pour pouvoir répliquer la configuration dans son intégralité.
 
 ### Différence
 
-M365DSC stocke sa configuration au format propriétaire DSC, et le processing se fait par PowerShell sur la machine cliente. UTCM stocke sa configuration en JSON et tout le processing se passe du côté de Microsoft.
+M365DSC stocke sa configuration au format propriétaire DSC, et le processing se fait par PowerShell sur la machine cliente. UTCM quand à lui, stocke sa configuration en JSON et tout le processing se passe du côté de Microsoft.
 
-### Fonctionnement
+### Comment utiliser UTCM ?
+
+L'utilisation de UTCM se fait en deux étapes :
 
 1. Faire un appel API avec le scope des choses à sauvegarder
 2. Télécharger le fichier qui a été généré (disponible pendant 7 jours côté Microsoft)
+
+Une fois que l'on a récupéré notre fichier JSON qui contient toutes nos données de configuration de notre tenant, on peut en faire ce qu'on veut !
+
+## Cas d'utilisation
+
+### Monitor
 
 Possibilité de créé un Monitor (tâche planifiée) qui tourne toute les 6 heures (plusieurs schedules disponibles bientôt, ça ne descendra pas en dessous de 1h). Le Monitor va permettre d'analyser la configuration actuelle par rapport à celle sauvegardée pour ensuite faire de l'alerting ou du roll-back, suivant vos préférences.
 
 Possibilité d'être extrèmement granulaire : exemple avec les accès conditionnels où il est possible de ne surveiller que la partie Groups Included & Excluded, et de laisser la partie Grant tranquille.
 
-Possibilité d'utiliser UTCM pour faire de la copie de configuration entre tenant : il est possible de répliquer la conf d'un environnement de PROD sur le TEST en spécifiant des paramètres pour ajuster certaines variables.
+### Copie de configuration
 
+Possibilité d'utiliser UTCM pour faire de la copie de configuration entre tenant : il est possible de répliquer la conf d'un environnement de PROD sur le TEST en spécifiant des paramètres pour ajuster certaines variables.
 
 Dans un monde idéal :
 
@@ -73,13 +102,21 @@ Dans un monde idéal :
 
 Le tout de manière complétement automatisée, en utilisant des variables et des paramètres spécifiques.
 
-Obligation d'avoir une Entra ID P1
+## Prérequis techniques
+
+Obligation d'avoir une Entra ID P1, et avec 
+
+## Interface graphique nouvellement disponible
+
+https://entra.microsoft.com/#view/Microsoft_Entra_TenantManagement/TenantGovernance.MenuView/~/permissions
 
 API uniquement pour le moment. Il y aura une interface graphique à terme
 Les commandes PowerShell du module ne sont pas encore disponibles
 
+> A creuser pour le module PowerShell
+
 800 objets par jour qui peuvent être monitorés en version gratuite. Objet = 1 groupe, une CA
-donc 200 CA a superviser gratuitement.
+donc 200 CA a superviser gratuitement (4 passage de monitor à 6 h d'intervalle sur 200 objets)
 
 Configuration.Monitoring.ReadWrite (nouveau rôle) pour tout faire, mais n'importe quel rôle intégré plus restrictif peut fonctionner pour un périmètre limité
 
@@ -89,9 +126,7 @@ Configuration.Monitoring.ReadWrite (nouveau rôle) pour tout faire, mais n'impor
 2. Créer un monitor
 3. Créer un drift et faire un auto rollback
 
-
 Quid de M365DSC : possibilité de conversion vers le fichier JSON compatible avec UTCM ou simplement faire un snapshot
-
 
 ### Création d'une app registration
 
@@ -149,3 +184,10 @@ $body = @"
 $responseMonitor = Invoke-MgGraphRequest -Method POST -Uri $uri
 ```
 
+## La stratégie de Microsoft derrière tout ça
+
+Pourquoi est-ce que Microsoft dédie des ressources sur le sujet ?
+
+Comment est-ce que cela va avec la nouvelle sauvegarde de Entra ID ?
+
+L'état de la Microsoft Graph API 

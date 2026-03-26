@@ -1,5 +1,6 @@
 {
-    "picture":  "/assets/images/profile-picture.jpg",
+    "picture":  "/assets/images/profile-picture.webp",
+    "picture-small":  "/assets/images/profile-picture-small.webp",
     "name":  "Léo Bouard",
     "title":  "Ingénieur systèmes",
     "personalInfo":  {
