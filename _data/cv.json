@@ -66,8 +66,8 @@
             "logo":  "/assets/cv/companies/metsys.jpg",
             "location":  "Rennes, Bretagne",
             "startDate":  "2018",
-            "endDate":  "aujourd'hui",
-            "duration":  "Plus de 7 ans",
+            "endDate":  "2026",
+            "duration":  "7 ans et 9 mois",
             "url":  "www.metsys.fr",
             "activity": "Services numériques",
             "summary":  "Entreprise de services numériques (ESN) d'environ 500 collaborateurs, présente sur toute la France et spécialisée dans l'expertise des produits Microsoft et de la cybersécurité.",
@@ -75,7 +75,7 @@
                 {
                     "title":  "Ingénieur systèmes",
                     "startDate":  "octobre 2021",
-                    "endDate":  "aujourd'hui",
+                    "endDate":  "juin 2026",
                     "summary":  "Mode projet et multi-clients depuis avril 2024 sur les sujets d'identité, d'automatisation et d'outils collaboratifs.",
                     "highlights":  [
                         "sécurisation de plusieurs forêts Active Directory",
@@ -87,7 +87,7 @@
                 {
                     "title":  "Responsable d'équipe",
                     "startDate":  "octobre 2021",
-                    "endDate":  "aujourd'hui",
+                    "endDate":  "juin 2026",
                     "summary":  "Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.",
                     "highlights":  [
                         "le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels",
