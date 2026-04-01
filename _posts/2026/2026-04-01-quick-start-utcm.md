@@ -1,7 +1,7 @@
 ---
 title: "Découverte de UTCM"
-description: "Démarrer rapidement Universal Tenant Configuration Manager"
-tags: ["msgraph", "powershell", "microsoft365"]
+description: "Démarrer rapidement avec le successeur de M365DSC : Universal Tenant Configuration Manager"
+tags: ["msgraph", "microsoft365"]
 listed: true
 ---
 
