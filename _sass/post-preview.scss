@@ -48,8 +48,9 @@ span.date {
 }
 
 .article-tags span {
-     background: var(--lightaccent);
+    background: var(--lightaccent);
     padding: 0.1em 0.5em;
     border-radius: var(--borderradius);
     font-size: smaller;
+    border: 1px solid var(--mediumaccent);
 }

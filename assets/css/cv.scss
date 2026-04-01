@@ -238,6 +238,7 @@ div.certification-full span.code {
     padding: 0 0.5em;
     background: var(--lightaccent);
     z-index: 2;
+    border: 1px solid var(--mediumaccent);
 }
 
 div.certification-full span.organization {
@@ -323,6 +324,7 @@ div.personalInfo ul i {
     border-radius: var(--borderradius);
     text-decoration: none;
     font-size: smaller;
+    border: 1px solid var(--mediumaccent);
 }
 
 // CALL TO WEBSITE
@@ -477,6 +479,7 @@ div.applied-skill span {
     border-radius: var(--borderradius);
     text-decoration: none;
     font-size: smaller;
+    border: 1px solid var(--mediumaccent);
 }
 
 // CV WRAPPER

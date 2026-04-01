@@ -13,6 +13,7 @@ div.all-tags a {
     border-radius: var(--borderradius);
     text-decoration: none;
     font-size: smaller;
+    border: 1px solid var(--mediumaccent);
 }
 
 div.all-tags a:hover {
