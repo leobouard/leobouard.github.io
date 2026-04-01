@@ -153,15 +153,15 @@ description: "Toutes mes expériences, mes formations et certifications"
 {% assign allposts = site.posts | where: "listed", true %}
 {% assign posts = allposts | slice: 0, 3 %}
 <p>Depuis 2021, j'essaye de publier régulièrement sur mon blog <a
-    href="https://www.labouabouate.fr/">www.labouabouate.fr</a>. Il a actuellement {{ allposts.size }} articles
-  disponibles, et voici mes derniers billets publiés :</p>
+    href="https://www.labouabouate.fr/">www.labouabouate.fr</a>. Il y a actuellement {{ allposts.size }} articles
+  disponibles, et voici les derniers qui ont été publiés :</p>
 <div class="all-posts">
   {% for post in posts %}
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags %}
   {% endfor %}
 </div>
 
-<h2>Projets open-source</h2>
+<h2>Projets</h2>
 <p>Voici quelques projets open-source sur lesquels j'ai travaillé. Vous pouvez retrouver l'ensemble de mes contributions
   sur <a href="https://github.com/leobouard" target="_blank">mon profil GitHub</a>.</p>
 <div class="github-repositories">
@@ -172,7 +172,7 @@ description: "Toutes mes expériences, mes formations et certifications"
   {% endif %}
 </div>
 
-<h2>Présentations publiques</h2>
+<h2>Présentations</h2>
 <p>J'ai eu l'occasion de faire des présentations techniques à plusieurs reprises lors de conférences et meetups.</p>
 <div style="display: grid; grid-gap: 1em;">
   {% for talk in site.data.talks %}
