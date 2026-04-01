@@ -1,14 +1,14 @@
 [
   {
-    "title": "Comment garder la configuration de votre tenant M365 au carré avec UTCM ?",
     "date": "mars 2026",
-    "event": "Microsoft User Group Rennes",
+    "title": "Comment garder la configuration de votre tenant M365 au carré avec UTCM ?",
+    "description": "Présenté dans le cadre de la reprise du Microsoft Rennes User Group, dans les locaux de METSYS à Rennes.",
     "url": "https://www.linkedin.com/posts/fabien-dibot-5b693059_cest-parti-pour-le-meetup-du-rennes-microsoft-share-7444786691678064641-6h97"
   },
   {
-    "title": "Comment aller plus loin avec PowerShell ? (avec Pierre LE QUERE)",
     "date": "octobre 2022",
-    "event": "Meetup METSYS",
+    "title": "Comment aller plus loin avec PowerShell ?",
+    "description": "Présenté avec Pierre LE QUERE lors d'un meet-up technique organisé par METSYS, dans les locaux de Sup de Vinci à Rennes.",
     "url": "https://www.linkedin.com/posts/lucie-le-blouc-h-68546765_metsys-meetup-cybersecurite-share-6988770677025611776-aYYa"
   }
 ]
