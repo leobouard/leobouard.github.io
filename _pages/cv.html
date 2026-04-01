@@ -174,13 +174,13 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 <h2>Présentations publiques</h2>
 <p>J'ai eu l'occasion de faire des présentations techniques à plusieurs reprises lors de conférences et meetups.</p>
-<div>
+<div style="display: grid; grid-gap: 1em;">
   {% for talk in site.data.talks %}
-  <div>
-    <a href="{{ talk.url }}" target="_blank">
+  <div class="talk">
+    <a href="{{ talk.url }}" target="_blank" class="no-decoration">
+      <small><i class="fa-regular fa-calendar"></i>{{ talk.date }}</small>
       <h3>{{ talk.title }}</h3>
-      <small>{{ talk.date }}</small>
-      <small>{{ talk.event }}</small>
+      <span><i class="fa-solid fa-ticket"></i>{{ talk.event }}</span>
     </a>
   </div>
   {% endfor %}
