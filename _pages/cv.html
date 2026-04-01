@@ -150,8 +150,8 @@ description: "Toutes mes expériences, mes formations et certifications"
 </div>
 
 <h2>Publications</h2>
-{% assign allposts = site.posts | where: "listed", true  %}
-{% assign posts = allposts | slice: 0, 3 }
+{% assign allposts = site.posts | where: "listed", true %}
+{% assign posts = allposts | slice: 0, 3 %}
 <p>Depuis 2021, j'essaye de publier régulièrement sur mon blog <a href="https://www.labouabouate.fr/">www.labouabouate.fr</a>. Il a actuellement {{ allposts.size }} articles disponibles, et voici mes derniers billets publiés :</p>
 <div class="all-posts">
   {% for post in posts %}
