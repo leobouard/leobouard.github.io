@@ -149,10 +149,11 @@ description: "Toutes mes expériences, mes formations et certifications"
   {% endfor %}
 </div>
 
-<h2>Dernières publications</h2>
-<p>Voici les derniers articles publiés sur mon blog <a href="https://www.labouabouate.fr/">www.labouabouate.fr</a> :</p>
+<h2>Publications</h2>
+{% assign allposts = site.posts | where: "listed", true  %}
+{% assign posts = allposts | slice: 0, 3 }
+<p>Depuis 2021, j'essaye de publier régulièrement sur mon blog <a href="https://www.labouabouate.fr/">www.labouabouate.fr</a>. Il a actuellement {{ allposts.size }} articles disponibles, et voici mes derniers billets publiés :</p>
 <div class="all-posts">
-  {% assign posts = site.posts | where: "listed", true | slice: 0, 3 %}
   {% for post in posts %}
   {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags %}
   {% endfor %}
