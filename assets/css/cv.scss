@@ -72,19 +72,6 @@ div.company-quick-info i {
     color: var(--heavyaccent);
 }
 
-details.enterprise {
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-details.enterprise:not([open]) {
-    max-height: 5em;
-}
-
-details.enterprise[open] {
-    max-height: 1000px;
-}
-
 // EXPERIENCES
 
 .experience {
@@ -92,19 +79,6 @@ details.enterprise[open] {
     margin-left: 2em;
     position: relative;
     break-inside: avoid;
-}
-
-details.experience {
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-details.experience:not([open]) {
-    max-height: 3em;
-}
-
-details.experience[open] {
-    max-height: 1000px;
 }
 
 details.experience[open] i.open-indicator-experience {
