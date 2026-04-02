@@ -500,13 +500,13 @@ div.applied-skill span {
 
 // DETAILS ANIMATION
 
-@keyframes details-show {
-  from {
-    opacity:0;
-    transform: var(--details-translate, translateY(-0.5em));
-  }
+details > *:not(summary) {
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+  transform: var(--details-translate, translateY(-0.5em));
 }
 
 details[open] > *:not(summary) {
-  animation: details-show 200ms ease-in-out;
+  opacity: 1;
+  transform: none;
 }
