@@ -380,7 +380,7 @@ $responsePOST = Invoke-MgGraphRequest -Method POST -Uri $uri -Body $body
 
 L'intégralité de votre fichier baseline est à mettre dans le body, à la place des `...`.
 
-> Rappel : pas de caractères spéciaux ou d'accent dans le nom de votre baseline !
+> Rappel : pas de caractères spéciaux ou d'accent dans le nom de votre monitor !
 
 Même si honnêtement, la création par interface graphique reste plus simple et permet une vérification syntaxique immédiate de votre baseline. Le lien direct : [Gouvernance des locataires - Centre d’administration Microsoft Entra](https://entra.microsoft.com/#view/Microsoft_Entra_TenantManagement/TenantGovernance.MenuView/~/permissions)
 
