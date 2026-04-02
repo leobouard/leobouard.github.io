@@ -1,4 +1,7 @@
---- --- // ENTERPRISES
+---
+---
+
+// ENTERPRISES
 
 div.enterprise,
 summary.enterprise {
@@ -143,7 +146,6 @@ div.personalLinks a i {
     height: 3em;
     transition: all ease-in-out 200ms;
 }
-
 .certification:hover {
     background: var(--lightaccent);
 }
@@ -435,7 +437,7 @@ div.github-repositories {
 }
 
 div.github-repositories a {
-    max-width: 85%;
+    max-width: 85%;   
 }
 
 // APPLIED SKILLS
@@ -505,6 +507,6 @@ div.applied-skill span {
     }
 }
 
-details[open]>*:not(summary) {
+details[open] > *:not(summary) {
     animation: details-show 200ms ease-in-out;
 }
