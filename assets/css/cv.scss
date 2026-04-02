@@ -12,6 +12,7 @@ summary.enterprise {
     border-radius: var(--borderradius);
     position: relative;
     break-inside: avoid;
+    transition: all ease-in-out 200ms;
 }
 
 i.open-indicator-enterprise,
@@ -143,6 +144,7 @@ div.personalLinks a i {
     border: 1px solid var(--mediumaccent);
     border-radius: var(--borderradius);
     height: 3em;
+    transition: all ease-in-out 200ms;
 }
 .certification:hover {
     background: var(--lightaccent);
