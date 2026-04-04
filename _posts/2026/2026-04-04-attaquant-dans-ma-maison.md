@@ -21,7 +21,7 @@ Vendredi soir, je prépare à manger dans la cuisine en écoutant un peu de musi
 
 Bien sûr, je n'ai pas envie de faire tout ça depuis mon écran de téléphone, donc je me dirige dans le bureau pour m'installer devant mon PC, avec un grand écran.
 
-## Le ou la coupable
+## Le (ou la) coupable
 
 Et là, le mystère est résolu avant même d'allumer l'écran :
 
