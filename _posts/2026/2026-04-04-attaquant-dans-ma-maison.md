@@ -2,6 +2,7 @@
 title: "Mon compte Microsoft a été compromis"
 description: "Quand l'attaquant se trouve dans votre propre maison"
 tags: ["securite", "trivia"]
+listed: true
 ---
 
 > Aujourd'hui, je fais un article un peu différent. Pas de technique, simplement une histoire courte 😊
