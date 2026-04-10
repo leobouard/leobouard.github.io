@@ -48,6 +48,14 @@
         "year": 2026,
         "projects": [
             {
+                "company": "Groupe Legendre",
+                "title":  "Consultant SharePoint",
+                "period":  "avril 2026",
+                "duration":  "5 jours",
+                "description":  "Mise en place d'une gouvernance des sites SharePoint et équipes Teams, avec une remédiation sur la configuration actuelle et une récupération d'espace de stockage",
+                "tags":  ["sharepoint", "microsoft365"]
+            },
+            {
                 "company": "Groupe Even",
                 "title": "Scripting PowerShell",
                 "period": "mars 2026",
