@@ -11,7 +11,7 @@ Après de nombreuses tentatives échouées de prendre le sujet en main et de mon
 
 Déjà le terme de Authentication Policy et Authentication Policy Silos est un peu abstrait. On pourrait parler d'un **pare-feu d'authentification** (la partie *policy*) qui s'applique à un **regroupement de machine** (la partie *silo*). On défini donc des règles dans le pare-feu (qui peut se connecter, quelle est la durée de vie maximum d'un ticket Kerberos, est-ce que l'usage du NTLM est autorisé) que l'on appliquera ensuite à un ensemble d'ordinateurs.
 
-> Note : le silo est optionnel, et il est tout à faire possible de faire sans. Comme cet article vise à faire un tutoriel au plus simple, on va ignorer cette configuration.
+> Note : le silo est optionnel, et il est tout à faire possible de faire sans. Comme cet article vise à faire un tutoriel au plus simple, on va ignorer la configuration sans silo.
 
 Si vous êtes familier du concept de tiering-model, vous comprendrez qu'on a simplement à ajouter nos utilisateurs du TIER 0 dans la *policy* et nos serveurs TIER 0 dans le *silo* pour empêcher n'importe quel compte en dehors du TIER 0 de s'y connecter.
 
@@ -42,6 +42,8 @@ On va essayer de répliquer une configuration de tiering en utilisant exclusivem
 1. Le groupe *Allowed to authenticate to T1* qui va autoriser ses membres à se connecter aux serveurs du TIER 1
 2. L'utilisateur *t1_lbouard* qui représente un administrateur TIER 1
 3. Le serveur *SRV01* qui représente un serveur du TIER 1
+4. L'utilisateur *t2_lbouard* qui représente un administrateur TIER 2
+5. Le serveur *SRV02* qui représente un serveur du TIER 2
 
 L'objectif va donc être de restreindre l'accès au serveur SRV01 uniquement aux utilisateurs du TIER 1. Si un compte TIER 0 (membre du groupe Domain Admins) tente de s'y connecter, la connexion sera refusée même si le compte TIER 0 a les droits nécessaires.
 
@@ -113,6 +115,8 @@ $splat = @{
 New-ADAuthenticationPolicySilo @splat
 ```
 
+Ici encore une fois on vise la configuration la plus simple possible : on applique les mêmes règles pour les authentifications d'ordinateurs, d'utilisateurs ou de comptes de service.
+
 ### Intégration des serveurs dans le silo
 
 Ajouter le serveur SRV01 en tant que membre du silo :
@@ -147,12 +151,40 @@ Ne plus exposer le serveur SRV01 du pare-feu d'authentification :
 Set-ADComputer SRV01 -Clear 'msDS-AssignedAuthNPolicySilo'
 ```
 
+> Si l'ajout dans un silo se fait en deux étapes, deux étapes sont également nécessaires pour le retrait.
+
+## Administration quotidienne
+
+### Manquement des AuthNPolicy et AuthNPolicySilo
+
+L'ANSSI recommande le déploiement d'un tiering-model avec GPO + AuthNPolicy, pour pallier au manquement des AuthNPolicy. 
+
+Les membres du groupes "Allowed to authenticate to T1" peuvent tout à fait
+
+
+
+
+Tous les comptes ont des droits d'administration sur 
+
+- Seuls les utilisateurs membres du groupe "Allowed to authenticate to T1" et l'administrateur par défaut ont effectivement le droit de se connecter sur les ordinateurs du silo "T1 Silo"!
+- Les utilisateurs membres du groupe "Allowed to authenticate to T1" ne sont pas empêchés de se connecter ailleurs (si ceux-ci ont les droits suffisants pour le faire)
+- 
+
+D'après mes tests, le compte administrateur par défaut (avec le SID 500) n'est pas affecté par les 
+
+Pour tester un peu le comp
+
+Compte        | SRV01 | SRV02
+------        | ----- | -----
+Administrator | Oui   | Oui  
+t1_lbouard    | Oui   | Oui  
+t2_lbouard    | Non   | Oui  
+
 ## Automatisation de l'ajout dans le silo
 
 ```powershell
-$sb = 'OU=TIER 1,DC=corp,DC=contoso,DC=com'
+$sb = 'OU=T1,DC=corp,DC=contoso,DC=com'
 $computers = Get-ADComputer -Filter * -SearchBase $sb -Properties 'msDS-AssignedAuthNPolicySilo'
-
 $silosMembers = Get-ADAuthenticationPolicySilo 'T1 Silo' -Properties 'msDS-AuthNPolicySiloMembers'
 
 ```
