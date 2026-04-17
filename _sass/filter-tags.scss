@@ -14,6 +14,7 @@ div.all-tags a {
     text-decoration: none;
     font-size: smaller;
     border: 1px solid var(--mediumaccent);
+    transition: all ease-in-out 200ms;
 }
 
 div.all-tags a:hover {
