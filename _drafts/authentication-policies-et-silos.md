@@ -60,9 +60,9 @@ Création d'un groupe "Allowed to authenticate to T1" pour regrouper tous les co
 
 ```powershell
 $splat = @{
-    Name          = 'Allowed to authenticate to T0'
-    Path          = 'OU=Groups,OU=T0,DC=corp,DC=contoso,DC=com'
-    Description   = 'Members of this group are allowed to access to T0 computers through the authentication firewall'
+    Name          = 'Allowed to authenticate to T1'
+    Path          = 'OU=Groups,OU=T1,DC=corp,DC=contoso,DC=com'
+    Description   = 'Members of this group are allowed to access to T1 computers through the authentication firewall'
     GroupCategory = 'Security'
     GroupScope    = 'DomainLocal'
 }
@@ -72,7 +72,7 @@ New-ADGroup @splat
 Ajout de mon compte administrateur T1 dans le nouveau groupe :
 
 ```powershell
-Add-ADGroupMember 'Allowed to authenticate to T0' -Members 't0_lbouard'
+Add-ADGroupMember 'Allowed to authenticate to T1' -Members 't1_lbouard'
 ```
 
 ### Création des règles du pare-feu d'authentification
@@ -80,10 +80,10 @@ Add-ADGroupMember 'Allowed to authenticate to T0' -Members 't0_lbouard'
 Création des règles du pare-feu avec le moins de paramètres possibles :
 
 ```powershell
-$groupSid = (Get-ADGroup 'Allowed to authenticate to T0').SID.Value
+$groupSid = (Get-ADGroup 'Allowed to authenticate to T1').SID.Value
 $sddl = "O:SYG:SYD:(XA;OICI;CR;;;WD;(Member_of_any{SID($groupSID)}))"
 $splat = @{
-    Name                            = 'T0 Authentication Policy'
+    Name                            = 'T1 Authentication Policy'
     Enforce                         = $true
     ComputerAllowedToAuthenticateTo = $sddl
 }
@@ -104,9 +104,9 @@ Le SDDL peut être créé à partir de la commande `Show-ADAuthenticationPolicyE
 Création du silo qui va être soumis au pare-feu d'authentification que l'on a créé précédemment :
 
 ```powershell
-$authNpolicy = Get-ADAuthenticationPolicy 'T0 Authentication Policy'
+$authNpolicy = Get-ADAuthenticationPolicy 'T1 Authentication Policy'
 $splat = @{
-    Name                         = 'T0 Silo'
+    Name                         = 'T1 Silo'
     Enforce                      = $true
     ComputerAuthenticationPolicy = $authNpolicy
     ServiceAuthenticationPolicy  = $authNpolicy
@@ -123,13 +123,13 @@ Ajouter le serveur SRV01 en tant que membre du silo :
 
 ```powershell
 $computerDn = (Get-ADComputer SRV01).DistinguishedName
-Set-ADAuthenticationPolicySilo 'T0 Silo' -Add @{ 'msDS-AuthNPolicySiloMembers' = $computerDn }
+Set-ADAuthenticationPolicySilo 'T1 Silo' -Add @{ 'msDS-AuthNPolicySiloMembers' = $computerDn }
 ```
 
 Affecter le silo au serveur SRV01, ce qui permet d'exposer le serveur au pare-feu d'authentification :
 
 ```powershell
-Set-ADAccountAuthenticationPolicySilo 'SRV01$' -AuthenticationPolicySilo 'T0 Silo'
+Set-ADAccountAuthenticationPolicySilo 'SRV01$' -AuthenticationPolicySilo 'T1 Silo'
 ```
 
 > Pourquoi est-ce qu'il y a deux étapes ? J'en ai aucune foutue idée, mais les deux étapes sont nécessaires pour que le blocage soit effectif. Si le serveur n'est pas membre du silo (attribut `msDS-AuthNPolicySiloMembersBL`), même si celui-ci est exposé au pare-feu d'authentification (attribut `msDS-AssignedAuthNPolicySilo`), le blocage des comptes non-autorisés n'est pas effectif.
