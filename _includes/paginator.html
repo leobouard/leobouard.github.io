@@ -25,12 +25,18 @@
     const prevBtn = document.createElement("button");
     prevBtn.className = "button-primary hover-bottom";
     prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Précédent';
-    prevBtn.onclick = () => renderPage(currentPage - 1);
+    prevBtn.onclick = () => {
+        renderPage(currentPage - 1);
+        document.getElementById('top').scrollIntoView({behavior: 'smooth'});
+    };
 
     const nextBtn = document.createElement("button");
     nextBtn.className = "button-primary hover-bottom";
     nextBtn.innerHTML = 'Suivant <i class="fa-solid fa-arrow-right"></i>';
-    nextBtn.onclick = () => renderPage(currentPage + 1);
+    nextBtn.onclick = () => {
+        renderPage(currentPage + 1);
+        document.getElementById('top').scrollIntoView({behavior: 'smooth'});
+    };
 
     const pageIndicator = document.createElement("small");
 
@@ -41,6 +47,14 @@
         allPostsDiv.parentNode.insertBefore(nav, allPostsDiv.nextSibling);
     }
 
+    function updatePaginatorVisibility() {
+        const hasSearchFilter = document.getElementById('searchbar')?.value.trim() !== '';
+        const hasTagFilter = document.querySelector('a[onclick^="filterByTag"].selected') !== null;
+        nav.style.display = (hasSearchFilter || hasTagFilter) ? 'none' : '';
+    }
+
     renderPage(1);
-})();
+    updatePaginatorVisibility();
+
+    window.updatePaginatorVisibility = updatePaginatorVisibility;
 </script>

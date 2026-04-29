@@ -30,6 +30,9 @@
       }
     });
     hideEmtpyYear();
+    if (window.updatePaginatorVisibility) {
+      window.updatePaginatorVisibility();
+    }
   }
 
   function clearfilterByTag() {
@@ -39,6 +42,9 @@
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       link.classList.remove('selected');
     });
+    if (window.updatePaginatorVisibility) {
+      window.updatePaginatorVisibility();
+    }
   }
 
   function hideEmtpyYear() {
