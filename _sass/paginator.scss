@@ -1,0 +1,15 @@
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.paginator small {
+    color: var(--heavyaccent);
+}
+
+.paginator button:disabled {
+    filter: opacity(0.5) grayscale(1);
+}

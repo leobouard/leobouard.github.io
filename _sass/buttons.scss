@@ -2,7 +2,7 @@ a.no-decoration {
     text-decoration: none;
 }
 
-a.button-primary {
+.button-primary {
     padding: 0.75em 1.5em;
     border: 1px solid var(--primary);
     font-family: var(--titlefont);
@@ -11,7 +11,7 @@ a.button-primary {
     border-radius: var(--borderradius);
 }
 
-a.button-primary:hover {
+.button-primary:hover {
     background: var(--lightaccent)
 }
 
@@ -25,7 +25,7 @@ a.smaller {
     padding: 0.25em 0.5em !important;
 }
 
-a.button-primary:hover {
+.button-primary:hover {
     text-decoration: underline;
 }
 
