@@ -38,7 +38,7 @@
 
     const allPostsDiv = document.querySelector(".all-posts");
     if (allPostsDiv) {
-        allPostsDiv.parentNode.insertAfter(nav, allPostsDiv);
+        allPostsDiv.parentNode.insertBefore(nav, allPostsDiv.nextSibling);
     }
 
     renderPage(1);
