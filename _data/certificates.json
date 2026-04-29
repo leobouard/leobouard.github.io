@@ -45,6 +45,13 @@
         "url": "https://www.credly.com/badges/c5f8ba7a-be2e-4448-bb9f-0fef97e7c1ac/public_url"
     },
     {
+        "name": "MOOC SecNumAcadémie",
+        "organization": "ANSSI",
+        "date": "septembre 2024",
+        "image": "/assets/cv/certifications/anssi.png",
+        "url": "/assets/cv/certifications/secnumacademie.png"
+    },
+    {
         "name": "Microsoft 365 Administrator Expert",
         "code": "MS-102",
         "organization": "Microsoft",
