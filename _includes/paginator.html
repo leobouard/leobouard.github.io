@@ -1,0 +1,51 @@
+<script>
+    (function () {
+    const pageSize = 15;
+    const articles = Array.from(document.querySelectorAll("article"));
+    const totalPages = Math.ceil(articles.length / pageSize);
+    let currentPage = 1;
+
+    function renderPage(page) {
+        currentPage = page;
+
+        articles.forEach((a, i) => {
+            const start = (page - 1) * pageSize;
+            const end = start + pageSize;
+            a.style.display = (i >= start && i < end) ? "" : "none";
+        });
+
+        pageIndicator.textContent = `Page ${currentPage} / ${totalPages}`;
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+    }
+
+    const nav = document.createElement("div");
+    nav.style.cssText = `
+        display:flex;
+        gap:10px;
+        margin:20px 0;
+        align-items:center;
+        font-size:1.1em;
+    `;
+
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "← Précédent";
+    prevBtn.onclick = () => renderPage(currentPage - 1);
+
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "Suivant →";
+    nextBtn.onclick = () => renderPage(currentPage + 1);
+
+    const pageIndicator = document.createElement("span");
+
+    nav.append(prevBtn, pageIndicator, nextBtn);
+
+    const allPostsDiv = document.querySelector(".all-posts");
+    if (allPostsDiv) {
+        allPostsDiv.parentNode.insertBefore(nav, allPostsDiv);
+    }
+
+    renderPage(1);
+})();
+
+</script>
