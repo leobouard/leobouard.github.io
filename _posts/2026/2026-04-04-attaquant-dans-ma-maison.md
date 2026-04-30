@@ -1,7 +1,7 @@
 ---
 title: "Mon compte Microsoft a été compromis"
 description: "Quand l'attaquant se trouve dans votre propre maison"
-tags: ["securite", "trivia"]
+tags: ["windows"]
 listed: true
 ---
 
