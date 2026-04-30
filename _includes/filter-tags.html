@@ -30,6 +30,7 @@
       }
     });
     hideEmtpyYear();
+    togglePaginatorVisibility(false);
   }
 
   function clearfilterByTag() {
@@ -39,6 +40,7 @@
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       link.classList.remove('selected');
     });
+    togglePaginatorVisibility(true);
   }
 
   function hideEmtpyYear() {

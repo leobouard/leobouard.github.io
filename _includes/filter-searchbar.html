@@ -1,4 +1,11 @@
 <script>
+  function togglePaginatorVisibility(show) {
+    const paginator = document.getElementById('paginator-nav');
+    if (paginator) {
+      paginator.style.display = show ? '' : 'none';
+    }
+  }
+
   function filterArticlesBySearch() {
     clearfilterByTag();
     const searchValue = document.getElementById('searchbar').value.toLowerCase();
@@ -12,5 +19,6 @@
         article.style.display = 'none';
       }
     });
+    togglePaginatorVisibility(searchValue === '');
   }
 </script>
