@@ -1,56 +1,11 @@
 [
     {
-        "year": "En cours",
-        "projects": [
-            {
-                "company": "Groupe IMA",
-                "title": "Architecte Active Directory",
-                "period": "depuis novembre 2025",
-                "duration": "2 jours par semaine",
-                "description": "Remédiation et architecture des différents environnements Active Directory",
-                "tags": ["activedirectory"]
-            },
-            {
-                "company": "Oberthur Fiduciaire",
-                "title": "Consultant Active Directory",
-                "period": "depuis septembre 2025",
-                "duration": "10 jours",
-                "description": "Accompagnement des équipes internes pour la sécurisation de l'infrastructure Active Directory",
-                "tags": ["activedirectory"]
-            },
-            {
-                "company": "IMATECH",
-                "title": "Architecte Active Directory",
-                "period": "depuis juin 2025",
-                "duration": "20 jours",
-                "description": "Sécurisation Active Directory et mise en place du tiering-model",
-                "tags": ["activedirectory", "powershell"]
-            },
-            {
-                "company": "Groupe Roullier",
-                "title": "Architecte Active Directory",
-                "period": "depuis avril 2024",
-                "duration": "5 jours par mois",
-                "description": "Référent technique sur les projets Active Directory et l'automatisation avec PowerShell",
-                "tags": ["activedirectory", "powershell"]
-            },
-            {
-                "company": "METSYS",
-                "title":  "Administrateur Moodle",
-                "period":  "depuis juin 2025",
-                "duration":  "au besoin",
-                "description":  "Administrateur technique de la plateforme de formation en ligne de METSYS",
-                "tags":  ["formation", "linux"]
-            }
-        ]
-    },
-    {
         "year": 2026,
         "projects": [
             {
                 "company": "Groupe Legendre",
                 "title":  "Consultant SharePoint",
-                "period":  "avril 2026",
+                "period":  "de avril 2026 à juin 2026",
                 "duration":  "5 jours",
                 "description":  "Mise en place d'une gouvernance des sites SharePoint et équipes Teams, avec une remédiation sur la configuration actuelle et une récupération d'espace de stockage",
                 "tags":  ["sharepoint", "microsoft365"]
@@ -101,6 +56,22 @@
                 "tags": ["activedirectory"]
             },
             {
+                "company": "Groupe IMA",
+                "title": "Architecte Active Directory",
+                "period": "de novembre 2025 à juin 2026",
+                "duration": "2 jours par semaine",
+                "description": "Remédiation et architecture des différents environnements Active Directory",
+                "tags": ["activedirectory"]
+            },
+            {
+                "company": "Oberthur Fiduciaire",
+                "title": "Consultant Active Directory",
+                "period": "de septembre 2025 à juin 2026",
+                "duration": "10 jours",
+                "description": "Accompagnement des équipes internes pour la sécurisation de l'infrastructure Active Directory",
+                "tags": ["activedirectory"]
+            },
+            {
                 "company": "Crédit Mutuel Arkéa",
                 "title": "Consultant Active Directory",
                 "period": "de septembre 2025 à janvier 2026",
@@ -123,6 +94,22 @@
                 "duration": "2 jours",
                 "description": "Mise en place express d'un tiering-model sur Active Directory",
                 "tags": ["activedirectory", "powershell"]
+            },
+            {
+                "company": "IMATECH",
+                "title": "Architecte Active Directory",
+                "period": "de juin 2025 à juin 2026",
+                "duration": "20 jours",
+                "description": "Sécurisation Active Directory et mise en place du tiering-model",
+                "tags": ["activedirectory", "powershell"]
+            },
+            {
+                "company": "METSYS",
+                "title":  "Administrateur Moodle",
+                "period":  "de juin 2025 à juin 2026",
+                "duration":  "au besoin",
+                "description":  "Administrateur technique de la plateforme de formation en ligne de METSYS",
+                "tags":  ["formation", "linux"]
             },
             {
                 "company": "Avril",
@@ -215,6 +202,14 @@
                 "period": "de octobre 2024 à janvier 2025",
                 "duration": "10 jours",
                 "description": "Sécurisation et application des bonnes pratiques sur Active Directory et automatisation de processus en PowerShell",
+                "tags": ["activedirectory", "powershell"]
+            },
+            {
+                "company": "Groupe Roullier",
+                "title": "Architecte Active Directory",
+                "period": "de avril 2024 à juin 2026",
+                "duration": "5 jours par mois",
+                "description": "Référent technique sur les projets Active Directory et l'automatisation avec PowerShell",
                 "tags": ["activedirectory", "powershell"]
             },
             {
