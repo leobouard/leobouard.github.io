@@ -26,6 +26,11 @@
       return;
     }
 
+    const articles = document.querySelectorAll('.all-posts article');
+    articles.forEach(article => {
+      article.style.display = '';
+    });
+
     clearfilterByTag();
     showAllYears();
     document.querySelectorAll('#tag-container').forEach(container => {
