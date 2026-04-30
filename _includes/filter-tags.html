@@ -1,9 +1,16 @@
 <script>
-  function togglePaginatorVisibility(show) {
+  function hidePaginator() {
     const paginator = document.getElementById('paginator-nav');
     if (paginator) {
-      paginator.style.display = show ? '' : 'none';
-      if (show && window.resetPaginator) {
+      paginator.style.display = 'none';
+    }
+  }
+
+  function showAndResetPaginator() {
+    const paginator = document.getElementById('paginator-nav');
+    if (paginator) {
+      paginator.style.display = '';
+      if (window.resetPaginator) {
         window.resetPaginator();
       }
     }
@@ -31,8 +38,6 @@
       article.style.display = '';
     });
 
-    clearfilterByTag();
-    showAllYears();
     document.querySelectorAll('#tag-container').forEach(container => {
       const tags = container.querySelector('#tags');
       if (!tags || !tags.textContent.includes(tag)) {
@@ -45,7 +50,7 @@
       }
     });
     hideEmtpyYear();
-    togglePaginatorVisibility(false);
+    hidePaginator();
   }
 
   function clearfilterByTag() {
@@ -55,7 +60,7 @@
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       link.classList.remove('selected');
     });
-    togglePaginatorVisibility(true);
+    showAndResetPaginator();
   }
 
   function hideEmtpyYear() {

@@ -1,27 +1,41 @@
 <script>
-  function togglePaginatorVisibility(show) {
+  function hidePaginator() {
     const paginator = document.getElementById('paginator-nav');
     if (paginator) {
-      paginator.style.display = show ? '' : 'none';
-      if (show && window.resetPaginator) {
+      paginator.style.display = 'none';
+    }
+  }
+
+  function showAndResetPaginator() {
+    const paginator = document.getElementById('paginator-nav');
+    if (paginator) {
+      paginator.style.display = '';
+      if (window.resetPaginator) {
         window.resetPaginator();
       }
     }
   }
 
   function filterArticlesBySearch() {
-    clearfilterByTag();
     const searchValue = document.getElementById('searchbar').value.toLowerCase();
     const articles = document.querySelectorAll('.all-posts article');
+    
+    articles.forEach(article => {
+      article.style.display = '';
+    });
+    
     articles.forEach(article => {
       const title = article.querySelector('h3').textContent.toLowerCase();
       const description = article.querySelector('p').textContent.toLowerCase();
-      if (title.includes(searchValue) || description.includes(searchValue)) {
-        article.style.display = '';
-      } else {
+      if (!title.includes(searchValue) && !description.includes(searchValue)) {
         article.style.display = 'none';
       }
     });
-    togglePaginatorVisibility(searchValue === '');
+    
+    if (searchValue === '') {
+      showAndResetPaginator();
+    } else {
+      hidePaginator();
+    }
   }
 </script>
