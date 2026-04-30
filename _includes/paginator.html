@@ -48,6 +48,11 @@
         allPostsDiv.parentNode.insertBefore(nav, allPostsDiv.nextSibling);
     }
 
+    window.resetPaginator = function() {
+        currentPage = 1;
+        renderPage(1);
+    };
+
     renderPage(1);
 })();
 </script>

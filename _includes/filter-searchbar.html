@@ -3,6 +3,9 @@
     const paginator = document.getElementById('paginator-nav');
     if (paginator) {
       paginator.style.display = show ? '' : 'none';
+      if (show && window.resetPaginator) {
+        window.resetPaginator();
+      }
     }
   }
 

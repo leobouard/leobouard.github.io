@@ -1,4 +1,14 @@
 <script>
+  function togglePaginatorVisibility(show) {
+    const paginator = document.getElementById('paginator-nav');
+    if (paginator) {
+      paginator.style.display = show ? '' : 'none';
+      if (show && window.resetPaginator) {
+        window.resetPaginator();
+      }
+    }
+  }
+
   function filterByTag(tag) {
     let linkSelected = false;
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
