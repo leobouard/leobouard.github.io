@@ -17,7 +17,6 @@
   }
 
   function filterByTag(tag) {
-    // Vérifier si le tag est déjà sélectionné
     let isAlreadySelected = false;
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       if (link.getAttribute('onclick').includes(`'${tag}'`) && link.classList.contains('selected')) {
@@ -25,25 +24,26 @@
       }
     });
 
-    // Si le tag est déjà sélectionné, le désélectionner
     if (isAlreadySelected) {
       clearfilterByTag();
       showAllYears();
       return;
     }
 
-    // Désélectionner tous les autres tags
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       link.classList.remove('selected');
     });
 
-    // Afficher tous les articles
     const articles = document.querySelectorAll('.all-posts article');
+    const projects = document.querySelectorAll('.project');
+    
     articles.forEach(article => {
       article.style.display = '';
     });
+    projects.forEach(project => {
+      project.style.display = '';
+    });
 
-    // Masquer les containers qui ne correspondent pas au tag
     document.querySelectorAll('#tag-container').forEach(container => {
       const tags = container.querySelector('#tags');
       if (!tags || !tags.textContent.includes(tag)) {
@@ -51,7 +51,6 @@
       }
     });
     
-    // Sélectionner le tag cliqué
     document.querySelectorAll('a[onclick^="filterByTag"]').forEach(link => {
       if (link.getAttribute('onclick').includes(`'${tag}'`)) {
         link.classList.add('selected');
