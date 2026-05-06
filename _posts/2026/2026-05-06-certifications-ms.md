@@ -15,16 +15,18 @@ Honnêtement, la vraie valeur technique d'une certification n'est connue que des
 
 ### Compétence ≠ certification
 
-Je le dis fréquemment et je profite de ce poste pour le mettre par écrit :
+Je le dis fréquemment et je profite de ce post pour le mettre par écrit :
 
 <p style="font-size: larger; text-align: center; margin: 1em 2em;"><i>Ce n'est pas parce que vous avez la compétence technique que vous aurez la certification. Ce n'est pas parce que vous avez la certification que vous aurez la compétence technique.</i></p>
 
-Compétences et certifications peuvent malheureusement être assez éloignées. J'admet volontiers que [certains des badges que j'ai pu obtenir](/certifications) ne sont liés à aucune compétence technique réelle, simplement d'un apprentissage théorique pour pouvoir répondre au QCM.
+Compétences et certifications peuvent malheureusement être assez éloignées. J'admet volontiers que [certains des badges que j'ai pu obtenir](/certificates) ne sont liés à aucune compétence technique réelle, simplement d'un apprentissage théorique pour pouvoir répondre au QCM.
 
 Et à contrario, certaines de mes compétences techniques ne peuvent pas être prouvée par des badges, notamment sur Active Directory ou PowerShell.
 
-> A titre personnel, j'ai tendance à me méfier techniquement des profils "trop certifiés", avec des certifications sur des domaines éloignés ou qui veulent trop mettre en avant leurs certifications obtenues. Une sélection cohérente de certification est plus valorisante à mon sens.
->
+A titre personnel, j'ai tendance à me méfier techniquement des profils "trop certifiés", avec des certifications sur des domaines éloignés. Une sélection cohérente de certification est plus valorisante à mon sens. Quand je vois cette liste de certification, je me dis qu'il n'y en a aucune qui prouve un niveau technique :
+
+![trop de certifs tue la certif](/assets/images/certifications-ms-001.png)
+
 > En bref : *trop de certifs tue la certif*.
 
 ### L'utilité cachée
