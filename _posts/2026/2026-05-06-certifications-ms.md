@@ -37,9 +37,11 @@ Les certifications ne sont pas pensées pour valoriser les profils techniques à
 
 Elles ont une forte valeur pour les Entreprises de Services du Numériques (ESN), car elles permettent d'améliorer ou de maintenir leur partenariat auprès des éditeurs. Ce partenariat va permettre d'être mieux identifié et de remporter des appels d'offres directement via leur référencement. Un bon exemple est le [Partner Program de Microsoft](https://partner.microsoft.com/fr-fr/partnership/find-a-partner) qui est divisé en deux niveaux : Gold Partner et Silver Partner (en fonction notamment du nombre de certifiés dans l'entreprise).
 
-![logo collector de MS Gold Partner](https://upload.wikimedia.org/wikipedia/commons/b/b1/Logo_Partenaires_Or_Microsoft.jpg)
-
 C'est donc pour cette raison que les ESN financent et récompensent l'obtention de certifications.
+
+<p>
+  <img style="height: 8em;" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Logo_Partenaires_Or_Microsoft.jpg" alt="logo collector de ms partner gold">
+</p>
 
 ## Préparer et obtenir votre certification Microsoft
 
