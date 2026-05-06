@@ -9,6 +9,8 @@ listed: true
 
 Microsoft annonce sur sa page [Titres et certificats de compétences professionnelles et techniques \| Microsoft Learn](https://learn.microsoft.com/fr-fr/credentials/) différentes métriques et pourcentages sur l'utilité d'une certification.
 
+![utilite certification](/assets/images/certifications-ms-002.png)
+
 Honnêtement, la vraie valeur technique d'une certification n'est connue que des personnes qui l'ont déjà passée. Sinon, ça reste un beau badge officiel à ajouter sur un CV, qui permettra de vous distinguer d'un profil similaire au vôtre. Au-delà de la valeur technique du badge, une certification atteste toujours d'une volonté de monter en compétence ou de valoriser ses connaissances (ce qui est un très bon point).
 
 > D'expérience, la présence d'une certification Expert attire souvent l'attention des recruteurs, mais elle n'est plus utile ou reconnue au moment des qualifications techniques.
@@ -23,7 +25,7 @@ Compétences et certifications peuvent malheureusement être assez éloignées. 
 
 Et à contrario, certaines de mes compétences techniques ne peuvent pas être prouvée par des badges, notamment sur Active Directory ou PowerShell.
 
-A titre personnel, j'ai tendance à me méfier techniquement des profils "trop certifiés", avec des certifications sur des domaines éloignés. Une sélection cohérente de certification est plus valorisante à mon sens. Quand je vois cette liste de certification, je me dis qu'il n'y en a aucune qui prouve un niveau technique :
+A titre personnel, j'ai tendance à me méfier techniquement des profils "trop certifiés", avec des certifications sur des domaines éloignés. Une sélection cohérente de certification est plus valorisante à mon sens. Quand je vois cette liste de certifications, je me dis qu'il n'y en a aucune qui prouve un niveau technique :
 
 ![trop de certifs tue la certif](/assets/images/certifications-ms-001.png)
 
@@ -34,6 +36,8 @@ A titre personnel, j'ai tendance à me méfier techniquement des profils "trop c
 Les certifications ne sont pas pensées pour valoriser les profils techniques à un niveau individuel. Les certifications sont avant tout un dispositif mis en place par un éditeur logiciel (Microsoft par exemple) pour attester d'un niveau global dans une entreprise partenaire.
 
 Elles ont une forte valeur pour les Entreprises de Services du Numériques (ESN), car elles permettent d'améliorer ou de maintenir leur partenariat auprès des éditeurs. Ce partenariat va permettre d'être mieux identifié et de remporter des appels d'offres directement via leur référencement. Un bon exemple est le [Partner Program de Microsoft](https://partner.microsoft.com/fr-fr/partnership/find-a-partner) qui est divisé en deux niveaux : Gold Partner et Silver Partner (en fonction notamment du nombre de certifiés dans l'entreprise).
+
+![logo collector de MS Gold Partner](https://upload.wikimedia.org/wikipedia/commons/b/b1/Logo_Partenaires_Or_Microsoft.jpg)
 
 C'est donc pour cette raison que les ESN financent et récompensent l'obtention de certifications.
 
@@ -113,6 +117,8 @@ Certains vouchers peuvent être offerts par Microsoft sur les certifications Fun
 
 Mais pour les certifications Associate ou Expert, il vous faudra impérativement payer pour passer l'examen. Certaines écoles et entreprises proposent des réductions ou peuvent prendre en charge de le coût du passage, donc renseignez-vous en amont.
 
+![réservation de l'examen](/assets/images/certifications-ms-003.png)
+
 ### Le jour de l'examen
 
 Il y a deux méthodes pour passer l'examen : à distance ou dans un centre agréé.
@@ -152,6 +158,8 @@ Les examinateurs sont très stricts sur la suspicion de triche, donc si :
 
 En cas de réussite, félicitation à vous ! 🎉 Vous retrouverez prochainement votre nouveau badge sur votre [profil Microsoft Learn](https://learn.microsoft.com/users/me/credentials?tab=credentials-tab), avec le lien qui permet de prouver la validité de votre certification.
 
+![flex de la certification expert](/assets/images/certifications-ms-004.png)
+
 Sinon, vous pouvez repasser à la caisse pour obtenir un [Exam Replay](https://learn.microsoft.com/fr-fr/credentials/certifications/deals) et retentez votre chance.
 
 > La seule personne que je connaisse qui ait utilisé un Exam Replay n'a pas eu la certification au deuxième essai... Donc même si vous avez échoué de peu, prennez le temps de réviser en profondeur !
@@ -178,8 +186,6 @@ Si vous échouez votre tentative, vous devrez attendre le lendemain pour réessa
 
 ### Liens utiles
 
-#### Pour tout le monde
-
 Site | Catégorie | Description
 ---- | --------- | -----------
 [learn.microsoft.com](https://learn.microsoft.com/) | Formation | Propose un parcours d'apprentissage complet lié aux certifications
@@ -188,13 +194,8 @@ Site | Catégorie | Description
 [all-the-exams](https://github.com/JurgenOnAzure/all-the-exams/blob/main/README.md) | Information | Suivre les mises à jour des examens
 [examtopics.com](https://www.examtopics.com/) | Dumps | Interdit par Microsoft
 [free-braindumps.com](https://free-braindumps.com/) | Dumps | Interdit par Microsoft
-
-#### Pour les partenaires Gold ou Silver
-
-Site | Description
----- | -----------
-[esi.microsoft.com](https://esi.microsoft.com/) | Portail professionnel pour la préparation des certifications
-[cdx.transform.microsoft.com](https://cdx.transform.microsoft.com/) | Portail de création de tenant Microsoft 365 gratuits
+[esi.microsoft.com](https://esi.microsoft.com/) | Microsoft Partners | Portail professionnel pour la préparation des certifications
+[cdx.transform.microsoft.com](https://cdx.transform.microsoft.com/) | Microsoft Partners | Portail de création de tenant Microsoft 365 gratuits
 
 ### Lexique
 
