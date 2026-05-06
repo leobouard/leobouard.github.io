@@ -7,7 +7,7 @@ listed: true
 
 ## L'utilité du passage de certification
 
-Microsoft annonce sur sa page [Titres et certificats de compétences professionnelles et techniques | Microsoft Learn](https://learn.microsoft.com/fr-fr/credentials/) différentes métriques et pourcentages sur l'utilité d'une certification.
+Microsoft annonce sur sa page [Titres et certificats de compétences professionnelles et techniques \| Microsoft Learn](https://learn.microsoft.com/fr-fr/credentials/) différentes métriques et pourcentages sur l'utilité d'une certification.
 
 Honnêtement, la vraie valeur technique d'une certification n'est connue que des personnes qui l'ont déjà passée. Sinon, ça reste un beau badge officiel à ajouter sur un CV, qui permettra de vous distinguer d'un profil similaire au vôtre. Au-delà de la valeur technique du badge, une certification atteste toujours d'une volonté de monter en compétence ou de valoriser ses connaissances (ce qui est un très bon point).
 
