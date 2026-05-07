@@ -1,6 +1,6 @@
 ﻿---
 title: "Authentication Policies & Silos"
-description: "Le tutoriel le plus simple pour mettre en place cette m****"
+description: "Le tutoriel le plus simple possible pour apprivoiser cette fonctionnalité de Active Directory"
 tags: activedirectory
 listed: true
 ---
@@ -32,6 +32,8 @@ Les inconvénients par rapport au tiering par GPO :
 - **Incompatibilité avec certaines versions de Windows** : les AuthNPolicy reposent sur Kerberos FAST, qui n'est disponible qu'à partir de Windows 8 & Windows Server 2012
 - **Risque accru de blocage** : un problème de configuration d'une AuthNPolicy peut mener à bloquer intégralement l'accès à certains serveurs
 - **Ne s'applique pas aux contrôleurs de domaine** : appliquer une AuthNPolicy sur les contrôleurs de domaine pourrait bloquer les authentifications de la plupart des utilisateurs du domaine
+
+> Je n'ai pas encore eu le temps de tester la partie "Inconvénients", donc je ne fait que relater des points qui m'ont été remontés par des collègues ou dans d'autres articles.
 
 ## Procédure
 
@@ -136,6 +138,8 @@ Set-ADAccountAuthenticationPolicySilo 'SRV01$' -AuthenticationPolicySilo 'T1 Sil
 
 À partir de maintenant, seul un membre du groupe *Allowed to authenticate to T1* pourra s'authentifier sur l'ordinateur "SRV01". Si un utilisateur ne faisant pas partie de ce groupe essaye de se connecter, il tombera sur l'erreur suivante : **The computer you are signing into is protected by an authentication firewall. The specified account is not allowed to authenticate to the computer.**
 
+> D'après mes tests, le compte administrateur par défaut (avec le SID 500) n'est pas affecté par les AuthNPolicy. Il pourra donc servir de compte brise glace sur tous les ordinateurs / serveurs du domaine (qu'importe le silo d'authentification).
+
 ### Sortir un serveur d'un silo
 
 Retirer le serveur SRV01 du silo :
@@ -153,28 +157,41 @@ Set-ADComputer SRV01 -Clear 'msDS-AssignedAuthNPolicySilo'
 
 > Si l'ajout dans un silo se fait en deux étapes, deux étapes sont également nécessaires pour le retrait.
 
-## Administration quotidienne
+## Questions supplémentaires
 
-### Manquement des AuthNPolicy et AuthNPolicySilo
+### Double attribution
 
-Le problème des AuthNPolicy & AuthNPolicySilo pour le déploiement d'une segmentation des comptes, puisqu'ils n'interdisent pas la connexion des utilisateurs en dehors du silo.
+Que se passe-t'il si jamais un serveur est affecté dans deux silos différents (exemple : "T1 Silo" et "T2 Silo") ?
 
-En effet :
+J'ai testé pour vous, et si mon hypothèse initiale était que le serveur allait bloquer les connexions pour les utilisateurs du TIER 1 & 2 : ce n'est pas le cas ! En fait l'attribut qui prime sur quel AuthNPolicy va être appliquée est `msDS-AssignedAuthNPolicySilo`, qui ne peut contenir qu'une seule valeur.
 
-- Seuls les utilisateurs membres du groupe "Allowed to authenticate to T1" et l'administrateur par défaut ont effectivement le droit de se connecter sur les ordinateurs du silo "T1 Silo"
-- Les utilisateurs membres du groupe "Allowed to authenticate to T1" ne sont pas empêchés de se connecter ailleurs (si ceux-ci ont les droits suffisants pour le faire)
-
-> D'après mes tests, le compte administrateur par défaut (avec le SID 500) n'est pas affecté par les AuthNPolicy.
-
-L'ANSSI recommande donc le déploiement d'un tiering-model avec GPO + AuthNPolicy, pour pallier au manquement des AuthNPolicy. Ce système de *"ceinture & bretelles"* va permettre :
-
-- d'autoriser uniquement certains utilisateurs d'accéder à des ressources spécifiques via les AuthNPolicy
-- interdire l'accès à ces même utilisateurs aux autres ressources du domaine via les GPO
-
-## Automatisation de l'ajout dans le silo
+Donc pour répondre, à la question : un ordinateur ne peut techniquement pas être dans deux silos en même temps. On peut consulter celui qui est utilisé avec la commande suivante :
 
 ```powershell
-$sb = 'OU=T1,DC=corp,DC=contoso,DC=com'
+Get-ADComputer SRV01 -Properties AuthenticationPolicySilo
+```
+
+### Intérêt de la cohabitation avec les GPO User Rights Assignment
+
+Dans ses [recommandations relatives à l'administration sécurisée des systèmes d'information reposant sur Microsoft Active Directory](https://messervices.cyber.gouv.fr/guides/recommandations-pour-ladministration-securisee-des-si-reposant-sur-ad), l'ANSSI conseille le déploiement conjoint des AuthNPolicy et des GPO de restriction de connexion classiques (qui utilise les *User Rights Assignment*), sans détailler la raison de se design. Et visiblement je ne suis pas le seul à ne pas savoir pourquoi :
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eQ0VSHYFEik?si=zlMz0kF9F6uskJMG&amp;start=1941" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Après avoir creusé un peu, je pense que la raison principale de déployer AuthNPolicy + GPO est pour réduire l'administration quotidienne. L'ajout systématique dans un silo pour les ordinateurs personnels me paraît peu crédible sur la durée, et la GPO sert de filet de sécurité pour appliquer une restriction de connexion dès qu'un objet ordinateur est déplacé dans une unité d'organisation du TIER (dans le cas d'un oubli).
+
+Comme le fonctionnement des deux méthodes est différent, elles restent complémentaires :
+
+- L'AuthNPolicy vient autoriser uniquement une sélection d'utilisateurs à se connecter sur des ordinateurs du silo, mais n'empêche pas ceux-ci de se connecter ailleurs
+- La GPO *User Rights Assignment* permet d'interdire la connexion des utilisateurs sur les ordinateurs en dehors du silo
+
+Pour plus d'informations sur les GPO de limitation de connexion, vous pouvez consulter [mon article sur le sujet](/2024/11/01/tiering-model-005).
+
+### Automatisation de l'ajout dans le silo
+
+C'est cadeau, je n'ai pas pu le tester de manière extensive mais voici un bout de code qui permet d'ajouter automatiquement tous les serveurs TIER 1 dans le silo du TIER 1 :
+
+```powershell
+$sb = 'OU=Servers,OU=T1,DC=corp,DC=contoso,DC=com'
 $computers = Get-ADComputer -Filter * -SearchBase $sb -Properties 'msDS-AssignedAuthNPolicySilo'
 $silo = Get-ADAuthenticationPolicySilo 'T1 Silo' -Properties 'msDS-AuthNPolicySiloMembers'
 
@@ -184,4 +201,20 @@ ForEach-Object {
     Set-ADAuthenticationPolicySilo $silo -Add @{ 'msDS-AuthNPolicySiloMembers' = $_.DistinguishedName }
     Set-ADAccountAuthenticationPolicySilo $_.SamAccountName -AuthenticationPolicySilo $silo
 }
+```
+
+Et comme je suis très gentil, voici de quoi mettre en place les délégations de contrôle qui permettrons d'exécuter le script avec un compte dédié (`svc_authnpolicysilo`) en utilisant le principe du moindre privilège.
+
+> Pour des raisons de simplicité je donne les droits directement sur le compte de service, mais la bonne pratique est de donner les droits sur des groupes dédiés, pour rendre les permissions explicites.
+
+Ajout du droit d'écriture de l'attribut `msDS-AssignedAuthNPolicySilo` sur les objets ordinateurs sous "OU=Servers,OU=T1,DC=corp,DC=contoso,DC=com" :
+
+```powershell
+dsacls "OU=Servers,OU=T1,DC=corp,DC=contoso,DC=com" /G "CORP\svc_authnpolicysilo:WP;msDS-AssignedAuthNPolicySilo;computer" /I:S
+```
+
+Ajout du droit d'écriture de l'attribut `msDS-AuthNPolicySiloMembers` sur les objets silos  sous "CN=AuthN Silos,CN=AuthN Policy Configuration,CN=Services,CN=Configuration,DC=corp,DC=contoso,DC=com" :
+
+```powershell
+dsacls "CN=AuthN Silos,CN=AuthN Policy Configuration,CN=Services,CN=Configuration,DC=corp,DC=contoso,DC=com" /G "CORP\svc_authnpolicysilo:WP;sDS-AuthNPolicySiloMembers;msDS-AuthNPolicySilo" /I:S
 ```
