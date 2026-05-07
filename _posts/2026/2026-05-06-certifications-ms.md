@@ -9,8 +9,6 @@ listed: true
 
 Microsoft annonce sur sa page [Titres et certificats de compétences professionnelles et techniques \| Microsoft Learn](https://learn.microsoft.com/fr-fr/credentials/) différentes métriques et pourcentages sur l'utilité d'une certification.
 
-![utilite certification](/assets/images/certifications-ms-002.png)
-
 Honnêtement, la vraie valeur technique d'une certification n'est connue que des personnes qui l'ont déjà passée. Sinon, ça reste un beau badge officiel à ajouter sur un CV, qui permettra de vous distinguer d'un profil similaire au vôtre. Au-delà de la valeur technique du badge, une certification atteste toujours d'une volonté de monter en compétence ou de valoriser ses connaissances (ce qui est un très bon point).
 
 > D'expérience, la présence d'une certification Expert attire souvent l'attention des recruteurs, mais elle n'est plus utile ou reconnue au moment des qualifications techniques.
@@ -38,10 +36,6 @@ Les certifications ne sont pas pensées pour valoriser les profils techniques à
 Elles ont une forte valeur pour les Entreprises de Services du Numériques (ESN), car elles permettent d'améliorer ou de maintenir leur partenariat auprès des éditeurs. Ce partenariat va permettre d'être mieux identifié et de remporter des appels d'offres directement via leur référencement. Un bon exemple est le [Partner Program de Microsoft](https://partner.microsoft.com/fr-fr/partnership/find-a-partner) qui est divisé en deux niveaux : Gold Partner et Silver Partner (en fonction notamment du nombre de certifiés dans l'entreprise).
 
 C'est donc pour cette raison que les ESN financent et récompensent l'obtention de certifications.
-
-<p>
-  <img style="height: 8em;" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Logo_Partenaires_Or_Microsoft.jpg" alt="logo collector de ms partner gold">
-</p>
 
 ## Préparer et obtenir votre certification Microsoft
 
@@ -96,7 +90,7 @@ Pour les partenaires Gold & Silver, des tenants gratuits peuvent être demandés
 
 ### S'entrainer au passage de certification
 
-Si vous savez déjà mettre en pratique vos connaissance (soit par expérience, soit grâce votre environnement de test), ne partez pas la fleur au fusil vers l'examen.
+Si vous savez déjà mettre en pratique vos connaissances (soit par expérience, soit grâce votre environnement de test), ne partez pas la fleur au fusil vers l'examen.
 
 Je le répète encore une fois :
 
