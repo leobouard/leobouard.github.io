@@ -1,0 +1,48 @@
+# Fichier copié sur le dépôt https://github.com/Arnaud-Ferriere/SurLesNuages
+name: Vérification des liens cassés
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --root-dir ${{ github.workspace }}/_site
+            --verbose
+            --no-progress
+            --exclude-path '_site/assets'
+            '_site/**/*.html'
+          output: ./lychee-report.md
+          fail: false
+      - name: Create Issue From File
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: '🔗 Liens cassés détectés'
+          content-filepath: ./lychee-report.md
+          labels: |
+            bug
+            liens-casses
+            automated
