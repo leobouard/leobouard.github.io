@@ -2,7 +2,6 @@
 title: "Deny Hunting dans Active Directory"
 description: "Rechercher dans l'annuaire les configurations étranges au niveau des permissions des objets"
 tags: ["activedirectory", "powershell"]
-
 ---
 
 ## Explication

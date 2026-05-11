@@ -2,7 +2,6 @@
 title: "Patch note Ping Castle 3.3.0.0"
 description: "Quoi de neuf dans la dernière version de Ping Castle ?"
 tags: ["activedirectory", "pingcastle"]
-
 ---
 
 ## Patch notes officielle

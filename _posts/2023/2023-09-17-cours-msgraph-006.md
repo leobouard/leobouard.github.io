@@ -1,5 +1,4 @@
 ﻿---
-
 title: "MSGRAPH #6 - Exercices pratiques"
 description: "Travaux pratiques qui mobilisent l'ensemble des connaissances acquises"
 hidden: true

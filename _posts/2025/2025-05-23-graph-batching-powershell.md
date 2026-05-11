@@ -2,7 +2,6 @@
 title: "Microsoft Graph JSON batching avec PowerShell"
 description: "Diviser par 20 les temps de réponse pour vos appels API vers Microsoft Graph"
 tags: ["powershell", "msgraph"]
-
 ---
 
 ## JSON batching

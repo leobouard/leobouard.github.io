@@ -1,5 +1,4 @@
 ---
-
 title: "Cours PowerShell #8 - Ajout de l'interface graphique"
 description: "On appose maintenant une interface graphique XAML au script PowerShell et on adapte le script existant pour convenir à ce changement"
 hidden: true

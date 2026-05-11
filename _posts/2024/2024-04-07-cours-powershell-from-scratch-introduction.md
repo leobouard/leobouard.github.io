@@ -1,9 +1,7 @@
 ---
-
 title: "Cours PowerShell 101"
 description: "Être opérationnel en PowerShell le plus rapidement possible"
 tags: ['cours','powershell']
-
 nextLink:
   name: "Partie 1"
   id: "cours-powershell-from-scratch-001"

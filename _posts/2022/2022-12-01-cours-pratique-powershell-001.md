@@ -1,5 +1,4 @@
 ---
-
 title: "Cours PowerShell #1 - Simple. Basique."
 description: "Création de la base du script PowerShell : générer un nombre aléatoire et le comparer avec l'estimation du joueur"
 hidden: true

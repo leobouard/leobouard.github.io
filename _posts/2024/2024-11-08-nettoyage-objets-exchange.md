@@ -2,7 +2,6 @@
 title: "Nettoyer les derniers objets Exchange"
 description: "Comment nettoyer son domaine Active Directory après la suppression de votre dernier serveur Exchange ?"
 tags: activedirectory
-
 ---
 
 ## Contexte

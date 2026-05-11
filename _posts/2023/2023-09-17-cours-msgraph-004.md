@@ -1,5 +1,4 @@
 ﻿---
-
 title: "MSGRAPH #4 - Les modules PowerShell"
 description: "Travailler avec Microsoft Graph en PowerShell via les modules dédiés"
 hidden: true

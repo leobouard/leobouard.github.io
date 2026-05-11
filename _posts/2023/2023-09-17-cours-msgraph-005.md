@@ -1,5 +1,4 @@
 ﻿---
-
 title: "MSGRAPH #5 - Applications Azure"
 description: "Découvrir le rôle et le fonctionnement d'une application Azure pour utiliser Microsoft Graph"
 hidden: true

@@ -2,7 +2,6 @@
 title: "Trouver la date d'ajout d'un membre dans un groupe"
 description: "Utiliser les métadonnées de réplication pour retrouver la date d'ajout d'un membre dans un groupe"
 tags: ["powershell", "activedirectory"]
-
 ---
 
 ## Métadonnées de réplication

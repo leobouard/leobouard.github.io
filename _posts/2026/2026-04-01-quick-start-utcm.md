@@ -2,7 +2,6 @@
 title: "Découverte de UTCM"
 description: "Démarrer rapidement avec le successeur de M365DSC : Universal Tenant Configuration Manager"
 tags: ["msgraph", "microsoft365"]
-
 ---
 
 > Cet article est issu de la présentation technique effectuée au Microsoft User Group de Rennes, qui a eu lieu le mardi 31 mars dans les locaux de METSYS à Saint-Grégoire. Le support de présentation est disponible ici : [Comment garder la configuration de votre tenant M365 au carré avec UTCM ?](/assets/files/presentation-utcm.pdf)

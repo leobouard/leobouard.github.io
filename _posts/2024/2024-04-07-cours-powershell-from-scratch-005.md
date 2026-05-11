@@ -1,5 +1,4 @@
 ---
-
 title: "PS101 #5 - Les opérateurs en bref"
 description: "Second élément essentiel du scripting"
 hidden: true

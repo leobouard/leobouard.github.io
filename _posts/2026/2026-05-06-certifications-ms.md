@@ -2,7 +2,6 @@
 title: "Guide de passage des certifications Microsoft"
 description: "Comment préparer et obtenir une certification Microsoft, et quelle est la vraie valeur de celle-ci ?"
 tags: ["microsoft365", "entraid"]
-
 ---
 
 ## L'utilité du passage de certification

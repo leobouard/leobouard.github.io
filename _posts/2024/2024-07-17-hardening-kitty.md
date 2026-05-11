@@ -2,7 +2,6 @@
 title: "Renforcement d'un OS Windows"
 description: "Appliquer toutes les recommandations Microsoft en 30 secondes avec HardeningKitty"
 tags: windows
-
 ---
 
 ## HardeningKitty

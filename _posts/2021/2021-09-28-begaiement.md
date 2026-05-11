@@ -2,7 +2,6 @@
 title: "DÉFI #2 - Bégaiement"
 description: "Faire bégailler une longue tirade en faisant attention à la longueur des mots et aux syllabes"
 tags: ['challenge','powershell']
-
 nextLink:
   name: "Voir la solution"
   id: "begaiement-soluce"

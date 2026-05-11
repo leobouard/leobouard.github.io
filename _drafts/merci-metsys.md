@@ -1,4 +1,3 @@
-
 ---
 title: "Merci METSYS !"
 description: "Merci pour les (presque) 8 ans avec vous !"

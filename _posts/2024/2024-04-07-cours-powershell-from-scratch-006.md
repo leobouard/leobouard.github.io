@@ -1,5 +1,4 @@
 ---
-
 title: "PS101 #6 - Les conditions en bref"
 description: "Troisième élément essentiel du scripting"
 hidden: true

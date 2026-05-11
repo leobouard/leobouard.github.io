@@ -2,7 +2,6 @@
 title: "Lister les permissions LogonAsBatch et LogonAsService en PowerShell"
 description: "Obtenir la liste des objets qui peuvent se connecter en tant que tâche ou service"
 tags: ["powershell", "windows"]
-
 ---
 
 ## Permissions

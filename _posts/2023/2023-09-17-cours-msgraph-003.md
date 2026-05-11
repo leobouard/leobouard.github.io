@@ -1,5 +1,4 @@
 ﻿---
-
 title: "MSGRAPH #3 - Microsoft Graph Explorer"
 description: "Prendre en main efficacement l'outil web de requête d'API"
 hidden: true

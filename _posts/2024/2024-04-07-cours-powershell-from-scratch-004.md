@@ -1,5 +1,4 @@
 ---
-
 title: "PS101 #4 - Les variables en bref"
 description: "Premier élément essentiel du scripting"
 hidden: true

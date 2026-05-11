@@ -2,7 +2,6 @@
 title: "Configuration d'un contrôleur de domaine en mode Core"
 description: "Suivre les bonnes pratiques de l'ANSSI pour le déploiement de vos contrôleurs de domaine"
 tags: ["activedirectory", "powershell"]
-
 ---
 
 ## Utilisation du mode Core sur un contrôleur de domaine

@@ -2,7 +2,6 @@
 title: "Réinitialiser le propriétaire d'un objet AD"
 description: "Tout remettre d'équerre pour respecter les bonnes pratiques de l'ANSSI"
 tags: ["activedirectory", "powershell"]
-
 ---
 
 ## Le propriétaire d'objet

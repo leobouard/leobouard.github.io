@@ -2,7 +2,6 @@
 title: "DÉFI #4 - Secret santa"
 description: "Créer un tirage au sort qui permet de savoir à qui doit-on offrir son cadeau"
 tags: ['challenge','powershell']
-
 nextLink:
   name: "Voir la solution"
   id: "pere-noel-secret-soluce"
