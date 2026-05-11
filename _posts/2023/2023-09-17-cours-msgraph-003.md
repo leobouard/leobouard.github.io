@@ -2,6 +2,7 @@
 
 title: "MSGRAPH #3 - Microsoft Graph Explorer"
 description: "Prendre en main efficacement l'outil web de requête d'API"
+hidden: true
 tableOfContent: "cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 4"

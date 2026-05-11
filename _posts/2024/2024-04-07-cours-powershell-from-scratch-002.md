@@ -2,6 +2,7 @@
 
 title: "PS101 #2 - Commandes et paramètres"
 description: "Comprendre comment fonctionnent les commandes"
+hidden: true
 tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 3"

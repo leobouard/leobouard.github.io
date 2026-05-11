@@ -1,6 +1,7 @@
 ---
 title: "TIERING #6 - PAW"
 description: "Mise en place de Privileged Access Workstation"
+hidden: true
 tableOfContent: "tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 7"

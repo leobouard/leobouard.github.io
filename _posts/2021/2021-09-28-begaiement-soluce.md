@@ -1,5 +1,6 @@
 ---
 title: "SOLUCE #2 - Bégaiement"
+hidden: true
 prevLink:
   name: "Retour au défi"
   id: "begaiement"

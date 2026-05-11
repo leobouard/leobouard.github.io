@@ -2,6 +2,7 @@
 
 title: "Cours PowerShell #8 - Ajout de l'interface graphique"
 description: "On appose maintenant une interface graphique XAML au script PowerShell et on adapte le script existant pour convenir à ce changement"
+hidden: true
 tableOfContent: "cours-pratique-powershell-introduction#table-des-matières"
 nextLink:
   name: "Partie 9"

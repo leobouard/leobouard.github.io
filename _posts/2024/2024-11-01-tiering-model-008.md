@@ -1,6 +1,7 @@
 ---
 title: "TIERING #8 - Recertification"
 description: "S'assurer que le tiering model reste sécurisé"
+hidden: true
 tableOfContent: "tiering-model-introduction#table-des-matières"
 prevLink:
   name: "Partie 7"

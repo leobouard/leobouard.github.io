@@ -1,6 +1,7 @@
 ---
 title: "PING CASTLE - Trusts"
 description: "Relations d'approbations et connexions entre différents domaines et/ou forêts"
+hidden: true
 tableOfContent: "remediation-ad-pingcastle-introduction#table-des-matières"
 nextLink:
   name: "Privileged Accounts"

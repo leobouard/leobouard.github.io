@@ -2,6 +2,7 @@
 
 title: "MSGRAPH #2 - Les spécificités de Microsoft Graph"
 description: "Comprendre les éléments clés de l'API de Microsoft"
+hidden: true
 tableOfContent: "cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 3"

@@ -2,7 +2,7 @@
 title: "Deep Dive - Password Settings Object"
 description: "On creuse en profondeur sur le fonctionnement des stratégies de mot de passe à fin grain sur Active Directory"
 tags: ["activedirectory", "powershell"]
-listed: true
+
 ---
 
 ## Introduction

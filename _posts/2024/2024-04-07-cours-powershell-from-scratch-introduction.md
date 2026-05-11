@@ -3,7 +3,7 @@
 title: "Cours PowerShell 101"
 description: "Être opérationnel en PowerShell le plus rapidement possible"
 tags: ['cours','powershell']
-listed: true
+
 nextLink:
   name: "Partie 1"
   id: "cours-powershell-from-scratch-001"

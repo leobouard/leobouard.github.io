@@ -1,6 +1,7 @@
 ---
 title: "TIERING #7 - Migration"
 description: "Migrer les ressources vers le tiering model"
+hidden: true
 tableOfContent: "tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 8"

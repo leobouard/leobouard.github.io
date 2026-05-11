@@ -2,6 +2,7 @@
 
 title: "Cours PowerShell #4 - Mais on est où là ?"
 description: "Ajout de bornes inférieure et supérieure pour aider le joueur à deviner le nombre aléatoire"
+hidden: true
 tableOfContent: "cours-pratique-powershell-introduction#table-des-matières"
 nextLink:
   name: "Partie 5"

@@ -2,6 +2,7 @@
 
 title: "MSGRAPH #6 - Exercices pratiques"
 description: "Travaux pratiques qui mobilisent l'ensemble des connaissances acquises"
+hidden: true
 tableOfContent: "cours-msgraph-introduction#table-des-matières"
 prevLink:
   name: "Partie 5"

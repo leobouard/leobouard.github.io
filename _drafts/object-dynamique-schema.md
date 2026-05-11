@@ -2,7 +2,7 @@
 title: "Comment détruire votre Active Directory"
 description: "Votre forêt s'auto-détruira dans 3, 2, 1..."
 tags: activedirectory
-listed: true
+
 ---
 
 ## Un objet dynamique dans le schéma

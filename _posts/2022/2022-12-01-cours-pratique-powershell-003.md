@@ -2,6 +2,7 @@
 
 title: "Cours PowerShell #3 - Historique de navigation"
 description: "Toutes les tentatives du joueur sont gardées en mémoire pour pouvoir afficher plus d'informations sur la partie"
+hidden: true
 tableOfContent: "cours-pratique-powershell-introduction#table-des-matières"
 nextLink:
   name: "Partie 4"

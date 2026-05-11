@@ -2,6 +2,7 @@
 
 title: "PS101 #5 - Les opérateurs en bref"
 description: "Second élément essentiel du scripting"
+hidden: true
 tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"

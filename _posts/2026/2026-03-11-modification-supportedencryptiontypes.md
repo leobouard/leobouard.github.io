@@ -2,7 +2,7 @@
 title: "Comment empêcher l'attribut msDS-SupportedEncryptionTypes d'être modifié ?"
 description: "Chassez le DES, il revient au galop"
 tags: ["activedirectory"]
-listed: true
+
 ---
 
 ## Remédiation en surface

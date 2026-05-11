@@ -1,5 +1,6 @@
 ---
 title: "SOLUCE #5 - Le nom le plus long"
+hidden: true
 prevLink:
   name: "Retour au défi"
   id: "le-nom-le-plus-long"

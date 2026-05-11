@@ -2,7 +2,7 @@
 title: "Montée de version du domaine et de la forêt vers Windows2016"
 description: "Mettre à jour le niveau fonctionnel de votre domaine et votre fôret"
 tags: activedirectory
-listed: true
+
 ---
 
 ## Contexte

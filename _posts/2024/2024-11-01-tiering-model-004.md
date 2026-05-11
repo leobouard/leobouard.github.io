@@ -1,6 +1,7 @@
 ---
 title: "TIERING #4 - Délégations et administrateurs"
 description: "Mise en place de délégations pour les administrateurs du Tier 1 & 2"
+hidden: true
 tableOfContent: "tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 5"

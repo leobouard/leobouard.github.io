@@ -2,6 +2,7 @@
 
 title: "MSGRAPH #1 - Les bases d'une API web"
 description: "Concepts et principes de base pour l'utilisation d'une API RESTful"
+hidden: true
 tableOfContent: "cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 2"

@@ -1,6 +1,7 @@
 ---
 title: "PING CASTLE - Stale Object"
 description: "Dette technique liées aux comptes ordinateurs"
+hidden: true
 tableOfContent: "remediation-ad-pingcastle-introduction#table-des-matières"
 nextLink:
   name: "Trusts"

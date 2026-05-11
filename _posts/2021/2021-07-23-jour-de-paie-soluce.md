@@ -1,5 +1,6 @@
 ---
 title: "SOLUCE #1 - Le jour de paie"
+hidden: true
 prevLink:
   name: "Retour au défi"
   id: "jour-de-paie"

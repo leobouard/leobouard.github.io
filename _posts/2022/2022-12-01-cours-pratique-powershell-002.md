@@ -2,6 +2,7 @@
 
 title: "Cours PowerShell #2 - En boucle en boucle en boucle"
 description: "Mise en boucle du script pour permettre au joueur d'avoir 10 tentatives pour trouver un nombre aléatoire"
+hidden: true
 tableOfContent: "cours-pratique-powershell-introduction#table-des-matières"
 nextLink:
   name: "Partie 3"

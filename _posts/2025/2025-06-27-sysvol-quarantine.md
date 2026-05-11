@@ -2,7 +2,7 @@
 title: "SYSVOL quarantine avec Semperis ADFR"
 description: "Renommer tous les fichiers exécutables contenus dans le SYSVOL lors d'une restauration de forêt"
 tags: ["semperis", "activedirectory"]
-listed: true
+
 ---
 
 ## Contexte

@@ -2,6 +2,7 @@
 
 title: "Cours PowerShell #5 - Top chrono !"
 description: "On ajoute un chronomètre qui va mesurer le temps de résolution total ainsi que le temps moyen par tentative"
+hidden: true
 tableOfContent: "cours-pratique-powershell-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"

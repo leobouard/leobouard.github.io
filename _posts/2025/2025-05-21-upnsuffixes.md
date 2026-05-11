@@ -2,7 +2,7 @@
 title: "KCLAD #1 - UPNSuffixes"
 description: "Casser tous vos profils utilisateurs pour juste trier une liste déroulante ?"
 tags: ["activedirectory", "powershell"]
-listed: true
+
 ---
 
 > **Disclaimer**

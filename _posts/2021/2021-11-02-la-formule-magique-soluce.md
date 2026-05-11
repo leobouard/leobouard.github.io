@@ -1,5 +1,6 @@
 ---
 title: "SOLUCE #3 - La formule magique"
+hidden: true
 prevLink:
   name: "Retour au défi"
   id: "la-formule-magique"

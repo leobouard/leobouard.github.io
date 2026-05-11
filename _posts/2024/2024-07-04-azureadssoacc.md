@@ -3,7 +3,7 @@
 title: "Rotation du mot de passe de AZUREADSSOACC"
 description: "Suivre les recommandations pour Microsoft Entra Seamless SSO"
 tags: ['activedirectory','entraid']
-listed: true
+
 ---
 
 ## Contexte

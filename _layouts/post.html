@@ -75,7 +75,7 @@ layout: default
 
 {% if page.nextLink == nil %}
 <section class="recommandation">
-  {% assign post = site.posts | where: "listed", true | sample %}
+  {% assign post = site.posts | where_exp: "item", "item.hidden != false" | sample %}
   <div>
     <span class="recommandation">Cet article pourrait-il vous intéresser ?</span>
     {% include doodle-arrow.html %}

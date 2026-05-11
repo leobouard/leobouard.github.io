@@ -2,7 +2,7 @@
 title: "Fin de vie d'un compte gMSA"
 description: "Identifier, analyser et supprimer un compte de service gMSA inutile dans Active Directory"
 tags: ["activedirectory"]
-listed: true
+
 ---
 
 ## Gestion des comptes gMSA

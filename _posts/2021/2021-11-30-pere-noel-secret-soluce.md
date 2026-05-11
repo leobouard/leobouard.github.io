@@ -1,5 +1,6 @@
 ---
 title: "SOLUCE #4 - Secret santa"
+hidden: true
 prevLink:
   name: "Retour au défi"
   id: "pere-noel-secret"

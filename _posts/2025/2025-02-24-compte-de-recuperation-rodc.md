@@ -2,7 +2,7 @@
 title: "Le compte DSRM sur un contrôleur de domaine"
 description: "Comment se connecter sur un DC/RODC avec un compte local ?"
 tags: activedirectory
-listed: true
+
 ---
 
 ## C'est quoi le compte DSRM ?

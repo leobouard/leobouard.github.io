@@ -2,7 +2,7 @@
 title: "Le Kerberoasting avec PowerShell"
 description: "Comprendre et mener une attaque Kerberoasting sur un compte avec un ServicePrincipalName"
 tags: ["activedirectory", "powershell"]
-listed: true
+
 ---
 
 ## Contexte et explication

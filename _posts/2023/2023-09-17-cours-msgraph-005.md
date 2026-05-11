@@ -2,6 +2,7 @@
 
 title: "MSGRAPH #5 - Applications Azure"
 description: "Découvrir le rôle et le fonctionnement d'une application Azure pour utiliser Microsoft Graph"
+hidden: true
 tableOfContent: "cours-msgraph-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"

@@ -2,6 +2,7 @@
 
 title: "PS101 #1 - Introduction"
 description: "Revoir la base du fonctionnement de PowerShell"
+hidden: true
 tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 2"

@@ -2,7 +2,7 @@
 title: "Modifier le schéma Active Directory"
 description: ""
 tags: ["activedirectory", "powershell"]
-listed: true
+
 ---
 
 ## Prérequis

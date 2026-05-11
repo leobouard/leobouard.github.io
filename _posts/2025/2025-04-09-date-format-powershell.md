@@ -2,7 +2,7 @@
 title: "Tous les formats de date en PowerShell"
 description: "Les formats pour Get-Date avec les résultats en français"
 tags: powershell
-listed: true
+
 ---
 
 ## Documentation officielle

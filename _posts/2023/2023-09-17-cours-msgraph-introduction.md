@@ -2,7 +2,7 @@
 title: "Cours Microsoft Graph"
 description: "Bien commencer sur Microsoft Graph pour les administrateurs systèmes"
 tags: ['cours','msgraph']
-listed: true
+
 nextLink:
   name: "Partie 1"
   id: "cours-msgraph-001"

@@ -2,7 +2,7 @@
 title: "Top 5 des commandes PowerShell pour Microsoft Graph"
 description: "Les seules commandes indispensables dans les modules Microsoft Graph"
 tags: ["msgraph", "powershell"]
-listed: true
+
 ---
 
 > Article issu d'une publication de septembre 2024 sur LinkedIn  : [Top 5 des commandes PowerShell à connaître sur Microsoft Graph](https://www.linkedin.com/posts/leobouard\_top-5-des-commandes-powershell-%C3%A0-connaitre-activity-7239920803582996482-i6gi?utm\_source=share&utm\_medium=member\_desktop&rcm=ACoAACeUVyYBCG\_mSlyJ9Nb1h1VjxMttbiTk4Ec).

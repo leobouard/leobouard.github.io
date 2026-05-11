@@ -1,6 +1,7 @@
 ---
 title: "PING CASTLE - Privileged Accounts"
 description: "Administrateurs de Active Directory"
+hidden: true
 tableOfContent: "remediation-ad-pingcastle-introduction#table-des-matières"
 nextLink:
   name: "Anomalies"

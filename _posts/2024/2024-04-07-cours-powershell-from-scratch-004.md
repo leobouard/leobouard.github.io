@@ -2,6 +2,7 @@
 
 title: "PS101 #4 - Les variables en bref"
 description: "Premier élément essentiel du scripting"
+hidden: true
 tableOfContent: "cours-powershell-from-scratch-introduction#table-des-matières"
 nextLink:
   name: "Partie 5"

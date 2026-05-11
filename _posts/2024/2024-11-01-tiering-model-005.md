@@ -1,6 +1,7 @@
 ---
 title: "TIERING #5 - Limiter les connexions"
 description: "Empêcher les connexions d'un compte vers un serveur d'un autre niveau"
+hidden: true
 tableOfContent: "tiering-model-introduction#table-des-matières"
 nextLink:
   name: "Partie 6"

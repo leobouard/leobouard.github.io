@@ -1,5 +1,7 @@
 ---
 title: "SOLUCE #6 - SUTOM"
+description: "Solution - Concevoir un script qui permet de tricher au jeu du SUTOM"
+hidden: true
 prevLink:
   name: "Retour au défi"
   id: "sutom"
