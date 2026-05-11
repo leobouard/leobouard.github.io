@@ -25,7 +25,7 @@ description: "Tous les articles, cours et défis sur PowerShell et d'autres tech
     {% endfor %}
   </div>
   <div class="all-posts">
-    {% assign posts = site.posts | where_exp: "item", "item.hidden != false" %}
+    {% assign posts = site.posts | where_exp: "item", "item.hidden != true" %}
     {% for post in posts %}
     {% include post-preview.html id=post.id date=post.date title=post.title description=post.description tags=post.tags  %}
     {% endfor %}
