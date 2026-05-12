@@ -2,6 +2,7 @@ div.talk-container {
     border: 1px solid var(--mediumaccent);
     border-radius: var(--borderradius);
     padding: 1em;
+    position: relative;
 }
 
 div.talk-thumbnail {
@@ -40,4 +41,15 @@ a.talk-event {
 
 small.talk-date {
     color: var(--heavyaccent);
+}
+
+a.talk-slide {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    font-size: 1.5em;
+}
+
+a.talk-slide:hover {
+    color: var(--primary);
 }

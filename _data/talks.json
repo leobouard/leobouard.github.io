@@ -8,7 +8,8 @@
       "name": "Microsoft Rennes User Group",
       "url": "https://www.linkedin.com/groups/17873040/",
       "logo": "/assets/cv/companies/microsoft-user-group-rennes.jpg"
-    }
+    },
+    "slide": "/assets/files/presentation-utcm.pdf"
   },
   {
     "url": "https://www.linkedin.com/posts/lucie-le-blouc-h-68546765_metsys-meetup-cybersecurite-share-6988770677025611776-aYYa",
@@ -20,6 +21,7 @@
       "name": "METSYS Meetup",
       "url": "https://www.meetup.com/metsys-communaute-microsoft-ouest/",
       "logo": "/assets/cv/companies/metsys.jpg"
-    }
+    },
+    "slide": "/assets/files/presentation-powershell.pdf"
   }
 ]
