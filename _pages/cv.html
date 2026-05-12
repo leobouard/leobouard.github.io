@@ -176,12 +176,6 @@ description: "Toutes mes expériences, mes formations et certifications"
 <p>J'ai eu l'occasion de faire des présentations techniques à plusieurs reprises lors de conférences et meetups.</p>
 <div style="display: grid; grid-gap: 1em;">
   {% for talk in site.data.talks %}
-  <div class="post-preview hover-bottom">
-    <a href="{{ talk.url }}" target="_blank" class="no-decoration">
-      <span class="date"><i class="fa-regular fa-calendar"></i>Présenté en {{ talk.date }}</span>
-      <h3>{{ talk.title }}</h3>
-      <span>{{ talk.description }}</span>
-    </a>
-  </div>
+    {% include talk.html url=talk.url title=talk.title image=talk.image event=talk.event date=talk.date copresenter=talk.copresenter %}
   {% endfor %}
 </div>

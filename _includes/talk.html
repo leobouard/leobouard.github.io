@@ -1,0 +1,15 @@
+<div class="talk-container hover-bottom">
+  <a href="{{ include.url }}" class="no-decoration">
+    <div class="talk-thumbnail">
+      <h3>{{ include.title }}</h3>
+      {% if include.copresenter %}<small>{{ include.copresenter }}</small>{% endif %}
+    </div>
+  </a>
+  <div style="display: flex;">
+    <img src="{{ include.image }}" alt="Event logo" class="talk-event-logo">
+    <div style="margin-left: 0.5em;">
+      <span class="talk-event">{{ include.event }}</span>
+      <small class="talk-date">{{ include.date }}</small>
+    </div>
+  </div>
+</div>
