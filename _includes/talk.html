@@ -2,14 +2,14 @@
   <a href="{{ include.url }}" class="no-decoration">
     <div class="talk-thumbnail">
       <h3>{{ include.title }}</h3>
-      {% if include.copresenter %}<small>{{ include.copresenter }}</small>{% endif %}
+      {% if include.copresenter %}<small style="margin-top: 1em;">{{ include.copresenter }}</small>{% endif %}
     </div>
   </a>
   <div style="display: flex;">
-    <img src="{{ include.image }}" alt="Event logo" class="talk-event-logo">
+    <img src="{{ include.event.logo }}" alt="Event logo" class="talk-event-logo">
     <div style="margin-left: 0.5em;">
-      <span class="talk-event">{{ include.event }}</span>
-      <small class="talk-date">{{ include.date }}</small>
+      <a href="{{ include.event.url }}" class="talk-event" target="_blank">{{ include.event.name }}</a>
+      <small class="talk-date">{{ include.date }} • {{ include.place }}</small>
     </div>
   </div>
 </div>

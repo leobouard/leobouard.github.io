@@ -1,17 +1,25 @@
 [
   {
-    "date": "mars 2026",
+    "url": "https://www.linkedin.com/posts/fabien-dibot-5b693059_cest-parti-pour-le-meetup-du-rennes-microsoft-share-7444786691678064641-6h97",
     "title": "Comment garder la configuration de votre tenant M365 au carré avec UTCM ?",
-    "event": "Microsoft Rennes User Group",
-    "image": "/assets/cv/companies/microsoft-user-group-rennes.jpg",
-    "url": "https://www.linkedin.com/posts/fabien-dibot-5b693059_cest-parti-pour-le-meetup-du-rennes-microsoft-share-7444786691678064641-6h97"
+    "date": "mars 2026",
+    "place": "Rennes",
+    "event": {
+      "name": "Microsoft Rennes User Group",
+      "url": "https://www.linkedin.com/groups/17873040/",
+      "logo": "/assets/cv/companies/microsoft-user-group-rennes.jpg"
+    }
   },
   {
-    "date": "octobre 2022",
+    "url": "https://www.linkedin.com/posts/lucie-le-blouc-h-68546765_metsys-meetup-cybersecurite-share-6988770677025611776-aYYa",
     "title": "Comment aller plus loin avec PowerShell ?",
-    "event": "METSYS Meetup",
     "copresenter": "Pierre LE QUERE",
-    "image": "/assets/cv/companies/metsys.jpg",
-    "url": "https://www.linkedin.com/posts/lucie-le-blouc-h-68546765_metsys-meetup-cybersecurite-share-6988770677025611776-aYYa"
+    "date": "octobre 2022",
+    "place": "Rennes",
+    "event": {
+      "name": "METSYS Meetup",
+      "url": "https://www.meetup.com/metsys-communaute-microsoft-ouest/",
+      "logo": "/assets/cv/companies/metsys.jpg"
+    }
   }
 ]
