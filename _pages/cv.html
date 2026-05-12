@@ -174,7 +174,7 @@ description: "Toutes mes expériences, mes formations et certifications"
 
 <h2>Présentations</h2>
 <p>J'ai eu l'occasion de faire des présentations techniques à plusieurs reprises lors de conférences et meetups.</p>
-<div style="display: grid; grid-gap: 1em;">
+<div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));">
   {% for talk in site.data.talks %}
     {% include talk.html url=talk.url title=talk.title image=talk.image event=talk.event date=talk.date copresenter=talk.copresenter %}
   {% endfor %}
