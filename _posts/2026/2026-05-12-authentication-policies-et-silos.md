@@ -183,7 +183,7 @@ Get-ADComputer SRV01 -Properties AuthenticationPolicySilo
 
 Dans ses [recommandations relatives à l'administration sécurisée des systèmes d'information reposant sur Microsoft Active Directory](https://messervices.cyber.gouv.fr/guides/recommandations-pour-ladministration-securisee-des-si-reposant-sur-ad), l'ANSSI conseille le déploiement conjoint des AuthNPolicy et des GPO de restriction de connexion classiques (qui utilise les *User Rights Assignment*), sans détailler la raison d'un tel design. Et visiblement je ne suis pas le seul à ne pas savoir pourquoi :
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eQ0VSHYFEik?si=zlMz0kF9F6uskJMG&amp;start=1941" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe style="display: block; margin: 2em auto;" width="560" height="315" src="https://www.youtube.com/embed/eQ0VSHYFEik?si=zlMz0kF9F6uskJMG&amp;start=1941" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Après avoir creusé un peu, je pense que la raison principale de déployer AuthNPolicy + GPO est pour réduire l'administration quotidienne. L'ajout systématique dans un silo pour les ordinateurs personnels me paraît peu crédible sur la durée, et la GPO sert de filet de sécurité pour appliquer une restriction de connexion dès qu'un objet ordinateur est déplacé dans une unité d'organisation du TIER (dans le cas d'un oubli).
 
