@@ -1,0 +1,32 @@
+div.rewind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    border: 1px solid var(--mediumaccent);
+    border-radius: var(--borderradius);
+    height: stretch;
+}
+
+div.rewind h3 {
+    font-size: xx-large;
+    margin: 0.5em 0;
+    line-height: 120%;
+}
+
+div.bg-primary {
+    background: var(--primary);
+}
+
+div.bg-secondary {
+    background: var(--secondary);
+}
+
+div.bg-accent {
+    background: var(--accent);
+}
+
+div.bg-lightaccent {
+    background: var(--lightaccent);
+}
