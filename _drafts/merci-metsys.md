@@ -37,6 +37,7 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
   <div class="rewind hover-popout bg-accent">
     <h3>14 personnes</h3>
     <small>qui ont eu le malheur<br>de tomber dans mon équipe</small>
+    <!-- Rémi, Julien, Mario, Grégoire, Romuald, Pierre, Louis, Mathias, Maxence, Marc-Elie, Krysten, Arnaud, Michael, Marc-Antoine -->
     <i class="fa-solid fa-people-group"></i>
   </div>
   <div class="rewind hover-popout bg-lightaccent">
@@ -44,10 +45,32 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
     <small>qui reflètent toutes une compétence<br>technique réelle (évidemment)</small>
     <i class="fa-solid fa-award"></i>
   </div>
+  <div class="rewind hover-popout bg-lightaccent">
+    <h3>140</h3>
+    <small>comptes rendu d'activité envoyés<br>(tous n'ont pas été signés)</small>
+    <i class="fa-solid fa-file-invoice"></i>
+  </div>
+  <div class="rewind hover-popout bg-lightaccent">
+    <h3>7 PCs</h3>
+    <small>portables maltraités<br>et seulement 2 téléphones</small>
+    <!-- 3x ROULLIER, 2x METSYS, 1x IMATECH, 1x BEAUMANOIR -->
+    <i class="fa-solid fa-laptop"></i>
+  </div>
   <div class="rewind hover-popout bg-primary">
     <h3>4 générations</h3>
     <small>de voitures de service qui ont été<br>mises en travers sur des rond-points</small>
     <i class="fa-solid fa-car-burst"></i>
+  </div>
+  <div class="rewind hover-popout bg-lightaccent">
+    <h3>10 prods<br>cassées</h3>
+    <small>y'a que les gens qui ne font rien<br>qui ne font pas d'erreurs nan ?</small>
+    <i class="fa-solid fa-burst"></i>
+  </div>
+  <div class="rewind hover-popout bg-lightaccent">
+    <h3>23 comptes</h3>
+    <small>admins du domaine<br>(tous désactivés maintenant)</small>
+    <!-- 1x EVEN, 1x CD40, 1x CHU, 4x IMA, 1x IMATECH, 1x PAO, 1x STG, 3x AVRIL, 2x DELTADORE, 1x SDIS29, 2x LE DUFF, 1x B&B HOTELS, 3x ROULLIER, 1x BEAUMANOIR -->
+    <i class="fa-solid fa-crown"></i>
   </div>
   <div class="rewind hover-popout bg-accent">
     <h3>+70 entretiens<br>techniques</h3>
@@ -56,7 +79,7 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
   </div>
   <div class="rewind hover-popout bg-secondary">
     <h3>+100 000 lignes<br>de PowerShell</h3>
-    <small>une estimation très conservatrice</small>
+    <small>une estimation trèèès conservatrice</small>
     <i class="fa-solid fa-file-code"></i>
   </div>
 <div>
