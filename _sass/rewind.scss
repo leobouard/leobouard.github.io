@@ -16,6 +16,14 @@ div.rewind h3 {
     line-height: 120%;
 }
 
+div.rewind i {
+    position: absolute;
+    font-size: 5em;
+    opacity: 0.1;
+    top: 0;
+    right: -0.25em;
+}
+
 div.bg-primary {
     background: var(--primary);
     color: var(--lightaccent);
