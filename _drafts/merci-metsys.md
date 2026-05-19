@@ -21,7 +21,7 @@ Je vous souhaite du fond du cœur le meilleur à vous toutes et tous, et j'espè
 
 Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr) évidemment !
 
-## Rewind
+## METSYS Rewind
 
 <div style="display: flex; grid-gap: 1em; flex-wrap: wrap;">
   <div class="rewind bg-primary">
@@ -38,18 +38,18 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
   </div>
   <div class="rewind bg-lightaccent">
     <h3>11 certifications<br>6 accréditations</h3>
-    <small>qui reflètent toutes une compétence technique réelle (évidemment)</small>
+    <small>qui reflètent toutes une compétence<br>technique réelle (évidemment)</small>
   </div>
   <div class="rewind bg-primary">
     <h3>4 générations</h3>
-    <small>de voitures de service qui ont été mises en travers sur des rond-points</small>
+    <small>de voitures de service qui ont été<br>mises en travers sur des rond-points</small>
   </div>
   <div class="rewind bg-accent">
     <h3>+70 entretiens<br>techniques</h3>
-    <small>avec des candidat(e)s plus ou moins bien préparés</small>
+    <small>avec des candidat(e)s<br>plus ou moins bien préparés</small>
   </div>
   <div class="rewind bg-secondary">
     <h3>+100 000 lignes<br>de PowerShell</h3>
-    <small>une estimation au doigt mouillé très conservatrice</small>
+    <small>une estimation très conservatrice</small>
   </div>
 <div>
