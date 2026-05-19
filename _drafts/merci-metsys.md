@@ -23,7 +23,7 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
 
 ## METSYS Rewind
 
-<div style="display: flex; grid-gap: 1em; flex-wrap: wrap;">
+<div style="display: flex; grid-gap: 1.5em; flex-wrap: wrap; justify-content: center;">
   <div class="rewind bg-primary">
     <h3>7 ans<br>9 mois<br>10 jours</h3>
     <small>passés avec METSYS</small>
