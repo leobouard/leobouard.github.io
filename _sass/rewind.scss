@@ -14,7 +14,7 @@ div.rewind {
 
 div.rewind h3 {
     font-size: xx-large;
-    margin: 0.5em 0;
+    margin: 0.5em;
     line-height: 120%;
 }
 
@@ -24,6 +24,11 @@ div.rewind i {
     opacity: 0.1;
     top: 0;
     right: -0.25em;
+    transition: all 300ms ease-in-out;
+}
+
+div.rewind:hover i {
+    transform: rotate(-10deg);
 }
 
 div.bg-primary {
