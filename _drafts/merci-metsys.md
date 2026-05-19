@@ -10,18 +10,20 @@ Je suis rentré chez METSYS à Rennes en tant que junior en septembre 2018, pour
 
 - **Lucie et Yannick** pour avoir donné sa chance à un alternant sorti d'études et d'avoir cru en lui pour devenir responsable d'équipe, consultant en mode projet ou pour relancer la partie conseil en IAM de METSYS. C'est en grande partie grâce à vous que j'en suis là aujourd'hui, donc merci pour la confiance accordée et pour votre investissement ! ❤️
 - **Franck et Alan** pour avoir été des managers au top qui m'ont toujours suivi dans mes initiatives, et **Gilles, François et Glen** pour avoir été des grands-frères techniques. 🎓
-- Tous mes compères de route pour aller à Saint-Malo, de **Jean** à **Krysten** en passant par **Marc-Elie** ! Pas sûr que j'aurai tenu aussi longtemps chez ce client sans vous (et désolé de vous avoir embarqué là dedans). 😂
-- Tous les candidats que j'ai pu aider à recruter avec **Ilknur** : **Benjamin, Arnaud, Jean-Baptiste, Julien, Leelou, Loïc, Romain et Brice** (et il y a en encore d'autres au national avec **Lucie**). C'est toujours une petite fierté de suivre votre progression ! 📈
+- Tous mes compères de route pour aller à Saint-Malo, de **Jean** à **Krysten** en passant par **Marc-Elie** ! Pas sûr que j'aurais tenu aussi longtemps chez ce client sans vous (et désolé de vous avoir embarqué là-dedans). 😂
+- Tous les candidats que j'ai pu aider à recruter avec **Ilknur** : **Benjamin, Arnaud, Jean-Baptiste, Julien, Leelou, Loïc, Romain et Brice** (et il y en a encore d'autres au niveau national avec **Lucie**). C'est toujours une petite fierté de suivre votre progression ! 📈
 - Merci à **Nancy et Sophie** pour leur disponibilité et leur gentillesse ainsi qu'à **Charles** pour les (nombreuses) balades en amoureux à Brest. 🌊
-- Les meilleurs pour la fin, mon équipe : **Rémi, Romuald, Mathias, Marc-Antoine et Michael**. Certains d'entre-vous sont dans l'équipe depuis 2021 et ça aura été un vrai plaisir de vous suivre pendant tout ce temps. Heureusement qu'il n'y a jamais eu de compétition PowerShell au niveau national, sinon on aurait tout défoncé c'est sûr ! 💪
+- Les meilleurs pour la fin : mon équipe **Rémi, Romuald, Mathias, Marc-Antoine et Michael**. Certains d'entre vous sont dans l'équipe depuis 2021 et ça aura été un vrai plaisir de vous suivre pendant tout ce temps. Heureusement qu'il n'y a jamais eu de compétition PowerShell au niveau national, sinon on aurait tout défoncé c'est sûr ! 💪
 
 Et enfin merci à toutes les personnes qui font que l'agence de Rennes est aussi accueillante : ceux qui sont toujours disponibles pour papoter un peu, ceux qui gèrent comme un chef la commande de burgers du jeudi ou ceux qui apportent simplement de la bonne humeur !
 
-Je vous souhaite du fond du cœur le meilleur à vous toutes et tous, et j'espère avoir pu redistribuer au moins autant de temps et de connaissances que ce qu'on a pu m'apporter en tant que junior !
+Je vous souhaite, du fond du cœur, le meilleur à vous toutes et tous, et j'espère avoir pu redistribuer au moins autant de temps et de connaissances que ce que l'on m'a apporté en tant que junior !
 
 Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr) évidemment !
 
 ## METSYS Rewind
+
+Et voici maintenant quelques petites statistiques :
 
 <div style="display: flex; grid-gap: 1.5em; flex-wrap: wrap; justify-content: center;">
   <div class="rewind hover-popout bg-primary">
@@ -45,12 +47,12 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
     <small>qui reflètent toutes une compétence<br>technique réelle (évidemment)</small>
     <i class="fa-solid fa-award"></i>
   </div>
-  <div class="rewind hover-popout bg-lightaccent">
+  <div class="rewind hover-popout bg-accent">
     <h3>140 CRA</h3>
     <small>comptes rendu d'activité envoyés<br>(jusqu'à 6 le même mois)</small>
     <i class="fa-solid fa-file-invoice"></i>
   </div>
-  <div class="rewind hover-popout bg-lightaccent">
+  <div class="rewind hover-popout bg-primary">
     <h3>7 PC</h3>
     <small>portables maltraités<br>mais rendus intacts</small>
     <!-- 3x ROULLIER, 2x METSYS, 1x IMATECH, 1x BEAUMANOIR -->
@@ -66,8 +68,8 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
     <small>y'a que les gens qui ne font rien<br>qui ne font pas d'erreurs nan ?</small>
     <i class="fa-solid fa-burst"></i>
   </div>
-  <div class="rewind hover-popout bg-lightaccent">
-    <h3>23 comptes</h3>
+  <div class="rewind hover-popout bg-secondary">
+    <h3>23<br>comptes</h3>
     <small>admins du domaine<br>(tous désactivés maintenant)</small>
     <!-- 1x EVEN, 1x CD40, 1x CHU, 4x IMA, 1x IMATECH, 1x PAO, 1x STG, 3x AVRIL, 2x DELTADORE, 1x SDIS29, 2x LE DUFF, 1x B&B HOTELS, 3x ROULLIER, 1x BEAUMANOIR -->
     <i class="fa-solid fa-crown"></i>
@@ -82,4 +84,4 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
     <small>une estimation trèèès basse</small>
     <i class="fa-solid fa-file-code"></i>
   </div>
-<div>
+</div>
