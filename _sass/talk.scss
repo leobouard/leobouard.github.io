@@ -18,6 +18,8 @@ div.talk-thumbnail {
     border-radius: var(--borderradius);
     border-bottom: 4px solid var(--accent);
     background: var(--lightaccent);
+    position: relative;
+    overflow: hidden;
 }
 
 div.talk-thumbnail h3 {
@@ -27,6 +29,20 @@ div.talk-thumbnail h3 {
 div.talk-thumbnail:hover h3 {
     color: var(--primary);
     text-decoration: underline;
+}
+
+div.talk-thumbnail i {
+    position: absolute;
+    font-size: 8em;
+    opacity: 0.1;
+    top: 0;
+    right: -0.25em;
+    transition: all 300ms ease-in-out;
+}
+
+div.talk-thumbnail:hover i {
+    transform: rotate(-10deg) scale(1.1);
+    opacity: 0.2;
 }
 
 img.talk-event-logo {
