@@ -49,3 +49,14 @@ div.bg-accent {
 div.bg-lightaccent {
     background: var(--lightaccent);
 }
+
+@media screen and (max-width: 610px) {
+    div.rewind {
+        padding: 1em;
+        width: 100%;
+    }
+    
+    div.rewind h3 {
+        font-size: x-large;
+    }
+}

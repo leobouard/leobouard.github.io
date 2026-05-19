@@ -36,7 +36,7 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
   </div>
   <div class="rewind hover-popout bg-accent">
     <h3>14 personnes</h3>
-    <small>qui ont eu le malheur<br>de tomber dans mon équipe</small>
+    <small>qui sont passées<br>dans mon équipe</small>
     <!-- Rémi, Julien, Mario, Grégoire, Romuald, Pierre, Louis, Mathias, Maxence, Marc-Elie, Krysten, Arnaud, Michael, Marc-Antoine -->
     <i class="fa-solid fa-people-group"></i>
   </div>
@@ -52,7 +52,7 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
   </div>
   <div class="rewind hover-popout bg-lightaccent">
     <h3>7 PCs</h3>
-    <small>portables maltraités<br>et seulement 2 téléphones</small>
+    <small>portables maltraités<br>mais rendus intacts</small>
     <!-- 3x ROULLIER, 2x METSYS, 1x IMATECH, 1x BEAUMANOIR -->
     <i class="fa-solid fa-laptop"></i>
   </div>
@@ -79,7 +79,7 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
   </div>
   <div class="rewind hover-popout bg-secondary">
     <h3>+100 000 lignes<br>de PowerShell</h3>
-    <small>une estimation trèèès conservatrice</small>
+    <small>une estimation trèèès basse</small>
     <i class="fa-solid fa-file-code"></i>
   </div>
 <div>
