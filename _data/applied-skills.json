@@ -1,5 +1,11 @@
 [
     {
+        "name": "Implémenter la protection des données et la protection contre la perte de données à l'aide de Microsoft Purview",
+        "tags": ["Microsoft Purview", "Administrateurs de la conformité", "Intermédiaire"],
+        "date": "mai 2026",
+        "url": "https://learn.microsoft.com/api/credentials/share/fr-fr/leo-bouard/F0C72924A3CC7A1D?sharingId=F97A0011A58C57B8"
+    },
+    {
         "name": "Prise en main des identités et de l'accès à l'aide de Microsoft Entra",
         "tags": ["Microsoft Entra", "Administrateurs", "Débutant"],
         "date": "mars 2026",
