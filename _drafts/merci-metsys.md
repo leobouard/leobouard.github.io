@@ -24,32 +24,32 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
 ## Rewind
 
 <div style="display: flex; grid-gap: 1em; flex-wrap: wrap;">
-  <div class="rewind">
+  <div class="rewind bg-primary">
     <h3>7 ans<br>9 mois<br>10 jours</h3>
     <small>passés avec METSYS</small>
   </div>
-  <div class="rewind">
+  <div class="rewind bg-secondary">
     <h3>32 missions</h3>
     <small>chez 22 clients différents</small>
   </div>
-  <div class="rewind">
+  <div class="rewind bg-accent">
     <h3>14 personnes</h3>
     <small>qui ont eu le malheur de tomber dans mon équipe</small>
   </div>
-  <div class="rewind">
+  <div class="rewind bg-lightaccent">
     <h3>11 certifications<br>6 accréditations</h3>
     <small>qui reflètent toutes une compétence technique réelle (évidemment)</small>
   </div>
-  <div class="rewind">
+  <div class="rewind bg-primary">
     <h3>4 générations</h3>
     <small>de voitures de service qui ont été mises en travers sur des rond-points</small>
   </div>
-  <div class="rewind">
-    <h3>+50 entretiens<br>techniques</h3>
+  <div class="rewind bg-accent">
+    <h3>+70 entretiens<br>techniques</h3>
     <small>avec des candidat(e)s plus ou moins bien préparés</small>
   </div>
-  <div class="rewind">
-    <h3>+50 000 entretiens<br>techniques</h3>
-    <small>avec des candidat(e)s plus ou moins bien préparés</small>
+  <div class="rewind bg-secondary">
+    <h3>+100 000 lignes<br>de PowerShell</h3>
+    <small>une estimation au doigt mouillé très conservatrice</small>
   </div>
 <div>
