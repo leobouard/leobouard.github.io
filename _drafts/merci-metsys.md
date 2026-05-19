@@ -27,29 +27,36 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
   <div class="rewind bg-primary">
     <h3>7 ans<br>9 mois<br>10 jours</h3>
     <small>passés avec METSYS</small>
+    <i class="fa-solid fa-hourglass"></i>
   </div>
   <div class="rewind bg-secondary">
     <h3>32 missions</h3>
     <small>chez 22 clients différents</small>
+    <i class="fa-solid fa-user-ninja"></i>
   </div>
   <div class="rewind bg-accent">
     <h3>14 personnes</h3>
     <small>qui ont eu le malheur de tomber dans mon équipe</small>
+    <i class="fa-solid fa-people-group"></i>
   </div>
   <div class="rewind bg-lightaccent">
     <h3>11 certifications<br>6 accréditations</h3>
     <small>qui reflètent toutes une compétence<br>technique réelle (évidemment)</small>
+    <i class="fa-solid fa-award"></i>
   </div>
   <div class="rewind bg-primary">
     <h3>4 générations</h3>
     <small>de voitures de service qui ont été<br>mises en travers sur des rond-points</small>
+    <i class="fa-solid fa-car-burst"></i>
   </div>
   <div class="rewind bg-accent">
     <h3>+70 entretiens<br>techniques</h3>
     <small>avec des candidat(e)s<br>plus ou moins bien préparés</small>
+    <i class="fa-solid fa-comments"></i>
   </div>
   <div class="rewind bg-secondary">
     <h3>+100 000 lignes<br>de PowerShell</h3>
     <small>une estimation très conservatrice</small>
+    <i class="fa-solid fa-file-code"></i>
   </div>
 <div>
