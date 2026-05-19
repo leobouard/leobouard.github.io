@@ -6,7 +6,7 @@ div.rewind {
     text-align: center;
     padding: 1.5em;
     border: 1px solid var(--mediumaccent);
-    border-radius: var(--borderradius);
+    border-radius: 1em;
     height: stretch;
     position: relative;
     overflow: hidden;
@@ -29,6 +29,7 @@ div.rewind i {
 
 div.rewind:hover i {
     transform: rotate(-10deg);
+    opacity: 0.2;
 }
 
 div.bg-primary {
