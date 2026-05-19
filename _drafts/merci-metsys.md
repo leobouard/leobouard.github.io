@@ -41,17 +41,17 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
     <i class="fa-solid fa-people-group"></i>
   </div>
   <div class="rewind hover-popout bg-lightaccent">
-    <h3>11 certifications<br>6 accréditations</h3>
+    <h3>11 certifications</h3>
     <small>qui reflètent toutes une compétence<br>technique réelle (évidemment)</small>
     <i class="fa-solid fa-award"></i>
   </div>
   <div class="rewind hover-popout bg-lightaccent">
-    <h3>140</h3>
-    <small>comptes rendu d'activité envoyés<br>(tous n'ont pas été signés)</small>
+    <h3>140 CRA</h3>
+    <small>comptes rendu d'activité envoyés<br>(jusqu'à 6 le même mois)</small>
     <i class="fa-solid fa-file-invoice"></i>
   </div>
   <div class="rewind hover-popout bg-lightaccent">
-    <h3>7 PCs</h3>
+    <h3>7 PC</h3>
     <small>portables maltraités<br>mais rendus intacts</small>
     <!-- 3x ROULLIER, 2x METSYS, 1x IMATECH, 1x BEAUMANOIR -->
     <i class="fa-solid fa-laptop"></i>
