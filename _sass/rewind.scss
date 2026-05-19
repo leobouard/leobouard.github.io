@@ -9,6 +9,7 @@ div.rewind {
     border-radius: var(--borderradius);
     height: stretch;
     position: relative;
+    overflow: hidden;
 }
 
 div.rewind h3 {
