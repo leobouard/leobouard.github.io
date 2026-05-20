@@ -1,6 +1,7 @@
 <div class="talk-container hover-bottom">
   <a href="{{ include.url }}" class="no-decoration" target="_blank">
     <div class="talk-thumbnail">
+      <i class="fa-regular fa-calendar-days"></i>
       <h3>{{ include.title }}</h3>
       {% if include.copresenter %}<small style="margin-top: 1em;">avec {{ include.copresenter }}</small>{% endif %}
     </div>
@@ -12,7 +13,7 @@
       <small class="talk-date">{{ include.date }} • {{ include.place }}</small>
     </div>
   </div>
-  <a href="{{ include.slide }}" class="no-decoration talk-slide" target="_blank">
+  <a href="{{ include.slide }}" class="no-decoration hover-popout talk-slide" title="Voir les slides" target="_blank">
     <i class="fa-regular fa-file-pdf"></i>
   </a>
 </div>

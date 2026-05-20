@@ -1,0 +1,62 @@
+div.rewind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5em;
+    border: 1px solid var(--mediumaccent);
+    border-radius: 1em;
+    height: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+div.rewind h3 {
+    font-size: xx-large;
+    margin: 0.5em;
+    line-height: 120%;
+}
+
+div.rewind i {
+    position: absolute;
+    font-size: 5em;
+    opacity: 0.1;
+    top: 0;
+    right: -0.25em;
+    transition: all 300ms ease-in-out;
+}
+
+div.rewind:hover i {
+    transform: rotate(-10deg) scale(1.1);
+    opacity: 0.2;
+}
+
+div.bg-primary {
+    background: var(--primary);
+    color: var(--lightaccent);
+}
+
+div.bg-secondary {
+    background: var(--secondary);
+}
+
+div.bg-accent {
+    background: var(--accent);
+    color: var(--lightaccent);
+}
+
+div.bg-lightaccent {
+    background: var(--lightaccent);
+}
+
+@media screen and (max-width: 610px) {
+    div.rewind {
+        padding: 1em;
+        width: 100%;
+    }
+    
+    div.rewind h3 {
+        font-size: x-large;
+    }
+}
