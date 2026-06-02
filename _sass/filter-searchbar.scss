@@ -25,8 +25,8 @@ input.searchbar:focus {
 div.searchbar-container i {
     position: absolute;
     right: 0.5em;
+    top: 0.25em;
     font-size: large;
-    align-self: anchor-center;
     color: var(--heavyaccent);
     background: linear-gradient(280deg, var(--lightaccent), var(--lightaccent), transparent);
     padding: 0.5em 0.5em 0.5em 2em;
