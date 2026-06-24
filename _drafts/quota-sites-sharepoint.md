@@ -36,7 +36,7 @@ Ces deux paramètres ne sont pas rétroactifs, il faut donc repasser sur tous le
 
 ### Comment définir des quotas à grande échelle ?
 
-On a vu comment modifier le quota d'un seul site et le quota par défaut pour les nouveaux sites, mais on souhaite maintenant plafonner à grande échelle tous les sites existants sur notre tenant. Pour faire cela, on va encore utiliser le module PowerShell `PnP.PowerShell` et appliquer les quotas suivants :
+On a vu comment modifier le quota d'un seul site et le quota par défaut pour les nouveaux sites, mais on souhaite désormais plafonner tous les sites existants sur notre tenant. Pour faire cela, on va encore utiliser le module PowerShell `PnP.PowerShell` et appliquer les quotas suivants :
 
 - Taille S (par défaut) : 10 GB
 - Taille M : 50 GB
@@ -50,7 +50,7 @@ La première étape pour appliquer les quotas à grande échelle, c'est de savoi
 
 ### Quotas par tranche
 
-On commence par se connecter sur le tenant à l'aide d'une application Azure. Si vous ne disposez pas d'application Azure pour PnP, vous pouvez la créer à l'aide de cette documentation : [Register an Entra ID Application to use with PnP PowerShell \| PnP PowerShell](https://pnp.github.io/powershell/articles/registerapplication.html).
+On commence par se connecter sur le tenant à l'aide d'une application Azure. Si vous n'avez pas d'application Azure pour PnP, vous pouvez la créer à l'aide de cette documentation : [Register an Entra ID Application to use with PnP PowerShell \| PnP PowerShell](https://pnp.github.io/powershell/articles/registerapplication.html).
 
 ```powershell
 $appSettings = @{
