@@ -1,5 +1,5 @@
 ﻿---
-title: "La prochaine étape pour votre tier model Active Directory"
+title: "La prochaine étape pour votre tier model"
 description: "Le tutoriel le plus simple possible pour apprivoiser les Authentication Policy & Silos de Active Directory"
 tags: activedirectory
 ---
