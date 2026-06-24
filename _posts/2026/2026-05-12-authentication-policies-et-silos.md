@@ -1,6 +1,6 @@
 ﻿---
-title: "Authentication Policies & Silos"
-description: "Le tutoriel le plus simple possible pour apprivoiser cette fonctionnalité de Active Directory"
+title: "La prochaine étape pour votre tier model Active Directory"
+description: "Le tutoriel le plus simple possible pour apprivoiser les Authentication Policy & Silos de Active Directory"
 tags: activedirectory
 ---
 
