@@ -1,6 +1,7 @@
 div.article-info {
     display: flex;
     grid-gap: 1em;
+    flex-wrap: wrap;
     font-size: smaller;
     color: var(--heavyaccent);
 }
