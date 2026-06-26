@@ -8,6 +8,9 @@ emailAddress: leo.bouard@hotmail.com
 
 # GitHub repository
 repository: https://github.com/leobouard/leobouard.github.io/tree/main/
+github_owner: leobouard
+github_repo: leobouard.github.io
+github_branch: main
 
 # Add '_pages' folder
 include: [_pages]
