@@ -78,24 +78,6 @@
                     "endDate":  "aujourd'hui",
                     "summary":  "",
                     "highlights":  [ ]
-                },
-                {
-                    "title":  "Responsable d'équipe",
-                    "startDate":  "octobre 2021",
-                    "endDate":  "mai 2026",
-                    "summary":  "Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.",
-                    "highlights":  [
-                        "le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels",
-                        "la formation et l'accompagnement des collaborateurs dans leur montée en compétence",
-                        "la qualification technique des candidats",
-                        "l'organisation des afterworks d'équipe"
-                    ]
-                },
-                {
-                    "title":  "Administrateur systèmes",
-                    "startDate":  "septembre 2018",
-                    "endDate":  "septembre 2021",
-                    "summary":  "Consultant junior au sein de la business unit Infrastructure & Services."
                 }
             ]
         },
