@@ -62,6 +62,44 @@
     ],
     "companies":  [
         {
+            "name":  "Bleu Cloud",
+            "logo":  "/assets/cv/companies/bleu-cloud.jpg",
+            "location":  "Rennes, Bretagne",
+            "startDate":  "2026",
+            "endDate":  "aujourd'hui",
+            "duration":  "Moins d'un an",
+            "url":  "www.bleucloud.fr",
+            "activity": "Hébergement et services cloud",
+            "summary":  "Bleu propose les services Microsoft 365 et Microsoft Azure dans un cloud français sécurisé, en cours de qualification SecNumCloud 3.2 de l’ANSSI.",
+            "positions":  [
+                {
+                    "title":  "Ingénieur opération Microsoft 365",
+                    "startDate":  "juillet 2026",
+                    "endDate":  "aujourd'hui",
+                    "summary":  "",
+                    "highlights":  [ ]
+                },
+                {
+                    "title":  "Responsable d'équipe",
+                    "startDate":  "octobre 2021",
+                    "endDate":  "mai 2026",
+                    "summary":  "Référent technique PowerShell et gestion d'une équipe de cinq consultant(e)s.",
+                    "highlights":  [
+                        "le suivi des collaborateurs en mission et dans leurs entretiens individuels et professionnels",
+                        "la formation et l'accompagnement des collaborateurs dans leur montée en compétence",
+                        "la qualification technique des candidats",
+                        "l'organisation des afterworks d'équipe"
+                    ]
+                },
+                {
+                    "title":  "Administrateur systèmes",
+                    "startDate":  "septembre 2018",
+                    "endDate":  "septembre 2021",
+                    "summary":  "Consultant junior au sein de la business unit Infrastructure & Services."
+                }
+            ]
+        },
+        {
             "name":  "METSYS",
             "logo":  "/assets/cv/companies/metsys.jpg",
             "location":  "Rennes, Bretagne",
