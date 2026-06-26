@@ -42,7 +42,6 @@ layout: default
   {% if page.prevLink == nil %}
     {% include article-info.html date=page.date content=page.content %}
   {% endif %}
-  <span>{{ page.last_modified_at | date: "%d/%m/%Y à %H:%M" }}</span>
 
   <!-- Article content -->
   {{ content }}
