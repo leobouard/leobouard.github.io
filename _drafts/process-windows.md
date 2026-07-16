@@ -1,7 +1,19 @@
+---
+title: "Lancement de programmes depuis PowerShell"
+description: "Comment lancer certains programmes depuis une console PowerShell"
+tags: ["windows", "powershell"]
+---
+
+## Incontournables
+
+Nom court | Programme
+--------- | ---------
+`explorer` | Explorateur de fichiers
+`notepad` | Bloc-notes
 
 ## Général
 
-Nom court | Console
+Nom court | Programme
 --------- | -------
 `taskschd` | Planificateur de tâches
 `taskmgr` | Gestionnaire de tâches
@@ -22,13 +34,7 @@ Nom court | Console
 
 ## Active Directory
 
-### RSAT Active Directory
-
-```powershell
-Install-WindowsFeature -Name RSAT-ActiveDirectory
-```
-
-Nom court | Console
+Nom court | Programme
 --------- | -------
 `dsa` | Utilisateurs et ordinateurs Active Directory
 `dsac` | Centre d'administration Active Directory
@@ -38,9 +44,22 @@ Nom court | Console
 `gpmc` | Gestion de stratégie de groupe
 `mmc schmmgmt` | Schéma Active Directory
 
-### Certificats
+## Certificats
 
-Nom court | Console
+Nom court | Programme
 --------- | -------
-`certlm` | Certificats - Ordinateur local
-`certmgr` | Certificats - Utilisateur actuel
+`certlm` | Certificats ordinateur
+`certmgr` | Certificats utilisateur
+`certsrv` | Autorité de certification
+
+## PowerShell et développement
+
+Nom court | Programme
+--------- | ---------
+`cmd` | Invité de commande
+`powershell` | Windows PowerShell
+`powershell_ise` | Windows PowerShell ISE 
+`pwsh` | PowerShell 7+
+`code` | Visual Studio Code
+
+> Pour lancer une nouvelle instance `cmd` ou `pwsh` (plutôt que simplement basculer vers), vous devez utiliser la commande `Start-Process pwsh` par exemple.
