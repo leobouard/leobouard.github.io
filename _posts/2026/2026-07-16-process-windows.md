@@ -51,6 +51,7 @@ Nom court | Programme
 `certlm` | Certificats ordinateur
 `certmgr` | Certificats utilisateur
 `certsrv` | Autorité de certification
+`certtmpl` | Modèle de certificats
 
 ## PowerShell et développement
 
