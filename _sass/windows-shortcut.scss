@@ -13,6 +13,8 @@ div.windows-shortcut {
 div.windows-shortcut img {
   width: 4em;
   margin: auto;
+  aspect-ratio: 1;
+  overflow: hidden;
 }
 
 div.windows-shortcut p {
