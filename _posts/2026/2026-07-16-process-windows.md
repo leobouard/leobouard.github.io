@@ -4,7 +4,7 @@ description: "Comment lancer certains programmes depuis une console PowerShell"
 tags: ["windows", "powershell"]
 ---
 
-Que vous soyez sur une version de Windows installée en 
+Que vous soyez sur une version de Windows installée dans une langue avec laquelle vous n'êtes pas familier ou que vous deviez lancer plusieurs programmes "en tant que", voici quelques raccourcis pour exécuter des utilitaires Windows directement depuis une console PowerShell.
 
 {% assign general = site.data.process-windows | where: "category", "Général" %}
 {% assign active-directory = site.data.process-windows | where: "category", "Active Directory" %}
@@ -43,4 +43,10 @@ Que vous soyez sur une version de Windows installée en
 {% endfor %}
 </div>
 
-> Pour lancer une nouvelle instance `cmd` ou `pwsh` (plutôt que simplement basculer vers), vous devez utiliser la commande `Start-Process pwsh` par exemple.
+Pour lancer une nouvelle instance `cmd` ou `pwsh` (plutôt que simplement basculer vers), vous devez utiliser la commande `Start-Process pwsh` par exemple.
+
+Si vous souhaitez lancer un nouvel invité de commande en tant qu'administrateur, vous pouvez utiliser le paramètre `-Verb` comme ceci :
+
+```powershell
+Start-Process pwsh -Verb RunAs
+```
