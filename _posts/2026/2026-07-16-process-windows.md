@@ -6,7 +6,7 @@ tags: ["windows", "powershell"]
 
 Que vous soyez sur une version de Windows installée en 
 
-{% assign general = site.data.process-windows | where: "category", "Général"  %}
+{% assign general = site.data.process-windows | where: "category", "Général" | first %}
 {% assign active-directory = site.data.process-windows | where: "category", "Active Directory" %}
 {% assign certificates = site.data.process-windows | where: "category", "Certificats" %}
 {% assign powershell = site.data.process-windows | where: "category", "PowerShell et développement" %}
