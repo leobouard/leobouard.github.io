@@ -1,0 +1,158 @@
+[
+    {
+        "category": "Général",
+        "processes": [
+            {
+                "name": "Explorateur de fichiers",
+                "shortcut": "explorer"
+            },
+            {
+                "name": "Bloc-notes",
+                "shortcut": "notepad"
+            },
+            {
+                "name": "Planificateur de tâches",
+                "shortcut": "taskschd"
+            },
+            {
+                "name": "Gestionnaire de tâches",
+                "shortcut": "taskmgr"
+            },
+            {
+                "name": "Propriétés systèmes",
+                "shortcut": "sysdm"
+            },
+            {
+                "name": "Gestion de l’ordinateur",
+                "shortcut": "compmgmt"
+            },
+            {
+                "name": "Configuration du système",
+                "shortcut": "msconfig"
+            },
+            {
+                "name": "Observateur d’événements",
+                "shortcut": "eventvwr"
+            },
+            {
+                "name": "Moniteur de performances",
+                "shortcut": "perfmon"
+            },
+            {
+                "name": "Services Windows",
+                "shortcut": "services"
+            },
+            {
+                "name": "Éditeur du Registre",
+                "shortcut": "regedit"
+            },
+            {
+                "name": "Gestionnaire de périphériques",
+                "shortcut": "devmgmt"
+            },
+            {
+                "name": "Gestion des disques",
+                "shortcut": "diskmgmt"
+            },
+            {
+                "name": "Connexions réseau",
+                "shortcut": "ncpa.cpl"
+            },
+            {
+                "name": "Panneau de configuration",
+                "shortcut": "control"
+            },
+            {
+                "name": "Programmes et fonctionnalités",
+                "shortcut": "appwiz.cpl"
+            },
+            {
+                "name": "Propriétés système (avancé)",
+                "shortcut": "sysdm.cpl"
+            },
+            {
+                "name": "Services de composants",
+                "shortcut": "comexp"
+            }
+        ]
+    },
+    {
+        "category": "Active Directory",
+        "processes": [
+            {
+                "name": "Utilisateurs et ordinateurs Active Directory",
+                "shortcut": "dsa"
+            },
+            {
+                "name": "Centre d’administration Active Directory",
+                "shortcut": "dsac"
+            },
+            {
+                "name": "Sites et services Active Directory",
+                "shortcut": "dssite"
+            },
+            {
+                "name": "Domaines et approbations Active Directory",
+                "shortcut": "domain"
+            },
+            {
+                "name": "Modification ADSI",
+                "shortcut": "adsiedit"
+            },
+            {
+                "name": "Gestion de stratégie de groupe",
+                "shortcut": "gpmc"
+            },
+            {
+                "name": "Schéma Active Directory",
+                "shortcut": "mmc schmmgmt"
+            }
+        ]
+    },
+    {
+        "category": "Certificats",
+        "processes": [
+            {
+                "name": "Certificats ordinateurs",
+                "shortcut": "certlm"
+            },
+            {
+                "name": "Certificats utilisateurs",
+                "shortcut": "certmgr"
+            },
+            {
+                "name": "Autorité de certification",
+                "shortcut": "certsrv"
+            },
+            {
+                "name": "Modèle de certificat",
+                "shortcut": "certtmpl"
+            }
+        ]
+    },
+    {
+        "category": "PowerShell et développement",
+        "processes": [
+            {
+                "name": "Invité de commande",
+                "shortcut": "cmd"
+            },
+            {
+                "name": "Windows PowerShell",
+                "shortcut": "powershell"
+            },
+            {
+                "name": "Windows PowerShell ISE",
+                "shortcut": "powershell_ise"
+            },
+            {
+                "name": "PowerShell 7+",
+                "shortcut": "pwsh"
+            },
+            {
+                "name": "Visual Studio Code",
+                "shortcut": "code"
+            }
+        ]
+    }
+]

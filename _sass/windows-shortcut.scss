@@ -1,0 +1,32 @@
+div.windows-shortcut {
+    border: 1px solid var(--mediumaccent);
+    aspect-ratio: 1;
+    display: flex;
+    padding: 1em;
+    align-content: center;
+    justify-content: end;
+    width: 9em;
+    position: relative;
+    flex-direction: column;
+}
+
+div.windows-shortcut img {
+  width: 4em;
+  margin: auto;
+}
+
+div.windows-shortcut p {
+  line-height: 130%;
+  margin: 0;
+}
+
+div.windows-shortcut span {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: var(--lightaccent);
+  border: 1px solid var(--mediumaccent);
+  padding: 1px 5px;
+  font-size: 12px;
+  font-family: system-ui, arial;
+}
