@@ -26,7 +26,7 @@ div.windows-shortcut span {
   right: 1em;
   background: var(--lightaccent);
   border: 1px solid var(--mediumaccent);
-  padding: 1px 5px;
-  font-size: 12px;
-  font-family: system-ui, arial;
+  border-radius: var(--borderradius);
+  padding: 0.1em 0.5em;
+  font-size: small;
 }
