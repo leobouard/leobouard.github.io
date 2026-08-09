@@ -67,7 +67,7 @@
     {
         "category": "Général",
         "name": "Connexions réseau",
-        "shortcut": "ncpa.cpl"
+        "shortcut": "ncpa"
     },
     {
         "category": "Général",
@@ -77,7 +77,7 @@
     {
         "category": "Général",
         "name": "Programmes et fonctionnalités",
-        "shortcut": "appwiz.cpl"
+        "shortcut": "appwiz"
     },
     {
         "category": "Général",
