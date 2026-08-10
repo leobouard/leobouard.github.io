@@ -36,11 +36,6 @@
     },
     {
         "category": "Général",
-        "name": "Configuration du système",
-        "shortcut": "msconfig"
-    },
-    {
-        "category": "Général",
         "name": "Observateur d’événements",
         "shortcut": "eventvwr"
     },
