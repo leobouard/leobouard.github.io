@@ -86,8 +86,8 @@
     },
     {
         "category": "Général",
-        "name": "Services de composants",
-        "shortcut": "comexp"
+        "name": "Console MMC",
+        "shortcut": "mmc"
     },
     {
         "category": "Général",
@@ -123,6 +123,11 @@
         "category": "Active Directory",
         "name": "Gestion de stratégie de groupe",
         "shortcut": "gpmc"
+    },
+    {
+        "category": "Active Directory",
+        "name": "Stratégie de sécurité locale",
+        "shortcut": "secpol"
     },
     {
         "category": "Active Directory",
