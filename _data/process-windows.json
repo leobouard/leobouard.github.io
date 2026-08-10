@@ -21,6 +21,11 @@
     },
     {
         "category": "Général",
+        "name": "Connexion bureau à distance",
+        "shortcut": "mstsc"
+    },
+    {
+        "category": "Général",
         "name": "Propriétés systèmes",
         "shortcut": "sysdm"
     },
