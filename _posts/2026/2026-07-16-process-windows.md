@@ -6,11 +6,11 @@ tags: ["windows", "powershell"]
 
 ## Introduction rapide
 
-Que vous soyez sur une version de Windows installée dans une langue avec laquelle vous n'êtes pas familier ou que vous deviez lancer plusieurs programmes "en tant que", voici quelques raccourcis pour exécuter des utilitaires Windows directement depuis une console PowerShell.
+Que vous soyez sur une version de Windows installée dans une langue que vous ne maîtriser pas ou que vous deviez lancer plusieurs programmes "en tant que", voici quelques raccourcis pour exécuter des utilitaires Windows directement depuis une console PowerShell.
 
-Le principe est simple : chaque application Windows a souvent un nom court (ProcessName) qui peut être utilisé pour lancer celui-ci, directement depuis une console PowerShell.
+Le principe est simple : chaque application Windows a souvent un nom court (ProcessName) qui peut être utilisé pour le lancer, directement depuis une console PowerShell.
 
-Vous n'avez donc qu'à ouvrir une console PowerShell en tant qu'administrateur (ou avec un autre utilisateur que celui qui a ouvert la session) et lancer le reste des programmes depuis le terminal. Pour lancer le panneau de configuration par exemple, vous n'avez qu'à tapper la commande `control`.
+Vous n'avez donc qu'à ouvrir une console PowerShell en tant qu'administrateur (ou avec un autre utilisateur que celui qui a ouvert la session) et lancer le reste des programmes depuis le terminal. Pour lancer le panneau de configuration par exemple, vous n'avez qu'à taper la commande `control`.
 
 {% assign general = site.data.process-windows | where: "category", "Général" %}
 {% assign active-directory = site.data.process-windows | where: "category", "Active Directory" %}
@@ -104,4 +104,4 @@ Voici un exemple pour lancer une nouvelle fenêtre de PowerShell 7+ en tant qu'a
 Start-Process pwsh -Verb RunAs
 ```
 
-> Certains programmes ne peuvent pas être lancés en tant qu'administrateur quoi que vous fassiez. C'est notamment le cas de l'explorateur de fichiers (`explorer`).
+> Certains programmes ne peuvent pas être lancés en tant qu'administrateur ou avec un autre utilisateur que celui qui a ouvert la session, quoi que vous fassiez. C'est notamment le cas de l'explorateur de fichiers (`explorer`).
