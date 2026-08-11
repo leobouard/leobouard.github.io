@@ -96,7 +96,7 @@ Si la résolution n'est pas fameuse, sachez que c'est le maximum que j'ai pu tir
 
 ### Exécution en tant qu'administrateur
 
-Si vous souhaitez lancer une application en tant qu'administrateur alors que votre terminal n'a pas été lancé en tant que tel, vous pouvez faire une élevation avec la commande `Start-Process` et le paramètre ` -Verb`.
+Si vous souhaitez lancer une application en tant qu'administrateur alors que votre terminal n'a pas été lancé en tant que tel, vous pouvez faire une élévation avec la commande `Start-Process` et le paramètre ` -Verb`.
 
 Voici un exemple pour lancer une nouvelle fenêtre de PowerShell 7+ en tant qu'administrateur :
 
