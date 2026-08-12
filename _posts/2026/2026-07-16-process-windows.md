@@ -4,7 +4,7 @@ description: "Comment lancer certains programmes depuis une console PowerShell"
 tags: ["windows", "powershell"]
 ---
 
-## Introduction rapide
+## Introduction
 
 Que vous soyez sur une version de Windows installée dans une langue que vous ne maîtriser pas ou que vous deviez lancer plusieurs programmes "en tant que", voici quelques raccourcis pour exécuter des utilitaires Windows directement depuis une console PowerShell.
 
