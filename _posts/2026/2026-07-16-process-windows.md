@@ -21,7 +21,7 @@ Vous n'avez donc qu'à ouvrir une console PowerShell en tant qu'administrateur (
 
 ### Général
 
-<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto;">
+<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto; justify-content: center;">
 {% for process in general %}
   {% include windows-shortcut.html name=process.name shortcut=process.shortcut %}
 {% endfor %}
@@ -41,7 +41,7 @@ Pour avoir accès à la console de modification du schéma, il faudra faire une 
 regsvr32 schmmgmt.dll
 ```
 
-<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto;">
+<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto; justify-content: center;">
 {% for process in active-directory %}
   {% include windows-shortcut.html name=process.name shortcut=process.shortcut %}
 {% endfor %}
@@ -55,7 +55,7 @@ Pour installer les consoles liées à Active Directory Certificate Services (ADC
 Install-WindowsFeature RSAT-ADCS
 ```
 
-<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto;">
+<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto; justify-content: center;">
 {% for process in certificates %}
   {% include windows-shortcut.html name=process.name shortcut=process.shortcut %}
 {% endfor %}
@@ -63,7 +63,7 @@ Install-WindowsFeature RSAT-ADCS
 
 ### PowerShell et développement
 
-<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto;">
+<div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto; justify-content: center;">
 {% for process in powershell %}
   {% include windows-shortcut.html name=process.name shortcut=process.shortcut %}
 {% endfor %}
