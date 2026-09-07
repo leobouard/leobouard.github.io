@@ -62,26 +62,6 @@
     ],
     "companies":  [
         {
-            "name":  "Bleu",
-            "logo":  "/assets/cv/companies/bleu-cloud.jpg",
-            "location":  "Rennes, Bretagne",
-            "startDate":  "2026",
-            "endDate":  "aujourd'hui",
-            "duration":  "Moins d'un an",
-            "url":  "www.bleucloud.fr",
-            "activity": "Hébergement et services cloud",
-            "summary":  "Bleu propose les services Microsoft 365 et Microsoft Azure dans un cloud français sécurisé, en cours de qualification SecNumCloud 3.2 de l’ANSSI.",
-            "positions":  [
-                {
-                    "title":  "Ingénieur opération Microsoft 365",
-                    "startDate":  "juillet 2026",
-                    "endDate":  "aujourd'hui",
-                    "summary":  "",
-                    "highlights":  [ ]
-                }
-            ]
-        },
-        {
             "name":  "METSYS",
             "logo":  "/assets/cv/companies/metsys.jpg",
             "location":  "Rennes, Bretagne",
