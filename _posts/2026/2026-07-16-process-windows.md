@@ -105,3 +105,20 @@ Start-Process pwsh -Verb RunAs
 ```
 
 > Certains programmes ne peuvent pas être lancés en tant qu'administrateur ou avec un autre utilisateur que celui qui a ouvert la session, quoi que vous fassiez. C'est notamment le cas de l'explorateur de fichiers (`explorer`).
+
+### Lancement d'applications par défaut
+
+Le cas le plus probable est l'exécution d'un programme comme un navigateur Internet. Il n'est pas possible à ma connaissance de lancer Microsoft Edge avec le nom du processus `msedge`. Pour contourner le problème, vous n'avez qu'à lancer un processus qui pointe vers du HTTP / HTTPS. L'URL n'a même pas à être valide, elle doit simplement commencer par `http:` ou `https:` :
+
+```powershell
+Start-Process 'http:'
+```
+
+Avec la même logique, vous pouvez lancer d'autres applications par défaut comme :
+
+- `ssh:` pour le SSH
+- `ftp:` pour le FTP
+- `mailto:` pour les courriels
+- `tel:` pour les appels téléphoniques
+- `sms:` pour les messages téléphoniques
+- `sip:` pour les appels VOIP (donc souvent Teams, mais sachez que vous pouvez utiliser le ProcessName `ms-teams` si besoin)
