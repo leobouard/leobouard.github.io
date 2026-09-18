@@ -13,9 +13,9 @@ Deux serveurs :
 
 Trois groupes :
 
-- **JEA_Domain Admins_Requester** pour demander à être ajouter dans le groupe Domain Admins
-- **JEA_Domain Admins_Approver** pour approuver les demandes d'ajout dans le groupe Domain Admins
-- **JEA_Domain Admins_WaitingAttribution** qui va stocker les demandes en attente d'approbation
+- **JEA_Requesters** pour demander à être ajouter dans une sélection de groupes
+- **JEA_Approvers** pour approuver les demandes d'ajout
+- **JEA_WaitingAttribution_Domain Admins** qui va stocker les demandes en attente d'approbation
 
 Deux profils JEA :
 
@@ -45,56 +45,156 @@ L'approbateur et le demandeur peuvent tous les deux consulter les demandes en at
 L'approbateur peut finalement approuver une demande en indiquant le nom du groupe et le membre autorisé. L'approbation ajoute l'utilisateur dans le groupe cible avec le TTL demandé, et supprime l'appartenance au groupe WaitingAttribution.
 
 ```powershell
-function New-JEARequestDC {
+function New-JEARequest {
     param(
-        [string]$Group,  # mandatory + validate set
-        [int]$TimeToLive, # mandatory + validate range
-        [string]$Reason # mandatory
+        [Parameter(Mandatory)][string]$Group,
+        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$TimeToLive,
+        [Parameter(Mandatory)][ValidateNotNullOrEmpty()][string]$Reason
     )
 
-    $splat = @{
-        Identity = (Get-ADGroup $Group).DistinguishedName
-        Members = (Get-ADUser $env:username).DistinguishedName
-        MemberTimeToLive = (New-TimeSpan -Days $TimeToLive+1)
-    }
-    $seeAlso = "$($env:username): $Reason"
+    $User = $env:USERNAME
+    $domainController = (Get-ADDomainController -Discover).HostName
+    Invoke-Command -ComputerName $domainController -ConfigurationName 'JEARequester' -ScriptBlock {
+        param($Group, $TimeToLive, $Reason)
+        New-JEADCRequest -Group $Group -TimeToLive $TimeToLive -Reason $Reason
+    } -ArgumentList $User, $Group, $TimeToLive, $Reason
+}
 
-    Enter-PSSession -ComputerName $domainController -ConfigurationName JEARequester -ScriptBlock {
-        Add-ADGroupMember @splat
-        Set-ADGroup $splat.Identity -Add @{ seeAlso = $seeAlso }
-    }
+function New-JEADCRequest {
+    param(
+        [Parameter(Mandatory)][string]$Group,
+        [Parameter(Mandatory)][string]$User,
+        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$TimeToLive,
+        [Parameter(Mandatory)][ValidateNotNullOrEmpty()][string]$Reason
+    )
+
+    $waitingGroup = Get-ADGroup -Identity "JEA_WaitingAttribution_$Group" -ErrorAction Stop
+    $requestor = Get-ADUser -Identity $env:USERNAME -ErrorAction Stop
+    $entry = "$($requestor.SamAccountName):$TimeToLive`:$Reason"
+
+    Add-ADGroupMember -Identity $waitingGroup -Members $requestor -MemberTimeToLive (New-TimeSpan -Days ($TimeToLive + 1))
+    Set-ADGroup -Identity $waitingGroup -Add @{ SeeAlso = $entry }
+    "Demande créée pour $($targetGroup.Name)."
 }
 
 function Get-JEARequest {
-    $groups = Get-ADGroup -Filter { Name -like 'JEA_*_WaitingApprobation' } -Properties Members, SeeAlso -ShowMemberTimeToLive
-    $groups | ForEach-Object {
-        $name = ($_.Name -split '_' | Select-Object -Skip 1 -SkipLast 1) -join '_'
-        $reasons = $_.SeeAlso
-        $_.Members | ForEach-Object {
-            [PSCustomObject]@{
-                Requestor = $null
-                Group = $name
-                Timestamp = $null
-                TimeToLive = $null
-                Reason = $null
+    $domainController = (Get-ADDomainController -Discover).HostName
+    Invoke-Command -ComputerName $domainController -ConfigurationName 'JEARequester' -ScriptBlock {
+        Get-JEADCRequest
+    }
+}
+
+function Get-JEADCRequest {
+    Get-ADGroup -Filter "Name -like 'JEA_WaitingAttribution_*'" -Properties Members, SeeAlso -ShowMemberTimeToLive |
+        ForEach-Object {
+            $waitingGroup = $_
+            $targetName = $waitingGroup.Name.Substring(4, $waitingGroup.Name.Length - 23)
+
+            foreach ($member in $waitingGroup.Members) {
+                if ($member -notmatch '^<TTL=(\d+)>,(.+)$') { continue }
+
+                $ttl = [int64]$Matches[1]
+                $requestor = Get-ADUser -Identity $Matches[2] -Properties SamAccountName
+                $entry = $waitingGroup.SeeAlso | Where-Object { $_ -like "$($requestor.SamAccountName):*" } | Select-Object -First 1
+                $parts = $entry -split ':', 3
+                $requestedHours = [int]$parts[1]
+
+                [PSCustomObject]@{
+                    Requestor = $requestor.SamAccountName
+                    Group = $targetName
+                    Timestamp = (Get-Date).AddSeconds($ttl).AddDays(-($requestedHours + 1))
+                    TimeToLive = $requestedHours
+                    Reason = $parts[2]
+                }
             }
         }
-    }
 }
 
-function Approve-JEARequestDC {
+function Approve-JEARequest {
     param(
-        [string]Group,
-        [string]$Member
+        [Parameter(Mandatory)][string]$Group,
+        [Parameter(Mandatory)][string]$Member
     )
 
-    $caller = $env:username
-    if ($Member -eq $caller) { Write-Error "" }
-    else {
-        Add-ADGroupMember  -TimeToLive $ttl
-        Set-ADGrou
-        Remove-ADGroupMember
+    $domainController = (Get-ADDomainController -Discover).HostName
+    Invoke-Command -ComputerName $domainController -ConfigurationName 'JEAApprover' -ScriptBlock {
+        param($Group, $Member)
+        Approve-JEADCRequest -Group $Group -Member $Member
+    } -ArgumentList $Group, $Member
+}
+
+function Approve-JEADCRequest {
+    param(
+        [Parameter(Mandatory)][string]$Group,
+        [Parameter(Mandatory)][string]$Member
+    )
+
+    $waitingGroup = Get-ADGroup -Identity "JEA_WaitingAttribution_$Group" -Properties Members, SeeAlso -ShowMemberTimeToLive -ErrorAction Stop
+    $requestor = Get-ADUser -Identity $Member -Properties SamAccountName -ErrorAction Stop
+
+    if ($requestor.SamAccountName -eq $env:USERNAME) {
+        throw 'Un approbateur ne peut pas approuver sa propre demande.'
     }
 
+    $memberEntry = $waitingGroup.Members | Where-Object { $_ -like "*,$($requestor.DistinguishedName)" -or $_ -eq $requestor.DistinguishedName } | Select-Object -First 1
+    if ($memberEntry -notmatch '^<TTL=(\d+)>,') {
+        throw "Aucune demande en attente pour $($requestor.SamAccountName) dans $($targetGroup.Name)."
+    }
+
+    $entry = $waitingGroup.SeeAlso | Where-Object { $_ -like "$($requestor.SamAccountName):*" } | Select-Object -First 1
+    $requestedHours = [int](($entry -split ':', 3)[1])
+    Add-ADGroupMember -Identity $targetGroup -Members $requestor -MemberTimeToLive (New-TimeSpan -Hours $requestedHours)
+    Remove-ADGroupMember -Identity $waitingGroup -Members $requestor -Confirm:$false
+    Set-ADGroup -Identity $waitingGroup -Remove @{ SeeAlso = $entry }
+    "Demande approuvée pour $($requestor.SamAccountName)."
+}
+
+function Remove-JEAExpiredRequest {
+    Get-ADGroup -Filter "Name -like 'JEA_WaitingAttribution_*'" -Properties Members, SeeAlso -ShowMemberTimeToLive |
+        ForEach-Object {
+            $waitingGroup = $_
+            $activeRequestors = $waitingGroup.Members | ForEach-Object {
+                if ($_ -match '^<TTL=\d+>,(.+)$') {
+                    (Get-ADUser -Identity $Matches[1]).SamAccountName
+                }
+            }
+
+            $waitingGroup.SeeAlso | Where-Object {
+                $requestor = ($_ -split ':', 2)[0]
+                $requestor -notin $activeRequestors
+            } | ForEach-Object {
+                Set-ADGroup -Identity $waitingGroup -Remove @{ SeeAlso = $_ }
+            }
+        }
 }
 ```
+
+Les fonctions `New-JEARequest`, `Get-JEARequest` et `Approve-JEARequest` sont les fonctions exposées aux utilisateurs. Les fonctions dont le nom se termine par `DC` sont celles exposées par les endpoints JEA sur le contrôleur de domaine.
+
+Le groupe `JEA_WaitingAttribution_<groupe cible>` doit être crée pour chaque groupe administrable. La fonction `Remove-JEAExpiredRequest` peut être exécutée par une tache planifiée chaque nuit ; l'expiration TTL supprime deja les membres, et cette fonction nettoie les entrees correspondantes dans `SeeAlso`.
+
+### Création des groupes
+
+Création des trois groupes :
+
+```powershell
+$path = 'OU=Groups,OU=TIER0,DC=corp,DC=contoso,DC=com'
+New-ADGroup -Name 'JEA_WaitingApprobation_Domain Admins' -Description 'Request the access to the Domain Admins group' -Path $path
+New-ADGroup -Name 'JEA_Approvers' -Description 'Can approve membership for privileged groups' -Path $path
+New-ADGroup -Name 'JEA_Requesters' -Description 'Can request membership to privileged groups' -Path $path
+```
+
+### Création de la configuration du JEA
+
+```powershell
+$path = 'C:\Program Files\WindowsPowerShell\Modules\JEADC'
+New-Item -Type Directory -Path $path
+```
+
+### Fichier de configuration de session (PSSC)
+
+PowerShell Session Configuration, avec la commande `New-PSSessionConfigurationFile`.
+
+### Fichier de configuration du rôle (PSRC)
+
+PowerShell Role Configuration, avec la commande `New-PSRoleCapabilityFile`.
