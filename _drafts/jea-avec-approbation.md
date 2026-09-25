@@ -15,7 +15,7 @@ Trois groupes :
 
 - **JEA_Requesters** pour demander à être ajouter dans une sélection de groupes
 - **JEA_Approvers** pour approuver les demandes d'ajout
-- **JEA_WaitingAttribution_Domain Admins** qui va stocker les demandes en attente d'approbation
+- **JEA_WaitingApproval_Domain Admins** qui va stocker les demandes en attente d'approbation
 
 Deux profils JEA :
 
@@ -48,130 +48,92 @@ L'approbateur peut finalement approuver une demande en indiquant le nom du group
 function New-JEARequest {
     param(
         [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$TimeToLive,
-        [Parameter(Mandatory)][ValidateNotNullOrEmpty()][string]$Reason
+        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours
     )
 
-    $User = $env:USERNAME
-    $domainController = (Get-ADDomainController -Discover).HostName
-    Invoke-Command -ComputerName $domainController -ConfigurationName 'JEARequester' -ScriptBlock {
-        param($Group, $TimeToLive, $Reason)
-        New-JEADCRequest -Group $Group -TimeToLive $TimeToLive -Reason $Reason
-    } -ArgumentList $User, $Group, $TimeToLive, $Reason
+    Invoke-Command -ComputerName (Get-ADDomainController).HostName -ConfigurationName JEAApprobation -ArgumentList $Group, $Hours -ScriptBlock {
+        New-JEADCRequest -Group $args[0] -Hours $args[1]
+    }
 }
 
 function New-JEADCRequest {
     param(
         [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][string]$User,
-        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$TimeToLive,
-        [Parameter(Mandatory)][ValidateNotNullOrEmpty()][string]$Reason
+        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours
     )
 
-    $waitingGroup = Get-ADGroup -Identity "JEA_WaitingAttribution_$Group" -ErrorAction Stop
-    $requestor = Get-ADUser -Identity $env:USERNAME -ErrorAction Stop
-    $entry = "$($requestor.SamAccountName):$TimeToLive`:$Reason"
-
-    Add-ADGroupMember -Identity $waitingGroup -Members $requestor -MemberTimeToLive (New-TimeSpan -Days ($TimeToLive + 1))
-    Set-ADGroup -Identity $waitingGroup -Add @{ SeeAlso = $entry }
-    "Demande créée pour $($targetGroup.Name)."
+    $splat = @{
+        Identity         = Get-ADGroup -Identity "JEA_WaitingApproval_$Group"
+        Members          = [System.Security.Principal.NTAccount]::New($PSSenderInfo.ConnectedUser).Translate([System.Security.Principal.SecurityIdentifier])
+        MemberTimeToLive = New-TimeSpan -Days ($Hours + 1)
+    }
+    Add-ADGroupMember @splat
 }
 
 function Get-JEARequest {
-    $domainController = (Get-ADDomainController -Discover).HostName
-    Invoke-Command -ComputerName $domainController -ConfigurationName 'JEARequester' -ScriptBlock {
-        Get-JEADCRequest
-    }
-}
+    Get-ADGroup -Filter { Name -like 'JEA_WaitingApproval_*' } -Properties Members -ShowMemberTimeToLive | ForEach-Object {
+        $waGroup = $_.Name
+        $group = ($waGroup -split '_' | Select-Object -Skip 2) -join '_'
 
-function Get-JEADCRequest {
-    Get-ADGroup -Filter "Name -like 'JEA_WaitingAttribution_*'" -Properties Members, SeeAlso -ShowMemberTimeToLive |
-        ForEach-Object {
-            $waitingGroup = $_
-            $targetName = $waitingGroup.Name.Substring(4, $waitingGroup.Name.Length - 23)
-
-            foreach ($member in $waitingGroup.Members) {
-                if ($member -notmatch '^<TTL=(\d+)>,(.+)$') { continue }
-
-                $ttl = [int64]$Matches[1]
-                $requestor = Get-ADUser -Identity $Matches[2] -Properties SamAccountName
-                $entry = $waitingGroup.SeeAlso | Where-Object { $_ -like "$($requestor.SamAccountName):*" } | Select-Object -First 1
-                $parts = $entry -split ':', 3
-                $requestedHours = [int]$parts[1]
+        $_.Members | ForEach-Object {
+            if ($_ -match "<TTL=(\d+)>") { 
+                $sec  = $matches[1]
+                $ttl  = New-TimeSpan -Seconds $sec
+                $date = (Get-Date).AddSeconds($sec)
+                $dn   = ($_ -split ',' | Select-Object -Skip 1) -join ','
 
                 [PSCustomObject]@{
-                    Requestor = $requestor.SamAccountName
-                    Group = $targetName
-                    Timestamp = (Get-Date).AddSeconds($ttl).AddDays(-($requestedHours + 1))
-                    TimeToLive = $requestedHours
-                    Reason = $parts[2]
+                    Group     = $group
+                    Requestor = (Get-ADUser $dn).SamAccountName
+                    Hours     = [int]$ttl.TotalDays
                 }
             }
         }
+    }
 }
 
 function Approve-JEARequest {
     param(
         [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][string]$Member
+        [Parameter(Mandatory)][string]$Requestor
     )
 
-    $domainController = (Get-ADDomainController -Discover).HostName
-    Invoke-Command -ComputerName $domainController -ConfigurationName 'JEAApprover' -ScriptBlock {
-        param($Group, $Member)
-        Approve-JEADCRequest -Group $Group -Member $Member
-    } -ArgumentList $Group, $Member
+    Invoke-Command -ComputerName (Get-ADDomainController).HostName -ConfigurationName JEAApprobation -ArgumentList $Group, $Requestor -ScriptBlock {
+        Approve-JEADCRequest -Group $args[0] -Requestor $args[1]
+    }
 }
 
 function Approve-JEADCRequest {
     param(
         [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][string]$Member
+        [Parameter(Mandatory)][string]$Requestor
     )
 
-    $waitingGroup = Get-ADGroup -Identity "JEA_WaitingAttribution_$Group" -Properties Members, SeeAlso -ShowMemberTimeToLive -ErrorAction Stop
-    $requestor = Get-ADUser -Identity $Member -Properties SamAccountName -ErrorAction Stop
+    $waGroup     = Get-ADGroup -Identity "JEA_WaitingApproval_$Group" -Properties Members -ShowMemberTimeToLive
+    $approverSid = [System.Security.Principal.NTAccount]::New($PSSenderInfo.ConnectedUser).Translate([System.Security.Principal.SecurityIdentifier]).Value
+    $member      = Get-ADUser $Requestor -Properties ObjectSid
+    $memberSid   = $member.objectSid.Value
 
-    if ($requestor.SamAccountName -eq $env:USERNAME) {
-        throw 'Un approbateur ne peut pas approuver sa propre demande.'
+    if ($approverSid -eq $memberSid) { throw "You can't approve your own request" }
+
+    $memberWithTTL = $waGroup.Members -like "<TTL=*>,$($member.DistinguishedName)"
+    if ($memberWithTTL) {
+        $ttl = ($memberWithTTL -split ',')[0]
+        $ttl = $ttl -replace '<TTL=', '' -replace '>', ''
+        $hours = [int](New-TimeSpan -Seconds $ttl).TotalDays
+
+        Add-ADGroupMember $Group -Members $member -MemberTimeToLive (New-TimeSpan -Hours $hours)
+        Remove-ADGroupMember $waGroup -Members $member -Confirm:$false
     }
-
-    $memberEntry = $waitingGroup.Members | Where-Object { $_ -like "*,$($requestor.DistinguishedName)" -or $_ -eq $requestor.DistinguishedName } | Select-Object -First 1
-    if ($memberEntry -notmatch '^<TTL=(\d+)>,') {
-        throw "Aucune demande en attente pour $($requestor.SamAccountName) dans $($targetGroup.Name)."
+    else {
+        throw "No request has been found for $Requestor on $Group"
     }
-
-    $entry = $waitingGroup.SeeAlso | Where-Object { $_ -like "$($requestor.SamAccountName):*" } | Select-Object -First 1
-    $requestedHours = [int](($entry -split ':', 3)[1])
-    Add-ADGroupMember -Identity $targetGroup -Members $requestor -MemberTimeToLive (New-TimeSpan -Hours $requestedHours)
-    Remove-ADGroupMember -Identity $waitingGroup -Members $requestor -Confirm:$false
-    Set-ADGroup -Identity $waitingGroup -Remove @{ SeeAlso = $entry }
-    "Demande approuvée pour $($requestor.SamAccountName)."
-}
-
-function Remove-JEAExpiredRequest {
-    Get-ADGroup -Filter "Name -like 'JEA_WaitingAttribution_*'" -Properties Members, SeeAlso -ShowMemberTimeToLive |
-        ForEach-Object {
-            $waitingGroup = $_
-            $activeRequestors = $waitingGroup.Members | ForEach-Object {
-                if ($_ -match '^<TTL=\d+>,(.+)$') {
-                    (Get-ADUser -Identity $Matches[1]).SamAccountName
-                }
-            }
-
-            $waitingGroup.SeeAlso | Where-Object {
-                $requestor = ($_ -split ':', 2)[0]
-                $requestor -notin $activeRequestors
-            } | ForEach-Object {
-                Set-ADGroup -Identity $waitingGroup -Remove @{ SeeAlso = $_ }
-            }
-        }
 }
 ```
 
 Les fonctions `New-JEARequest`, `Get-JEARequest` et `Approve-JEARequest` sont les fonctions exposées aux utilisateurs. Les fonctions dont le nom se termine par `DC` sont celles exposées par les endpoints JEA sur le contrôleur de domaine.
 
-Le groupe `JEA_WaitingAttribution_<groupe cible>` doit être crée pour chaque groupe administrable. La fonction `Remove-JEAExpiredRequest` peut être exécutée par une tache planifiée chaque nuit ; l'expiration TTL supprime deja les membres, et cette fonction nettoie les entrees correspondantes dans `SeeAlso`.
+Le groupe `JEA_WaitingApproval_<groupe cible>` doit être crée pour chaque groupe administrable.
 
 ### Création des groupes
 
@@ -179,22 +141,79 @@ Création des trois groupes :
 
 ```powershell
 $path = 'OU=Groups,OU=TIER0,DC=corp,DC=contoso,DC=com'
-New-ADGroup -Name 'JEA_WaitingApprobation_Domain Admins' -Description 'Request the access to the Domain Admins group' -Path $path
-New-ADGroup -Name 'JEA_Approvers' -Description 'Can approve membership for privileged groups' -Path $path
-New-ADGroup -Name 'JEA_Requesters' -Description 'Can request membership to privileged groups' -Path $path
+New-ADGroup -Name 'JEA_WaitingApprobation_Domain Admins' -Description 'Has requested an access to Domain Admins group' -Path $path
+New-ADGroup -Name 'JEA_Approvers_Domain Admins' -Description 'Can approve membership for privileged Domain Admins group' -Path $path
+New-ADGroup -Name 'JEA_Requesters_Domain Admins' -Description 'Can request membership to privileged Domain Admins group' -Path $path
 ```
 
 ### Création de la configuration du JEA
 
 ```powershell
-$path = 'C:\Program Files\WindowsPowerShell\Modules\JEADC'
-New-Item -Type Directory -Path $path
+New-Item -Type Directory -Path 'C:\Program Files\WindowsPowerShell\Modules\JEAApprobation'
+New-Item -Type Directory -Path 'C:\ProgramData\JEAApprobation\Transcripts'
 ```
 
 ### Fichier de configuration de session (PSSC)
 
 PowerShell Session Configuration, avec la commande `New-PSSessionConfigurationFile`.
 
+On va créer le fichier `SessionConfiguration.pssc` dans le dossier du module.
+
+```powershell
+@{
+    SchemaVersion       = '2.0.0.0'
+    GUID                = 'f8072fe2-2f5b-4790-9546-45df9fd3a312'
+    Author              = 'Léo Bouard'
+    Description         = 'Endpoint JEA pour les demandes JEADC'
+    SessionType         = 'RestrictedRemoteServer'
+    TranscriptDirectory = 'C:\ProgramData\JEADC\Transcripts'
+    RunAsVirtualAccount = $true
+    ModulesToImport     = 'JEAApprobation', 'ActiveDirectory'
+    RoleDefinitions     = @{
+        'CORP\JEA_Approvers_Domain Admins'  = @{ RoleCapabilities = 'ApproverDA' }
+        'CORP\JEA_Requesters_Domain Admins' = @{ RoleCapabilities = 'RequesterDA' }
+    }
+}
+```
+
 ### Fichier de configuration du rôle (PSRC)
 
 PowerShell Role Configuration, avec la commande `New-PSRoleCapabilityFile`.
+
+Pour le rôle "RequesterDA" :
+
+```powershell
+@{
+    GUID = '21155f4e-ec27-41fd-b63a-ce7e011bdd19'
+    VisibleFunctions = @(
+        @{
+            Name = 'New-JEADCRequest'
+            Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' }, @{ Name = 'Hours' }
+        }
+    )
+}
+```
+
+Pour le role "ApproverDA" :
+
+```powershell
+@{
+    GUID = 'd0611c28-162d-431a-b031-81635d31ceda'
+    VisibleFunctions = @(
+        @{
+            Name = 'Approve-JEADCRequest'
+            Parameters = @{ Name = 'Group'; ValidateSet = 'Domain Admins' }, @{ Name = 'Requestor' }
+        }
+    )
+}
+```
+
+### Activation sur le contrôleur de domaine
+
+Puis on l'enregistre depuis le contrôleur de domaine avec la commande :
+
+```powershell
+Register-PSSessionConfiguration -Name JEAApprobation -Path 'C:\Program Files\WindowsPowerShell\Modules\JEAApprobation\SessionConfiguration.pssc'
+```
+
+> Si jamais vous devez modifier le fichier, vous allez devoir "rafraîchir" la configuration en la supprimant avec la commande `Unregister-PSSessionConfiguration -Name JEAApprobation` puis en ré-exécutant la commande d'enregistrement précédente et en redémarrant le service WinRM avec `Restart-Service WinRM`.
