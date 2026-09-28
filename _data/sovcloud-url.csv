@@ -1,0 +1,14 @@
+name,url,category
+Microsoft 365 admin center,https://admin.sovcloud.fr/,M365
+Microsoft 365 portal,https://m365.sovcloud.fr/,M365
+myaccount.sovcloud-identity.fr,https://myaccount.sovcloud-identity.fr/,Entra ID
+myaccess.sovcloud-identity.fr,https://myaccess.sovcloud-identity.fr/,Entra ID
+mygroups.sovcloud-identity.fr,https://mygroups.sovcloud-identity.fr/,Entra ID
+mysignins.sovcloud-identity.fr,https://mysignins.sovcloud-identity.fr/,Entra ID
+Self Service Password Reset portal,https://passwordreset.sovcloud-identity.fr/,Entra ID
+Microsoft Azure,https://portal.sovcloud-azure.fr/,Azure
+Exchange Online,https://exchange.admin.sovcloud.fr/,M365
+Microsoft Entra admin center,https://entra.sovcloud.fr/,Entra ID
+SharePoint admin center,https://msazurecloud-admin.sovcloud-sharepoint.fr/,M365
+Microsoft Teams admin center,https://admin.teams.sovcloud.fr/,M365
+aka.ms,https://aka.sovcloud-api.fr/,Autre
