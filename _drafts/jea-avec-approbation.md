@@ -157,6 +157,16 @@ function Approve-JEADCRequest {
         throw "No request has been found for $Requestor on $Group"
     }
 }
+
+function Clear-JEARequest {
+    param([string]$Group = '*')
+
+    $filter = "JEA_WaitingApproval_$Group"
+    Get-ADGroup -Filter { Name -like $filter } -Properties members | ForEach-Object {
+        Remove-ADGroupMember $_ -Members $_.members -Confirm:$false
+        Set-ADGroup $_ -Clear nTGroupMembers
+    }
+}
 ```
 
 Les fonctions `New-JEARequest`, `Get-JEARequest` et `Approve-JEARequest` sont les fonctions exposées aux utilisateurs. Les fonctions dont le nom se termine par `DC` sont celles exposées par les endpoints JEA sur le contrôleur de domaine.
