@@ -13,20 +13,20 @@ Deux serveurs :
 
 Trois groupes :
 
-- **JEA_Requesters** pour demander à être ajouter dans une sélection de groupes
-- **JEA_Approvers** pour approuver les demandes d'ajout
+- **JEA_Requesters_Domain Admins** pour demander à être ajouter dans une sélection de groupes
+- **JEA_Approvers_Domain Admins** pour approuver les demandes d'ajout
 - **JEA_WaitingApproval_Domain Admins** qui va stocker les demandes en attente d'approbation
 
 Deux profils JEA :
 
-- JEARequester qui va permettre de faire une demande (groupe autorisé : JEA_Domain Admins_Requester)
-- JEAApprover qui va permettre d'approuver les demandes (groupe autorisé : JEA_Domain Admins_Approver)
+- JEARequesterDA qui va permettre de faire une demande (groupe autorisé : JEA_Requesters_Domain Admins)
+- JEAApproverDA qui va permettre d'approuver les demandes (groupe autorisé : JEA_Approvers_Domain Admins)
 
 Même si un utilisateur a accès aux deux profils JEA, il ne pourra pas faire d'auto-approbation (accepter lui-même sa demande).
 
 Comportement :
 
-Les demandeurs sont ajoutés automatiquement dans le groupe WaitingAttribution, avec une durée de vie (TTL) de X jours qui va correspondre au nombre d'heures souhaitée pour l'appartenance au groupe demandé. Les groupes WaitingAttribution sont automatiquement purgés tous les jours à minuit pour nettoyer les demandes caduques. 
+Les demandeurs sont ajoutés automatiquement dans le groupe JEA_WaitingAttribution_, avec une durée de vie (TTL) de X jours qui va correspondre au nombre d'heures souhaitées pour l'appartenance au groupe demandé. Les groupes JEA_WaitingAttribution_ sont automatiquement purgés tous les jours à minuit pour nettoyer les demandes caduques.
 
 Les informations suivantes sont demandées pour toute requête :
 
@@ -48,44 +48,67 @@ L'approbateur peut finalement approuver une demande en indiquant le nom du group
 function New-JEARequest {
     param(
         [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours
+        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours,
+        [Parameter(Mandatory)][ValidateLength(8, 120)[string]$Reason
     )
 
     Invoke-Command -ComputerName (Get-ADDomainController).HostName -ConfigurationName JEAApprobation -ArgumentList $Group, $Hours -ScriptBlock {
-        New-JEADCRequest -Group $args[0] -Hours $args[1]
+        New-JEADCRequest -Group $args[0] -Hours $args[1] -Reason $Reason
     }
 }
 
 function New-JEADCRequest {
     param(
         [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours
+        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours,
+        [Parameter(Mandatory)][ValidateLength(8, 120)][string]$Reason
     )
 
+    # Add member with TTL
+    $member = (Get-ADUser [System.Security.Principal.NTAccount]::New($PSSenderInfo.ConnectedUser).Translate([System.Security.Principal.SecurityIdentifier])).SamAccountName
     $splat = @{
         Identity         = Get-ADGroup -Identity "JEA_WaitingApproval_$Group"
-        Members          = [System.Security.Principal.NTAccount]::New($PSSenderInfo.ConnectedUser).Translate([System.Security.Principal.SecurityIdentifier])
+        Members          = $member
         MemberTimeToLive = New-TimeSpan -Days ($Hours + 1)
     }
     Add-ADGroupMember @splat
+
+    # Add reason
+    $Reason = $Reason -replace ':', '' -replace "`n", ''
+    $group = Get-ADGroup $splat.Identity -Properties nTGroupMembers
+    $group.nTGroupMembers | ForEach-Object {
+        $text = [System.Text.Encoding]::UTF8.GetString($_)
+        if ($text -like "$member:*") { Set-ADGroup $group -Remove @{ nTGroupMembers = $_ } }
+    }
+    Set-ADGroup $group -Add @{ nTGroupMembers = "$member:$Reason" }
 }
 
 function Get-JEARequest {
-    Get-ADGroup -Filter { Name -like 'JEA_WaitingApproval_*' } -Properties Members -ShowMemberTimeToLive | ForEach-Object {
+    Get-ADGroup -Filter { Name -like 'JEA_WaitingApproval_*' } -Properties Members, nTGroupMembers -ShowMemberTimeToLive | ForEach-Object {
         $waGroup = $_.Name
         $group = ($waGroup -split '_' | Select-Object -Skip 2) -join '_'
+        $reasons = $_.nTGroupMembers | ForEach-Object { 
+            $raw = [System.Text.Encoding]::UTF8.GetString($_) -split ':'
+            [PSCustomObject]@{
+                Requestor = $raw[0]
+                Reason    = $raw[1]
+            }    
+        }
 
         $_.Members | ForEach-Object {
-            if ($_ -match "<TTL=(\d+)>") { 
-                $sec  = $matches[1]
-                $ttl  = New-TimeSpan -Seconds $sec
-                $date = (Get-Date).AddSeconds($sec)
-                $dn   = ($_ -split ',' | Select-Object -Skip 1) -join ','
+            if ($_ -match "<TTL=(\d+)>") {
+                $sec   = $matches[1]
+                $ttl   = New-TimeSpan -Seconds $sec
+                $hours = [int]$ttl.TotalDays
+                $dn    = ($_ -split ',' | Select-Object -Skip 1) -join ','
+                $user = (Get-ADUser $dn).SamAccountName
 
                 [PSCustomObject]@{
                     Group     = $group
-                    Requestor = (Get-ADUser $dn).SamAccountName
-                    Hours     = [int]$ttl.TotalDays
+                    Requestor = $user
+                    Hours     = $hours
+                    Timestamp = (Get-Date).AddSeconds($sec).AddDays(-$hours)
+                    Reason    = ($reasons | Where-Object { $_.Requestor -eq $user }).Reason
                 }
             }
         }
@@ -109,7 +132,7 @@ function Approve-JEADCRequest {
         [Parameter(Mandatory)][string]$Requestor
     )
 
-    $waGroup     = Get-ADGroup -Identity "JEA_WaitingApproval_$Group" -Properties Members -ShowMemberTimeToLive
+    $waGroup     = Get-ADGroup -Identity "JEA_WaitingApproval_$Group" -Properties Members, nTGroupMembers -ShowMemberTimeToLive
     $approverSid = [System.Security.Principal.NTAccount]::New($PSSenderInfo.ConnectedUser).Translate([System.Security.Principal.SecurityIdentifier]).Value
     $member      = Get-ADUser $Requestor -Properties ObjectSid
     $memberSid   = $member.objectSid.Value
@@ -124,6 +147,11 @@ function Approve-JEADCRequest {
 
         Add-ADGroupMember $Group -Members $member -MemberTimeToLive (New-TimeSpan -Hours $hours)
         Remove-ADGroupMember $waGroup -Members $member -Confirm:$false
+        
+        $waGroup.nTGroupMembers | ForEach-Object {
+            $text = [System.Text.Encoding]::UTF8.GetString($_)
+            if ($text -like "$($member.SamAccountName):*") { Set-ADGroup $group -Remove @{ nTGroupMembers = $_ } }
+        }
     }
     else {
         throw "No request has been found for $Requestor on $Group"
@@ -141,9 +169,11 @@ Création des trois groupes :
 
 ```powershell
 $path = 'OU=Groups,OU=TIER0,DC=corp,DC=contoso,DC=com'
-New-ADGroup -Name 'JEA_WaitingApprobation_Domain Admins' -Description 'Has requested an access to Domain Admins group' -Path $path
-New-ADGroup -Name 'JEA_Approvers_Domain Admins' -Description 'Can approve membership for privileged Domain Admins group' -Path $path
-New-ADGroup -Name 'JEA_Requesters_Domain Admins' -Description 'Can request membership to privileged Domain Admins group' -Path $path
+'Domain Admins', 'Schema Admins', 'Enterprise Admins' | ForEach-Object {
+    New-ADGroup -Name "JEA_WaitingApprobation_$_" -Description "Has requested an access to '$_' group" -Path $path
+    New-ADGroup -Name "JEA_Approvers_$_" -Description "Can approve membership for privileged '$_' group" -Path $path
+    New-ADGroup -Name "JEA_Requesters_$_" -Description "Can request membership to privileged '$_' group" -Path $path
+}
 ```
 
 ### Création de la configuration du JEA
@@ -188,7 +218,7 @@ Pour le rôle "RequesterDA" :
     VisibleFunctions = @(
         @{
             Name = 'New-JEADCRequest'
-            Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' }, @{ Name = 'Hours' }
+            Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' }, @{ Name = 'Hours' }, @{ Name = 'Reason' }
         }
     )
 }
