@@ -22,8 +22,8 @@ PIM n’a pas d’équivalent natif dans Active Directory : il est impossible de
 
 La solution présentée repose sur deux technologies natives, disponibles dans toute version récente de Windows Server et d’Active Directory :
 
-- PowerShell Just Enough Administration (JEA), disponible nativement sur tous les Windows Server récents
-- Active Directory Privileged Access Management (PAM), disponible au niveau fonctionnel Active Directory 2016
+- [PowerShell Just Enough Administration (JEA)](https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/jea/overview?view=powershell-7.6), disponible nativement sur tous les Windows Server récents
+- [Active Directory Privileged Access Management (PAM)](https://learn.microsoft.com/en-us/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services), disponible au niveau fonctionnel Active Directory 2016
 
 Via PowerShell JEA, on va autoriser l’exécution de commandes spécifiques sur un contrôleur de domaine. Elles permettront de :
 
