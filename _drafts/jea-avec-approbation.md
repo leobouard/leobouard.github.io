@@ -1,259 +1,229 @@
 ---
-title: "Approbation avec PowerShell JEA"
-description: "Mise en place d'une preuve de concept pour un système d'approbation qui permet de devenir admin du domaine"
+title: "Entra ID PIM, mais pour Active Directory"
+description: "Preuve de concept pour un système d'élévation de privilèges avec approbation"
 tags: ["activedirectory", "powershell"]
 ---
 
-On va beaucoup utiliser la fonctionnalité d'appartenance temporaire à des groupes, disponible sur les domaines Active Directory en version 2016+.
+## Explication
 
-Deux serveurs :
+Pour Entra ID (et Azure en général), la plupart des organisations sont habituées à utiliser PIM (Privileged Identity Management). Le principe est simple : on est éligible à certains privilèges que l'on peut activer au besoin, pour une durée déterminée et selon un processus défini (auto-approbation ou approbation par un pair).
 
-- Un serveur d'administration depuis lequel on va lancer les demandes JEA
-- Un contrôleur de domaine qui va réceptionner les demandes JEA et les exécuter avec les permissions Domain Admins
+Ce système permet de respecter le principe du JIT (Just-in-Time) et évite d'avoir des comptes super-admins de la plateforme en permanence.
 
-Trois groupes :
+PIM n’a pas d’équivalent natif dans Active Directory : il est impossible de s’élever temporairement au rang d’administrateur du domaine. L’objectif de ce POC (Proof of Concept) est de bricoler une solution qui reproduirait le comportement de PIM, tout en respectant quelques exigences personnelles :
 
-- **JEA_Requesters_Domain Admins** pour demander à être ajouter dans une sélection de groupes
-- **JEA_Approvers_Domain Admins** pour approuver les demandes d'ajout
-- **JEA_WaitingApproval_Domain Admins** qui va stocker les demandes en attente d'approbation
+1. **Pas de système (trop) complexe** : l’idée est de proposer un concept simple, facilement réplicable, qui ne nécessite pas de mettre en place toute une architecture avec des serveurs dédiés, une base de données et une interface web (par exemple).
+2. **Pas de délégation sur AdminSDHolder ni de compte de service membre de "Domain Admins"** : c’est le meilleur moyen de faire hurler Ping Castle ou Purple Knight et de se rendre visible aux yeux d’un attaquant.
+3. **Possibilité d’empêcher l’auto-approbation** : dans certains cas, l’approbation par un pair peut être nécessaire pour satisfaire des exigences de sécurité. Il faut alors prévoir des barrières qui empêchent l’auto-approbation et ne peuvent pas être facilement contournées.
 
-Deux profils JEA :
+## Solution proposée
 
-- JEARequesterDA qui va permettre de faire une demande (groupe autorisé : JEA_Requesters_Domain Admins)
-- JEAApproverDA qui va permettre d'approuver les demandes (groupe autorisé : JEA_Approvers_Domain Admins)
+### Prérequis
 
-Même si un utilisateur a accès aux deux profils JEA, il ne pourra pas faire d'auto-approbation (accepter lui-même sa demande).
+La solution présentée repose sur deux technologies natives, disponibles dans toute version récente de Windows Server et d’Active Directory :
 
-Comportement :
+- PowerShell Just Enough Administration (JEA), disponible nativement sur tous les Windows Server récents
+- Active Directory Privileged Access Management (PAM), disponible au niveau fonctionnel Active Directory 2016
 
-Les demandeurs sont ajoutés automatiquement dans le groupe JEA_WaitingAttribution_, avec une durée de vie (TTL) de X jours qui va correspondre au nombre d'heures souhaitées pour l'appartenance au groupe demandé. Les groupes JEA_WaitingAttribution_ sont automatiquement purgés tous les jours à minuit pour nettoyer les demandes caduques.
+Via PowerShell JEA, on va autoriser l’exécution de commandes spécifiques sur un contrôleur de domaine. Elles permettront de :
 
-Les informations suivantes sont demandées pour toute requête :
+- Demander à être ajouté à un groupe pour une durée définie et avec une justification
+- Voir toutes les demandes en cours
+- Approuver les demandes d'ajout (si on y est autorisé)
 
-- Groupe cible : va permettre d'ajouter l'utilisateur directement dans le groupe "WaitingApprobation" associé au groupe cible
-- Durée demandée : va indiquer la durée d'appartenance au groupe cible et sera stockée dans le TTL du groupe "WaitingApprobation" (format 1 heure demandée = 1 jour + 1)
-- Raison invoquée : va permettre de donner plus de détails sur la demande. Sera stockée dans l'attribut `SeeAlso` et préfixée par le nom du demandeur.
+Les informations seront stockées directement dans des groupes Active Directory prévus à cet effet.
 
-L'approbateur et le demandeur peuvent tous les deux consulter les demandes en attentes. Les informations suivantes sont affichées pour chaque demande :
+### Architecture
 
-- Demandeur de l'élévation (*exemple : adm-jsmith*)
-- Groupe cible (*exemple : Domain Admins*)
-- Heure de la demande, qui sera calculé à partir du TTL du membre dans le groupe WaitingAttribution
-- Durée demandée (*exemple : 4 heures*)
-- Raison invoquée (*exemple : Needs to install a new version of Entra ID Connect*)
+La solution nécessitera au minimum deux types de serveurs :
 
-L'approbateur peut finalement approuver une demande en indiquant le nom du groupe et le membre autorisé. L'approbation ajoute l'utilisateur dans le groupe cible avec le TTL demandé, et supprime l'appartenance au groupe WaitingAttribution.
+1. Un serveur d’administration depuis lequel on lancera les demandes d’élévation et les approbations via PowerShell JEA
+2. Un contrôleur de domaine qui réceptionnera les demandes via PowerShell JEA et les exécutera avec les permissions de Domain Admins
+
+> On exécute les commandes PowerShell directement sur le contrôleur de domaine afin de bénéficier d’un compte virtuel disposant des droits d’administrateur local sur la machine. Or, sur un contrôleur de domaine, être administrateur local revient à être administrateur du domaine.
+
+On aura également besoin de trois groupes pour gérer les demandes et les permissions liées à PowerShell JEA :
+
+- Un groupe autorisé à demander une élévation de privilèges dans le groupe "Domain Admins", que l’on appellera **PIM_Requesters_Domain Admins**
+- Un groupe chargé d’approuver les demandes d’élévation : **PIM_Approvers_Domain Admins**
+- Un dernier groupe pour stocker les demandes en attente d’approbation : **PIM_WaitingApproval_Domain Admins**
+
+> Encore une fois, l’idée est qu’un utilisateur membre à la fois des groupes "Requesters" et "Approvers" ne puisse pas approuver sa propre demande.
+
+### Module PowerShell
+
+Le module PowerShell ci-dessous n’est qu’un POC : il lui manque encore beaucoup de choses pour être prêt à être utilisé en production. Il ne comporte, par exemple, aucune journalisation, ce qui est évidemment problématique pour ce type d’usage.
+
+{% include github-gist.html name="PIMActiveDirectory" id="34c2611b712e9ab6a4bf79f4046c8b19" %}
+
+Il est composé des commandes suivantes :
+
+- `New-PIMRequest` et `New-PIMDCRequest`, qui permettent de demander une élévation de privilèges
+- `Get-PIMRequest` qui permet de consulter toutes les demandes d'élévation de privilège en attente d'approbation
+- `Approve-PIMRequest` et `Approve-PIMDCRequest`, qui permettent d’approuver les demandes d’élévation de privilèges
+- `Clear-PIMDCRequest` qui permet de supprimer toutes les demandes en attente d'approbation
+
+Les fonctions dont le nom contient le préfixe `PIMDC` sont exécutées sur le contrôleur de domaine. Les autres sont disponibles depuis le serveur d’administration et servent, pour la plupart, d’enveloppes aux commandes `PIMDC`.
+
+## Utilisation
+
+### Demande d'élévation
+
+Lorsqu’une personne demande une élévation de privilèges avec la commande `New-PIMRequest`, son compte est automatiquement ajouté au groupe "PIM_WaitingApproval". Le TTL de cette appartenance correspond au nombre d’heures demandé pour l’appartenance au groupe cible. Les demandes en attente doivent être automatiquement purgées chaque jour à minuit à l’aide de la commande `Clear-PIMDCRequest`, afin de supprimer les demandes expirées.
+
+Exemple de demande :
 
 ```powershell
-function New-JEARequest {
-    param(
-        [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours,
-        [Parameter(Mandatory)][ValidateLength(8, 120)[string]$Reason
-    )
-
-    Invoke-Command -ComputerName (Get-ADDomainController).HostName -ConfigurationName JEAApprobation -ArgumentList $Group, $Hours -ScriptBlock {
-        New-JEADCRequest -Group $args[0] -Hours $args[1] -Reason $Reason
-    }
-}
-
-function New-JEADCRequest {
-    param(
-        [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][ValidateRange(1, 24)][int]$Hours,
-        [Parameter(Mandatory)][ValidateLength(8, 120)][string]$Reason
-    )
-
-    # Add member with TTL
-    $member = (Get-ADUser [System.Security.Principal.NTAccount]::New($PSSenderInfo.ConnectedUser).Translate([System.Security.Principal.SecurityIdentifier])).SamAccountName
-    $splat = @{
-        Identity         = Get-ADGroup -Identity "JEA_WaitingApproval_$Group"
-        Members          = $member
-        MemberTimeToLive = New-TimeSpan -Days ($Hours + 1)
-    }
-    Add-ADGroupMember @splat
-
-    # Add reason
-    $Reason = $Reason -replace ':', '' -replace "`n", ''
-    $group = Get-ADGroup $splat.Identity -Properties nTGroupMembers
-    $group.nTGroupMembers | ForEach-Object {
-        $text = [System.Text.Encoding]::UTF8.GetString($_)
-        if ($text -like "$member:*") { Set-ADGroup $group -Remove @{ nTGroupMembers = $_ } }
-    }
-    Set-ADGroup $group -Add @{ nTGroupMembers = "$member:$Reason" }
-}
-
-function Get-JEARequest {
-    Get-ADGroup -Filter { Name -like 'JEA_WaitingApproval_*' } -Properties Members, nTGroupMembers -ShowMemberTimeToLive | ForEach-Object {
-        $waGroup = $_.Name
-        $group = ($waGroup -split '_' | Select-Object -Skip 2) -join '_'
-        $reasons = $_.nTGroupMembers | ForEach-Object { 
-            $raw = [System.Text.Encoding]::UTF8.GetString($_) -split ':'
-            [PSCustomObject]@{
-                Requestor = $raw[0]
-                Reason    = $raw[1]
-            }    
-        }
-
-        $_.Members | ForEach-Object {
-            if ($_ -match "<TTL=(\d+)>") {
-                $sec   = $matches[1]
-                $ttl   = New-TimeSpan -Seconds $sec
-                $hours = [int]$ttl.TotalDays
-                $dn    = ($_ -split ',' | Select-Object -Skip 1) -join ','
-                $user = (Get-ADUser $dn).SamAccountName
-
-                [PSCustomObject]@{
-                    Group     = $group
-                    Requestor = $user
-                    Hours     = $hours
-                    Timestamp = (Get-Date).AddSeconds($sec).AddDays(-$hours)
-                    Reason    = ($reasons | Where-Object { $_.Requestor -eq $user }).Reason
-                }
-            }
-        }
-    }
-}
-
-function Approve-JEARequest {
-    param(
-        [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][string]$Requestor
-    )
-
-    Invoke-Command -ComputerName (Get-ADDomainController).HostName -ConfigurationName JEAApprobation -ArgumentList $Group, $Requestor -ScriptBlock {
-        Approve-JEADCRequest -Group $args[0] -Requestor $args[1]
-    }
-}
-
-function Approve-JEADCRequest {
-    param(
-        [Parameter(Mandatory)][string]$Group,
-        [Parameter(Mandatory)][string]$Requestor
-    )
-
-    $waGroup     = Get-ADGroup -Identity "JEA_WaitingApproval_$Group" -Properties Members, nTGroupMembers -ShowMemberTimeToLive
-    $approverSid = [System.Security.Principal.NTAccount]::New($PSSenderInfo.ConnectedUser).Translate([System.Security.Principal.SecurityIdentifier]).Value
-    $member      = Get-ADUser $Requestor -Properties ObjectSid
-    $memberSid   = $member.objectSid.Value
-
-    if ($approverSid -eq $memberSid) { throw "You can't approve your own request" }
-
-    $memberWithTTL = $waGroup.Members -like "<TTL=*>,$($member.DistinguishedName)"
-    if ($memberWithTTL) {
-        $ttl = ($memberWithTTL -split ',')[0]
-        $ttl = $ttl -replace '<TTL=', '' -replace '>', ''
-        $hours = [int](New-TimeSpan -Seconds $ttl).TotalDays
-
-        Add-ADGroupMember $Group -Members $member -MemberTimeToLive (New-TimeSpan -Hours $hours)
-        Remove-ADGroupMember $waGroup -Members $member -Confirm:$false
-        
-        $waGroup.nTGroupMembers | ForEach-Object {
-            $text = [System.Text.Encoding]::UTF8.GetString($_)
-            if ($text -like "$($member.SamAccountName):*") { Set-ADGroup $group -Remove @{ nTGroupMembers = $_ } }
-        }
-    }
-    else {
-        throw "No request has been found for $Requestor on $Group"
-    }
-}
-
-function Clear-JEARequest {
-    param([string]$Group = '*')
-
-    $filter = "JEA_WaitingApproval_$Group"
-    Get-ADGroup -Filter { Name -like $filter } -Properties members | ForEach-Object {
-        Remove-ADGroupMember $_ -Members $_.members -Confirm:$false
-        Set-ADGroup $_ -Clear nTGroupMembers
-    }
-}
+New-PIMRequest -Group 'Domain Admins' -Hours 12 -Reason 'Just need to update a few GPOs on the TIER 0'
 ```
 
-Les fonctions `New-JEARequest`, `Get-JEARequest` et `Approve-JEARequest` sont les fonctions exposées aux utilisateurs. Les fonctions dont le nom se termine par `DC` sont celles exposées par les endpoints JEA sur le contrôleur de domaine.
+> Il n’est pas nécessaire de préciser votre nom de compte : celui-ci est automatiquement récupéré à partir de la variable d’environnement `$PSSenderInfo.ConnectedUser` dans la session JEA. La durée est limitée à 24 heures dans le module, et la justification doit comporter entre 8 et 120 caractères.
 
-Le groupe `JEA_WaitingApproval_<groupe cible>` doit être crée pour chaque groupe administrable.
+### Consultation des élévations en attente d'approbation
+
+Une fois la demande créée, tout le monde (demandeurs comme approbateurs) peut la consulter avec la commande `Get-PIMRequest` et obtenir les informations suivantes :
+
+- Demandeur de l'élévation
+- Groupe cible
+- Heure de la demande (calculée à partir du TTL du membre dans le groupe "PIM_WaitingApproval")
+- Durée demandée
+- Raison invoquée (stockée dans l'attribut `wbemPath` du groupe "PIM_WaitingApproval")
+
+Exemple de commande :
+
+```powershell
+Get-PIMRequest
+```
+
+Voici un exemple de résultat :
+
+```plaintext
+Group     : Domain Admins
+Requestor : adm-jsmith
+Hours     : 12
+Timestamp : 04/10/2026 22:17:05
+Reason    : Just need to update a few GPOs on the TIER 0
+```
+
+### Approbation d'une demande
+
+L’approbateur peut alors approuver une demande en indiquant le nom du groupe et celui du membre à autoriser. L’approbation ajoute l’utilisateur au groupe cible pour la durée demandée, efface la justification stockée dans l’attribut `wbemPath` et supprime son appartenance au groupe "PIM_WaitingApproval".
+
+```powershell
+Approve-PIMRequest -Group 'Domain Admins' -Requestor 'adm-jsmith'
+```
+
+### Suppression de toutes les demandes en attente
+
+Vous pouvez supprimer toutes les demandes non approuvées à l’aide de la commande suivante :
+
+```powershell
+Clear-PIMDCRequest
+```
+
+## Installation et mise en place
 
 ### Création des groupes
 
-Création des trois groupes :
+Commençons par créer les trois groupes nécessaires au fonctionnement de notre PIM :
 
 ```powershell
-$path = 'OU=Groups,OU=TIER0,DC=corp,DC=contoso,DC=com'
-'Domain Admins', 'Schema Admins', 'Enterprise Admins' | ForEach-Object {
-    New-ADGroup -Name "JEA_WaitingApprobation_$_" -Description "Has requested an access to '$_' group" -Path $path
-    New-ADGroup -Name "JEA_Approvers_$_" -Description "Can approve membership for privileged '$_' group" -Path $path
-    New-ADGroup -Name "JEA_Requesters_$_" -Description "Can request membership to privileged '$_' group" -Path $path
+$group = 'Domain Admins'
+$splat = @{
+    GroupScope    = 'DomainLocal'
+    GroupCategory = 'Security'
+    Path          = 'OU=Groups,OU=TIER0,DC=corp,DC=contoso,DC=com'
 }
+
+New-ADGroup -Name "PIM_WaitingApproval_$group" -Description "Has requested an access to '$group' group" @splat
+New-ADGroup -Name "PIM_Approvers_$group" -Description "Can approve membership for privileged '$group' group" @splat
+New-ADGroup -Name "PIM_Requesters_$group" -Description "Can request membership to privileged '$group' group" @splat
 ```
 
-### Création de la configuration du JEA
+### Import du module
 
-```powershell
-New-Item -Type Directory -Path 'C:\Program Files\WindowsPowerShell\Modules\JEAApprobation'
-New-Item -Type Directory -Path 'C:\ProgramData\JEAApprobation\Transcripts'
+Importons ensuite notre module PowerShell dans le dossier `PIMActiveDirectory`, en respectant la structure de fichiers suivante :
+
+```plaintext
+C:\Program Files\WindowsPowerShell\Modules\PIMActiveDirectory
+
+  📂 RoleCapabilities
+    📄 ApproverDA.psrc
+    📄 RequesterDA.psrc
+  📄 PIMActiveDirectory.psm1
+  📄 SessionConfiguration.pssc
 ```
+
+Par souci de simplicité, vous pouvez déployer le dossier complet à l’identique sur les contrôleurs de domaine et sur le serveur d’administration. En pratique, ce dernier n’a besoin que du fichier `.psm1` contenant les fonctions `New-PIMRequest`, `Get-PIMRequest` et `Approve-PIMRequest`. Les fichiers de configuration JEA (`.psrc` et `.pssc`) ne sont utiles que sur les contrôleurs de domaine.
 
 ### Fichier de configuration de session (PSSC)
 
-PowerShell Session Configuration, avec la commande `New-PSSessionConfigurationFile`.
-
-On va créer le fichier `SessionConfiguration.pssc` dans le dossier du module.
+Le fichier `SessionConfiguration.pssc` peut être généré avec la commande `New-PSSessionConfigurationFile`. Pour cet exemple, il suffit d’y copier le contenu suivant :
 
 ```powershell
 @{
     SchemaVersion       = '2.0.0.0'
     GUID                = 'f8072fe2-2f5b-4790-9546-45df9fd3a312'
     Author              = 'Léo Bouard'
-    Description         = 'Endpoint JEA pour les demandes JEADC'
+    Description         = 'Privileged Identity Management for Active Directory'
     SessionType         = 'RestrictedRemoteServer'
-    TranscriptDirectory = 'C:\ProgramData\JEADC\Transcripts'
+    # TranscriptDirectory = 'C:\Path\To\Transcript'
     RunAsVirtualAccount = $true
-    ModulesToImport     = 'JEAApprobation', 'ActiveDirectory'
+    ModulesToImport     = 'PIMActiveDirectory', 'ActiveDirectory'
     RoleDefinitions     = @{
-        'CORP\JEA_Approvers_Domain Admins'  = @{ RoleCapabilities = 'ApproverDA' }
-        'CORP\JEA_Requesters_Domain Admins' = @{ RoleCapabilities = 'RequesterDA' }
+        'CORP\PIM_Approvers_Domain Admins'  = @{ RoleCapabilities = 'ApproverDA' }
+        'CORP\PIM_Requesters_Domain Admins' = @{ RoleCapabilities = 'RequesterDA' }
     }
 }
 ```
 
-### Fichier de configuration du rôle (PSRC)
+Ce fichier permet notamment de définir les autorisations JEA (*RoleDefinitions*), c’est-à-dire les commandes que chaque rôle peut exécuter. Il contient également plusieurs paramètres généraux, comme :
 
-PowerShell Role Configuration, avec la commande `New-PSRoleCapabilityFile`.
+- Le dossier de journalisation (*TranscriptDirectory*)
+- Le fait de fonctionner sur un compte administrateur local virtuel (*RunAsVirtualAccount*)
+- Les modules à importer au lancement de la connexion WinRM (*ModulesToImport*)
 
-Pour le rôle "RequesterDA" :
+### Fichiers de configuration du rôle (PSRC)
 
-```powershell
-@{
-    GUID = '21155f4e-ec27-41fd-b63a-ce7e011bdd19'
-    VisibleFunctions = @(
-        @{
-            Name = 'New-JEADCRequest'
-            Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' }, @{ Name = 'Hours' }, @{ Name = 'Reason' }
-        }
-    )
-}
-```
+Les fichiers `ApproverDA.psrc` et `RequesterDA.psrc`, placés dans le dossier `RoleCapabilities`, définissent les commandes, les paramètres et les valeurs autorisés pendant la session JEA.
 
-Pour le role "ApproverDA" :
+Pour le rôle "ApproverDA", on autorise la commande `Approve-PIMDCRequest`. Le paramètre `-Requestor` est libre, tandis que `-Group` ne peut prendre que la valeur "Domain Admins" :
 
 ```powershell
 @{
     GUID = 'd0611c28-162d-431a-b031-81635d31ceda'
-    VisibleFunctions = @(
-        @{
-            Name = 'Approve-JEADCRequest'
-            Parameters = @{ Name = 'Group'; ValidateSet = 'Domain Admins' }, @{ Name = 'Requestor' }
-        }
-    )
+    VisibleFunctions = @(@{
+        Name = 'Approve-PIMDCRequest'
+        Parameters = @{ Name = 'Group'; ValidateSet = 'Domain Admins' }, @{ Name = 'Requestor' }
+    })
 }
 ```
 
-### Activation sur le contrôleur de domaine
-
-Puis on l'enregistre depuis le contrôleur de domaine avec la commande :
+Pour le rôle "RequesterDA", on autorise la commande `New-PIMDCRequest`. Les paramètres `-Hours` et `-Reason` sont libres, tandis que `-Group` ne peut prendre que la valeur "Domain Admins" :
 
 ```powershell
-Register-PSSessionConfiguration -Name JEAApprobation -Path 'C:\Program Files\WindowsPowerShell\Modules\JEAApprobation\SessionConfiguration.pssc'
+@{
+    GUID = '21155f4e-ec27-41fd-b63a-ce7e011bdd19'
+    VisibleFunctions = @(@{
+        Name = 'New-PIMDCRequest'
+        Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' }, @{ Name = 'Hours' }, @{ Name = 'Reason' }
+    })
+}
 ```
 
-> Si jamais vous devez modifier le fichier, vous allez devoir "rafraîchir" la configuration en la supprimant avec la commande `Unregister-PSSessionConfiguration -Name JEAApprobation` puis en ré-exécutant la commande d'enregistrement précédente et en redémarrant le service WinRM avec `Restart-Service WinRM`.
+Un modèle de fichier de ce type peut être généré avec la commande `New-PSRoleCapabilityFile`.
+
+### Activation sur le contrôleur de domaine
+
+Dernière étape : enregistrons notre configuration PowerShell JEA depuis le contrôleur de domaine à l’aide de la commande suivante :
+
+```powershell
+$path = 'C:\Program Files\WindowsPowerShell\Modules\PIMActiveDirectory\SessionConfiguration.pssc'
+Register-PSSessionConfiguration -Name PIMActiveDirectory -Path $path -Force
+```
+
+Le paramètre `-Force` permet de créer ou de mettre à jour la configuration. Pensez à exécuter cette commande après chaque modification du fichier `SessionConfiguration.pssc`.
+
+## Conclusion
+
+Cette approche permet de reproduire une partie du fonctionnement de PIM dans Active Directory, avec des demandes justifiées, une approbation par un pair et une appartenance temporaire aux groupes privilégiés. Elle reste toutefois un POC : avant toute utilisation en production, il faudrait notamment mettre en place une journalisation fiable et tester soigneusement les contrôles d’accès ainsi que les cas d’erreur. La solution doit être adaptée à chaque environnement, en particulier lorsqu’il s’agit de groupes aussi sensibles que Domain Admins.
