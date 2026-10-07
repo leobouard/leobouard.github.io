@@ -55,6 +55,12 @@ Pour installer les consoles liées à Active Directory Certificate Services (ADC
 Install-WindowsFeature RSAT-ADCS
 ```
 
+Et dans le cas de la console de modification du schéma, il faudra aussi enregistrer cette DLL :
+
+```powershell
+regsvr32.exe schmmgmt.dll
+```
+
 <div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto; justify-content: center;">
 {% for process in certificates %}
   {% include windows-shortcut.html name=process.name shortcut=process.shortcut %}
@@ -104,7 +110,9 @@ Voici un exemple pour lancer une nouvelle fenêtre de PowerShell 7+ en tant qu'a
 Start-Process pwsh -Verb RunAs
 ```
 
-> Certains programmes ne peuvent pas être lancés en tant qu'administrateur ou avec un autre utilisateur que celui qui a ouvert la session, quoi que vous fassiez. C'est notamment le cas de l'explorateur de fichiers (`explorer`).
+### Exécution d'un explorateur de fichier en administrateur
+
+Certains programmes ne peuvent pas être lancés en tant qu'administrateur ou avec un autre utilisateur que celui qui a ouvert la session, quoi que vous fassiez. C'est notamment le cas de l'explorateur de fichiers (`explorer`). La bonne nouvelle c'est qu'il y a un contournement possible pour ce dernier : ouvrir un autre programme qui peut s'exécuter comme administrateur (comme `notepad`) et de profiter de l'explorateur de fichier intégré (accessible avec Ctrl + O par exemple).
 
 ### Lancement d'applications par défaut
 
