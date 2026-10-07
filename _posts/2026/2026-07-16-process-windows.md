@@ -55,12 +55,6 @@ Pour installer les consoles liées à Active Directory Certificate Services (ADC
 Install-WindowsFeature RSAT-ADCS
 ```
 
-Et dans le cas de la console de modification du schéma, il faudra aussi enregistrer cette DLL :
-
-```powershell
-regsvr32.exe schmmgmt.dll
-```
-
 <div style="display: flex; grid-gap: 1em; flex-wrap: wrap; margin: 1em auto; width: auto; justify-content: center;">
 {% for process in certificates %}
   {% include windows-shortcut.html name=process.name shortcut=process.shortcut %}
