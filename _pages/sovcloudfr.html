@@ -1,0 +1,28 @@
+---
+permalink: "/sovcloudfr"
+title: "Les liens utiles pour votre tenant sovcloud.fr"
+layout: "default"
+description: "Les liens utiles pour gérer votre environnement Microsoft 365 et Azure hébergé chez Bleu"
+---
+
+<section class="blog-page fill-available">
+  <h1 style="margin: 0;">Les liens utiles pour votre tenant sovcloud.fr</h1>
+  {% include filter-searchbar.html %}
+  {% include filter-tags.html %}
+  <div class="searchbar-container">
+    <input class="searchbar" type="text" id="searchbar" placeholder="Rechercher un article..." onkeyup="filterArticlesBySearch()" />
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+  <div class="all-tags">
+    {% assign tags = site.data.sovcloudfr.category | sort %}
+    {% for tag in tags %}
+    <a href="#" onclick="filterByTag('{{ tag[0] }}');">{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+  <div class="all-url">
+    {% assign urls = site.data.sovcloudfr %}
+    {% for url in urls %}
+    <a href="{{ url.url }}" target="_blank">{{ url.name }}</a>
+    {% endfor %}
+  </div>
+</section>
