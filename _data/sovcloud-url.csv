@@ -6,10 +6,61 @@ Mes groupes,https://mygroups.sovcloud-identity.fr/,Entra ID
 Mes connexions,https://mysignins.sovcloud-identity.fr/,Entra ID
 Réinitialisation de mot de passe en libre service,https://passwordreset.sovcloud-identity.fr/,Entra ID
 Microsoft Azure,https://portal.sovcloud-azure.fr/,Azure
-Exchange Online,https://exchange.admin.sovcloud.fr/,M365
-Centre d'administration Microsoft Entra,https://entra.sovcloud.fr/,Entra ID
-Centre d'administration SharePoint,https://msazurecloud-admin.sovcloud-sharepoint.fr/,M365
-Centre d'administration Microsoft Teams,https://admin.teams.sovcloud.fr/,M365
-Centre d'administration Microsoft 365,https://admin.sovcloud.fr/,M365
+Centre d'administration Microsoft Entra,https://entra.sovcloud.fr/,Microsoft 365
+Microsoft Purview,https://purview.sovcloud.fr/,Microsoft 365
+Microsoft Defender,https://security.sovcloud.fr/,Microsoft 365
 aka.ms,https://aka.sovcloud-api.fr/,Autre
 Outlook,https://outlook.sovcloud.fr/,M365
+Microsoft 365 Admin,https://admin.sovcloud.fr/,Microsoft 365
+Exchange,https://admin.sovcloud.fr/exchange,Microsoft 365
+SharePoint,https://tenant-admin.sovcloud-sharepoint.fr/,Microsoft 365
+Teams,https://admin.teams.sovcloud.fr,Microsoft 365
+Places,https://,Microsoft 365
+OneDrive,https://,Microsoft 365
+Power BI,https://,Microsoft 365
+Power Platform,https://,Microsoft 365
+Power Automate,https://,Microsoft 365
+Yammer,https://,Microsoft 365
+Outlook,https://outlook.sovcloud.fr/,Microsoft 365
+Licenses,https://,Microsoft 365
+PowerApps,https://,Microsoft 365
+Microsoft Dynamics Lifecycle Service,https://,Microsoft 365
+Teams Web Client,https://,Microsoft 365
+Teams Rooms Pro Management,https://,Microsoft 365
+Office Customization Tool,https://,Microsoft 365
+Microsoft 365 Apps admin center,https://apps.admin.sovcloud.fr/,Microsoft 365
+Microsoft Forms,https://,Microsoft 365
+Microsoft Loop,https://,Microsoft 365
+Lighthouse,https://,Microsoft 365
+Baselines Lighthouse,https://,Microsoft 365
+Deployment Insights Lighthouse,https://,Microsoft 365
+Tenants Lighthouse,https://,Microsoft 365
+Windows 365,https://,Microsoft 365
+Volume Licensing Keys,https://,Microsoft 365
+Message Center,https://,Microsoft 365
+Customer Digital Experiences (Demo),https://,Microsoft 365
+All Tenants,https://,Microsoft 365
+Exchange Message Trace,https://,Microsoft 365
+Exchange Mail Flow Rules,https://,Microsoft 365
+Microsoft 365 Service Health,https://,Microsoft 365
+Copilot,https://,Microsoft 365
+Copilot Dashboard,https://,Microsoft 365
+Planner,https://,Microsoft 365
+School Data Sync,https://,Microsoft 365
+Exchange mail flow reports,https://,Microsoft 365
+Syntex,https://,Microsoft 365
+Edge Configuration Profiles,https://,Microsoft 365
+Edge Configuration Overview,https://,Microsoft 365
+Domains,https://,Microsoft 365
+Fabric,https://,Microsoft 365
+Microsoft Migration Manager 365,https://,Microsoft 365
+Active Users,https://,Microsoft 365
+My Access,https://myaccess.identity.sovcloud.fr/,My Pages
+My Account,https://myaccount.identity.sovcloud.fr/,My Pages
+My Groups,https://myaccount.identity.sovcloud.fr/groups,My Pages
+My Security Info,https://mysignins.identity.sovcloud.fr/security-info,My Pages
+My Apps,https://myapps.identity.sovcloud.fr/,My Pages
+My Staff,https://,My Pages
+My Office 365 Subscriptions,https://,My Pages
+Password Reset,https://,My Pages
+Visual Studio Subscriptions,https://,My Pages
