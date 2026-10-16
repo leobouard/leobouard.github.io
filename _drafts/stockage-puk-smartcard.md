@@ -172,6 +172,10 @@ New-ADObject @splat
 ### Création du module
 
 ```powershell
+# Dépendances
+
+Import-Module ActiveDirectory
+
 # Fonctions privées
 
 Add-Type -TypeDefinition @'
@@ -255,34 +259,81 @@ function New-ADSmartCard {
     $splat = @{
         Name = $Name
         Path = $User.DistinguishedName
-        Type = 'corp-smartCard007'
+        Type = 'corp-smartCard'
         OtherAttributes = @{
-            'corppuk' = $pukBytes
-            'corppukLastSet' = Get-Date
+            'corp-puk' = $pukBytes
+            'corp-pukLastSet' = Get-Date
         }
     }
     New-ADObject @splat
 }
 
 function Get-ADSmartCard {
+    [CmdletBinding(DefaultParameterSetName = 'Identity')]
     param(
-        [Parameter(Mandatory, ValueFromPipeline)][Microsoft.ActiveDirectory.Management.ADUser]$User,
+        [Parameter(Mandatory, ValueFromPipeline, ParameterSetName='Identity', Position=0)][string]$Identity,
+        [Parameter(Mandatory, ValueFromPipeline, ParameterSetName='User')][Microsoft.ActiveDirectory.Management.ADUser]$User,
+        [Parameter(Mandatory, ParameterSetName='Filter')][string]$Filter,
         [switch]$AsPlainText
     )
 
-    $smartCards = Get-ADObject -Filter { ObjectClass -eq 'corp-smartCard007' } -Properties * -SearchBase $User.DistinguishedName -SearchScope OneLevel
+    $properties = 'corp-puk', 'corp-pukHistory', 'corp-pukLastSet', 'msds-ParentDistName'
+    $smartCards = if ($Identity) {
+        Get-ADObject -Filter {(ObjectClass -eq 'corp-smartCard') -and (Name -eq $Identity)} -Properties $properties | Select-Object -First 1
+    } elseif ($User) {
+        Get-ADObject -Filter { ObjectClass -eq 'corp-smartCard' } -Properties $properties -SearchBase $User.DistinguishedName -SearchScope OneLevel
+    } elseif ($Filter) {
+        Get-ADObject -Filter $Filter -Properties $properties | Where-Object { $_.ObjectClass -eq 'corp-smartCard' }
+    }
 
-    $smartCards | Select-Object DistinguishedName, Name, ObjectClass, ObjectGUID, 
-        @{ Name = 'PUK' ; Expression = { ConvertFrom-DpapiNg $_.corpPuk } },
-        @{ Name = 'PUKHistory' ; Expression = { $_.corpPukHistory | ForEach-Object { ConvertFrom-DpapiNg $_ } } },
-        @{ Name = 'PUKLastSet' ; Expression = { $_.corpPukLastSet[0] } }
+    $smartCards | ForEach-Object {
+        $puk = $_.'corp-Puk'
+        $pukHistory = $_.'corp-PukHistory'
+
+        if ($AsPlainText.IsPresent) {
+            $puk = ConvertFrom-DpapiNg $puk
+            $pukHistory = $pukHistory | ForEach-Object { ConvertFrom-DpapiNg $_ }
+        }
+
+        $_ | Select-Object DistinguishedName, Name, ObjectClass, ObjectGUID,
+            @{ Name = 'PUK' ; Expression = { $puk } },
+            @{ Name = 'PUKHistory' ; Expression = { $pukHistory } },
+            @{ Name = 'PUKLastSet' ; Expression = { $_.'corp-PukLastSet' } },
+            @{ Name = 'User' ; Expression = { (Get-ADUser $_.'msds-ParentDistName') } }
+    }
 }
 
-function Set-CORPSmartCard {
+function Set-ADSmartCard {
+    param(
+        [Parameter(Mandatory, ValueFromPipeline)][object]$Identity,
+        [Parameter(Mandatory)][SecureString]$PUK
+    )
 
+    [byte[]]$pukBytes = ConvertTo-DpapiNg $PUK
+    $smartCard = if ($Identity -is [string]) {
+        Get-ADObject -Filter {(ObjectClass -eq 'corp-SmartCard') -and (Name -eq $Identity)} -Properties * | Select-Object -First 1
+    } elseif ($Identity.DistinguishedName) {
+        Get-ADObject -Identity $Identity.DistinguishedName -Properties *
+    }
+    Set-ADObject $smartCard -Replace @{ 'corp-Puk' = $pukBytes ; 'corp-PukLastSet' = Get-Date } -Add @{ 'corp-PukHistory' = $smartCard.'corp-Puk' }
 }
 
-function Remove-CORPSmartCard {
+function Remove-ADSmartCard {
+    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
+    param([Parameter(Mandatory, ValueFromPipeline)][object[]]$Identity)
 
+    process {
+        $Identity | ForEach-Object {
+            $smartCard = if ($_ -is [string]) {
+                Get-ADObject -Filter {(ObjectClass -eq 'corp-SmartCard') -and (Name -eq $_)} -Properties * | Select-Object -First 1
+            } elseif ($_.DistinguishedName) {
+                Get-ADObject -Identity $_.DistinguishedName -Properties *
+            }
+
+            if ($smartCard -and $PSCmdlet.ShouldProcess($smartCard.DistinguishedName, 'Remove smart card')) {
+                Remove-ADObject $smartCard -Confirm:$false
+            }
+        }
+    }
 }
 ```
