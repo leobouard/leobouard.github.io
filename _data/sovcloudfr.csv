@@ -1,7 +1,7 @@
 name,url,category
 Azure,https://portal.sovcloud-azure.fr/,Azure
 Sentinel,https://,Azure
-Azure Resource Graph Explorer,,Azure
+Azure Resource Graph Explorer,https://,Azure
 Purview Unified Data Governance,https://,Azure
 Automanage,https://,Azure
 Azure Virtual Desktop,https://,Azure
@@ -49,7 +49,6 @@ Exchange Mail Flow Rules,https://,Microsoft 365
 Microsoft 365 Service Health,https://,Microsoft 365
 Copilot,https://,Microsoft 365
 Copilot Dashboard,https://,Microsoft 365
-Planner,https://,Microsoft 365
 School Data Sync,https://,Microsoft 365
 Exchange mail flow reports,https://,Microsoft 365
 Syntex,https://,Microsoft 365
@@ -72,6 +71,6 @@ Microsoft Whiteboard,https://whiteboard.sovcloud.fr/,Microsoft 365
 Outlook Bookings,https://outlook.sovcloud.fr/bookings,Microsoft 365
 Outlook Calendar,https://outlook.sovcloud.fr/calendar,Microsoft 365
 Outlook Contacts,https://outlook.sovcloud.fr/people,Microsoft 365
-Microsoft Planner,https://planner.sovcloud.fr/,Microsoft 365
+Planner,https://planner.sovcloud.fr/,Microsoft 365
 Azure Data Factory,https://adf.sovcloud-azure.fr/,Azure
 
