@@ -6,36 +6,56 @@ tags: ["", ""]
 
 ## Contexte
 
-Si vous avez un Active Directory avec un tiering-model de déployé et que vous devez utiliser un mot de passe différent pour chaque compte, les smartcards sont une solution merveilleuse pour vous simplifier la vie tout en garantissant un top niveau de sécurité. Avec un appareil physique (type YubiKey) et un code PIN, vous pouvez vous connecter avec l'ensemble de vos comptes sans avoir à tapper de mot de passe !
+Si vous avez un Active Directory avec un tiering-model de déployé et que vous devez utiliser un mot de passe différent pour chaque compte, les smart cards sont une solution merveilleuse pour vous simplifier la vie. Grâce à elles, vous pouvez vous connecter avec l'ensemble de vos comptes sans avoir à tapper de mot de passe : un code PIN suffit !
 
-Donc pour résumer, une smartcard c'est :
+Pour résumer, une smart card c'est :
 
-- un appareil physique
+- un appareil physique (type [Yubikey 5C NFC FIPS](https://www.amazon.fr/Yubico-Y-335-YubiKey-5C-NFC/dp/B08DHL1YDL) par exemple) qui va stocker votre certificat de connexion utilisateur
 - un code PIN personnel de 6 à 10 caractères pour déverrouiller l'appareil
 - un code PUK pour débloquer la clé si besoin
 
-...et si le code PIN est personnel (c'est dans le nom), le code PUK est utile à votre administrateur pour éviter d'avoir à refaire tous vos certificats si jamais vous avez oublié votre PIN (ou si vous avez bloqué votre clé après X mauvais PIN).
+...et si le code PIN est personnel (*c'est le "P" dans "PIN"*), le code PUK est utile à votre administrateur pour éviter d'avoir à refaire tous vos certificats si jamais vous avez oublié votre PIN (ou que vous avez bloqué votre clé après plusieurs mauvais codes PIN).
 
 Viens alors la réflexion du stockage de ces codes PUK, et pour ça plusieurs options possibles :
 
-- **Si vous êtes le seul administrateur** : un bon vieux KeePass pour stocker ça de manière sécurisé, c'est simple et efficace (mais peu relou et daté)
-- **Si vous êtes plusieurs** :
-  - Soit vous partez sur la facilité au détriment de la sécurité : un petit fichier Excel des familles, stocké sur SharePoint pour permettre la coédition et éviter d'écraser le travail de quelqu'un d'autre. Si vous faites ça, des identifiants critiques pour votre Active Directory seront accessibles depuis Microsoft 365.
-  - Soit vous utilisez une solution de coffre-fort partagé, mais là aussi vous allez stocker des mots de passe qui seront accessibles aux administrateurs du coffre-fort
-
-Il reste une troisième option, qui est de mettre tous ses œufs dans le même panier et de stocker l'information des codes PUK directement dans Active Directory.
+- Un fichier KeePass2 au format KBDX pour stocker ça de manière simple et sécurisée
+- Un espace partagé sur votre gestionnaire de mot de passe préféré (Bitwarden ❤️)
+- Un vieux fichier Excel sur SharePoint si jamais vous n'en avez rien à faire de la sécurité
 
 ### Principal problème
 
+Toutes ces options ont un inconvénient majeur : elles ne suivent pas le cycle de vie des utilisateurs Active Directory. Au fil des départs et arrivées, des changements de noms et d'équipe, vous allez finir par vous y perdre. Impossible d'identifier rapidement les utilisateurs qui n'ont pas de code PUK, ou ceux qui ont quitté l'entreprise depuis déjà plusieurs années.
 
+L'idée de cet article est donc de proposer autre chose : une méthode purement expérimentale qui va lier directement l'utilisateur à sa smart card dans Active Directory ; sans pour autant que le code PUK soit accessible à tous.
+
+![There is another](https://i.redd.it/lyd5md4v3q351.jpg)
+
+### Ma solution (expérimentale)
+
+Le principe s'inspire très largement du travail que Microsoft a déjà effectué pour la gestion des clés BitLocker sur les comptes ordinateurs, ainsi que mots de passe LAPS et ceux des comptes gMSA. On va **créer une nouvelle classe d'objet** représentant nos smart cards dans notre schéma Active Directory (vous comprenez maintenant le côté *expérimental*). Ces nouveaux objets "smart cards" viendrait se greffer comme un objet enfant des comptes utilisateurs existant, pour se lier durablement à eux sans être impactés par un déplacement ou un renommage de l'objet parent.
+
+Pour accompagner cette nouvelle classe, on vient également ajouter trois nouveaux attributs :
+
+- Un pour stocker le **code PUK actuel**
+- Un pour stocker **l'historique des anciens codes PUK**
+- Un dernier pour indiquer **la date de définition du code PUK actuel**
+
+Les codes PUK ne doivent évidemment être accessibles uniquement par le personnel autorisé. Pour ça on part sur ceinture-bretelles avec :
+
+- **des attributs déclarés comme confidentiels** : leur valeur ne peut être consulter que par les utilisateurs ayant un droit d'accès explicite sur l'objet parent ou l'attribut
+- **un chiffrement des données via DPAPI-NG** : le mécanisme de chiffrement natif depuis Windows 8 & Windows Server 2012, qui va permettre de déchiffrer le code PUK très simplement pour tous les membres d'un groupe Active Directory
 
 ## Modification du schéma
 
+> Petit rappel, mais modifier son schéma sans savoir ce que l'on fait n'est clairement pas une bonne idée. Ne faites évidemment pas ça sur votre production. Chaque changement fait à votre schéma est indélébile et peut impacter la stabilité de votre domaine Active Directory.
+
 ### Prérequis
+
+Pour pouvoir modifier le schéma, créer notre classe et nos nouveaux attributs, il va falloir :
 
 1. Être membre du groupe "Schema Admins"
 2. Pouvoir générer un OID (avec la commande PowerShell ci-dessous par exemple)
-3. Pouvoir redémarrer le contrôleur de domaine qui porte le rôle SchemaMaster
+3. Pouvoir redémarrer le contrôleur de domaine qui porte le rôle SchemaMaster si besoin
 
 {% include name="New-Oid.ps1" id="e797c922cef0553924436149199c8ab4" %}
 
@@ -43,9 +63,9 @@ Il reste une troisième option, qui est de mettre tous ses œufs dans le même p
 
 On va avoir besoin de trois nouveaux attributs dans le schéma :
 
-- `corp-puk` pour stocker le code PUK
-- `corp-pukHistory` pour stocker les anciens codes PUK (on ne sait jamais)
-- `corp-pukLastSet` pour indiquer la date de définition du dernier code PUK
+- `corp-puk`
+- `corp-pukHistory`
+- `corp-pukLastSet`
 
 Les attributs sont préfixés par "CORP" pour éviter une éventuelle collision avec des nouveaux attributs qui pourraient être ajoutés dans le schéma par Microsoft ou un éditeur tier.
 
@@ -53,7 +73,7 @@ Voici les spécifications techniques pour chacun :
 
 #### corp-puk
 
-*Ajouter une description pour expliquer les choix de designs*
+`corp-puk` va être une chaîne d'octet confidentielle :
 
 Attribut | Valeur
 -------- | ------
@@ -67,7 +87,7 @@ searchFlags | 128 (Confidential)
 
 #### corp-pukHistory
 
-*Ajouter une description pour expliquer les choix de designs*
+Tout comme `corp-puk`, `corp-pukHistory` sera une chaîne d'octet confidentielle mais multi-valeur :
 
 Attribut | Valeur
 -------- | ------
@@ -81,7 +101,7 @@ searchFlags | 128 (Confidential)
 
 #### corp-pukLastSet
 
-*Ajouter une description pour expliquer les choix de designs*
+Ici pas besoin de déclarer l'attribut comme confidentiel, on défini simplement le bon format pour avoir une belle date bien propre (comme l'attribut `accountExpirationDate` par exemple) :
 
 Attribut | Valeur
 -------- | ------
@@ -119,20 +139,29 @@ $splat = @{
 New-ADObject @splat
 ```
 
+> N'oubliez pas, une seule erreur et celle-ci sera visible à jamais dans votre schéma.
+
 ### Définition de la classe
 
-Il faut maintenant passer aux spécifications de la classe qui a héberger nos nouveaux attributs :
+Il faut maintenant passer aux spécifications de la classe qui va héberger nos nouveaux attributs :
 
 Attribut | Valeur
 -------- | ------
 name | corp-smartCard
 objectClass | classSchema
-
-*tableau à mettre à jour*
+adminDescription | Device that can be used to authenticate
+defaultHidingValue | True
+mayContain | `serialNumber`, `corp-pukHistory`, `corp-pukLastSet`
+mustContain | `corp-puk`
+objectClassCategory | 1 (STRUCTURAL)
+possSuperior | user, inetOrgPerson
+showInAdvancedViewOnly | True
+systemOnly | False
+subClassOf | 2.5.6.0 (top)
 
 ### Création de la classe
 
-> Ça n'aura pas été aussi facile que prévu puisqu'il n'y a que très peu de documentation sur le sujet, mais les attributs "MayContain" et "MustContain" ne reçoivent que les OID des attributs cibles (si jamais ça peut vous aider).
+Voici la dernière étape pour la modification du schéma : la création de notre nouvelle classe d'objet `corp-smartCard` qui va utiliser les attributs créés précédemment.
 
 ```powershell
 $name = 'corp-smartCard'
@@ -150,190 +179,107 @@ $splat = @{
         DefaultHidingValue     = $true
         GovernsID              = (New-OID)
         LDAPDisplayName        = $name
-        MayContain             = $mayContain.AttributeID # serialNumber, corp-pukHistory, corp-pukLastSet
+        MayContain             = $mayContain.AttributeID
         MustContain            = $mustContain.AttributeID
-        ObjectClassCategory    = 1 # Structural
+        ObjectClassCategory    = 1
         PossSuperiors          = 'user', 'inetOrgPerson'
         ShowInAdvancedViewOnly = $true
         SystemOnly             = $false
-        SubClassOf             = '2.5.6.0' # top
+        SubClassOf             = '2.5.6.0'
     }
     Path = (Get-ADRootDSE).schemaNamingContext
 }
 New-ADObject @splat
 ```
 
-1. Création du groupe "SmartCard PUK Administrators"
-2. Chiffrement via DpapiNg du code PUK
-3. Création d'une nouvelle smartcard sous l'utilisateur John Smith
-4. Déchiffrer via DpapiNg
-5. Pour aller plus loin : la délégation pour le flag 128
+> Ça n'aura pas été aussi facile que prévu puisqu'il n'y a que très peu de documentation sur le sujet, mais sachez que les attributs "MayContain" et "MustContain" ne reçoivent que les OID des attributs cibles (si jamais ça peut vous aider).
 
-### Création du module
+## Exploitation de la nouvelle classe et des nouveaux attributs
+
+### Création du groupe d'accès au PUK
+
+Je l'ai caché dans mon module, et celui-ci devrait être plus visible mais les codes PUK ne sont déchiffrables que par les membres du groupe "SmartCard PUK Administrators". Il convient donc de créer ce groupe dans Active Directory :
 
 ```powershell
-# Dépendances
+New-ADGroup -Name 'SmartCard PUK Administrators' -GroupScope Global -GroupCategory Security
+```
 
-Import-Module ActiveDirectory
+Si vous voulez pouvez déchiffrer les codes PUK, vous aurez besoin d'être membre du groupe.
 
-# Fonctions privées
+### Délégation d'accès sur les attributs confidentiels
 
-Add-Type -TypeDefinition @'
-using System;
-using System.Runtime.InteropServices;
+Vous vous souvenez de l'explication sur les attributs qui ne pouvaient être lu que par les comptes autorisés ? Et bien comme le groupe "Domain Admins" possède déjà ces permissions ; je m'en accommode très bien. Si vous souhaitez mettre en place une délégation, voici ce que [Claude](https://claude.ai/) m'a proposé (je n'ai pas testé) :
 
-public static class DpapiNg {
-    [DllImport("ncrypt.dll")]
-    static extern int NCryptCreateProtectionDescriptor(
-        [MarshalAs(UnmanagedType.LPWStr)] string rule, uint flags, out IntPtr desc);
+```powershell
+$path  = "OU=Utilisateurs,DC=corp,DC=contoso,DC="
+$group = "CORP\SmartCard PUK Administrators"
+$attr  = "corp-puk"
 
-    [DllImport("ncrypt.dll")]
-    static extern int NCryptProtectSecret(
-        IntPtr desc, uint flags, byte[] data, uint cbData,
-        IntPtr alloc, IntPtr hwnd, out IntPtr blob, out uint cbBlob);
+# 1. Lecture de l'attribut
+dsacls $path /I:S /G "${group}:RP;$attr;corp-smartCard"
 
-    [DllImport("ncrypt.dll")]
-    static extern int NCryptUnprotectSecret(
-        IntPtr desc, uint flags, byte[] blob, uint cbBlob,
-        IntPtr alloc, IntPtr hwnd, out IntPtr data, out uint cbData);
+# 2. Control Access (requis pour les attributs confidentiels)
+dsacls $path /I:S /G "${group}:CA;;corp-smartCard"
+```
 
-    [DllImport("ncrypt.dll")]
-    static extern int NCryptCloseProtectionDescriptor(IntPtr desc);
+> Avant de mettre en place cette délégation, souvenez-vous qu'une seule smart card peut permettre d'utiliser plusieurs comptes, donc n'allez pas faire une délégation qui pourrait ouvrir un nouveau chemin d'attaque vers les membres du groupe "Domain Admins".
 
-    [DllImport("kernel32.dll")]
-    static extern IntPtr LocalFree(IntPtr p);
+### Utilisation du module
 
-    public static byte[] Protect(string rule, byte[] data) {
-        IntPtr d; int r = NCryptCreateProtectionDescriptor(rule, 0, out d);
-        if (r != 0) throw new Exception("Descriptor: 0x" + r.ToString("X"));
-        try {
-            IntPtr p; uint n;
-            r = NCryptProtectSecret(d, 0, data, (uint)data.Length, IntPtr.Zero, IntPtr.Zero, out p, out n);
-            if (r != 0) throw new Exception("Protect: 0x" + r.ToString("X"));
-            byte[] o = new byte[n]; Marshal.Copy(p, o, 0, (int)n); LocalFree(p); return o;
-        } finally { NCryptCloseProtectionDescriptor(d); }
-    }
+Une fois notre schéma ~~cassé~~ modifié, on peut passer à l'exploitation de nos nouveaux jouets ! Pour ça, j'ai créé un module PowerShell assez simple qui permet d'interagir avec nos smart cards :
 
-    public static byte[] Unprotect(byte[] blob) {
-        IntPtr p; uint n;
-        int r = NCryptUnprotectSecret(IntPtr.Zero, 0, blob, (uint)blob.Length, IntPtr.Zero, IntPtr.Zero, out p, out n);
-        if (r != 0) throw new Exception("Unprotect: 0x" + r.ToString("X"));
-        byte[] o = new byte[n]; Marshal.Copy(p, o, 0, (int)n); LocalFree(p); return o;
-    }
-}
-'@
+{% include name="PUKManagement.psm1" id="185f2b6e5cadbb1827b1609138463eb2" %}
 
-function ConvertFrom-SecureStringAsPlainText {
-    param([Parameter(Mandatory, ValueFromPipeline)][SecureString]$InputObject)
+Celui-ci est composé de quelques commandes utiles :
 
-    [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($InputObject))
-}
+- `New-ADSmartCard` pour créer une nouvelle smart card
+- `Get-ADSmartCard` pour lister les smart cards et obtenir leur code PUK
+- `Set-ADSmartCard` pour modifier une smart card
+- `Remove-ADSmartCard` pour supprimer évidemment
 
-function ConvertTo-DpapiNg {
-    param(
-        [Parameter(Mandatory, ValueFromPipeline)][SecureString]$InputObject,
-        [string]$Owner = 'SmartCard PUK Administrators'
-    )
+### Création d'une nouvelle smart card
 
-    $string = $InputObject | ConvertFrom-SecureStringAsPlainText
-    $descriptor = "SID=$((Get-ADGroup $Owner -Properties objectSid).objectSid.value)"
-    [DpapiNg]::Protect($descriptor, [Text.Encoding]::UTF8.GetBytes($string))
-}
+Création d'une nouvelle smart card pour l'utilisateur "John Smith", sans jamais saisir le code PUK en clair dans la console :
 
-function ConvertFrom-DpapiNg {
-    param([Parameter(Mandatory, ValueFromPipeline)][System.Object[]]$InputObject)
+```powershell
+New-ADSmartCard -Name '28293929' -User (Get-ADUser john.smith)
+```
 
-    [Text.Encoding]::UTF8.GetString([DpapiNg]::Unprotect($InputObject))
-}
+Comme le code PUK est obligatoire, il sera automatiquement récupéré via un prompt supplémentaire au format SecureString.
 
-# Fonctions publiques
+> Ici j'ai indiqué le numéro de série (SerialNumber) de la smart card dans la valeur du paramètre "Name". A mon humble avis, c'est le meilleur choix à faire.
 
-function New-ADSmartCard {
-    param(
-        [Parameter(Mandatory)][String]$Name,
-        [Parameter(Mandatory, ValueFromPipeline)][Microsoft.ActiveDirectory.Management.ADUser]$User,
-        [Parameter(Mandatory)][SecureString]$PUK
-    )
+### Récupération des informations d'une ou plusieurs smart cards
 
-    [byte[]]$pukBytes = ConvertTo-DpapiNg $PUK
-    $splat = @{
-        Name = $Name
-        Path = $User.DistinguishedName
-        Type = 'corp-smartCard'
-        OtherAttributes = @{
-            'corp-puk' = $pukBytes
-            'corp-pukLastSet' = Get-Date
-        }
-    }
-    New-ADObject @splat
-}
+Obtenir toutes les smart cards du domaine :
 
-function Get-ADSmartCard {
-    [CmdletBinding(DefaultParameterSetName = 'Identity')]
-    param(
-        [Parameter(Mandatory, ValueFromPipeline, ParameterSetName='Identity', Position=0)][string]$Identity,
-        [Parameter(Mandatory, ValueFromPipeline, ParameterSetName='User')][Microsoft.ActiveDirectory.Management.ADUser]$User,
-        [Parameter(Mandatory, ParameterSetName='Filter')][string]$Filter,
-        [switch]$AsPlainText
-    )
+```powershell
+Get-ADSmartCard -Filter *
+```
 
-    $properties = 'corp-puk', 'corp-pukHistory', 'corp-pukLastSet', 'msds-ParentDistName'
-    $smartCards = if ($Identity) {
-        Get-ADObject -Filter {(ObjectClass -eq 'corp-smartCard') -and (Name -eq $Identity)} -Properties $properties | Select-Object -First 1
-    } elseif ($User) {
-        Get-ADObject -Filter { ObjectClass -eq 'corp-smartCard' } -Properties $properties -SearchBase $User.DistinguishedName -SearchScope OneLevel
-    } elseif ($Filter) {
-        Get-ADObject -Filter $Filter -Properties $properties | Where-Object { $_.ObjectClass -eq 'corp-smartCard' }
-    }
+Obtenir toutes les smart cards d'un utilisateur :
 
-    $smartCards | ForEach-Object {
-        $puk = $_.'corp-Puk'
-        $pukHistory = $_.'corp-PukHistory'
+```powershell
+Get-ADUser john.smith | Get-ADSmartCard
+```
 
-        if ($AsPlainText.IsPresent) {
-            $puk = ConvertFrom-DpapiNg $puk
-            $pukHistory = $pukHistory | ForEach-Object { ConvertFrom-DpapiNg $_ }
-        }
+Obtenir le code PUK en clair de la smart card "28293929" :
 
-        $_ | Select-Object DistinguishedName, Name, ObjectClass, ObjectGUID,
-            @{ Name = 'PUK' ; Expression = { $puk } },
-            @{ Name = 'PUKHistory' ; Expression = { $pukHistory } },
-            @{ Name = 'PUKLastSet' ; Expression = { $_.'corp-PukLastSet' } },
-            @{ Name = 'User' ; Expression = { (Get-ADUser $_.'msds-ParentDistName') } }
-    }
-}
+```powershell
+Get-ADSmartCard 28293929 -AsPlainText
+```
 
-function Set-ADSmartCard {
-    param(
-        [Parameter(Mandatory, ValueFromPipeline)][object]$Identity,
-        [Parameter(Mandatory)][SecureString]$PUK
-    )
+### Mise à jour d'un code PUK
 
-    [byte[]]$pukBytes = ConvertTo-DpapiNg $PUK
-    $smartCard = if ($Identity -is [string]) {
-        Get-ADObject -Filter {(ObjectClass -eq 'corp-SmartCard') -and (Name -eq $Identity)} -Properties * | Select-Object -First 1
-    } elseif ($Identity.DistinguishedName) {
-        Get-ADObject -Identity $Identity.DistinguishedName -Properties *
-    }
-    Set-ADObject $smartCard -Replace @{ 'corp-Puk' = $pukBytes ; 'corp-PukLastSet' = Get-Date } -Add @{ 'corp-PukHistory' = $smartCard.'corp-Puk' }
-}
+```powershell
+Get-ADSmartCard 28293929 |
+Set-ADSmartCard -PUK (Read-Host -AsSecureString -Prompt 'New PUK')
+```
 
-function Remove-ADSmartCard {
-    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
-    param([Parameter(Mandatory, ValueFromPipeline)][object[]]$Identity)
+### Suppression d'une smart card
 
-    process {
-        $Identity | ForEach-Object {
-            $smartCard = if ($_ -is [string]) {
-                Get-ADObject -Filter {(ObjectClass -eq 'corp-SmartCard') -and (Name -eq $_)} -Properties * | Select-Object -First 1
-            } elseif ($_.DistinguishedName) {
-                Get-ADObject -Identity $_.DistinguishedName -Properties *
-            }
+Et pour finir, la commande `Remove-ADSmartCard` :
 
-            if ($smartCard -and $PSCmdlet.ShouldProcess($smartCard.DistinguishedName, 'Remove smart card')) {
-                Remove-ADObject $smartCard -Confirm:$false
-            }
-        }
-    }
-}
+```powershell
+Get-ADSmartCard 28293929 | Remove-ADSmartCard
 ```
