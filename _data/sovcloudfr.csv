@@ -1,8 +1,7 @@
 name,url,category
 Azure,https://portal.sovcloud-azure.fr/,Azure
-Azure Preview Portal,https://,Azure
 Sentinel,https://,Azure
-Azure Resource Graph Explorer,https://,Azure
+Azure Resource Graph Explorer,,Azure
 Purview Unified Data Governance,https://,Azure
 Automanage,https://,Azure
 Azure Virtual Desktop,https://,Azure
@@ -21,7 +20,7 @@ Exchange,https://admin.sovcloud.fr/exchange,Microsoft 365
 SharePoint,https://tenant-admin.sovcloud-sharepoint.fr/,Microsoft 365
 Teams,https://admin.teams.sovcloud.fr,Microsoft 365
 Places,https://,Microsoft 365
-OneDrive,https://,Microsoft 365
+OneDrive,https://admin.sovcloud.fr/onedrive,Microsoft 365
 Power BI,https://,Microsoft 365
 Power Platform,https://,Microsoft 365
 Power Automate,https://,Microsoft 365
@@ -34,8 +33,8 @@ Teams Web Client,https://,Microsoft 365
 Teams Rooms Pro Management,https://,Microsoft 365
 Office Customization Tool,https://,Microsoft 365
 Microsoft 365 Apps admin center,https://apps.admin.sovcloud.fr/,Microsoft 365
-Microsoft Forms,https://,Microsoft 365
-Microsoft Loop,https://,Microsoft 365
+Microsoft Forms,https://forms.sovcloud.fr/,Microsoft 365
+Microsoft Loop,https://loop.sovcloud.fr/,Microsoft 365
 Lighthouse,https://,Microsoft 365
 Baselines Lighthouse,https://,Microsoft 365
 Deployment Insights Lighthouse,https://,Microsoft 365
@@ -69,3 +68,10 @@ My Staff,https://,My Pages
 My Office 365 Subscriptions,https://,My Pages
 Password Reset,https://,My Pages
 Visual Studio Subscriptions,https://,My Pages
+Microsoft Whiteboard,https://whiteboard.sovcloud.fr/,Microsoft 365
+Outlook Bookings,https://outlook.sovcloud.fr/bookings,Microsoft 365
+Outlook Calendar,https://outlook.sovcloud.fr/calendar,Microsoft 365
+Outlook Contacts,https://outlook.sovcloud.fr/people,Microsoft 365
+Microsoft Planner,https://planner.sovcloud.fr/,Microsoft 365
+Azure Data Factory,https://adf.sovcloud-azure.fr/,Azure
+
