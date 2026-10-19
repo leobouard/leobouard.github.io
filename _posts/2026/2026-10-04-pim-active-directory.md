@@ -42,9 +42,10 @@ La solution nécessitera au minimum deux types de serveurs :
 
 > On exécute les commandes PowerShell directement sur le contrôleur de domaine afin de bénéficier d’un compte virtuel disposant des droits d’administrateur local sur la machine. Or, sur un contrôleur de domaine, être administrateur local revient à être administrateur du domaine.
 
-On aura également besoin de trois groupes pour gérer les demandes et les permissions liées à PowerShell JEA :
+On aura également besoin de quatre groupes pour gérer les demandes et les permissions liées à PowerShell JEA :
 
 - Un groupe autorisé à demander une élévation de privilèges dans le groupe "Domain Admins", que l’on appellera **PIM_Requesters_Domain Admins**
+- Un autre groupe autorisé à demander une élévation de privilège sans nécessiter d'approbation : **PIM_AutoApprove_Domain Admins**
 - Un groupe chargé d’approuver les demandes d’élévation : **PIM_Approvers_Domain Admins**
 - Un dernier groupe pour stocker les demandes en attente d’approbation : **PIM_WaitingApproval_Domain Admins**
 
@@ -78,6 +79,14 @@ New-PIMRequest -Group 'Domain Admins' -Hours 12 -Reason 'Just need to update a f
 ```
 
 > Il n’est pas nécessaire de préciser votre nom de compte : celui-ci est automatiquement récupéré à partir de la variable d’environnement `$PSSenderInfo.ConnectedUser` dans la session JEA. La durée est limitée à 24 heures dans le module, et la justification doit comporter entre 8 et 120 caractères.
+
+### Demande d'élévation sans approbation
+
+Si vous n'avez pas besoin d'un système d'approbation, vous pouvez simplement utiliser la commande suivante :
+
+```powershell
+New-PIMRequest -Group 'Domain Admins' -Hours 6 -Reason 'I need to patch the domain controllers real quick' -AutoApprove
+```
 
 ### Consultation des élévations en attente d'approbation
 
@@ -137,6 +146,7 @@ $splat = @{
 
 New-ADGroup -Name "PIM_WaitingApproval_$group" -Description "Has requested an access to '$group' group" @splat
 New-ADGroup -Name "PIM_Approvers_$group" -Description "Can approve membership for privileged '$group' group" @splat
+New-ADGroup -Name "PIM_AutoApprove_$group" -Description "Can automatically be added to '$group' group" @splat
 New-ADGroup -Name "PIM_Requesters_$group" -Description "Can request membership to privileged '$group' group" @splat
 ```
 
@@ -173,6 +183,7 @@ Le fichier `SessionConfiguration.pssc` peut être généré avec la commande `Ne
     RoleDefinitions     = @{
         'CORP\PIM_Approvers_Domain Admins'  = @{ RoleCapabilities = 'ApproverDA' }
         'CORP\PIM_Requesters_Domain Admins' = @{ RoleCapabilities = 'RequesterDA' }
+        'CORP\PIM_AutoApprove_Domain Admins' = @{ RoleCapabilities = 'AutoApproveDA' }
     }
 }
 ```
@@ -194,7 +205,8 @@ Pour le rôle "ApproverDA", on autorise la commande `Approve-PIMDCRequest`. Le p
     GUID = 'd0611c28-162d-431a-b031-81635d31ceda'
     VisibleFunctions = @(@{
         Name = 'Approve-PIMDCRequest'
-        Parameters = @{ Name = 'Group'; ValidateSet = 'Domain Admins' }, @{ Name = 'Requestor' }
+        Parameters = @{ Name = 'Group'; ValidateSet = 'Domain Admins' },
+            @{ Name = 'Requestor' }
     })
 }
 ```
@@ -206,8 +218,27 @@ Pour le rôle "RequesterDA", on autorise la commande `New-PIMDCRequest`. Les par
     GUID = '21155f4e-ec27-41fd-b63a-ce7e011bdd19'
     VisibleFunctions = @(@{
         Name = 'New-PIMDCRequest'
-        Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' }, @{ Name = 'Hours' }, @{ Name = 'Reason' }
+        Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' },
+            @{ Name = 'Hours' },
+            @{ Name = 'Reason' }
     })
+}
+```
+
+Et enfin on termine avec le fichier pour le rôle "AutoApproveDA" :
+
+```powershell
+@{
+    GUID = 'e32513df-e60f-433a-82bf-5e52b2018bb7'
+    VisibleFunctions = @(
+        @{
+            Name = 'New-PIMDCRequest'
+            Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' },
+                @{ Name = 'Hours' },
+                @{ Name = 'Reason' },
+                @{ Name = 'AutoApprove' }
+        }
+    )
 }
 ```
 
