@@ -230,15 +230,13 @@ Et enfin on termine avec le fichier pour le rôle "AutoApproveDA" :
 ```powershell
 @{
     GUID = 'e32513df-e60f-433a-82bf-5e52b2018bb7'
-    VisibleFunctions = @(
-        @{
-            Name = 'New-PIMDCRequest'
-            Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' },
-                @{ Name = 'Hours' },
-                @{ Name = 'Reason' },
-                @{ Name = 'AutoApprove' }
-        }
-    )
+    VisibleFunctions = @(@{
+        Name = 'New-PIMDCRequest'
+        Parameters = @{ Name = 'Group' ; ValidateSet = 'Domain Admins' },
+            @{ Name = 'Hours' },
+            @{ Name = 'Reason' },
+            @{ Name = 'AutoApprove' }
+    })
 }
 ```
 
