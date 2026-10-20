@@ -1,0 +1,33 @@
+div.sovcloudfr-link {
+    border: 1px solid var(--mediumaccent);
+    border-radius: var(--borderradius);
+    height: 5em;
+    position: relative;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: small;
+    line-height: 130%;
+}
+
+div.sovcloudfr-link:hover {
+    background: var(--lightaccent);
+    transition: all 300ms ease-in-out;
+}
+
+div.sovcloudfr-link h4 {
+    margin: 0em 2em 0.5em 0em;
+}
+
+div.sovcloudfr-link a {
+    text-underline-offset: 4px;
+    margin-right: 3em;
+    color: var(--heavyaccent);
+}
+
+div.sovcloudfr-link img {
+    position: absolute;
+    right: 1em;
+    height: 2em;
+}
