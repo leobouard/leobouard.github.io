@@ -3,7 +3,7 @@ div.sovcloudfr-link {
     border-radius: var(--borderradius);
     height: 5em;
     position: relative;
-    padding: 0.5em;
+    padding: 1em 4em 1em 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,17 +17,16 @@ div.sovcloudfr-link:hover {
 }
 
 div.sovcloudfr-link h4 {
-    margin: 0em 2em 0.5em 0em;
+    margin: 0 2 0.5em 0;
 }
 
 div.sovcloudfr-link a {
     text-underline-offset: 4px;
-    margin-right: 3em;
     color: var(--heavyaccent);
 }
 
 div.sovcloudfr-link img {
     position: absolute;
-    right: 1em;
+    right: 1.5em;
     height: 2em;
 }
