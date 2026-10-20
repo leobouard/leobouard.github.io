@@ -2,7 +2,7 @@
 permalink: /sovcloudfr
 title: "URLs Azure & M365 sovcloud.fr"
 description: "Les liens utiles pour administrer votre tenant Microsoft 365 et Azure hébergé chez Bleu"
----
+--- 
 
 ## Liens rapides
 
@@ -17,8 +17,8 @@ description: "Les liens utiles pour administrer votre tenant Microsoft 365 et Az
 
 ## Ressources
 
-L'idée originale vient évidemment de [cmd.ms](https://cmd.ms/) par [Merill Fernando](https://merill.net/) 🐐
+Voici les ressources qui ont été utilisées pour la création de cette page :
 
-Les icônes produits au format SVG proviennent de [Dashboard Icons](https://dashboardicons.com/icons?q=microsoft).
-
-Pour consulter le fichier CSV original : [sovcloudfr.csv](https://github.com/{{ site.github_owner }}/{{ site.github_repo }}/tree/{{ site.github_branch }}/_data/sovcloudfr.csv)
+- L'idée originale vient de [cmd.ms](https://cmd.ms/)
+- Les icônes proviennent de [dashboardicons.com](https://dashboardicons.com/icons?q=microsoft).
+- Le fichier CSV de base est disponible ici : [sovcloudfr.csv](https://github.com/{{ site.github_owner }}/{{ site.github_repo }}/tree/{{ site.github_branch }}/_data/sovcloudfr.csv)
