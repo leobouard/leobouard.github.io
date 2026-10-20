@@ -1,23 +1,23 @@
 name,url,category
 Portail Azure,portal.sovcloud-azure.fr,azure
 Azure Data Factory,adf.sovcloud-azure.fr,azure
-Centre d'administration Exchange,admin.sovcloud.fr/exchange,entra
-Centre d'administration Microsoft 365,admin.sovcloud.fr,entra
-Centre d'administration SharePoint,tenant-admin.sovcloud-sharepoint.fr,entra
-Centre d'administration Microsoft Defender,security.sovcloud.fr,entra
-Centre d'administration Microsoft Purview,purview.sovcloud.fr,entra
-Centre d'administration Teams,admin.teams.sovcloud.fr,entra
-Centre d'administration Applications M365,apps.admin.sovcloud.fr,entra
+Centre d'administration Exchange,admin.sovcloud.fr/exchange,exchange
+Centre d'administration Microsoft 365,admin.sovcloud.fr,m365admincenter
+Centre d'administration SharePoint,tenant-admin.sovcloud-sharepoint.fr,sharepoint
+Centre d'administration Microsoft Defender,security.sovcloud.fr,defender
+Centre d'administration Microsoft Purview,purview.sovcloud.fr,purview
+Centre d'administration Teams,admin.teams.sovcloud.fr,teams
+Centre d'administration Applications M365,apps.admin.sovcloud.fr,office
 Centre d'administration Microsoft Entra,entra.sovcloud.fr,entra
-Microsoft Outlook,outlook.sovcloud.fr,microsoft365
-Microsoft Forms,forms.sovcloud.fr,microsoft365
-Microsoft Loop,loop.sovcloud.fr,microsoft365
-Portail utilisateur Microsoft 365,m365.sovcloud.fr,microsoft365
-Microsoft Planner,planner.sovcloud.fr,microsoft365
-Outlook Bookings,outlook.sovcloud.fr/bookings,microsoft365
-Outlook Calendrier,outlook.sovcloud.fr/calendar,microsoft365
-Outlook Contacts,outlook.sovcloud.fr/people,microsoft365
-Microsoft Whiteboard,whiteboard.sovcloud.fr,microsoft365
+Microsoft Outlook,outlook.sovcloud.fr,outlook
+Microsoft Forms,forms.sovcloud.fr,forms
+Microsoft Loop,loop.sovcloud.fr,microsoft
+Portail utilisateur Microsoft 365,m365.sovcloud.fr,microsoft
+Microsoft Planner,planner.sovcloud.fr,microsoft
+Outlook Bookings,outlook.sovcloud.fr/bookings,outlook
+Outlook Calendrier,outlook.sovcloud.fr/calendar,outlook
+Outlook Contacts,outlook.sovcloud.fr/people,outlook
+Microsoft Whiteboard,whiteboard.sovcloud.fr,microsoft
 Mes accès,myaccess.identity.sovcloud.fr,mespages
 Mon compte,myaccount.identity.sovcloud.fr,mespages
 Mes groupes,myaccount.identity.sovcloud.fr/groups,mespages
