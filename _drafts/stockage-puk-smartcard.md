@@ -1,7 +1,7 @@
 ---
-title: ""
-description: ""
-tags: ["", ""]
+title: "Comment stocker des données confidentielles dans Active Directory ?"
+description: "Cas pratique : des codes PUK cachés à la vue de tous"
+tags: ["powershell", "activedirectory"]
 ---
 
 ## Contexte

@@ -3,16 +3,16 @@ div.windows-shortcut {
     border-radius: var(--borderradius);
     aspect-ratio: 1;
     display: flex;
-    padding: 1em;
+    padding: 0.5em;
     align-content: center;
     justify-content: end;
-    width: 9em;
+    width: 7em;
     position: relative;
     flex-direction: column;
 }
 
 div.windows-shortcut img {
-  width: 4em;
+  width: 3em;
   margin: auto;
   aspect-ratio: 1;
   overflow: hidden;
@@ -21,6 +21,7 @@ div.windows-shortcut img {
 div.windows-shortcut p {
   line-height: 130%;
   margin: 0;
+  font-size: 0.75em;
 }
 
 div.windows-shortcut span {
@@ -30,6 +31,7 @@ div.windows-shortcut span {
   background: var(--lightaccent);
   border: 1px solid var(--mediumaccent);
   border-radius: var(--borderradius);
-  padding: 0.1em 0.5em;
-  font-size: small;
+  padding: 2px;
+  font-size: 0.75em;
+  line-height: 130%
 }

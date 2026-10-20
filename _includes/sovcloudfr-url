@@ -1,0 +1,5 @@
+<div class="sovcloudfr-url hover-bottom">
+  <h4>{{ include.name }}</h4>
+  <a href="https://{{ include.url }}/" target="_blank">{{ include.url }}</a>
+  <img src="/assets/sovcloudfr-url/{{ include.icon }}.webp" alt="Icône de {{ include.name }} au format WEBP"/>
+</div>
