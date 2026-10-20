@@ -71,6 +71,11 @@
     },
     {
         "category": "Général",
+        "name": "Pare-feu Windows Defender avec fonctions avancées de sécurité",
+        "shortcut": "wf"
+    },
+    {
+        "category": "Général",
         "name": "Panneau de configuration",
         "shortcut": "control"
     },
