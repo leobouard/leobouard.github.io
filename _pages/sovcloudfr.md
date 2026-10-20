@@ -1,6 +1,5 @@
 ---
 permalink: /sovcloudfr
-layout: default
 title: "URLs Azure & M365 sovcloud.fr"
 description: "Les liens utiles pour administrer votre tenant Microsoft 365 et Azure hébergé chez Bleu"
 ---
