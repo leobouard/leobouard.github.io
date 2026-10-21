@@ -15,9 +15,9 @@ Loop,loop.sovcloud.fr,loop
 Portail Microsoft 365,m365.sovcloud.fr,m365
 Planner,planner.sovcloud.fr,planner
 Outlook Bookings,outlook.sovcloud.fr/bookings,outlook
-Outlook Calendrier,outlook.sovcloud.fr/calendar,outlook
-Outlook Contacts,outlook.sovcloud.fr/people,outlook
-Whiteboard,whiteboard.sovcloud.fr,microsoft
+Outlook Calendrier,outlook.sovcloud.fr/calendar,calendar
+Outlook Contacts,outlook.sovcloud.fr/people,people
+Whiteboard,whiteboard.sovcloud.fr,whiteboard
 Mes accès,myaccess.identity.sovcloud.fr,mespages
 Mon compte,myaccount.identity.sovcloud.fr,mespages
 Mes groupes,myaccount.identity.sovcloud.fr/groups,mespages
