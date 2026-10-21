@@ -1,7 +1,7 @@
 div.sovcloudfr-link {
     border: 1px solid var(--mediumaccent);
     border-radius: var(--borderradius);
-    height: 5em;
+    height: 4em;
     position: relative;
     padding: 1em 4em 1em 1em;
     display: flex;
@@ -23,6 +23,7 @@ div.sovcloudfr-link h4 {
 div.sovcloudfr-link a {
     text-underline-offset: 4px;
     color: var(--heavyaccent);
+    word-break: break-all;
 }
 
 div.sovcloudfr-link img {
