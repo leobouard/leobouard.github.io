@@ -1,10 +1,12 @@
 name,url,category
 Portail Azure,portal.sovcloud-azure.fr,azure
 Azure Data Factory,adf.sovcloud-azure.fr,azure
+Azure Data Explorer,dataexplorer.sovcloud-azure.fr,azure
 Centre d'admin Exchange,admin.sovcloud.fr/exchange,exchange
 Centre d'admin Microsoft 365,admin.sovcloud.fr,m365admincenter
 Centre d'admin SharePoint,tenant-admin.sovcloud-sharepoint.fr,sharepoint
 Centre d'admin Defender,security.sovcloud.fr,defender
+Centre d'admin Intune,intune.sovcloud.fr,intune
 Centre d'admin Purview,purview.sovcloud.fr,purview
 Centre d'admin Teams,admin.teams.sovcloud.fr,teams
 Centre d'admin Apps M365,apps.admin.sovcloud.fr,office
