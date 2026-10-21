@@ -75,17 +75,28 @@ Lorsqu’une personne demande une élévation de privilèges avec la commande `N
 Exemple de demande :
 
 ```powershell
-New-PIMRequest -Group 'Domain Admins' -Hours 12 -Reason 'Just need to update a few GPOs on the TIER 0'
+$splat = @{
+    Group = 'Domain Admins'
+    Hours = 12
+    Reason = 'Just need to update a few GPOs on the TIER 0'
+}
+New-PIMRequest @splat
 ```
 
 > Il n’est pas nécessaire de préciser votre nom de compte : celui-ci est automatiquement récupéré à partir de la variable d’environnement `$PSSenderInfo.ConnectedUser` dans la session JEA. La durée est limitée à 24 heures dans le module, et la justification doit comporter entre 8 et 120 caractères.
 
 ### Demande d'élévation sans approbation
 
-Si vous n'avez pas besoin d'un système d'approbation, vous pouvez simplement utiliser la commande suivante :
+Si vous n'avez pas besoin d'un système d'approbation, vous pouvez utiliser la même commande qu'avant, mais avec le paramètre `-AutoApprove` :
 
 ```powershell
-New-PIMRequest -Group 'Domain Admins' -Hours 6 -Reason 'I need to patch the domain controllers real quick' -AutoApprove
+$splat = @{
+    Group = 'Domain Admins'
+    Hours = 6
+    Reason = 'I need to patch the domain controllers real quick'
+    AutoApprove = $true
+}
+New-PIMRequest @splat
 ```
 
 ### Consultation des élévations en attente d'approbation
