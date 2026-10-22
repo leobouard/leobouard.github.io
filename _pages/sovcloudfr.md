@@ -16,7 +16,7 @@ description: "Les liens utiles pour administrer votre tenant Microsoft 365 et Az
 
 {% assign links = site.data.sovcloudfr %}
 {% for link in links %}
-  {% include sovcloudfr-link.html name=link.name url=link.url category=link.category %}
+  {% include sovcloudfr-link.html name=link.name url=link.url icon=link.icon %}
 {% endfor %}
 
 </div>
