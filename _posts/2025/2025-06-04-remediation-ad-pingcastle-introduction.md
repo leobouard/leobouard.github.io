@@ -1,4 +1,5 @@
 ---
+permalink: "/pingcastle"
 title: "Remédiation Active Directory avec Ping Castle"
 description: "Toutes mes notes sur les remédiations à faire pour chaque vulnérabilité trouvée par Ping Castle"
 tags: ["activedirectory", "pingcastle"]
