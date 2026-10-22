@@ -1,0 +1,19 @@
+<script>
+window.filterLinkBySearch = function () {
+  const query = (document.getElementById('searchbar')?.value || '').trim().toLowerCase();
+  const links = document.querySelectorAll('.sovcloudfr-link');
+
+  links.forEach(link => {
+    const title = link.querySelector('h4')?.textContent || '';
+    const url = Array.from(link.querySelectorAll('a'))
+      .map(anchor => `${anchor.textContent} ${anchor.href}`)
+      .join(' ');
+    const tags = Array.from(link.querySelectorAll('[id="TAG"]'))
+      .map(tag => tag.textContent)
+      .join(' ');
+    const searchableText = `${title} ${url} ${tags}`.toLowerCase();
+
+    link.style.display = !query || searchableText.includes(query) ? '' : 'none';
+  });
+};
+</script>

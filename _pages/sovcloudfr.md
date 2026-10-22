@@ -6,6 +6,12 @@ description: "Les liens utiles pour administrer votre tenant Microsoft 365 et Az
 
 ## Liens rapides
 
+{% include filter-link.html %}
+<div class="searchbar-container">
+  <input class="searchbar" type="text" id="searchbar" placeholder="Rechercher un lien..." onkeyup="filterLinkBySearch()" />
+  <i class="fa-solid fa-magnifying-glass"></i>
+</div>
+
 <div style="display: grid; grid-gap: 1em; margin: 1em auto; grid-template-columns: repeat(auto-fill, minmax(min(13rem, 100%), 1fr));">
 
 {% assign links = site.data.sovcloudfr %}
