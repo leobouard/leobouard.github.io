@@ -1,28 +1,28 @@
-name,url,category
-Portail Azure,portal.sovcloud-azure.fr,azure
-Azure Data Factory,adf.sovcloud-azure.fr,azure
-Azure Data Explorer,dataexplorer.sovcloud-azure.fr,azure
-Centre d'admin Exchange,admin.sovcloud.fr/exchange,exchange
-Centre d'admin Microsoft 365,admin.sovcloud.fr,m365admincenter
-Centre d'admin SharePoint,tenant-admin.sovcloud-sharepoint.fr,sharepoint
-Centre d'admin Defender,security.sovcloud.fr,defender
-Centre d'admin Intune,intune.sovcloud.fr,intune
-Centre d'admin Purview,purview.sovcloud.fr,purview
-Centre d'admin Teams,admin.teams.sovcloud.fr,teams
-Centre d'admin Apps M365,apps.admin.sovcloud.fr,office
-Centre d'admin Entra,entra.sovcloud.fr,entra
-Outlook,outlook.sovcloud.fr,outlook
-Forms,forms.sovcloud.fr,forms
-Loop,loop.sovcloud.fr,loop
-Portail Microsoft 365,m365.sovcloud.fr,m365
-Planner,planner.sovcloud.fr,planner
-Bookings,outlook.sovcloud.fr/bookings,bookings
-Calendrier,outlook.sovcloud.fr/calendar,calendar
-Contacts,outlook.sovcloud.fr/people,people
-Whiteboard,whiteboard.sovcloud.fr,whiteboard
-Mes accès,myaccess.identity.sovcloud.fr,mespages
-Mon compte,myaccount.identity.sovcloud.fr,mespages
-Mes groupes,myaccount.identity.sovcloud.fr/groups,mespages
-Infos de sécurité,mysignins.identity.sovcloud.fr/security-info,mespages
-Mes applications,myapps.identity.sovcloud.fr,mespages
-aka.ms,aka.sovcloud-api.fr,mespages
+name,url,icon,tag
+Portail Azure,portal.sovcloud-azure.fr,azure,
+Azure Data Factory,adf.sovcloud-azure.fr,azure,
+Azure Data Explorer,dataexplorer.sovcloud-azure.fr,azure,
+Centre d'admin Exchange,admin.sovcloud.fr/exchange,exchange,
+Centre d'admin M365,admin.sovcloud.fr,m365admincenter,
+Centre d'admin SharePoint,admin.sovcloud.fr/sharepoint,sharepoint,
+Centre d'admin Defender,security.sovcloud.fr,defender,
+Centre d'admin Intune,intune.sovcloud.fr,intune,
+Centre d'admin Purview,purview.sovcloud.fr,purview,
+Centre d'admin Teams,admin.teams.sovcloud.fr,teams,
+Centre d'admin Apps M365,apps.admin.sovcloud.fr,office,
+Centre d'admin Entra,entra.sovcloud.fr,entra,
+Outlook,outlook.sovcloud.fr,outlook,
+Forms,forms.sovcloud.fr,forms,
+Loop,loop.sovcloud.fr,loop,
+Portail Microsoft 365,m365.sovcloud.fr,m365,
+Planner,planner.sovcloud.fr,planner,
+Bookings,outlook.sovcloud.fr/bookings,bookings,
+Calendrier,outlook.sovcloud.fr/calendar,calendar,
+Contacts,outlook.sovcloud.fr/people,people,
+Whiteboard,whiteboard.sovcloud.fr,whiteboard,
+Mes accès,myaccess.identity.sovcloud.fr,mespages,
+Mon compte,myaccount.identity.sovcloud.fr,mespages,
+Mes groupes,myaccount.identity.sovcloud.fr/groups,mespages,
+Infos de sécurité,mysignins.identity.sovcloud.fr/security-info,mespages,
+Mes applications,myapps.identity.sovcloud.fr,mespages,
+aka.ms,aka.sovcloud-api.fr,mespages,
