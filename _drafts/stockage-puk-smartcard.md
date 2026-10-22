@@ -271,6 +271,8 @@ Get-ADSmartCard 28293929 -AsPlainText
 
 ### Mise à jour d'un code PUK
 
+Pour mettre à jour le code PUK de la smart card "28293929" :
+
 ```powershell
 Get-ADSmartCard 28293929 |
 Set-ADSmartCard -PUK (Read-Host -AsSecureString -Prompt 'New PUK')
@@ -282,4 +284,60 @@ Et pour finir, la commande `Remove-ADSmartCard` :
 
 ```powershell
 Get-ADSmartCard 28293929 | Remove-ADSmartCard
+```
+
+## Alternatives sans modifier le schéma
+
+Bon le POC est rigolo, mais une modification de schéma ne doit évidemment pas être prise à la légère. Dans 99% des cas, ça vous sera probablement refusé purement et simplement. Du coup voici une alternative pour stocker des informations confidentielles sans pour autant faire péter le rôle "Schema Admins".
+
+### Récupération d'un attribut inutilisé
+
+On va essayer d'identifier un attribut inutilisé de votre domaine. Pour ça, on peut utiliser la commande PowerShell la plus sous-côté (`Group-Object`). Voici comment vérifier l'utilisation de l'attribut `msds-CloudExtensionAttribute1` sur l'ensemble de vos utilisateurs :
+
+```powershell
+$attribute = 'msds-CloudExtensionAttribute1'
+Get-ADUser -Filter * -Properties $attribute | Group-Object $attribute
+```
+
+Les attributs `msds-CloudExtensionAttribute...` sont des candidats idéals, et ils existent depuis 2012. Seul problème : ils ne sont pas du type "Octet String" mais simplement "String". On va donc devoir convertir notre chaîne de bit chiffrés en une chaîne de caractères simple.
+
+### Conversion en chaîne de caractères
+
+Contrairement à notre plan "parfait" avec modification du schéma, ici on va devoir convertir notre *Octet String* en une chaîne de caractères. La bonne nouvelle, c'est que le Base64 permet de faire ça facilement :
+
+```powershell
+[Convert]::ToBase64String($blob)
+```
+
+On va donc utiliser notre commande personnalisée issue du module pour obtenir notre chaîne de caractères au format Base64 :
+
+```powershell
+$splat = @{
+    InputObject = ('test' | ConvertTo-SecureString -AsPlainText -Force)
+    ToBase64 = $true
+    Owner = 'Domain Admins'
+}
+$base64 = ConvertTo-DpapiNg @splat
+```
+
+### Inscription dans l'attribut de votre choix
+
+Une fois l'information chiffrée, il ne reste plus qu'à l'ajouter sur l'attribut `msds-CloudExtensionAttribute1` de notre utilisateur :
+
+```powershell
+Set-ADUser john.smith -Replace @{ 'msds-CloudExtensionAttribute1' = $base64 }
+```
+
+> **Quid de la longueur maximum de la chaîne de caractère ?**
+>
+> D'après mes tests sur les attributs `msds-CloudExtensionAttribute...`, on peut y stocker jusqu'à ~1 millions de caractères. Attention quand-même, je ne pense pas qu'ajouter 1 MB de données par utilisateur soit une bonne idée sur le long terme !
+
+### Lecture de l'attribut
+
+Enfin, pour déchiffrer la donnée, il faut faire le chemin inverse en faisant la conversion de Base64 vers *Octet String* :
+
+```powershell
+$user = Get-ADUser john.smith -Properties 'msds-CloudExtensionAttribute1'
+$blob = [Convert]::FromBase64String($user.'msds-CloudExtensionAttribute1')
+ConvertFrom-DpapiNg -InputObject $blob
 ```
