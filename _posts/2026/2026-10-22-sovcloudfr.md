@@ -5,8 +5,6 @@ description: "Les liens utiles pour administrer vos tenants Microsoft 365 et Azu
 tags: ["microsoft365", "entraid"]
 ---
 
-{{ page.description }}
-
 ## Liens rapides
 
 {% include filter-link.html %}
