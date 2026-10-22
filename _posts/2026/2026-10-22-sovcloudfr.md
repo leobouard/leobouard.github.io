@@ -1,8 +1,11 @@
 ---
 permalink: /sovcloudfr
 title: "URLs Azure & M365 sovcloud.fr"
-description: "Les liens utiles pour administrer votre tenant Microsoft 365 et Azure hébergé chez Bleu"
---- 
+description: "Les liens utiles pour administrer vos tenants Microsoft 365 et Azure hébergés chez Bleu"
+tags: ["microsoft365", "entraid"]
+---
+
+{{ page.description }}
 
 ## Liens rapides
 
