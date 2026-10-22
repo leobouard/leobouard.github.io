@@ -10,3 +10,10 @@ div.article-info i {
     color: var(--primary);
     min-width: 1em;
 }
+
+span.article-description {
+    display: block;
+    font-size: small;
+    color: var(--primary);
+    margin: -2em 0 1em;
+}
