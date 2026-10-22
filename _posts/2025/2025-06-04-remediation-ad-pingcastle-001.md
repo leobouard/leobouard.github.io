@@ -2,13 +2,13 @@
 title: "PING CASTLE - Stale Object"
 description: "Dette technique liées aux comptes ordinateurs"
 hidden: true
-tableOfContent: "/pingcastle#table-des-matières"
+tableOfContent: "remediation-ad-pingcastle-introduction#table-des-matières"
 nextLink:
   name: "Trusts"
   id: "remediation-ad-pingcastle-002"
 prevLink:
   name: "Introduction"
-  id: "/pingcastle"
+  id: "remediation-ad-pingcastle-introduction"
 ---
 
 ## Utilisateurs ou ordinateurs inactifs

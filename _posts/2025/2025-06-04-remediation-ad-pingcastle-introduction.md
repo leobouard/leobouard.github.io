@@ -5,7 +5,7 @@ description: "Toutes mes notes sur les remédiations à faire pour chaque vulné
 tags: ["activedirectory", "pingcastle"]
 nextLink:
   name: "Stale Object"
-  id: "/2025-06/04/remediation-ad-pingcastle-001"
+  id: "remediation-ad-pingcastle-001"
 ---
 
 ## Introduction
