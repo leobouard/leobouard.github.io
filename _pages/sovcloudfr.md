@@ -26,5 +26,5 @@ description: "Les liens utiles pour administrer votre tenant Microsoft 365 et Az
 Voici les ressources qui ont été utilisées pour la création de cette page :
 
 - L'idée originale vient de [cmd.ms](https://cmd.ms/)
-- Les icônes proviennent de [dashboardicons.com](https://dashboardicons.com/icons?q=microsoft)
-- Le fichier CSV de base est disponible ici : [sovcloudfr.csv](https://github.com/{{ site.github_owner }}/{{ site.github_repo }}/tree/{{ site.github_branch }}/_data/sovcloudfr.csv)
+- Les icônes proviennent de [dashboardicons.com](https://dashboardicons.com/icons?q=microsoft) ou directement des consoles Microsoft lorsque c'est possible
+- Le fichier CSV d'origine est disponible ici : [sovcloudfr.csv](https://github.com/{{ site.github_owner }}/{{ site.github_repo }}/tree/{{ site.github_branch }}/_data/sovcloudfr.csv)
