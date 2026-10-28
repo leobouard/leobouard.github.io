@@ -4,6 +4,8 @@ title: "Testing"
 description: "Page de contrôle"
 ---
 
+# Titre 1
+
 ## Titre 2
 
 ### Titre 3
@@ -70,9 +72,41 @@ item.innerHTML += '<i class="fa-solid fa-circle-check"></i>';
 
 ## Includes
 
+### article-info.html
+
+{% include article-info.html date="2025-01-15" content=page.content %}
+
 ### author-info.html
 
 {% include author-info.html %}
+
+### blog-header.html
+
+{% include blog-header.html %}
+
+### breadcrumbs.html
+
+{% include breadcrumbs.html %}
+
+### comments.html
+
+{% include comments.html %}
+
+### filter-searchbar.html
+
+{% include filter-searchbar.html %}
+
+### github-gist.html
+
+{% include github-gist.html name="Fonction fictive" id="00000000000000000000000000000000" %}
+
+### github-repository.html
+
+{% include github-repository.html repository="exemple/Projet-fictif" %}
+
+### post-preview.html
+
+{% include post-preview.html id="/articles/exemple-fictif/" date="2025-01-15" title="Article fictif" description="Présentation d'un article de démonstration." tags=page.demo_tags %}
 
 ### quick-test.html
 
@@ -95,3 +129,15 @@ Plusieurs bonnes réponses maintenant :
 ### risk-score.html
 
 {% include risk-score.html impact="3" probability="3" comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut *labore et dolore magna aliqua." %}
+
+### sovcloudfr-link.html
+
+{% include sovcloudfr-link.html name="Portail de test" url="portail.exemple.invalid" icon="microsoft" %}
+
+### talk.html
+
+{% include talk.html url=page.demo_event.url title="Présentation fictive" event=page.demo_event date="janvier 2025" place="En ligne" slide=page.demo_slide_url %}
+
+### windows-shortcut.html
+
+{% include windows-shortcut.html name="Console de commandes (exemple)" shortcut="cmd" %}
