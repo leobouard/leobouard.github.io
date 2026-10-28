@@ -45,7 +45,7 @@ description: "Liste des projets sur lesquels j'ai travaillé"
         <a href="{{ company.url }}" target="_blank">
           <img src="{{ company.logo }}" alt="{{ project.company }} logo" title="{{ project.company }}">
         </a>
-        <span><i class="fa-solid fa-briefcase"></i></i>{{ company.description }}</span>
+        <span>{{ company.description }}</span>
         {% endif %}
         <h4>{{ project.title }}</h4>
         <small><i class="fa-regular fa-calendar"></i>{{ project.period }} • {{ project.duration }}</small>

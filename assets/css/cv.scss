@@ -388,10 +388,8 @@ div.project img {
     width: 3em;
     position: absolute;
     top: 1em;
-    right: 1em;
+    left: 1em;
     border-radius: var(--borderradius);
-    border: 1px solid var(--mediumaccent);
-    box-shadow: 4px 4px var(--mediumaccent);
 }
 
 div.project i {
@@ -401,13 +399,13 @@ div.project i {
 div.project span {
     color: var(--primary);
     font-weight: 500;
-    margin-right: 4em;
+    margin-left: 4em;
     display: block;
 }
 
 div.project h4 {
-    margin: 0.5em 4em 0.5em 0;
-    font-size: 1.1em;
+    margin: 0 0 0.5em 4em;
+    font-size: 1em;
 }
 
 div.project small {
