@@ -8,13 +8,13 @@ tags: ["powershell", "activedirectory"]
 
 ### Le problème des données sensibles dans Active Directory
 
-Active Directory est globalement un livre ouvert : n'importe quel utilisateur peut lire la plupart des informations de l'annuaire (qui est membre de quoi, quel est le numéro de téléphone de John, qui est le manager de Jane...). Quelques attributs font exception (comme `unicodePwd` qui contient le mot de passe de l'objet) mais ceux-ci sont gérés par les contrôleurs de domaine et ne peuvent pas être utilisés à nos propres desseins.
+Active Directory est globalement un livre ouvert : n'importe quel utilisateur peut lire la plupart des informations de l'annuaire (qui est membre de quoi, quel est le numéro de téléphone de John, qui est le manager de Jane...). Quelques attributs font exception (comme `unicodePwd` qui contient le mot de passe de l'objet), mais ceux-ci sont gérés par les contrôleurs de domaine et ne peuvent pas être utilisés à nos propres fins.
 
-Comment stocker alors dans l'AD des informations confidentielles qui ne soient pas visibles par tous ? Windows LAPS et les mots de passe des comptes gMSA montrent qu'il est possible de protéger et de contrôler l'accès à ce type de données, en utilisant des mécaniques de chiffrements et de visibilité des attributs. On va donc s'en inspirer pour concevoir des solutions adaptées à nos propres besoins.
+Comment stocker alors dans l'AD des informations confidentielles qui ne soient pas visibles par tous ? Windows LAPS et les mots de passe des comptes gMSA montrent qu'il est possible de protéger et de contrôler l'accès à ce type de données, en utilisant des mécanismes de chiffrement et de visibilité des attributs. On va donc s'en inspirer pour concevoir des solutions adaptées à nos propres besoins.
 
 ### Les smart cards pour l'authentification
 
-Si vous avez un Active Directory avec un tiering-model de déployé et que vous devez utiliser un mot de passe différent pour chaque compte, les smart cards sont une solution merveilleuse pour vous simplifier la vie. Grâce à elles, vous pouvez vous connecter avec l'ensemble de vos comptes sans avoir à tapper de mot de passe : un code PIN suffit !
+Si vous avez un Active Directory avec un modèle de tiering déployé et que vous devez utiliser un mot de passe différent pour chaque compte, les smart cards sont une solution merveilleuse pour vous simplifier la vie. Grâce à elles, vous pouvez vous connecter avec l'ensemble de vos comptes sans avoir à taper de mot de passe : un code PIN suffit !
 
 Pour résumer, une smart card c'est :
 
@@ -24,7 +24,7 @@ Pour résumer, une smart card c'est :
 
 ...et si le code PIN est personnel (*c'est le "P" dans "PIN"*), le code PUK est utile à votre administrateur pour éviter d'avoir à refaire tous vos certificats si jamais vous avez oublié votre PIN (ou que vous avez bloqué votre clé après plusieurs mauvais codes PIN).
 
-Viens alors la réflexion du stockage de ces codes PUK, et pour ça plusieurs options possibles :
+Vient alors la réflexion du stockage de ces codes PUK, et pour ça, plusieurs options sont possibles :
 
 - Un fichier KeePass2 au format KBDX pour stocker ça de manière simple et sécurisée
 - Un espace partagé sur votre gestionnaire de mot de passe préféré (Bitwarden ❤️)
@@ -32,7 +32,7 @@ Viens alors la réflexion du stockage de ces codes PUK, et pour ça plusieurs op
 
 ### Principal problème
 
-Toutes ces options ont un inconvénient majeur : elles ne suivent pas le cycle de vie des utilisateurs Active Directory. Au fil des départs et arrivées, des changements de noms et d'équipe, vous allez finir par vous y perdre. Impossible d'identifier rapidement les utilisateurs qui n'ont pas de code PUK, ou ceux qui ont quitté l'entreprise depuis déjà plusieurs années.
+Toutes ces options ont un inconvénient majeur : elles ne suivent pas le cycle de vie des utilisateurs Active Directory. Au fil des départs et des arrivées, des changements de nom ou d'équipe, vous allez finir par vous y perdre. Impossible d'identifier rapidement les utilisateurs qui n'ont pas de code PUK, ou ceux qui ont quitté l'entreprise depuis déjà plusieurs années.
 
 L'idée de cet article est donc de proposer autre chose : une méthode purement expérimentale qui va lier directement l'utilisateur à sa smart card dans Active Directory ; sans pour autant que le code PUK soit accessible à tous.
 
@@ -40,7 +40,7 @@ L'idée de cet article est donc de proposer autre chose : une méthode purement 
 
 ### Ma solution (expérimentale)
 
-Le principe s'inspire très largement du travail que Microsoft a déjà effectué pour la gestion des clés BitLocker sur les comptes ordinateurs, ainsi que mots de passe LAPS et ceux des comptes gMSA. On va **créer une nouvelle classe d'objet** représentant nos smart cards dans notre schéma Active Directory (vous comprenez maintenant le côté *expérimental*). Ces nouveaux objets "smart cards" viendrait se greffer comme un objet enfant des comptes utilisateurs existant, pour se lier durablement à eux sans être impactés par un déplacement ou un renommage de l'objet parent.
+Le principe s'inspire très largement du travail que Microsoft a déjà effectué pour la gestion des clés BitLocker sur les comptes ordinateurs, ainsi que des mots de passe LAPS et de ceux des comptes gMSA. On va **créer une nouvelle classe d'objet** représentant nos smart cards dans notre schéma Active Directory (vous comprenez maintenant le côté *expérimental*). Ces nouveaux objets "smart cards" viendraient se greffer comme des objets enfants des comptes utilisateurs existants, pour se lier durablement à eux sans être impactés par un déplacement ou un renommage de l'objet parent.
 
 Pour accompagner cette nouvelle classe, on vient également ajouter trois nouveaux attributs :
 
@@ -48,10 +48,10 @@ Pour accompagner cette nouvelle classe, on vient également ajouter trois nouvea
 - Un pour stocker **l'historique des anciens codes PUK**
 - Un dernier pour indiquer **la date de définition du code PUK actuel**
 
-Les codes PUK ne doivent évidemment être accessibles uniquement par le personnel autorisé. Pour ça on part sur ceinture-bretelles avec :
+Les codes PUK ne doivent évidemment être accessibles qu'au personnel autorisé. Pour ça, on part sur une approche ceinture-bretelles avec :
 
-- **des attributs déclarés comme confidentiels** : leur valeur ne peut être consulter que par les utilisateurs ayant un droit d'accès explicite sur l'objet parent ou l'attribut
-- **un chiffrement des données via DPAPI-NG** : le mécanisme de chiffrement natif depuis Windows 8 & Windows Server 2012, qui va permettre de déchiffrer le code PUK très simplement pour tous les membres d'un groupe Active Directory
+- **des attributs déclarés comme confidentiels** : leur valeur ne peut être consultée que par les utilisateurs ayant un droit d'accès explicite sur l'objet parent ou l'attribut
+- **un chiffrement des données via DPAPI-NG** : le mécanisme de chiffrement natif depuis Windows 8 & Windows Server 2012, qui va permettre à tous les membres d'un groupe Active Directory de déchiffrer le code PUK très simplement
 
 ## Modification du schéma
 
@@ -75,7 +75,7 @@ On va avoir besoin de trois nouveaux attributs dans le schéma :
 - `corp-pukHistory`
 - `corp-pukLastSet`
 
-Les attributs sont préfixés par "CORP" pour éviter une éventuelle collision avec des nouveaux attributs qui pourraient être ajoutés dans le schéma par Microsoft ou un éditeur tier.
+Les attributs sont préfixés par "CORP" pour éviter une éventuelle collision avec de nouveaux attributs qui pourraient être ajoutés dans le schéma par Microsoft ou un éditeur tiers.
 
 Voici les spécifications techniques pour chacun :
 
@@ -95,7 +95,7 @@ searchFlags | 128 (Confidential)
 
 #### corp-pukHistory
 
-Tout comme `corp-puk`, `corp-pukHistory` sera une chaîne d'octet confidentielle mais multi-valeur :
+Tout comme `corp-puk`, `corp-pukHistory` sera une chaîne d'octets confidentielle, mais multivaluée :
 
 Attribut | Valeur
 -------- | ------
@@ -109,7 +109,7 @@ searchFlags | 128 (Confidential)
 
 #### corp-pukLastSet
 
-Ici pas besoin de déclarer l'attribut comme confidentiel, on défini simplement le bon format pour avoir une belle date bien propre (comme l'attribut `accountExpirationDate` par exemple) :
+Ici, pas besoin de déclarer l'attribut comme confidentiel, on définit simplement le bon format pour avoir une belle date bien propre (comme l'attribut `accountExpirationDate` par exemple) :
 
 Attribut | Valeur
 -------- | ------
@@ -147,7 +147,7 @@ $splat = @{
 New-ADObject @splat
 ```
 
-> N'oubliez pas, une seule erreur et celle-ci sera visible à jamais dans votre schéma.
+> N'oubliez pas qu'une seule erreur sera visible à jamais dans votre schéma.
 
 ### Définition de la classe
 
@@ -212,11 +212,11 @@ Je l'ai caché dans mon module, et celui-ci devrait être plus visible mais les 
 New-ADGroup -Name 'SmartCard PUK Administrators' -GroupScope Global -GroupCategory Security
 ```
 
-Si vous voulez pouvez déchiffrer les codes PUK, vous aurez besoin d'être membre du groupe.
+Si vous voulez pouvoir déchiffrer les codes PUK, vous aurez besoin d'être membre du groupe.
 
 ### Délégation d'accès sur les attributs confidentiels
 
-Vous vous souvenez de l'explication sur les attributs qui ne pouvaient être lu que par les comptes autorisés ? Et bien comme le groupe "Domain Admins" possède déjà ces permissions ; je m'en accommode très bien. Si vous souhaitez mettre en place une délégation, voici ce que [Claude](https://claude.ai/) m'a proposé (je n'ai pas testé) :
+Vous vous souvenez de l'explication sur les attributs qui ne pouvaient être lus que par les comptes autorisés ? Eh bien, comme le groupe "Domain Admins" possède déjà ces permissions, je m'en accommode très bien. Si vous souhaitez mettre en place une délégation, voici ce que [Claude](https://claude.ai/) m'a proposé (je n'ai pas testé) :
 
 ```powershell
 $path  = "OU=Utilisateurs,DC=corp,DC=contoso,DC="
@@ -300,14 +300,14 @@ Bon le POC est rigolo, mais une modification de schéma ne doit évidemment pas 
 
 ### Récupération d'un attribut inutilisé
 
-On va essayer d'identifier un attribut inutilisé de votre domaine. Pour ça, on peut utiliser la commande PowerShell la plus sous-côté (`Group-Object`). Voici comment vérifier l'utilisation de l'attribut `msds-CloudExtensionAttribute1` sur l'ensemble de vos utilisateurs :
+On va essayer d'identifier un attribut inutilisé de votre domaine. Pour ça, on peut utiliser la commande PowerShell la plus sous-cotée (`Group-Object`). Voici comment vérifier l'utilisation de l'attribut `msds-CloudExtensionAttribute1` sur l'ensemble de vos utilisateurs :
 
 ```powershell
 $attribute = 'msds-CloudExtensionAttribute1'
 Get-ADUser -Filter * -Properties $attribute | Group-Object $attribute
 ```
 
-Les attributs `msds-CloudExtensionAttribute...` sont des candidats idéals, et ils existent depuis 2012. Seul problème : ils ne sont pas du type "Octet String" mais simplement "String". On va donc devoir convertir notre chaîne de bit chiffrés en une chaîne de caractères simple.
+Les attributs `msds-CloudExtensionAttribute...` sont des candidats idéaux, et ils existent depuis 2012. Seul problème : ils ne sont pas du type "Octet String" mais simplement "String". On va donc devoir convertir notre chaîne de bits chiffrés en une chaîne de caractères simple.
 
 ### Conversion en chaîne de caractères
 
@@ -336,9 +336,9 @@ Une fois l'information chiffrée, il ne reste plus qu'à l'ajouter sur l'attribu
 Set-ADUser john.smith -Replace @{ 'msds-CloudExtensionAttribute1' = $base64 }
 ```
 
-> **Quid de la longueur maximum de la chaîne de caractère ?**
+> **Quid de la longueur maximale de la chaîne de caractères ?**
 >
-> D'après mes tests sur les attributs `msds-CloudExtensionAttribute...`, on peut y stocker jusqu'à ~1 millions de caractères. Attention quand-même, je ne pense pas qu'ajouter 1 MB de données par utilisateur soit une bonne idée sur le long terme !
+> D'après mes tests sur les attributs `msds-CloudExtensionAttribute...`, on peut y stocker jusqu'à environ un million de caractères. Attention quand même, je ne pense pas qu'ajouter 1 MB de données par utilisateur soit une bonne idée sur le long terme !
 
 ### Lecture de l'attribut
 
@@ -352,4 +352,4 @@ ConvertFrom-DpapiNg -InputObject $blob
 
 ## Conclusion
 
-Avec la combinaison de DPAPI-NG & le drapeau "CONFIDENTIEL" sur les attributs dans le schéma, il est possible de cacher des informations dans Active Directory et bénéficier ainsi du cycle de vie naturel de vos objets. La création d'une classe dédiée offre une solution intégrée, mais reste expérimentale et implique une modification irréversible du schéma. Pour un besoin plus simple, réutiliser un attribut existant peut éviter cette étape, après avoir vérifié qu'il est libre et adapté évidemment !
+Avec la combinaison de DPAPI-NG et du drapeau "CONFIDENTIEL" sur les attributs dans le schéma, il est possible de cacher des informations dans Active Directory et de bénéficier ainsi du cycle de vie naturel de vos objets. La création d'une classe dédiée offre une solution intégrée, mais reste expérimentale et implique une modification irréversible du schéma. Pour un besoin plus simple, réutiliser un attribut existant peut éviter cette étape, après avoir vérifié qu'il est libre et adapté, évidemment !
