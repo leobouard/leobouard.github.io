@@ -26,60 +26,57 @@ Pour continuer à avoir de mes nouvelles : [www.labouabouate.fr](labouabouate.fr
 Et voici maintenant quelques petites statistiques :
 
 <div style="display: flex; grid-gap: 1.5em; flex-wrap: wrap; justify-content: center;">
-  <div class="rewind hover-popout bg-primary">
+  <div class="rewind hover-popout">
     <h3>7 ans<br>9 mois<br>10 jours</h3>
     <small>passés avec METSYS</small>
     <i class="fa-regular fa-calendar-days"></i>
   </div>
-  <div class="rewind hover-popout bg-secondary">
+  <div class="rewind hover-popout">
     <h3>32 missions</h3>
     <small>chez 22 clients différents</small>
     <i class="fa-solid fa-briefcase"></i>
   </div>
-  <div class="rewind hover-popout bg-accent">
+  <div class="rewind hover-popout">
     <h3>14 personnes</h3>
     <small>qui sont passées<br>dans mon équipe</small>
-    <!-- Rémi, Julien, Mario, Grégoire, Romuald, Pierre, Louis, Mathias, Maxence, Marc-Elie, Krysten, Arnaud, Michael, Marc-Antoine -->
     <i class="fa-solid fa-people-group"></i>
   </div>
-  <div class="rewind hover-popout bg-lightaccent">
+  <div class="rewind hover-popout">
     <h3>11 certifications</h3>
     <small>qui reflètent toutes une compétence<br>technique réelle (évidemment)</small>
     <i class="fa-solid fa-award"></i>
   </div>
-  <div class="rewind hover-popout bg-accent">
+  <div class="rewind hover-popout">
     <h3>140 CRA</h3>
     <small>comptes rendu d'activité envoyés<br>(jusqu'à 6 le même mois)</small>
     <i class="fa-solid fa-file-invoice"></i>
   </div>
-  <div class="rewind hover-popout bg-primary">
+  <div class="rewind hover-popout">
     <h3>7 PC</h3>
     <small>portables maltraités<br>mais rendus intacts</small>
-    <!-- 3x ROULLIER, 2x METSYS, 1x IMATECH, 1x BEAUMANOIR -->
     <i class="fa-solid fa-laptop"></i>
   </div>
-  <div class="rewind hover-popout bg-primary">
+  <div class="rewind hover-popout">
     <h3>4 générations</h3>
     <small>de voitures de service qui ont été<br>mises en travers sur des rond-points</small>
     <i class="fa-solid fa-car-burst"></i>
   </div>
-  <div class="rewind hover-popout bg-lightaccent">
+  <div class="rewind hover-popout">
     <h3>10 prods<br>cassées</h3>
     <small>y'a que les gens qui ne font rien<br>qui ne font pas d'erreurs nan ?</small>
     <i class="fa-solid fa-burst"></i>
   </div>
-  <div class="rewind hover-popout bg-secondary">
+  <div class="rewind hover-popout">
     <h3>23<br>comptes</h3>
     <small>admins du domaine<br>(tous désactivés maintenant)</small>
-    <!-- 1x EVEN, 1x CD40, 1x CHU, 4x IMA, 1x IMATECH, 1x PAO, 1x STG, 3x AVRIL, 2x DELTADORE, 1x SDIS29, 2x LE DUFF, 1x B&B HOTELS, 3x ROULLIER, 1x BEAUMANOIR -->
     <i class="fa-solid fa-crown"></i>
   </div>
-  <div class="rewind hover-popout bg-accent">
+  <div class="rewind hover-popout">
     <h3>+70 entretiens<br>techniques</h3>
-    <small>avec des candidat(e)s<br>plus ou moins bien préparés</small>
+    <small>avec des candidat(e)s<br>plus ou moins bien préparé(e)s</small>
     <i class="fa-solid fa-comments"></i>
   </div>
-  <div class="rewind hover-popout bg-secondary">
+  <div class="rewind hover-popout">
     <h3>+100 000 lignes<br>de PowerShell</h3>
     <small>une estimation trèèès basse</small>
     <i class="fa-solid fa-file-code"></i>
