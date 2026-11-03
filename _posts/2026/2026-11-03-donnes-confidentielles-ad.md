@@ -1,6 +1,6 @@
 ---
 title: "Comment stocker des données confidentielles dans Active Directory ?"
-description: "Cacher une information sensible à la vue de tous, le cas pratique des codes PUK"
+description: "Cacher une information sensible à la vue de tous : cas pratique des codes PUK"
 tags: ["powershell", "activedirectory"]
 ---
 
@@ -65,7 +65,7 @@ Pour pouvoir modifier le schéma, créer notre classe et nos nouveaux attributs,
 2. Pouvoir générer un OID (avec la commande PowerShell ci-dessous par exemple)
 3. Pouvoir redémarrer le contrôleur de domaine qui porte le rôle SchemaMaster si besoin
 
-{% include name="New-Oid.ps1" id="e797c922cef0553924436149199c8ab4" %}
+{% include github-gist.html name="New-Oid.ps1" id="e797c922cef0553924436149199c8ab4" %}
 
 ### Définition des attributs
 
