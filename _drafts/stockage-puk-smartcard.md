@@ -1,10 +1,18 @@
 ---
 title: "Comment stocker des données confidentielles dans Active Directory ?"
-description: "Cas pratique : des codes PUK cachés à la vue de tous"
+description: "Cacher une information sensible à la vue de tous : cas pratique des codes PUK"
 tags: ["powershell", "activedirectory"]
 ---
 
-## Contexte
+## Introduction
+
+### Le problème des données sensibles dans Active Directory
+
+Active Directory est globalement un livre ouvert : n'importe quel utilisateur peut lire la plupart des informations de l'annuaire (qui est membre de quoi, quel est le numéro de téléphone de John, qui est le manager de Jane...). Quelques attributs font exception (comme `unicodePwd` qui contient le mot de passe de l'objet) mais ceux-ci sont gérés par les contrôleurs de domaine et ne peuvent pas être utilisés à nos propres desseins.
+
+Comment stocker alors dans l'AD des informations confidentielles qui ne soient pas visibles par tous ? Windows LAPS et les mots de passe des comptes gMSA montrent qu'il est possible de protéger et de contrôler l'accès à ce type de données, en utilisant des mécaniques de chiffrements et de visibilité des attributs. On va donc s'en inspirer pour concevoir des solutions adaptées à nos propres besoins.
+
+### Les smart cards pour l'authentification
 
 Si vous avez un Active Directory avec un tiering-model de déployé et que vous devez utiliser un mot de passe différent pour chaque compte, les smart cards sont une solution merveilleuse pour vous simplifier la vie. Grâce à elles, vous pouvez vous connecter avec l'ensemble de vos comptes sans avoir à tapper de mot de passe : un code PIN suffit !
 
@@ -341,3 +349,7 @@ $user = Get-ADUser john.smith -Properties 'msds-CloudExtensionAttribute1'
 $blob = [Convert]::FromBase64String($user.'msds-CloudExtensionAttribute1')
 ConvertFrom-DpapiNg -InputObject $blob
 ```
+
+## Conclusion
+
+Avec la combinaison de DPAPI-NG & le drapeau "CONFIDENTIEL" sur les attributs dans le schéma, il est possible de cacher des informations dans Active Directory et bénéficier ainsi du cycle de vie naturel de vos objets. La création d'une classe dédiée offre une solution intégrée, mais reste expérimentale et implique une modification irréversible du schéma. Pour un besoin plus simple, réutiliser un attribut existant peut éviter cette étape, après avoir vérifié qu'il est libre et adapté évidemment !
