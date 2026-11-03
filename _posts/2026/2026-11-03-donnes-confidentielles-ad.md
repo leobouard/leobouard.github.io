@@ -1,6 +1,6 @@
 ---
 title: "Comment stocker des données confidentielles dans Active Directory ?"
-description: "Cacher une information sensible à la vue de tous : cas pratique des codes PUK"
+description: "Cacher une information sensible à la vue de tous, le cas pratique des codes PUK"
 tags: ["powershell", "activedirectory"]
 ---
 
