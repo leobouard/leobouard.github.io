@@ -236,7 +236,7 @@ dsacls $path /I:S /G "${group}:CA;;corp-smartCard"
 
 Une fois notre schéma ~~cassé~~ modifié, on peut passer à l'exploitation de nos nouveaux jouets ! Pour ça, j'ai créé un module PowerShell assez simple qui permet d'interagir avec nos smart cards :
 
-{% include name="PUKManagement.psm1" id="185f2b6e5cadbb1827b1609138463eb2" %}
+{% include github-gist.html name="PUKManagement.psm1" id="185f2b6e5cadbb1827b1609138463eb2" %}
 
 Celui-ci est composé de quelques commandes utiles :
 
