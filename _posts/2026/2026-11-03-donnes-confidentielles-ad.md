@@ -34,9 +34,9 @@ Vient alors la réflexion du stockage de ces codes PUK, et pour ça, plusieurs o
 
 Toutes ces options ont un inconvénient majeur : elles ne suivent pas le cycle de vie des utilisateurs Active Directory. Au fil des départs et des arrivées, des changements de nom ou d'équipe, vous allez finir par vous y perdre. Impossible d'identifier rapidement les utilisateurs qui n'ont pas de code PUK, ou ceux qui ont quitté l'entreprise depuis déjà plusieurs années.
 
-L'idée de cet article est donc de proposer autre chose : une méthode purement expérimentale qui va lier directement l'utilisateur à sa smart card dans Active Directory ; sans pour autant que le code PUK soit accessible à tous.
-
 ![There is another](https://i.redd.it/lyd5md4v3q351.jpg)
+
+L'idée de cet article est donc de proposer autre chose : une méthode purement expérimentale qui va lier directement l'utilisateur à sa smart card dans Active Directory ; sans pour autant que le code PUK soit accessible à tous.
 
 ### Ma solution (expérimentale)
 
