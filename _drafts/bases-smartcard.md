@@ -10,45 +10,104 @@ On peut retrouver des codes PIN un peu partout sous Windows : avec Windows Hello
 
 Et la plupart du temps, lorsqu'on nous demande de définir un code PIN, on pense immédiatement à un truc comme ça :
 
-22052026
+<div style="margin: 1em auto;width: fit-content;font-size: 1.25em;font-family: var(--titlefont);display: flex;grid-gap: 0.25em;">
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">2</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">2</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">0</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">5</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">2</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">0</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">2</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">6</span>
+</div>
 
-*C'est la date de naissance de mon fils si vous vous demandez*
+<i style="margin: auto; display: block; width: fit-content;">Est-ce que vous la voyez la belle date de naissance ?</i>
 
-Pourtant, ce code PIN : il pue la m*****.
+### Pourquoi est-ce que l'on pense à un code PIN avec des chiffres ?
 
-### Pourquoi on pense à un code PIN avec des chiffres
+Bon le "N" dans PIN c'est "Number", mais passons.
 
-Pendant longtemps, un code PIN allait être tapé sur un clavier à 10 touches, comme un téléphone ou terminal de paiement. Du coup les limites techniques imposaient logiquement un code uniquement composés de chiffres.
+Pendant longtemps, un code PIN était tapé sur un clavier à 10 touches (comme un téléphone T9 ou un terminal de paiement). Du coup les limites techniques imposaient un code uniquement composés de chiffres.
 
-### Pourquoi c'est mieux d'utiliser un mot
+### Pourquoi est-ce mieux d'utiliser un mot ?
 
-Le truc c'est qu'en 2026 et sur un ordinateur, il n'y a pas de raison de se limiter à 10 caractères pour votre code PIN. Et comme on a pas besoin du 
+Le truc c'est qu'aujourd'hui et sur un ordinateur, il n'y a pas de raison de se limiter à une sélection 10 caractères pour votre code PIN. Vous avez un clavier complet à votre disposition, et aucune interdiction de mettre autre chose que des chiffres ! Les codes PIN avec des lettres sont supportés sur :
 
-- Permet d'utiliser la majorité des touches de votre clavier
-- Garde une cohérence sur votre mémoire musculaire entre tous les claviers (pas de différence entre un clavier de téléphone ou un clavier pleine-taille avec pavé numérique)
-- Aussi (si ce n'est plus) rapide à tapper
-- Beaucoup plus facile à retenir qu'une suite de chiffres aléatoire
-- Si vous vous débrouillez bien, un mot peut être compatible en AZERTY et QWERTY
+- ✅ Windows Hello
+- ✅ BitLocker
+- ✅ YubiKey (sauf les accents)
 
-### 
+Donc au lieu de penser à une date de naissance, pensez plutôt à un truc comme ça :
 
-Et qu'est-ce qui fait 6 ou 8 chiffres et qui est facilement mémorisable ? Dans le lot on va retrouver :
+<div style="margin: 1em auto;width: fit-content;font-size: 1.25em;font-family: var(--titlefont);display: flex;grid-gap: 0.25em;">
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">F</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">e</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">s</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">t</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">i</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">v</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">a</span>
+  <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">l</span>
+</div>
 
-- votre date de naissance
-- votre code postal avec un numéro bonus à la fin
-- votre code de carte bancaire
-- un motif de pavé numérique
-- une suite de chiffre logiques (11223344 par exemple)
+Un code PIN qui prend la forme d'un mot :
 
-Et toutes ces propositions ont un niveau de sécurité relatif.
+- Est souvent **plus rapide à tapper** sur des claviers sans pavé numérique
+- Peut être **compatible en AZERTY et QWERTY** si vous excluez quelques lettres (A, Z, Q, W et M)
+- Est beaucoup **plus facile à mémoriser** qu'une suite de chiffres aléatoire
 
-## Générateur de code PIN
+Et vous n'êtes évidemment pas restreint à des mots de la langue française, vous pouvez personnaliser votre jeu de mots (dans le sens *word set*, pas calembour) :
+
+<div style="display: flex; grid-gap: 1.5em; flex-wrap: wrap; justify-content: center;">
+  <div class="rewind hover-popout">
+    <h3>Avantime</h3>
+    <small>Pour les fans de Renault</small>
+    <i class="fa-regular fa-calendar-days"></i>
+  </div>
+  <div class="rewind hover-popout">
+    <h3>Dracofeu</h3>
+    <small>Si vous avez toujours votre GameBoy</small>
+    <i class="fa-solid fa-briefcase"></i>
+  </div>
+  <div class="rewind hover-popout">
+    <h3>Jordan23</h3>
+    <small>Si vous savez qui est le vrai G.O.A.T de la NBA</small>
+    <i class="fa-solid fa-people-group"></i>
+  </div>
+  <div class="rewind hover-popout">
+    <h3>Toulouse</h3>
+    <small>Pour le cassoulet et BigFlo & Oli</small>
+    <i class="fa-solid fa-award"></i>
+  </div>
+</div>
+
+### En terme de sécurité
+
+Un code PIN c'est trois essais maximum et ça nécessite un accès physique à l'appareil. A moins que vous mettiez votre prénom (ce qui est du même niveau que mettre votre date de naissance), ça devrait aller.
+
+Si on compare avec un code PIN classique composé de nombres, on retrouve souvent les mêmes paternes : date de naissance, code postal, répétition de chiffres...
+
+Donc on va dire égalité entre les deux options.
 
 ## Contraintes techniques
 
 ### Windows Hello
 
+> **Lowercase letters in PIN, Uppercase letters in PIN, and Special characters in PIN.**
+>
+> You can enforce a stronger PIN by requiring the use of uppercase letters, lowercase letters, and special characters in the PIN. For each, select from:
+>
+> [...]
+>
+> Not allowed (default): Users must not use these character types in their PIN. (This is also the behavior if the setting isn't configured.). Special characters include: `! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ { | } ~`
+
+Source : [Configure Windows Hello for Business on devices when they enroll with Intune](https://learn.microsoft.com/intune/device-security/identity-protection/configure-tenant-wide-policy)
+
 ### BitLocker
+
+> Enhanced startup PINs permit the use of characters including uppercase and lowercase letters, symbols, numbers, and spaces. This policy setting is applied when you turn on BitLocker.
+
+Source : [Allow enhanced PINs for startup](https://learn.microsoft.com/previous-versions/windows/it-pro/windows-7/ee706521(v=ws.10)#allow-enhanced-pins-for-startup)
 
 ### YubiKey
 
@@ -61,5 +120,5 @@ Source : [The PIV PIN, PUK, and management key](https://docs.yubico.com/yesdk/us
 Pour lister tous les caractères ASCII disponibles en PowerShell :
 
 ```powershell
-33..126 -as [char[]] | Get-Random -Count 8
+(33..126 -as [char[]]) -join ' '
 ```
