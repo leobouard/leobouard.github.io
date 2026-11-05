@@ -33,9 +33,9 @@ Pendant longtemps, un code PIN était tapé sur un clavier à 10 touches (comme 
 
 Le truc c'est qu'aujourd'hui et sur un ordinateur, il n'y a pas de raison de se limiter à une sélection 10 caractères pour votre code PIN. Vous avez un clavier complet à votre disposition, et aucune interdiction de mettre autre chose que des chiffres ! Les codes PIN avec des lettres sont supportés sur :
 
-- ✅ Windows Hello
-- ✅ BitLocker
-- ✅ YubiKey (sauf les accents)
+- Windows Hello
+- BitLocker
+- YubiKey (sauf les accents)
 
 Donc au lieu de penser à une date de naissance, pensez plutôt à un truc comme ça :
 
@@ -62,22 +62,32 @@ Et vous n'êtes évidemment pas restreint à des mots de la langue française, v
   <div class="rewind hover-popout">
     <h3>Avantime</h3>
     <small>Pour les fans de Renault</small>
-    <i class="fa-regular fa-calendar-days"></i>
+    <i class="fa-solid fa-car"></i>
   </div>
   <div class="rewind hover-popout">
     <h3>Dracofeu</h3>
-    <small>Si vous avez toujours votre GameBoy</small>
-    <i class="fa-solid fa-briefcase"></i>
+    <small>Vous avez toujours votre GameBoy évidemment</small>
+    <i class="fa-solid fa-gamepad"></i>
   </div>
   <div class="rewind hover-popout">
     <h3>Jordan23</h3>
     <small>Si vous savez qui est le vrai G.O.A.T de la NBA</small>
-    <i class="fa-solid fa-people-group"></i>
+    <i class="fa-solid fa-basketball"></i>
   </div>
   <div class="rewind hover-popout">
     <h3>Toulouse</h3>
     <small>Pour le cassoulet et BigFlo & Oli</small>
-    <i class="fa-solid fa-award"></i>
+    <i class="fa-solid fa-utensils"></i>
+  </div>
+  <div class="rewind hover-popout">
+    <h3>Bucheron</h3>
+    <small>Parce que c'est le métier de vos rêves</small>
+    <i class="fa-solid fa-tree"></i>
+  </div>
+  <div class="rewind hover-popout">
+    <h3>Caroline</h3>
+    <small>Je ne t'oublierai jamais</small>
+    <i class="fa-solid fa-heart"></i>
   </div>
 </div>
 
@@ -95,10 +105,8 @@ Donc on va dire égalité entre les deux options.
 
 > **Lowercase letters in PIN, Uppercase letters in PIN, and Special characters in PIN.**
 >
-> You can enforce a stronger PIN by requiring the use of uppercase letters, lowercase letters, and special characters in the PIN. For each, select from:
->
+> You can enforce a stronger PIN by requiring the use of uppercase letters, lowercase letters, and special characters in the PIN.
 > [...]
->
 > Not allowed (default): Users must not use these character types in their PIN. (This is also the behavior if the setting isn't configured.). Special characters include: `! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ { | } ~`
 
 Source : [Configure Windows Hello for Business on devices when they enroll with Intune](https://learn.microsoft.com/intune/device-security/identity-protection/configure-tenant-wide-policy)
