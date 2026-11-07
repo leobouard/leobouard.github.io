@@ -16,7 +16,7 @@
       <span hidden data-length="{{ item.word | size }}">{{ item.word }}</span>
     {% endfor %}
   </div>
-  <small>Les mots sont issus du fichier suivant : <a target="_blank" href="https://github.com/{{ site.github_owner }}/{{ site.github_repo }}/tree/{{ site.github_branch }}/_data/word-list.csv">word-list.csv</a>. Il y a actuellement {{ site.data.word-list | size }} mots disponibles.</small>
+  <small>Les mots proviennent du fichier <a target="_blank" href="https://github.com/{{ site.github_owner }}/{{ site.github_repo }}/tree/{{ site.github_branch }}/_data/word-list.csv">word-list.csv</a> ({{ site.data.word-list | size }} mots disponibles).</small>
 </div>
 
 <script>
