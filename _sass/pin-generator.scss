@@ -30,16 +30,17 @@ div.pin-generator {
 }
 
 .pin-generator-results {
-	padding: 1em;
+	padding: 2em;
 	border: 1px solid var(--mediumaccent);
 	border-top: 0;
     border-radius: 0 0 var(--borderradius) var(--borderradius);
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
 	grid-gap: 1em;
 	justify-content: center;
 	text-transform: capitalize;
 	margin-bottom: 1em;
+	font-family: var(--codefont);
 }
 
 .pin-generator-results span {
