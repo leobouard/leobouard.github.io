@@ -1,0 +1,40 @@
+div.pin-generator {
+    margin: 2em 0;
+}
+
+.pin-generator-controls {
+	border: 1px solid var(--mediumaccent);
+	padding: 0.5em;
+	font-size: small;
+	background: var(--lightaccent);
+	color: var(--heavyaccent);
+	border-radius: var(--borderradius) var(--borderradius) 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pin-generator-controls input {
+    border: var(--border);
+    background: var(--background);
+    color: var(--heavyaccent);
+    text-align: center;
+}
+
+.pin-generator-results {
+	padding: 1em;
+	border: 1px solid var(--mediumaccent);
+	border-top: 0;
+    border-radius: 0 0 var(--borderradius) var(--borderradius);
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 1em;
+	justify-content: center;
+	font-family: var(--codefont);
+    text-transform: uppercase;
+}
+
+.pin-generator-results span {
+    border: 1px solid var(--mediumaccent);
+    border-radius: var(--borderradius);
+    padding: 0.25em 0.5em;
+}
