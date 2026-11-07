@@ -7,7 +7,8 @@
     <button id="refresh">Refresh</button>
   </div>
   <div class="pin-generator-results">
-    {% for word in site.data.word-list %}
+    {% assign wordlist = site.data.word-list %}
+    {% for word in wordlist %}
       <span style="display: none;" id="length-{{ word.word | size }}">{{ word.word }}</span>
     {% endfor %}
   </div>
