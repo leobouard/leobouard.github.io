@@ -3,9 +3,9 @@
     <div style="height: fit-content; margin: auto 0;">
       <label for="pin-length">Longueur :</label>
       <input type="number" id="pin-length" min="6" max="10" value="8">
-      <label><input type="checkbox" id="pin-azertyqwerty">AZERTY/QWERTY</label>
+      <label><input type="checkbox" id="pin-azertyqwerty" style="margin-left: 0.5em;padding-left: 0.5em;border-left: 1px solid var(--mediumaccent);">Compatible AZERTY & QWERTY</label>
     </div>
-    <button id="refresh" class="hover-popout" type="button" aria-label="Rafraîchir les mots">
+    <button id="refresh" type="button" aria-label="Rafraîchir les mots">
       <i class="fa-solid fa-arrows-rotate"></i>
     </button>
   </div>
@@ -55,7 +55,7 @@
         [matchingWords[index], matchingWords[randomPosition]] = [matchingWords[randomPosition], matchingWords[index]];
       }
 
-      matchingWords.slice(0, 22).forEach(word => { word.hidden = false; });
+      matchingWords.slice(0, 24).forEach(word => { word.hidden = false; });
     }
 
     lengthInput.addEventListener('change', refreshWords);

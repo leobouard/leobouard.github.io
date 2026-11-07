@@ -6,7 +6,7 @@ tags: ["windows", "smartcard"]
 
 ## Dictionnaire de mots
 
-Le but de l'article est de vous convaincre qu'un mot comme "Grillage" ou "Nintendo" est plus efficace comme code PIN sur un ordinateur qu'une suite de chiffres. Voici donc un dictionnaire pour vous aider à trouver de l'inspiration :
+Sur ordinateur, l'utilisation d'un mot comme code PIN est beaucoup plus efficace qu'une suite de chiffres. Voici quelques propositions pour vous aider à trouver le vôtre :
 
 {% include pin-generator.html %}
 
