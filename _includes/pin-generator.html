@@ -7,26 +7,8 @@
     <button id="refresh">Refresh</button>
   </div>
   <div class="pin-generator-results">
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
-    <span>Caroline</span>
+    {% for word in site.data.word-list.word %}
+      <span style="display: none;" id="length-{{ word | size }}">{{ word }}</span>
+    {% endfor %}
   </div>
-  <a href="#" id="generate-new-pins" class="no-decoration button-primary hover-bottom">Nouvelle sélection</a>
 </div>
