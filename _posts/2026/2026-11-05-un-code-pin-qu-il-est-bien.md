@@ -1,5 +1,5 @@
 ---
-title: "Vos codes PIN puent la m**** !"
+title: "Vous méritez un meilleur code PIN !"
 description: "Donne moi ta date de naissance et je te donnerai ton code PIN"
 tags: ["windows", "smartcard"]
 ---
