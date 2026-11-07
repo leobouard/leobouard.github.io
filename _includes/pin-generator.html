@@ -5,7 +5,9 @@
       <input type="number" id="pin-length" min="6" max="10" value="8">
       <label><input type="checkbox" id="pin-azertyqwerty">AZERTY/QWERTY</label>
     </div>
-    <button id="refresh" class="hover-popout" type="button">Refresh</button>
+    <button id="refresh" class="hover-popout" type="button" aria-label="Rafraîchir les mots">
+      <i class="fa-solid fa-arrows-rotate"></i>
+    </button>
   </div>
   <div class="pin-generator-results">
     {% for item in site.data.word-list %}
