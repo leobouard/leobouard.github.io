@@ -1,0 +1,134 @@
+<!--
+  Générateur d'idées de codes PIN (mots français)
+  À enregistrer dans _includes/pin-generator.html
+  puis à appeler dans une page ou un article avec : {% include pin-generator.html %}
+
+  Prérequis : un fichier _data/mots.csv avec une colonne "Word" (en-tête sur la 1re ligne).
+  Si votre fichier s'appelle autrement (ex. francais.csv), remplacez site.data.mots par site.data.francais.
+-->
+
+<div id="pin-generator">
+  <div class="pin-controls">
+    <label for="pin-length">Nombre de caractères :</label>
+    <select id="pin-length">
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <label for="pin-count">Nombre d'idées :</label>
+    <select id="pin-count">
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="20">20</option>
+    </select>
+
+    <label><input type="checkbox" id="pin-noaccents"> Sans accents</label>
+
+    <button type="button" id="pin-refresh">Nouveaux PIN</button>
+  </div>
+
+  <ul id="pin-list" aria-live="polite"></ul>
+  <p id="pin-msg" class="pin-msg"></p>
+</div>
+
+<style>
+  #pin-generator .pin-controls { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin-bottom: 1rem; }
+  #pin-generator button { padding: .45rem 1rem; cursor: pointer; }
+  #pin-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+  #pin-list li {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 1.1rem; padding: .35rem .8rem; border: 1px solid #ccc;
+    border-radius: 6px; cursor: pointer; background: #f7f7f7; color: #222;
+  }
+  #pin-list li:hover { background: #eaeaea; }
+  #pin-list li.copied { background: #d4f4dd; border-color: #6c6; }
+  .pin-msg { font-size: .85rem; color: #666; min-height: 1.2em; }
+</style>
+
+<script>
+  /* ---- Partie Liquid : on injecte uniquement les mots de 6 à 10 caractères ---- */
+  const MOTS = [
+  {%- assign premier = true -%}
+  {%- for ligne in site.data.word-list -%}
+    {%- assign mot = ligne.Word | strip -%}
+    {%- assign n = mot | size -%}
+    {%- if n >= 6 and n <= 10 -%}
+      {%- unless premier -%},{%- endunless -%}{{ mot | jsonify }}
+      {%- assign premier = false -%}
+    {%- endif -%}
+  {%- endfor -%}
+  ];
+
+  /* ---- Partie JavaScript ---- */
+  (function () {
+    const lengthSel = document.getElementById('pin-length');
+    const countSel  = document.getElementById('pin-count');
+    const noAccents = document.getElementById('pin-noaccents');
+    const btn       = document.getElementById('pin-refresh');
+    const list      = document.getElementById('pin-list');
+    const msg       = document.getElementById('pin-msg');
+
+    // Entier aléatoire dans [0, max[ via l'API crypto (meilleur que Math.random)
+    function randInt(max) {
+      const buf = new Uint32Array(1);
+      const limit = Math.floor(0x100000000 / max) * max;
+      do { crypto.getRandomValues(buf); } while (buf[0] >= limit);
+      return buf[0] % max;
+    }
+
+    function stripAccents(s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function generate() {
+      const len = parseInt(lengthSel.value, 10);
+      const count = parseInt(countSel.value, 10);
+      const sansAccents = noAccents.checked;
+
+      // Mots uniques de la longueur demandée (après retrait éventuel des accents)
+      const pool = [...new Set(
+        MOTS.map(m => sansAccents ? stripAccents(m) : m)
+            .filter(m => Array.from(m).length === len)
+      )];
+
+      list.innerHTML = '';
+      if (pool.length === 0) {
+        msg.textContent = 'Aucun mot de ' + len + ' caractères dans la liste.';
+        return;
+      }
+
+      // Tirage sans doublon (Fisher-Yates partiel)
+      const n = Math.min(count, pool.length);
+      for (let i = 0; i < n; i++) {
+        const j = i + randInt(pool.length - i);
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+        const li = document.createElement('li');
+        li.textContent = pool[i];
+        li.title = 'Cliquer pour copier';
+        list.appendChild(li);
+      }
+      msg.textContent = pool.length + ' mots disponibles à ' + len + ' caractères. Cliquez sur un mot pour le copier.';
+    }
+
+    list.addEventListener('click', function (e) {
+      const li = e.target.closest('li');
+      if (!li) return;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(li.textContent).then(function () {
+          li.classList.add('copied');
+          setTimeout(function () { li.classList.remove('copied'); }, 800);
+        });
+      }
+    });
+
+    btn.addEventListener('click', generate);
+    lengthSel.addEventListener('change', generate);
+    countSel.addEventListener('change', generate);
+    noAccents.addEventListener('change', generate);
+
+    generate();
+  })();
+</script>

@@ -4,6 +4,12 @@ description: "Donne moi ta date de naissance et je te donnerai ton code PIN"
 tags: ["windows", "smartcard"]
 ---
 
+## Dictionnaire de mots
+
+Le but de l'article est de vous convaincre qu'un mot comme "Grillage" ou "Nintendo" est plus efficace comme code PIN sur un ordinateur qu'une suite de chiffres. Voici donc un dictionnaire pour vous aider à trouver de l'inspiration :
+
+{% include pin-generator.html %}
+
 ## Les codes PIN sur Windows
 
 On peut retrouver des codes PIN un peu partout sous Windows : avec Windows Hello, pour le chiffrement BitLocker ou encore avec des smart cards comme les YubiKey.
