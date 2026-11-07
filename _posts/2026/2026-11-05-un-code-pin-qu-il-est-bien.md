@@ -1,5 +1,5 @@
 ---
-title: "Vous méritez un meilleur code PIN !"
+title: "Vous méritez de meilleurs codes PIN !"
 description: "Donne moi ta date de naissance et je te donnerai ton code PIN"
 tags: ["windows", "smartcard"]
 ---
