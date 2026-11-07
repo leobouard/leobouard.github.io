@@ -20,6 +20,15 @@ div.pin-generator {
     text-align: center;
 }
 
+.pin-generator-controls button {
+	background: transparent;
+	border: 1px solid var(--mediumaccent);
+	color: var(--text);
+	border-radius: var(--borderradius);
+	aspect-ratio: 1;
+	font-size: 1.25em;
+}
+
 .pin-generator-results {
 	padding: 1em;
 	border: 1px solid var(--mediumaccent);
@@ -29,6 +38,7 @@ div.pin-generator {
 	flex-wrap: wrap;
 	grid-gap: 1em;
 	justify-content: center;
+	text-transform: capitalize;
 }
 
 .pin-generator-results span {

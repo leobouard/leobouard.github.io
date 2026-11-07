@@ -1,17 +1,18 @@
 <div class="pin-generator">
   <div class="pin-generator-controls">
-    <div>
+    <div style="height: fit-content; margin: auto 0;">
       <label for="pin-length">Longueur :</label>
       <input type="number" id="pin-length" min="6" max="10" value="8">
       <label><input type="checkbox" id="pin-azertyqwerty">AZERTY/QWERTY</label>
     </div>
-    <button id="refresh" type="button">Refresh</button>
+    <button id="refresh" class="hover-popout" type="button">Refresh</button>
   </div>
   <div class="pin-generator-results">
     {% for item in site.data.word-list %}
       <span hidden data-length="{{ item.word | size }}">{{ item.word }}</span>
     {% endfor %}
   </div>
+  <small>Les mots sont issus du fichier suivant : <a href="https://github.com/{{ site.github_owner }}/{{ site.github_repo }}/tree/{{ site.github_branch }}/_data/word-list.csv">word-list.csv</a>. Il y a actuellement {{ site.data.word-list | size }} mots disponibles.</small>
 </div>
 
 <script>
