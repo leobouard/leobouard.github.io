@@ -3,6 +3,7 @@
     <div>
       <label for="pin-length">Longueur :</label>
       <input type="number" id="pin-length" min="6" max="10" value="8">
+      <label><input type="checkbox" id="pin-azertyqwerty">AZERTY/QWERTY</label>
     </div>
     <button id="refresh" type="button">Refresh</button>
   </div>
@@ -17,6 +18,7 @@
   (() => {
     const generator = document.currentScript.previousElementSibling;
     const lengthInput = generator.querySelector('#pin-length');
+    const keyboardCompatibilityInput = generator.querySelector('#pin-azertyqwerty');
     const refreshButton = generator.querySelector('#refresh');
     const words = [...generator.querySelectorAll('.pin-generator-results [data-length]')];
 
@@ -40,16 +42,21 @@
         return;
       }
 
-      const matchingWords = words.filter(word => Number(word.dataset.length) === selectedLength);
+      const matchingWords = words.filter(word => {
+        const hasSelectedLength = Number(word.dataset.length) === selectedLength;
+        const hasCompatibleLetters = !/[azqwm]/i.test(word.textContent);
+        return hasSelectedLength && (!keyboardCompatibilityInput.checked || hasCompatibleLetters);
+      });
       for (let index = matchingWords.length - 1; index > 0; index--) {
         const randomPosition = randomIndex(index + 1);
         [matchingWords[index], matchingWords[randomPosition]] = [matchingWords[randomPosition], matchingWords[index]];
       }
 
-      matchingWords.slice(0, 25).forEach(word => { word.hidden = false; });
+      matchingWords.slice(0, 22).forEach(word => { word.hidden = false; });
     }
 
     lengthInput.addEventListener('change', refreshWords);
+    keyboardCompatibilityInput.addEventListener('change', refreshWords);
     refreshButton.addEventListener('click', refreshWords);
     refreshWords();
   })();
