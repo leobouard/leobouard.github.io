@@ -4,12 +4,53 @@
       <label for="pin-length">Longueur :</label>
       <input type="number" id="pin-length" min="6" max="10" value="8">
     </div>
-    <button id="refresh">Refresh</button>
+    <button id="refresh" type="button">Refresh</button>
   </div>
   <div class="pin-generator-results">
-    {% assign wordlist = site.data.word-list %}
-    {% for word in wordlist %}
-      <span style="display: none;" data-length="{{ word.word | size }}">{{ word.word }}</span>
+    {% for item in site.data.word-list %}
+      <span hidden data-length="{{ item.word | size }}">{{ item.word }}</span>
     {% endfor %}
   </div>
 </div>
+
+<script>
+  (() => {
+    const generator = document.currentScript.previousElementSibling;
+    const lengthInput = generator.querySelector('#pin-length');
+    const refreshButton = generator.querySelector('#refresh');
+    const words = [...generator.querySelectorAll('.pin-generator-results [data-length]')];
+
+    function randomIndex(max) {
+      const range = 0x100000000;
+      const limit = Math.floor(range / max) * max;
+      const randomValue = new Uint32Array(1);
+
+      do {
+        window.crypto.getRandomValues(randomValue);
+      } while (randomValue[0] >= limit);
+
+      return randomValue[0] % max;
+    }
+
+    function refreshWords() {
+      words.forEach(word => { word.hidden = true; });
+
+      const selectedLength = Number(lengthInput.value);
+      if (!lengthInput.checkValidity() || !Number.isInteger(selectedLength)) {
+        return;
+      }
+
+      const matchingWords = words.filter(word => Number(word.dataset.length) === selectedLength);
+      for (let index = matchingWords.length - 1; index > 0; index--) {
+        const randomPosition = randomIndex(index + 1);
+        [matchingWords[index], matchingWords[randomPosition]] = [matchingWords[randomPosition], matchingWords[index]];
+      }
+
+      matchingWords.slice(0, 25).forEach(word => { word.hidden = false; });
+    }
+
+    lengthInput.addEventListener('change', refreshWords);
+    refreshButton.addEventListener('click', refreshWords);
+    refreshWords();
+  })();
+</script>
