@@ -129,7 +129,7 @@ Source : [Allow enhanced PINs for startup](https://learn.microsoft.com/previous-
 
 Source : [The PIV PIN, PUK, and management key](https://docs.yubico.com/yesdk/users-manual/application-piv/pin-puk-mgmt-key.html)
 
-> Les accents ne font pas partie du jeu de caractères ASCII, donc le code PIN `Bûcheron` ne marchera pas.
+Les accents ne font pas partie du jeu de caractères ASCII, donc le code PIN `Bûcheron` ne marchera pas.
 
 Pour lister tous les caractères ASCII disponibles en PowerShell :
 
