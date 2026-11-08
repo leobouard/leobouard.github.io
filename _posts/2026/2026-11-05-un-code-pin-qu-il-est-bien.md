@@ -16,7 +16,7 @@ On peut retrouver des codes PIN un peu partout sous Windows : avec Windows Hello
 
 Et la plupart du temps, lorsqu'on nous demande de définir un code PIN, on pense immédiatement à un truc comme ça :
 
-<div style="margin: 1em auto;width: fit-content;font-size: 1.25em;font-family: var(--titlefont);display: flex;grid-gap: 0.25em;">
+<div style="margin: 1em auto;width: fit-content;font-size: 1.25em;font-family: var(--codefont);display: flex;grid-gap: 0.25em;">
   <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">2</span>
   <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">2</span>
   <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">0</span>
@@ -45,7 +45,7 @@ Le truc c'est qu'aujourd'hui et sur un ordinateur, il n'y a pas de raison de se 
 
 Donc au lieu de penser à une date de naissance, pensez plutôt à un truc comme ça :
 
-<div style="margin: 1em auto;width: fit-content;font-size: 1.25em;font-family: var(--titlefont);display: flex;grid-gap: 0.25em;">
+<div style="margin: 1em auto;width: fit-content;font-size: 1.25em;font-family: var(--codefont);display: flex;grid-gap: 0.25em;">
   <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">F</span>
   <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">e</span>
   <span style="border: 1px solid var(--mediumaccent);padding: 0.5em;border-radius: var(--borderradius);">s</span>
@@ -61,41 +61,6 @@ Un code PIN qui prend la forme d'un mot :
 - Est souvent **plus rapide à tapper** sur des claviers sans pavé numérique
 - Peut être **compatible en AZERTY et QWERTY** si vous excluez quelques lettres (A, Z, Q, W et M)
 - Est beaucoup **plus facile à mémoriser** qu'une suite de chiffres aléatoire
-
-Et vous n'êtes évidemment pas restreint à des mots de la langue française, vous pouvez personnaliser votre jeu de mots (dans le sens *word set*, pas calembour) :
-
-<div style="display: flex; grid-gap: 1.5em; flex-wrap: wrap; justify-content: center;">
-  <div class="rewind hover-popout">
-    <h3>Avantime</h3>
-    <small>Pour les fans de Renault</small>
-    <i class="fa-solid fa-car"></i>
-  </div>
-  <div class="rewind hover-popout">
-    <h3>Dracofeu</h3>
-    <small>Vous avez toujours votre GameBoy évidemment</small>
-    <i class="fa-solid fa-gamepad"></i>
-  </div>
-  <div class="rewind hover-popout">
-    <h3>Jordan23</h3>
-    <small>Si vous savez qui est le vrai G.O.A.T de la NBA</small>
-    <i class="fa-solid fa-basketball"></i>
-  </div>
-  <div class="rewind hover-popout">
-    <h3>Toulouse</h3>
-    <small>Pour le cassoulet et BigFlo & Oli</small>
-    <i class="fa-solid fa-utensils"></i>
-  </div>
-  <div class="rewind hover-popout">
-    <h3>Bucheron</h3>
-    <small>Parce que c'est le métier de vos rêves</small>
-    <i class="fa-solid fa-tree"></i>
-  </div>
-  <div class="rewind hover-popout">
-    <h3>Caroline</h3>
-    <small>Je ne t'oublierai jamais</small>
-    <i class="fa-solid fa-heart"></i>
-  </div>
-</div>
 
 ### En terme de sécurité
 
