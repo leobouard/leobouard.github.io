@@ -24,6 +24,7 @@ div.highlighter-rouge {
     background-color: var(--lightaccent);
     border: var(--border);
     padding: 10px;
+    border-radius: var(--borderradius);
 }
 
 div.highlighter-rouge:before {
@@ -32,6 +33,7 @@ div.highlighter-rouge:before {
     display: block;
     padding: 5px 10px;
     font-size: 12px;
+    color: var(--heavyaccent);
     font-family: var(--textfont);
 }
 
