@@ -34,7 +34,7 @@ div.pin-generator {
 	border-top: 0;
     border-radius: 0 0 var(--borderradius) var(--borderradius);
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(7.5em, 1fr));
 	grid-gap: 1em;
 	justify-content: center;
 	text-transform: capitalize;
