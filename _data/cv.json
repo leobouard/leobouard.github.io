@@ -76,8 +76,13 @@
                     "title":  "Ingénieur opération Microsoft 365",
                     "startDate":  "juillet 2026",
                     "endDate":  "aujourd'hui",
-                    "summary":  "",
-                    "highlights":  [ ]
+                    "summary":  "Maintien en conditions opérationnelles des services Microsoft 365 et Entra ID pour les tenants clients de Bleu.",
+                    "highlights":  [
+                        "diagnostic et résolution des incidents plateforme",
+                        "conception de l'environnement souverain hors Microsoft",
+                        "audit et mise en conformité pour les certifications ISO 27001 et SecNumCloud 3.2",
+                        "rétro-ingénierie et documentation de l'infrastructure Microsoft"
+                    ]
                 }
             ]
         },
