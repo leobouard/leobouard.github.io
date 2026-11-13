@@ -170,6 +170,7 @@ C:\Program Files\WindowsPowerShell\Modules\PIMActiveDirectory
 
   📂 RoleCapabilities
     📄 ApproverDA.psrc
+    📄 AutoApproveDA.psrc
     📄 RequesterDA.psrc
   📄 PIMActiveDirectory.psm1
   📄 SessionConfiguration.pssc
@@ -207,7 +208,9 @@ Ce fichier permet notamment de définir les autorisations JEA (*RoleDefinitions*
 
 ### Fichiers de configuration du rôle (PSRC)
 
-Les fichiers `ApproverDA.psrc` et `RequesterDA.psrc`, placés dans le dossier `RoleCapabilities`, définissent les commandes, les paramètres et les valeurs autorisés pendant la session JEA.
+Les fichiers `ApproverDA.psrc`, `AutoApproveDA.psrc` et `RequesterDA.psrc`, placés dans le dossier `RoleCapabilities`, définissent les commandes, les paramètres et les valeurs autorisés pendant la session JEA.
+
+#### ApproverDA
 
 Pour le rôle "ApproverDA", on autorise la commande `Approve-PIMDCRequest`. Le paramètre `-Requestor` est libre, tandis que `-Group` ne peut prendre que la valeur "Domain Admins" :
 
@@ -222,6 +225,8 @@ Pour le rôle "ApproverDA", on autorise la commande `Approve-PIMDCRequest`. Le p
 }
 ```
 
+#### RequesterDA
+
 Pour le rôle "RequesterDA", on autorise la commande `New-PIMDCRequest`. Les paramètres `-Hours` et `-Reason` sont libres, tandis que `-Group` ne peut prendre que la valeur "Domain Admins" :
 
 ```powershell
@@ -235,6 +240,8 @@ Pour le rôle "RequesterDA", on autorise la commande `New-PIMDCRequest`. Les par
     })
 }
 ```
+
+#### AutoApproveDA
 
 Et enfin on termine avec le fichier pour le rôle "AutoApproveDA" :
 
