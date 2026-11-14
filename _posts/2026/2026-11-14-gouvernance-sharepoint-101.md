@@ -1,6 +1,6 @@
 ---
 title: "Gouvernance SharePoint 101"
-description: "Conseils pratiques pour maîtriser le stockage SharePoint, gouverner les sites et équipes Teams et accompagner l'adoption de Microsoft 365."
+description: "Conseils pratiques pour maîtriser les sites SharePoint de votre tenant"
 tags: ["sharepoint", "microsoft365"]
 ---
 
